@@ -1,0 +1,11 @@
+@media print {
+    .bd-toc {
+        visibility: hidden;
+    }
+}
+
+@media print {
+    .skip-link{
+        visibility: hidden;
+    }
+}

@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/print.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -312,13 +313,13 @@ document.write(`
 <section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
 <p>We will develop a simulation which models the spread of a viral infection through a population. Individuals in the population are assumed to be distributed in a grid of cells which might represent a geographical area such as a city or country, and are assigned various states which describe their exposure to the virus. As the simulation progresses, individuals transition between states according to probabilistic rules (see <a class="reference internal" href="#fig-project-epidemic"><span class="std std-numref">Fig. 1</span></a>).</p>
-<p>The SIR model is one of the most basic models for describing the temporal dynamics of an infectious disease in a population. It compartmentalizes people into one of three categories: those who are Susceptible to the disease, those who are currently Infectious, and those who have Recovered (with immunity). At its most basic level, the SIR model is a set of equations that describes the number (or proportion) of people in each compartment at every point in time. The SIR model is often represented with the following flow diagram that shows the three states (S, I, and R) and arrows depicting the direction of flow between the states.</p>
 <figure class="align-default" id="fig-project-epidemic">
 <a class="reference internal image-reference" href="_images/sample_epidemic.png"><img alt="_images/sample_epidemic.png" src="_images/sample_epidemic.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Simulation results for the spread of the infection in a population. The colour of each cell represents its state of infection. Reprinted from <span id="id1">[<a class="reference internal" href="#id3" title="Sayantari Ghosh and Saumik Bhattacharya. Computational model on covid-19 pandemic using probabilistic cellular automata. SN Computer Science, 2(3):230, 2021.">GB21</a>]</span>.</span><a class="headerlink" href="#fig-project-epidemic" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<p>The SIR model is one of the most basic models for describing the temporal dynamics of an infectious disease in a population. It compartmentalizes people into one of three categories: those who are Susceptible to the disease, those who are currently Infectious, and those who have Recovered (with immunity). At its most basic level, the SIR model is a set of equations that describes the number (or proportion) of people in each compartment at every point in time. The SIR model is often represented with the following flow diagram that shows the three states (S, I, and R) and arrows depicting the direction of flow between the states.</p>
 </section>
 <section id="simulation">
 <h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">#</a></h2>
