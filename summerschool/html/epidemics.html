@@ -320,10 +320,16 @@ document.write(`
 </figcaption>
 </figure>
 <p>The SIR model is one of the most basic models for describing the temporal dynamics of an infectious disease in a population. It compartmentalizes people into one of three categories: those who are Susceptible to the disease, those who are currently Infectious, and those who have Recovered (with immunity). At its most basic level, the SIR model is a set of equations that describes the number (or proportion) of people in each compartment at every point in time. The SIR model is often represented with the following flow diagram that shows the three states (S, I, and R) and arrows depicting the direction of flow between the states.</p>
+<figure class="align-default" id="sir-flow">
+<a class="reference internal image-reference" href="_images/sir_flow.png"><img alt="_images/sir_flow.png" src="_images/sir_flow.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">In the SIR model, individuals transition between states S (Susceptible), I (Infected) and R (Recovered).</span><a class="headerlink" href="#sir-flow" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="simulation">
 <h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">#</a></h2>
-<p><a class="reference internal" href="#epidemic-fig"><span class="std std-numref">Fig. 2</span></a> shows the results of a simple SIR model of infection on a 6 by 6 grid. Each cell represents an individual in one of three states: Susceptible (S), Infected (I) or Recovered (R). Initially all cells are in the susceptible state except one infected individual. At each timestep, each cell changes state according to the following rules:</p>
+<p><a class="reference internal" href="#epidemic-fig"><span class="std std-numref">Fig. 3</span></a> shows the results of a simple SIR model of infection on a 6 by 6 grid. Each cell represents an individual in one of three states: Susceptible (S), Infected (I) or Recovered (R). Initially all cells are in the susceptible state except one infected individual. At each timestep, each cell changes state according to the following rules:</p>
 <ul class="simple">
 <li><p>A cell in state S which has at least one neighbouring cell in state I changes to state I with probability <span class="math notranslate nohighlight">\(p=0.25\)</span>, otherwise remains in state S;</p></li>
 <li><p>A cell in state I changes to state R with probability <span class="math notranslate nohighlight">\(q=0.25\)</span>, otherwise remains in state I;</p></li>
@@ -333,7 +339,7 @@ document.write(`
 <figure class="align-default" id="epidemic-fig" style="width: 800px">
 <img alt="_images/52364e33ad59ef846b83b7c748f791e3af8af70337cb8427f4271e99d4f0fa7f.png" src="_images/52364e33ad59ef846b83b7c748f791e3af8af70337cb8427f4271e99d4f0fa7f.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">The results of an SIR epidemic simulation on a 6 by 6 grid (left) and total populations of susceptible, infected and recovered individuals over the timecourse of the simulation (right).</span><a class="headerlink" href="#epidemic-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">The results of an SIR epidemic simulation on a 6 by 6 grid (left) and total populations of susceptible, infected and recovered individuals over the timecourse of the simulation (right).</span><a class="headerlink" href="#epidemic-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
