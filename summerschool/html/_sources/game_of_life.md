@@ -44,7 +44,7 @@ x_init = [[0, 0, 0, 0, 0],
 ```{admonition} Question 2
 :class: tip
 
-Follow the above link and run the simulation.
+Follow the above link and run the simulation by pressing the 'Run cell' button ![Run cell](colab_run.png).
 By changing the numbers in the square brackets, check your answers to Question 1.
 ```
 
@@ -89,7 +89,7 @@ Which of the above starting patterns result in ‘life’ ?
 Which of the above patterns is a ‘glider’ ?
 ```
 
-> **Tip**: You can make the game board bigger by increasing the value of `d`
+> **Tip**: You can make the game board bigger by increasing the value of `d`. Try `d = 30`.
 
 ```
 x_init = [[0, 0, 0, 0, 0],
@@ -97,7 +97,7 @@ x_init = [[0, 0, 0, 0, 0],
           [0, 0, 0, 1, 1],
           [1, 1, 1, 1, 1],
           [0, 0, 0, 0, 0]]
-d = 30
+d = 11
 ```
 
 ## Experiment
