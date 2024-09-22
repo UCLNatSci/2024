@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2. Arrays and Plotting &#8212; Mathematics for Natural Sciences 1 - Python Material</title>
+    <title>Arrays and Plotting &#8212; Mathematics for Natural Sciences 1 - Python Material</title>
   
   
   
@@ -63,7 +63,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '2_arrays_and_plots/arrays_and_plots';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="1.2. Fundamentals" href="../1_introduction/fundamentals.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -154,13 +153,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../1_introduction/week_1.html">1. Introduction to Computing</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../1_introduction/cocalc.html">1.1. Using CoCalc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../1_introduction/fundamentals.html">1.2. Fundamentals</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Arrays and Plotting</a></li>
 </ul>
 
     </div>
@@ -307,14 +305,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-folder-and-file">2.1. Create a new folder and file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectiles">2.2. Projectiles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">2.3. Plotting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-numpy">2.4. Using Numpy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">2.4.1. Numpy arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-folder-and-file">Create a new folder and file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectiles">Projectiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-numpy">Using Numpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">Numpy arrays</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">2.5. Further Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">Further Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -327,7 +325,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="arrays-and-plotting">
-<h1><span class="section-number">2. </span>Arrays and Plotting<a class="headerlink" href="#arrays-and-plotting" title="Permalink to this headline">#</a></h1>
+<h1>Arrays and Plotting<a class="headerlink" href="#arrays-and-plotting" title="Permalink to this headline">#</a></h1>
 <div class="admonition-what-you-will-learn admonition">
 <p class="admonition-title">What you will learn</p>
 <p>After completing this section you should be able to:</p>
@@ -339,7 +337,7 @@ document.write(`
 </ul>
 </div>
 <section id="create-a-new-folder-and-file">
-<h2><span class="section-number">2.1. </span>Create a new folder and file<a class="headerlink" href="#create-a-new-folder-and-file" title="Permalink to this headline">#</a></h2>
+<h2>Create a new folder and file<a class="headerlink" href="#create-a-new-folder-and-file" title="Permalink to this headline">#</a></h2>
 <p>We need to create a new notebook for this week’s work. To keep everything organised, we’ll first create a folder to store it in. We can do both using the ‘New’ dropdown button:</p>
 <p><img alt="New dropdown" src="../_images/new_folder.png" /></p>
 <p>Perform the following steps to create a new folder called <code class="docutils literal notranslate"><span class="pre">week</span> <span class="pre">2</span></code>:</p>
@@ -365,12 +363,12 @@ document.write(`
 </div>
 </section>
 <section id="projectiles">
-<h2><span class="section-number">2.2. </span>Projectiles<a class="headerlink" href="#projectiles" title="Permalink to this headline">#</a></h2>
+<h2>Projectiles<a class="headerlink" href="#projectiles" title="Permalink to this headline">#</a></h2>
 <p>Python is especially useful for modelling physical systems. We’ll illustrate this with a simple example from mechanics: the motion of an object under gravity.</p>
 <figure class="align-default" id="cannon">
 <a class="reference internal image-reference" href="../_images/cannon.jpg"><img alt="../_images/cannon.jpg" src="../_images/cannon.jpg" style="height: 150px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A projectile fired horizontally from a cannon.</span><a class="headerlink" href="#cannon" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">A projectile fired horizontally from a cannon.</span><a class="headerlink" href="#cannon" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>A projectile fired horizontally at a speed <span class="math notranslate nohighlight">\(v_0 = 5~\mathrm{m/s}\)</span> from an initial height <span class="math notranslate nohighlight">\(y_0 = 200~\mathrm{m}\)</span> follows a trajectory given by the following equations:</p>
@@ -429,7 +427,7 @@ y (metres): [200.    195.095 180.38  155.855 121.52 ]
 <p>When you perform a calculation with an array, the operation is performed on each element separately. For example, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">v_0</span> <span class="pre">*</span> <span class="pre">t</span></code> multiplies <code class="docutils literal notranslate"><span class="pre">v_0</span> <span class="pre">=</span> <span class="pre">5</span></code> by each element of <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code> resulting in <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">5,</span> <span class="pre">10,</span> <span class="pre">15,</span> <span class="pre">20]</span></code>.</p>
 <div class="exercise admonition" id="2_arrays_and_plots/arrays_and_plots-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
+<p class="admonition-title"></p>
 <section id="exercise-content">
 <p>What is the x,y-position of the projectile at 4 seconds?</p>
 <p>By increasing the upper limit of <code class="docutils literal notranslate"><span class="pre">t</span></code>, estimate the time that projectile hits the ground. How far does it travel horizontally?</p>
@@ -465,7 +463,7 @@ y (metres): [200.    195.095 180.38  155.855 121.52 ]
 </div>
 </section>
 <section id="plotting">
-<h2><span class="section-number">2.3. </span>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">#</a></h2>
+<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">#</a></h2>
 <p>In this section we’ll learn how to use Python to plot graphs. The following code will plot a graph of the trajectory of the projectile introduced at the start of this workshop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -526,7 +524,7 @@ y (metres): [200.    195.095 180.38  155.855 121.52 ]
 <p>which instructions Python to plot the graph with the values of <code class="docutils literal notranslate"><span class="pre">t</span></code> on the x-axis and the values of <code class="docutils literal notranslate"><span class="pre">x</span></code> on the y-axis.</p>
 <div class="exercise admonition" id="2_arrays_and_plots/arrays_and_plots-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
+<p class="admonition-title"></p>
 <section id="exercise-content">
 <p>Plot a line graph of the y-position of the projectile against time.</p>
 </section>
@@ -562,7 +560,7 @@ y (metres): [200.    195.095 180.38  155.855 121.52 ]
 </div>
 </section>
 <section id="using-numpy">
-<span id="sec-numpy"></span><h2><span class="section-number">2.4. </span>Using Numpy<a class="headerlink" href="#using-numpy" title="Permalink to this headline">#</a></h2>
+<span id="sec-numpy"></span><h2>Using Numpy<a class="headerlink" href="#using-numpy" title="Permalink to this headline">#</a></h2>
 <p>As well as containing the array data type, the Numpy library gives us access to a variety of mathematical functions. For example, to calculate the square-root of two we use the <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -595,7 +593,7 @@ y (metres): [200.    195.095 180.38  155.855 121.52 ]
 <p>The result is not exactly zero, but is extremely close. This happens because the calculation is done using something called “floating point arithmetic”.</p>
 <div class="exercise admonition" id="2_arrays_and_plots/arrays_and_plots-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
+<p class="admonition-title"></p>
 <section id="exercise-content">
 <p>(a) Calculate <span class="math notranslate nohighlight">\(e^{\sqrt{2}}\)</span> and define the result as <span class="math notranslate nohighlight">\(y\)</span>.<br>
 (b) Carry out further operations on <span class="math notranslate nohighlight">\(y\)</span> that should return the result 2.</p>
@@ -616,7 +614,7 @@ y (metres): [200.    195.095 180.38  155.855 121.52 ]
 <p>Note: The natural logarithm uses the function name <code class="docutils literal notranslate"><span class="pre">log</span></code>, not <code class="docutils literal notranslate"><span class="pre">ln</span></code>. This is common in scientific programming languages. If we want the log in base 10, we can use <code class="docutils literal notranslate"><span class="pre">log10</span></code>.</p>
 </div>
 <section id="numpy-arrays">
-<h3><span class="section-number">2.4.1. </span>Numpy arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">#</a></h3>
+<h3>Numpy arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">#</a></h3>
 <p>The Numpy library allows us construct arrays, which are variables containing a sequence of numerical values, like a vector from mathematics. The <code class="docutils literal notranslate"><span class="pre">linspace</span></code> functions from the numpy library can be used to create arrays of evenly spaced values.</p>
 <p>Check out the results of the following expressions. Using the <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">+</span></code> operands on numpy arrays results in addition and multiplication.</p>
 <div class="cell docutils container">
@@ -645,7 +643,7 @@ y (metres): [200.    195.095 180.38  155.855 121.52 ]
 <p>In fact, any mathematical operation that can be applied to a single number can also be applied to arrays. For example, <code class="docutils literal notranslate"><span class="pre">np.exp(x)</span></code> or <code class="docutils literal notranslate"><span class="pre">np.sqrt(x)</span></code>.</p>
 <div class="exercise admonition" id="2_arrays_and_plots/arrays_and_plots-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
+<p class="admonition-title"></p>
 <section id="exercise-content">
 <p>Use <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> to create an array containing the values <code class="docutils literal notranslate"><span class="pre">[0</span> <span class="pre">0.25</span> <span class="pre">0.5</span> <span class="pre">0.75</span> <span class="pre">1.0]</span></code>, then calculate an array containing the square roots of these numbers.</p>
 </section>
@@ -663,7 +661,7 @@ y (metres): [200.    195.095 180.38  155.855 121.52 ]
 </section>
 </section>
 <section id="further-exercises">
-<h2><span class="section-number">2.5. </span>Further Exercises<a class="headerlink" href="#further-exercises" title="Permalink to this headline">#</a></h2>
+<h2>Further Exercises<a class="headerlink" href="#further-exercises" title="Permalink to this headline">#</a></h2>
 <p>Try plotting the functions defined in question 1 of this weeks problems.</p>
 </section>
 </section>
@@ -699,15 +697,6 @@ y (metres): [200.    195.095 180.38  155.855 121.52 ]
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../1_introduction/fundamentals.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.2. </span>Fundamentals</p>
-      </div>
-    </a>
 </div></div>
   
 </div>
@@ -726,14 +715,14 @@ y (metres): [200.    195.095 180.38  155.855 121.52 ]
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-folder-and-file">2.1. Create a new folder and file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectiles">2.2. Projectiles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">2.3. Plotting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-numpy">2.4. Using Numpy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">2.4.1. Numpy arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-folder-and-file">Create a new folder and file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectiles">Projectiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-numpy">Using Numpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">Numpy arrays</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">2.5. Further Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">Further Exercises</a></li>
 </ul>
   </nav></div>
 
