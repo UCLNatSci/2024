@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Variation of Parameters &#8212; PHAS0026 Notes</title>
+    <title>ODE Methods - Variation of Parameters &#8212; PHAS0026 Notes</title>
   
   
   
@@ -63,11 +63,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'variationofparameters';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ODEvariation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Laplace Transform" href="Laplacian.html" />
-    <link rel="prev" title="Independence of Functions" href="independent_functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,10 +156,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ODEs.html">Linear Ordinary Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="independent_functions.html">Independence of Functions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Variation of Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variationofparameters.html">Variation of Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Laplacian.html">Laplace Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diracdelta.html">The Dirac Delta Function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s Functions</a></li>
@@ -236,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvariationofparameters.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FODEvariation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -266,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/variationofparameters.md" target="_blank"
+      <li><a href="_sources/ODEvariation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -348,7 +346,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Variation of Parameters</h1>
+    <h1>ODE Methods - Variation of Parameters</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -358,10 +356,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-case">The General Case</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-n-2">Example: <span class="math notranslate nohighlight">\( n = 2 \)</span></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-systems">First order systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-systems">Second order systems</a></li>
 </ul>
             </nav>
         </div>
@@ -373,8 +369,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="variation-of-parameters">
-<h1>Variation of Parameters<a class="headerlink" href="#variation-of-parameters" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ode-methods-variation-of-parameters">
+<h1>ODE Methods - Variation of Parameters<a class="headerlink" href="#ode-methods-variation-of-parameters" title="Permalink to this heading">#</a></h1>
+<p>Whilst the method of undetermined coefficients works for specific set of source terms <span class="math notranslate nohighlight">\(f(x)\)</span> (i.e. those of certain elementary functions with symmetries in their derivatives), we could ask what is the more general method for solving these sorts of ODEs?</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
 <p>The variation of parameters method can be used to solve <span class="math notranslate nohighlight">\(n^{th}\)</span> degree linear  ODEs of the form:</p>
@@ -406,24 +403,58 @@ u_{1}^{(n-1)}(x) &amp; u_{2}^{(n-1)}(x) &amp; \cdots &amp; f(x)&amp; \cdots &amp
 0 \\ 0 \\ \vdots \\ f(x)
 \end{pmatrix}\end{split}\]</div>
 </div>
-<p>Let’s begin again with the form of the inhomogeneous second order equation:</p>
+<section id="first-order-systems">
+<h2>First order systems<a class="headerlink" href="#first-order-systems" title="Permalink to this heading">#</a></h2>
+<p>If we start with a general first order linear ODE:</p>
+<div class="math notranslate nohighlight" id="equation-inhomofirstorder">
+<span class="eqno">()<a class="headerlink" href="#equation-inhomofirstorder" title="Permalink to this equation">#</a></span>\[y’ + p(x)\,y = q(x)\]</div>
+<p>we can think of this a sourced first order problem, so the homogenous equation is:</p>
+<div class="math notranslate nohighlight">
+\[y’ + p(x)\,y = 0\]</div>
+<p>which we can solve, for instance with separation of variables:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int \frac{1}{y}\,\mathrm{d}y &amp;= - \int p\,\mathrm{d}x\\
+\ln(y) &amp;= - \int p\,\mathrm{d}x + \ln(y_0) \\
+y_h &amp;= y_0\,e^{- \int p\,\mathrm{d}x}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_0\)</span> is a constant.</p>
+<p>Now we can use this homogeneous solution <span class="math notranslate nohighlight">\(y_h(x)\)</span> to solve for the inhomogeneous case <span class="math notranslate nohighlight">\(y_p(x)\)</span>, by multiplying this solution with a (yet unknown) function <span class="math notranslate nohighlight">\(C(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y_p = C(x)\,e^{- \int p\,\mathrm{d}x}\]</div>
+<p>If we substitute this back into <a class="reference internal" href="#equation-inhomofirstorder">()</a> we will find:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; C’(x)\,e^{- \int p\,\mathrm{d}x} - C(x)\,p(x)\,e^{- \int p\,\mathrm{d}x} + p(x)\, C(x)\,e^{- \int p\,\mathrm{d}x} = q(x)\\
+&amp; \Rightarrow C’(x)\,e^{- \int p\,\mathrm{d}x} = q(x)\end{split}\]</div>
+<p>which by straight integration means that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}C(x) &amp;= \int q(x)\, e^{\int p\,\mathrm{d}x}\,\mathrm{d}x \\
+\Rightarrow y_p &amp;= e^{- \int p\,\mathrm{d}x}\,\int q(x)\, e^{\int p\,\mathrm{d}x}\,\mathrm{d}x\end{split}\]</div>
+<p>and so the final solution is given by the sum of:</p>
+<div class="math notranslate nohighlight">
+\[y = y_h + y_p =  e^{- \int p\,\mathrm{d}x}\,\Big(\int q(x)\, e^{\int p\,\mathrm{d}x}\,\mathrm{d}x + y_0\Big)\]</div>
+<p>which we have seen before with integrating factors for first order systems.</p>
+</section>
+<section id="second-order-systems">
+<h2>Second order systems<a class="headerlink" href="#second-order-systems" title="Permalink to this heading">#</a></h2>
+<p>Let’s begin again with the form of the inhomogeneous second order ODE in <code class="xref eq docutils literal notranslate"><span class="pre">ode2order</span></code>:</p>
 <div class="math notranslate nohighlight">
 \[L\,y(x) = y^{\prime\prime}(x)+p(x)\,y^{\prime}(x)+q(x)\,y(x) = r(x)\]</div>
 <p>firstly we aim to solve the homogeneous equation:</p>
 <div class="math notranslate nohighlight">
 \[L\,y(x) = y^{\prime\prime}(x)+p(x)\,y^{\prime}(x)+q(x)\,y(x) = 0\]</div>
 <p>which will admit solutions <span class="math notranslate nohighlight">\(u_1(x),\, u_2(x)\)</span>. Hence we will construct a solution to the general equation of the form:</p>
-<div class="math notranslate nohighlight">
-\[y(x) = A(x)\,u_1(x) + B(x)\,u_2(x)\]</div>
-<p>We note that if <span class="math notranslate nohighlight">\(A(x),\, B(x)\)</span> here were just constants, then this would be a linear superposition of the homogeneous solutions - therefore in general these should contain some additive constant with each function.  In order to have two equations with two unknowns, we need to enforce a separate condition on <span class="math notranslate nohighlight">\(A(x),\, B(x)\)</span>, as we will see the most helpful condition to simplify later algebra turns out to be:</p>
-<div class="math notranslate nohighlight">
-\[A'(x)\,u_1(x) + B'(x)\,u_2(x) = 0\]</div>
-<p>If we try to constuct the form of the second order equation using this first condition, we will find:</p>
+<div class="math notranslate nohighlight" id="equation-cond1">
+<span class="eqno">()<a class="headerlink" href="#equation-cond1" title="Permalink to this equation">#</a></span>\[y(x) = A(x)\,u_1(x) + B(x)\,u_2(x)\]</div>
+<p>We note that if <span class="math notranslate nohighlight">\(A(x),\, B(x)\)</span> here were just constants, then this would be a linear superposition of the homogeneous solutions - therefore in general these
+should contain some additive constant with each function.  In order to have two equations with two unknowns, we need to enforce a separate condition on <span class="math notranslate nohighlight">\(A(x),\, B(x)\)</span>,
+as we will see the most helpful condition to simplify later algebra turns out to be:</p>
+<div class="math notranslate nohighlight" id="equation-cond2">
+<span class="eqno">()<a class="headerlink" href="#equation-cond2" title="Permalink to this equation">#</a></span>\[A'(x)\,u_1(x) + B'(x)\,u_2(x) = 0\]</div>
+<p>If we try to constuct the form of <a class="reference internal" href="ODEreduction.html#equation-ode2general">()</a> using <a class="reference internal" href="#equation-cond1">()</a>, we will find:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}y'(x) &amp;= \Big(A(x)\,u_1(x) + B(x)\,u_2(x)\Big)' \\
 &amp;= A'(x)\,u_1(x) + B'(x)\,u_2(x) + A(x)\,u_1'(x) + B(x)\,u_2'(x)\\
 &amp;= A(x)\,u_1'(x) + B(x)\,u_2'(x)\end{split}\]</div>
-<p>where we have used our second condition to reach the final line.  Likewise for second derivatives:</p>
+<p>where we have used our condition <a class="reference internal" href="#equation-cond2">()</a> to reach the final line.  Likewise for second derivatives:</p>
 <div class="math notranslate nohighlight">
 \[y''(x) = A(x)\,u_1''(x) + B(x)\,u_2''(x) + A'(x)\,u_1'(x) + B'(x)\,u_2'(x)\]</div>
 <p>and so using the linear derivative operator:</p>
@@ -469,8 +500,8 @@ f(x)
 u_1(x)\,r(x)
 \end{pmatrix}\end{split}\]</div>
 <p>which means the final solutions can be found from:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}A(x) &amp;= -\int \frac{1}{W}\,u_2(x)\,r(x) \,\mathrm{d}x \\
+<div class="math notranslate nohighlight" id="equation-varparsolns">
+<span class="eqno">()<a class="headerlink" href="#equation-varparsolns" title="Permalink to this equation">#</a></span>\[\begin{split}A(x) &amp;= -\int \frac{1}{W}\,u_2(x)\,r(x) \,\mathrm{d}x \\
 B(x) &amp;= \int \frac{1}{W}\,u_1(x)\,r(x) \,\mathrm{d}x \\\end{split}\]</div>
 <div class="seealso admonition">
 <p class="admonition-title">Worked example</p>
@@ -493,7 +524,7 @@ u_2(x) &amp;= e^{-3x}\end{split}\]</div>
 e^{-x} &amp; e^{-3x} \\
 -e^{-x} &amp; -3e^{-3x}
 \end{vmatrix} = -3e^{-4x} - (-e^{-4x}) = -2e^{-4x}\end{split}\]</div>
-<p>and so using <a class="reference internal" href="ODEvariation.html#equation-varparsolns">()</a>:</p>
+<p>and so using <a class="reference internal" href="#equation-varparsolns">()</a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}A(x) &amp;= \frac{1}{2}\int e^{4x}\,e^{-3x}\,\cosh(2x) \,\mathrm{d}x  = \frac{1}{4}\int \Big(e^{3x}+e^{-x}\Big) \,\mathrm{d}x = \frac{1}{4}\Big(\frac{1}{3}e^{3x} - e^{-x}\Big) + C_1 \\
 B(x) &amp;= -\frac{1}{2}\int e^{4x}\,e^{-x}\,\cosh(2x) \,\mathrm{d}x = -\frac{1}{4}\int \Big(e^{5x} + e^{x}\Big) \,\mathrm{d}x = -\frac{1}{4}\Big(\frac{1}{5}e^{5x} + e^{x}\Big) + C_2\end{split}\]</div>
@@ -520,46 +551,6 @@ y''(x) &amp;= \frac{1}{30}\Big(4e^{2x} - 60e^{-2x} + 15e^{-x} - 135 \,e^{-3x}\Bi
 &amp;= \frac{1}{30}\Big(15e^{2x} + 15 e^{-2x}\Big) = \cosh(2x)\end{split}\]</div>
 <p>and so the solutions are correct!</p>
 </div>
-<section id="the-general-case">
-<h2>The General Case<a class="headerlink" href="#the-general-case" title="Permalink to this heading">#</a></h2>
-<p>Let us solve the ODE:</p>
-<div class="math notranslate nohighlight">
-\[a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_1(x) y' + a_0(x) y = f(x)\]</div>
-<p>where the coefficients <span class="math notranslate nohighlight">\( a_i(x) \)</span> may or may not be functions of <span class="math notranslate nohighlight">\( x \)</span>. First, assume that the complementary solution of the homogeneous equation:</p>
-<div class="math notranslate nohighlight">
-\[a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_1(x) y' + a_0(x) y = 0\]</div>
-<p>is known and is represented as:</p>
-<div class="math notranslate nohighlight">
-\[y_c(x) = c_1 y_1(x) + c_2 y_2(x) + \dots + c_n y_n(x)\]</div>
-<p>where <span class="math notranslate nohighlight">\( c_i \)</span> are constants and <span class="math notranslate nohighlight">\( y_i(x) \)</span> are known linearly independent functions.</p>
-<p>We now consider a particular solution of the inhomogeneous equation in the form:</p>
-<div class="math notranslate nohighlight">
-\[y_p(x) = k_1(x) y_1(x) + k_2(x) y_2(x) + \dots + k_n(x) y_n(x)\]</div>
-<p>where the coefficients <span class="math notranslate nohighlight">\( k_i(x) \)</span> are, in general, functions of <span class="math notranslate nohighlight">\( x \)</span>. These functions can be determined by imposing <span class="math notranslate nohighlight">\( n \)</span> non-equivalent conditions. The ODE itself gives one of these conditions. How to choose the others?</p>
-<section id="example-n-2">
-<h3>Example: <span class="math notranslate nohighlight">\( n = 2 \)</span><a class="headerlink" href="#example-n-2" title="Permalink to this heading">#</a></h3>
-<p>Consider the equation:</p>
-<div class="math notranslate nohighlight">
-\[a_2(x) y'' + a_1(x) y' + a_0(x) y = f(x)\]</div>
-<p>Assume that the solutions of the corresponding homogeneous equation <span class="math notranslate nohighlight">\( y_1(x) \)</span> and <span class="math notranslate nohighlight">\( y_2(x) \)</span> are known. Then:</p>
-<div class="math notranslate nohighlight">
-\[y_c(x) = c_1 y_1(x) + c_2 y_2(x)\]</div>
-<p>is the complementary function. We now seek a particular solution in the form:</p>
-<div class="math notranslate nohighlight">
-\[y_p(x) = k_1(x) y_1(x) + k_2(x) y_2(x)\]</div>
-<p>Substitute <span class="math notranslate nohighlight">\( y_p(x) \)</span> into the original equation:</p>
-<div class="math notranslate nohighlight">
-\[f(x) = a_0 (k_1 y_1 + k_2 y_2) + a_1 (k_1' y_1 + k_2' y_2 + k_1 y_1' + k_2 y_2') + a_2 (k_1'' y_1 + k_2'' y_2 + k_1' y_1' + k_2' y_2')\]</div>
-<p>If we impose the conditions:</p>
-<div class="math notranslate nohighlight">
-\[k_1' y_1 + k_2' y_2 = 0\]</div>
-<div class="math notranslate nohighlight">
-\[f(x) = a_2 (k_1' y_1' + k_2' y_2')\]</div>
-<p>we find that:</p>
-<div class="math notranslate nohighlight">
-\[k_1'(x) = -k_2'(x) \frac{y_2(x)}{y_1(x)}\]</div>
-<p>This process continues until we obtain the functions <span class="math notranslate nohighlight">\( k_1(x) \)</span> and <span class="math notranslate nohighlight">\( k_2(x) \)</span>.</p>
-</section>
 </section>
 </section>
 
@@ -594,24 +585,6 @@ y''(x) &amp;= \frac{1}{30}\Big(4e^{2x} - 60e^{-2x} + 15e^{-x} - 135 \,e^{-3x}\Bi
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="independent_functions.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Independence of Functions</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Laplacian.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Laplace Transform</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -630,10 +603,8 @@ y''(x) &amp;= \frac{1}{30}\Big(4e^{2x} - 60e^{-2x} + 15e^{-x} - 135 \,e^{-3x}\Bi
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-case">The General Case</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-n-2">Example: <span class="math notranslate nohighlight">\( n = 2 \)</span></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-systems">First order systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-systems">Second order systems</a></li>
 </ul>
   </nav></div>
 
