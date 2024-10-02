@@ -358,12 +358,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-solution-of-an-inhomogeneous-equation">The general solution of an inhomogeneous equation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence-of-functions">Linear Independence of Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence-in-n-dimensions">Linear Independence in <span class="math notranslate nohighlight">\(n\)</span> dimensions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-n-2">Example: <span class="math notranslate nohighlight">\( n=2 \)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-solution-of-an-inhomogeneous-equation">The general solution of an inhomogeneous equation</a></li>
 </ul>
             </nav>
         </div>
@@ -377,6 +377,21 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="independence-of-functions">
 <h1>Independence of Functions<a class="headerlink" href="#independence-of-functions" title="Permalink to this heading">#</a></h1>
+<section id="the-general-solution-of-an-inhomogeneous-equation">
+<h2>The general solution of an inhomogeneous equation<a class="headerlink" href="#the-general-solution-of-an-inhomogeneous-equation" title="Permalink to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_2(x) y'' + a_1(x) y' + a_0(x) y = f(x)\]</div>
+<p>has the form:</p>
+<div class="math notranslate nohighlight">
+\[y(x) = y_c(x) + y_p(x)\]</div>
+<p>where <span class="math notranslate nohighlight">\( y_p(x) \)</span> is a particular solution of the inhomogeneous equation and <span class="math notranslate nohighlight">\( y_c(x) \)</span>, called the complementary function, is a linear combination of <span class="math notranslate nohighlight">\( n \)</span> linearly independent functions:</p>
+<div class="math notranslate nohighlight">
+\[y_c(x) = c_1 y_1(x) + c_2 y_2(x) + \dots + c_n y_n(x)\]</div>
+<p>where each <span class="math notranslate nohighlight">\( y_k(x) \)</span> is a solution of the homogeneous equation:</p>
+<div class="math notranslate nohighlight">
+\[a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_2(x) y'' + a_1(x) y' + a_0(x) y = 0\]</div>
+<p>It will however be important here to check if the obtained solutions <span class="math notranslate nohighlight">\( y_k(x) \)</span> are linearly independent.</p>
+</section>
 <section id="linear-independence-of-functions">
 <h2>Linear Independence of Functions<a class="headerlink" href="#linear-independence-of-functions" title="Permalink to this heading">#</a></h2>
 <p>A set of functions <span class="math notranslate nohighlight">\( y_k(x) \)</span> (where <span class="math notranslate nohighlight">\( k=1,2,\dots,n \)</span>) is <strong>linearly dependent</strong> if there exist coefficients <span class="math notranslate nohighlight">\( c_i \)</span> (not all zeros) such that:</p>
@@ -481,21 +496,6 @@ c_1 f'(x) + c_2 g'(x) &amp;= 0
 <p>This can be represented as a matrix equation <span class="math notranslate nohighlight">\( Ac = b \)</span>, where <span class="math notranslate nohighlight">\( A \)</span> is the matrix formed by the coefficients <span class="math notranslate nohighlight">\( f(x), g(x), f'(x), g'(x) \)</span>, and <span class="math notranslate nohighlight">\( b = 0 \)</span>. Since the determinant <span class="math notranslate nohighlight">\( \text{det}(A) = W(f, g) \neq 0 \)</span>, the only solution is <span class="math notranslate nohighlight">\( c_1 = c_2 = 0 \)</span>, confirming linear independence.</p>
 </section>
 </section>
-<section id="the-general-solution-of-an-inhomogeneous-equation">
-<h2>The general solution of an inhomogeneous equation<a class="headerlink" href="#the-general-solution-of-an-inhomogeneous-equation" title="Permalink to this heading">#</a></h2>
-<div class="math notranslate nohighlight">
-\[a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_2(x) y'' + a_1(x) y' + a_0(x) y = f(x)\]</div>
-<p>has the form:</p>
-<div class="math notranslate nohighlight">
-\[y(x) = y_c(x) + y_p(x)\]</div>
-<p>where <span class="math notranslate nohighlight">\( y_p(x) \)</span> is a particular solution of the inhomogeneous equation and <span class="math notranslate nohighlight">\( y_c(x) \)</span>, called the complementary function, is a linear combination of <span class="math notranslate nohighlight">\( n \)</span> linearly independent functions:</p>
-<div class="math notranslate nohighlight">
-\[y_c(x) = c_1 y_1(x) + c_2 y_2(x) + \dots + c_n y_n(x)\]</div>
-<p>where each <span class="math notranslate nohighlight">\( y_k(x) \)</span> is a solution of the homogeneous equation:</p>
-<div class="math notranslate nohighlight">
-\[a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_2(x) y'' + a_1(x) y' + a_0(x) y = 0\]</div>
-<p>To check if the obtained solutions <span class="math notranslate nohighlight">\( y_k(x) \)</span> are linearly independent, we use the <strong>Wronskian</strong>.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -565,12 +565,12 @@ c_1 f'(x) + c_2 g'(x) &amp;= 0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-solution-of-an-inhomogeneous-equation">The general solution of an inhomogeneous equation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence-of-functions">Linear Independence of Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence-in-n-dimensions">Linear Independence in <span class="math notranslate nohighlight">\(n\)</span> dimensions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-n-2">Example: <span class="math notranslate nohighlight">\( n=2 \)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-solution-of-an-inhomogeneous-equation">The general solution of an inhomogeneous equation</a></li>
 </ul>
   </nav></div>
 

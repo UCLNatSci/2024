@@ -1,5 +1,31 @@
 # Independence of Functions
 
+## The general solution of an inhomogeneous equation 
+
+```{math}
+a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_2(x) y'' + a_1(x) y' + a_0(x) y = f(x)
+```
+
+has the form:
+
+```{math}
+y(x) = y_c(x) + y_p(x)
+```
+
+where $ y_p(x) $ is a particular solution of the inhomogeneous equation and $ y_c(x) $, called the complementary function, is a linear combination of $ n $ linearly independent functions:
+
+```{math}
+y_c(x) = c_1 y_1(x) + c_2 y_2(x) + \dots + c_n y_n(x)
+```
+
+where each $ y_k(x) $ is a solution of the homogeneous equation:
+
+```{math}
+a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_2(x) y'' + a_1(x) y' + a_0(x) y = 0
+```
+
+It will however be important here to check if the obtained solutions $ y_k(x) $ are linearly independent.
+
 ## Linear Independence of Functions
 
 A set of functions $ y_k(x) $ (where $ k=1,2,\dots,n $) is **linearly dependent** if there exist coefficients $ c_i $ (not all zeros) such that:
@@ -150,28 +176,3 @@ c_1 f'(x) + c_2 g'(x) &= 0
 
 This can be represented as a matrix equation $ Ac = b $, where $ A $ is the matrix formed by the coefficients $ f(x), g(x), f'(x), g'(x) $, and $ b = 0 $. Since the determinant $ \text{det}(A) = W(f, g) \neq 0 $, the only solution is $ c_1 = c_2 = 0 $, confirming linear independence.
 
-## The general solution of an inhomogeneous equation 
-
-```{math}
-a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_2(x) y'' + a_1(x) y' + a_0(x) y = f(x)
-```
-
-has the form:
-
-```{math}
-y(x) = y_c(x) + y_p(x)
-```
-
-where $ y_p(x) $ is a particular solution of the inhomogeneous equation and $ y_c(x) $, called the complementary function, is a linear combination of $ n $ linearly independent functions:
-
-```{math}
-y_c(x) = c_1 y_1(x) + c_2 y_2(x) + \dots + c_n y_n(x)
-```
-
-where each $ y_k(x) $ is a solution of the homogeneous equation:
-
-```{math}
-a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_2(x) y'' + a_1(x) y' + a_0(x) y = 0
-```
-
-To check if the obtained solutions $ y_k(x) $ are linearly independent, we use the **Wronskian**.
