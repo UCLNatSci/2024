@@ -6,5 +6,8 @@ The topics in this module will cover:
 
 ```{tableofcontents}
 ```
+Cartesian Tensors \\
+Sturm-Louiville Equations \\
+Partial Differential Equations \\
 
 Please come back soon for updated content!

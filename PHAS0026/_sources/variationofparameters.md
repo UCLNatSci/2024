@@ -39,45 +39,8 @@ where the $i^{th}$ column of the Wronskian $W(x)$ has been replaced with:
 ```
 
 ````
-### First order systems
-If we start with a general first order linear ODE:
-```{math}
-:label: inhomofirstorder
-y’ + p(x)\,y = q(x)
-```
-we can think of this a sourced first order problem, so the homogenous equation is:
-```{math}
-y’ + p(x)\,y = 0
-```
-which we can solve, for instance with separation of variables:
-```{math}
-\int \frac{1}{y}\,\mathrm{d}y &= - \int p\,\mathrm{d}x\\
-\ln(y) &= - \int p\,\mathrm{d}x + \ln(y_0) \\
-y_h &= y_0\,e^{- \int p\,\mathrm{d}x}
-```
-where $y_0$ is a constant.
 
-Now we can use this homogeneous solution $y_h(x)$ to solve for the inhomogeneous case $y_p(x)$, by multiplying this solution with a (yet unknown) function $C(x)$:
-```{math}
-y_p = C(x)\,e^{- \int p\,\mathrm{d}x}
-```
-If we substitute this back into {eq}`inhomofirstorder` we will find:
-```{math}
-& C’(x)\,e^{- \int p\,\mathrm{d}x} - C(x)\,p(x)\,e^{- \int p\,\mathrm{d}x} + p(x)\, C(x)\,e^{- \int p\,\mathrm{d}x} = q(x)\\
-& \Rightarrow C’(x)\,e^{- \int p\,\mathrm{d}x} = q(x)
-```
-which by straight integration means that:
-```{math}
-C(x) &= \int q(x)\, e^{\int p\,\mathrm{d}x}\,\mathrm{d}x \\
-\Rightarrow y_p &= e^{- \int p\,\mathrm{d}x}\,\int q(x)\, e^{\int p\,\mathrm{d}x}\,\mathrm{d}x
-```
-and so the final solution is given by the sum of:
-```{math}
-y = y_h + y_p =  e^{- \int p\,\mathrm{d}x}\,\Big(\int q(x)\, e^{\int p\,\mathrm{d}x}\,\mathrm{d}x + y_0\Big)
-```
-which we have seen before with integrating factors for first order systems.
 
-### Second order systems
 Let’s begin again with the form of the inhomogeneous second order equation:
 ```{math}
 L\,y(x) = y^{\prime\prime}(x)+p(x)\,y^{\prime}(x)+q(x)\,y(x) = r(x)
@@ -88,23 +51,19 @@ L\,y(x) = y^{\prime\prime}(x)+p(x)\,y^{\prime}(x)+q(x)\,y(x) = 0
 ```
 which will admit solutions $u_1(x),\, u_2(x)$. Hence we will construct a solution to the general equation of the form:
 ```{math}
-:label: cond1
 y(x) = A(x)\,u_1(x) + B(x)\,u_2(x)
 ``` 
-We note that if $A(x),\, B(x)$ here were just constants, then this would be a linear superposition of the homogeneous solutions - therefore in general these 
-should contain some additive constant with each function.  In order to have two equations with two unknowns, we need to enforce a separate condition on $A(x),\, B(x)$, 
-as we will see the most helpful condition to simplify later algebra turns out to be:
+We note that if $A(x),\, B(x)$ here were just constants, then this would be a linear superposition of the homogeneous solutions - therefore in general these should contain some additive constant with each function.  In order to have two equations with two unknowns, we need to enforce a separate condition on $A(x),\, B(x)$, as we will see the most helpful condition to simplify later algebra turns out to be:
 ```{math}
-:label: cond2
 A'(x)\,u_1(x) + B'(x)\,u_2(x) = 0
 ```
-If we try to constuct the form of {eq}`ode2general` using {eq}`cond1`, we will find:
+If we try to constuct the form of the second order equation using this first condition, we will find:
 ```{math}
 y'(x) &= \Big(A(x)\,u_1(x) + B(x)\,u_2(x)\Big)' \\
 &= A'(x)\,u_1(x) + B'(x)\,u_2(x) + A(x)\,u_1'(x) + B(x)\,u_2'(x)\\
 &= A(x)\,u_1'(x) + B(x)\,u_2'(x)
 ```
-where we have used our condition {eq}`cond2` to reach the final line.  Likewise for second derivatives:
+where we have used our second condition to reach the final line.  Likewise for second derivatives:
 ```{math}
 y''(x) = A(x)\,u_1''(x) + B(x)\,u_2''(x) + A'(x)\,u_1'(x) + B'(x)\,u_2'(x)
 ```
@@ -157,7 +116,6 @@ u_1(x)\,r(x)
 ```
 which means the final solutions can be found from:
 ```{math}
-:label: varparsolns
 A(x) &= -\int \frac{1}{W}\,u_2(x)\,r(x) \,\mathrm{d}x \\
 B(x) &= \int \frac{1}{W}\,u_1(x)\,r(x) \,\mathrm{d}x \\
 ```

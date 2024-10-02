@@ -70,10 +70,15 @@ W(y_1,\,y_2)(x) = \begin{vmatrix} y_1 & y_2 \\ {y_1}' & {y_2}'\end{vmatrix} &=
 ```
 and clearly for any finite $x > 0$, $W \neq 0$, hence we have a fundamental set.
 
-
 ````
 
-To determine linear independence, differentiate the above equation $ n-1 $ times to obtain a system of $ n $ linear equations:
+## Linear Independence in $n$ dimensions
+To determine linear independence, we can differentiate 
+```{math}
+c_1 y_1(x) + c_2 y_2(x) + \dots + c_n y_n(x) = 0
+```
+
+$ n-1 $ times to obtain a system of $ n $ linear equations:
 
 ```{math}
 \begin{aligned}
