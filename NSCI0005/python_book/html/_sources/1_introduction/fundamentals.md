@@ -237,3 +237,12 @@ print("Fine structure constant:", alpha)
 ```{note}
 Note that we avoid Greek characters such as `α` in our Python code since Python might not understand it. Stick to the regular alphabet!
 ```
+
+## Practice Questions
+
+```{exercise}
+Use Python to calculate the value of the following numerical expressions. Then simplify each expression and use Python to check your answer.
+
+1. $3^{1/2}27^{-2/3}9^{-1/2}$
+2. $\frac{1}{\sqrt{3}-1} + \frac{1}{\sqrt{3}+1}$
+```
