@@ -61,11 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Trigonometry';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Algebra" href="Algebra.html" />
-    <link rel="prev" title="Welcome to NSCI0044 - Introductory Mathematics for Natural Sciences" href="intro.html" />
+    <link rel="next" title="Limits and Infinities" href="Limits.html" />
+    <link rel="prev" title="Functions" href="Functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,9 +159,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Trigonometry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Algebra.html">Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Limits.html">Linear Ordinary Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Functions.html">Functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Trigonometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Limits.html">Limits and Infinities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series.html">Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Differentiation.html">Rates of Change and Differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Integration.html">Areas and Integration</a></li>
@@ -335,7 +338,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -351,6 +356,25 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basics">The Basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-rules">Trigonometric Rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sine-area-rule">Sine Area Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sine-rule">Sine Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-rule">Cosine Rule</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-identities">Trigonometric Identities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-angle-identities">Double Angle Identities</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric-functions">Inverse Trigonometric Functions</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -362,6 +386,124 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="trigonometry">
 <h1>Trigonometry<a class="headerlink" href="#trigonometry" title="Permalink to this heading">#</a></h1>
+<section id="the-basics">
+<h2>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this heading">#</a></h2>
+<p>Trigonometry is the study of triangles, lengths, and angles. Typically, we use trigonometry to examine right-angled triangles, where Pythagoras’s theorem applies:</p>
+<div class="math notranslate nohighlight">
+\[a^2 + b^2 = c^2 \]</div>
+<p><img alt="Right-Angled Triangle" src="_images/RightAngledTriangle.png" /></p>
+<p>We can label the sides opposite and adjacent to angle <span class="math notranslate nohighlight">\( \theta \)</span> and define the three basic trigonometric functions:</p>
+<p><img alt="Triangle" src="_images/TriangleAdjOppHyp3.png" /></p>
+<p>If we look at Pythagoras’s theorem again:</p>
+<div class="math notranslate nohighlight">
+\[\text{opposite}^2 + \text{adjacent}^2 = \text{hypotenuse}^2 \Rightarrow \frac{\text{opposite}^2}{\text{hypotenuse}^2} + \frac{\text{adjacent}^2}{\text{hypotenuse}^2} = 1 \]</div>
+<div class="math notranslate nohighlight">
+\[\Rightarrow \sin^2(\theta) + \cos^2(\theta) = 1\]</div>
+<p>which is a very useful relation between <span class="math notranslate nohighlight">\( \sin \)</span> and <span class="math notranslate nohighlight">\( \cos \)</span>. We can also define reciprocal functions for each of the trigonometric functions:</p>
+<div class="math notranslate nohighlight">
+\[\sin(\theta) \Rightarrow \text{cosec}(\theta) = \frac{1}{\sin(\theta)}\]</div>
+<div class="math notranslate nohighlight">
+\[\cos(\theta) \Rightarrow \sec(\theta) = \frac{1}{\cos(\theta)}\]</div>
+<div class="math notranslate nohighlight">
+\[\tan(\theta) \Rightarrow \cot(\theta) = \frac{1}{\tan(\theta)}\]</div>
+<p>There are some angles which produce special results:</p>
+<p><img alt="Special Angles" src="_images/sin30sin45sin60.png" /></p>
+<p>It is also common to write angles in <strong>Radians</strong> instead of <strong>Degrees</strong>, and we can convert between them using:</p>
+<div class="math notranslate nohighlight">
+\[\text{Radians} = \text{Degrees} \times \frac{2\pi}{360} \Longleftrightarrow \text{Degrees} = \text{Radians} \times \frac{360}{2\pi}\]</div>
+<p>Using radians is quite common in mathematics, so we will use them throughout from now on. We can extend these trigonometric definitions from triangles to circles, and plot graphs over the range <span class="math notranslate nohighlight">\( 0 \leq \theta &lt; 2 \pi \)</span>:</p>
+<p><img alt="Trig Circles" src="_images/TrigCircles.png" />
+<img alt="Sine and Cosine" src="_images/SineCosine.png" /></p>
+<p>Notice that since <span class="math notranslate nohighlight">\( \sin(\theta) &lt; 0, \, \pi &lt; \theta &lt; 2\pi \)</span> and <span class="math notranslate nohighlight">\( \cos(\theta) &lt; 0, \, \frac{\pi}{2} &lt; \theta &lt; \frac{3\pi}{2} \)</span>, the circle can be broken up into quadrants with different behaviors:</p>
+<p><img alt="Four Quadrants" src="_images/Four-quadrants-circle.jpg" /></p>
+<p>Using trigonometry, we can find some interesting identities. Start with a triangle and draw a right-angled bisector from apex <span class="math notranslate nohighlight">\(B\)</span> down to side <span class="math notranslate nohighlight">\(b\)</span>:</p>
+<p><img alt="Any Triangle" src="_images/AnyTriangle.png" /></p>
+</section>
+<section id="trigonometric-rules">
+<h2>Trigonometric Rules<a class="headerlink" href="#trigonometric-rules" title="Permalink to this heading">#</a></h2>
+<section id="sine-area-rule">
+<h3>Sine Area Rule<a class="headerlink" href="#sine-area-rule" title="Permalink to this heading">#</a></h3>
+<p>Since Area <span class="math notranslate nohighlight">\(= \frac{1}{2}bh\)</span>, using trigonometry:</p>
+<div class="math notranslate nohighlight">
+\[\sin(C) = \frac{h}{a} \Rightarrow h = a \sin(C)\]</div>
+<p>and hence for <em>any</em> triangle:</p>
+<div class="math notranslate nohighlight">
+\[\text{Area} = \frac{1}{2}a\,b\,\sin(C)\]</div>
+<p>which we can extend to any two sides of a triangle and the angle between them:</p>
+<div class="math notranslate nohighlight">
+\[\text{Area} = \frac{1}{2}a\,b\,\sin(C) = \frac{1}{2}a\,c\,\sin(B) = \frac{1}{2}b\,c\,\sin(A)\]</div>
+</section>
+<section id="sine-rule">
+<h3>Sine Rule<a class="headerlink" href="#sine-rule" title="Permalink to this heading">#</a></h3>
+<p>Using trigonometry:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sin(A) &amp;= \frac{h}{c} \Rightarrow h = c \sin(A) \\
+\sin(C) &amp;= \frac{h}{a} \Rightarrow h = a \sin(C) \Rightarrow \frac{\sin(A)}{a} = \frac{\sin(C)}{c}\end{split}\]</div>
+<p>We could equally bisect the line <span class="math notranslate nohighlight">\(a\)</span> at right angles from apex <span class="math notranslate nohighlight">\(A\)</span>, and find that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sin(A)}{a} = \frac{\sin(C)}{c}\]</div>
+<p>which means for <em>any</em> triangle:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sin(A)}{a} =  \frac{\sin(B)}{b}= \frac{\sin(C)}{c}\]</div>
+</section>
+<section id="cosine-rule">
+<h3>Cosine Rule<a class="headerlink" href="#cosine-rule" title="Permalink to this heading">#</a></h3>
+<p>Performing Pythagoras’s theorem on the sides opposite to <span class="math notranslate nohighlight">\(h\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a^2 &amp;= h^2 + (b_2)^2 \\
+c^2 &amp;= h^2 - (b_1)^2 \Rightarrow (b_1)^2 = c^2 - h^2\end{split}\]</div>
+<p>Looking at the side <span class="math notranslate nohighlight">\(b\)</span>, which is broken up into <span class="math notranslate nohighlight">\(b_1, b_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[b = b_1 + b_2 \Rightarrow b_2 = b - b_1\]</div>
+<p>and now putting these together:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a^2 &amp;= h^2 + (b_2)^2 = h^2 + b^2 - 2bb_1 + (b_1)^2 \\
+a^2 &amp;= b^2 + c^2 -2bb_1\end{split}\]</div>
+<p>Using trigonometry on the side <span class="math notranslate nohighlight">\(b_1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\cos(A) &amp;= \frac{b_1}{c} \Rightarrow b_1 = c \cos(A) \\
+\Rightarrow a^2 &amp;= b^2 + c^2 - 2bc\cos(A)\end{split}\]</div>
+<p>This reduces to Pythagoras’s theorem for <span class="math notranslate nohighlight">\(A = \frac{\pi}{2}\)</span>, but holds true for <em>any</em> triangle. We can also write different versions based on the angles involved:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a^2 &amp;= b^2 + c^2 - 2bc\cos(A) \\
+b^2 &amp;= a^2 + c^2 - 2ac\cos(B) \\
+c^2 &amp;= a^2 + b^2 - 2ab\cos(C)\end{split}\]</div>
+<p>These are useful formulae for calculating a triangle’s angles when we know all the side lengths, OR to find a third side if we know one angle and two lengths of a triangle.</p>
+</section>
+</section>
+<section id="trigonometric-identities">
+<h2>Trigonometric Identities<a class="headerlink" href="#trigonometric-identities" title="Permalink to this heading">#</a></h2>
+<p>Using our trigonometric definitions, we can start to develop more complicated identities. Two of the most useful are the compound angle identities for <span class="math notranslate nohighlight">\( \sin(\theta) \)</span> and <span class="math notranslate nohighlight">\( \cos(\theta) \)</span>, which can be proven geometrically:</p>
+<p><img alt="Angle Addition Diagram for Sine" src="_images/AngleAdditionDiagramSine.png" /></p>
+<p>where we have used the odd function properties of <span class="math notranslate nohighlight">\( \sin(\theta) \)</span> and even function properties of <span class="math notranslate nohighlight">\( \cos(\theta) \)</span> in the final set of identities. Equally, for <span class="math notranslate nohighlight">\( \tan(\theta) \)</span>, we find:</p>
+<div class="math notranslate nohighlight">
+\[\tan(\alpha \pm \beta) = \frac{\sin(\alpha \pm \beta)}{\cos(\alpha \pm \beta)} = \frac{\sin(\alpha)\cos(\beta) \pm \cos(\alpha)\sin(\beta)}{\cos(\alpha)\cos(\beta) \mp \sin(\alpha)\sin(\beta)} = \frac{\tan(\alpha) \pm \tan(\beta)}{1 \mp \tan(\alpha)\tan(\beta)}\]</div>
+<section id="double-angle-identities">
+<h3>Double Angle Identities<a class="headerlink" href="#double-angle-identities" title="Permalink to this heading">#</a></h3>
+<p>Using these identities, for the case of double angles:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sin(2\theta) &amp;= 2 \sin(\theta)\,\cos(\theta) \\
+\cos(2\theta) &amp;= 2 \cos^2(\theta) - \sin^2(\theta)
+&amp;= 2 \cos^2(\theta) - 1 \\
+&amp;= 1 - 2\sin^2(\theta)\end{split}\]</div>
+<p>where for these last two identities we have made use of the trigonometric version of Pythagoras’s theorem, <span class="math notranslate nohighlight">\( \cos^2(\theta) + \sin^2(\theta) = 1 \)</span>. Likewise for <span class="math notranslate nohighlight">\( \tan(\theta) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\tan(2\theta) = \frac{2 \tan(\theta)}{1 - \tan^2(\theta)}\]</div>
+</section>
+</section>
+<section id="inverse-trigonometric-functions">
+<h2>Inverse Trigonometric Functions<a class="headerlink" href="#inverse-trigonometric-functions" title="Permalink to this heading">#</a></h2>
+<p>As well as knowing the trigonometric functions and their reciprocal functions, it is possible to define their inverse functions. To ensure that we have 1-to-1 mappings, we need to restrict the domain of the functions before finding the inverse, which means there can be different co-domains for each function:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{clccc}
+\sin(x), &amp; x \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right] &amp; \Rightarrow &amp; \arcsin(x), &amp; x \in \left[-1,1\right] \\
+\cos(x), &amp; x \in \left[0,\pi\right] &amp; \Rightarrow &amp; \arccos(x), &amp; x \in \left[-1,1\right] \\
+\tan(x), &amp; x \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right] &amp; \Rightarrow &amp; \arctan(x), &amp; x \in \left(-\infty,\infty\right)
+\end{array}\end{split}\]</div>
+<p>We can visualize all of these graphically:</p>
+<p><img alt="Inverse Trigonometric Functions" src="_images/ArcSinCos3.png" /></p>
+<p>We notice that for <span class="math notranslate nohighlight">\( \tan(x),\, \arctan(x) \)</span>, the function asymptotes to positive/negative infinity, whereas <span class="math notranslate nohighlight">\( \sin(x), \,\cos(x) \)</span>, etc., are all in closed intervals.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -396,20 +538,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="Functions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to NSCI0044 - Introductory Mathematics for Natural Sciences</p>
+        <p class="prev-next-title">Functions</p>
       </div>
     </a>
     <a class="right-next"
-       href="Algebra.html"
+       href="Limits.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Algebra</p>
+        <p class="prev-next-title">Limits and Infinities</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -422,6 +564,31 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basics">The Basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-rules">Trigonometric Rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sine-area-rule">Sine Area Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sine-rule">Sine Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-rule">Cosine Rule</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-identities">Trigonometric Identities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-angle-identities">Double Angle Identities</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric-functions">Inverse Trigonometric Functions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

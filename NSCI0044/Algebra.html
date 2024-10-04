@@ -61,11 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Algebra';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Linear Ordinary Differential Equations" href="Limits.html" />
-    <link rel="prev" title="Trigonometry" href="Trigonometry.html" />
+    <link rel="next" title="Functions" href="Functions.html" />
+    <link rel="prev" title="Welcome to NSCI0044 - Introductory Mathematics for Natural Sciences" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,9 +159,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Trigonometry.html">Trigonometry</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Limits.html">Linear Ordinary Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trigonometry.html">Trigonometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Limits.html">Limits and Infinities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series.html">Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Differentiation.html">Rates of Change and Differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Integration.html">Areas and Integration</a></li>
@@ -335,7 +338,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -351,6 +356,36 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-equations">Quadratic Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brackets-and-foil">Brackets and FOIL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-the-square">Completing the Square</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots">Roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remainders">Remainders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surds">Surds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Remainders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Surds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indices">Indices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms">Logarithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-function">Exponential Function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-fractions">Partial Fractions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-application-with-prime-factors">An Application with Prime Factors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brackets">Brackets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pascal-s-triangle">Pascal’s Triangle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-theorem">Binomial Theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-series">Binomial Series</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -362,6 +397,531 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="algebra">
 <h1>Algebra<a class="headerlink" href="#algebra" title="Permalink to this heading">#</a></h1>
+<section id="quadratic-equations">
+<h2>Quadratic Equations<a class="headerlink" href="#quadratic-equations" title="Permalink to this heading">#</a></h2>
+<p>A <strong>Quadratic</strong> equation is one where the highest power of <span class="math notranslate nohighlight">\(x\)</span> is two:</p>
+<div class="math notranslate nohighlight">
+\[ax^2 + bx + c = 0\]</div>
+<p>where <span class="math notranslate nohighlight">\(a, b, c\)</span> are all constants. Quadratic equations appear frequently in mathematics and the sciences, so it is important to confidently solve them. Since the highest power in the equation is two, there are (up to) two real solutions to this equation.</p>
+</section>
+<section id="brackets-and-foil">
+<h2>Brackets and FOIL<a class="headerlink" href="#brackets-and-foil" title="Permalink to this heading">#</a></h2>
+<p>To think about how to solve quadratics, let’s first consider how to expand brackets, starting with a simple problem:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = (x+a)(x+b) = 0\]</div>
+<p>We can use an ordered method, known as <strong>FOIL</strong>—<strong>F</strong>irst, <strong>O</strong>utside, <strong>I</strong>nside, <strong>L</strong>ast—to expand the two brackets:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = x^2 + bx + ax + ab = x^2 + (a+b)x + ab\]</div>
+<p>If presented with a quadratic, we can revise this process, factorizing it into a set of brackets to solve the equation. For example, solve the quadratic:</p>
+<div class="math notranslate nohighlight">
+\[x^2 + 3x + 2  =  0\]</div>
+<p>We need two numbers that add to 3 and multiply to 2. A good choice is <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[x^2 + 3x + 2 = (x+1)(x+2) = 0\]</div>
+<p>Once the terms are in brackets, since the right-hand side equals zero, <strong>one</strong> of the two brackets must <strong>also</strong> equal zero:</p>
+<div class="math notranslate nohighlight">
+\[(x+1)(x+2) = 0 \Rightarrow (x+1) = 0 \quad \text{OR} \quad (x+2) = 0\]</div>
+<p>which rearranged means the solutions to the quadratic are:</p>
+<div class="math notranslate nohighlight">
+\[x = -1 \quad \text{OR} \quad x = -2\]</div>
+<p>The equation we factorize <strong>must</strong> equal zero. To see why, suppose we had:</p>
+<div class="math notranslate nohighlight">
+\[x^2 + 3x + 2 = 2 \Rightarrow (x+1)(x+2) = 2\]</div>
+<p>We might be tempted to say here that <span class="math notranslate nohighlight">\((x+1) = 1\)</span> and <span class="math notranslate nohighlight">\((x+2) = 2\)</span>, but we could also say it should be <span class="math notranslate nohighlight">\((x+1) = \sqrt{2}\)</span> and <span class="math notranslate nohighlight">\((x+2) = \sqrt{2}\)</span>, etc. It turns out there are an infinite number of solutions here, which clearly is not true! The beauty of having zero on the right-hand side is that one of the brackets <strong>must</strong> equal zero.</p>
+</section>
+<section id="completing-the-square">
+<h2>Completing the Square<a class="headerlink" href="#completing-the-square" title="Permalink to this heading">#</a></h2>
+<p>The goal of this method is to bring the equation close to the form of a perfect square:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = (x-a)^2 = x^2 + 2a + a^2\]</div>
+<p>This is known as <strong>Completing the Square</strong>. To see how this is useful, let’s start with the quadratic form:</p>
+<div class="math notranslate nohighlight">
+\[ax^2 + bx + c = 0\]</div>
+<p>First, factor out the coefficient <span class="math notranslate nohighlight">\(a\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[a\left(x^2 + \frac{b}{a} x\right) + c = 0\]</div>
+<p>Next, to bring this into the form of a perfect square, we add and subtract the term <span class="math notranslate nohighlight">\(\frac{b^2}{4a^2}\)</span>, which is just the coefficient of the <span class="math notranslate nohighlight">\(x\)</span> term squared and divided by 4:</p>
+<div class="math notranslate nohighlight">
+\[\left(x^2 + \frac{b}{a} x + \frac{b^2}{4a^2} - \frac{b^2}{4a^2}\right) + c = 0\]</div>
+<p>Now we see that we have a perfect square in the first three terms, which we can factorize:</p>
+<div class="math notranslate nohighlight">
+\[a\left(\left(x + \frac{b}{2a}\right)^2  - \frac{b^2}{4a^2}\right) + c = 0\]</div>
+<p>Rearrange to make <span class="math notranslate nohighlight">\(x\)</span> the subject of the formula:</p>
+<div class="math notranslate nohighlight">
+\[a\left(x + \frac{b}{2a}\right)^2  - \frac{b^2}{4a} + c = 0\]</div>
+<div class="math notranslate nohighlight">
+\[a\left(x + \frac{b}{2a}\right)^2 = \frac{b^2}{4a} - c = \frac{b^2 - 4ac}{4a}\]</div>
+<div class="math notranslate nohighlight">
+\[\left(x + \frac{b}{2a}\right)^2 = \frac{b^2 - 4ac}{4a^2}\]</div>
+<div class="math notranslate nohighlight">
+\[x + \frac{b}{2a} = \pm\sqrt{\frac{b^2 - 4ac}{4a^2}} \Rightarrow x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</div>
+<p>Hence, we derive the quadratic formula!</p>
+<p>An example: complete the square on <span class="math notranslate nohighlight">\(f(x) = x^2 + 6x + 5 = 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\left(x^2 + 6x + \frac{6^2}{4} - \frac{6^2}{4}\right) + 5 \Rightarrow \bigg(x^2 + 6x + 9\bigg) - 4 = 0\]</div>
+<p>Hence, we see that <span class="math notranslate nohighlight">\((x+3)^2 = 4 \Rightarrow x = -3 \pm 2 = (-5, -1)\)</span>. To check:</p>
+<div class="math notranslate nohighlight">
+\[f(-5) = 25 -30 + 5 = 0,\quad f(-1) = 1 - 6 + 5 = 0\]</div>
+</section>
+<section id="roots">
+<h2>Roots<a class="headerlink" href="#roots" title="Permalink to this heading">#</a></h2>
+<p>Take a polynomial function:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = (x-a)(x-b)\]</div>
+<p>Since <span class="math notranslate nohighlight">\(f(a) = f(b) = 0\)</span>, we call <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> the <strong>Roots</strong> of the function. If we were to plot the <span class="math notranslate nohighlight">\(f(x)\)</span>, then <span class="math notranslate nohighlight">\(x=a, b\)</span> would be where the graph cuts the <span class="math notranslate nohighlight">\(x\)</span>-axis.</p>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = (x+1)(x-2) = x^2 - x - 2\]</div>
+<p><img alt="RootsPlot" src="_images/RootsPlot.png" /></p>
+<p>Notice the roots at <span class="math notranslate nohighlight">\(x=-1, 2\)</span>.</p>
+</section>
+<section id="remainders">
+<h2>Remainders<a class="headerlink" href="#remainders" title="Permalink to this heading">#</a></h2>
+<p>Suppose we have a polynomial <span class="math notranslate nohighlight">\(f(x)=(x-a)(x-b)\)</span> and wanted to see if a function <span class="math notranslate nohighlight">\(g(x)=(x-c)\)</span> was a factor. We could perform long division, however, if <span class="math notranslate nohighlight">\(g(x)\)</span> does not exactly divide <span class="math notranslate nohighlight">\(f(x)\)</span>, then there will be a <strong>Remainder</strong> <span class="math notranslate nohighlight">\(r\)</span> left over:</p>
+<div class="math notranslate nohighlight">
+\[\frac{(x-a)(x-b)}{x-c} = h(x) + \frac{r}{x-c}\]</div>
+<p>and we find that <span class="math notranslate nohighlight">\(f(c) = r\)</span>.</p>
+<p>An example: <span class="math notranslate nohighlight">\(f(x) = x^2 - x - 2\)</span>, <span class="math notranslate nohighlight">\(g(x) = x-1 \Longrightarrow r = f(1) = -2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{x^2 - x - 2}{x-1} = \frac{x(x-1) -2}{x-1} = x - \frac{2}{x-1}\]</div>
+<p>Another example: <span class="math notranslate nohighlight">\(f(x) = x^2 - x - 2\)</span>, <span class="math notranslate nohighlight">\(g(x) = x+2 \Longrightarrow r = f(-2) = 4\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{x^2 - x -2}{x+2} = \frac{x^2 +2x - 3x -6 + 6-2}{x+2} = \frac{x(x+2) - 3(x+2) + 4}{x+2} = x - 3 + \frac{4}{x+2}\]</div>
+</section>
+<hr class="docutils" />
+<section id="surds">
+<h2>Surds<a class="headerlink" href="#surds" title="Permalink to this heading">#</a></h2>
+<p><strong>Surds</strong> are the technical name for things like square roots <span class="math notranslate nohighlight">\(\sqrt{}\)</span>, cube roots <span class="math notranslate nohighlight">\(\sqrt[3]{}\)</span>, etc. An important point is that expressions with surds are <strong>exact</strong>, unlike, say, a decimal <strong>approximation</strong>, such as:</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{2} \approx 1.414\dots\]</div>
+<p>We need to be a little careful in how we treat surds, to avoid a common error like:</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{2} + \sqrt{3} \neq \sqrt{2 + 3}\]</div>
+<p>For multiplication and division, we can manipulate some expressions into a single root:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sqrt{3}}{\sqrt{2}} = \sqrt{\frac{3}{2}}, \quad \sqrt{2}\sqrt{5} = \sqrt{10}\]</div>
+<p>We have to be careful, however, if there are fractions involved, as the general rule is to move surds entirely from the denominator of a fraction:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sqrt{3}} = \frac{1}{\sqrt{3}}\times\frac{\sqrt{3}}{\sqrt{3}} = \frac{\sqrt{3}}{3}\]</div>
+<p>This can be a little more complicated if the denominator is a mixture of rational numbers and surds.</p>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2 + \sqrt{3}}\]</div>
+<p>The rule of thumb here is to find the <strong>Conjugate</strong> of the denominator and then multiply top and bottom by this, moving any surds into the numerator:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2 + \sqrt{3}} = \frac{1}{2 + \sqrt{3}}\times\frac{2 - \sqrt{3}}{2 - \sqrt{3}} = \frac{2 - \sqrt{3}}{4 - 3} = 2 - \sqrt{3}\]</div>
+<p>This technique works because we are finding a difference of two squares expression:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{a+b} = \frac{1}{a+b}\times\frac{a-b}{a-b} = \frac{a-b}{a^2 - b^2}\]</div>
+<p>which clearly removes surds from the denominator. The next level of complication is expressions with two surds in the denominator.</p>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[\frac{2}{\sqrt{7} - \sqrt{5}}\]</div>
+<p>which we can manipulate as:</p>
+<div class="math notranslate nohighlight">
+\[\frac{2}{\sqrt{7} - \sqrt{5}} \times \frac{\sqrt{7} + \sqrt{5}}{\sqrt{7} + \sqrt{5}} = \frac{2(\sqrt{7}+\sqrt{5})}{7-5} = \sqrt{7} + \sqrt{5}\]</div>
+</section>
+<section id="id1">
+<h2>Remainders<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Suppose we have a polynomial <span class="math notranslate nohighlight">\(f(x)=(x-a)(x-b)\)</span> and wanted to see if a function <span class="math notranslate nohighlight">\(g(x)=(x-c)\)</span> was a factor. We could perform long division, however, if <span class="math notranslate nohighlight">\(g(x)\)</span> does not exactly divide <span class="math notranslate nohighlight">\(f(x)\)</span>, then there will be a <strong>Remainder</strong> <span class="math notranslate nohighlight">\(r\)</span> left over:</p>
+<div class="math notranslate nohighlight">
+\[\frac{(x-a)(x-b)}{x-c} = h(x) + \frac{r}{x-c}\]</div>
+<p>and we find that <span class="math notranslate nohighlight">\(f(c) = r\)</span>.</p>
+<p>An example: <span class="math notranslate nohighlight">\(f(x) = x^2 - x - 2\)</span>, <span class="math notranslate nohighlight">\(g(x) = x-1 \Longrightarrow r = f(1) = -2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{x^2 - x - 2}{x-1} = \frac{x(x-1) -2}{x-1} = x - \frac{2}{x-1}\]</div>
+<p>Another example: <span class="math notranslate nohighlight">\(f(x) = x^2 - x - 2\)</span>, <span class="math notranslate nohighlight">\(g(x) = x+2 \Longrightarrow r = f(-2) = 4\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{x^2 - x -2}{x+2} = \frac{x^2 +2x - 3x -6 + 6-2}{x+2} = \frac{x(x+2) - 3(x+2) + 4}{x+2} = x - 3 + \frac{4}{x+2}\]</div>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h2>Surds<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p><strong>Surds</strong> are the technical name for things like square roots <span class="math notranslate nohighlight">\(\sqrt{}\)</span>, cube roots <span class="math notranslate nohighlight">\(\sqrt[3]{}\)</span>, etc. An important point is that expressions with surds are <strong>exact</strong>, unlike, say, a decimal <strong>approximation</strong>, such as:</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{2} \approx 1.414\dots\]</div>
+<p>We need to be a little careful in how we treat surds, to avoid a common error like:</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{2} + \sqrt{3} \neq \sqrt{2 + 3}\]</div>
+<p>For multiplication and division, we can manipulate some expressions into a single root:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sqrt{3}}{\sqrt{2}} = \sqrt{\frac{3}{2}}, \quad \sqrt{2}\sqrt{5} = \sqrt{10}\]</div>
+<p>We have to be careful, however, if there are fractions involved, as the general rule is to move surds entirely from the denominator of a fraction:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sqrt{3}} = \frac{1}{\sqrt{3}}\times\frac{\sqrt{3}}{\sqrt{3}} = \frac{\sqrt{3}}{3}\]</div>
+<p>This can be a little more complicated if the denominator is a mixture of rational numbers and surds.</p>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2 + \sqrt{3}}\]</div>
+<p>The rule of thumb here is to find the <strong>Conjugate</strong> of the denominator and then multiply top and bottom by this, moving any surds into the numerator:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2 + \sqrt{3}} = \frac{1}{2 + \sqrt{3}}\times\frac{2 - \sqrt{3}}{2 - \sqrt{3}} = \frac{2 - \sqrt{3}}{4 - 3} = 2 - \sqrt{3}\]</div>
+<p>This technique works because we are finding a difference of two squares expression:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{a+b} = \frac{1}{a+b}\times\frac{a-b}{a-b} = \frac{a-b}{a^2 - b^2}\]</div>
+<p>which clearly removes surds from the denominator. The next level of complication is expressions with two surds in the denominator.</p>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[\frac{2}{\sqrt{7} - \sqrt{5}}\]</div>
+<p>which we can manipulate as:</p>
+<div class="math notranslate nohighlight">
+\[\frac{2}{\sqrt{7} - \sqrt{5}} \times \frac{\sqrt{7} + \sqrt{5}}{\sqrt{7} + \sqrt{5}} = \frac{2(\sqrt{7}+\sqrt{5})}{7-5} = \sqrt{7} + \sqrt{5}\]</div>
+</section>
+<section id="indices">
+<h2>Indices<a class="headerlink" href="#indices" title="Permalink to this heading">#</a></h2>
+<p>Algebra allows us to group together terms with a common factor or power, which can greatly simplify how we represent terms in our equations. For example, <span class="math notranslate nohighlight">\( a + a + a = 3a \)</span> or <span class="math notranslate nohighlight">\( b \times b \times b = b^3 \)</span>. We recall that powers follow simple rules:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    x^A \cdot x^B &amp;= x^{A+B} \\
+    \frac{x^A}{x^B} &amp;= x^{A-B} \\
+    \frac{1}{x^A} &amp;= x^{-A} \\
+    \left(x^A\right)^B &amp;= x^{AB} \\
+    x^{1/A} &amp;= \sqrt[A]{x} \\
+    x^0 &amp;= 1
+\end{aligned}\end{split}\]</div>
+</section>
+<hr class="docutils" />
+<section id="logarithms">
+<h2>Logarithms<a class="headerlink" href="#logarithms" title="Permalink to this heading">#</a></h2>
+<p>We can be given a problem with a known input <span class="math notranslate nohighlight">\(x\)</span> and exponent <span class="math notranslate nohighlight">\(n\)</span> and asked to find <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y = x^n\]</div>
+<p>or we could be given <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and need to work out <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[x = y^{1/n}\]</div>
+<p>and this can be achieved after some calculation. A harder problem, however, is what if we are given <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and need to work out <span class="math notranslate nohighlight">\(n\)</span>? This is where <strong>Logarithms</strong> come into use! A logarithm allows us to reverse the problem. So if <span class="math notranslate nohighlight">\(y = x^n\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[\log_x y = n\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(x\)</span> is known as the <strong>Base</strong> of the logarithm and <span class="math notranslate nohighlight">\(n\)</span> is the <strong>Exponent</strong> (power) that we raise the base to in order to get <span class="math notranslate nohighlight">\(y\)</span>. Logarithms for any base (that is a real number) can be computed straightforwardly, though calculators typically have two built-in logarithm functions:</p>
+<ul class="simple">
+<li><p><strong>log</strong> refers to logarithms to the base 10, <span class="math notranslate nohighlight">\(\log(x) = \log_{10}(x)\)</span></p></li>
+<li><p><strong>ln</strong> refers to logarithms to the base <span class="math notranslate nohighlight">\(e\)</span>, <span class="math notranslate nohighlight">\(\ln(x) = \log_e(x)\)</span></p></li>
+</ul>
+<p>Logarithms also follow rules, which are somewhat similar to the exponent rules:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \log_x (A) + \log_x (B) &amp;= \log_x(AB) \\
+    \log_x (A) - \log_x (B) &amp;= \log_x\left(\frac{A}{B}\right) \\
+    -\log_x (A) &amp;= \log_x\left(\frac{1}{A}\right) \\
+    B\log_x (A) &amp;= \log_x A^B \\
+    \log_x x &amp;= 1 \\
+    \log_x 1 &amp;= 0
+\end{aligned}\end{split}\]</div>
+<p><strong>Example:</strong> Find the value of <span class="math notranslate nohighlight">\(n\)</span> that satisfies <span class="math notranslate nohighlight">\(20 = 10^n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\log_{10} (20) = \log_{10} (10^n) = n \log_{10} (10) = n \\
+\Rightarrow n = \log_{10} (20) \approx 1.30\dots\end{split}\]</div>
+<p><strong>Another example:</strong> Solve <span class="math notranslate nohighlight">\(5 = 2^n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ln (5) = \ln(2^n) = n \ln (2) \quad \text{or} \quad \log (5) = \log(2^n) = n \log (2) \\
+\Rightarrow n = \frac{\ln (5)}{\ln (2)} \approx 2.32\dots \quad \text{or} \quad n = \frac{\log (5)}{\log (2)} \approx 2.32\dots\end{split}\]</div>
+<p>To find the logarithms in one base, say <span class="math notranslate nohighlight">\(a\)</span>, in terms of another base, say <span class="math notranslate nohighlight">\(b\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}y = \log_a (x) \Longleftrightarrow a^y = x \\
+\Rightarrow \log_b (a^y) = \log_b (x) \Rightarrow y \log_b (a) = \log_b (x) \\
+\Rightarrow \log_a (x) = \frac{\log_b (x)}{\log_b (a)}\end{split}\]</div>
+<section id="exponential-function">
+<h3>Exponential Function<a class="headerlink" href="#exponential-function" title="Permalink to this heading">#</a></h3>
+<p>The number <span class="math notranslate nohighlight">\(e \approx 2.718\dots\)</span> is related to the <strong>Exponential Function</strong> <span class="math notranslate nohighlight">\(e^x\)</span>, which has many mathematical properties. To understand some of these, consider the following situation:</p>
+<ul>
+<li><p>Suppose we put £1 in a new bank account and ask the bank to earn interest at an annual rate of £<span class="math notranslate nohighlight">\(x\)</span>, compounded monthly, so the interest earned each month is <span class="math notranslate nohighlight">\(\frac{x}{12}\)</span> of the current account value. Hence, the monthly total account value is:</p>
+<div class="math notranslate nohighlight">
+\[\left(1 + \frac{x}{12}\right)\]</div>
+<p>and at the end of the year, the total account value is:</p>
+<div class="math notranslate nohighlight">
+\[\left(1 + \frac{x}{12}\right)^{12}\]</div>
+</li>
+<li><p>If the interest is compounded daily, the end-of-year value becomes:</p>
+<div class="math notranslate nohighlight">
+\[\left(1 + \frac{x}{365}\right)^{365}\]</div>
+</li>
+<li><p>If compounded hourly, since there are <span class="math notranslate nohighlight">\(365 \times 24 = 8760\)</span> hours/year, the total becomes:</p>
+<div class="math notranslate nohighlight">
+\[\left(1 + \frac{x}{8760}\right)^{8760}\]</div>
+</li>
+<li><p>Letting the number of time intervals per year grow without bound leads to the limit definition of the exponential function:</p>
+<div class="math notranslate nohighlight">
+\[e^x = \lim_{n\rightarrow\infty}\left(1 + \frac{x}{n}\right)^n\]</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="partial-fractions">
+<h2>Partial Fractions<a class="headerlink" href="#partial-fractions" title="Permalink to this heading">#</a></h2>
+<p>Consider the problem of adding different fractions, for example:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{2} + \frac{1}{3} = \frac{?}{??}
+\]</div>
+<p>The easiest way to write this as one single fraction is to rewrite each fraction in terms of a common denominator and then just add the numerators. To find the common denominator, we need to find the lowest common multiple (LCM) of the denominators, here LCM<span class="math notranslate nohighlight">\((2,3) = 6\)</span> and hence:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{2} = \frac{3}{6}, \quad \frac{1}{3} = \frac{2}{6} \Rightarrow \frac{1}{2} + \frac{1}{3} = \frac{2 + 3}{6} = \frac{5}{6}
+\]</div>
+<p>If we have two algebraic fractions, we can follow a similar process.</p>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2}{n+1} + \frac{3}{n+2} = \frac{2(n+2) + 3(n+1)}{(n+1)(n+2)} = \frac{5n + 7}{(n+1)(n+2)}
+\]</div>
+<p>The idea behind partial fractions is to reverse this process, breaking up a composite fraction into its smaller fractional parts.</p>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{3}{(n-1)(n+2)}
+\]</div>
+<p>First, split this up into:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{3}{(n-1)(n+2)} = \frac{A}{n-1} + \frac{B}{n+2}
+\]</div>
+<p>Then, recombine to set up equations to find the unknown coefficients:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{3}{(n-1)(n+2)} = \frac{A(n+2) + B(n-1)}{(n-1)(n+2)} \Rightarrow 3 = A(n+2) + B(n-1)
+\]</div>
+<p>There are two (equally valid) methods to use at this point to find <span class="math notranslate nohighlight">\(A, B\)</span>:</p>
+<ul>
+<li><p>We can substitute in <span class="math notranslate nohighlight">\(n=1\)</span> and <span class="math notranslate nohighlight">\(n=-2\)</span> into the equation, in each case:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{aligned}
+  n = 1: &amp;\quad 3 = 3A \Rightarrow A = 1 \\
+  n = -2: &amp;\quad 3 = -3B \Rightarrow B = -1
+  \end{aligned}
+  \end{split}\]</div>
+</li>
+<li><p>We can compare coefficients of <span class="math notranslate nohighlight">\(n^0\)</span> and <span class="math notranslate nohighlight">\(n^1\)</span> (which by the fundamental theorem of algebra are independent), producing a set of simultaneous equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{aligned}
+  n^1: &amp;\quad A + B = 0 \Rightarrow B = -A \\
+  n^0: &amp;\quad 2A - B = 3 \Rightarrow 2A + A = 3 \\
+       &amp;\quad \Rightarrow A = 1, B = -1
+  \end{aligned}
+  \end{split}\]</div>
+</li>
+</ul>
+<p>If we have repeated roots in the denominator, the decomposition now has terms for each of the roots and an additional one for the repeated root.</p>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[
+g(n) = \frac{9}{(n+2)(n+5)^2} = \frac{A}{n+2} + \frac{B}{n+5} + \frac{C}{(n+5)^2}
+\]</div>
+<p>To find the partial fractions, recall we first combine:</p>
+<div class="math notranslate nohighlight">
+\[
+g(n) = \frac{A(n+5)^2 + B(n+2)(n+5) + C(n+2)}{(n+2)(n+5)^2}
+\]</div>
+<p>and then substitute in values:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+n=-5: &amp;\quad (-3)C = 9 \Rightarrow C = -3 \\
+n = -2: &amp;\quad 3^2A = 9 \Rightarrow A = 1 \\
+n=0: &amp;\quad 25A + 10B + 2C = 9 \Rightarrow B=-1
+\end{aligned}
+\end{split}\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+g(n) = \frac{1}{n+2} - \frac{1}{n+5} - \frac{3}{(n+5)^2}
+\]</div>
+<section id="an-application-with-prime-factors">
+<h3>An Application with Prime Factors<a class="headerlink" href="#an-application-with-prime-factors" title="Permalink to this heading">#</a></h3>
+<p>For a fraction like <span class="math notranslate nohighlight">\( \frac{1}{18}\)</span>, can we decompose this into fractions of the prime factors <span class="math notranslate nohighlight">\(18 = 2 \cdot 3^2\)</span>? The full partial fraction decomposition would have the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{18} = \frac{A}{2} + \frac{B}{3} + \frac{C}{3^2}
+\]</div>
+<p>First, we have to present the system in a way that is meaningful to use partial fractions:</p>
+<div class="math notranslate nohighlight">
+\[
+f(n) = \frac{1}{(n+2)(n+3)^2} = \frac{A}{n+2} + \frac{B}{n+3} + \frac{C}{(n+3)^2}
+\]</div>
+<p>So that we reduce to the original problem at <span class="math notranslate nohighlight">\(f(0)\)</span>. Now we just follow the process:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{(n+2)(n+3)^2} = \frac{A(n+3)^2 + B(n+2)(n+3) + C(n+2)}{(n+2)(n+3)^2}
+\]</div>
+<p>Substituting in values we find:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+n=-3: &amp;\quad (-1)C = 1 \Rightarrow C = -1 \\
+n = -2: &amp;\quad 1^2A = 1 \Rightarrow A = 1 \\
+n=0: &amp;\quad 9A + 6B + 2C = 1 \Rightarrow B = -1
+\end{aligned}
+\end{split}\]</div>
+<p>Giving the final decomposition:</p>
+<div class="math notranslate nohighlight">
+\[
+f(n) = \frac{1}{n+2} - \frac{1}{n+3} - \frac{1}{(n+3)^2} \Rightarrow f(0) = \frac{1}{18} = \frac{1}{2} - \frac{1}{3} - \frac{1}{3^2}
+\]</div>
+</section>
+</section>
+<section id="brackets">
+<h2>Brackets<a class="headerlink" href="#brackets" title="Permalink to this heading">#</a></h2>
+<p>From our discussion of brackets before, we know that to expand out a quadratic, we can use the <strong>FOIL</strong> method:</p>
+<div class="math notranslate nohighlight">
+\[(a+b)^2 = a^2 + 2ab + b^2\]</div>
+<p>If the power is higher than two, we can reduce the problem to a longer calculation:</p>
+<div class="math notranslate nohighlight">
+\[(a+b)^3 = (a+b)(a+b)^2 = (a+b)(a^2 + 2ab + b^2) = (a^3 + 3a^2 + 3ab^2 + b^3)\]</div>
+<p>This becomes more and more tedious for higher powers and also means that to find the answer to a higher power, say <span class="math notranslate nohighlight">\((a+b)^{10}\)</span>, we would need to know the answers to the previous nine powers, which is highly inefficient! A better method can be found by looking at the symmetries of the brackets.</p>
+<section id="pascal-s-triangle">
+<h3>Pascal’s Triangle<a class="headerlink" href="#pascal-s-triangle" title="Permalink to this heading">#</a></h3>
+<p>Let’s look at the expansion for <span class="math notranslate nohighlight">\((a+b)^2\)</span>, where we have put in all of the powers of <span class="math notranslate nohighlight">\(a, b\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[(a+b)^2 = a^2b^0 + 2a^1b^1 + a^0b^2\]</div>
+<p>We see that going from left to right, the powers of <span class="math notranslate nohighlight">\(a\)</span> start at two and reduce down to zero, and equally, the power of <span class="math notranslate nohighlight">\(b\)</span> starts at zero and increases up to two. The only additional complication is that the coefficients for each term are not all the same, so provided we can work these out, we could more easily calculate the full expansions for higher powers. The coefficients follow a simple pattern, known as <strong>Pascal’s Triangle</strong>:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p>2</p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p>3</p></td>
+<td><p></p></td>
+<td><p>3</p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p>4</p></td>
+<td><p></p></td>
+<td><p>6</p></td>
+<td><p></p></td>
+<td><p>4</p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p>5</p></td>
+<td><p></p></td>
+<td><p>10</p></td>
+<td><p></p></td>
+<td><p>10</p></td>
+<td><p></p></td>
+<td><p>5</p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>Each number in each line of the triangle is formed by the addition of the two numbers diagonally above. However, although we have greatly simplified the calculation of the terms in higher-order brackets, we still have to calculate the <span class="math notranslate nohighlight">\(n-1\)</span> lines of the triangle to find the coefficients for <span class="math notranslate nohighlight">\((a+b)^n\)</span>.</p>
+</section>
+<section id="binomial-theorem">
+<h3>Binomial Theorem<a class="headerlink" href="#binomial-theorem" title="Permalink to this heading">#</a></h3>
+<p>Each of the terms in Pascal’s triangle is called a <strong>Binomial Coefficient</strong>, and we can use the <strong>Binomial Theorem</strong> to expand out <span class="math notranslate nohighlight">\((a+b)^n\)</span> for <em>any</em> power <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[(a+b)^n = a^n + \frac{n!}{r!(n-r)!}\,a^{n-r}\,b^r + \dots + b^n\]</div>
+<div class="math notranslate nohighlight">
+\[
+= a^n + n\,a^{n-1}\,b + \frac{n(n-1)}{2!}\,a^{n-2}\,b^2 + \frac{n(n-1)(n-2)}{3!}\,a^{n-3}\,b^3 + \dots + b^n
+\]</div>
+<p>An example, find all the terms in the expansion of <span class="math notranslate nohighlight">\((a+b)^5\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[(a+b)^5 = a^5 + a^4\,b^1\,\frac{5!}{1!(5-1)!} + a^3\,b^2\,\frac{5!}{2!(5-2)!} + a^2\,b^3\,\frac{5!}{3!(5-3)!} + a^1\,b^4\,\frac{5!}{4!(5-4)!} + b^5\]</div>
+<div class="math notranslate nohighlight">
+\[
+= a^5 + 5\,a^4\,b + 10\,a^3\,b^2 + 10\,a^2\,b^3 + 5\,a\,b^4 + b^5
+\]</div>
+<p>Which matches our earlier expression from Pascal’s triangle.</p>
+<p>Another example, find the constant term in <span class="math notranslate nohighlight">\(\left( x^8 - \frac{2}{x^2}\right)^{10}\)</span>:</p>
+<p>Firstly, to make sense of the problem, let’s expand out a few terms:</p>
+<div class="math notranslate nohighlight">
+\[
+\left( x^8 - \frac{2}{x^2}\right)^{10} = x^{80} + 10\,x^{72}\left(-\frac{2}{x^2}\right) + \frac{10\times 9}{2}\,x^{64} \left(-\frac{2}{x^2}\right)^{2} + \dots + \left(-\frac{2}{x^2}\right)^{10}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= x^{80} - 20 \,x^{70} + 180 \,x^{60} + \dots + 1024 \,x^{-20}
+\]</div>
+<p>Notice that powers of <span class="math notranslate nohighlight">\(x\)</span> decrease by 10, from <span class="math notranslate nohighlight">\(x^{80}\)</span> up to <span class="math notranslate nohighlight">\(x^{-20}\)</span>, so there should be a term with <span class="math notranslate nohighlight">\(x^0\)</span> - which would be the constant term. Since the combined sum of the powers totals 10, we have a term of the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{10!}{8!(10-8)!}(x^8)^2\left(-\frac{2}{x^2}\right)^8 = \frac{10!}{8!(10-8)!} 2^8 = \frac{1}{2}\times10\times9\times 2^8 = 11520
+\]</div>
+</section>
+<section id="binomial-series">
+<h3>Binomial Series<a class="headerlink" href="#binomial-series" title="Permalink to this heading">#</a></h3>
+<p>It turns out that the Binomial theorem can be applied to any problem in binomial form, even if the exponent <span class="math notranslate nohighlight">\(n\)</span> is not an integer; however, there will be an infinite number of terms resulting here. An example:</p>
+<div class="math notranslate nohighlight">
+\[(1+x)^{1/2} = 1 + \frac{1}{2} x + \frac{1}{2}\bigg(-\frac{1}{2}\bigg)\frac{1}{2!} x^2 + \frac{1}{2}\bigg(-\frac{1}{2}\bigg)\bigg(-\frac{3}{2}\bigg)\frac{1}{3!} x^3 + \dots\]</div>
+<p>There are, however, strict criteria as to when we can use such a series, which here require that the size of <span class="math notranslate nohighlight">\(x\)</span> is small, <span class="math notranslate nohighlight">\(|x| \ll 1\)</span>, otherwise the expansion here is not valid. We will see why when we study series and convergence.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -396,20 +956,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Trigonometry.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Trigonometry</p>
+        <p class="prev-next-title">Welcome to NSCI0044 - Introductory Mathematics for Natural Sciences</p>
       </div>
     </a>
     <a class="right-next"
-       href="Limits.html"
+       href="Functions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear Ordinary Differential Equations</p>
+        <p class="prev-next-title">Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -422,6 +982,42 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-equations">Quadratic Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brackets-and-foil">Brackets and FOIL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-the-square">Completing the Square</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots">Roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remainders">Remainders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surds">Surds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Remainders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Surds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indices">Indices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms">Logarithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-function">Exponential Function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-fractions">Partial Fractions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-application-with-prime-factors">An Application with Prime Factors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brackets">Brackets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pascal-s-triangle">Pascal’s Triangle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-theorem">Binomial Theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-series">Binomial Series</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
