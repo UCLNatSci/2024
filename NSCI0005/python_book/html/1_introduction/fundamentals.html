@@ -598,8 +598,8 @@ document.write(`
 <section id="exercise-content">
 <p>In physics, the fine structure constant <span class="math notranslate nohighlight">\(\alpha\)</span> is given by</p>
 <div class="math notranslate nohighlight">
-\[\alpha = e^2/2\epsilon_0h\]</div>
-<p>where <span class="math notranslate nohighlight">\(e=1.60 \times 10^{-19}~\mathrm{C}\)</span> is the elementary charge, <span class="math notranslate nohighlight">\(\epsilon_0 = 8.85~\mathrm{Fm}^{-1}\)</span> is the electric permittivity of free space, and <span class="math notranslate nohighlight">\(h = 6.63~ \mathrm{JHz}^{-1}\)</span> is Planck’s constant.</p>
+\[\alpha = \frac{e^2}{2\epsilon_0hc}\]</div>
+<p>where <span class="math notranslate nohighlight">\(e=1.60\times 10^{-19}~\mathrm{C}\)</span> is the elementary charge, <span class="math notranslate nohighlight">\(\epsilon_0=8.85\times 10^{-12}~\mathrm{Fm}^{-1}\)</span> is the electric permittivity of free space <span class="math notranslate nohighlight">\(c = 299.8 \times 10^6 \mathrm{ms}^{-1}\)</span> is the speed of light, and <span class="math notranslate nohighlight">\(h = 6.63\times~10^{-34}~\mathrm{JHz}^{-1}\)</span> is Planck’s constant.</p>
 <p>Calculate the value of <span class="math notranslate nohighlight">\(\alpha\)</span> and check your answer against the value on the <a class="reference external" href="https://en.wikipedia.org/wiki/Fine-structure_constant">Wikipedia page</a>.</p>
 </section>
 </div>
@@ -609,14 +609,17 @@ document.write(`
 <span class="n">e</span> <span class="o">=</span> <span class="mf">1.6e-19</span>
 
 <span class="c1"># permittivity</span>
-<span class="n">epsilon_0</span> <span class="o">=</span> <span class="mf">8.85</span>
+<span class="n">epsilon_0</span> <span class="o">=</span> <span class="mf">8.85e-12</span>
+
+<span class="c1"># speed of light</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">299.8e6</span>
 
 <span class="c1"># Planck&#39;s constant</span>
-<span class="n">h</span> <span class="o">=</span> <span class="mf">6.63</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">6.63e-34</span>
 
 <span class="c1"># Calculate fine structure constant</span>
 
-<span class="n">alpha</span> <span class="o">=</span> <span class="n">e</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">epsilon_0</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">e</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">epsilon_0</span> <span class="o">*</span> <span class="n">h</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fine structure constant:&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
 </pre></div>
