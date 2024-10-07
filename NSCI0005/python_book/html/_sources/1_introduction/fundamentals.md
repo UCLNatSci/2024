@@ -208,7 +208,7 @@ In physics, the fine structure constant $\alpha$ is given by
 
 $$\alpha = \frac{e^2}{2\epsilon_0hc}$$
 
-where $e=1.60\times 10^{-19}~\mathrm{C}$ is the elementary charge, $\epsilon_0=8.85\times 10^{-12}~\mathrm{Fm}^{-1}$ is the electric permittivity of free space $c = 299.8 \times 10^6 \mathrm{ms}^{-1}$ is the speed of light, and $h = 6.63\times~10^{-34}~\mathrm{JHz}^{-1}$ is Planck's constant.
+where $e=1.60\times 10^{-19}~\mathrm{C}$ is the elementary charge, $\epsilon_0=8.85\times 10^{-12}~\mathrm{Fm}^{-1}$ is the electric permittivity of free space $c = 299.8 \times 10^6~\mathrm{ms}^{-1}$ is the speed of light, and $h = 6.63\times 10^{-34}~\mathrm{JHz}^{-1}$ is Planck's constant.
 
 Calculate the value of $\alpha$ and check your answer against the value on the [Wikipedia page](https://en.wikipedia.org/wiki/Fine-structure_constant).
 ````
