@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Differentiation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -336,7 +338,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -352,6 +356,39 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiating-polynomial-functions">Differentiating Polynomial Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiating-functions">Differentiating Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-functions">Trigonometric Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-functions">Exponential Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-functions">Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation-rules">Differentiation Rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#product-rule">Product Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quotient-rule">Quotient Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">Chain Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-differentiation">Implicit Differentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-differentiation">Parametric Differentiation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation-tricks">Differentiation Tricks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric">Trigonometric</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic">Hyperbolic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric">Inverse Trigonometric</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential">Exponential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic">Logarithmic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powers">Powers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-stationary-points">Finding Stationary Points</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -363,6 +400,310 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="rates-of-change-and-differentiation">
 <h1>Rates of Change and Differentiation<a class="headerlink" href="#rates-of-change-and-differentiation" title="Permalink to this heading">#</a></h1>
+<section id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
+<p>A question that often crops up in mathematics and science is, how do we find the rate at which a quantity changes? Let’s start by considering the simplest case of a function, a straight line, which follows the equation <span class="math notranslate nohighlight">\(y = mx + c\)</span>:</p>
+<p><img alt="2DSlope" src="_images/2DSlope.png" /></p>
+<p>As we see, the rate of change, known as the <strong>Gradient</strong>, <span class="math notranslate nohighlight">\(m\)</span>, is found from the ratio of the changes in the <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x\)</span> directions:</p>
+<div class="math notranslate nohighlight">
+\[m = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}\]</div>
+<p>But what about for a curve? Clearly, the gradient of this curve varies from point to point:</p>
+<p><img alt="Tangent-calculus" src="_images/Tangent-calculus.png" /></p>
+<p>We can start at a point <span class="math notranslate nohighlight">\(x\)</span> and find the gradient of the <strong>Tangent</strong> to the curve; however, we could also overshoot the curve and draw a line connecting the curve with a neighboring point <span class="math notranslate nohighlight">\(x+h\)</span> (known as a <strong>Secant</strong> line). By drawing more secant lines for smaller choices of <span class="math notranslate nohighlight">\(h\)</span>, we can gradually build up a value for the gradient at the point:</p>
+<p><img alt="FindingTangent" src="_images/FindingTangent.png" /></p>
+<p>We can do this mathematically, for the function <span class="math notranslate nohighlight">\(y = f(x)\)</span>, by taking the limit for decreasing <span class="math notranslate nohighlight">\(h\)</span>, which we denote by a change <span class="math notranslate nohighlight">\(\Delta x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\Delta x \rightarrow 0}\frac{y(x + \Delta x) - y(x)}{\Delta x} = \frac{\textrm{d}y}{\textrm{d}x} \]</div>
+<p>We call this the <strong>Derivative</strong> of the function, and the process of finding the derivative is known as <strong>Differentiation</strong>. The quantities <span class="math notranslate nohighlight">\(\textrm{d}y\)</span> and <span class="math notranslate nohighlight">\(\textrm{d}x\)</span> are known as <strong>Infinitesimals</strong> and represent changes of a variable, say <span class="math notranslate nohighlight">\(x\)</span>, in the limit of <span class="math notranslate nohighlight">\(\Delta x \rightarrow 0\)</span>. Sometimes, if we are just using <span class="math notranslate nohighlight">\(f(x)\)</span> to describe a function, we use the notation <span class="math notranslate nohighlight">\(f'(x)\)</span> for the derivative. We should note that the derivative is properly called a <strong>Mathematical Operator</strong>, which means we have to be careful how it is used. Technically speaking, we are finding <span class="math notranslate nohighlight">\(\frac{\textrm{d}}{\textrm{d}x}\bigg(y\bigg)\)</span>, and for the choice of a function, such as <span class="math notranslate nohighlight">\(y = x^2 + 2x + 1\)</span>, we could write:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\textrm{d}}{\textrm{d}x}\left(x^2 + 2x + 1\right)\]</div>
+<p>The limit definition allows us to find the derivatives for different types of functions.</p>
+<p>An example: find the derivative of <span class="math notranslate nohighlight">\(y = x^2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\textrm{d}y}{\textrm{d}x} = \lim_{\Delta x \rightarrow 0}\frac{y(x + \Delta x) - y(x)}{\Delta x} = \lim_{\Delta x \rightarrow 0}\frac{(x + \Delta x)^2 - x^2}{\Delta x}\]</div>
+<div class="math notranslate nohighlight">
+\[= \lim_{\Delta x \rightarrow 0} \frac{(x^2 + 2x\Delta x + \Delta x^2) - x^2}{\Delta x} = \lim_{\Delta x \rightarrow 0} \left(2x + \Delta x \right) = 2x\]</div>
+<p>For polynomials in general, using the binomial theorem, for <span class="math notranslate nohighlight">\(y = x^n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\textrm{d}y}{\textrm{d}x} = \lim_{\Delta x \rightarrow 0}\frac{(x + \Delta x)^n - x^n}{\Delta x} = \lim_{\Delta x \rightarrow 0} \frac{(x^n + nx^{n-1}\Delta x + \mathcal{O}(\Delta x^2) + \dots) - x^n}{\Delta x}\]</div>
+<div class="math notranslate nohighlight">
+\[= \lim_{\Delta x \rightarrow 0} \left( nx^{n-1} + \mathcal{O}(\Delta x) + \dots \right) = nx^{n-1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{O}(\Delta x)\)</span> is mathematical notation for terms of order <span class="math notranslate nohighlight">\(\Delta x\)</span>.</p>
+</section>
+<section id="differentiating-polynomial-functions">
+<h2>Differentiating Polynomial Functions<a class="headerlink" href="#differentiating-polynomial-functions" title="Permalink to this heading">#</a></h2>
+<p>Using the limit definition, we can find the derivative for a range of different functions. We recall that for polynomials:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = a\,x^n \Rightarrow f'(x) = a\,n\,x^{n-1}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is a constant, and this follows from the limit definition and binomial theorem. For the case of a constant:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = a = a\,x^0 \Rightarrow f'(x) = 0
+\]</div>
+<p>which makes sense since if the function is constant, the gradient is zero, hence zero derivative. We should notice that for the same function with a shift, we see the gradient will be the same:</p>
+<p><img alt="Finding Tangent Polynomial" src="_images/FindingTangentPolynomial.png" /></p>
+</section>
+<section id="differentiating-functions">
+<h2>Differentiating Functions<a class="headerlink" href="#differentiating-functions" title="Permalink to this heading">#</a></h2>
+<p>We can use the limit definition to differentiate different types of functions:</p>
+<section id="trigonometric-functions">
+<h3>Trigonometric Functions<a class="headerlink" href="#trigonometric-functions" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \frac{\textrm{d}}{\textrm{d}x}\bigg(\sin(x)\bigg) &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\sin(x + \Delta x) - \sin(x)}{\Delta x} \right)\\
+  &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x) - \sin(x)}{\Delta x} \right)\\
+  &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\sin(x)(\cos(\Delta x)-1) + \cos(x)\sin(\Delta x)}{\Delta x} \right)\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \frac{\textrm{d}}{\textrm{d}x}\bigg(\cos(x)\bigg) &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\cos(x + \Delta x) - \cos(x)}{\Delta x} \right) \\
+  &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\cos(x)\cos(\Delta x) - \sin(x)\sin(\Delta x) - \cos(x)}{\Delta x} \right)\\
+  &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\cos(x)(\cos(\Delta x)-1) -\sin(x)\sin(\Delta x)}{\Delta x} \right)\end{split}\]</div>
+<p>Next, we can show (from geometric considerations) in the limit of <span class="math notranslate nohighlight">\( |\Delta\theta| \ll 1 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \frac{\sin(\Delta\theta)}{\Delta\theta} &amp;= 1 + \mathcal{O}\left(\Delta \theta^2\right) + \dots\\
+  \frac{\cos(\Delta \theta) - 1}{\Delta \theta}  &amp;= -\frac{1}{2}\Delta \theta + \mathcal{O}\left(\Delta \theta^3\right) + \dots\end{split}\]</div>
+<p>Which means the derivatives are:</p>
+<div class="math notranslate nohighlight">
+\[  \frac{\textrm{d}}{\textrm{d}x}\bigg(\sin(x)\bigg) = \cos(x) \quad \quad \frac{\textrm{d}}{\textrm{d}x}\bigg(\cos(x)\bigg) = -\sin(x)\]</div>
+</section>
+<section id="exponential-functions">
+<h3>Exponential Functions<a class="headerlink" href="#exponential-functions" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[  \frac{\textrm{d}}{\textrm{d}x}\bigg(e^x\bigg) = \lim_{\Delta x \rightarrow 0}\left(\frac{e^{x +\Delta x} - e^x}{\Delta x} \right) =  e^x\left(\lim_{\Delta x \rightarrow 0}\left(\frac{e^{\Delta x} - 1}{\Delta x} \right)\right)\]</div>
+<p>Using the definition of the exponential:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  e^{\Delta x} &amp;= \lim_{n\rightarrow\infty}\left(1 + \frac{\Delta x}{n}\right)^n \\
+  \Rightarrow \frac{\textrm{d}}{\textrm{d}x}\bigg(e^x\bigg) &amp;= e^x\lim_{\Delta x \rightarrow 0}\lim_{n\rightarrow\infty}\left[\frac{1}{\Delta x}\left(\left(1 + \frac{\Delta x}{n}\right)^n - 1 \right)\right]\\
+  &amp;=  e^x \lim_{\Delta x \rightarrow 0}\lim_{n\rightarrow\infty}\left[\frac{1}{\Delta x}\left(\left(1 + n\frac{\Delta x}{n} + \frac{n(n-1)}{2!}\frac{(\Delta x)^2}{n^2} + \dots \right)- 1 \right)\right]\\
+  &amp;= e^x \lim_{\Delta x \rightarrow 0}\lim_{n\rightarrow\infty}\left(1 + \mathcal{O}\left(\frac{\Delta x}{n}\right) + \dots\right)\\
+  \Rightarrow \frac{\textrm{d}}{\textrm{d}x}\bigg(e^x\bigg) &amp;= e^x\end{split}\]</div>
+</section>
+<section id="logarithmic-functions">
+<h3>Logarithmic Functions<a class="headerlink" href="#logarithmic-functions" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \frac{\textrm{d}}{\textrm{d}x}\bigg(\ln(x)\bigg) &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\ln(x +\Delta x) - \ln(x)}{\Delta x} \right) =  \lim_{\Delta x \rightarrow 0}\left(\frac{1}{\Delta x} \ln\left( 1 + \frac{\Delta x}{x}\right)\right)\\
+  &amp;= \lim_{\Delta x \rightarrow 0}\left(\ln\left( 1 + \frac{\Delta x}{x}\right)^{1/\Delta x}\right)\end{split}\]</div>
+<p>Using the definition of the exponential, with <span class="math notranslate nohighlight">\( n = 1 / \Delta x \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  e^{1/x} &amp;= \lim_{\Delta x \rightarrow 0}\left(1 + \frac{\Delta x}{x}\right)^{1/\Delta x}\\
+  \Rightarrow \frac{\textrm{d}}{\textrm{d}x}\bigg(\ln(x)\bigg) &amp;= \ln\bigg(e^{1/x}\bigg) = \frac{1}{x}\end{split}\]</div>
+</section>
+</section>
+<section id="differentiation-rules">
+<h2>Differentiation Rules<a class="headerlink" href="#differentiation-rules" title="Permalink to this heading">#</a></h2>
+<p>There are three main differentiation rules:</p>
+<section id="product-rule">
+<h3>Product Rule<a class="headerlink" href="#product-rule" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+  y = f(x) \,g(x) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{\textrm{d}f(x)}{\textrm{d}x} g(x) + f(x) \frac{\textrm{d}g(x)}{\textrm{d}x}
+  \]</div>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  y = x^2 \sin(x) \\
+  \frac{\textrm{d}y}{\textrm{d}x} = 2x \sin(x) + x^2 \cos(x)
+  \end{split}\]</div>
+</section>
+<section id="quotient-rule">
+<h3>Quotient Rule<a class="headerlink" href="#quotient-rule" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+  y = \frac{f(x)}{g(x)} \Rightarrow y'(x) = \frac{f'(x) g(x) - f(x) g'(x)}{g^2(x)}
+  \]</div>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  y = \tan(x) = \frac{\sin(x)}{\cos(x)} \\
+  \frac{\textrm{d}y}{\textrm{d}x} = \frac{\cos(x) \cos(x) - (-\sin(x))\sin(x) }{\cos^2(x)} =  \frac{1}{\cos^2(x)} \\
+  = \sec^2(x)
+  \end{split}\]</div>
+</section>
+<section id="chain-rule">
+<h3>Chain Rule<a class="headerlink" href="#chain-rule" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+  y = y(f(x)) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{\textrm{d}y}{\textrm{d}f}\frac{\textrm{d}f}{\textrm{d}x}
+  \]</div>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  y = \sin(x^2) \\
+  y = \sin(f),\, f = x^2 \\
+  \frac{\textrm{d}y}{\textrm{d}f} = \cos(f), \, \frac{\textrm{d}f}{\textrm{d}x} = 2x \\
+  \frac{\textrm{d}y}{\textrm{d}x} = \frac{\textrm{d}y}{\textrm{d}f}\frac{\textrm{d}f}{\textrm{d}x} = 2x \cos(f) \\
+  = 2x \cos(x^2)
+  \end{split}\]</div>
+<p>There are two further differentiation techniques you need to know:</p>
+</section>
+<section id="implicit-differentiation">
+<h3>Implicit Differentiation<a class="headerlink" href="#implicit-differentiation" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+  f(y) = g(x) \Rightarrow f'(y) \frac{\textrm{d}y}{\textrm{d}x} = g'(x)
+  \]</div>
+<p>An example: Find an expression for <span class="math notranslate nohighlight">\( \frac{\textrm{d}y}{\textrm{d}x} \)</span> given <span class="math notranslate nohighlight">\( \sin(y) = x^2 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \cos(y) \frac{\textrm{d}y}{\textrm{d}x} = 2x \\
+  \frac{\textrm{d}y}{\textrm{d}x} = \frac{2x}{\cos(y)} = \frac{2x}{\sqrt{1-\sin^2(y)}} \\
+  = \frac{2x}{\sqrt{1-x^4}}
+  \end{split}\]</div>
+</section>
+<section id="parametric-differentiation">
+<h3>Parametric Differentiation<a class="headerlink" href="#parametric-differentiation" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  x=x(t),\quad y=y(t) \\
+  \frac{\textrm{d}y}{\textrm{d}x} = \frac{\textrm{d}y}{\textrm{d}t}\frac{\textrm{d}t}{\textrm{d}x} = \frac{\textrm{d}y}{\textrm{d}t} \left/\frac{\textrm{d}x}{\textrm{d}t}\right.
+  \end{split}\]</div>
+<p>An example, find <span class="math notranslate nohighlight">\( \frac{\textrm{d}y}{\textrm{d}x} \)</span> given:</p>
+<div class="math notranslate nohighlight">
+\[
+  x = \sin(t),\, y = \cos(t)
+  \]</div>
+<p>To proceed, we first differentiate <span class="math notranslate nohighlight">\( x,\,y \)</span> with respect to <span class="math notranslate nohighlight">\( t \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+  x'(t) = \cos(t),\, y' = -\sin(t)
+  \]</div>
+<p>and then to find the derivative of <span class="math notranslate nohighlight">\( y \)</span> with respect to <span class="math notranslate nohighlight">\( x \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+  \frac{\textrm{d}y}{\textrm{d}x} = -\frac{\sin(t)}{\cos(t)} = -\frac{x}{y}
+  \]</div>
+<p>To check, we can try to eliminate <span class="math notranslate nohighlight">\( t \)</span> and differentiate implicitly:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  x^2 + y^2 = \cos^2(t) + \sin^2(t) = 1 \\
+  \Rightarrow 2x + 2y \frac{\textrm{d}y}{\textrm{d}x} = 0 \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = -\frac{x}{y}
+  \end{split}\]</div>
+<p>although it is not always possible to do this explicitly!</p>
+</section>
+</section>
+<section id="differentiation-tricks">
+<h2>Differentiation Tricks<a class="headerlink" href="#differentiation-tricks" title="Permalink to this heading">#</a></h2>
+<p>By applying some of these rules, we find a series of patterns in different functions that can make differentiation easier and quicker to perform:</p>
+<section id="trigonometric">
+<h3>Trigonometric<a class="headerlink" href="#trigonometric" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+  y = \sin(f(x)) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = f'(x) \cos(f(x))
+  \]</div>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[
+  \sin(ax+b) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = a \cos(ax+b)
+  \]</div>
+</section>
+<section id="hyperbolic">
+<h3>Hyperbolic<a class="headerlink" href="#hyperbolic" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+  y = \cosh(f(x)) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = f'(x) \sinh(f(x))
+  \]</div>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[
+  \cosh(ax^3+bx) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = (3ax^2 + b) \sinh(ax^3+bx)
+  \]</div>
+</section>
+<section id="inverse-trigonometric">
+<h3>Inverse Trigonometric<a class="headerlink" href="#inverse-trigonometric" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+  y = \arcsin(x)
+  \]</div>
+<p>The easiest way to deal with these is to invert the function, then differentiate implicitly and finally simplify the resulting expression:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \sin(y) = x \\
+  \cos(y) \frac{\textrm{d}y}{\textrm{d}x} = 1 \\
+  \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{1}{\cos(y)} = \frac{1}{\sqrt{1-\sin^2(y)}} = \frac{1}{\sqrt{1 - x^2}}
+  \end{split}\]</div>
+<p>The next level of complication comes for functions like <span class="math notranslate nohighlight">\( y = \arctan(x) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  y = \arctan(x) \\
+  \tan(y) = x \\
+  \sec^2(x)\frac{\textrm{d}y}{\textrm{d}x} = 1 \\
+  \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{1}{\sec^2(y)} = \frac{1}{1 + \tan^2(y)} = \frac{1}{1 + x^2}
+  \end{split}\]</div>
+</section>
+<section id="exponential">
+<h3>Exponential<a class="headerlink" href="#exponential" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+  y = e^{f(x)} \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = f'(x) e^{f(x)}
+  \]</div>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[
+  y = e^{ax^2+b} \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = 2ax e^{ax^2+b}
+  \]</div>
+</section>
+<section id="logarithmic">
+<h3>Logarithmic<a class="headerlink" href="#logarithmic" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+  y = \ln(f(x)) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{f'(x)}{f(x)}
+  \]</div>
+<p>An example:</p>
+<div class="math notranslate nohighlight">
+\[
+  y = \ln(x^2 + 3) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{2x}{x^2+3}
+  \]</div>
+</section>
+<section id="powers">
+<h3>Powers<a class="headerlink" href="#powers" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+  y = a^x
+  \]</div>
+<p>Although we have a simple derivative for <span class="math notranslate nohighlight">\( y = e^x \)</span>, the derivative of other numbers to the power of <span class="math notranslate nohighlight">\( x \)</span> is less simple, such as <span class="math notranslate nohighlight">\( y = 2^x \)</span>. However, a trick can be employed here, by applying logarithms:</p>
+<div class="math notranslate nohighlight">
+\[
+  y = 2^x \Rightarrow \ln y = \ln (2^x) = x \ln 2
+  \]</div>
+<p>Now exponentiate both sides:</p>
+<div class="math notranslate nohighlight">
+\[
+  y = e^{x \ln 2}
+  \]</div>
+<p>and so the derivative is just a slightly more complicated exponential type:</p>
+<div class="math notranslate nohighlight">
+\[
+  \frac{\textrm{d}y}{\textrm{d}x} = e^{x \ln 2} \ln 2 = 2^x \ln 2 
+  \]</div>
+<p>So the general expression is</p>
+<div class="math notranslate nohighlight">
+\[
+  y = a^x \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} =  a^x \ln a
+  \]</div>
+</section>
+</section>
+<section id="finding-stationary-points">
+<h2>Finding Stationary Points<a class="headerlink" href="#finding-stationary-points" title="Permalink to this heading">#</a></h2>
+<p>An application of differentiation is to find a function <span class="math notranslate nohighlight">\(f(x)\)</span>’s <strong>Stationary Points</strong> (SP’s), where we are searching for solutions to <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>. There are three distinct types of SP:</p>
+<p><img alt="Stationary Points" src="_images/StationaryPoints2.png" /></p>
+<p>We see that we need the first derivative to be zero, but the sign of the second derivative can indicate the type of stationary point.<br />
+An example, find the coordinate(s) and nature of all the stationary point(s) for:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = x^3 - 27x\]</div>
+<p>Firstly, find expressions for all the relevant derivatives:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = x^3 - 27x \Longrightarrow f'(x) = 3x^2 - 27 \Longrightarrow f''(x) = 6x\]</div>
+<p>Then find the <span class="math notranslate nohighlight">\(x\)</span> coordinates for the SP’s using <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = 3x^2 - 27 = 3(x^2-9) = 3(x+3)(x-3) = 0 \Rightarrow x = \pm 3\]</div>
+<p>Finally, substitute in <span class="math notranslate nohighlight">\(x\)</span> values to find the <span class="math notranslate nohighlight">\(y\)</span> coordinates and so identify the type of SP:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{lcl}
+    f(3) = 3^3 - 27(3) = -54 &amp; &amp; f(-3) = (-3)^3 - 27(-3) = 54  \\
+    f''(3) = 18 &gt; 0 &amp; &amp; f''(-3) = -18 &lt; 0
+\end{array}\end{split}\]</div>
+<p>Therefore <span class="math notranslate nohighlight">\(f(x)\)</span> has two SP’s, a minima at <span class="math notranslate nohighlight">\((3, -54)\)</span> and a maxima at <span class="math notranslate nohighlight">\((-3, 54)\)</span>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -423,6 +764,45 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiating-polynomial-functions">Differentiating Polynomial Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiating-functions">Differentiating Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-functions">Trigonometric Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-functions">Exponential Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-functions">Logarithmic Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation-rules">Differentiation Rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#product-rule">Product Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quotient-rule">Quotient Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">Chain Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-differentiation">Implicit Differentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-differentiation">Parametric Differentiation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation-tricks">Differentiation Tricks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric">Trigonometric</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic">Hyperbolic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric">Inverse Trigonometric</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential">Exponential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic">Logarithmic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powers">Powers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-stationary-points">Finding Stationary Points</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

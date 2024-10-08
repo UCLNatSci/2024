@@ -173,3 +173,35 @@ We can visualize all of these graphically:
 ![Inverse Trigonometric Functions](ArcSinCos3.png)
 
 We notice that for $ \tan(x),\, \arctan(x) $, the function asymptotes to positive/negative infinity, whereas $ \sin(x), \,\cos(x) $, etc., are all in closed intervals.
+
+## Hyperbolic Functions*
+Recall that there are both **odd** and **even** functions which satisfy:
+
+```{math}
+\begin{array}{lcl}
+f(-x) = -f(x) & \text{(odd)} \\
+f(-x) = f(x) & \text{(even)}
+\end{array}
+```
+
+We do also know functions which fit into neither of these categories, such as the exponential function $ f(x) = e^x $.
+
+We can define the **Hyperbolic** functions:
+
+![Hyperbolic Functions](Sinh_cosh_tanh2.png)
+
+From the definitions, we find the following useful relation:
+
+```{math}
+\cosh^2(\theta) - \sinh^2(\theta) \equiv 1
+```
+
+Likewise, it is possible to construct reciprocal functions:
+
+![Reciprocal Functions](Csch_sech_coth2.png)
+
+Which allow us to construct further useful relations:
+
+```{math}
+1 - \tanh^2(\theta) \equiv \text{sech}^2(\theta) \quad \text{and} \quad \text{coth}^2(\theta) - 1 \equiv \text{cosech}^2(\theta)
+```

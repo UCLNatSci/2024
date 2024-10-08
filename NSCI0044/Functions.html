@@ -364,6 +364,17 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-functions">Inverse Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-for-finding-inverse">Algorithm for Finding Inverse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-well-known-inverse-functions">Examples of Well-Known Inverse Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#even-and-odd-functions">Even and Odd Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-and-examples">Definition and examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#even-functions">Even functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odd-functions">Odd functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness">Uniqueness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction">Addition and subtraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication-and-division">Multiplication and division</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composition">Composition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evenodd-decomposition">Even–odd decomposition</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -379,7 +390,7 @@ document.write(`
 <h1>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h1>
 <section id="inverse-functions">
 <h2>Inverse Functions<a class="headerlink" href="#inverse-functions" title="Permalink to this heading">#</a></h2>
-<p>So far we have defined a function <span class="math notranslate nohighlight">\( y=y(x) \)</span>, but given this, is it possible to reverse the function to find <span class="math notranslate nohighlight">\( x=x(y) \)</span>? This reversing of the function process is called finding the <strong>Inverse</strong> function. The notation for the inverse of a function <span class="math notranslate nohighlight">\( f(x) \)</span> is <span class="math notranslate nohighlight">\( f^{-1}(x) \)</span>. This is often confused with the <strong>Reciprocal</strong> function <span class="math notranslate nohighlight">\( \frac{1}{f(x)} \)</span>. For trigonometric functions, the prefix “arc” is commonly added to indicate the inverse function, such as <span class="math notranslate nohighlight">\( \arcsin(x) \)</span> etc.</p>
+<p>So far we have defined a function <span class="math notranslate nohighlight">\( y=y(x) \)</span>, but given this, is it possible to reverse the function to find <span class="math notranslate nohighlight">\( x=x(y) \)</span>? This reversing of the function process is called finding the <strong>inverse</strong> function. The notation for the inverse of a function <span class="math notranslate nohighlight">\( f(x) \)</span> is <span class="math notranslate nohighlight">\( f^{-1}(x) \)</span>. This is often confused with the <strong>reciprocal</strong> function <span class="math notranslate nohighlight">\( \frac{1}{f(x)} \)</span>. For trigonometric functions, the prefix “arc” is commonly added to indicate the inverse function, such as <span class="math notranslate nohighlight">\( \arcsin(x) \)</span> etc.</p>
 </section>
 <section id="algorithm-for-finding-inverse">
 <h2>Algorithm for Finding Inverse<a class="headerlink" href="#algorithm-for-finding-inverse" title="Permalink to this heading">#</a></h2>
@@ -406,6 +417,120 @@ document.write(`
 <p>The exponential and logarithm functions are the inverse of each other, and if we plot them, we can see the mirror image over the line <span class="math notranslate nohighlight">\( y = x \)</span>.</p>
 <p><img alt="Exponential and Logarithm" src="_images/ExpLog.png" /></p>
 <p><img alt="Inverse Trigonometric Functions" src="_images/ArcSinCos2.png" /></p>
+</section>
+<section id="even-and-odd-functions">
+<h2>Even and Odd Functions<a class="headerlink" href="#even-and-odd-functions" title="Permalink to this heading">#</a></h2>
+<p>In mathematics, an even function is a real function such that <span class="math notranslate nohighlight">\( f(-x) = f(x) \)</span> for every <span class="math notranslate nohighlight">\( x \)</span> in its domain. Similarly, an odd function is a function such that <span class="math notranslate nohighlight">\( f(-x) = -f(x) \)</span> for every <span class="math notranslate nohighlight">\( x \)</span> in its domain.</p>
+<p>They are named for the parity of the powers of the power functions which satisfy each condition: the function <span class="math notranslate nohighlight">\( f(x) = x^n \)</span> is even if <span class="math notranslate nohighlight">\(n\)</span> is an even integer, and it is odd if <span class="math notranslate nohighlight">\(n\)</span> is an odd integer.</p>
+<p>Even functions are those real functions whose graph is self-symmetric with respect to the <span class="math notranslate nohighlight">\( y \)</span>-axis, and odd functions are those whose graph is self-symmetric with respect to the origin.</p>
+<p>If the domain of a real function is self-symmetric with respect to the origin, then the function can be uniquely decomposed as the sum of an even function and an odd function.</p>
+<section id="definition-and-examples">
+<h3>Definition and examples<a class="headerlink" href="#definition-and-examples" title="Permalink to this heading">#</a></h3>
+<p>Evenness and oddness are generally considered for real functions, that is, real-valued functions of a real variable. However, the concepts may be more generally defined for functions whose domain and codomain both have a notion of additive inverse. This includes abelian groups, all rings, all fields, and all vector spaces. Thus, for example, a real function could be odd or even (or neither), as could a complex-valued function of a vector variable, and so on.</p>
+<p>The given examples are real functions, to illustrate the symmetry of their graphs.</p>
+</section>
+<section id="even-functions">
+<h3>Even functions<a class="headerlink" href="#even-functions" title="Permalink to this heading">#</a></h3>
+<p><img alt="Function " src="_images/funx2.png" /><br />
+<span class="math notranslate nohighlight">\( f(x) = x^2 \)</span> is an example of an even function.</p>
+<p>A real function <span class="math notranslate nohighlight">\( f \)</span> is even if, for every <span class="math notranslate nohighlight">\( x \)</span> in its domain, <span class="math notranslate nohighlight">\( -x \)</span> is also in its domain and:</p>
+<div class="math notranslate nohighlight">
+\[f(-x) = f(x)\]</div>
+<p>or equivalently</p>
+<div class="math notranslate nohighlight">
+\[f(x) - f(-x) = 0.\]</div>
+<p>Geometrically, the graph of an even function is symmetric with respect to the <span class="math notranslate nohighlight">\( y \)</span>-axis, meaning that its graph remains unchanged after reflection about the <span class="math notranslate nohighlight">\( y \)</span>-axis.</p>
+<p>Examples of even functions are:</p>
+<ul class="simple">
+<li><p>The absolute value <span class="math notranslate nohighlight">\( x \mapsto |x| \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( x \mapsto x^2 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( x \mapsto x^4 \)</span></p></li>
+<li><p>Cosine <span class="math notranslate nohighlight">\( \cos \)</span></p></li>
+<li><p>Gaussian function <span class="math notranslate nohighlight">\( x \mapsto \exp(-x^2) \)</span></p></li>
+</ul>
+</section>
+<section id="odd-functions">
+<h3>Odd functions<a class="headerlink" href="#odd-functions" title="Permalink to this heading">#</a></h3>
+<p><img alt="Function " src="_images/funx3.png" /><br />
+<span class="math notranslate nohighlight">\( f(x) = x^3 \)</span> is an example of an odd function.</p>
+<p>A real function <span class="math notranslate nohighlight">\( f \)</span> is odd if, for every <span class="math notranslate nohighlight">\( x \)</span> in its domain, <span class="math notranslate nohighlight">\( -x \)</span> is also in its domain and:</p>
+<div class="math notranslate nohighlight">
+\[f(-x) = -f(x)\]</div>
+<p>or equivalently</p>
+<div class="math notranslate nohighlight">
+\[f(x) + f(-x) = 0.\]</div>
+<p>Geometrically, the graph of an odd function has rotational symmetry with respect to the origin, meaning that its graph remains unchanged after rotation of 180 degrees about the origin.</p>
+<p>If <span class="math notranslate nohighlight">\( x = 0 \)</span> is in the domain of an odd function <span class="math notranslate nohighlight">\( f(x) \)</span>, then <span class="math notranslate nohighlight">\( f(0) = 0 \)</span>.</p>
+<p>Examples of odd functions are:</p>
+<ul class="simple">
+<li><p>The sign function <span class="math notranslate nohighlight">\( x \mapsto \mathrm{sign}(x) \)</span></p></li>
+<li><p>The identity function <span class="math notranslate nohighlight">\( x \mapsto x \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( x \mapsto x^3 \)</span></p></li>
+<li><p>Sine <span class="math notranslate nohighlight">\( \sin \)</span></p></li>
+</ul>
+<p><img alt="Function " src="_images/funx31.png" /><br />
+<span class="math notranslate nohighlight">\( f(x) = x^3 + 1 \)</span> is neither even nor odd.</p>
+</section>
+<section id="uniqueness">
+<h3>Uniqueness<a class="headerlink" href="#uniqueness" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>If a function is both even and odd, it is equal to 0 everywhere it is defined.</p></li>
+<li><p>If a function is odd, the <strong>absolute value</strong> of that function is an even function.</p></li>
+</ul>
+</section>
+<section id="addition-and-subtraction">
+<h3>Addition and subtraction<a class="headerlink" href="#addition-and-subtraction" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The <strong>sum</strong> of two even functions is even.</p></li>
+<li><p>The sum of two odd functions is odd.</p></li>
+<li><p>The <strong>difference</strong> between two odd functions is odd.</p></li>
+<li><p>The difference between two even functions is even.</p></li>
+<li><p>The sum of an even and odd function is not even or odd unless one of the functions is equal to zero over the given <strong>domain</strong>.</p></li>
+</ul>
+</section>
+<section id="multiplication-and-division">
+<h3>Multiplication and division<a class="headerlink" href="#multiplication-and-division" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The <strong>product</strong> of two even functions is an even function.</p>
+<ul>
+<li><p>That implies that the product of any number of even functions is an even function as well.</p></li>
+</ul>
+</li>
+<li><p>The product of two odd functions is an even function.</p></li>
+<li><p>The product of an even function and an odd function is an odd function.</p></li>
+<li><p>The <strong>quotient</strong> of two even functions is an even function.</p></li>
+<li><p>The quotient of two odd functions is an even function.</p></li>
+<li><p>The quotient of an even function and an odd function is an odd function.</p></li>
+</ul>
+</section>
+<section id="composition">
+<h3>Composition<a class="headerlink" href="#composition" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The <strong>composition</strong> of two even functions is even.</p></li>
+<li><p>The composition of two odd functions is odd.</p></li>
+<li><p>The composition of an even function and an odd function is even.</p></li>
+<li><p>The composition of any function with an even function is even (but not vice versa).</p></li>
+</ul>
+</section>
+<section id="evenodd-decomposition">
+<h3>Even–odd decomposition<a class="headerlink" href="#evenodd-decomposition" title="Permalink to this heading">#</a></h3>
+<p>If a real function has a domain that is self-symmetric with respect to the origin, it may be uniquely decomposed as the sum of an even and an odd function, which are called respectively the <strong>even part</strong> and the <strong>odd part</strong> of the function, and are defined by</p>
+<div class="math notranslate nohighlight">
+\[f_\text{even}(x) = \frac{f(x) + f(-x)}{2},\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[f_\text{odd}(x) = \frac{f(x) - f(-x)}{2}.\]</div>
+<p>It is straightforward to verify that <span class="math notranslate nohighlight">\( f_\text{even} \)</span> is even, <span class="math notranslate nohighlight">\( f_\text{odd} \)</span> is odd, and <span class="math notranslate nohighlight">\( f = f_\text{even} + f_\text{odd} \)</span>.</p>
+<p>This decomposition is unique since, if</p>
+<div class="math notranslate nohighlight">
+\[f(x) = g(x) + h(x),\]</div>
+<p>where <span class="math notranslate nohighlight">\( g \)</span> is even and <span class="math notranslate nohighlight">\( h \)</span> is odd, then <span class="math notranslate nohighlight">\( g = f_\text{even} \)</span> and <span class="math notranslate nohighlight">\( h = f_\text{odd} \)</span>, since</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+2f_\text{even}(x) &amp;= f(x) + f(-x) = g(x) + g(-x) + h(x) + h(-x) = 2g(x), \\
+2f_\text{odd}(x) &amp;= f(x) - f(-x) = g(x) - g(-x) + h(x) - h(-x) = 2h(x).
+\end{align*}\end{split}\]</div>
+</section>
 </section>
 </section>
 
@@ -479,6 +604,17 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-functions">Inverse Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-for-finding-inverse">Algorithm for Finding Inverse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-well-known-inverse-functions">Examples of Well-Known Inverse Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#even-and-odd-functions">Even and Odd Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-and-examples">Definition and examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#even-functions">Even functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odd-functions">Odd functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness">Uniqueness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction">Addition and subtraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication-and-division">Multiplication and division</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composition">Composition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evenodd-decomposition">Even–odd decomposition</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

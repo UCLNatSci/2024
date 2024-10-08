@@ -531,3 +531,45 @@ It turns out that the Binomial theorem can be applied to any problem in binomial
 $$(1+x)^{1/2} = 1 + \frac{1}{2} x + \frac{1}{2}\bigg(-\frac{1}{2}\bigg)\frac{1}{2!} x^2 + \frac{1}{2}\bigg(-\frac{1}{2}\bigg)\bigg(-\frac{3}{2}\bigg)\frac{1}{3!} x^3 + \dots$$
 
 There are, however, strict criteria as to when we can use such a series, which here require that the size of $x$ is small, $|x| \ll 1$, otherwise the expansion here is not valid. We will see why when we study series and convergence.
+
+## Curve Sketching
+We should be confident in sketching curves we are given, this can be through a characterisation of different features:
+
+### Roots
+  Finding the places where a function crosses the \(y\) or \(x\) axis can also be useful in curve sketching. An example, \(y = \frac{\cos(x)}{x^2 + 4}\), over the range \(x \in [-2\pi, 2\pi]\):
+  \[
+  \cos(x) = 0 \Longrightarrow x = -\frac{3\pi}{2}, -\frac{\pi}{2}, \frac{\pi}{2}, \frac{3\pi}{2}, \dots
+  \]
+
+### Asymptotes
+  An asymptote is a line that a curve never crosses (although in some finite or infinite limits may get increasingly close to). There are three main types:
+
+![Asymptotes](Asymptotes.png)
+
+  1. **Horizontal**  
+     \[
+     y = \frac{2x-1}{x-1} \Longrightarrow \lim_{x \rightarrow \infty} y = 2
+     \]
+
+  2. **Vertical**  
+     \[
+     y = \frac{1}{x-1} \Longrightarrow \lim_{x \rightarrow 1^\pm} y \rightarrow \pm \infty
+     \]
+
+  3. **Oblique**  
+     \[
+     y = \frac{3x^2 + 2x + 4}{x-1} \Longrightarrow y = \lim_{x \rightarrow \infty} \frac{3x^2 +2x}{x} = 3x + 2 
+     \]
+
+An example, sketch \(f(x) = \frac{x^2 - 4x + 4}{x-1}\):  
+\[
+\begin{align*}
+& f(x) = \frac{(x- 2)^2}{x-1} \Longrightarrow f(2) = 0, \, f(0) = -4 \\
+& f(x) = x - 3 + \frac{1}{x-1} \Rightarrow f'(x) = 1 - \frac{1}{(x-1)^2} \Longrightarrow f'(x) = 0 \Rightarrow x = 0,\,2 \\
+& f''(x) = \frac{2}{(x-1)^2} \Longrightarrow f''(0) = -2 < 0 \,(\text{Maxima}),\, f''(2) = 2 > 0 \,(\text{Minima}) \\
+& \lim_{x \rightarrow \pm\infty} \frac{x^2 - 4x + 4}{x-1} = x - 4, \quad \lim_{x \rightarrow 1^\pm} \frac{x^2 - 4x + 4}{x-1} \rightarrow \pm \infty
+\end{align*}
+\]
+So a sketch would look like:
+
+![Curve Sketching](CurveSketching.png)
