@@ -70,9 +70,9 @@ y''(x) = A(x)\,u_1''(x) + B(x)\,u_2''(x) + A'(x)\,u_1'(x) + B'(x)\,u_2'(x)
 and so using the linear derivative operator:
 ```{math}
 L\, y(x) &= A(x)\,u_1''(x) + B(x)\,u_2''(x) + A'(x)\,u_1'(x) + B'(x)\,u_2'(x) \\ &+ p(x)\,(A(x)\,u_1'(x) + B(x)\,u_2'(x)) \\ &+ q(x)\,(A(x)\,u_1(x) + B(x)\,u_2(x)) = f(x)\\
-&= A(x)(u''(x) + u'(x) + u(x)) + B(x)(u''(x) + u'(x) + u(x)) \\
+&= A(x)(u''(x) + p(x\,)u'(x) + q(x)\,u(x)) + B(x)(u''(x) + p(x)\,u'(x) + q(x)\,u(x)) \\
 &+ A'(x)\,u_1'(x) + B'(x)\,u_2'(x)\\
-&= A'(x)\,u_1'(x) + B'(x)\,u_2'(x) + A'(x)\,L\,u_1(x) + B'(x)\,L\,u_2(x)\\
+&= A'(x)\,u_1'(x) + B'(x)\,u_2'(x) + A(x)\,L\,u_1(x) + B(x)\,L\,u_2(x)\\
 &= A'(x)\,u_1'(x) + B'(x)\,u_2'(x)
 ```
 where we have used the fact that the terms with $A(x),\, B(x)$ coefficients are actually just the homogeneous equations, hence they equal zero.  So this leaves a coupled ODE system:
@@ -238,16 +238,18 @@ Substitute $ y_p(x) $ into the original equation:
 f(x) = a_0 (k_1 y_1 + k_2 y_2) + a_1 (k_1' y_1 + k_2' y_2 + k_1 y_1' + k_2 y_2') + a_2 (k_1'' y_1 + k_2'' y_2 + k_1' y_1' + k_2' y_2')
 ```
 
-If we impose the conditions:
+If we impose the condition:
 
 ```{math}
 k_1' y_1 + k_2' y_2 = 0
 ```
+
+then the remaining terms must satisfy:
 ```{math}
 f(x) = a_2 (k_1' y_1' + k_2' y_2')
 ```
 
-we find that:
+This means that we have two simultaneous equations and tow unknowns $k_1(x)\,k_2(x)$ and we find that:
 
 ```{math}
 k_1'(x) = -k_2'(x) \frac{y_2(x)}{y_1(x)}

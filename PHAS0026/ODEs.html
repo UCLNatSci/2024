@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Linear Ordinary Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="independent_functions.html">Independence of Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variationofparameters.html">Variation of Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Laplacian.html">Laplace Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Laplacian.html">Integral Transforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diracdelta.html">The Dirac Delta Function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s Functions</a></li>
 </ul>
@@ -583,7 +583,7 @@ y_2''(x) &amp;= y_1''(x)\,f(x) + y_1'(x)\,f'(x) + y_1'(x)\,f'(x) + y_1(x)\,f''(x
 <p>So if we substitute into the ODE and then group terms by common factors:</p>
 <div class="math notranslate nohighlight">
 \[f(x)\left[ a_2\,y_1''(x) + a_1\,y_1'(x) + a_0\,y_1(x) \right] 
-+ f'(x)\left[ 2a_2\,y_1'(x) + a_1\,y_1(x)\right] + f''(x)\,y_1(x) = 0\]</div>
++ f'(x)\left[ 2a_2\,y_1'(x) + a_1\,y_1(x)\right] + f''(x)a_2\,\,y_1(x) = 0\]</div>
 <p>The first bracket will disappear as <span class="math notranslate nohighlight">\(y_1(x)\)</span> is a solution to the homogeneous equation.  The second bracket also disappears since in this case, with a repeated root <span class="math notranslate nohighlight">\(\lambda = \frac{-a_1}{2a_2}\)</span> and so:</p>
 <div class="math notranslate nohighlight">
 \[\lambda = \frac {y_1'(x)}{y_1(x)} = \frac{-a_1}{2a_2} \Rightarrow 2a_2\,y_1'(x) + a_1\,y_1(x)\]</div>
@@ -656,7 +656,7 @@ the form:</p>
 \[\begin{split}y &amp;= x^n\,f \\
 y' &amp;= nx^{n-1}\,f + x^n\,f' \\
 y'' &amp;= n(n-1)x^{n-2}\,f + 2nx^{n-1}\,f' + x^{n}f''\\
-\Rightarrow ax^2\,y′′+bx\,y′+cy &amp;= ax^{n+1}\,f'' + (2an+b)\,x^{n+1}\,f' + (an(n-1) + bn + c)\,x^n\,f = 0\end{split}\]</div>
+\Rightarrow ax^2\,y′′+bx\,y′+cy &amp;= ax^{n+2}\,f'' + (2an+b)\,x^{n+1}\,f' + (an(n-1) + bn + c)\,x^n\,f = 0\end{split}\]</div>
 <p>This can be simplified straight away since we are using the value of <span class="math notranslate nohighlight">\(n\)</span> which satisfies the characteristic equation
 <span class="math notranslate nohighlight">\(an(n-1) + bn + c = 0\)</span>, therefore the equation reduces to:</p>
 <div class="math notranslate nohighlight">
@@ -694,9 +694,9 @@ taking a coordinate transformation <span class="math notranslate nohighlight">\(
 \[z(t) = y(x) = y(-t)\]</div>
 <p>then this means that:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\frac{\mathrm{d}}{\mathrm{d}t} z(t) = \dot{z}(t) &amp;= - \frac{\mathrm{d}}{\mathrm{d}x} y(x) = y'(x)\\
+\[\begin{split}\frac{\mathrm{d}}{\mathrm{d}t} z(t) = \dot{z}(t) &amp;= - \frac{\mathrm{d}}{\mathrm{d}x} y(x) = -y'(x)\\
 \frac{\mathrm{d}^2}{\mathrm{d}t^2} z(t) = \ddot{z}(t)&amp;= + \frac{\mathrm{d}^2}{\mathrm{d}x^2} y(x) = y''(x)\end{split}\]</div>
-<p>and therefore <a class="reference internal" href="ODEreduction.html#equation-eulereqn">()</a> reads as:</p>
+<p>and therefore the Euler equation now reads as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}a(-t)^2\ddot{z} + b(-t)(-\dot{z}) + cz &amp;= 0 \\
 \Rightarrow at^2\ddot{z} + bt\dot{z} + cz = 0\end{split}\]</div>

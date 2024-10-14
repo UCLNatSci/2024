@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ODEs.html">Linear Ordinary Differential Equations</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Independence of Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variationofparameters.html">Variation of Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Laplacian.html">Laplace Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Laplacian.html">Integral Transforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diracdelta.html">The Dirac Delta Function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s Functions</a></li>
 </ul>
@@ -401,7 +401,7 @@ document.write(`
 <p>We really need a way to consider the distinct-ness of any solutions we find or if we switch representation of solutions that they form a fundamental set, e.g. <span class="math notranslate nohighlight">\(\sin(x),\, \cos(x)\)</span> could be
 considered to be a fundamental set, as could <span class="math notranslate nohighlight">\(e^{ix},\, e^{-ix}\)</span>, but if we mix the two <span class="math notranslate nohighlight">\(\cos(x),\, e^{ix}\)</span> then this is not a fundamental set and we run the risk of having
 duplicate solutions.</p>
-<p>Lets start with a 2nd order system which has two fundamental solutions <span class="math notranslate nohighlight">\(y_1,\, y_2\)</span> and has to satisy initial conditions <span class="math notranslate nohighlight">\(y(x_0) = y_0,\, y'(x_0) = y_0\)</span>:</p>
+<p>Lets start with a 2nd order system which has two fundamental solutions <span class="math notranslate nohighlight">\(y_1,\, y_2\)</span> and has to satisy initial conditions <span class="math notranslate nohighlight">\(y(x_0) = y_0,\, y'(x_0) = y'_0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}y(x) = Ay_1(x) + By_2(x) \Rightarrow \,&amp;\, y(x_0) = y_0 = Ay_1(x_0) + By_2(x_0)\\
 y'(x) = A{y_1}'(x) + B{y_2}'(x) \Rightarrow \,&amp;\, y'(x_0) = {y_0}' = A{y_1}'(x_0) + B{y_2}'(x_0)\end{split}\]</div>
@@ -438,7 +438,7 @@ y'(x) = A{y_1}'(x) + B{y_2}'(x) \Rightarrow \,&amp;\, y'(x_0) = {y_0}' = A{y_1}'
 <div class="math notranslate nohighlight">
 \[\begin{split}W(y_1,\,y_2)(x) = \begin{vmatrix} y_1 &amp; y_2 \\ {y_1}' &amp; {y_2}'\end{vmatrix} &amp;= 
 \begin{vmatrix} e^{(\lambda + \mu i)\ln (x)} &amp; e^{(\lambda - \mu i)\ln (x)} \\ \frac{(\lambda + \mu i)}{x}e^{(\lambda + \mu i)\ln (x)} &amp; \frac{(\lambda - \mu i)}{x}e^{(\lambda - \mu i)\ln (x)}\end{vmatrix}\\
-&amp;= e^{(\lambda^2 + \mu^2)\ln(x)}\left(\frac{\lambda - \mu i}{x} - \frac{\lambda + \mu i}{x} \right) \\
+&amp;= e^{(\lambda^2 + \mu^2)\ln(x)}\left(\frac{\lambda - \mu i}{x} - \frac{\lambda + \\mu i}{x} \right) \\
 &amp;= -\frac{2\mu\,i\,e^{(\lambda^2 + \mu^2)\ln(x)}}{x} = -2\mu\,i\,x^{\lambda^2 + \mu^2-1}\end{split}\]</div>
 <p>and clearly for any finite <span class="math notranslate nohighlight">\(x &gt; 0\)</span>, <span class="math notranslate nohighlight">\(W \neq 0\)</span>, hence we have a fundamental set.</p>
 </div>

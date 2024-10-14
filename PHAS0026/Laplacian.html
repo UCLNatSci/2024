@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Laplace Transform &#8212; PHAS0026 Notes</title>
+    <title>Integral Transforms &#8212; PHAS0026 Notes</title>
   
   
   
@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ODEs.html">Linear Ordinary Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="independent_functions.html">Independence of Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variationofparameters.html">Variation of Parameters</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Laplace Transform</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integral Transforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diracdelta.html">The Dirac Delta Function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s Functions</a></li>
 </ul>
@@ -348,7 +348,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Laplace Transform</h1>
+    <h1>Integral Transforms</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -358,9 +358,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-derivatives">Laplace Transform of Derivatives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-ode-using-the-laplace-transform">Solving ODE Using the Laplace Transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform">Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-derivatives">Laplace Transform of Derivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-ode-using-the-laplace-transform">Solving ODE Using the Laplace Transform</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-transform">Fourier Transform</a></li>
 </ul>
             </nav>
         </div>
@@ -372,53 +376,55 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="laplace-transform">
-<h1>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="integral-transforms">
+<h1>Integral Transforms<a class="headerlink" href="#integral-transforms" title="Permalink to this heading">#</a></h1>
+<section id="laplace-transform">
+<h2>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Permalink to this heading">#</a></h2>
 <p>Finding solutions to differential equations can be made easier if the equation is converted to an algebraic form using the Laplace transform. The Laplace transform is an integral transformation defined as:</p>
 <div class="math notranslate nohighlight">
-\[L[f(x)] = \int_0^\infty f(x) e^{-px} dx = F(p)\]</div>
+\[\mathcal{L}[f(x)] = \int_0^\infty f(x) e^{-px} dx = F(p)\]</div>
 <ul class="simple">
-<li><p>By definition, <span class="math notranslate nohighlight">\( L[f] \)</span> does not depend on the behavior of <span class="math notranslate nohighlight">\( f(x) \)</span> for <span class="math notranslate nohighlight">\( x &lt; 0 \)</span>.</p></li>
+<li><p>By definition, <span class="math notranslate nohighlight">\( \mathcal{L}[f] \)</span> does not depend on the behavior of <span class="math notranslate nohighlight">\( f(x) \)</span> for <span class="math notranslate nohighlight">\( x &lt; 0 \)</span>.</p></li>
 <li><p>Note that function <span class="math notranslate nohighlight">\( F(p) \)</span> might be undefined for some values of <span class="math notranslate nohighlight">\( p \)</span>.</p></li>
 <li><p>Laplace transform is a linear operation:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[L[c_1 f(x) + c_2 g(x)] = c_1 L[f(x)] + c_2 L[g(x)]\]</div>
+\[\mathcal{L}[c_1 f(x) + c_2 g(x)] = c_1 \mathcal{L}[f(x)] + c_2 \mathcal{L}[g(x)]\]</div>
 <p>It is straightforward to find the Laplace transform <span class="math notranslate nohighlight">\( F(p) \)</span> of any given function <span class="math notranslate nohighlight">\( f(x) \)</span>. To find the function <span class="math notranslate nohighlight">\( g(x) \)</span> given its Laplace transform <span class="math notranslate nohighlight">\( G(p) \)</span>, refer to a table of Laplace transforms.</p>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>For <span class="math notranslate nohighlight">\( f(x) = a \)</span> (constant):</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[F(p) = \int_0^\infty a e^{-px} dx = \frac{a}{p}, \quad \text{for } \Re(p) &gt; 0\]</div>
+\[F(p) = \int_0^\infty a e^{-px} dx = \frac{a}{p}, \quad \text{for } \text{Re }(p) &gt; 0\]</div>
 <ol class="arabic simple" start="2">
 <li><p>For <span class="math notranslate nohighlight">\( f(x) = e^{-ax} \)</span>:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[F(p) = \int_0^\infty e^{-ax} e^{-px} dx = \frac{1}{a + p}, \quad \text{for } \Re(a + p) &gt; 0\]</div>
+\[F(p) = \int_0^\infty e^{-ax} e^{-px} dx = \frac{1}{a + p}, \quad \text{for } \text{Re }(a + p) &gt; 0\]</div>
 <ol class="arabic simple" start="3">
 <li><p>For <span class="math notranslate nohighlight">\( f(x) = \cos(ax) \)</span>:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[F(p) = \int_0^\infty \cos(ax) e^{-px} dx = \frac{p}{a^2 + p^2}, \quad \text{for } \Re(p) &gt; | \Im(a) |\]</div>
+\[F(p) = \int_0^\infty \cos(ax) e^{-px} dx = \frac{p}{a^2 + p^2}, \quad \text{for } \text{Re }(p) &gt; | \text{Im }(a) |\]</div>
 </section>
 <section id="laplace-transform-of-derivatives">
-<h2>Laplace Transform of Derivatives<a class="headerlink" href="#laplace-transform-of-derivatives" title="Permalink to this heading">#</a></h2>
+<h3>Laplace Transform of Derivatives<a class="headerlink" href="#laplace-transform-of-derivatives" title="Permalink to this heading">#</a></h3>
 <p>Consider Laplace transforms of <span class="math notranslate nohighlight">\( f'(x) \)</span> and <span class="math notranslate nohighlight">\( f''(x) \)</span>.</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\( L[f'] \)</span>:</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathcal{L}[f'] \)</span>:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[L[f'] = \int_0^\infty f'(x) e^{-px} dx = \left[ e^{-px} f(x) \right]_0^\infty + p \int_0^\infty f(x) e^{-px} dx = -f(0) + p L[f]\]</div>
+\[\mathcal{L}[f'] = \int_0^\infty f'(x) e^{-px} dx = \left[ e^{-px} f(x) \right]_0^\infty + p \int_0^\infty f(x) e^{-px} dx = -f(0) + p \mathcal{L}[f]\]</div>
 <ol class="arabic simple" start="2">
-<li><p><span class="math notranslate nohighlight">\( L[f''] \)</span>:</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathcal{L}[f''] \)</span>:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[L[f''] = \int_0^\infty f''(x) e^{-px} dx = p^2 L[f] - p f(0) - f'(0)\]</div>
+\[\mathcal{L}[f''] = \int_0^\infty f''(x) e^{-px} dx = p^2 \mathcal{L}[f] - p f(0) - f'(0)\]</div>
 </section>
 <section id="solving-ode-using-the-laplace-transform">
-<h2>Solving ODE Using the Laplace Transform<a class="headerlink" href="#solving-ode-using-the-laplace-transform" title="Permalink to this heading">#</a></h2>
+<h3>Solving ODE Using the Laplace Transform<a class="headerlink" href="#solving-ode-using-the-laplace-transform" title="Permalink to this heading">#</a></h3>
 <p>Applying the Laplace transform method is convenient if:</p>
 <ul class="simple">
 <li><p>The variable <span class="math notranslate nohighlight">\( x \)</span> is defined in the interval <span class="math notranslate nohighlight">\( [0, \infty) \)</span> (e.g., coordinate of a point in a semi-infinite metal rod or time).</p></li>
@@ -429,19 +435,24 @@ document.write(`
 \[f''(x) + 4 f'(x) + 4 f(x) = x^2 e^{-2x}\]</div>
 <p>with initial conditions <span class="math notranslate nohighlight">\( f(0) = 0 \)</span> and <span class="math notranslate nohighlight">\( f'(0) = 0 \)</span>. Taking the Laplace transform of the equation gives:</p>
 <div class="math notranslate nohighlight">
-\[p^2 L[f] + 4 p L[f] + 4 L[f] = L[x^2 e^{-2x}]\]</div>
+\[p^2 \mathcal{L}[f] + 4 p \mathcal{L}[f] + 4 \mathcal{L}[f] = \mathcal{L}[x^2 e^{-2x}]\]</div>
 <p>Given the initial conditions, we simplify:</p>
 <div class="math notranslate nohighlight">
-\[(p + 2)^2 L[f] = L[x^2 e^{-2x}]\]</div>
+\[(p + 2)^2 \mathcal{L}[f] = \mathcal{L}[x^2 e^{-2x}]\]</div>
 <p>Using a table of Laplace transforms, we find:</p>
 <div class="math notranslate nohighlight">
-\[L[x^2 e^{-2x}] = \frac{2}{(p + 2)^3}\]</div>
+\[\mathcal{L}[x^2 e^{-2x}] = \frac{2}{(p + 2)^3}\]</div>
 <p>Thus, the transformed equation becomes:</p>
 <div class="math notranslate nohighlight">
-\[L[f] = \frac{2}{(p + 2)^5}\]</div>
+\[\mathcal{L}[f] = \frac{2}{(p + 2)^5}\]</div>
 <p>By referring to a Laplace transform table, we find that the solution of the ODE is:</p>
 <div class="math notranslate nohighlight">
 \[f(x) = \frac{1}{12} x^4 e^{-2x}\]</div>
+</section>
+</section>
+<section id="fourier-transform">
+<h2>Fourier Transform<a class="headerlink" href="#fourier-transform" title="Permalink to this heading">#</a></h2>
+<p>There is some relationship between Laplace transforms and Fourier transforms.</p>
 </section>
 </section>
 
@@ -512,9 +523,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-derivatives">Laplace Transform of Derivatives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-ode-using-the-laplace-transform">Solving ODE Using the Laplace Transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform">Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-derivatives">Laplace Transform of Derivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-ode-using-the-laplace-transform">Solving ODE Using the Laplace Transform</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-transform">Fourier Transform</a></li>
 </ul>
   </nav></div>
 

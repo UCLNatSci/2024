@@ -40,7 +40,7 @@ We really need a way to consider the distinct-ness of any solutions we find or i
 considered to be a fundamental set, as could $e^{ix},\, e^{-ix}$, but if we mix the two $\cos(x),\, e^{ix}$ then this is not a fundamental set and we run the risk of having 
 duplicate solutions.  
 
-Lets start with a 2nd order system which has two fundamental solutions $y_1,\, y_2$ and has to satisy initial conditions $y(x_0) = y_0,\, y'(x_0) = y_0$:
+Lets start with a 2nd order system which has two fundamental solutions $y_1,\, y_2$ and has to satisy initial conditions $y(x_0) = y_0,\, y'(x_0) = y'_0$:
 ```{math}
 y(x) = Ay_1(x) + By_2(x) \Rightarrow \,&\, y(x_0) = y_0 = Ay_1(x_0) + By_2(x_0)\\
 y'(x) = A{y_1}'(x) + B{y_2}'(x) \Rightarrow \,&\, y'(x_0) = {y_0}' = A{y_1}'(x_0) + B{y_2}'(x_0)
@@ -91,7 +91,7 @@ $y_2 = x^{\lambda - \mu i}= e^{(\lambda - \mu i)\ln (x)}$ form a fundamental set
 ```{math}
 W(y_1,\,y_2)(x) = \begin{vmatrix} y_1 & y_2 \\ {y_1}' & {y_2}'\end{vmatrix} &= 
 \begin{vmatrix} e^{(\lambda + \mu i)\ln (x)} & e^{(\lambda - \mu i)\ln (x)} \\ \frac{(\lambda + \mu i)}{x}e^{(\lambda + \mu i)\ln (x)} & \frac{(\lambda - \mu i)}{x}e^{(\lambda - \mu i)\ln (x)}\end{vmatrix}\\
-&= e^{(\lambda^2 + \mu^2)\ln(x)}\left(\frac{\lambda - \mu i}{x} - \frac{\lambda + \mu i}{x} \right) \\
+&= e^{(\lambda^2 + \mu^2)\ln(x)}\left(\frac{\lambda - \mu i}{x} - \frac{\lambda + \\mu i}{x} \right) \\
 &= -\frac{2\mu\,i\,e^{(\lambda^2 + \mu^2)\ln(x)}}{x} = -2\mu\,i\,x^{\lambda^2 + \mu^2-1}
 ```
 and clearly for any finite $x > 0$, $W \neq 0$, hence we have a fundamental set.

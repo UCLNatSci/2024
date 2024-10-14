@@ -314,7 +314,7 @@ y_2''(x) &= y_1''(x)\,f(x) + y_1'(x)\,f'(x) + y_1'(x)\,f'(x) + y_1(x)\,f''(x)   
 So if we substitute into the ODE and then group terms by common factors:
 ```{math}
 f(x)\left[ a_2\,y_1''(x) + a_1\,y_1'(x) + a_0\,y_1(x) \right] 
-+ f'(x)\left[ 2a_2\,y_1'(x) + a_1\,y_1(x)\right] + f''(x)\,y_1(x) = 0
++ f'(x)\left[ 2a_2\,y_1'(x) + a_1\,y_1(x)\right] + f''(x)a_2\,\,y_1(x) = 0
 ```
 
 The first bracket will disappear as $y_1(x)$ is a solution to the homogeneous equation.  The second bracket also disappears since in this case, with a repeated root $\lambda = \frac{-a_1}{2a_2}$ and so:
@@ -429,7 +429,7 @@ Using this ansatz, the ODE takes the form:
 y &= x^n\,f \\
 y' &= nx^{n-1}\,f + x^n\,f' \\
 y'' &= n(n-1)x^{n-2}\,f + 2nx^{n-1}\,f' + x^{n}f''\\
-\Rightarrow ax^2\,y′′+bx\,y′+cy &= ax^{n+1}\,f'' + (2an+b)\,x^{n+1}\,f' + (an(n-1) + bn + c)\,x^n\,f = 0
+\Rightarrow ax^2\,y′′+bx\,y′+cy &= ax^{n+2}\,f'' + (2an+b)\,x^{n+1}\,f' + (an(n-1) + bn + c)\,x^n\,f = 0
 ```
 This can be simplified straight away since we are using the value of $n$ which satisfies the characteristic equation 
 $an(n-1) + bn + c = 0$, therefore the equation reduces to:
@@ -480,10 +480,10 @@ z(t) = y(x) = y(-t)
 ```
 then this means that:
 ```{math}
-\frac{\mathrm{d}}{\mathrm{d}t} z(t) = \dot{z}(t) &= - \frac{\mathrm{d}}{\mathrm{d}x} y(x) = y'(x)\\
+\frac{\mathrm{d}}{\mathrm{d}t} z(t) = \dot{z}(t) &= - \frac{\mathrm{d}}{\mathrm{d}x} y(x) = -y'(x)\\
 \frac{\mathrm{d}^2}{\mathrm{d}t^2} z(t) = \ddot{z}(t)&= + \frac{\mathrm{d}^2}{\mathrm{d}x^2} y(x) = y''(x)
 ```
-and therefore {eq}`EulerEqn` reads as:
+and therefore the Euler equation now reads as:
 ```{math}
 a(-t)^2\ddot{z} + b(-t)(-\dot{z}) + cz &= 0 \\
 \Rightarrow at^2\ddot{z} + bt\dot{z} + cz = 0
