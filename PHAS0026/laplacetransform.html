@@ -1,0 +1,1066 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Integral Transforms &#8212; PHAS0026 Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'laplacetransform';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The Dirac Delta Function" href="diracdelta.html" />
+    <link rel="prev" title="Variation of Parameters" href="variationofparameters.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to PHAS0026 - Mathematical Methods for Theoretical Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ODEs.html">Linear Ordinary Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="independent_functions.html">Independence of Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variationofparameters.html">Variation of Parameters</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integral Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diracdelta.html">The Dirac Delta Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s Functions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flaplacetransform.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/laplacetransform.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Integral Transforms</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transforms">Laplace Transforms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prototype-laplace-integral">The prototype Laplace integral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-a-constant">Transforming a constant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-an-exponential-function">Transforming an exponential function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-a-trigonometric-function">Transforming a trigonometric function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-a-power-of-t">Transforming a power of <span class="math notranslate nohighlight">\(t\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#side-note">Side note</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity-of-the-laplace-transform">Linearity of the Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-derivatives">Laplace Transform of Derivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fractional-powers-of-t">Fractional powers of <span class="math notranslate nohighlight">\(t\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-ode-using-the-laplace-transform">Solving ODE Using the Laplace Transform</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-laplace-transforms">Table of Laplace Transforms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-transform">Fourier Transform</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="integral-transforms">
+<h1>Integral Transforms<a class="headerlink" href="#integral-transforms" title="Permalink to this heading">#</a></h1>
+<section id="laplace-transforms">
+<h2>Laplace Transforms<a class="headerlink" href="#laplace-transforms" title="Permalink to this heading">#</a></h2>
+<p>A function is called <em>piecewise continuous</em> on an interval if the interval can be broken into a finite number of subintervals on which the function is continuous on each open subinterval (i.e., the subinterval without its endpoints) and has a finite limit at the endpoints of each subinterval.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(f(t)\)</span> is a piecewise continuous function. The Laplace transform of <span class="math notranslate nohighlight">\(f(t)\)</span> is denoted <span class="math notranslate nohighlight">\(\mathcal{L}[f(t)]\)</span> and defined as</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[f(t)] = \int_0^\infty e^{-pt} f(t) \,\mathrm{d}t\]</div>
+<p>There is an alternate notation for Laplace transforms. For convenience, we will often denote Laplace transforms as:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[f(t)] = F(p)\]</div>
+<p>With this alternate notation, note that the transform is really a function of a new variable, <span class="math notranslate nohighlight">\(p\)</span>, and that all the <span class="math notranslate nohighlight">\(t\)</span>’s will drop out in the integration process.</p>
+<p>We can start with a few facts about Laplace transform:</p>
+<ul class="simple">
+<li><p>By definition, <span class="math notranslate nohighlight">\( \mathcal{L}[f] \)</span> does not depend on the behavior of <span class="math notranslate nohighlight">\( f(x) \)</span> for <span class="math notranslate nohighlight">\( x &lt; 0 \)</span>.</p></li>
+<li><p>Note that function <span class="math notranslate nohighlight">\( F(p) \)</span> might be undefined for some values of <span class="math notranslate nohighlight">\( p \)</span>.</p></li>
+<li><p>Laplace transform is a linear operation:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[c_1 f(x) + c_2 g(x)] = c_1 \mathcal{L}[f(x)] + c_2 \mathcal{L}[g(x)]\]</div>
+<p>It is straightforward to find the Laplace transform <span class="math notranslate nohighlight">\( F(p) \)</span> of any given function <span class="math notranslate nohighlight">\( f(x) \)</span>. To find the function <span class="math notranslate nohighlight">\( g(x) \)</span> given its Laplace transform <span class="math notranslate nohighlight">\( G(p) \)</span>, refer to a table of Laplace transforms.</p>
+<section id="the-prototype-laplace-integral">
+<h3>The prototype Laplace integral<a class="headerlink" href="#the-prototype-laplace-integral" title="Permalink to this heading">#</a></h3>
+<p>If <span class="math notranslate nohighlight">\(c \neq 0\)</span>, evaluate the following integral:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^\infty e^{ct} \,\mathrm{d}t\]</div>
+<p>Remember that you need to convert improper integrals to limits as follows:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^\infty e^{ct} \,\mathrm{d}t = \lim_{n \to \infty} \int_0^n e^{ct} \,\mathrm{d}t\]</div>
+<p>Now, do the integral, then evaluate the limit:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^\infty e^{ct} \,\mathrm{d}t = \lim_{n \to \infty} \left( \frac{1}{c} e^{ct} \right)_0^n = \lim_{n \to \infty} \left( \frac{1}{c} e^{cn} - \frac{1}{c} \right)\]</div>
+<p>Now, at this point, we’ve got to be careful. The value of <span class="math notranslate nohighlight">\(c\)</span> will affect our answer. We’ve already assumed that <span class="math notranslate nohighlight">\(c\)</span> was non-zero, now we need to worry about the sign of <span class="math notranslate nohighlight">\(c\)</span>. If <span class="math notranslate nohighlight">\(c\)</span> is positive, the exponential will go to infinity. On the other hand, if <span class="math notranslate nohighlight">\(c\)</span> is negative, the exponential will go to zero.</p>
+<p>So, the integral is only convergent (i.e., the limit exists and is finite) provided <span class="math notranslate nohighlight">\(c &lt; 0\)</span>. In this case, we get:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^\infty e^{ct} \,\mathrm{d}t = -\frac{1}{c}, \quad \text{provided } c &lt; 0\]</div>
+<p>Now that we remember how to do these, let’s compute some Laplace transforms.</p>
+</section>
+<section id="transforming-a-constant">
+<h3>Transforming a constant<a class="headerlink" href="#transforming-a-constant" title="Permalink to this heading">#</a></h3>
+<p>Compute <span class="math notranslate nohighlight">\(\mathcal{L}[1]\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[1] = \int_0^\infty e^{-pt} \,\mathrm{d}t\]</div>
+<p>Now, at this point, notice that this is nothing more than the integral in the previous example with <span class="math notranslate nohighlight">\(c = -p\)</span>. Therefore, all we need to do is reuse our previous result with the appropriate substitution. Doing this gives:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[1] = \int_0^\infty e^{-pt} \,\mathrm{d}t = -\frac{1}{-p}, \quad \text{provided } -p &lt; 0\]</div>
+<p>Or, with some simplification we have:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[1] = \frac{1}{p}, \quad \text{provided } p &gt; 0\]</div>
+<p>Notice that we had to put a restriction on <span class="math notranslate nohighlight">\(p\)</span> in order to actually compute the transform. All Laplace transforms will have restrictions on <span class="math notranslate nohighlight">\(p\)</span>. At this stage, this restriction is something that we tend to ignore, but we really shouldn’t ever forget that it’s there.</p>
+<p>In general for a constant <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(\mathcal{L}[a]\)</span> is found as:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[a] = \frac{a}{p}\]</div>
+</section>
+<section id="transforming-an-exponential-function">
+<h3>Transforming an exponential function<a class="headerlink" href="#transforming-an-exponential-function" title="Permalink to this heading">#</a></h3>
+<p>Compute <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}]\)</span>.</p>
+<p>Plug the function into the definition of the transform and do a little simplification:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[e^{at}] = \int_0^\infty e^{-pt} e^{at} \,\mathrm{d}t = \int_0^\infty e^{(a-p)t} \,\mathrm{d}t\]</div>
+<p>Once again, notice that we can use our previous result, provided <span class="math notranslate nohighlight">\(c = a-p\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[e^{at}] = \int_0^\infty e^{(a-p)t} \,\mathrm{d}t = -\frac{1}{a-p}, \quad \text{provided } a-p &lt; 0\]</div>
+<p>With some simplification we have:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[e^{at}] = \frac{1}{p-a}, \quad \text{provided } p &gt; a\]</div>
+</section>
+<section id="transforming-a-trigonometric-function">
+<h3>Transforming a trigonometric function<a class="headerlink" href="#transforming-a-trigonometric-function" title="Permalink to this heading">#</a></h3>
+<p>Compute <span class="math notranslate nohighlight">\(\mathcal{L}[\sin(at)]\)</span>.</p>
+<p>Plug the function into the definition:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[\sin(at)] = F(p) = \int_0^\infty e^{-pt} \sin(at) \,\mathrm{d}t\]</div>
+<p>Now we can do one of two methods to find the result here:</p>
+<ol class="arabic simple">
+<li><p>Integrate by parts:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}u = e^{-pt} &amp;\qquad v' = \sin(at)\\
+u' = -pe^{-pt} &amp;\qquad v = -\frac{1}{a}\cos(at)\end{split}\]</div>
+<p>which results in:</p>
+<div class="math notranslate nohighlight">
+\[F(p) = \left[ -\frac{1}{a}\,e^{-pt}\,\cos(at)\right]_0^{\infty} - \frac{p}{a}\int_0^\infty e^{-pt} \cos(at) \,\mathrm{d}t\]</div>
+<p>We then have to integrate by parts again on the second integral:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u = e^{-pt} &amp;\qquad v' = \cos(at)\\
+u' = -pe^{-pt} &amp;\qquad v = -\frac{1}{a}\sin(at)\end{split}\]</div>
+<p>which gives:</p>
+<div class="math notranslate nohighlight">
+\[F(p) = \left[ -\frac{1}{a}\,e^{-pt}\,\cos(at) + \frac{p}{a^2}\frac{1}{a}\sin(at)\right]_0^{\infty} - \frac{p^2}{a^2}\frac{p}{a}\int_0^\infty e^{-pt} \sin(at) \,\mathrm{d}t\]</div>
+<p>We can recognise the last integral also as <span class="math notranslate nohighlight">\(F(p)\)</span>, hence:</p>
+<div class="math notranslate nohighlight">
+\[\left(1 + \frac{p^2}{a^2}\right) F(p) = \left[ -\frac{1}{a}\,e^{-pt}\,\sin(at) + \frac{p}{a^2}\frac{1}{a}\cos(at)\right]_0^{\infty} \]</div>
+<p>Using the limit definition, we have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left(1 + \frac{p^2}{a^2}\right) F(p) &amp;= \lim_{n \rightarrow \infty} \left[ -\frac{1}{a}\,e^{-pt}\,\cos(at) + \frac{p}{a^2}\frac{1}{a}\sin(at)\right]_0^n\\
+&amp;= \lim_{n \rightarrow \infty}\left(\frac{1}{a} - \frac{1}{a}e^{-pn}\cos(an) + \frac{p}{a^2}e^{-pn}\sin(an)\right) = \frac{1}{a}\end{split}\]</div>
+<p>which means that:</p>
+<div class="math notranslate nohighlight">
+\[\left(1 + \frac{p^2}{a^2}\right) F(p) = 1 \Rightarrow F(p) = \frac{\frac{1}{a}}{\left(1 + \frac{p^2}{a^2}\right) } = frac{a}{p^2+a^2}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Using complex exponentials:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathcal{L}[\sin(at)] = F(p) &amp;= \frac{1}{2i}\mathcal{L}\left[ e^{iat} - e^{-iat}\right] \\
+&amp;= \frac{1}{2i}\left(\frac{1}{p-ia} - \frac{1}{p+ia} \right) = \frac{p+ia - p+ia}{2i(p^2 + a^2)} \\
+&amp;= \frac{a}{p^2+a^2}\end{split}\]</div>
+<p>Either method produces in the result:</p>
+<div class="math notranslate nohighlight">
+\[F(p) = \frac{a}{p^2 + a^2}\]</div>
+<p>As this example shows, computing Laplace transforms is often messy.</p>
+</section>
+<section id="transforming-a-power-of-t">
+<h3>Transforming a power of <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#transforming-a-power-of-t" title="Permalink to this heading">#</a></h3>
+<p>Compute <span class="math notranslate nohighlight">\(\mathcal{L}[at]\)</span>.</p>
+<p>Plug the function into the definition:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[at] = F(p) = \int_0^\infty e^{-pt} at \,\mathrm{d}t\]</div>
+<p>Now we can integrate by parts:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u = at &amp;\qquad v' = e^{-pt}\\
+u' = a &amp;\qquad v = -\frac{1}{p}e^{-pt}\end{split}\]</div>
+<p>which results in:</p>
+<div class="math notranslate nohighlight">
+\[F(p) = \left[ -\frac{a}{p}\,t\,e^{-pt}\right]_0^{\infty} + \frac{a}{p}\int_0^\infty e^{-pt} \,\mathrm{d}t\]</div>
+<p>The first term goes to zero in the infinite limit, the second term is related to the Laplace transform <span class="math notranslate nohighlight">\(\mathcal{L}[1]\)</span>, so we have:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[at] = \frac{a}{p}\frac{1}{p} = \frac{a}{p^2}\]</div>
+<p>What about for higher powers?  Well we can see that for <span class="math notranslate nohighlight">\(t^2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[at^2] = F(p) = \int_0^\infty e^{-pt} at^2 \,\mathrm{d}t\]</div>
+<p>Now we can integrate by parts:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u = at^2 &amp;\qquad v' = e^{-pt}\\
+u' = 2at &amp;\qquad v = -\frac{1}{p}e^{-pt}\end{split}\]</div>
+<p>which results in:</p>
+<div class="math notranslate nohighlight">
+\[F(p) = \left[ -\frac{a}{p}\,t^2\,e^{-pt}\right]_0^{\infty} + \frac{2a}{p}\int_0^\infty \,t\,e^{-pt} \,\mathrm{d}t\]</div>
+<p>The first term goes to zero in the infinite limit, the second term is related to the Laplace transform <span class="math notranslate nohighlight">\(\mathcal{L}[t]\)</span>, so we have:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[at] = \frac{2a}{p}\frac{1}{p^2} = \frac{2a}{p^3}\]</div>
+<p>So the effect of the integration by parts procedure is to differentiate the power of <span class="math notranslate nohighlight">\(t\)</span>, so in general:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[at^n] = F(p) = \int_0^\infty e^{-pt} at^n \,\mathrm{d}t\]</div>
+<p>Now we can integrate by parts:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u = at^n &amp;\qquad v' = e^{-pt}\\
+u' = nat^{n-1} &amp;\qquad v = -\frac{1}{p}e^{-pt}\end{split}\]</div>
+<p>which results in:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F(p) &amp;= \left[ -\frac{a}{p}\,t^n\,e^{-pt}\right]_0^{\infty} + \frac{na}{p}\int_0^\infty t^{n-1}\,e^{-pt} \,\mathrm{d}t \\
+\Rightarrow \mathcal{L}[at^n] &amp;= \frac{na}{p}\mathcal{L}[t^{n-1}] - \frac{na}{p}\frac{1}{p}\mathcal{L}[t^{n-2}] = \dots = \frac{an!}{p^{n+1}}\end{split}\]</div>
+<p>Note that this final step requires that <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span> so that the final term in the chain is <span class="math notranslate nohighlight">\(\mathcal{L}[1]\)</span>.  For other values of <span class="math notranslate nohighlight">\(n\)</span>, we will consider later.</p>
+</section>
+<section id="side-note">
+<h3>Side note<a class="headerlink" href="#side-note" title="Permalink to this heading">#</a></h3>
+<p>Before moving on to the next section, we need to do a little side note. On occasion, you will see the following as the definition of the Laplace transform:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[f(t)] = \int_{-\infty}^\infty e^{-pt} f(t) \,\mathrm{d}t\]</div>
+<p>Note the change in the lower limit from zero to negative infinity. In these cases, there is almost always the assumption that the function <span class="math notranslate nohighlight">\(f(t)\)</span> is defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(t) = \begin{cases}
+f(t) &amp; \text{if } t \geq 0 \\
+0 &amp; \text{if } t &lt; 0
+\end{cases}\end{split}\]</div>
+<p>In other words, it is assumed that the function is zero if <span class="math notranslate nohighlight">\(t &lt; 0\)</span>. In this case, the first half of the integral will drop out since the function is zero, and we will get back to the definition given at the start.</p>
+<p>We will return to this idea when we discuss the step function.</p>
+</section>
+</section>
+<section id="linearity-of-the-laplace-transform">
+<h2>Linearity of the Laplace Transform<a class="headerlink" href="#linearity-of-the-laplace-transform" title="Permalink to this heading">#</a></h2>
+<p>Given <span class="math notranslate nohighlight">\(f(t)\)</span> and <span class="math notranslate nohighlight">\(g(t)\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[af(t) + bg(t)] = aF(p) + bG(p)\]</div>
+<p>for any constants <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p>In other words, we don’t worry about constants, and we don’t worry about sums or differences of functions in taking Laplace transforms. All that we need to do is take the transform of the individual functions, then put any constants back in and add or subtract the results back up.</p>
+<div class="seealso dropdown admonition">
+<p class="admonition-title">Worked examples</p>
+<p>Find the Laplace transforms of the given functions.</p>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{(a) } f(t) = 6e^{-5t} + e^{3t} + 5t^3 - 9\]</div>
+<ol class="arabic simple" start="2">
+<li></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{(b) } g(t) = 4 \cos(4t) - 9 \sin(4t) + 2 \cos(10t)\]</div>
+<ol class="arabic simple" start="3">
+<li></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{(c) } h(t) = 3 \sinh(2t) + 3 \sin(2t)\]</div>
+<ol class="arabic simple" start="4">
+<li></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{(d) } g(t) = e^{3t} + \cos(6t) - e^{3t} \cos(6t)\]</div>
+</div>
+<div class="seealso dropdown admonition">
+<p class="admonition-title">Worked example solutions</p>
+<ol class="arabic simple">
+<li><p>For <span class="math notranslate nohighlight">\(f(t) = 6e^{-5t} + e^{3t} + 5t^3 - 9\)</span>, we have:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[F(p) = \frac{6}{p+5} + \frac{1}{p-3} + \frac{30}{p^4} - \frac{9}{p}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>For <span class="math notranslate nohighlight">\(g(t) = 4 \cos(4t) - 9 \sin(4t) + 2 \cos(10t)\)</span>, we get:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[G(p) = \frac{4p}{p^2 + 16} - \frac{36}{p^2 + 16} + \frac{2p}{p^2 + 100}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>For <span class="math notranslate nohighlight">\(h(t) = 3 \sinh(2t) + 3 \sin(2t)\)</span>, we obtain:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[H(p) = \frac{6}{p^2 - 4} + \frac{6}{p^2 + 4}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>For <span class="math notranslate nohighlight">\(g(t) = e^{3t} + \cos(6t) - e^{3t} \cos(6t)\)</span>, we get:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[G(p) = \frac{1}{p-3} + \frac{p}{p^2 + 36} - \frac{p-3}{(p-3)^2 + 36}\]</div>
+</div>
+<section id="laplace-transform-of-derivatives">
+<h3>Laplace Transform of Derivatives<a class="headerlink" href="#laplace-transform-of-derivatives" title="Permalink to this heading">#</a></h3>
+<p>Consider Laplace transforms of <span class="math notranslate nohighlight">\( f'(x) \)</span> and <span class="math notranslate nohighlight">\( f''(x) \)</span>, lets find these explictly:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\( \mathcal{L}[f'] \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[f'] = \int_0^\infty f'(x) e^{-pt}\,\mathrm{d}t\]</div>
+<p>Using integration by parts:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u = e^{-pt} &amp;\qquad v' = f'(t)\\
+u' = -p\,e^{-pt} &amp;\qquad v = f(t)\end{split}\]</div>
+<p>Which means that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathcal{L}[f'] &amp;= \left[ e^{-pt} f(t) \right]_0^\infty + p \int_0^\infty f(x) e^{-pt} \,dt = -f(0) + p \mathcal{L}[f]\\
+&amp;= -f(0) + p F(p)\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\( \mathcal{L}[f''] \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[f''] = \int_0^\infty f''(t) e^{-pt}\,\mathrm{d}t\]</div>
+<p>Using integration by parts:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u = e^{-pt} &amp;\qquad v' = f''(t)\\
+u' = -p\,e^{-pt} &amp;\qquad v = f'(t)\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathcal{L}[f''] &amp;= \left[ e^{-pt} f'(t) \right]_0^\infty + p \int_0^\infty f(x) e^{-pt} \,f'(t)\,dt = -f'(0) + p \mathcal{L}[f'(t)] \\
+&amp;= p(-f(0) + p F(p)) - f'(0) =  p^2\,F(p) - p f(0) - f'(0)\end{split}\]</div>
+<p>This means that the general result is that:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[f^{(n)}(t)] = p^n\, F(p) -p^{n-1}\, f(0) -p^{n-1} \,f'(0) - \dots - p\,f^{(n-2)}(0) - f^{(n-1)}(0)\]</div>
+<p>A related set of transform come in the form of <span class="math notranslate nohighlight">\(\mathcal{L}[t\,f(t)]\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[t\,f(t)] = \int_0^\infty t\,f(t)\,e^{-pt}\,\mathrm{d}t\]</div>
+<p>There is a temptation to evaluate this by parts, but this is not a fruitful method, instead consider taking a derivative by <span class="math notranslate nohighlight">\(p\)</span> space on a regular Laplace transform of <span class="math notranslate nohighlight">\(f(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[F(p) =  \int_0^\infty f(t)\,e^{-pt}\,\mathrm{d}t \Rightarrow \frac{\mathrm{d} F(p)}{\mathrm{d}p} = -\int_0^\infty t\,f(t)\,e^{-pt}\,\mathrm{d}t\]</div>
+<p>since here <span class="math notranslate nohighlight">\(\frac{\mathrm{d}}{\mathrm{d}p} e^{-pt} = -te^{-pt}\)</span>.</p>
+<p>So this means that:</p>
+<div class="math notranslate nohighlight">
+\[F'(p) = -\mathcal{L}[t\,f(t)]\]</div>
+<p>Likewise for <span class="math notranslate nohighlight">\(t^2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d^2} F(p)}{\mathrm{d}p^2} = \int_0^\infty t^2\,f(t)\,e^{-pt}\,\mathrm{d}t = \mathcal{L}[t^2\,f(t)]\]</div>
+<p>which means the general expression is:</p>
+<div class="math notranslate nohighlight">
+\[F^{(n)}(p) = \mathcal{L}[t^n\,f(t)]\]</div>
+<p>This is a useful way to calculate Laplace transforms for functions which involve factors of <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<div class="seealso dropdown admonition">
+<p class="admonition-title">Worked examples</p>
+<p>Find the transform of each of the following functions:</p>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f(t) = t \cosh(3t)\]</div>
+<ol class="arabic simple" start="2">
+<li></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[h(t) = t^2 \sin(2t)\]</div>
+<ol class="arabic simple" start="3">
+<li></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f(t) = t g'(t)\]</div>
+</div>
+<div class="seealso dropdown admonition">
+<p class="admonition-title">Worked example solutions</p>
+<ol class="arabic simple">
+<li><p>For <span class="math notranslate nohighlight">\(f(t) = t \cosh(3t)\)</span>, we need to consider using both the rule for compound functions with <span class="math notranslate nohighlight">\(t\)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[F(p) = \mathcal{L}[t g(t)] = -G'(p), \quad \text{where } g(t) = \cosh(3t)\]</div>
+<p>and use the fact that <span class="math notranslate nohighlight">\(\cosh(t) = \cos(it)\)</span>
+So, we then have:</p>
+<div class="math notranslate nohighlight">
+\[G(p) = \frac{p}{p^2 - 9}, \quad G'(p) = - \frac{p^2 + 9}{(p^2 - 9)^2}\]</div>
+<p>Hence the transform looks like:</p>
+<div class="math notranslate nohighlight">
+\[F(p) = \frac{p^2 + 9}{(p^2 - 9)^2}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>For <span class="math notranslate nohighlight">\(h(t) = t^2 \sin(2t)\)</span>, we could use the fact that:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[H(p) = \mathcal{L}[t f(t)] = -F'(p), \quad \text{where } f(t) = t \sin(2t)\]</div>
+<p>Or we could use:</p>
+<div class="math notranslate nohighlight">
+\[H(p) = \mathcal{L}[t^2 f(t)] = F''(p), \quad \text{where } f(t) = \sin(2t)\]</div>
+<p>So calculating all the derivatives:</p>
+<div class="math notranslate nohighlight">
+\[F(p) = \frac{2}{p^2 + 4}, \quad F'(p) = - \frac{4p}{(p^2 + 4)^2}, \quad F''(p) = \frac{12p^2-16)}{(p^2+4)^3}\]</div>
+<p>The transform is then:</p>
+<div class="math notranslate nohighlight">
+\[H(p) = \frac{12p^2 - 16}{(p^2 + 4)^3}\]</div>
+<ol class="arabic simple" start="5">
+<li><p>For <span class="math notranslate nohighlight">\(f(t) = t g'(t)\)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[t g'(t)] = -\frac{d}{dp} \mathcal{L}[g'(t)] = -\frac{d}{dp} \{p G(p) - g(0)]\]</div>
+<p>Then we have:</p>
+<div class="math notranslate nohighlight">
+\[= - \left( G(p) + p G'(p) - 0 \right) = - G(p) - p G'(p)\]</div>
+</div>
+</section>
+<section id="fractional-powers-of-t">
+<h3>Fractional powers of <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#fractional-powers-of-t" title="Permalink to this heading">#</a></h3>
+<p>If the powers of <span class="math notranslate nohighlight">\(t\)</span> are not a positive integer, then the situation is more complicated.  We relied on the fact that:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[t^n] = \frac{n}{p}\mathcal{L}[t^{n-1}] = \frac{n(n-1)}{p^2}\mathcal{L}[t^{n-2}] = \dots = \frac{n!}{p^{n+1}}\]</div>
+<p>But if <span class="math notranslate nohighlight">\(n\)</span> is not a natural number, then we will need to rely on the Gamma function <span class="math notranslate nohighlight">\(\Gamma(p)\)</span>, this is a natural generalisation of the factorial function:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Gamma(p) &amp;= \int_0^\infty t^{p-1}\,e^{-t}\,\mathrm{d}t\\\end{split}\]</div>
+<p>this has the property that:</p>
+<div class="math notranslate nohighlight">
+\[\Gamma(p+1) = p\,\Gamma(p) \Rightarrow \Gamma(p) = (p-1)!\]</div>
+<p>where <span class="math notranslate nohighlight">\(p&gt;0\)</span> is the only requirement for this function now.</p>
+<p>For <span class="math notranslate nohighlight">\(t^n\)</span> we can use this result, there are some values of <span class="math notranslate nohighlight">\(\Gamma(p)\)</span> which are exact and useful, the most important being <span class="math notranslate nohighlight">\(\Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}\)</span>.  Using this result, we see that to find <span class="math notranslate nohighlight">\(\mathcal{L}[t^{1/2}]\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[t^{1/2}] = \int_0^\infty t^{1/2}\,e^{-pt}\,\mathrm{d}t = \]</div>
+<div class="seealso dropdown admonition">
+<p class="admonition-title">Worked examples</p>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[g(t) = t^{3/2}\]</div>
+<ol class="arabic simple" start="2">
+<li></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f(t) = (10t)^{3/2}\]</div>
+</div>
+<div class="seealso dropdown admonition">
+<p class="admonition-title">Worked examples solutions</p>
+<ol class="arabic simple">
+<li><p>For <span class="math notranslate nohighlight">\(g(t) = t^{3/2}\)</span>, we’ll need to notice that:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\int_0^t \sqrt{v} \, dv = \frac{2}{3} t^{3/2} \quad \Rightarrow \quad t^{3/2} = \frac{3}{2} \int_0^t \sqrt{v} \, dv\]</div>
+<p>Now, using</p>
+<div class="math notranslate nohighlight">
+\[f(t) = \sqrt{t}, \quad F(p) = \frac{\sqrt{\pi}}{2p^{3/2}}\]</div>
+<p>Then we get the following:</p>
+<div class="math notranslate nohighlight">
+\[G(p) = \frac{3 \sqrt{\pi}}{4 p^{5/2}}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>For <span class="math notranslate nohighlight">\(f(t) = (10t)^{3/2}\)</span>, we will use #24 along with the answer from the previous part. To see this, note that if <span class="math notranslate nohighlight">\(g(t) = t^{3/2}\)</span>, then:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f(t) = g(10t)\]</div>
+<p>Therefore, the transform is:</p>
+<div class="math notranslate nohighlight">
+\[F(p) = \frac{1}{10} G\left(\frac{p}{10}\right) = \frac{1}{10} \left( \frac{3 \sqrt{\pi}}{4 \left( \frac{p}{10} \right)^{5/2}} \right) = \frac{10^{3/2} 3 \sqrt{\pi}}{4 p^{5/2}}\]</div>
+</div>
+</section>
+<section id="solving-ode-using-the-laplace-transform">
+<h3>Solving ODE Using the Laplace Transform<a class="headerlink" href="#solving-ode-using-the-laplace-transform" title="Permalink to this heading">#</a></h3>
+<p>Applying the Laplace transform method is convenient if:</p>
+<ul class="simple">
+<li><p>The variable <span class="math notranslate nohighlight">\( x \)</span> is defined in the interval <span class="math notranslate nohighlight">\( [0, \infty) \)</span> (e.g., coordinate of a point in a semi-infinite metal rod or time).</p></li>
+<li><p>The values of the function <span class="math notranslate nohighlight">\( f(x) \)</span> and its derivatives are zero for <span class="math notranslate nohighlight">\( x = 0 \)</span>.</p></li>
+</ul>
+<p>For example, consider the differential equation:</p>
+<div class="math notranslate nohighlight">
+\[f''(x) + 4 f'(x) + 4 f(x) = x^2 e^{-2x}\]</div>
+<p>with initial conditions <span class="math notranslate nohighlight">\( f(0) = 0 \)</span> and <span class="math notranslate nohighlight">\( f'(0) = 0 \)</span>. Taking the Laplace transform of the equation gives:</p>
+<div class="math notranslate nohighlight">
+\[p^2 \mathcal{L}[f] + 4 p \mathcal{L}[f] + 4 \mathcal{L}[f] = \mathcal{L}[x^2 e^{-2x}]\]</div>
+<p>Given the initial conditions, we simplify:</p>
+<div class="math notranslate nohighlight">
+\[(p + 2)^2 \mathcal{L}[f] = \mathcal{L}[x^2 e^{-2x}]\]</div>
+<p>Using a table of Laplace transforms, we find:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[x^2 e^{-2x}] = \frac{2}{(p + 2)^3}\]</div>
+<p>Thus, the transformed equation becomes:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[f] = \frac{2}{(p + 2)^5}\]</div>
+<p>By referring to a Laplace transform table, we find that the solution of the ODE is:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{1}{12} x^4 e^{-2x}\]</div>
+</section>
+</section>
+<section id="table-of-laplace-transforms">
+<h2>Table of Laplace Transforms<a class="headerlink" href="#table-of-laplace-transforms" title="Permalink to this heading">#</a></h2>
+<p>We can put together these transforms into a table:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(f(t)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(L\{f(t)\} = F(p)\)</span></p></th>
+<th class="head"><p>Conditions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{p}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p &gt; 0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(t\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{p^2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p &gt; 0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(t^n\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{n!}{p^{n+1}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p &gt; 0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(e^{at}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{p-a}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p &gt; a\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sin(at)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{a}{p^2 + a^2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p &gt; 0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cos(at)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{p}{p^2 + a^2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p &gt; 0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sinh(at)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{a}{p^2 - a^2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p &gt; |a|\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cosh(at)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{p}{p^2 - a^2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p &gt; |a|\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(e^{at} \sin(bt)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{b}{(p-a)^2 + b^2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p &gt; a\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(e^{at} \cos(bt)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{p-a}{(p-a)^2 + b^2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p &gt; a\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(t \sin(bt)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{2b}{(p^2 + b^2)^2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p &gt; 0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(t \cos(bt)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{p(p^2 - b^2)}{(p^2 + b^2)^2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p &gt; 0\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Given the functions <span class="math notranslate nohighlight">\(f(t)\)</span> and <span class="math notranslate nohighlight">\(g(t)\)</span>, and their respective Laplace transforms <span class="math notranslate nohighlight">\(F(p)\)</span> and <span class="math notranslate nohighlight">\(G(p)\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+f(t) &amp;= \mathcal{L}^{-1}[F(p)],\\
+g(t) &amp;= \mathcal{L}^{-1}[G(p)],
+\end{align}\end{split}\]</div>
+<p>then we can define a bunch of different Laplace Transforms properties:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Time domain <span class="math notranslate nohighlight">\(t\)</span></strong></p></th>
+<th class="head"><p><strong>Laplace domain <span class="math notranslate nohighlight">\(p\)</span></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Linearity</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\( a f(t) + b g(t) \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( a F(p) + b G(p) \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Frequency-domain derivative</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\( t f(t) \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( -F'(p) \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Frequency-domain general derivative</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\( t^n f(t) \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( (-1)^n F^{(n)}(p) \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Derivative</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\( f'(t) \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( p F(p) - f(0^{-}) \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Second derivative</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\( f''(t) \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( p^2 F(p) - p f(0) - f'(0) \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>General derivative</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\( f^{(n)}(t) \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( p^n F(p) - \sum_{k=1}^{n} p^{n-k} f^{(k-1)}(0) \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Frequency shifting</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\( e^{at} f(t) \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( F(p - a) \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Time shifting I</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\( f(t - a) u(t - a) \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( e^{-ap} F(p) \)</span> *</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Time shifting II</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\( f(t) u(t - a) \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( e^{-ap} \mathcal{L}\{f(t + a)] \)</span> *</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Time scaling</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\( f(at) \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( \frac{1}{a} F \left( \frac{p}{a} \right) \)</span></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>where <span class="math notranslate nohighlight">\(u(t)\)</span> is the Heavisde step function.</p></li>
+</ul>
+</section>
+<section id="fourier-transform">
+<h2>Fourier Transform<a class="headerlink" href="#fourier-transform" title="Permalink to this heading">#</a></h2>
+<p>There is some relationship between Laplace transforms and Fourier transforms.</p>
+<p>One definition of a Fourier transform is:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{F}[f(x)] = \tilde{f}(k) = \frac{1}{\sqrt{2\pi}}\,\int_{-\infty}^\infty f(x)\,e^{-ikx}\,\mathrm{d}x\]</div>
+<p>with the inverse transform looking like:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \mathcal{F}^{-1}[\tilde{f}(k) = \frac{1}{\sqrt{2\pi}}\,\int_{-\infty}^\infty \tilde{f}(x)\,e^{ikx}\,\mathrm{d}x\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="variationofparameters.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Variation of Parameters</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="diracdelta.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Dirac Delta Function</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transforms">Laplace Transforms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prototype-laplace-integral">The prototype Laplace integral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-a-constant">Transforming a constant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-an-exponential-function">Transforming an exponential function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-a-trigonometric-function">Transforming a trigonometric function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-a-power-of-t">Transforming a power of <span class="math notranslate nohighlight">\(t\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#side-note">Side note</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity-of-the-laplace-transform">Linearity of the Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-derivatives">Laplace Transform of Derivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fractional-powers-of-t">Fractional powers of <span class="math notranslate nohighlight">\(t\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-ode-using-the-laplace-transform">Solving ODE Using the Laplace Transform</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-laplace-transforms">Table of Laplace Transforms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-transform">Fourier Transform</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PHAS0026 Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
