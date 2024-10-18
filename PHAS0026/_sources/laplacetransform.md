@@ -483,7 +483,7 @@ If the powers of $t$ are not a positive integer, then the situation is more comp
 But if $n$ is not a natural number, then we will need to rely on the Gamma function $\Gamma(p)$, this is a natural generalisation of the factorial function:
 
 ```{math}
-\Gamma(p) &= \int_0^\infty t^{p-1}\,e^{-t}\,\mathrm{d}t\\
+\Gamma(p) = \int_0^\infty t^{p-1}\,e^{-t}\,\mathrm{d}t
 ```
 
 this has the property that:
@@ -495,8 +495,39 @@ where $p>0$ is the only requirement for this function now.
 For $t^n$ we can use this result, there are some values of $\Gamma(p)$ which are exact and useful, the most important being $\Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}$.  Using this result, we see that to find $\mathcal{L}[t^{1/2}]$:
 
 ```{math}
-\mathcal{L}[t^{1/2}] = \int_0^\infty t^{1/2}\,e^{-pt}\,\mathrm{d}t = 
+\mathcal{L}[t^{1/2}] = \int_0^\infty t^{1/2}\,e^{-pt}\,\mathrm{d}t 
 ```
+
+Solving this by parts:
+```{math}
+u = t^{1/2} &\qquad v' = e^{-pt}\\
+u' = \frac{1}{2}t^{-1/2} &\qquad v = -\frac{1}{p}e^{-pt}
+```
+
+meaning that:
+```{math}
+\mathcal{L}[t^{1/2}] = -\left[ \frac{t^{1/2}}{p}e^{-pt} \right]_0^\infty + \frac{1}{2p}\int_0^\infty t^{-1/2}\,e^{-pt}\,\mathrm{d}t 
+```
+
+and we notice that $\Gamma\left(\frac{1}{2}\right)$ has the form:
+```{math}
+\Gamma\left(\frac{1}{2}\right) = \int_0^\infty t^{-1/2}\,e^{-t}\,\mathrm{d}t = \sqrt{\pi}
+```
+so by changing variables we see that:
+```{math}
+\int_0^\infty t^{-1/2}\,e^{-pt}\,\mathrm{d}t  = \frac{1}{p^{-1/2}\,p}\int_0^\infty (pt)^{-1/2}\,e^{-pt}\,\mathrm{d}(pt) = \frac{\sqrt{\pi}}{p^{1/2}}
+```
+
+and so:
+```{math}
+\mathcal{L}[t^{1/2}] = -\left[ \frac{t^{1/2}}{p}e^{-pt} \right]_0^\infty + \frac{1}{2p}\frac{\sqrt{\pi}}{p^{1/2}}
+```
+
+since the first term goes to zero, this means:
+```{math}
+\mathcal{L}[t^{1/2}] = \frac{\sqrt{\pi}}{2p^{3/2}}
+```
+
 
 ````{admonition} Worked examples
 :class: seealso, dropdown

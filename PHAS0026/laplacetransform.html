@@ -721,14 +721,33 @@ So, we then have:</p>
 \[\mathcal{L}[t^n] = \frac{n}{p}\mathcal{L}[t^{n-1}] = \frac{n(n-1)}{p^2}\mathcal{L}[t^{n-2}] = \dots = \frac{n!}{p^{n+1}}\]</div>
 <p>But if <span class="math notranslate nohighlight">\(n\)</span> is not a natural number, then we will need to rely on the Gamma function <span class="math notranslate nohighlight">\(\Gamma(p)\)</span>, this is a natural generalisation of the factorial function:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\Gamma(p) &amp;= \int_0^\infty t^{p-1}\,e^{-t}\,\mathrm{d}t\\\end{split}\]</div>
+\[\Gamma(p) = \int_0^\infty t^{p-1}\,e^{-t}\,\mathrm{d}t\]</div>
 <p>this has the property that:</p>
 <div class="math notranslate nohighlight">
 \[\Gamma(p+1) = p\,\Gamma(p) \Rightarrow \Gamma(p) = (p-1)!\]</div>
 <p>where <span class="math notranslate nohighlight">\(p&gt;0\)</span> is the only requirement for this function now.</p>
 <p>For <span class="math notranslate nohighlight">\(t^n\)</span> we can use this result, there are some values of <span class="math notranslate nohighlight">\(\Gamma(p)\)</span> which are exact and useful, the most important being <span class="math notranslate nohighlight">\(\Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}\)</span>.  Using this result, we see that to find <span class="math notranslate nohighlight">\(\mathcal{L}[t^{1/2}]\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{L}[t^{1/2}] = \int_0^\infty t^{1/2}\,e^{-pt}\,\mathrm{d}t = \]</div>
+\[\mathcal{L}[t^{1/2}] = \int_0^\infty t^{1/2}\,e^{-pt}\,\mathrm{d}t \]</div>
+<p>Solving this by parts:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u = t^{1/2} &amp;\qquad v' = e^{-pt}\\
+u' = \frac{1}{2}t^{-1/2} &amp;\qquad v = -\frac{1}{p}e^{-pt}\end{split}\]</div>
+<p>meaning that:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[t^{1/2}] = -\left[ \frac{t^{1/2}}{p}e^{-pt} \right]_0^\infty + \frac{1}{2p}\int_0^\infty t^{-1/2}\,e^{-pt}\,\mathrm{d}t \]</div>
+<p>and we notice that <span class="math notranslate nohighlight">\(\Gamma\left(\frac{1}{2}\right)\)</span> has the form:</p>
+<div class="math notranslate nohighlight">
+\[\Gamma\left(\frac{1}{2}\right) = \int_0^\infty t^{-1/2}\,e^{-t}\,\mathrm{d}t = \sqrt{\pi}\]</div>
+<p>so by changing variables we see that:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^\infty t^{-1/2}\,e^{-pt}\,\mathrm{d}t  = \frac{1}{p^{-1/2}\,p}\int_0^\infty (pt)^{-1/2}\,e^{-pt}\,\mathrm{d}(pt) = \frac{\sqrt{\pi}}{p^{1/2}}\]</div>
+<p>and so:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[t^{1/2}] = -\left[ \frac{t^{1/2}}{p}e^{-pt} \right]_0^\infty + \frac{1}{2p}\frac{\sqrt{\pi}}{p^{1/2}}\]</div>
+<p>since the first term goes to zero, this means:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[t^{1/2}] = \frac{\sqrt{\pi}}{2p^{3/2}}\]</div>
 <div class="seealso dropdown admonition">
 <p class="admonition-title">Worked examples</p>
 <ol class="arabic simple">
