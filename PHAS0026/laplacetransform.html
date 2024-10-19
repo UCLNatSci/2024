@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Integral Transforms &#8212; PHAS0026 Notes</title>
+    <title>Laplace Transforms &#8212; PHAS0026 Notes</title>
   
   
   
@@ -185,11 +185,13 @@
 <li class="toctree-l1"><a class="reference internal" href="ODEs.html">Linear Ordinary Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="independent_functions.html">Independence of Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variationofparameters.html">Variation of Parameters</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integral Transforms</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Laplace Transforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diracdelta.html">The Dirac Delta Function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sturmliouville.html">Sturm-Liouville Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integraltransforms.html">Integral Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensors.html">Cartesian Tensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pdes.html">Partial Differential Equations</a></li>
 </ul>
 
     </div>
@@ -375,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Integral Transforms</h1>
+    <h1>Laplace Transforms</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,7 +387,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transforms">Laplace Transforms</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defintion">Defintion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prototype-laplace-integral">The prototype Laplace integral</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-a-constant">Transforming a constant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-an-exponential-function">Transforming an exponential function</a></li>
@@ -417,10 +419,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="integral-transforms">
-<h1>Integral Transforms<a class="headerlink" href="#integral-transforms" title="Link to this heading">#</a></h1>
-<section id="laplace-transforms">
-<h2>Laplace Transforms<a class="headerlink" href="#laplace-transforms" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="laplace-transforms">
+<h1>Laplace Transforms<a class="headerlink" href="#laplace-transforms" title="Link to this heading">#</a></h1>
+<section id="defintion">
+<h2>Defintion<a class="headerlink" href="#defintion" title="Link to this heading">#</a></h2>
 <p>A function is called <em>piecewise continuous</em> on an interval if the interval can be broken into a finite number of subintervals on which the function is continuous on each open subinterval (i.e., the subinterval without its endpoints) and has a finite limit at the endpoints of each subinterval.</p>
 <p>Suppose that <span class="math notranslate nohighlight">\(f(t)\)</span> is a piecewise continuous function. The Laplace transform of <span class="math notranslate nohighlight">\(f(t)\)</span> is denoted <span class="math notranslate nohighlight">\(\mathcal{L}[f(t)]\)</span> and defined as</p>
 <div class="math notranslate nohighlight">
@@ -1048,7 +1050,7 @@ g(t) &amp;= \mathcal{L}^{-1}[G(p)],
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transforms">Laplace Transforms</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defintion">Defintion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prototype-laplace-integral">The prototype Laplace integral</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-a-constant">Transforming a constant</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-an-exponential-function">Transforming an exponential function</a></li>

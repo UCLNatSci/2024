@@ -1,6 +1,6 @@
-#  Integral Transforms
+# Laplace Transforms
 
-## Laplace Transforms
+## Defintion
 
 A function is called *piecewise continuous* on an interval if the interval can be broken into a finite number of subintervals on which the function is continuous on each open subinterval (i.e., the subinterval without its endpoints) and has a finite limit at the endpoints of each subinterval.
 
