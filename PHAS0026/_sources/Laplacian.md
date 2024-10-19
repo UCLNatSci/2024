@@ -97,6 +97,47 @@ By referring to a Laplace transform table, we find that the solution of the ODE 
 f(x) = \frac{1}{12} x^4 e^{-2x}
 ```
 
+
+
+## Table of Laplace Transforms
+
+Given the functions $f(t)$ and $g(t)$, and their respective Laplace transforms $F(p)$ and $G(p)$ such that:
+
+```{math}
+\begin{align}
+f(t) &= \mathcal{L}^{-1}\{F\}(p),\\
+g(t) &= \mathcal{L}^{-1}\{G\}(p),
+\end{align}
+```
+then we can define a bunch of different Laplace Transforms and their properties:
+
+| **Property** | **Time domain $t$** | **Laplace domain $p$** |
+|--------------|-----------------|--------------|
+| **Linearity** | $ a f(t) + b g(t) $ | $ a F(p) + b G(p) $ |
+| **Frequency-domain derivative** | $ t f(t) $ | $ -F'(p) $ |
+| **Frequency-domain general derivative** | $ t^n f(t) $ | $ (-1)^n F^{(n)}(p) $ |
+| **Derivative** | $ f'(t) $ | $ p F(p) - f(0^{-}) $ |
+| **Second derivative** | $ f''(t) $ | $ p^2 F(p) - p f(0) - f'(0) $ |
+| **General derivative** | $ f^{(n)}(t) $ | $ p^n F(p) - \sum_{k=1}^{n} p^{n-k} f^{(k-1)}(0) $ |
+| **Frequency shifting** | $ e^{at} f(t) $ | $ F(p - a) $ |
+| **Time shifting I** | $ f(t - a) u(t - a) $ | $ e^{-ap} F(p) $ *|
+| **Time shifting II** | $ f(t) u(t - a) $ | $ e^{-ap} \mathcal{L}\{f(t + a)\} $ *|
+| **Time scaling** | $ f(at) $ | $ \frac{1}{a} F \left( \frac{p}{a} \right) $ |
+
+* where $u(t)$ is the Heavisde step function.
+
+
 ## Fourier Transform
 
 There is some relationship between Laplace transforms and Fourier transforms.
+
+One definition of a Fourier transform is:
+```{math}
+\mathcal{F}[f(x)] = \tilde{f}(k) = \frac{1}{\sqrt{2\pi}}\,\int_{-\infty}^\infty f(x)\,e^{-ikx}\,\mathrm{d}x
+```
+
+with the inverse transform looking like:
+
+```{math}
+f(x) = \mathcal{F}^{-1}[\tilde{f}(k) = \frac{1}{\sqrt{2\pi}}\,\int_{-\infty}^\infty \tilde{f}(x)\,e^{ikx}\,\mathrm{d}x
+```

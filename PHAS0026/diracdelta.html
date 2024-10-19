@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>The Dirac Delta Function &#8212; PHAS0026 Notes</title>
   
@@ -15,58 +14,55 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'diracdelta';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Green’s Functions" href="greensfunction.html" />
+    <link rel="next" title="Green’s functions" href="greensfunction.html" />
     <link rel="prev" title="Integral Transforms" href="laplacetransform.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="PHAS0026 Notes - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="PHAS0026 Notes - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -164,7 +187,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="variationofparameters.html">Variation of Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="laplacetransform.html">Integral Transforms</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The Dirac Delta Function</a></li>
-<li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sturmliouville.html">Sturm-Liouville Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integraltransforms.html">Integral Transforms</a></li>
 </ul>
 
     </div>
@@ -180,7 +205,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -189,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -318,26 +343,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -359,9 +386,14 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-dirac-delta-function">Properties of the Dirac Delta Function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-the-dirac-delta-function">Laplace Transform of the Dirac Delta Function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-of-the-dirac-delta-function">Derivatives of the Dirac Delta Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-delta-function">Properties of the <span class="math notranslate nohighlight">\( \delta \)</span>-function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-delta-ax">Calculating <span class="math notranslate nohighlight">\( \delta(ax) \)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-the-dirac-delta-function">Laplace transform of the Dirac delta function.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-of-the-dirac-delta-function">Derivatives of the Dirac delta function.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-generalized-functions">Other generalized functions.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-distribution">Gaussian distribution.</a></li>
 </ul>
             </nav>
         </div>
@@ -371,45 +403,123 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-dirac-delta-function">
-<h1>The Dirac Delta Function<a class="headerlink" href="#the-dirac-delta-function" title="Permalink to this heading">#</a></h1>
+<h1>The Dirac Delta Function<a class="headerlink" href="#the-dirac-delta-function" title="Link to this heading">#</a></h1>
 <section id="definition">
-<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
-<p>We define the Dirac delta function <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> with the following properties:</p>
+<h2>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
+<p>Let us introduce a function <span class="math notranslate nohighlight">\( \delta(x) \)</span> with properties:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\delta(x - a) = 
+\[\begin{split}\delta(x - a) =
 \begin{cases}
-0 \quad \text{if } x \neq a \\
-1 \quad \text{if } x = a
+0 &amp; \text{if } x \neq a \\
+\infty &amp; \text{if } x = a
 \end{cases}\end{split}\]</div>
+<p>where constant <span class="math notranslate nohighlight">\( a \)</span> is finite and</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} \delta(x - a) dx = 1\]</div>
-<p>This function is also called the <strong>impulse function</strong>, as it represents an external perturbation that is finite in magnitude but infinitely short in duration.</p>
-<p>The delta function belongs to a class of generalized functions, meaning its properties are determined by integrals with <strong>probe functions</strong> <span class="math notranslate nohighlight">\( f(x) \)</span>:</p>
+\[\int_{-\infty}^{\infty} \delta(x) \, dx = 1.\]</div>
+<p>This function is also called the impulse function because it can be used to represent external perturbations: finite in magnitude and infinitely short in duration.</p>
+<p>The <span class="math notranslate nohighlight">\( \delta \)</span>-function belongs to a class of generalized functions, i.e., its properties are determined by the properties of integrals with probe functions <span class="math notranslate nohighlight">\( f(x) \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} f(x) \delta(x - a) dx = f(a)\]</div>
-</section>
-<section id="properties-of-the-dirac-delta-function">
-<h2>Properties of the Dirac Delta Function<a class="headerlink" href="#properties-of-the-dirac-delta-function" title="Permalink to this heading">#</a></h2>
+\[\int_{-\infty}^{\infty} f(x) \delta(x - a) \, dx = f(a).\]</div>
+<p>Where:</p>
 <ol class="arabic simple">
-<li><p><strong>Scaling</strong>: <span class="math notranslate nohighlight">\( \delta(ax) = \frac{1}{|a|} \delta(x) \)</span></p></li>
-<li><p><strong>Sifting Property</strong>: <span class="math notranslate nohighlight">\( \int_{-\infty}^{\infty} f(x) \delta(x - x_0) dx = f(x_0) \)</span></p></li>
-<li><p><strong>Even Function</strong>: <span class="math notranslate nohighlight">\( \delta(-x) = \delta(x) \)</span></p></li>
+<li><p>The function <span class="math notranslate nohighlight">\( f(x) \)</span> is defined on a required interval of <span class="math notranslate nohighlight">\( x \)</span>, e.g., <span class="math notranslate nohighlight">\( x \in (-1, +1) \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( f(x) \)</span> and all of its derivatives are continuous and finite functions of <span class="math notranslate nohighlight">\( x \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( f(x) = 0 \)</span> for all values of <span class="math notranslate nohighlight">\( x \)</span> outside of some finite interval <span class="math notranslate nohighlight">\( [x_1, x_2] \)</span>.</p></li>
 </ol>
 </section>
-<section id="laplace-transform-of-the-dirac-delta-function">
-<h2>Laplace Transform of the Dirac Delta Function<a class="headerlink" href="#laplace-transform-of-the-dirac-delta-function" title="Permalink to this heading">#</a></h2>
-<p>The Laplace transform of <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> is:</p>
+<section id="properties-of-the-delta-function">
+<h2>Properties of the <span class="math notranslate nohighlight">\( \delta \)</span>-function<a class="headerlink" href="#properties-of-the-delta-function" title="Link to this heading">#</a></h2>
+<p>It follows from the definition that a product of <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> and any finite function is zero everywhere except at <span class="math notranslate nohighlight">\( x = a \)</span>. Hence,</p>
 <div class="math notranslate nohighlight">
-\[L[\delta(x - a)] = \int_0^{\infty} \delta(x - a) e^{-px} dx = e^{-pa}, \quad a &gt; 0\]</div>
+\[\int_{-\infty}^{\infty} f(x) \delta(x - x_0) \, dx = f(x_0) \int_{-\infty}^{\infty} \delta(x - x_0) \, dx = f(x_0).\]</div>
+<p>To find <span class="math notranslate nohighlight">\( \delta(\delta x) \)</span>, we need to consider the integral</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f(x) \delta(-x) \, dx.\]</div>
+<p>After substituting <span class="math notranslate nohighlight">\( x = -t \)</span> and <span class="math notranslate nohighlight">\( dx = -dt \)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f(x) \delta(-x) \, dx = \int_{-\infty}^{\infty} f(-t) \delta(t) (-dt) = \int_{-\infty}^{\infty} f(-t) \delta(t) \, dt = f(0).\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f(x) \delta(-x) \, dx = \int_{-\infty}^{\infty} f(t) \delta(t) \, dt.\]</div>
+<p>For any probe function <span class="math notranslate nohighlight">\( f(x) \)</span>, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[\delta(-x) = \delta(x).\]</div>
+</section>
+<section id="calculating-delta-ax">
+<h2>Calculating <span class="math notranslate nohighlight">\( \delta(ax) \)</span><a class="headerlink" href="#calculating-delta-ax" title="Link to this heading">#</a></h2>
+<p>Similarly, to calculate <span class="math notranslate nohighlight">\( \delta(ax) \)</span>, we need to consider the integral:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f(x) \delta(ax) \, dx.\]</div>
+<p>Substitute <span class="math notranslate nohighlight">\( ax = t \)</span>, then <span class="math notranslate nohighlight">\( dx = \frac{dt}{a} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f(x) \delta(ax) \, dx = \int_{-\infty}^{\infty} f\left(\frac{t}{a}\right) \delta(t) \, dt = f\left(\frac{0}{a}\right) = f(0).\]</div>
+<p>Hence,</p>
+<div class="math notranslate nohighlight">
+\[\delta(ax) = \frac{1}{|a|} \delta(x).\]</div>
+<p>Thus, for negative <span class="math notranslate nohighlight">\( b \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\delta(ax) = \frac{1}{|a|} \delta(x).\]</div>
+<p>By combining <span class="math notranslate nohighlight">\( \delta(-x) = \delta(x) \)</span> and <span class="math notranslate nohighlight">\( \delta(ax) = \frac{1}{a} \delta(x) \)</span>, we obtain</p>
+<div class="math notranslate nohighlight">
+\[\delta(ax) = \frac{1}{|a|} \delta(x)\]</div>
+<p>for any real <span class="math notranslate nohighlight">\( a \)</span>.</p>
+</section>
+<section id="laplace-transform-of-the-dirac-delta-function">
+<h2>Laplace transform of the Dirac delta function.<a class="headerlink" href="#laplace-transform-of-the-dirac-delta-function" title="Link to this heading">#</a></h2>
+<p>Evaluate <span class="math notranslate nohighlight">\( L[\delta(x - a)] \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[L[\delta(x - a)] = \int_{-\infty}^{\infty} \delta(x - a) e^{-px} dx = e^{-pa} \quad (\text{for } a &gt; 0)\]</div>
 </section>
 <section id="derivatives-of-the-dirac-delta-function">
-<h2>Derivatives of the Dirac Delta Function<a class="headerlink" href="#derivatives-of-the-dirac-delta-function" title="Permalink to this heading">#</a></h2>
-<p>We can extend the concept of the Dirac delta function to its derivatives. The nth derivative of the delta function, <span class="math notranslate nohighlight">\( \delta^{(n)}(x - a) \)</span>, satisfies:</p>
+<h2>Derivatives of the Dirac delta function.<a class="headerlink" href="#derivatives-of-the-dirac-delta-function" title="Link to this heading">#</a></h2>
+<p>To attach meaning to <span class="math notranslate nohighlight">\( \delta'(x - a) \)</span>, consider</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} f(x) \delta^{(n)}(x - a) dx = (-1)^n f^{(n)}(a)\]</div>
+\[\int_{-\infty}^{\infty} f(x) \delta'(x - a) dx = f(x) \delta(x - a) \Big|_{+1} - \int_{-\infty}^{\infty} f'(x) \delta(x - a) dx = - f'(a).\]</div>
+<p>The term <span class="math notranslate nohighlight">\( f(x) \delta(x - a) \Big|_{+1} \)</span> equals zero because probe functions <span class="math notranslate nohighlight">\( f(x) = 0 \)</span> for all <span class="math notranslate nohighlight">\( x \)</span> outside of some finite interval <span class="math notranslate nohighlight">\( [x_1, x_2] \)</span>.</p>
+<p>Similarly, we can find the nth derivative of <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> by calculating</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f(x) \delta^{(n)}(x - a) dx.\]</div>
+<p>Integrating by parts <span class="math notranslate nohighlight">\( n \)</span> times gives:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f(x) \delta^{(n)}(x - a) dx = (-1)^n \int_{-\infty}^{\infty} f^{(n)}(x) \delta(x - a) dx = (-1)^n f^{(n)}(a).\]</div>
+<section id="other-generalized-functions">
+<h3>Other generalized functions.<a class="headerlink" href="#other-generalized-functions" title="Link to this heading">#</a></h3>
+<p>Consider the following examples:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\( x \delta(x) \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f(x) [x \delta(x)] dx = \int_{-\infty}^{\infty} [f(x) x] \delta(x) dx = 0 \cdot f(0) = 0.\]</div>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\( x \delta'(x) \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f(x) [x \delta'(x)] dx = x f(x) \delta(x) \Big|_{-\infty}^{\infty} - \int_{-\infty}^{\infty} [f(x) + x f'(x)] \delta(x) dx = - f(0).\]</div>
+<ol class="arabic simple" start="3">
+<li><p><span class="math notranslate nohighlight">\( x^2 \delta''(x) \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f(x) [x^2 \delta''(x)] dx = x f(x) \delta(x) \Big|_{-\infty}^{\infty} + \int_{-\infty}^{\infty} [2x f(x) + x^2 f'(x)] \delta(x) dx = 2 f(0).\]</div>
+<p>Thus,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( x \delta(x) = 0 \)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\( x \delta'(x) = - \delta(x) \)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\( x^2 \delta''(x) = 2 \delta(x) \)</span>.</p></li>
+</ul>
+</section>
+</section>
+<section id="gaussian-distribution">
+<h2>Gaussian distribution.<a class="headerlink" href="#gaussian-distribution" title="Link to this heading">#</a></h2>
+<p>The normal distribution, also known as the Gaussian distribution, is given by</p>
+<div class="math notranslate nohighlight">
+\[g(x, a, \sigma) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x - a)^2}{2\sigma^2}}.\]</div>
+<p>In the limit of infinitely small <span class="math notranslate nohighlight">\( \sigma \)</span> (<span class="math notranslate nohighlight">\( \sigma \to 0 \)</span>), the function <span class="math notranslate nohighlight">\( g(x, a, \sigma) \)</span> behaves similarly to <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> in that:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\sigma \to 0} \int_{-\infty}^{\infty} f(x) g(x, a, \sigma) dx = f(a).\]</div>
+<p>Yet, we will not equate <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> and <span class="math notranslate nohighlight">\( \lim_{\sigma \to 0} g(x, a, \sigma) \)</span> because <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> is a generalized function defined via its integral with other functions, while <span class="math notranslate nohighlight">\( g(x, a, \sigma) \)</span> is a function in the usual sense.</p>
 </section>
 </section>
 
@@ -438,11 +548,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="laplacetransform.html"
@@ -458,14 +567,11 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Green’s Functions</p>
+        <p class="prev-next-title">Green’s functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -474,6 +580,7 @@ document.write(`
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -481,9 +588,14 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-dirac-delta-function">Properties of the Dirac Delta Function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-the-dirac-delta-function">Laplace Transform of the Dirac Delta Function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-of-the-dirac-delta-function">Derivatives of the Dirac Delta Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-delta-function">Properties of the <span class="math notranslate nohighlight">\( \delta \)</span>-function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-delta-ax">Calculating <span class="math notranslate nohighlight">\( \delta(ax) \)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-the-dirac-delta-function">Laplace transform of the Dirac delta function.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-of-the-dirac-delta-function">Derivatives of the Dirac delta function.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-generalized-functions">Other generalized functions.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-distribution">Gaussian distribution.</a></li>
 </ul>
   </nav></div>
 
@@ -505,9 +617,10 @@ By PHAS0026 Team
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -531,8 +644,8 @@ By PHAS0026 Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

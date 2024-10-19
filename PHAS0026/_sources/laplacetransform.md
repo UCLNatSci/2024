@@ -623,6 +623,8 @@ f(x) = \frac{1}{12} x^4 e^{-2x}
 
 ## Table of Laplace Transforms
 
+### Table of Functions
+
 We can put together these transforms into a table:
 
 | $f(t)$             | $L\{f(t)\} = F(p)$               | Conditions  |
@@ -640,6 +642,8 @@ We can put together these transforms into a table:
 | $t \sin(bt)$       | $\frac{2b}{(p^2 + b^2)^2}$       | $p > 0$     |
 | $t \cos(bt)$       | $\frac{p(p^2 - b^2)}{(p^2 + b^2)^2}$ | $p > 0$ |
 
+### Table of Properties
+
 
 Given the functions $f(t)$ and $g(t)$, and their respective Laplace transforms $F(p)$ and $G(p)$ such that:
 
@@ -653,18 +657,18 @@ then we can define a bunch of different Laplace Transforms properties:
 
 | **Property** | **Time domain $t$** | **Laplace domain $p$** |
 |--------------|-----------------|--------------|
-| **Linearity** | $ a f(t) + b g(t) $ | $ a F(p) + b G(p) $ |
-| **Frequency-domain derivative** | $ t f(t) $ | $ -F'(p) $ |
-| **Frequency-domain general derivative** | $ t^n f(t) $ | $ (-1)^n F^{(n)}(p) $ |
-| **Derivative** | $ f'(t) $ | $ p F(p) - f(0^{-}) $ |
-| **Second derivative** | $ f''(t) $ | $ p^2 F(p) - p f(0) - f'(0) $ |
-| **General derivative** | $ f^{(n)}(t) $ | $ p^n F(p) - \sum_{k=1}^{n} p^{n-k} f^{(k-1)}(0) $ |
-| **Frequency shifting** | $ e^{at} f(t) $ | $ F(p - a) $ |
-| **Time shifting I** | $ f(t - a) u(t - a) $ | $ e^{-ap} F(p) $ *|
-| **Time shifting II** | $ f(t) u(t - a) $ | $ e^{-ap} \mathcal{L}\{f(t + a)] $ *|
-| **Time scaling** | $ f(at) $ | $ \frac{1}{a} F \left( \frac{p}{a} \right) $ |
+| Linearity | $ a f(t) + b g(t) $ | $ a F(p) + b G(p) $ |
+| Frequency-domain derivative | $ t f(t) $ | $ -F'(p) $ |
+| Frequency-domain general derivative | $ t^n f(t) $ | $ (-1)^n F^{(n)}(p) $ |
+| Derivative | $ f'(t) $ | $ p F(p) - f(0^{-}) $ |
+| Second derivative | $ f''(t) $ | $ p^2 F(p) - p f(0) - f'(0) $ |
+| General derivative | $ f^{(n)}(t) $ | $ p^n F(p) - \sum_{k=1}^{n} p^{n-k} f^{(k-1)}(0) $ |
+| Frequency shifting | $ e^{at} f(t) $ | $ F(p - a) $ |
+| Time shifting I | $ f(t - a) u(t - a) $ | $ e^{-ap} F(p) $ *|
+| Time shifting II | $ f(t) u(t - a) $ | $ e^{-ap} \mathcal{L}\{f(t + a)] $ *|
+| Time scaling | $ f(at) $ | $ \frac{1}{a} F \left( \frac{p}{a} \right) $ |
 
-* where $u(t)$ is the Heavisde step function.
+* where $u(t)$ is the Heaviside step function.
 
 
 ## Fourier Transform

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Integral Transforms &#8212; PHAS0026 Notes</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laplacetransform';</script>
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="PHAS0026 Notes - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="PHAS0026 Notes - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -165,6 +188,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Integral Transforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diracdelta.html">The Dirac Delta Function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sturmliouville.html">Sturm-Liouville Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integraltransforms.html">Integral Transforms</a></li>
 </ul>
 
     </div>
@@ -180,7 +205,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -189,14 +214,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -318,26 +343,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -373,7 +400,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-ode-using-the-laplace-transform">Solving ODE Using the Laplace Transform</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-laplace-transforms">Table of Laplace Transforms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-laplace-transforms">Table of Laplace Transforms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-functions">Table of Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-properties">Table of Properties</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-transform">Fourier Transform</a></li>
 </ul>
             </nav>
@@ -384,12 +415,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="integral-transforms">
-<h1>Integral Transforms<a class="headerlink" href="#integral-transforms" title="Permalink to this heading">#</a></h1>
+<h1>Integral Transforms<a class="headerlink" href="#integral-transforms" title="Link to this heading">#</a></h1>
 <section id="laplace-transforms">
-<h2>Laplace Transforms<a class="headerlink" href="#laplace-transforms" title="Permalink to this heading">#</a></h2>
+<h2>Laplace Transforms<a class="headerlink" href="#laplace-transforms" title="Link to this heading">#</a></h2>
 <p>A function is called <em>piecewise continuous</em> on an interval if the interval can be broken into a finite number of subintervals on which the function is continuous on each open subinterval (i.e., the subinterval without its endpoints) and has a finite limit at the endpoints of each subinterval.</p>
 <p>Suppose that <span class="math notranslate nohighlight">\(f(t)\)</span> is a piecewise continuous function. The Laplace transform of <span class="math notranslate nohighlight">\(f(t)\)</span> is denoted <span class="math notranslate nohighlight">\(\mathcal{L}[f(t)]\)</span> and defined as</p>
 <div class="math notranslate nohighlight">
@@ -408,7 +439,7 @@ document.write(`
 \[\mathcal{L}[c_1 f(x) + c_2 g(x)] = c_1 \mathcal{L}[f(x)] + c_2 \mathcal{L}[g(x)]\]</div>
 <p>It is straightforward to find the Laplace transform <span class="math notranslate nohighlight">\( F(p) \)</span> of any given function <span class="math notranslate nohighlight">\( f(x) \)</span>. To find the function <span class="math notranslate nohighlight">\( g(x) \)</span> given its Laplace transform <span class="math notranslate nohighlight">\( G(p) \)</span>, refer to a table of Laplace transforms.</p>
 <section id="the-prototype-laplace-integral">
-<h3>The prototype Laplace integral<a class="headerlink" href="#the-prototype-laplace-integral" title="Permalink to this heading">#</a></h3>
+<h3>The prototype Laplace integral<a class="headerlink" href="#the-prototype-laplace-integral" title="Link to this heading">#</a></h3>
 <p>If <span class="math notranslate nohighlight">\(c \neq 0\)</span>, evaluate the following integral:</p>
 <div class="math notranslate nohighlight">
 \[\int_0^\infty e^{ct} \,\mathrm{d}t\]</div>
@@ -425,7 +456,7 @@ document.write(`
 <p>Now that we remember how to do these, let’s compute some Laplace transforms.</p>
 </section>
 <section id="transforming-a-constant">
-<h3>Transforming a constant<a class="headerlink" href="#transforming-a-constant" title="Permalink to this heading">#</a></h3>
+<h3>Transforming a constant<a class="headerlink" href="#transforming-a-constant" title="Link to this heading">#</a></h3>
 <p>Compute <span class="math notranslate nohighlight">\(\mathcal{L}[1]\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{L}[1] = \int_0^\infty e^{-pt} \,\mathrm{d}t\]</div>
@@ -441,7 +472,7 @@ document.write(`
 \[\mathcal{L}[a] = \frac{a}{p}\]</div>
 </section>
 <section id="transforming-an-exponential-function">
-<h3>Transforming an exponential function<a class="headerlink" href="#transforming-an-exponential-function" title="Permalink to this heading">#</a></h3>
+<h3>Transforming an exponential function<a class="headerlink" href="#transforming-an-exponential-function" title="Link to this heading">#</a></h3>
 <p>Compute <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}]\)</span>.</p>
 <p>Plug the function into the definition of the transform and do a little simplification:</p>
 <div class="math notranslate nohighlight">
@@ -454,7 +485,7 @@ document.write(`
 \[\mathcal{L}[e^{at}] = \frac{1}{p-a}, \quad \text{provided } p &gt; a\]</div>
 </section>
 <section id="transforming-a-trigonometric-function">
-<h3>Transforming a trigonometric function<a class="headerlink" href="#transforming-a-trigonometric-function" title="Permalink to this heading">#</a></h3>
+<h3>Transforming a trigonometric function<a class="headerlink" href="#transforming-a-trigonometric-function" title="Link to this heading">#</a></h3>
 <p>Compute <span class="math notranslate nohighlight">\(\mathcal{L}[\sin(at)]\)</span>.</p>
 <p>Plug the function into the definition:</p>
 <div class="math notranslate nohighlight">
@@ -499,7 +530,7 @@ u' = -pe^{-pt} &amp;\qquad v = -\frac{1}{a}\sin(at)\end{split}\]</div>
 <p>As this example shows, computing Laplace transforms is often messy.</p>
 </section>
 <section id="transforming-a-power-of-t">
-<h3>Transforming a power of <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#transforming-a-power-of-t" title="Permalink to this heading">#</a></h3>
+<h3>Transforming a power of <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#transforming-a-power-of-t" title="Link to this heading">#</a></h3>
 <p>Compute <span class="math notranslate nohighlight">\(\mathcal{L}[at]\)</span>.</p>
 <p>Plug the function into the definition:</p>
 <div class="math notranslate nohighlight">
@@ -541,7 +572,7 @@ u' = nat^{n-1} &amp;\qquad v = -\frac{1}{p}e^{-pt}\end{split}\]</div>
 <p>Note that this final step requires that <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span> so that the final term in the chain is <span class="math notranslate nohighlight">\(\mathcal{L}[1]\)</span>.  For other values of <span class="math notranslate nohighlight">\(n\)</span>, we will consider later.</p>
 </section>
 <section id="side-note">
-<h3>Side note<a class="headerlink" href="#side-note" title="Permalink to this heading">#</a></h3>
+<h3>Side note<a class="headerlink" href="#side-note" title="Link to this heading">#</a></h3>
 <p>Before moving on to the next section, we need to do a little side note. On occasion, you will see the following as the definition of the Laplace transform:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{L}[f(t)] = \int_{-\infty}^\infty e^{-pt} f(t) \,\mathrm{d}t\]</div>
@@ -556,7 +587,7 @@ f(t) &amp; \text{if } t \geq 0 \\
 </section>
 </section>
 <section id="linearity-of-the-laplace-transform">
-<h2>Linearity of the Laplace Transform<a class="headerlink" href="#linearity-of-the-laplace-transform" title="Permalink to this heading">#</a></h2>
+<h2>Linearity of the Laplace Transform<a class="headerlink" href="#linearity-of-the-laplace-transform" title="Link to this heading">#</a></h2>
 <p>Given <span class="math notranslate nohighlight">\(f(t)\)</span> and <span class="math notranslate nohighlight">\(g(t)\)</span>, then:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{L}[af(t) + bg(t)] = aF(p) + bG(p)\]</div>
@@ -610,7 +641,7 @@ f(t) &amp; \text{if } t \geq 0 \\
 \[G(p) = \frac{1}{p-3} + \frac{p}{p^2 + 36} - \frac{p-3}{(p-3)^2 + 36}\]</div>
 </div>
 <section id="laplace-transform-of-derivatives">
-<h3>Laplace Transform of Derivatives<a class="headerlink" href="#laplace-transform-of-derivatives" title="Permalink to this heading">#</a></h3>
+<h3>Laplace Transform of Derivatives<a class="headerlink" href="#laplace-transform-of-derivatives" title="Link to this heading">#</a></h3>
 <p>Consider Laplace transforms of <span class="math notranslate nohighlight">\( f'(x) \)</span> and <span class="math notranslate nohighlight">\( f''(x) \)</span>, lets find these explictly:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\( \mathcal{L}[f'] \)</span>:</p></li>
@@ -715,7 +746,7 @@ So, we then have:</p>
 </div>
 </section>
 <section id="fractional-powers-of-t">
-<h3>Fractional powers of <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#fractional-powers-of-t" title="Permalink to this heading">#</a></h3>
+<h3>Fractional powers of <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#fractional-powers-of-t" title="Link to this heading">#</a></h3>
 <p>If the powers of <span class="math notranslate nohighlight">\(t\)</span> are not a positive integer, then the situation is more complicated.  We relied on the fact that:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{L}[t^n] = \frac{n}{p}\mathcal{L}[t^{n-1}] = \frac{n(n-1)}{p^2}\mathcal{L}[t^{n-2}] = \dots = \frac{n!}{p^{n+1}}\]</div>
@@ -785,7 +816,7 @@ u' = \frac{1}{2}t^{-1/2} &amp;\qquad v = -\frac{1}{p}e^{-pt}\end{split}\]</div>
 </div>
 </section>
 <section id="solving-ode-using-the-laplace-transform">
-<h3>Solving ODE Using the Laplace Transform<a class="headerlink" href="#solving-ode-using-the-laplace-transform" title="Permalink to this heading">#</a></h3>
+<h3>Solving ODE Using the Laplace Transform<a class="headerlink" href="#solving-ode-using-the-laplace-transform" title="Link to this heading">#</a></h3>
 <p>Applying the Laplace transform method is convenient if:</p>
 <ul class="simple">
 <li><p>The variable <span class="math notranslate nohighlight">\( x \)</span> is defined in the interval <span class="math notranslate nohighlight">\( [0, \infty) \)</span> (e.g., coordinate of a point in a semi-infinite metal rod or time).</p></li>
@@ -812,9 +843,11 @@ u' = \frac{1}{2}t^{-1/2} &amp;\qquad v = -\frac{1}{p}e^{-pt}\end{split}\]</div>
 </section>
 </section>
 <section id="table-of-laplace-transforms">
-<h2>Table of Laplace Transforms<a class="headerlink" href="#table-of-laplace-transforms" title="Permalink to this heading">#</a></h2>
+<h2>Table of Laplace Transforms<a class="headerlink" href="#table-of-laplace-transforms" title="Link to this heading">#</a></h2>
+<section id="table-of-functions">
+<h3>Table of Functions<a class="headerlink" href="#table-of-functions" title="Link to this heading">#</a></h3>
 <p>We can put together these transforms into a table:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(f(t)\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(L\{f(t)\} = F(p)\)</span></p></th>
@@ -872,6 +905,10 @@ u' = \frac{1}{2}t^{-1/2} &amp;\qquad v = -\frac{1}{p}e^{-pt}\end{split}\]</div>
 </tr>
 </tbody>
 </table>
+</div>
+</section>
+<section id="table-of-properties">
+<h3>Table of Properties<a class="headerlink" href="#table-of-properties" title="Link to this heading">#</a></h3>
 <p>Given the functions <span class="math notranslate nohighlight">\(f(t)\)</span> and <span class="math notranslate nohighlight">\(g(t)\)</span>, and their respective Laplace transforms <span class="math notranslate nohighlight">\(F(p)\)</span> and <span class="math notranslate nohighlight">\(G(p)\)</span> such that:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
@@ -879,7 +916,7 @@ f(t) &amp;= \mathcal{L}^{-1}[F(p)],\\
 g(t) &amp;= \mathcal{L}^{-1}[G(p)],
 \end{align}\end{split}\]</div>
 <p>then we can define a bunch of different Laplace Transforms properties:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
 <th class="head"><p><strong>Time domain <span class="math notranslate nohighlight">\(t\)</span></strong></p></th>
@@ -887,54 +924,56 @@ g(t) &amp;= \mathcal{L}^{-1}[G(p)],
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>Linearity</strong></p></td>
+<tr class="row-even"><td><p>Linearity</p></td>
 <td><p><span class="math notranslate nohighlight">\( a f(t) + b g(t) \)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\( a F(p) + b G(p) \)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Frequency-domain derivative</strong></p></td>
+<tr class="row-odd"><td><p>Frequency-domain derivative</p></td>
 <td><p><span class="math notranslate nohighlight">\( t f(t) \)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\( -F'(p) \)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Frequency-domain general derivative</strong></p></td>
+<tr class="row-even"><td><p>Frequency-domain general derivative</p></td>
 <td><p><span class="math notranslate nohighlight">\( t^n f(t) \)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\( (-1)^n F^{(n)}(p) \)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Derivative</strong></p></td>
+<tr class="row-odd"><td><p>Derivative</p></td>
 <td><p><span class="math notranslate nohighlight">\( f'(t) \)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\( p F(p) - f(0^{-}) \)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Second derivative</strong></p></td>
+<tr class="row-even"><td><p>Second derivative</p></td>
 <td><p><span class="math notranslate nohighlight">\( f''(t) \)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\( p^2 F(p) - p f(0) - f'(0) \)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>General derivative</strong></p></td>
+<tr class="row-odd"><td><p>General derivative</p></td>
 <td><p><span class="math notranslate nohighlight">\( f^{(n)}(t) \)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\( p^n F(p) - \sum_{k=1}^{n} p^{n-k} f^{(k-1)}(0) \)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Frequency shifting</strong></p></td>
+<tr class="row-even"><td><p>Frequency shifting</p></td>
 <td><p><span class="math notranslate nohighlight">\( e^{at} f(t) \)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\( F(p - a) \)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Time shifting I</strong></p></td>
+<tr class="row-odd"><td><p>Time shifting I</p></td>
 <td><p><span class="math notranslate nohighlight">\( f(t - a) u(t - a) \)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\( e^{-ap} F(p) \)</span> *</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Time shifting II</strong></p></td>
+<tr class="row-even"><td><p>Time shifting II</p></td>
 <td><p><span class="math notranslate nohighlight">\( f(t) u(t - a) \)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\( e^{-ap} \mathcal{L}\{f(t + a)] \)</span> *</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Time scaling</strong></p></td>
+<tr class="row-odd"><td><p>Time scaling</p></td>
 <td><p><span class="math notranslate nohighlight">\( f(at) \)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\( \frac{1}{a} F \left( \frac{p}{a} \right) \)</span></p></td>
 </tr>
 </tbody>
 </table>
+</div>
 <ul class="simple">
-<li><p>where <span class="math notranslate nohighlight">\(u(t)\)</span> is the Heavisde step function.</p></li>
+<li><p>where <span class="math notranslate nohighlight">\(u(t)\)</span> is the Heaviside step function.</p></li>
 </ul>
 </section>
+</section>
 <section id="fourier-transform">
-<h2>Fourier Transform<a class="headerlink" href="#fourier-transform" title="Permalink to this heading">#</a></h2>
+<h2>Fourier Transform<a class="headerlink" href="#fourier-transform" title="Link to this heading">#</a></h2>
 <p>There is some relationship between Laplace transforms and Fourier transforms.</p>
 <p>One definition of a Fourier transform is:</p>
 <div class="math notranslate nohighlight">
@@ -970,11 +1009,10 @@ g(t) &amp;= \mathcal{L}^{-1}[G(p)],
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="variationofparameters.html"
@@ -994,10 +1032,7 @@ g(t) &amp;= \mathcal{L}^{-1}[G(p)],
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1005,6 +1040,7 @@ g(t) &amp;= \mathcal{L}^{-1}[G(p)],
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1027,7 +1063,11 @@ g(t) &amp;= \mathcal{L}^{-1}[G(p)],
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-ode-using-the-laplace-transform">Solving ODE Using the Laplace Transform</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-laplace-transforms">Table of Laplace Transforms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-laplace-transforms">Table of Laplace Transforms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-functions">Table of Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-properties">Table of Properties</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-transform">Fourier Transform</a></li>
 </ul>
   </nav></div>
@@ -1050,9 +1090,10 @@ By PHAS0026 Team
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1076,8 +1117,8 @@ By PHAS0026 Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

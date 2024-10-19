@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Integral Transforms &#8212; PHAS0026 Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'integraltransforms';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Sturm-Liouville Theory" href="sturmliouville.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="PHAS0026 Notes - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="PHAS0026 Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to PHAS0026 - Mathematical Methods for Theoretical Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ODEs.html">Linear Ordinary Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="independent_functions.html">Independence of Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variationofparameters.html">Variation of Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laplacetransform.html">Integral Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diracdelta.html">The Dirac Delta Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sturmliouville.html">Sturm-Liouville Theory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integral Transforms</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintegraltransforms.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/integraltransforms.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Integral Transforms</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform">Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-laplace-transform">Inverse Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution">Convolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-theorem">Convolution theorem.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-distribution-in-an-infinite-bar">Temperature distribution in an infinite bar</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="integral-transforms">
+<h1>Integral Transforms<a class="headerlink" href="#integral-transforms" title="Link to this heading">#</a></h1>
+<p>We have already introduced the Laplace integral transform and used it in order to solve ordinary differential equations. In this chapter, we will use Laplace and Fourier integral transforms to solve partial differential equations (PDE). The strategy of the integral transform method is to reduce the number of variables in a PDE and to convert it to a simpler PDE or to an ordinary differential equation.</p>
+<section id="laplace-transform">
+<h2>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Link to this heading">#</a></h2>
+<p>Laplace transforms are a natural method of choice if the problem concerns a process where at least one of the variables can have values from zero to infinity. We will demonstrate the application of integral transforms to solving PDEs using particular examples.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p>Consider a semi-infinite tube filled initially with pure water and brought into contact with a salt solution maintained at a fixed concentration. Find the total amount of salt diffused into the tube by the time <span class="math notranslate nohighlight">\( t \)</span> if the diffusion constant is <span class="math notranslate nohighlight">\( k \)</span>.</p>
+<p>The semi-infinite tube is a one-dimensional system. Therefore, the concentration of salt in the tube <span class="math notranslate nohighlight">\( u \)</span> can be described using two variables only: <span class="math notranslate nohighlight">\( x \)</span> – the distance from the salt container and <span class="math notranslate nohighlight">\( t \)</span> – the duration of the contact. Hence, <span class="math notranslate nohighlight">\( u = u(x, t) \)</span>.</p>
+<p>The diffusion process is described by the equation:</p>
+<div class="math notranslate nohighlight">
+\[k \frac{\partial^2 u(x,t)}{\partial x^2} = \frac{\partial u(x,t)}{\partial t}\]</div>
+<p>and the following conditions:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( u(0, t) = u_0 \)</span>, i.e., the concentration of the salt solution “at the source” is the same at all times.</p></li>
+<li><p><span class="math notranslate nohighlight">\( u(x, 0) = 0 \)</span>, i.e., the tube contained pure water prior to being brought into contact with the salt reservoir at <span class="math notranslate nohighlight">\( t = 0 \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( u(1,t) = 0 \)</span>, i.e., salt will never reach the far end of the semi-infinite tube.</p></li>
+<li><p><span class="math notranslate nohighlight">\( u(x,t) \)</span> is finite for all <span class="math notranslate nohighlight">\( x \)</span> and all <span class="math notranslate nohighlight">\( t \)</span>.</p></li>
+</ul>
+<p>Our strategy is to convert this PDE into an ODE by eliminating the dependence on one of the variables.</p>
+<p>Taking the Laplace transform from both sides with respect to <span class="math notranslate nohighlight">\( t \)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^\infty \frac{\partial^2 u(x,t)}{\partial x^2} e^{-st} dt = \int_0^\infty \frac{\partial u(x,t)}{\partial t} e^{-st} dt\]</div>
+<p>Swapping the order of the derivatives and integrals:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2}{\partial x^2} \left( \int_0^\infty e^{-st} u(x,t) dt \right) = \int_0^\infty \frac{\partial}{\partial t} e^{-st} u(x,t) dt\]</div>
+<p>This gives:</p>
+<div class="math notranslate nohighlight">
+\[k \frac{\partial^2 U(x,s)}{\partial x^2} = s U(x,s)\]</div>
+<p>where <span class="math notranslate nohighlight">\( U(x,s) \)</span> is the Laplace transform of <span class="math notranslate nohighlight">\( u(x,t) \)</span>. Integrating the right-hand side by parts, as done previously:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^\infty u e^{-st} dt = u(x,t) e^{-st} \big|_0^\infty + s \int_0^\infty u(x,t) e^{-st} dt = s U(x,s) - u(x,0)\]</div>
+<p>Taking into account the boundary condition <span class="math notranslate nohighlight">\( u(x, 0) = 0 \)</span>, becomes:</p>
+<div class="math notranslate nohighlight">
+\[k \frac{\partial^2 U(x,s)}{\partial x^2} = s U(x,s)\]</div>
+<p>which is an ordinary differential equation with respect to <span class="math notranslate nohighlight">\( U(x,s) \)</span>.</p>
+<p>The solution to this equation is given by:</p>
+<div class="math notranslate nohighlight">
+\[U(x, s) = A(s) e^{\sqrt{\frac{s}{k}} x} + B(s) e^{-\sqrt{\frac{s}{k}} x}\]</div>
+<p>where <span class="math notranslate nohighlight">\( A(s) \)</span> and <span class="math notranslate nohighlight">\( B(s) \)</span> are, in general, functions of <span class="math notranslate nohighlight">\( s \)</span>. Only one of the terms here is physically meaningful in the context of this problem. Indeed, assuming that <span class="math notranslate nohighlight">\( u(1, t) = 0 \)</span>, i.e., salt never reaches the far end of the semi-infinite tube, we have:</p>
+<div class="math notranslate nohighlight">
+\[U(x, s) = B(s) e^{-\sqrt{\frac{s}{k}} x}\]</div>
+<p>The function <span class="math notranslate nohighlight">\( B(s) \)</span> can be determined from the boundary conditions by calculating the Laplace transform of <span class="math notranslate nohighlight">\( u(0, t) = u_0 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[U(0,s) = \int_0^\infty u_0 e^{-st} dt = u_0 \int_0^\infty e^{-st} dt = \frac{u_0}{s}\]</div>
+<p>Hence:</p>
+<div class="math notranslate nohighlight">
+\[B(s) = \frac{u_0}{\sqrt{\frac{k}{s}}}\]</div>
+<p>Thus, <span class="math notranslate nohighlight">\( U(x, s) = \frac{u_0}{\sqrt{k}} e^{-\sqrt{\frac{s}{k}} x} \)</span>.</p>
+<p>Now, to find the total amount of salt diffused into the tube, we need to calculate:</p>
+<div class="math notranslate nohighlight">
+\[w(t) = \int_0^\infty u(x,t) dx\]</div>
+<p>However, since the problem requires only <span class="math notranslate nohighlight">\( w(t) \)</span>, we do not need to find <span class="math notranslate nohighlight">\( u(x,t) \)</span> explicitly.</p>
+<p>To find <span class="math notranslate nohighlight">\( w(t) \)</span>, we consider the Laplace transform of <span class="math notranslate nohighlight">\( w(t) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[W(s) = \int_0^\infty w(t) e^{-st} dt = \int_0^\infty \left( \int_0^\infty u(x,t) dx \right) e^{-st} dt\]</div>
+<p>The inner integral is the Laplace transform of <span class="math notranslate nohighlight">\( u(x,t) \)</span>, and hence:</p>
+<div class="math notranslate nohighlight">
+\[W(s) = \int_0^\infty U(x,s) dx\]</div>
+<p>Substituting <span class="math notranslate nohighlight">\( U(x, s) \)</span>, the integral can be evaluated:</p>
+<div class="math notranslate nohighlight">
+\[W(s) = \frac{u_0}{\sqrt{k}} \int_0^\infty e^{-\sqrt{\frac{s}{k}} x} dx = \frac{u_0}{\sqrt{k}} \cdot \frac{1}{\sqrt{s}}\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[W(s) = \frac{u_0}{\sqrt{k s}}\]</div>
+<p>Finally, <span class="math notranslate nohighlight">\( w(t) \)</span> can be found by consulting a table of Laplace transforms:</p>
+<div class="math notranslate nohighlight">
+\[w(t) = \frac{u_0 \sqrt{k}}{\sqrt{\pi}} t^{-1/2}\]</div>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<p>A semi-infinite metal bar has an initial temperature <span class="math notranslate nohighlight">\( T = 0 \, \text{K} \)</span> everywhere along the bar. At time <span class="math notranslate nohighlight">\( t = 0 \)</span>, one end of the bar is brought into contact with a constant temperature heat reservoir at <span class="math notranslate nohighlight">\( T = 100 \, \text{K} \)</span>. Find the temperature distribution along the bar after time <span class="math notranslate nohighlight">\( t \)</span>.</p>
+</section>
+</section>
+<section id="inverse-laplace-transform">
+<h2>Inverse Laplace Transform<a class="headerlink" href="#inverse-laplace-transform" title="Link to this heading">#</a></h2>
+<p>Consider a 2nd-order ODE</p>
+<div class="math notranslate nohighlight">
+\[A y''(t) + B y'(t) + C y(t) = f(t),\]</div>
+<p>where the boundary conditions imposed on the function <span class="math notranslate nohighlight">\( y \)</span> are <span class="math notranslate nohighlight">\( y(0) = y'(0) = 0 \)</span>, <span class="math notranslate nohighlight">\( t \geq 0 \)</span>, and <span class="math notranslate nohighlight">\( A \)</span>, <span class="math notranslate nohighlight">\( B \)</span>, <span class="math notranslate nohighlight">\( C \)</span> are constant coefficients.</p>
+<p>The Laplace transform of this equation gives</p>
+<div class="math notranslate nohighlight">
+\[A p^2 Y(p) + B p Y(p) + C Y(p) = F(p),\]</div>
+<p>where <span class="math notranslate nohighlight">\( Y(p) \)</span> is the Laplace transform of <span class="math notranslate nohighlight">\( y(t) \)</span> and <span class="math notranslate nohighlight">\( F(p) \)</span> is the transform of <span class="math notranslate nohighlight">\( f(t) \)</span>. From here, we find</p>
+<div class="math notranslate nohighlight">
+\[Y(p) = \frac{F(p)}{A p^2 + B p + C} = \frac{F(p)}{A(p + a)(p + b)},\]</div>
+<p>where <span class="math notranslate nohighlight">\( a \)</span> and <span class="math notranslate nohighlight">\( b \)</span> are constants.</p>
+<p>We already know the inverse Laplace transform of <span class="math notranslate nohighlight">\( F(p) \)</span> (it is given to us as <span class="math notranslate nohighlight">\( f(t) \)</span>) and we can always find the inverse transform of</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{A(p + a)(p + b)}\]</div>
+<p>by inspecting the table of Laplace transforms. Can we find the inverse transform of <span class="math notranslate nohighlight">\( Y(p) \)</span>?</p>
+<p>More generally, assume that inverse Laplace transforms of <span class="math notranslate nohighlight">\( H(p) \)</span> and <span class="math notranslate nohighlight">\( G(p) \)</span> are known functions <span class="math notranslate nohighlight">\( h(t) \)</span> and <span class="math notranslate nohighlight">\( g(t) \)</span>, respectively. How do we find the inverse Laplace transform of <span class="math notranslate nohighlight">\( H(p) G(p) \)</span>?</p>
+<section id="convolution">
+<h3>Convolution<a class="headerlink" href="#convolution" title="Link to this heading">#</a></h3>
+<p>Consider the product <span class="math notranslate nohighlight">\( H(p) G(p) \)</span>, where <span class="math notranslate nohighlight">\( H(p) \)</span> and <span class="math notranslate nohighlight">\( G(p) \)</span> are Laplace transforms of <span class="math notranslate nohighlight">\( h(t) \)</span> and <span class="math notranslate nohighlight">\( g(t) \)</span>, respectively.</p>
+<div class="math notranslate nohighlight">
+\[H(p) G(p) = \int_0^\infty h(s) e^{-ps} ds \int_0^\infty g(t) e^{-pt} dt = \int_0^\infty \int_0^\infty h(s) g(t) e^{-p(s + t)} ds dt.\]</div>
+<p>Introduce a new variable <span class="math notranslate nohighlight">\( r = s + t \)</span> for any fixed <span class="math notranslate nohighlight">\( t \)</span>. Then, <span class="math notranslate nohighlight">\( s = r - t \)</span> and <span class="math notranslate nohighlight">\( ds = dr \)</span>. To define the limits of integration with respect to <span class="math notranslate nohighlight">\( dr \)</span>, we notice that <span class="math notranslate nohighlight">\( r = t \)</span> if <span class="math notranslate nohighlight">\( s = 0 \)</span> and <span class="math notranslate nohighlight">\( r = \infty \)</span> if <span class="math notranslate nohighlight">\( s = \infty \)</span>. Therefore,</p>
+<div class="math notranslate nohighlight">
+\[H(p) G(p) = \int_0^\infty \left( \int_t^\infty h(r - t) g(t) e^{-pr} dr \right) dt.\]</div>
+<p>The diagram below shows schematically the order of integration in this equation: each horizontal line corresponds to the inner integration from <span class="math notranslate nohighlight">\( r = t \)</span> to <span class="math notranslate nohighlight">\( r = \infty \)</span>; all lines together cover one half of the first quadrilateral, which corresponds to the outer integral for <span class="math notranslate nohighlight">\( 0 \leq t &lt; \infty \)</span>.</p>
+<p><img alt="Convolution Integration" src="_images/convolution_integration.png" /></p>
+<p>(a) Inner integral (over <span class="math notranslate nohighlight">\( r \)</span>): <span class="math notranslate nohighlight">\( t \leq r &lt; 1 \)</span>, outer integral (over <span class="math notranslate nohighlight">\( t \)</span>): <span class="math notranslate nohighlight">\( 0 \leq t &lt; 1 \)</span>;<br />
+(b) Inner integral (over <span class="math notranslate nohighlight">\( t \)</span>): <span class="math notranslate nohighlight">\( 0 \leq t &lt; r \)</span>, outer integral (over <span class="math notranslate nohighlight">\( r \)</span>): <span class="math notranslate nohighlight">\( 0 \leq r &lt; 1 \)</span>.</p>
+<p>We can change the order of integration with respect to <span class="math notranslate nohighlight">\( t \)</span> and <span class="math notranslate nohighlight">\( r \)</span> in the equation, as illustrated in Fig. 6.1(b), so as</p>
+<div class="math notranslate nohighlight">
+\[H(p) G(p) = \int_0^\infty \left( \int_0^r g(r - t) h(t) e^{-pr} dt \right) dr.\]</div>
+<p>This inner integral is called the convolution of functions <span class="math notranslate nohighlight">\( g(x) \)</span> and <span class="math notranslate nohighlight">\( h(x) \)</span>. (Do not confuse the symbol <span class="math notranslate nohighlight">\( \ast \)</span> indicating the convolution operation with that indicating the multiplication operation.)</p>
+<p>Thus, Equation (6.5) can be written as</p>
+<div class="math notranslate nohighlight">
+\[H(p) G(p) = \int_0^\infty [h \ast g] e^{-pr} dr,\]</div>
+<p>i.e., the Laplace transform of a convolution of functions <span class="math notranslate nohighlight">\( h(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span> equals the product of the Laplace transforms of these functions. In other words, <span class="math notranslate nohighlight">\( g \ast h \)</span> is the inverse Laplace transform of <span class="math notranslate nohighlight">\( H(p) G(p) \)</span>.</p>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Find the solution of the equation</p>
+<div class="math notranslate nohighlight">
+\[y'' + 3y' + 2y = e^{-t} \quad \text{with} \quad y(0) = y'(0) = 0\]</div>
+<p>using the convolution method. After Laplace transform:</p>
+<div class="math notranslate nohighlight">
+\[p^2 Y(p) + 3p Y(p) + 2 Y(p) = \mathcal{L}(e^{-t}),\]</div>
+<p>which gives</p>
+<div class="math notranslate nohighlight">
+\[Y(p) = \frac{1}{(p^2 + 3p + 2)} = \frac{1}{(p+1)(p+2)}.\]</div>
+<p>The inverse Laplace transform of <span class="math notranslate nohighlight">\( L(e^{-t}) \)</span> is <span class="math notranslate nohighlight">\( e^{-t} \)</span>. Therefore,</p>
+<div class="math notranslate nohighlight">
+\[Y(p) = \mathcal{L}(e^{-t} - e^{-2t}).\]</div>
+<p>To find <span class="math notranslate nohighlight">\( y(t) \)</span>, we need to calculate the convolution of <span class="math notranslate nohighlight">\( e^{-t} - e^{-2t} \)</span> and <span class="math notranslate nohighlight">\( e^{-t} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y(t) = \int_0^t \left[ e^{-t} - e^{-2t} \right] e^{-(t - \tau)} d\tau.\]</div>
+<p>This simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[y(t) = t e^{-t} + e^{-2t} - e^{-t}.\]</div>
+</section>
+</section>
+<section id="convolution-theorem">
+<h2>Convolution theorem.<a class="headerlink" href="#convolution-theorem" title="Link to this heading">#</a></h2>
+<p>Let us consider two functions <span class="math notranslate nohighlight">\( f(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span>. Their Fourier transforms can be defined as</p>
+<div class="math notranslate nohighlight">
+\[F(k) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(x)e^{-ikx} dx\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[G(k) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} g(x)e^{-ikx} dx.\]</div>
+<p>Note that other definitions of the Fourier transform may use a different factor in front of the integral.</p>
+<p>Is it possible to give meaning to the product <span class="math notranslate nohighlight">\( F(k)G(k) \)</span>? Rewrite <span class="math notranslate nohighlight">\( F(k)G(k) \)</span> as:</p>
+<p>For any fixed <span class="math notranslate nohighlight">\( t \)</span>, we can introduce a new variable <span class="math notranslate nohighlight">\( p = s+t \)</span>. Then, <span class="math notranslate nohighlight">\( s = p - t \)</span> and <span class="math notranslate nohighlight">\( ds = dp \)</span>. Rewrite the integral in terms of variables <span class="math notranslate nohighlight">\( p \)</span> and <span class="math notranslate nohighlight">\( t \)</span>. Note that the integration limits remain unchanged:</p>
+<div class="math notranslate nohighlight">
+\[F(k)G(k) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(p-t)g(t) e^{-ikp} dp dt.\]</div>
+<p>Change the order of integration with respect to <span class="math notranslate nohighlight">\( dt \)</span> and <span class="math notranslate nohighlight">\( dp \)</span> and multiply both parts of the equation by <span class="math notranslate nohighlight">\( p^{2\pi} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2\pi} F(k)G(k) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(p-t) g(t) e^{-ikp} dp dt.\]</div>
+<p>The integral in square parenthesis is called the convolution (note that the integration limits are different from those defined for the case of the Laplace transform):</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{+\infty} f(p-t)g(t) dt.\]</div>
+<p>Thus the equation states that the product of the Fourier transforms of functions <span class="math notranslate nohighlight">\( f(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span> is proportional to the Fourier transform of a convolution of these functions. This statement is called the <strong>convolution theorem</strong>.</p>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Demonstrate that</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(p-t)g(t) dt = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(t-p)g(t) dt.\]</div>
+</section>
+</section>
+<section id="temperature-distribution-in-an-infinite-bar">
+<h2>Temperature distribution in an infinite bar<a class="headerlink" href="#temperature-distribution-in-an-infinite-bar" title="Link to this heading">#</a></h2>
+<p>An infinite metal bar has the initial temperature distribution along the bar <span class="math notranslate nohighlight">\( f(x) \)</span>. Find the temperature distribution after time <span class="math notranslate nohighlight">\( t \)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\( u(x,t) \)</span> be the temperature at a point <span class="math notranslate nohighlight">\( x \)</span> along the bar at the time <span class="math notranslate nohighlight">\( t \)</span>. Assume that the far ends of the bar remain cold, i.e.</p>
+<div class="math notranslate nohighlight">
+\[u(\pm 1, t) = \frac{\partial u(x, t)}{\partial x} \Big|_{x=\pm 1} = 0.\]</div>
+<p>The temperature along the bar is described by the heat flow equation</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 u}{\partial x^2} = \frac{\partial u}{\partial t}.\]</div>
+<p>Natural boundary conditions for this problem are:</p>
+<ul class="simple">
+<li><p>The far ends of the bar remain cold: <span class="math notranslate nohighlight">\( u(x,t) \to 0 \)</span> for <span class="math notranslate nohighlight">\( x \to \pm 1 \)</span>.</p></li>
+<li><p>The temperature does not change at the ends of the bar: <span class="math notranslate nohighlight">\( \frac{\partial u(x, t)}{\partial x} \to 0 \)</span> for <span class="math notranslate nohighlight">\( x \to \pm 1 \)</span>.</p></li>
+</ul>
+<p>Apply the Fourier transform to both parts of the equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2\pi} \int_{-\infty}^{+\infty} \frac{\partial^2 u}{\partial x^2} e^{-ikx} dx = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \frac{\partial u}{\partial t} e^{-ikx} dx.\]</div>
+<p>The LHS can be integrated by parts:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{+\infty} \frac{\partial^2 u}{\partial x^2} e^{-ikx} dx = -k^2 \int_{-\infty}^{+\infty} u(x,t) e^{-ikx} dx,\]</div>
+<p>while in the RHS, <span class="math notranslate nohighlight">\( \frac{\partial}{\partial t} \)</span> can be moved outside of the integration. Thus, the PDE is transformed into:</p>
+<div class="math notranslate nohighlight">
+\[-k^2 U(k,t) = \frac{\partial U(k,t)}{\partial t}.\]</div>
+<p>The latter equation has a solution of the form:</p>
+<div class="math notranslate nohighlight">
+\[U(k,t) = U(k,0) e^{-k^2 \alpha t}.\]</div>
+<p>Function <span class="math notranslate nohighlight">\( U(k,0) \)</span> is defined from the initial condition at the time <span class="math notranslate nohighlight">\( t = 0 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[U(k,0) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} u(x,0) e^{-ikx} dx = F(k),\]</div>
+<p>i.e. <span class="math notranslate nohighlight">\( U(k,0) \)</span> is given by the Fourier transform of the function <span class="math notranslate nohighlight">\( f(x) \)</span>.</p>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[U(k,t) = 2\pi F(k) G(k,t),\]</div>
+<p>where we introduced the function <span class="math notranslate nohighlight">\( G(k,t) \)</span> defined as:</p>
+<div class="math notranslate nohighlight">
+\[G(k,t) = e^{-k^2 \alpha t}.\]</div>
+<p>Function <span class="math notranslate nohighlight">\( G(k,t) \)</span> can be considered as a Fourier transform of some function <span class="math notranslate nohighlight">\( g(x,t) \)</span>. Since <span class="math notranslate nohighlight">\( U(k,t) \)</span> is represented as a product of two Fourier transforms, we can apply the convolution theorem to find <span class="math notranslate nohighlight">\( u(x,t) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[u(x,t) = \int_{-\infty}^{+\infty} g(x-s,t) f(s) ds.\]</div>
+<p>In other words, the problem will be solved if we find function <span class="math notranslate nohighlight">\( g(x,t) \)</span> explicitly. Function <span class="math notranslate nohighlight">\( g(x,t) \)</span> can be found by the inverse Fourier transform of <span class="math notranslate nohighlight">\( G(k,t) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[g(x,t) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} e^{-k^2 \alpha t} e^{ikx} dk.\]</div>
+<p>To take this integral, first complete the square:</p>
+<div class="math notranslate nohighlight">
+\[g(x,t) = \frac{1}{\sqrt{4\pi \alpha t}} \int_{-\infty}^{+\infty} e^{-\frac{(k-ix)^2}{4\alpha t}} dk.\]</div>
+<p>Now, using the fact that:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{+\infty} e^{-a s^2} ds = \sqrt{\frac{\pi}{a}},\]</div>
+<p>we obtain:</p>
+<div class="math notranslate nohighlight">
+\[g(x,t) = \frac{1}{\sqrt{4\pi \alpha t}} e^{-\frac{x^2}{4\alpha t}}.\]</div>
+<p>Finally, the temperature distribution at time <span class="math notranslate nohighlight">\( t \)</span> can be calculated, using function <span class="math notranslate nohighlight">\( g(x,t) \)</span> and the initial temperature distribution <span class="math notranslate nohighlight">\( f(x) \)</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sturmliouville.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sturm-Liouville Theory</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform">Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-laplace-transform">Inverse Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution">Convolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-theorem">Convolution theorem.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-distribution-in-an-infinite-bar">Temperature distribution in an infinite bar</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PHAS0026 Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
