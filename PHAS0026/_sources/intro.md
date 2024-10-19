@@ -7,8 +7,4 @@ The topics in this module will cover:
 ```{tableofcontents}
 ```
 
-Partial Differential Equations
-
-Cartesian Tensors
-
 Please come back soon for updated content!
