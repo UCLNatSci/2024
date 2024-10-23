@@ -635,12 +635,12 @@ We can put together these transforms into a table:
 | $e^{at}$           | $\frac{1}{p-a}$                  | $p > a$     |
 | $\sin(at)$         | $\frac{a}{p^2 + a^2}$            | $p > 0$     |
 | $\cos(at)$         | $\frac{p}{p^2 + a^2}$            | $p > 0$     |
-| $\sinh(at)$        | $\frac{a}{p^2 - a^2}$            | $p > \|a\|$   |
-| $\cosh(at)$        | $\frac{p}{p^2 - a^2}$            | $p > \|a\|$   |
+| $\sinh(at)$        | $\frac{a}{p^2 - a^2}$            | $p > \|a\|$ |
+| $\cosh(at)$        | $\frac{p}{p^2 - a^2}$            | $p > \|a\|$ |
 | $e^{at} \sin(bt)$  | $\frac{b}{(p-a)^2 + b^2}$        | $p > a$     |
 | $e^{at} \cos(bt)$  | $\frac{p-a}{(p-a)^2 + b^2}$      | $p > a$     |
-| $t \sin(bt)$       | $\frac{2b}{(p^2 + b^2)^2}$       | $p > 0$     |
-| $t \cos(bt)$       | $\frac{p(p^2 - b^2)}{(p^2 + b^2)^2}$ | $p > 0$ |
+| $t \sin(bt)$       | $\frac{2bp}{(p^2 + b^2)^2}$      | $p > 0$     |
+| $t \cos(bt)$       | $\frac{p^2 - b^2}{(p^2 + b^2)^2}$| $p > 0$     |
 
 ### Table of Properties
 

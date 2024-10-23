@@ -14,7 +14,7 @@ Let us introduce a function $ \delta(x) $ with properties:
 where constant $ a $ is finite and
 
 ```{math}
-\int_{-\infty}^{\infty} \delta(x) \, dx = 1.
+\int_{-\infty}^{\infty} \delta(x) \,\mathrm{d}x= 1.
 ```
 
 This function is also called the impulse function because it can be used to represent external perturbations: finite in magnitude and infinitely short in duration.
@@ -22,7 +22,7 @@ This function is also called the impulse function because it can be used to repr
 The $ \delta $-function belongs to a class of generalized functions, i.e., its properties are determined by the properties of integrals with probe functions $ f(x) $:
 
 ```{math}
-\int_{-\infty}^{\infty} f(x) \delta(x - a) \, dx = f(a).
+\int_{-\infty}^{\infty} f(x) \delta(x - a) \,\mathrm{d}x= f(a).
 ```
 
 Where:
@@ -35,25 +35,25 @@ Where:
 It follows from the definition that a product of $ \delta(x - a) $ and any finite function is zero everywhere except at $ x = a $. Hence,
 
 ```{math}
-\int_{-\infty}^{\infty} f(x) \delta(x - x_0) \, dx = f(x_0) \int_{-\infty}^{\infty} \delta(x - x_0) \, dx = f(x_0).
+\int_{-\infty}^{\infty} f(x) \delta(x - x_0) \,\mathrm{d}x= f(x_0) \int_{-\infty}^{\infty} \delta(x - x_0) \,\mathrm{d}x= f(x_0).
 ```
 
-To find $ \delta(\delta x) $, we need to consider the integral
+To find $ \delta(- x) $, we need to consider the integral
 
 ```{math}
 \int_{-\infty}^{\infty} f(x) \delta(-x) \, dx.
 ```
 
-After substituting $ x = -t $ and $ dx = -dt $, we have
+After substituting $ x = -t $ and $\mathrm{d}x= -dt $, we have
 
 ```{math}
-\int_{-\infty}^{\infty} f(x) \delta(-x) \, dx = \int_{-\infty}^{\infty} f(-t) \delta(t) (-dt) = \int_{-\infty}^{\infty} f(-t) \delta(t) \, dt = f(0).
+\int_{-\infty}^{+\infty} f(x) \delta(-x) \,\mathrm{d}x= \int_{+\infty}^{-\infty} f(-t) \delta(t) (-dt) = \int_{-\infty}^{+\infty} f(-t) \delta(t) \,\mathrm{d}t= f(0).
 ```
 
 Thus,
 
 ```{math}
-\int_{-\infty}^{\infty} f(x) \delta(-x) \, dx = \int_{-\infty}^{\infty} f(t) \delta(t) \, dt.
+\int_{-\infty}^{+\infty} f(x) \delta(-x) \,\mathrm{d}x= \int_{-\infty}^{+\infty} f(t) \delta(t) \, dt.
 ```
 
 For any probe function $ f(x) $, we obtain:
@@ -69,23 +69,28 @@ Similarly, to calculate $ \delta(ax) $, we need to consider the integral:
 ```{math}
 \int_{-\infty}^{\infty} f(x) \delta(ax) \, dx.
 ```
-
-Substitute $ ax = t $, then $ dx = \frac{dt}{a} $:
+Lets start with $a > 0$, substitute $ ax = t $, then $\mathrm{d}x= \frac{dt}{a} $:
 
 ```{math}
-\int_{-\infty}^{\infty} f(x) \delta(ax) \, dx = \int_{-\infty}^{\infty} f\left(\frac{t}{a}\right) \delta(t) \, dt = f\left(\frac{0}{a}\right) = f(0).
+\int_{-\infty}^{\infty} f(x) \delta(ax) \,\mathrm{d}x= \int_{-\infty}^{\infty} \frac{1}{a}f\left(\frac{t}{a}\right) \delta(t) \,\mathrm{d}t= \frac{1}{a}f\left(\frac{0}{a}\right) = \frac{1}{a}f(0) = \int_{-\infty}^{\infty} f(s)\,\delta(s)\,\mathrm{d}s
 ```
 
 Hence,
 
 ```{math}
-\delta(ax) = \frac{1}{|a|} \delta(x).
+\delta(ax) = \frac{1}{a} \delta(x).
 ```
 
-Thus, for negative $ b $:
+It also follows that for $ a < 0 $:
 
 ```{math}
-\delta(ax) = \frac{1}{|a|} \delta(x).
+\delta(ax) = \delta(-|a|x) = \delta(|a|x)
+```
+
+from our earlier property.  This therefore means that:
+
+```{math}
+\delta(ax) = \delta(|a|x) = \frac{1}{|a|}\delta(x)
 ```
 
 By combining $ \delta(-x) = \delta(x) $ and $ \delta(ax) = \frac{1}{a} \delta(x) $, we obtain
@@ -94,14 +99,14 @@ By combining $ \delta(-x) = \delta(x) $ and $ \delta(ax) = \frac{1}{a} \delta(x)
 \delta(ax) = \frac{1}{|a|} \delta(x)
 ```
 
-for any real $ a $.
+for any $ a \in \mathbb{R}$.
 
 ## Laplace transform of the Dirac delta function.
 
 Evaluate $ L[\delta(x - a)] $:
 
 ```{math}
-L[\delta(x - a)] = \int_{-\infty}^{\infty} \delta(x - a) e^{-px} dx = e^{-pa} \quad (\text{for } a > 0)
+L[\delta(x - a)] = \int_{-\infty}^{\infty} \delta(x - a) e^{-px}\mathrm{d}x= e^{-pa} \quad (\text{for } a > 0)
 ```
 
 ## Derivatives of the Dirac delta function.
@@ -109,12 +114,12 @@ L[\delta(x - a)] = \int_{-\infty}^{\infty} \delta(x - a) e^{-px} dx = e^{-pa} \q
 To attach meaning to $ \delta'(x - a) $, consider
 
 ```{math}
-\int_{-\infty}^{\infty} f(x) \delta'(x - a) dx = f(x) \delta(x - a) \Big|_{+1} - \int_{-\infty}^{\infty} f'(x) \delta(x - a) dx = - f'(a).
+\int_{-\infty}^{\infty} f(x) \delta'(x - a)\mathrm{d}x= \left[f(x) \delta(x - a)\right]_{-\infty}^{+\infty} - \int_{-\infty}^{\infty} f'(x) \delta(x - a)\mathrm{d}x= - f'(a).
 ```
 
-The term $ f(x) \delta(x - a) \Big|_{+1} $ equals zero because probe functions $ f(x) = 0 $ for all $ x $ outside of some finite interval $ [x_1, x_2] $.
+The term $ \left[f(x) \delta(x - a)\right]_{-\infty}^{+\infty} $ equals zero because probe functions $ f(x) = 0 $ for all $ x $ outside of some finite interval $ [x_1, x_2] $.
 
-Similarly, we can find the nth derivative of $ \delta(x - a) $ by calculating
+Similarly, we can find the nth derivative of $ \delta(x - a) $ by calculating:
 
 ```{math}
 \int_{-\infty}^{\infty} f(x) \delta^{(n)}(x - a) dx.
@@ -123,7 +128,7 @@ Similarly, we can find the nth derivative of $ \delta(x - a) $ by calculating
 Integrating by parts $ n $ times gives:
 
 ```{math}
-\int_{-\infty}^{\infty} f(x) \delta^{(n)}(x - a) dx = (-1)^n \int_{-\infty}^{\infty} f^{(n)}(x) \delta(x - a) dx = (-1)^n f^{(n)}(a).
+\int_{-\infty}^{\infty} f(x) \delta^{(n)}(x - a)\mathrm{d}x= (-1)^n \int_{-\infty}^{\infty} f^{(n)}(x) \delta(x - a)\mathrm{d}x= (-1)^n f^{(n)}(a).
 ```
 
 ### Other generalized functions.
@@ -133,19 +138,19 @@ Consider the following examples:
 1) $ x \delta(x) $:
 
 ```{math}
-\int_{-\infty}^{\infty} f(x) [x \delta(x)] dx = \int_{-\infty}^{\infty} [f(x) x] \delta(x) dx = 0 \cdot f(0) = 0.
+\int_{-\infty}^{\infty} f(x) [x \delta(x)]\mathrm{d}x= \int_{-\infty}^{\infty} [f(x) x] \delta(x)\mathrm{d}x= 0 \cdot f(0) = 0.
 ```
 
 2) $ x \delta'(x) $:
 
 ```{math}
-\int_{-\infty}^{\infty} f(x) [x \delta'(x)] dx = x f(x) \delta(x) \Big|_{-\infty}^{\infty} - \int_{-\infty}^{\infty} [f(x) + x f'(x)] \delta(x) dx = - f(0).
+\int_{-\infty}^{\infty} f(x) [x \delta'(x)]\mathrm{d}x= x f(x) \delta(x) \Big|_{-\infty}^{\infty} - \int_{-\infty}^{\infty} [f(x) + x f'(x)] \delta(x)\mathrm{d}x= - f(0).
 ```
 
 3) $ x^2 \delta''(x) $:
 
 ```{math}
-\int_{-\infty}^{\infty} f(x) [x^2 \delta''(x)] dx = x f(x) \delta(x) \Big|_{-\infty}^{\infty} + \int_{-\infty}^{\infty} [2x f(x) + x^2 f'(x)] \delta(x) dx = 2 f(0).
+\int_{-\infty}^{\infty} f(x) [x^2 \delta''(x)]\mathrm{d}x= x f(x) \delta(x) \Big|_{-\infty}^{\infty} + \int_{-\infty}^{\infty} [2x f(x) + x^2 f'(x)] \delta(x)\mathrm{d}x= 2 f(0).
 ```
 
 Thus,
@@ -165,7 +170,7 @@ g(x, a, \sigma) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x - a)^2}{2\sigma^2}
 In the limit of infinitely small $ \sigma $ ($ \sigma \to 0 $), the function $ g(x, a, \sigma) $ behaves similarly to $ \delta(x - a) $ in that:
 
 ```{math}
-\lim_{\sigma \to 0} \int_{-\infty}^{\infty} f(x) g(x, a, \sigma) dx = f(a).
+\lim_{\sigma \to 0} \int_{-\infty}^{\infty} f(x) g(x, a, \sigma)\mathrm{d}x= f(a).
 ```
 
 Yet, we will not equate $ \delta(x - a) $ and $ \lim_{\sigma \to 0} g(x, a, \sigma) $ because $ \delta(x - a) $ is a generalized function defined via its integral with other functions, while $ g(x, a, \sigma) $ is a function in the usual sense.

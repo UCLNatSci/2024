@@ -420,11 +420,11 @@ document.write(`
 \end{cases}\end{split}\]</div>
 <p>where constant <span class="math notranslate nohighlight">\( a \)</span> is finite and</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} \delta(x) \, dx = 1.\]</div>
+\[\int_{-\infty}^{\infty} \delta(x) \,\mathrm{d}x= 1.\]</div>
 <p>This function is also called the impulse function because it can be used to represent external perturbations: finite in magnitude and infinitely short in duration.</p>
 <p>The <span class="math notranslate nohighlight">\( \delta \)</span>-function belongs to a class of generalized functions, i.e., its properties are determined by the properties of integrals with probe functions <span class="math notranslate nohighlight">\( f(x) \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} f(x) \delta(x - a) \, dx = f(a).\]</div>
+\[\int_{-\infty}^{\infty} f(x) \delta(x - a) \,\mathrm{d}x= f(a).\]</div>
 <p>Where:</p>
 <ol class="arabic simple">
 <li><p>The function <span class="math notranslate nohighlight">\( f(x) \)</span> is defined on a required interval of <span class="math notranslate nohighlight">\( x \)</span>, e.g., <span class="math notranslate nohighlight">\( x \in (-1, +1) \)</span>;</p></li>
@@ -436,16 +436,16 @@ document.write(`
 <h2>Properties of the <span class="math notranslate nohighlight">\( \delta \)</span>-function<a class="headerlink" href="#properties-of-the-delta-function" title="Link to this heading">#</a></h2>
 <p>It follows from the definition that a product of <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> and any finite function is zero everywhere except at <span class="math notranslate nohighlight">\( x = a \)</span>. Hence,</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} f(x) \delta(x - x_0) \, dx = f(x_0) \int_{-\infty}^{\infty} \delta(x - x_0) \, dx = f(x_0).\]</div>
-<p>To find <span class="math notranslate nohighlight">\( \delta(\delta x) \)</span>, we need to consider the integral</p>
+\[\int_{-\infty}^{\infty} f(x) \delta(x - x_0) \,\mathrm{d}x= f(x_0) \int_{-\infty}^{\infty} \delta(x - x_0) \,\mathrm{d}x= f(x_0).\]</div>
+<p>To find <span class="math notranslate nohighlight">\( \delta(- x) \)</span>, we need to consider the integral</p>
 <div class="math notranslate nohighlight">
 \[\int_{-\infty}^{\infty} f(x) \delta(-x) \, dx.\]</div>
-<p>After substituting <span class="math notranslate nohighlight">\( x = -t \)</span> and <span class="math notranslate nohighlight">\( dx = -dt \)</span>, we have</p>
+<p>After substituting <span class="math notranslate nohighlight">\( x = -t \)</span> and <span class="math notranslate nohighlight">\(\mathrm{d}x= -dt \)</span>, we have</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} f(x) \delta(-x) \, dx = \int_{-\infty}^{\infty} f(-t) \delta(t) (-dt) = \int_{-\infty}^{\infty} f(-t) \delta(t) \, dt = f(0).\]</div>
+\[\int_{-\infty}^{+\infty} f(x) \delta(-x) \,\mathrm{d}x= \int_{+\infty}^{-\infty} f(-t) \delta(t) (-dt) = \int_{-\infty}^{+\infty} f(-t) \delta(t) \,\mathrm{d}t= f(0).\]</div>
 <p>Thus,</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} f(x) \delta(-x) \, dx = \int_{-\infty}^{\infty} f(t) \delta(t) \, dt.\]</div>
+\[\int_{-\infty}^{+\infty} f(x) \delta(-x) \,\mathrm{d}x= \int_{-\infty}^{+\infty} f(t) \delta(t) \, dt.\]</div>
 <p>For any probe function <span class="math notranslate nohighlight">\( f(x) \)</span>, we obtain:</p>
 <div class="math notranslate nohighlight">
 \[\delta(-x) = \delta(x).\]</div>
@@ -455,38 +455,41 @@ document.write(`
 <p>Similarly, to calculate <span class="math notranslate nohighlight">\( \delta(ax) \)</span>, we need to consider the integral:</p>
 <div class="math notranslate nohighlight">
 \[\int_{-\infty}^{\infty} f(x) \delta(ax) \, dx.\]</div>
-<p>Substitute <span class="math notranslate nohighlight">\( ax = t \)</span>, then <span class="math notranslate nohighlight">\( dx = \frac{dt}{a} \)</span>:</p>
+<p>Lets start with <span class="math notranslate nohighlight">\(a &gt; 0\)</span>, substitute <span class="math notranslate nohighlight">\( ax = t \)</span>, then <span class="math notranslate nohighlight">\(\mathrm{d}x= \frac{dt}{a} \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} f(x) \delta(ax) \, dx = \int_{-\infty}^{\infty} f\left(\frac{t}{a}\right) \delta(t) \, dt = f\left(\frac{0}{a}\right) = f(0).\]</div>
+\[\int_{-\infty}^{\infty} f(x) \delta(ax) \,\mathrm{d}x= \int_{-\infty}^{\infty} \frac{1}{a}f\left(\frac{t}{a}\right) \delta(t) \,\mathrm{d}t= \frac{1}{a}f\left(\frac{0}{a}\right) = \frac{1}{a}f(0) = \int_{-\infty}^{\infty} f(s)\,\delta(s)\,\mathrm{d}s\]</div>
 <p>Hence,</p>
 <div class="math notranslate nohighlight">
-\[\delta(ax) = \frac{1}{|a|} \delta(x).\]</div>
-<p>Thus, for negative <span class="math notranslate nohighlight">\( b \)</span>:</p>
+\[\delta(ax) = \frac{1}{a} \delta(x).\]</div>
+<p>It also follows that for <span class="math notranslate nohighlight">\( a &lt; 0 \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\delta(ax) = \frac{1}{|a|} \delta(x).\]</div>
+\[\delta(ax) = \delta(-|a|x) = \delta(|a|x)\]</div>
+<p>from our earlier property.  This therefore means that:</p>
+<div class="math notranslate nohighlight">
+\[\delta(ax) = \delta(|a|x) = \frac{1}{|a|}\delta(x)\]</div>
 <p>By combining <span class="math notranslate nohighlight">\( \delta(-x) = \delta(x) \)</span> and <span class="math notranslate nohighlight">\( \delta(ax) = \frac{1}{a} \delta(x) \)</span>, we obtain</p>
 <div class="math notranslate nohighlight">
 \[\delta(ax) = \frac{1}{|a|} \delta(x)\]</div>
-<p>for any real <span class="math notranslate nohighlight">\( a \)</span>.</p>
+<p>for any <span class="math notranslate nohighlight">\( a \in \mathbb{R}\)</span>.</p>
 </section>
 <section id="laplace-transform-of-the-dirac-delta-function">
 <h2>Laplace transform of the Dirac delta function.<a class="headerlink" href="#laplace-transform-of-the-dirac-delta-function" title="Link to this heading">#</a></h2>
 <p>Evaluate <span class="math notranslate nohighlight">\( L[\delta(x - a)] \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[L[\delta(x - a)] = \int_{-\infty}^{\infty} \delta(x - a) e^{-px} dx = e^{-pa} \quad (\text{for } a &gt; 0)\]</div>
+\[L[\delta(x - a)] = \int_{-\infty}^{\infty} \delta(x - a) e^{-px}\mathrm{d}x= e^{-pa} \quad (\text{for } a &gt; 0)\]</div>
 </section>
 <section id="derivatives-of-the-dirac-delta-function">
 <h2>Derivatives of the Dirac delta function.<a class="headerlink" href="#derivatives-of-the-dirac-delta-function" title="Link to this heading">#</a></h2>
 <p>To attach meaning to <span class="math notranslate nohighlight">\( \delta'(x - a) \)</span>, consider</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} f(x) \delta'(x - a) dx = f(x) \delta(x - a) \Big|_{+1} - \int_{-\infty}^{\infty} f'(x) \delta(x - a) dx = - f'(a).\]</div>
-<p>The term <span class="math notranslate nohighlight">\( f(x) \delta(x - a) \Big|_{+1} \)</span> equals zero because probe functions <span class="math notranslate nohighlight">\( f(x) = 0 \)</span> for all <span class="math notranslate nohighlight">\( x \)</span> outside of some finite interval <span class="math notranslate nohighlight">\( [x_1, x_2] \)</span>.</p>
-<p>Similarly, we can find the nth derivative of <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> by calculating</p>
+\[\int_{-\infty}^{\infty} f(x) \delta'(x - a)\mathrm{d}x= \left[f(x) \delta(x - a)\right]_{-\infty}^{+\infty} - \int_{-\infty}^{\infty} f'(x) \delta(x - a)\mathrm{d}x= - f'(a).\]</div>
+<p>The term <span class="math notranslate nohighlight">\( \left[f(x) \delta(x - a)\right]_{-\infty}^{+\infty} \)</span> equals zero because probe functions <span class="math notranslate nohighlight">\( f(x) = 0 \)</span> for all <span class="math notranslate nohighlight">\( x \)</span> outside of some finite interval <span class="math notranslate nohighlight">\( [x_1, x_2] \)</span>.</p>
+<p>Similarly, we can find the nth derivative of <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> by calculating:</p>
 <div class="math notranslate nohighlight">
 \[\int_{-\infty}^{\infty} f(x) \delta^{(n)}(x - a) dx.\]</div>
 <p>Integrating by parts <span class="math notranslate nohighlight">\( n \)</span> times gives:</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} f(x) \delta^{(n)}(x - a) dx = (-1)^n \int_{-\infty}^{\infty} f^{(n)}(x) \delta(x - a) dx = (-1)^n f^{(n)}(a).\]</div>
+\[\int_{-\infty}^{\infty} f(x) \delta^{(n)}(x - a)\mathrm{d}x= (-1)^n \int_{-\infty}^{\infty} f^{(n)}(x) \delta(x - a)\mathrm{d}x= (-1)^n f^{(n)}(a).\]</div>
 <section id="other-generalized-functions">
 <h3>Other generalized functions.<a class="headerlink" href="#other-generalized-functions" title="Link to this heading">#</a></h3>
 <p>Consider the following examples:</p>
@@ -494,17 +497,17 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\( x \delta(x) \)</span>:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} f(x) [x \delta(x)] dx = \int_{-\infty}^{\infty} [f(x) x] \delta(x) dx = 0 \cdot f(0) = 0.\]</div>
+\[\int_{-\infty}^{\infty} f(x) [x \delta(x)]\mathrm{d}x= \int_{-\infty}^{\infty} [f(x) x] \delta(x)\mathrm{d}x= 0 \cdot f(0) = 0.\]</div>
 <ol class="arabic simple" start="2">
 <li><p><span class="math notranslate nohighlight">\( x \delta'(x) \)</span>:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} f(x) [x \delta'(x)] dx = x f(x) \delta(x) \Big|_{-\infty}^{\infty} - \int_{-\infty}^{\infty} [f(x) + x f'(x)] \delta(x) dx = - f(0).\]</div>
+\[\int_{-\infty}^{\infty} f(x) [x \delta'(x)]\mathrm{d}x= x f(x) \delta(x) \Big|_{-\infty}^{\infty} - \int_{-\infty}^{\infty} [f(x) + x f'(x)] \delta(x)\mathrm{d}x= - f(0).\]</div>
 <ol class="arabic simple" start="3">
 <li><p><span class="math notranslate nohighlight">\( x^2 \delta''(x) \)</span>:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} f(x) [x^2 \delta''(x)] dx = x f(x) \delta(x) \Big|_{-\infty}^{\infty} + \int_{-\infty}^{\infty} [2x f(x) + x^2 f'(x)] \delta(x) dx = 2 f(0).\]</div>
+\[\int_{-\infty}^{\infty} f(x) [x^2 \delta''(x)]\mathrm{d}x= x f(x) \delta(x) \Big|_{-\infty}^{\infty} + \int_{-\infty}^{\infty} [2x f(x) + x^2 f'(x)] \delta(x)\mathrm{d}x= 2 f(0).\]</div>
 <p>Thus,</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( x \delta(x) = 0 \)</span>,</p></li>
@@ -520,7 +523,7 @@ document.write(`
 \[g(x, a, \sigma) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x - a)^2}{2\sigma^2}}.\]</div>
 <p>In the limit of infinitely small <span class="math notranslate nohighlight">\( \sigma \)</span> (<span class="math notranslate nohighlight">\( \sigma \to 0 \)</span>), the function <span class="math notranslate nohighlight">\( g(x, a, \sigma) \)</span> behaves similarly to <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> in that:</p>
 <div class="math notranslate nohighlight">
-\[\lim_{\sigma \to 0} \int_{-\infty}^{\infty} f(x) g(x, a, \sigma) dx = f(a).\]</div>
+\[\lim_{\sigma \to 0} \int_{-\infty}^{\infty} f(x) g(x, a, \sigma)\mathrm{d}x= f(a).\]</div>
 <p>Yet, we will not equate <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> and <span class="math notranslate nohighlight">\( \lim_{\sigma \to 0} g(x, a, \sigma) \)</span> because <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> is a generalized function defined via its integral with other functions, while <span class="math notranslate nohighlight">\( g(x, a, \sigma) \)</span> is a function in the usual sense.</p>
 </section>
 </section>
