@@ -509,11 +509,12 @@ document.write(`
 <h3>Limit as <span class="math notranslate nohighlight">\( \epsilon \to 0 \)</span><a class="headerlink" href="#limit-as-epsilon-to-0" title="Link to this heading">#</a></h3>
 <p>Let us consider the limit of the left-hand side of the equation as <span class="math notranslate nohighlight">\( \epsilon \to 0 \)</span>. Since <span class="math notranslate nohighlight">\( p_k(x) \)</span> are continuous functions, we can define <span class="math notranslate nohighlight">\( J_k \)</span> as:</p>
 <div class="math notranslate nohighlight">
-\[J_0 = \lim_{\epsilon \to 0} \int_{t - \epsilon}^{t + \epsilon} p_0(x) G(x, t)\mathrm{d}x = p_0(t) \lim_{\epsilon \to 0} \left( G(t + \epsilon, t) - G(t - \epsilon, t) \right),\]</div>
+\[J_0 = \lim_{\epsilon \to 0} \int_{t - \epsilon}^{t + \epsilon} p_0(x) G(x, t)\mathrm{d}x = p_0(t) \lim_{\epsilon \to 0} \left( g(t + \epsilon, t) - g(t - \epsilon, t) \right),\]</div>
 <div class="math notranslate nohighlight">
 \[J_1 = \lim_{\epsilon \to 0} \left[ p_1(x) G(x, t) \right]_{t + \epsilon}^{t - \epsilon} = p_1(t) \lim_{\epsilon \to 0} \left( G(t + \epsilon, t) - G(t - \epsilon, t) \right),\]</div>
 <div class="math notranslate nohighlight">
 \[J_2 = \lim_{\epsilon \to 0} \left[ p_2(x) G'(x, t) \right]_{t + \epsilon}^{t - \epsilon} = p_2(t) \lim_{\epsilon \to 0} \left( G'(t + \epsilon, t) - G'(t - \epsilon, t) \right).\]</div>
+where <span class="math notranslate nohighlight">\( g'(x,t)= G(x,t) \)</span>.
 <p>From the equation, we have:</p>
 <div class="math notranslate nohighlight">
 \[J_0 + J_1 + J_2 = 1.\]</div>
