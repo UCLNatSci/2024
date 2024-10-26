@@ -509,12 +509,11 @@ document.write(`
 <h3>Limit as <span class="math notranslate nohighlight">\( \epsilon \to 0 \)</span><a class="headerlink" href="#limit-as-epsilon-to-0" title="Link to this heading">#</a></h3>
 <p>Let us consider the limit of the left-hand side of the equation as <span class="math notranslate nohighlight">\( \epsilon \to 0 \)</span>. Since <span class="math notranslate nohighlight">\( p_k(x) \)</span> are continuous functions, we can define <span class="math notranslate nohighlight">\( J_k \)</span> as:</p>
 <div class="math notranslate nohighlight">
-\[J_0 = \lim_{\epsilon \to 0} \int_{t - \epsilon}^{t + \epsilon} p_0(x) G(x, t)\mathrm{d}x = p_0(t) \lim_{\epsilon \to 0} \left( g(t + \epsilon, t) - g(t - \epsilon, t) \right),\]</div>
+\[J_0 = \lim_{\epsilon \to 0} \left[\int_{t - \epsilon}^{t + \epsilon} p_0(x) G(x, t)\mathrm{d}x \right] = p_0(t)\lim_{t\rightarrow \epsilon}\left[ \int_{t - \epsilon}^{t + \epsilon} G(x, t)\mathrm{d}x\right],\]</div>
 <div class="math notranslate nohighlight">
 \[J_1 = \lim_{\epsilon \to 0} \left[ p_1(x) G(x, t) \right]_{t + \epsilon}^{t - \epsilon} = p_1(t) \lim_{\epsilon \to 0} \left( G(t + \epsilon, t) - G(t - \epsilon, t) \right),\]</div>
 <div class="math notranslate nohighlight">
-\[J_2 = \lim_{\epsilon \to 0} \left[ p_2(x) G'(x, t) \right]_{t + \epsilon}^{t - \epsilon} = p_2(t) \lim_{\epsilon \to 0} \left( G'(t + \epsilon, t) - G'(t - \epsilon, t) \right).\]</div>
-where <span class="math notranslate nohighlight">\( g'(x,t)= G(x,t) \)</span>.
+\[J_2 = \lim_{\epsilon \to 0} \left[ p_2(x) G'(x, t) \right]_{t + \epsilon}^{t - \epsilon} = p_2(t) \lim_{\epsilon \to 0} \left( G'(t + \epsilon, t) - G'(t - \epsilon, t) \right) \]</div>
 <p>From the equation, we have:</p>
 <div class="math notranslate nohighlight">
 \[J_0 + J_1 + J_2 = 1.\]</div>
@@ -524,18 +523,18 @@ where <span class="math notranslate nohighlight">\( g'(x,t)= G(x,t) \)</span>.
 <h2>Continuity and Discontinuity Conditions<a class="headerlink" href="#continuity-and-discontinuity-conditions" title="Link to this heading">#</a></h2>
 <p>If we assume that <span class="math notranslate nohighlight">\( G'(x, t) \)</span> is continuous at <span class="math notranslate nohighlight">\( x = t \)</span>, i.e.,</p>
 <div class="math notranslate nohighlight">
-\[\lim_{\epsilon \to 0} \left( G(t + \epsilon, t) - G(t - \epsilon, t) \right) = 0,\]</div>
-<p>then the continuity of <span class="math notranslate nohighlight">\( G(x, t) \)</span> and <span class="math notranslate nohighlight">\( G(x, t) \,\mathrm{d}x \)</span> holds, which leads to <span class="math notranslate nohighlight">\( J_2 = 0 \)</span>, <span class="math notranslate nohighlight">\( J_1 = 0 \)</span>, and <span class="math notranslate nohighlight">\( J_0 = 0 \)</span>, contradicting the equation.</p>
+\[\lim_{\epsilon \to 0} \left( G'(t + \epsilon, t) - G'(t - \epsilon, t) \right) = 0,\]</div>
+<p>then the continuity of <span class="math notranslate nohighlight">\( G(x, t) \)</span> and <span class="math notranslate nohighlight">\( \int G(x, t) \,\mathrm{d}x \)</span> holds (i.e. the Green's function is smooth and continuous), which leads to <span class="math notranslate nohighlight">\( J_2 = 0 \)</span>, <span class="math notranslate nohighlight">\( J_1 = 0 \)</span>, and <span class="math notranslate nohighlight">\( J_0 = 0 \)</span>, contradicting the equation.</p>
 <p>Alternatively, if we assume that <span class="math notranslate nohighlight">\( G'(x, t) \)</span> has a finite discontinuity at <span class="math notranslate nohighlight">\( x = t \)</span>, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[\lim_{\epsilon \to 0} \left( G'(t + \epsilon, t) - G'(t - \epsilon, t) \right) = 1,\]</div>
-<p>then <span class="math notranslate nohighlight">\( G(x, t) \)</span> and <span class="math notranslate nohighlight">\( G(x, t) \,\mathrm{d}x \)</span> are continuous functions, i.e., <span class="math notranslate nohighlight">\( J_2 = 1 \)</span>, <span class="math notranslate nohighlight">\( J_1 = J_0 = 0 \)</span>, and consequently:</p>
+<p>BUT keep <span class="math notranslate nohighlight">\( G(x, t) \)</span> and <span class="math notranslate nohighlight">\( G(x, t) \,\mathrm{d}x \)</span> as continuous functions (i.e. function is continuous but not smooth), i.e., <span class="math notranslate nohighlight">\( J_2 = 1 \)</span>, <span class="math notranslate nohighlight">\( J_1 = J_0 = 0 \)</span>, and consequently:</p>
 <div class="math notranslate nohighlight">
 \[J_0 + J_1 + J_2 = 1,\]</div>
 <p>as required by the equation.</p>
 <p>Thus, the continuity and discontinuity conditions for <span class="math notranslate nohighlight">\( G(x, t) \)</span> are:</p>
 <div class="math notranslate nohighlight">
-\[a_2(x)\lim_{\epsilon \to 0} \left( G'(t + \epsilon, t) - G'(t - \epsilon, t) \right) = 1,\]</div>
+\[p_2(t)\lim_{\epsilon \to 0} \left( G'(t + \epsilon, t) - G'(t - \epsilon, t) \right) = 1,\]</div>
 <div class="math notranslate nohighlight">
 \[\lim_{\epsilon \to 0} \left( G(t + \epsilon, t) - G(t - \epsilon, t) \right) = 0.\]</div>
 </section>
