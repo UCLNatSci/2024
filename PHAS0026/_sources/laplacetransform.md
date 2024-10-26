@@ -664,11 +664,11 @@ then we can define a bunch of different Laplace Transforms properties:
 | Second derivative | $ f''(t) $ | $ p^2 F(p) - p f(0) - f'(0) $ |
 | General derivative | $ f^{(n)}(t) $ | $ p^n F(p) - \sum_{k=1}^{n} p^{n-k} f^{(k-1)}(0) $ |
 | Frequency shifting | $ e^{at} f(t) $ | $ F(p - a) $ |
-| Time shifting I | $ f(t - a) u(t - a) $ | $ e^{-ap} F(p) $ *|
-| Time shifting II | $ f(t) u(t - a) $ | $ e^{-ap} \mathcal{L}\{f(t + a)] $ *|
+| Time shifting I | $ f(t - a) \,H(t - a) $ | $ e^{-ap} F(p) $ *|
+| Time shifting II | $ f(t) \,H(t - a) $ | $ e^{-ap} \mathcal{L}\{f(t + a)] $ *|
 | Time scaling | $ f(at) $ | $ \frac{1}{a} F \left( \frac{p}{a} \right) $ |
 
-* where $u(t)$ is the Heaviside step function.
+* where $H(t)$ is the Heaviside step function.
 
 
 ## Fourier Transform

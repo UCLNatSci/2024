@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Integral Transforms &#8212; PHAS0026 Notes</title>
+    <title>Continuity of \( G(x, t) \) at \( x = t \): nth order ODE &#8212; PHAS0026 Notes</title>
   
   
   
@@ -59,7 +59,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Laplacian';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'stuff';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -263,7 +263,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLaplacian.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fstuff.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +293,7 @@
       
       
       
-      <li><a href="_sources/Laplacian.md" target="_blank"
+      <li><a href="_sources/stuff.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -377,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Integral Transforms</h1>
+    <h1>Continuity of  G(x, t)  at  x = t : nth order ODE</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -387,14 +387,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform">Laplace Transform</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-derivatives">Laplace Transform of Derivatives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-ode-using-the-laplace-transform">Solving ODE Using the Laplace Transform</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-laplace-transforms">Table of Laplace Transforms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-transform">Fourier Transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions-for-an-nth-order-ode">Boundary conditions for an nth order ODE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inhomogeneous-boundary-conditions">Inhomogeneous boundary conditions</a></li>
 </ul>
             </nav>
         </div>
@@ -406,153 +400,89 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="integral-transforms">
-<h1>Integral Transforms<a class="headerlink" href="#integral-transforms" title="Link to this heading">#</a></h1>
-<section id="laplace-transform">
-<h2>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Link to this heading">#</a></h2>
-<p>Finding solutions to differential equations can be made easier if the equation is converted to an algebraic form using the Laplace transform. The Laplace transform is an integral transformation defined as:</p>
+  <section id="continuity-of-g-x-t-at-x-t-nth-order-ode">
+<h1>Continuity of <span class="math notranslate nohighlight">\( G(x, t) \)</span> at <span class="math notranslate nohighlight">\( x = t \)</span>: nth order ODE<a class="headerlink" href="#continuity-of-g-x-t-at-x-t-nth-order-ode" title="Link to this heading">#</a></h1>
+<p>Consider an infinitely small region of <span class="math notranslate nohighlight">\( x \)</span> in the vicinity of <span class="math notranslate nohighlight">\( x = t \)</span>: <span class="math notranslate nohighlight">\( x \in [t-\epsilon, t+\epsilon] \)</span>. Integrate both parts of Eq. (3.9) over <span class="math notranslate nohighlight">\( x \in [t-\epsilon, t+\epsilon] \)</span>. Integration of the right-hand side gives by the definition of the Dirac delta function.</p>
+<p>Before integrating the left part of Eq. (3.9), let us introduce auxiliary functions:</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{L}[f(x)] = \int_0^\infty f(x) e^{-px} dx = F(p)\]</div>
-<ul class="simple">
-<li><p>By definition, <span class="math notranslate nohighlight">\( \mathcal{L}[f] \)</span> does not depend on the behavior of <span class="math notranslate nohighlight">\( f(x) \)</span> for <span class="math notranslate nohighlight">\( x &lt; 0 \)</span>.</p></li>
-<li><p>Note that function <span class="math notranslate nohighlight">\( F(p) \)</span> might be undefined for some values of <span class="math notranslate nohighlight">\( p \)</span>.</p></li>
-<li><p>Laplace transform is a linear operation:</p></li>
-</ul>
+\[S_k(g(x)) = \int_{t-\epsilon}^{t+\epsilon} g(x) dx\]</div>
+<p>and</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{L}[c_1 f(x) + c_2 g(x)] = c_1 \mathcal{L}[f(x)] + c_2 \mathcal{L}[g(x)]\]</div>
-<p>It is straightforward to find the Laplace transform <span class="math notranslate nohighlight">\( F(p) \)</span> of any given function <span class="math notranslate nohighlight">\( f(x) \)</span>. To find the function <span class="math notranslate nohighlight">\( g(x) \)</span> given its Laplace transform <span class="math notranslate nohighlight">\( G(p) \)</span>, refer to a table of Laplace transforms.</p>
-<section id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>For <span class="math notranslate nohighlight">\( f(x) = a \)</span> (constant):</p></li>
-</ol>
+\[I_k(g(x)) = \int_{t-\epsilon}^{t+\epsilon} g(x) dx G(x, t)\]</div>
+<p>For convenience, we can express <span class="math notranslate nohighlight">\( g(x) \)</span> as:</p>
 <div class="math notranslate nohighlight">
-\[F(p) = \int_0^\infty a e^{-px} dx = \frac{a}{p}, \quad \text{for } \text{Re }(p) &gt; 0\]</div>
-<ol class="arabic simple" start="2">
-<li><p>For <span class="math notranslate nohighlight">\( f(x) = e^{-ax} \)</span>:</p></li>
-</ol>
+\[g(x) = g(t+\epsilon) G^{(n-k)}(t+\epsilon, t) - g(t-\epsilon) G^{(n-k)}(t-\epsilon, t)\]</div>
+<p>Integration of the first term on the left-hand side (LHS) of Eq. (3.9) gives:</p>
 <div class="math notranslate nohighlight">
-\[F(p) = \int_0^\infty e^{-ax} e^{-px} dx = \frac{1}{a + p}, \quad \text{for } \text{Re }(a + p) &gt; 0\]</div>
-<ol class="arabic simple" start="3">
-<li><p>For <span class="math notranslate nohighlight">\( f(x) = \cos(ax) \)</span>:</p></li>
-</ol>
+\[I_1(a_n) = \int_{t-\epsilon}^{t+\epsilon} a_n(x) dx^n G(x, t) dx\]</div>
+<p>which, when integrated by parts, becomes:</p>
 <div class="math notranslate nohighlight">
-\[F(p) = \int_0^\infty \cos(ax) e^{-px} dx = \frac{p}{a^2 + p^2}, \quad \text{for } \text{Re }(p) &gt; | \text{Im }(a) |\]</div>
+\[I_1(a_n) = a_n(x) dx^{n-1} G(x, t)\]</div>
+<p>Using the auxiliary functions <span class="math notranslate nohighlight">\( I_k(g(x)) \)</span> and <span class="math notranslate nohighlight">\( S_k(g(x)) \)</span>, we notice that:</p>
+<div class="math notranslate nohighlight">
+\[I_1(a_n) = S_1(a_n) - I_2(a_0n)\]</div>
+<p>where:</p>
+<div class="math notranslate nohighlight">
+\[I_2(a_0n) = \int_{t-\epsilon}^{t+\epsilon} a_0n(x) G^{(n-1)}(x, t) dx\]</div>
+<p>and:</p>
+<div class="math notranslate nohighlight">
+\[S_1(a_n) = a_n(t + \epsilon) G^{(n-1)}(t + \epsilon, t) - a_n(t - \epsilon) G^{(n-1)}(t - \epsilon, t)\]</div>
+<p>Similarly, integration of the second term on the LHS of Eq. (3.9) gives:</p>
+<div class="math notranslate nohighlight">
+\[I_2(a_{n-1}) = \int_{t-\epsilon}^{t+\epsilon} a_{n-1}(x) dx^{n-1} G(x, t) dx = S_2(a_{n-1}) - I_3(a_{0n-1})\]</div>
+<p>where:</p>
+<div class="math notranslate nohighlight">
+\[I_3(a_{0n-1}) = \int_{t-\epsilon}^{t+\epsilon} a_{0n-1}(x) G^{(n-2)}(x, t) dx\]</div>
+<p>Note that <span class="math notranslate nohighlight">\( I_2(a_0n) - I_2(a_{n-1}) = I_2(a_0n - a_{n-1}) \)</span>. Thus, integrating the first two terms of Eq. (3.9) gives:</p>
+<div class="math notranslate nohighlight">
+\[I_1(a_n) + I_2(a_{n-1}) = S_1(p_1) + S_2(p_2) - I_3(p_0)\]</div>
+<p>For convenience, we introduce functions <span class="math notranslate nohighlight">\( p_k(x) \)</span>, which are linear combinations of various derivatives of <span class="math notranslate nohighlight">\( a_m(x) \)</span>, such that:</p>
+<div class="math notranslate nohighlight">
+\[p_1(x) = a_1(x) - a_0(x)\]</div>
+<div class="math notranslate nohighlight">
+\[p_2(x) = a_2(x) - a_1(x)\]</div>
+<p>and so on.</p>
+<p>Thus, the equation becomes:</p>
+<div class="math notranslate nohighlight">
+\[I_1(a_n) + I_2(a_{n-1}) + \ldots + I_{n+1}(a_0)\]</div>
+<p>The integral of the right-hand side of Eq. (3.9) is 1, so:</p>
+<div class="math notranslate nohighlight">
+\[I_1(a_n) + I_2(a_{n-1}) + \ldots + I_n(a_1) + I_{n+1}(a_0) = 1\]</div>
+<p>Taking the limit of Eq. (3.14) for <span class="math notranslate nohighlight">\( \epsilon \to 0 \)</span>, since the functions <span class="math notranslate nohighlight">\( p_k(x) \)</span> are derived from continuous functions <span class="math notranslate nohighlight">\( a_m(x) \)</span>, they are also continuous. Therefore, for each:</p>
+<div class="math notranslate nohighlight">
+\[S_k(p_k): \lim_{\epsilon \to 0} S_k(p_k) = \lim_{\epsilon \to 0} \left[ p_k(t + \epsilon) G^{(n-k)}(t + \epsilon, t) - p_k(t - \epsilon) G^{(n-k)}(t - \epsilon, t) \right]\]</div>
+<p>If <span class="math notranslate nohighlight">\( G^{(n-k)}(x, t) \)</span> is continuous at <span class="math notranslate nohighlight">\( x = t \)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[\lim S_k(p_k) = 0\]</div>
+<p>In our case, we have:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\epsilon \to 0} \int_{t-\epsilon}^{t+\epsilon} p_{n+1}(x) G(x, t) dx = 1\]</div>
+<p>This is satisfied if the <span class="math notranslate nohighlight">\( (n-1) \)</span>-th derivative of <span class="math notranslate nohighlight">\( G(x, t) \)</span> in Eq. (3.14) has a finite discontinuity at <span class="math notranslate nohighlight">\( x = t \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[p_1(t) \lim_{\epsilon \to 0} \left[ G^{(n-1)}(t + \epsilon, t) - G^{(n-1)}(t - \epsilon, t) \right] = 1\]</div>
+<p>And all lower derivatives of <span class="math notranslate nohighlight">\( G(x, t) \)</span> are continuous:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\epsilon \to 0} \left[ G^{(n-k)}(t + \epsilon, t) - G^{(n-k)}(t - \epsilon, t) \right] = 0 \quad \text{(for } k = 2, 3, \dots, n\text{)} \]</div>
+<p>Thus, the single discontinuity condition and <span class="math notranslate nohighlight">\( n-1 \)</span> continuity conditions for the function <span class="math notranslate nohighlight">\( G(x, t) \)</span> at <span class="math notranslate nohighlight">\( x = t \)</span> are:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\epsilon \to 0} \frac{d^k G(x, t)}{dx^k} \Big|_{x = t + \epsilon} = 0 \quad \text{(for } k = 0, 1, \dots, n-2\text{)}\]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{\epsilon \to 0} \frac{d^{n-1} G(x, t)}{dx^{n-1}} \Big|_{x = t + \epsilon} = 1\]</div>
+<section id="boundary-conditions-for-an-nth-order-ode">
+<h2>Boundary conditions for an nth order ODE<a class="headerlink" href="#boundary-conditions-for-an-nth-order-ode" title="Link to this heading">#</a></h2>
+<p>An nth order ODE requires <span class="math notranslate nohighlight">\( n \)</span> boundary conditions, which can be given in a variety of forms. For example, <span class="math notranslate nohighlight">\( n \)</span>-point conditions:</p>
+<div class="math notranslate nohighlight">
+\[y(x_1) = y_1, \, y(x_2) = y_2, \dots, y(x_n) = y_n,\]</div>
+<p>or the one-point boundary conditions:</p>
+<div class="math notranslate nohighlight">
+\[y(x_0) = a, \, y'(x_0) = b, \dots, y^{(n)}(x_n) = c.\]</div>
 </section>
-<section id="laplace-transform-of-derivatives">
-<h3>Laplace Transform of Derivatives<a class="headerlink" href="#laplace-transform-of-derivatives" title="Link to this heading">#</a></h3>
-<p>Consider Laplace transforms of <span class="math notranslate nohighlight">\( f'(x) \)</span> and <span class="math notranslate nohighlight">\( f''(x) \)</span>.</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\( \mathcal{L}[f'] \)</span>:</p></li>
-</ol>
+<section id="inhomogeneous-boundary-conditions">
+<h2>Inhomogeneous boundary conditions<a class="headerlink" href="#inhomogeneous-boundary-conditions" title="Link to this heading">#</a></h2>
+<p>So far, we applied homogeneous boundary conditions. For inhomogeneous ones, use substitution:</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{L}[f'] = \int_0^\infty f'(x) e^{-px} dx = \left[ e^{-px} f(x) \right]_0^\infty + p \int_0^\infty f(x) e^{-px} dx = -f(0) + p \mathcal{L}[f]\]</div>
-<ol class="arabic simple" start="2">
-<li><p><span class="math notranslate nohighlight">\( \mathcal{L}[f''] \)</span>:</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[\mathcal{L}[f''] = \int_0^\infty f''(x) e^{-px} dx = p^2 \mathcal{L}[f] - p f(0) - f'(0)\]</div>
-</section>
-<section id="solving-ode-using-the-laplace-transform">
-<h3>Solving ODE Using the Laplace Transform<a class="headerlink" href="#solving-ode-using-the-laplace-transform" title="Link to this heading">#</a></h3>
-<p>Applying the Laplace transform method is convenient if:</p>
-<ul class="simple">
-<li><p>The variable <span class="math notranslate nohighlight">\( x \)</span> is defined in the interval <span class="math notranslate nohighlight">\( [0, \infty) \)</span> (e.g., coordinate of a point in a semi-infinite metal rod or time).</p></li>
-<li><p>The values of the function <span class="math notranslate nohighlight">\( f(x) \)</span> and its derivatives are zero for <span class="math notranslate nohighlight">\( x = 0 \)</span>.</p></li>
-</ul>
-<p>For example, consider the differential equation:</p>
-<div class="math notranslate nohighlight">
-\[f''(x) + 4 f'(x) + 4 f(x) = x^2 e^{-2x}\]</div>
-<p>with initial conditions <span class="math notranslate nohighlight">\( f(0) = 0 \)</span> and <span class="math notranslate nohighlight">\( f'(0) = 0 \)</span>. Taking the Laplace transform of the equation gives:</p>
-<div class="math notranslate nohighlight">
-\[p^2 \mathcal{L}[f] + 4 p \mathcal{L}[f] + 4 \mathcal{L}[f] = \mathcal{L}[x^2 e^{-2x}]\]</div>
-<p>Given the initial conditions, we simplify:</p>
-<div class="math notranslate nohighlight">
-\[(p + 2)^2 \mathcal{L}[f] = \mathcal{L}[x^2 e^{-2x}]\]</div>
-<p>Using a table of Laplace transforms, we find:</p>
-<div class="math notranslate nohighlight">
-\[\mathcal{L}[x^2 e^{-2x}] = \frac{2}{(p + 2)^3}\]</div>
-<p>Thus, the transformed equation becomes:</p>
-<div class="math notranslate nohighlight">
-\[\mathcal{L}[f] = \frac{2}{(p + 2)^5}\]</div>
-<p>By referring to a Laplace transform table, we find that the solution of the ODE is:</p>
-<div class="math notranslate nohighlight">
-\[f(x) = \frac{1}{12} x^4 e^{-2x}\]</div>
-</section>
-</section>
-<section id="table-of-laplace-transforms">
-<h2>Table of Laplace Transforms<a class="headerlink" href="#table-of-laplace-transforms" title="Link to this heading">#</a></h2>
-<p>Given the functions <span class="math notranslate nohighlight">\(f(t)\)</span> and <span class="math notranslate nohighlight">\(g(t)\)</span>, and their respective Laplace transforms <span class="math notranslate nohighlight">\(F(p)\)</span> and <span class="math notranslate nohighlight">\(G(p)\)</span> such that:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-f(t) &amp;= \mathcal{L}^{-1}\{F\}(p),\\
-g(t) &amp;= \mathcal{L}^{-1}\{G\}(p),
-\end{align}\end{split}\]</div>
-<p>then we can define a bunch of different Laplace Transforms and their properties:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
-<th class="head"><p><strong>Time domain <span class="math notranslate nohighlight">\(t\)</span></strong></p></th>
-<th class="head"><p><strong>Laplace domain <span class="math notranslate nohighlight">\(p\)</span></strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>Linearity</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\( a f(t) + b g(t) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( a F(p) + b G(p) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Frequency-domain derivative</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\( t f(t) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( -F'(p) \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Frequency-domain general derivative</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\( t^n f(t) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( (-1)^n F^{(n)}(p) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Derivative</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\( f'(t) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( p F(p) - f(0^{-}) \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Second derivative</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\( f''(t) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( p^2 F(p) - p f(0) - f'(0) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>General derivative</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\( f^{(n)}(t) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( p^n F(p) - \sum_{k=1}^{n} p^{n-k} f^{(k-1)}(0) \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Frequency shifting</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\( e^{at} f(t) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( F(p - a) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Time shifting I</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\( f(t - a) u(t - a) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( e^{-ap} F(p) \)</span> *</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Time shifting II</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\( f(t) u(t - a) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( e^{-ap} \mathcal{L}\{f(t + a)\} \)</span> *</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Time scaling</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\( f(at) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \frac{1}{a} F \left( \frac{p}{a} \right) \)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul class="simple">
-<li><p>where <span class="math notranslate nohighlight">\(u(t)\)</span> is the Heavisde step function.</p></li>
-</ul>
-</section>
-<section id="fourier-transform">
-<h2>Fourier Transform<a class="headerlink" href="#fourier-transform" title="Link to this heading">#</a></h2>
-<p>There is some relationship between Laplace transforms and Fourier transforms.</p>
-<p>One definition of a Fourier transform is:</p>
-<div class="math notranslate nohighlight">
-\[\mathcal{F}[f(x)] = \tilde{f}(k) = \frac{1}{\sqrt{2\pi}}\,\int_{-\infty}^\infty f(x)\,e^{-ikx}\,\mathrm{d}x\]</div>
-<p>with the inverse transform looking like:</p>
-<div class="math notranslate nohighlight">
-\[f(x) = \mathcal{F}^{-1}[\tilde{f}(k) = \frac{1}{\sqrt{2\pi}}\,\int_{-\infty}^\infty \tilde{f}(x)\,e^{ikx}\,\mathrm{d}x\]</div>
+\[u(x) = y(x) - h(x),\]</div>
+<p>where <span class="math notranslate nohighlight">\( h(x) \)</span> is a polynomial function of order <span class="math notranslate nohighlight">\( n - 1 \)</span> (i.e., it has <span class="math notranslate nohighlight">\( n \)</span> coefficients) that satisfies the inhomogeneous boundary conditions. Then, the function <span class="math notranslate nohighlight">\( u(x) \)</span> will satisfy homogeneous boundary conditions.</p>
 </section>
 </section>
 
@@ -602,14 +532,8 @@ g(t) &amp;= \mathcal{L}^{-1}\{G\}(p),
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform">Laplace Transform</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-derivatives">Laplace Transform of Derivatives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-ode-using-the-laplace-transform">Solving ODE Using the Laplace Transform</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-laplace-transforms">Table of Laplace Transforms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-transform">Fourier Transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions-for-an-nth-order-ode">Boundary conditions for an nth order ODE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inhomogeneous-boundary-conditions">Inhomogeneous boundary conditions</a></li>
 </ul>
   </nav></div>
 

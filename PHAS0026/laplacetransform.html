@@ -190,8 +190,8 @@
 <li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sturmliouville.html">Sturm-Liouville Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integraltransforms.html">Integral Transforms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tensors.html">Cartesian Tensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pdes.html">Partial Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensors.html">Cartesian Tensors</a></li>
 </ul>
 
     </div>
@@ -955,11 +955,11 @@ g(t) &amp;= \mathcal{L}^{-1}[G(p)],
 <td><p><span class="math notranslate nohighlight">\( F(p - a) \)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Time shifting I</p></td>
-<td><p><span class="math notranslate nohighlight">\( f(t - a) u(t - a) \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( f(t - a) \,H(t - a) \)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\( e^{-ap} F(p) \)</span> *</p></td>
 </tr>
 <tr class="row-even"><td><p>Time shifting II</p></td>
-<td><p><span class="math notranslate nohighlight">\( f(t) u(t - a) \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( f(t) \,H(t - a) \)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\( e^{-ap} \mathcal{L}\{f(t + a)] \)</span> *</p></td>
 </tr>
 <tr class="row-odd"><td><p>Time scaling</p></td>
@@ -970,7 +970,7 @@ g(t) &amp;= \mathcal{L}^{-1}[G(p)],
 </table>
 </div>
 <ul class="simple">
-<li><p>where <span class="math notranslate nohighlight">\(u(t)\)</span> is the Heaviside step function.</p></li>
+<li><p>where <span class="math notranslate nohighlight">\(H(t)\)</span> is the Heaviside step function.</p></li>
 </ul>
 </section>
 </section>
