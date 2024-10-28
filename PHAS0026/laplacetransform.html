@@ -877,11 +877,11 @@ u' = \frac{1}{2}t^{-1/2} &amp;\qquad v = -\frac{1}{p}e^{-pt}\end{split}\]</div>
 (b) Inner integral (over <span class="math notranslate nohighlight">\( t \)</span>): <span class="math notranslate nohighlight">\( 0 \leq t &lt; r \)</span>, outer integral (over <span class="math notranslate nohighlight">\( r \)</span>): <span class="math notranslate nohighlight">\( 0 \leq r &lt; 1 \)</span>.</p>
 <p>We can change the order of integration with respect to <span class="math notranslate nohighlight">\( t \)</span> and <span class="math notranslate nohighlight">\( r \)</span> in the equation, as illustrated in the above figure (b), so as</p>
 <div class="math notranslate nohighlight">
-\[H(p) G(p) = \int_0^\infty \left( \int_0^r g(r - t) h(t) e^{-pr} dt \right) dr.\]</div>
+\[H(p) G(p) = \int_0^\infty \left( \int_0^r g(r - t) h(t) e^{-pr} dt \right) dr = h \ast g \]</div>
 <p>This inner integral is called the convolution of functions <span class="math notranslate nohighlight">\( g(x) \)</span> and <span class="math notranslate nohighlight">\( h(x) \)</span>. (Do not confuse the symbol <span class="math notranslate nohighlight">\( \ast \)</span> indicating the convolution operation with that indicating the multiplication operation.)</p>
 <p>Thus this integral can be written as</p>
 <div class="math notranslate nohighlight">
-\[H(p) G(p) = \int_0^\infty [h \ast g] e^{-pr} dr,\]</div>
+\[H(p) G(p) = \int_0^\infty [h \ast g] e^{-pr} dr,\] </div>
 <p>i.e., the Laplace transform of a convolution of functions <span class="math notranslate nohighlight">\( h(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span> equals the product of the Laplace transforms of these functions. In other words, <span class="math notranslate nohighlight">\( g \ast h \)</span> is the inverse Laplace transform of <span class="math notranslate nohighlight">\( H(p) G(p) \)</span>.</p>
 </section>
 <hr class="docutils" />
@@ -895,13 +895,16 @@ u' = \frac{1}{2}t^{-1/2} &amp;\qquad v = -\frac{1}{p}e^{-pt}\end{split}\]</div>
 \[p^2 Y(p) + 3p Y(p) + 2 Y(p) = \mathcal{L}(e^{-t}),\]</div>
 <p>which gives</p>
 <div class="math notranslate nohighlight">
-\[Y(p) = \frac{1}{(p^2 + 3p + 2)} = \frac{1}{(p+1)(p+2)}.\]</div>
-<p>The inverse Laplace transform of <span class="math notranslate nohighlight">\( L(e^{-t}) \)</span> is <span class="math notranslate nohighlight">\( e^{-t} \)</span>. Therefore,</p>
+\[Y(p) = \frac{\mathcal{L}(e^{-t})}{(p^2 + 3p + 2)} = \frac{\mathcal{L}(e^{-t})}{(p+1)(p+2)}.\]</div>
+The inverse transform of <div class="math notranslate nohighlight">
+\frac{1}{(p+1)(p+2)} = \frac{1}{p+1} - \frace{1}{p+2}\]</div>
+is <span class="math notranslate nohighlight">\( e^{-t} - e^{-2t}\)</span> 
+  Therefore,</p>
 <div class="math notranslate nohighlight">
-\[Y(p) = \mathcal{L}(e^{-t} - e^{-2t}).\]</div>
+\[Y(p) = \mathcal{L}(e^{-t} - e^{-2t})\mathcal{L}(e^{-t}})\]</div>
 <p>To find <span class="math notranslate nohighlight">\( y(t) \)</span>, we need to calculate the convolution of <span class="math notranslate nohighlight">\( e^{-t} - e^{-2t} \)</span> and <span class="math notranslate nohighlight">\( e^{-t} \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[y(t) = \int_0^t \left[ e^{-t} - e^{-2t} \right] e^{-(t - \tau)} d\tau.\]</div>
+\[y(t) = \in t_0^t g(\tau)\,h(t-\tau)\,\mathrm{d}\tau = \int_0^t \left[ e^{-\tau} - e^{-2\tau} \right] e^{-(t - \tau)} d\tau.\]</div>
 <p>This simplifies to:</p>
 <div class="math notranslate nohighlight">
 \[y(t) = t e^{-t} + e^{-2t} - e^{-t}.\]</div>
