@@ -546,27 +546,28 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\( y(x) \)</span> satisfies the boundary conditions <span class="math notranslate nohighlight">\( y(0) = y(\frac{\pi}{2}) = 0 \)</span>. First, consider the ODE with respect to <span class="math notranslate nohighlight">\( G(x, t) \)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\frac{d^2G(x, t)}{dx^2} + G(x, t) = \delta(t - x),\]</div>
-<p>and write down solutions for the homogeneous equation for <span class="math notranslate nohighlight">\( x &lt; t \)</span> and <span class="math notranslate nohighlight">\( x &gt; t \)</span> (note that these solutions should be different because of the discontinuity at <span class="math notranslate nohighlight">\( x = t \)</span>):</p>
+<p>and write down solutions for the homogeneous equation for <span class="math notranslate nohighlight">\( 0 &lt; t &lt; x\)</span> and <span class="math notranslate nohighlight">\( x &lt; t &lt; 
+  \frac{\pi}{2} \)</span> (note that these solutions should be different because of the discontinuity at <span class="math notranslate nohighlight">\( x = t \)</span>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
-G(x, t) = A(t) \sin(x) + B(t) \cos(x), &amp; \text{for } x &lt; t, \\
-G(x, t) = C(t) \sin(x) + D(t) \cos(x), &amp; \text{for } x &gt; t.
+G(x, t) = A(t) \sin(x) + B(t) \cos(x), &amp; \text{for }  0 &lt; t &lt; x, \\
+G(x, t) = C(t) \sin(x) + D(t) \cos(x), &amp; \text{for }  x &lt; t &lt; \pi/2.
 \end{cases}\end{split}\]</div>
 <section id="boundary-conditions-and-continuity-conditions">
 <h3>Boundary conditions and continuity conditions<a class="headerlink" href="#boundary-conditions-and-continuity-conditions" title="Link to this heading">#</a></h3>
 <p>Use the two boundary conditions and the continuity and discontinuity conditions to determine <span class="math notranslate nohighlight">\( A(t), B(t), C(t), D(t) \)</span>.</p>
-<p>From the boundary conditions, we have for <span class="math notranslate nohighlight">\( x &lt; t \)</span>:</p>
+<p>From the boundary conditions, we have for <span class="math notranslate nohighlight">\( 0 &lt; t &lt; x\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[G(0, t) = A(t) \sin(0) + B(t) \cos(0) = 0 + B(t) = B(t) = 0.\]</div>
-<p>For <span class="math notranslate nohighlight">\( x &gt; t \)</span>:</p>
+<p>For <span class="math notranslate nohighlight">\( x &lt; t &lt; \pi/2 \)</span>:</p>
 <div class="math notranslate nohighlight">
 \[G\left(\frac{\pi}{2}, t\right) = C(t) \sin\left(\frac{\pi}{2}\right) + D(t) \cos\left(\frac{\pi}{2}\right) = C(t) \cdot 1 + D(t) \cdot 0 = C(t) = 0.\]</div>
 <p>Hence,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}G(x, t) =
 \begin{cases}
-A(t) \sin(x), &amp; \text{for } x &lt; t, \\
-D(t) \cos(x), &amp; \text{for } x &gt; t.
+A(t) \sin(x), &amp; \text{for } 0 &lt; t &lt; x, \\
+D(t) \cos(x), &amp; \text{for } x &lt; t &lt; \pi/2.
 \end{cases}\end{split}\]</div>
 </section>
 <section id="id1">
@@ -589,21 +590,21 @@ and so:
 <div class="math notranslate nohighlight">
 \[\begin{split}G(x, t) =
 \begin{cases}
-- \cos(t) \sin(x), &amp; \text{for } x &lt; t, \\
-- \sin(t) \cos(x), &amp; \text{for } x &gt; t.
+- \cos(t) \sin(x), &amp; \text{for } 0 &lt; t &lt; x, \\
+- \sin(t) \cos(x), &amp; \text{for } x &lt; t &lt; \pi/2.
 \end{cases}\end{split}\]</div>
 </section>
 <section id="general-solution-using-greens-function">
 <h3>General solution using Green’s function<a class="headerlink" href="#general-solution-using-greens-function" title="Link to this heading">#</a></h3>
 <p>Now use this <span class="math notranslate nohighlight">\( G(x, t) \)</span> to find <span class="math notranslate nohighlight">\( y(x) \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[y(x) = \int_0^{\frac{\pi}{2}} G(x, t) f(t) \,\mathrm{d}t = \int_0^x G_{x &gt; t}(x, t) f(t) \,\mathrm{d}t + \int_x^{\frac{\pi}{2}} G_{x &lt; t}(x, t) f(t) \,\mathrm{d}t.\]</div>
-<p>For <span class="math notranslate nohighlight">\( x &gt; t \)</span>:</p>
+\[y(x) = \int_0^{\frac{\pi}{2}} G(x, t) f(t) \,\mathrm{d}t = \int_0^x G_{0 &lt; t &lt; x}(x, t) f(t) \,\mathrm{d}t + \int_x^{\frac{\pi}{2}} G_{x &lt; t &lt; \pi/2}(x, t) f(t) \,\mathrm{d}t.\]</div>
+<p>For <span class="math notranslate nohighlight">\( 0 &lt; t &lt; x\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\int_0^x G(x, t) f(t) \,\mathrm{d}t = \int_0^x (-\sin(t) \cos(x)) (t) \,\mathrm{d}t = \cos(x)( x\cos(x) - \sin(x))\]</div>
-<p>For <span class="math notranslate nohighlight">\( x &lt; t \)</span>:</p>
+\[\int_0^x G(x, t) f(t) \,\mathrm{d}t = \int_0^x (-\cos(t) \sin(x)) (t) \,\mathrm{d}t = -\sin(x)\left(-\frac{\pi}{2} - x \sin(x) - \cos(x) \right)\]</div>
+<p>For <span class="math notranslate nohighlight">\( x &lt; t &lt; \pi/2 \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\int_x^{\pi/2} G(x, t) f(t) \,\mathrm{d}t = \int_x^{\pi/2} (-\cos(t) \sin(x)) (t) \,\mathrm{d}t = \sin(x)\left(-\frac{\pi}{2} + x \sin(x) + \cos(x) \right)\]</div>
+\[\int_x^{\pi/2} G(x, t) f(t) \,\mathrm{d}t = \int_x^{\pi/2} (-\sin(t) \cos(x)) (t) \,\mathrm{d}t = -\cos(x)( -x\cos(x) + \sin(x))\]</div>
 </section>
 <section id="particular-solution">
 <h3>Particular solution<a class="headerlink" href="#particular-solution" title="Link to this heading">#</a></h3>
