@@ -598,7 +598,7 @@ and so:
 <h3>General solution using Green’s function<a class="headerlink" href="#general-solution-using-greens-function" title="Link to this heading">#</a></h3>
 <p>Now use this <span class="math notranslate nohighlight">\( G(x, t) \)</span> to find <span class="math notranslate nohighlight">\( y(x) \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[y(x) = \int_0^{\frac{\pi}{2}} G(x, t) f(t) \,\mathrm{d}t = \int_0^x G_{x &g; t}(x, t) f(t) \,\mathrm{d}t + \int_x^{\frac{\pi}{2}} G_{x &lt; t}(x, t) f(t) \,\mathrm{d}t.\]</div>
+\[y(x) = \int_0^{\frac{\pi}{2}} G(x, t) f(t) \,\mathrm{d}t = \int_0^x G_{x &gt; t}(x, t) f(t) \,\mathrm{d}t + \int_x^{\frac{\pi}{2}} G_{x &lt; t}(x, t) f(t) \,\mathrm{d}t.\]</div>
 Notice that we are switching from a <span class="math notranslate nohighlight">\( x \)</span> space to a <span class="math notranslate nohighlight">\(t \)</span> space, so the specific parts of the Green's function in the integrand switch around, hence we have <span class="math notranslate nohighlight">\( G_{x &gt; t}(x, t) \)</span> in the first part, <span class="math notranslate nohighlight">\( G_{x &lt; t }(x, t) \)</span> in the second.
 <p>For <span class="math notranslate nohighlight">\(x &lt; t\)</span>:</p>
 <div class="math notranslate nohighlight">
