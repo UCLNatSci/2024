@@ -904,7 +904,7 @@ is <span class="math notranslate nohighlight">\( e^{-t} - e^{-2t}\)</span>
 \[Y(p) = \mathcal{L}(e^{-t} - e^{-2t})\mathcal{L}(e^{-t})\]</div>
 <p>To find <span class="math notranslate nohighlight">\( y(t) \)</span>, we need to calculate the convolution of <span class="math notranslate nohighlight">\( e^{-t} - e^{-2t} \)</span> and <span class="math notranslate nohighlight">\( e^{-t} \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[y(t) = \in t_0^t g(\tau)\,h(t-\tau)\,\mathrm{d}\tau = \int_0^t \left[ e^{-\tau} - e^{-2\tau} \right] e^{-(t - \tau)} d\tau.\]</div>
+\[y(t) = \int_0^t g(\tau)\,h(t-\tau)\,\mathrm{d}\tau = \int_0^t \left[ e^{-\tau} - e^{-2\tau} \right] e^{-(t - \tau)} d\tau.\]</div>
 <p>This simplifies to:</p>
 <div class="math notranslate nohighlight">
 \[y(t) = t e^{-t} + e^{-2t} - e^{-t}.\]</div>
