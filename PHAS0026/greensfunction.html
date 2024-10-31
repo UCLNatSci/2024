@@ -1,4 +1,4 @@
- 
+
 <!DOCTYPE html>
 
 
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -62,7 +62,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'greensfunction';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Sturm-Liouville Theory" href="sturmliouville.html" />
     <link rel="prev" title="The Dirac Delta Function" href="diracdelta.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -188,10 +187,6 @@
 <li class="toctree-l1"><a class="reference internal" href="laplacetransform.html">Laplace Transforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diracdelta.html">The Dirac Delta Function</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Green’s functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sturmliouville.html">Sturm-Liouville Theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="integraltransforms.html">Integral Transforms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pdes.html">Partial Differential Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tensors.html">Cartesian Tensors</a></li>
 </ul>
 
     </div>
@@ -389,18 +384,19 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restrictions-on-g-x-t">Restrictions on <span class="math notranslate nohighlight">\(G(x,t)\)</span>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-of-g-x-t-at-x-t">Continuity of <span class="math notranslate nohighlight">\(G(x, t)\)</span> at <span class="math notranslate nohighlight">\(x = t\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investigate-the-behaviour-of-g-x-t-near-the-point-x-t">Investigate the behaviour of <span class="math notranslate nohighlight">\( G(x, t) \)</span> near the point <span class="math notranslate nohighlight">\( x = t \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-linear-combinations-of-coefficients">Define the linear combinations of coefficients</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-as-epsilon-to-0">Limit as <span class="math notranslate nohighlight">\( \epsilon \to 0 \)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-and-discontinuity-conditions">Continuity and Discontinuity Conditions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-odes-using-greens-function-an-example">Solving ODEs using Green’s function - an example.</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-green-s-function">Setting up a Green’s function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investigating-the-behaviour-of-g-x-t-near-the-point-x-t">Investigating the behaviour of <span class="math notranslate nohighlight">\( G(x, t) \)</span> near the point <span class="math notranslate nohighlight">\( x = t \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-linear-combinations-of-coefficients">Defining the linear combinations of coefficients</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-as-epsilon-to-0">Limit as <span class="math notranslate nohighlight">\( \epsilon \to 0 \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-and-discontinuity-conditions">Continuity and Discontinuity Conditions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-odes-using-greens-function-an-example">Solving ODEs using Green’s function - an example</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions-and-continuity-conditions">Boundary conditions and continuity conditions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Continuity and Discontinuity conditions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution-using-greens-function">General solution using Green’s function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particular-solution">Particular solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-solution-using-the-greens-function">Finding the solution using the Green’s function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">General solution</a></li>
 </ul>
 </li>
@@ -419,10 +415,10 @@ document.write(`
 <h1>Green’s functions<a class="headerlink" href="#greens-functions" title="Link to this heading">#</a></h1>
 <section id="definition">
 <h2>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
-<p>We can represent the left-hand-side of an ODE</p>
+<p>We can represent the left-hand side of an ODE:</p>
 <div class="math notranslate nohighlight">
 \[a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \dots + a_2(x)y'' + a_1(x)y' + a_0(x)y = f(x)\]</div>
-<p>in the form</p>
+<p>in the form:</p>
 <div class="math notranslate nohighlight">
 \[L(x)y(x) = f(x),\]</div>
 <p>where the operator <span class="math notranslate nohighlight">\(L(x)\)</span> is</p>
@@ -457,24 +453,24 @@ document.write(`
 <section id="restrictions-on-g-x-t">
 <h3>Restrictions on <span class="math notranslate nohighlight">\(G(x,t)\)</span>:<a class="headerlink" href="#restrictions-on-g-x-t" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Boundary conditions -  If, for example, <span class="math notranslate nohighlight">\(y(a) = y(b) = 0\)</span>, we can request that <span class="math notranslate nohighlight">\(G(a, t) = G(b, t) = 0\)</span> for any value of <span class="math notranslate nohighlight">\(t\)</span>. Clearly, <span class="math notranslate nohighlight">\(y(x) = \int_a^b G(x, t)f(t) \,\mathrm{d}t \)</span> will be satisfied in this case.</p></li>
-<li><p>Continuity and discontinuity of <span class="math notranslate nohighlight">\(G(x, t)\)</span>, <span class="math notranslate nohighlight">\(G'(x, t)\)</span>, …, <span class="math notranslate nohighlight">\(G^{(n-1)}(x, t)\)</span> at <span class="math notranslate nohighlight">\(x = t\)</span>. (Remember that <span class="math notranslate nohighlight">\(\delta(t - x)\)</span> is a generalized function which turns to infinity at <span class="math notranslate nohighlight">\(x = t\)</span>.)</p></li>
+<li><p><strong>Boundary conditions</strong> - If, for example, <span class="math notranslate nohighlight">\(y(a) = y(b) = 0\)</span>, we can request that <span class="math notranslate nohighlight">\(G(a, t) = G(b, t) = 0\)</span> for any value of <span class="math notranslate nohighlight">\(t\)</span>. Clearly, <span class="math notranslate nohighlight">\(y(x) = \int_a^b G(x, t)f(t) \,\mathrm{d}t \)</span> will be satisfied in this case.</p></li>
+<li><p><strong>Continuity and discontinuity of <span class="math notranslate nohighlight">\(G(x, t)\)</span></strong>, <span class="math notranslate nohighlight">\(G'(x, t)\)</span>, …, <span class="math notranslate nohighlight">\(G^{(n-1)}(x, t)\)</span> at <span class="math notranslate nohighlight">\(x = t\)</span>. (Remember that <span class="math notranslate nohighlight">\(\delta(t - x)\)</span> is a generalized function which turns to infinity at <span class="math notranslate nohighlight">\(x = t\)</span>.)</p></li>
 </ol>
 </section>
-<section id="continuity-of-g-x-t-at-x-t">
-<h3>Continuity of <span class="math notranslate nohighlight">\(G(x, t)\)</span> at <span class="math notranslate nohighlight">\(x = t\)</span><a class="headerlink" href="#continuity-of-g-x-t-at-x-t" title="Link to this heading">#</a></h3>
-<p>Let us consider the 2nd order equation</p>
+</section>
+<section id="setting-up-a-green-s-function">
+<h2>Setting up a Green’s function<a class="headerlink" href="#setting-up-a-green-s-function" title="Link to this heading">#</a></h2>
+<p>Let us consider the 2nd order equation:</p>
 <div class="math notranslate nohighlight">
 \[a_2(x) y''(x) + a_1(x) y'(x) + a_0(x) y(x) = f(x), \quad y(a) = y(b) = 0.\]</div>
-<p>The Green’s function for this equation should satisfy</p>
+<p>The Green’s function for this equation should satisfy:</p>
 <div class="math notranslate nohighlight">
 \[a_2(x) G''(x, t) + a_1(x) G'(x, t) + a_0(x) G(x, t) = \delta(x - t),\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[G(a, t) = G(b, t) = 0.\]</div>
-</section>
-<section id="investigate-the-behaviour-of-g-x-t-near-the-point-x-t">
-<h3>Investigate the behaviour of <span class="math notranslate nohighlight">\( G(x, t) \)</span> near the point <span class="math notranslate nohighlight">\( x = t \)</span><a class="headerlink" href="#investigate-the-behaviour-of-g-x-t-near-the-point-x-t" title="Link to this heading">#</a></h3>
+<section id="investigating-the-behaviour-of-g-x-t-near-the-point-x-t">
+<h3>Investigating the behaviour of <span class="math notranslate nohighlight">\( G(x, t) \)</span> near the point <span class="math notranslate nohighlight">\( x = t \)</span><a class="headerlink" href="#investigating-the-behaviour-of-g-x-t-near-the-point-x-t" title="Link to this heading">#</a></h3>
 <p>Integrate both parts of the equation for <span class="math notranslate nohighlight">\( G(x, t) \)</span> with respect to <span class="math notranslate nohighlight">\( x \)</span> near <span class="math notranslate nohighlight">\( x = t \)</span>, i.e., in the interval <span class="math notranslate nohighlight">\( x \in [t - \epsilon, t + \epsilon] \)</span>, where <span class="math notranslate nohighlight">\( \epsilon \)</span> is small, i.e.</p>
 <div class="math notranslate nohighlight">
 \[\int_{t-\epsilon}^{t+\epsilon}\left[a_2(x) \frac{\mathrm{d}^2}{\mathrm{d}x^2} + a_{1}(x) \frac{\mathrm{d}}{\mathrm{d}x} + a_0(x)\right] G(x, t)\,\mathrm{d}x = \int_{t - \epsilon}^{t + \epsilon} \delta(x - t)\mathrm{d}x\]</div>
@@ -487,8 +483,9 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[I_1(t, \epsilon) = \int_{t - \epsilon}^{t + \epsilon} a_1(x) G'(x, t)\mathrm{d}x = \left[ a_1(x) G(x, t) \right]_{t - \epsilon}^{t + \epsilon} - \int_{t - \epsilon}^{t + \epsilon} a_1'(x)\, G(x, t)\,\mathrm{d}x\]</div>
 <div class="math notranslate nohighlight">
-\[I_2(t, \epsilon) = \int_{t - \epsilon}^{t + \epsilon} a_2(x) G''(x, t)\mathrm{d}x = \left[ a_2(x) G'(x, t) \right]_{t - \epsilon}^{t + \epsilon}- \int_{t - \epsilon}^{t + \epsilon} a_2'(x)\, G'(x, t)\,\mathrm{d}x = \left[ a_2(x) G'(x, t) - a_2'(x) G(x, t)\right]_{t - \epsilon}^{t + \epsilon} + \int_{t - \epsilon}^{t + \epsilon} a_2''(x)\, G(x, t)\,\mathrm{d}x \]</div>
-<p>After rearranging the contributions in <span class="math notranslate nohighlight">\( I_k(t, \epsilon) \)</span>, we obtain:</p>
+\[\begin{split}I_2(t, \epsilon) &amp;= \int_{t - \epsilon}^{t + \epsilon} a_2(x) G''(x, t)\mathrm{d}x = \left[ a_2(x) G'(x, t) \right]_{t - \epsilon}^{t + \epsilon}- \int_{t - \epsilon}^{t + \epsilon} a_2'(x)\, G'(x, t)\,\mathrm{d}x 
+\\&amp;= \left[ a_2(x) G'(x, t) - a_2'(x) G(x, t)\right]_{t - \epsilon}^{t + \epsilon} + \int_{t - \epsilon}^{t + \epsilon} a_2''(x)\, G(x, t)\,\mathrm{d}x\end{split}\]</div>
+<p>After rearranging the contributions in <span class="math notranslate nohighlight">\(I_k(t, \epsilon)\)</span>, we obtain:</p>
 <div class="math notranslate nohighlight">
 \[I_0(t, \epsilon) + I_1(t, \epsilon) + I_2(t, \epsilon) = 1.\]</div>
 <p>Thus, we have</p>
@@ -496,8 +493,8 @@ document.write(`
 \[\int_{t - \epsilon}^{t + \epsilon} (a_0 - a_1'+a_2')\, G(x, t)\,\mathrm{d}x  + 
  \left[ (a_1-a_2') G(x, t) \right]_{t + \epsilon}^{t - \epsilon} + \left[ a_2(x) G'(x, t) \right]_{t - \epsilon}^{t + \epsilon} = 1.\]</div>
 </section>
-<section id="define-the-linear-combinations-of-coefficients">
-<h3>Define the linear combinations of coefficients<a class="headerlink" href="#define-the-linear-combinations-of-coefficients" title="Link to this heading">#</a></h3>
+<section id="defining-the-linear-combinations-of-coefficients">
+<h3>Defining the linear combinations of coefficients<a class="headerlink" href="#defining-the-linear-combinations-of-coefficients" title="Link to this heading">#</a></h3>
 <p>We assume that coefficients <span class="math notranslate nohighlight">\( a(x) \)</span> and their derivatives are continuous functions. Then, their linear combinations are also continuous functions. For simplicity, set:</p>
 <div class="math notranslate nohighlight">
 \[p_0(x) = a_0(x) - a_1'(x) + a_2''(x), \quad p_1(x) = a_1(x) - a_2'(x), \quad p_2(x) = a_2(x).\]</div>
@@ -509,26 +506,25 @@ document.write(`
 <h3>Limit as <span class="math notranslate nohighlight">\( \epsilon \to 0 \)</span><a class="headerlink" href="#limit-as-epsilon-to-0" title="Link to this heading">#</a></h3>
 <p>Let us consider the limit of the left-hand side of the equation as <span class="math notranslate nohighlight">\( \epsilon \to 0 \)</span>. Since <span class="math notranslate nohighlight">\( p_k(x) \)</span> are continuous functions, we can define <span class="math notranslate nohighlight">\( J_k \)</span> as:</p>
 <div class="math notranslate nohighlight">
-\[J_0 = \lim_{\epsilon \to 0} \left[\int_{t - \epsilon}^{t + \epsilon} p_0(x) G(x, t)\mathrm{d}x \right] = p_0(t)\lim_{t\rightarrow \epsilon}\left[ \int_{t - \epsilon}^{t + \epsilon} G(x, t)\mathrm{d}x\right],\]</div>
+\[J_0 = \lim_{\epsilon \to 0} \left[\int_{t - \epsilon}^{t + \epsilon} p_0(x) G(x, t)\mathrm{d}x \right] = p_0(t)\lim_{\epsilon \to 0}\left[ \int_{t - \epsilon}^{t + \epsilon} G(x, t)\mathrm{d}x\right],\]</div>
 <div class="math notranslate nohighlight">
 \[J_1 = \lim_{\epsilon \to 0} \left[ p_1(x) G(x, t) \right]_{t + \epsilon}^{t - \epsilon} = p_1(t) \lim_{\epsilon \to 0} \left( G(t + \epsilon, t) - G(t - \epsilon, t) \right),\]</div>
 <div class="math notranslate nohighlight">
-\[J_2 = \lim_{\epsilon \to 0} \left[ p_2(x) G'(x, t) \right]_{t + \epsilon}^{t - \epsilon} = p_2(t) \lim_{\epsilon \to 0} \left( G'(t + \epsilon, t) - G'(t - \epsilon, t) \right) \]</div>
+\[J_2 = \lim_{\epsilon \to 0} \left[ p_2(x) G'(x, t) \right]_{t + \epsilon}^{t - \epsilon} = p_2(t) \lim_{\epsilon \to 0} \left( G'(t + \epsilon, t) - G'(t - \epsilon, t) \right)\]</div>
 <p>From the equation, we have:</p>
 <div class="math notranslate nohighlight">
 \[J_0 + J_1 + J_2 = 1.\]</div>
 </section>
-</section>
 <section id="continuity-and-discontinuity-conditions">
-<h2>Continuity and Discontinuity Conditions<a class="headerlink" href="#continuity-and-discontinuity-conditions" title="Link to this heading">#</a></h2>
+<h3>Continuity and Discontinuity Conditions<a class="headerlink" href="#continuity-and-discontinuity-conditions" title="Link to this heading">#</a></h3>
 <p>If we assume that <span class="math notranslate nohighlight">\( G'(x, t) \)</span> is continuous at <span class="math notranslate nohighlight">\( x = t \)</span>, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[\lim_{\epsilon \to 0} \left( G'(t + \epsilon, t) - G'(t - \epsilon, t) \right) = 0,\]</div>
-<p>then the continuity of <span class="math notranslate nohighlight">\( G(x, t) \)</span> and <span class="math notranslate nohighlight">\( \int G(x, t) \,\mathrm{d}x \)</span> holds (i.e. the Green's function is smooth and continuous), which leads to <span class="math notranslate nohighlight">\( J_2 = 0 \)</span>, <span class="math notranslate nohighlight">\( J_1 = 0 \)</span>, and <span class="math notranslate nohighlight">\( J_0 = 0 \)</span>, contradicting the equation <span class="math notranslate nohighlight">\( J_0 + J_1 + J_2 = 1 \)</span>.</p>
+<p>then the continuity of <span class="math notranslate nohighlight">\( G(x, t) \)</span> and <span class="math notranslate nohighlight">\( \int G(x, t) \,\mathrm{d}x \)</span> holds (i.e., the Green’s function is smooth and continuous), which leads to <span class="math notranslate nohighlight">\( J_2 = 0 \)</span>, <span class="math notranslate nohighlight">\( J_1 = 0 \)</span>, and <span class="math notranslate nohighlight">\( J_0 = 0 \)</span>, contradicting the equation <span class="math notranslate nohighlight">\( J_0 + J_1 + J_2 = 1 \)</span>.</p>
 <p>Alternatively, if we assume that <span class="math notranslate nohighlight">\( G'(x, t) \)</span> has a finite discontinuity at <span class="math notranslate nohighlight">\( x = t \)</span>, which means we can have:</p>
 <div class="math notranslate nohighlight">
 \[\lim_{\epsilon \to 0} \left( G'(t + \epsilon, t) - G'(t - \epsilon, t) \right) = 1,\]</div>
-<p>BUT keep <span class="math notranslate nohighlight">\( G(x, t) \)</span> and <span class="math notranslate nohighlight">\( \int G(x, t) \,\mathrm{d}x \)</span> as continuous (i.e. function is continuous but not smooth), i.e., <span class="math notranslate nohighlight">\( J_2 = 1 \)</span>, <span class="math notranslate nohighlight">\( J_1 = J_0 = 0 \)</span>, so consequently:</p>
+<p>BUT keep <span class="math notranslate nohighlight">\( G(x, t) \)</span> and <span class="math notranslate nohighlight">\( \int G(x, t) \,\mathrm{d}x \)</span> as continuous (i.e., the function is continuous but not smooth), i.e., <span class="math notranslate nohighlight">\( J_2 = 1 \)</span>, <span class="math notranslate nohighlight">\( J_1 = J_0 = 0 \)</span>, so consequently:</p>
 <div class="math notranslate nohighlight">
 \[J_0 + J_1 + J_2 = 1,\]</div>
 <p>as required by the equation.</p>
@@ -538,37 +534,37 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\lim_{\epsilon \to 0} \left( G(t + \epsilon, t) - G(t - \epsilon, t) \right) = 0.\]</div>
 </section>
+</section>
 <section id="solving-odes-using-greens-function-an-example">
-<h2>Solving ODEs using Green’s function - an example.<a class="headerlink" href="#solving-odes-using-greens-function-an-example" title="Link to this heading">#</a></h2>
+<h2>Solving ODEs using Green’s function - an example<a class="headerlink" href="#solving-odes-using-greens-function-an-example" title="Link to this heading">#</a></h2>
 <p>Find the general solution of the inhomogeneous equation</p>
 <div class="math notranslate nohighlight">
 \[\frac{d^2y}{dx^2} + y = x,\]</div>
 <p>where <span class="math notranslate nohighlight">\( y(x) \)</span> satisfies the boundary conditions <span class="math notranslate nohighlight">\( y(0) = y(\frac{\pi}{2}) = 0 \)</span>. First, consider the ODE with respect to <span class="math notranslate nohighlight">\( G(x, t) \)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\frac{d^2G(x, t)}{dx^2} + G(x, t) = \delta(t - x),\]</div>
-<p>and write down solutions for the homogeneous equation for <span class="math notranslate nohighlight">\( 0 &le; x &lt; t\)</span> and <span class="math notranslate nohighlight">\( t &lt; x &le; 
-  \frac{\pi}{2} \)</span> (note that these solutions should be different because of the discontinuity at <span class="math notranslate nohighlight">\( x = t \)</span>):</p>
+<p>and write down solutions for the homogeneous equation for <span class="math notranslate nohighlight">\( 0 \leq x &lt; t \)</span> and <span class="math notranslate nohighlight">\( t &lt; x \leq \frac{\pi}{2} \)</span> (note that these solutions should be different because of the discontinuity at <span class="math notranslate nohighlight">\( x = t \)</span>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
-G(x, t) = A(t) \sin(x) + B(t) \cos(x), &amp; \text{for }  0 &le; x &lt; t, \\
-G(x, t) = C(t) \sin(x) + D(t) \cos(x), &amp; \text{for }  t &lt; x &le; \pi/2.
+G(x, t) = A(t) \sin(x) + B(t) \cos(x), &amp; \text{for }  0 \leq x &lt; t, \\
+G(x, t) = C(t) \sin(x) + D(t) \cos(x), &amp; \text{for }  t &lt; x \leq \pi/2.
 \end{cases}\end{split}\]</div>
 <section id="boundary-conditions-and-continuity-conditions">
 <h3>Boundary conditions and continuity conditions<a class="headerlink" href="#boundary-conditions-and-continuity-conditions" title="Link to this heading">#</a></h3>
 <p>Use the two boundary conditions and the continuity and discontinuity conditions to determine <span class="math notranslate nohighlight">\( A(t), B(t), C(t), D(t) \)</span>.</p>
-<p>From the boundary conditions, we have for <span class="math notranslate nohighlight">\( 0 &le; x &lt; t\)</span>:</p>
+<p>From the boundary conditions, we have for <span class="math notranslate nohighlight">\( 0 \leq x &lt; t\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[G(0, t) = A(t) \sin(0) + B(t) \cos(0) = 0 + B(t) = B(t) = 0.\]</div>
-<p>For <span class="math notranslate nohighlight">\( t &lt; x &le; \pi/2 \)</span>:</p>
+<p>For <span class="math notranslate nohighlight">\( t &lt; x \leq \pi/2 \)</span>:</p>
 <div class="math notranslate nohighlight">
 \[G\left(\frac{\pi}{2}, t\right) = C(t) \sin\left(\frac{\pi}{2}\right) + D(t) \cos\left(\frac{\pi}{2}\right) = C(t) \cdot 1 + D(t) \cdot 0 = C(t) = 0.\]</div>
 <p>Hence,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}G(x, t) =
+\[\begin{split}\begin{split}G(x, t) =
 \begin{cases}
-A(t) \sin(x), &amp; \text{for } 0 &le; x &lt; t, \\
-D(t) \cos(x), &amp; \text{for } t &lt; x &le; \pi/2.
-\end{cases}\end{split}\]</div>
+A(t) \sin(x), &amp; \text{for } 0 \leq x &lt; t, \\
+D(t) \cos(x), &amp; \text{for } t &lt; x \leq \pi/2.
+\end{cases}\end{split}\end{split}\]</div>
 </section>
 <section id="id1">
 <h3>Continuity and Discontinuity conditions<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
@@ -577,42 +573,40 @@ D(t) \cos(x), &amp; \text{for } t &lt; x &le; \pi/2.
 </ul>
 <div class="math notranslate nohighlight">
 \[D(t) \cos(t) - A(t) \sin(t) = 0.\]</div>
-
 <ul class="simple">
 <li><p>Discontinuity condition for <span class="math notranslate nohighlight">\( G'(x, t) \)</span> at <span class="math notranslate nohighlight">\( x = t \)</span>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[ - D(t) \sin(t) -A(t) \cos(t) = 1.\]</div>
+\[- D(t) \sin(t) -A(t) \cos(t) = 1.\]</div>
 <p>From these conditions, we find:</p>
 <div class="math notranslate nohighlight">
 \[A(t) = -\cos(t), \quad D(t) = -\sin(t).\]</div>
-and so:
+<p>and so:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}G(x, t) =
+\[\begin{split}\begin{split}G(x, t) =
 \begin{cases}
-- \cos(t) \sin(x), &amp; \text{for } 0 &le; x &lt; t, \\
-- \sin(t) \cos(x), &amp; \text{for } t &lt; x &le; \pi/2.
-\end{cases}\end{split}\]</div>
+- \cos(t) \sin(x), &amp; \text{for } 0 \leq x &lt; t, \\
+- \sin(t) \cos(x), &amp; \text{for } t &lt; x \leq \pi/2.
+\end{cases}\end{split}\end{split}\]</div>
 </section>
-<section id="general-solution-using-greens-function">
-<h3>General solution using Green’s function<a class="headerlink" href="#general-solution-using-greens-function" title="Link to this heading">#</a></h3>
+<section id="finding-the-solution-using-the-greens-function">
+<h3>Finding the solution using the Green’s function<a class="headerlink" href="#finding-the-solution-using-the-greens-function" title="Link to this heading">#</a></h3>
 <p>Now use this <span class="math notranslate nohighlight">\( G(x, t) \)</span> to find <span class="math notranslate nohighlight">\( y(x) \)</span>:</p>
 <div class="math notranslate nohighlight">
 \[y(x) = \int_0^{\frac{\pi}{2}} G(x, t) f(t) \,\mathrm{d}t = \int_0^x G_{x &gt; t}(x, t) f(t) \,\mathrm{d}t + \int_x^{\frac{\pi}{2}} G_{x &lt; t}(x, t) f(t) \,\mathrm{d}t.\]</div>
-Notice that we are switching from a <span class="math notranslate nohighlight">\( x \)</span> space to a <span class="math notranslate nohighlight">\(t \)</span> space, so the specific parts of the Green's function in the integrand switch around, hence we have <span class="math notranslate nohighlight">\( G_{x &gt; t}(x, t) \)</span> in the first part, <span class="math notranslate nohighlight">\( G_{x &lt; t }(x, t) \)</span> in the second.
+<p>Notice that we are switching from a <span class="math notranslate nohighlight">\( x \)</span> space to a <span class="math notranslate nohighlight">\( t \)</span> space, so the specific parts of the Green’s function in the integrand switch around, hence we have <span class="math notranslate nohighlight">\( G_{x &gt; t}(x, t) \)</span> in the first part, <span class="math notranslate nohighlight">\( G_{x &lt; t }(x, t) \)</span> in the second.</p>
 <p>For <span class="math notranslate nohighlight">\(x &gt; t\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\int_0^x G_{x &gt; t}(x, t) f(t) \,\mathrm{d}t = \int_0^x (-\sin(t) \cos(x)) (t) \,\mathrm{d}t = -\cos(x)\left[-t \cos(t) + \sin(t)\right]_0^x \]</div>
-hence <div class="math notranslate nohighlight">
+\[\int_0^x G_{x &gt; t}(x, t) f(t) \,\mathrm{d}t = \int_0^x (-\sin(t) \cos(x)) (t) \,\mathrm{d}t = -\cos(x)\left[-t \cos(t) + \sin(t)\right]_0^x\]</div>
+<p>hence</p>
+<div class="math notranslate nohighlight">
 \[\int_0^x G_{x &gt; t}(x, t) f(t) \,\mathrm{d}t = \cos(x)\left(x\cos(x)- \sin(x)\right)\]</div>
 <p>For <span class="math notranslate nohighlight">\( x &lt; t\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\int_x^{\pi/2} G_{x &lt; t}(x, t) f(t) \,\mathrm{d}t = \int_x^{\pi/2} (-\cos(t) \sin(x)) (t) \,\mathrm{d}t = -\sin(x)\left[t\sin(t)+\cos(t) \right]_x^{\pi/2}  \]</div>
-hence <div class="math notranslate nohighlight">
+\[\int_x^{\pi/2} G_{x &lt; t}(x, t) f(t) \,\mathrm{d}t = \int_x^{\pi/2} (-\cos(t) \sin(x)) (t) \,\mathrm{d}t = -\sin(x)\left[t\sin(t)+\cos(t) \right]_x^{\pi/2}\]</div>
+<p>hence</p>
+<div class="math notranslate nohighlight">
 \[\int_x^{\pi/2} G_{x &lt; t}(x, t) f(t) \,\mathrm{d}t = \sin(x) \left(-\frac{\pi}{2} + x\sin(x)+\cos(x)\right)\]</div>
-</section>
-<section id="particular-solution">
-<h3>Particular solution<a class="headerlink" href="#particular-solution" title="Link to this heading">#</a></h3>
 <p>Thus, a particular solution is:</p>
 <div class="math notranslate nohighlight">
 \[y(x) = x\left(\sin^2(x)+\cos^2(x)\right)-\cos(x)\sin(x) + \sin(x)\cos(x) - \frac{\pi}{2} \sin(x) = x - \frac{\pi}{2} \sin(x).\]</div>
@@ -668,15 +662,6 @@ hence <div class="math notranslate nohighlight">
         <p class="prev-next-title">The Dirac Delta Function</p>
       </div>
     </a>
-    <a class="right-next"
-       href="sturmliouville.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sturm-Liouville Theory</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -695,18 +680,19 @@ hence <div class="math notranslate nohighlight">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restrictions-on-g-x-t">Restrictions on <span class="math notranslate nohighlight">\(G(x,t)\)</span>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-of-g-x-t-at-x-t">Continuity of <span class="math notranslate nohighlight">\(G(x, t)\)</span> at <span class="math notranslate nohighlight">\(x = t\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investigate-the-behaviour-of-g-x-t-near-the-point-x-t">Investigate the behaviour of <span class="math notranslate nohighlight">\( G(x, t) \)</span> near the point <span class="math notranslate nohighlight">\( x = t \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-linear-combinations-of-coefficients">Define the linear combinations of coefficients</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-as-epsilon-to-0">Limit as <span class="math notranslate nohighlight">\( \epsilon \to 0 \)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-and-discontinuity-conditions">Continuity and Discontinuity Conditions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-odes-using-greens-function-an-example">Solving ODEs using Green’s function - an example.</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-green-s-function">Setting up a Green’s function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investigating-the-behaviour-of-g-x-t-near-the-point-x-t">Investigating the behaviour of <span class="math notranslate nohighlight">\( G(x, t) \)</span> near the point <span class="math notranslate nohighlight">\( x = t \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-linear-combinations-of-coefficients">Defining the linear combinations of coefficients</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-as-epsilon-to-0">Limit as <span class="math notranslate nohighlight">\( \epsilon \to 0 \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-and-discontinuity-conditions">Continuity and Discontinuity Conditions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-odes-using-greens-function-an-example">Solving ODEs using Green’s function - an example</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions-and-continuity-conditions">Boundary conditions and continuity conditions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Continuity and Discontinuity conditions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution-using-greens-function">General solution using Green’s function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particular-solution">Particular solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-solution-using-the-greens-function">Finding the solution using the Green’s function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">General solution</a></li>
 </ul>
 </li>

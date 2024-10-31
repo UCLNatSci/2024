@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Independence of Functions &#8212; PHAS0026 Notes</title>
+    <title>ODE Methods - Variation of Parameters &#8212; PHAS0026 Notes</title>
   
   
   
@@ -59,11 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'independent_functions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ODEvariation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Variation of Parameters" href="variationofparameters.html" />
-    <link rel="prev" title="Linear Ordinary Differential Equations" href="ODEs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,9 +181,9 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ODEs.html">Linear Ordinary Differential Equations</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Independence of Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="independent_functions.html">Independence of Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variationofparameters.html">Variation of Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="laplacetransform.html">Laplace Transforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diracdelta.html">The Dirac Delta Function</a></li>
@@ -259,7 +259,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Findependent_functions.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FODEvariation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -289,7 +289,7 @@
       
       
       
-      <li><a href="_sources/independent_functions.md" target="_blank"
+      <li><a href="_sources/ODEvariation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -373,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Independence of Functions</h1>
+    <h1>ODE Methods - Variation of Parameters</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,12 +383,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-solution-of-an-inhomogeneous-equation">The general solution of an inhomogeneous equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence-of-functions">Linear Independence of Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence-in-n-dimensions">Linear Independence in <span class="math notranslate nohighlight">\(n\)</span> dimensions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-n-2">Example: <span class="math notranslate nohighlight">\( n=2 \)</span></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-systems">First order systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-systems">Second order systems</a></li>
 </ul>
             </nav>
         </div>
@@ -400,126 +396,188 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="independence-of-functions">
-<h1>Independence of Functions<a class="headerlink" href="#independence-of-functions" title="Link to this heading">#</a></h1>
-<section id="the-general-solution-of-an-inhomogeneous-equation">
-<h2>The general solution of an inhomogeneous equation<a class="headerlink" href="#the-general-solution-of-an-inhomogeneous-equation" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="ode-methods-variation-of-parameters">
+<h1>ODE Methods - Variation of Parameters<a class="headerlink" href="#ode-methods-variation-of-parameters" title="Link to this heading">#</a></h1>
+<p>Whilst the method of undetermined coefficients works for specific set of source terms <span class="math notranslate nohighlight">\(f(x)\)</span> (i.e. those of certain elementary functions with symmetries in their derivatives), we could ask what is the more general method for solving these sorts of ODEs?</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>The variation of parameters method can be used to solve <span class="math notranslate nohighlight">\(n^{th}\)</span> degree linear  ODEs of the form:</p>
 <div class="math notranslate nohighlight">
-\[a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_2(x) y'' + a_1(x) y' + a_0(x) y = f(x)\]</div>
-<p>has the form:</p>
+\[y^{(n)}(x) + \sum^{n-1}_{i=0} a_i(x)\,y^{(i)}(x) = f(x)\]</div>
+<p>which can be shown to have the solution:</p>
 <div class="math notranslate nohighlight">
-\[y(x) = y_c(x) + y_p(x)\]</div>
-<p>where <span class="math notranslate nohighlight">\( y_p(x) \)</span> is a particular solution of the inhomogeneous equation and <span class="math notranslate nohighlight">\( y_c(x) \)</span>, called the complementary function, is a linear combination of <span class="math notranslate nohighlight">\( n \)</span> linearly independent functions:</p>
+\[\sum_{i=1}^{n} u_i(x)\, \int \frac{W_i(x)}{W(x)}\,\mathrm{d}x\]</div>
+<p>where <span class="math notranslate nohighlight">\(u_i(x),\, i \in \{1,\, 2,\, \dots,\, n\}\)</span> are the the homogeneous solutions of the ODE, <span class="math notranslate nohighlight">\(W(x)\)</span> is the Wronskian of these homogeneous solutions:</p>
 <div class="math notranslate nohighlight">
-\[y_c(x) = c_1 y_1(x) + c_2 y_2(x) + \dots + c_n y_n(x)\]</div>
-<p>where each <span class="math notranslate nohighlight">\( y_k(x) \)</span> is a solution of the homogeneous equation:</p>
+\[\begin{split}W \Big(u_{1}, \ldots ,u_{n}\Big)=
+\begin{vmatrix}
+u_{1}(x) &amp; u_{2}(x) &amp; \cdots &amp; u_{n}(x)\\
+u_{1}'(x) &amp; u_{2}'(x) &amp; \cdots &amp; u_{n}'(x)\\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+u_{1}^{(n-1)}(x) &amp; u_{2}^{(n-1)}(x) &amp; \cdots &amp; u_{n}^{(n-1)}(x)
+\end{vmatrix}\end{split}\]</div>
+<p>and <span class="math notranslate nohighlight">\(W_i(x)\)</span> is the reduced Wronskian:</p>
 <div class="math notranslate nohighlight">
-\[a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_2(x) y'' + a_1(x) y' + a_0(x) y = 0\]</div>
-<p>It will however be important here to check if the obtained solutions <span class="math notranslate nohighlight">\( y_k(x) \)</span> are linearly independent.</p>
+\[\begin{split}W_i(x) = \begin{vmatrix}
+u_{1}(x) &amp; u_{2}(x) &amp; \cdots &amp; 0 &amp; \cdots &amp; u_{n}(x)\\
+u_{1}'(x) &amp; u_{2}'(x) &amp; \cdots &amp; 0&amp; \cdots &amp; u_{n}'(x)\\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots &amp;\vdots &amp;\vdots \\
+u_{1}^{(n-1)}(x) &amp; u_{2}^{(n-1)}(x) &amp; \cdots &amp; f(x)&amp; \cdots &amp; u_{n}^{(n-1)}(x)
+\end{vmatrix}\end{split}\]</div>
+<p>where the <span class="math notranslate nohighlight">\(i^{th}\)</span> column of the Wronskian <span class="math notranslate nohighlight">\(W(x)\)</span> has been replaced with:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+0 \\ 0 \\ \vdots \\ f(x)
+\end{pmatrix}\end{split}\]</div>
+</div>
+<section id="first-order-systems">
+<h2>First order systems<a class="headerlink" href="#first-order-systems" title="Link to this heading">#</a></h2>
+<p>If we start with a general first order linear ODE:</p>
+<div class="math notranslate nohighlight" id="equation-inhomofirstorder">
+<span class="eqno">()<a class="headerlink" href="#equation-inhomofirstorder" title="Link to this equation">#</a></span>\[y’ + p(x)\,y = q(x)\]</div>
+<p>we can think of this a sourced first order problem, so the homogenous equation is:</p>
+<div class="math notranslate nohighlight">
+\[y’ + p(x)\,y = 0\]</div>
+<p>which we can solve, for instance with separation of variables:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int \frac{1}{y}\,\mathrm{d}y &amp;= - \int p\,\mathrm{d}x\\
+\ln(y) &amp;= - \int p\,\mathrm{d}x + \ln(y_0) \\
+y_h &amp;= y_0\,e^{- \int p\,\mathrm{d}x}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_0\)</span> is a constant.</p>
+<p>Now we can use this homogeneous solution <span class="math notranslate nohighlight">\(y_h(x)\)</span> to solve for the inhomogeneous case <span class="math notranslate nohighlight">\(y_p(x)\)</span>, by multiplying this solution with a (yet unknown) function <span class="math notranslate nohighlight">\(C(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y_p = C(x)\,e^{- \int p\,\mathrm{d}x}\]</div>
+<p>If we substitute this back into <a class="reference internal" href="#equation-inhomofirstorder">()</a> we will find:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; C’(x)\,e^{- \int p\,\mathrm{d}x} - C(x)\,p(x)\,e^{- \int p\,\mathrm{d}x} + p(x)\, C(x)\,e^{- \int p\,\mathrm{d}x} = q(x)\\
+&amp; \Rightarrow C’(x)\,e^{- \int p\,\mathrm{d}x} = q(x)\end{split}\]</div>
+<p>which by straight integration means that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}C(x) &amp;= \int q(x)\, e^{\int p\,\mathrm{d}x}\,\mathrm{d}x \\
+\Rightarrow y_p &amp;= e^{- \int p\,\mathrm{d}x}\,\int q(x)\, e^{\int p\,\mathrm{d}x}\,\mathrm{d}x\end{split}\]</div>
+<p>and so the final solution is given by the sum of:</p>
+<div class="math notranslate nohighlight">
+\[y = y_h + y_p =  e^{- \int p\,\mathrm{d}x}\,\Big(\int q(x)\, e^{\int p\,\mathrm{d}x}\,\mathrm{d}x + y_0\Big)\]</div>
+<p>which we have seen before with integrating factors for first order systems.</p>
 </section>
-<section id="linear-independence-of-functions">
-<h2>Linear Independence of Functions<a class="headerlink" href="#linear-independence-of-functions" title="Link to this heading">#</a></h2>
-<p>A set of functions <span class="math notranslate nohighlight">\( y_k(x) \)</span> (where <span class="math notranslate nohighlight">\( k=1,2,\dots,n \)</span>) is <strong>linearly dependent</strong> if there exist coefficients <span class="math notranslate nohighlight">\( c_i \)</span> (not all zeros) such that:</p>
+<section id="second-order-systems">
+<h2>Second order systems<a class="headerlink" href="#second-order-systems" title="Link to this heading">#</a></h2>
+<p>Let’s begin again with the form of the inhomogeneous second order ODE in <code class="xref eq docutils literal notranslate"><span class="pre">ode2order</span></code>:</p>
 <div class="math notranslate nohighlight">
-\[c_1 y_1(x) + c_2 y_2(x) + \dots + c_n y_n(x) = 0\]</div>
-<p>Otherwise, these functions are <strong>linearly independent</strong>.</p>
-<p>We really need a way to consider the distinct-ness of any solutions we find or if we switch representation of solutions that they form a fundamental set, e.g. <span class="math notranslate nohighlight">\(\sin(x),\, \cos(x)\)</span> could be
-considered to be a fundamental set, as could <span class="math notranslate nohighlight">\(e^{ix},\, e^{-ix}\)</span>, but if we mix the two <span class="math notranslate nohighlight">\(\cos(x),\, e^{ix}\)</span> then this is not a fundamental set and we run the risk of having
-duplicate solutions.</p>
-<p>Lets start with a 2nd order system which has two fundamental solutions <span class="math notranslate nohighlight">\(y_1,\, y_2\)</span> and has to satisy initial conditions <span class="math notranslate nohighlight">\(y(x_0) = y_0,\, y'(x_0) = y'_0\)</span>:</p>
+\[L\,y(x) = y^{\prime\prime}(x)+p(x)\,y^{\prime}(x)+q(x)\,y(x) = r(x)\]</div>
+<p>firstly we aim to solve the homogeneous equation:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}y(x) = Ay_1(x) + By_2(x) \Rightarrow \,&amp;\, y(x_0) = y_0 = Ay_1(x_0) + By_2(x_0)\\
-y'(x) = A{y_1}'(x) + B{y_2}'(x) \Rightarrow \,&amp;\, y'(x_0) = {y_0}' = A{y_1}'(x_0) + B{y_2}'(x_0)\end{split}\]</div>
-<p>This means we have two equations to find two unknowns <span class="math notranslate nohighlight">\(A,\,B\)</span>, we could therefore to solve for these simultaneously, however a different method is to use a 2x2 matrix:</p>
+\[L\,y(x) = y^{\prime\prime}(x)+p(x)\,y^{\prime}(x)+q(x)\,y(x) = 0\]</div>
+<p>which will admit solutions <span class="math notranslate nohighlight">\(u_1(x),\, u_2(x)\)</span>. Hence we will construct a solution to the general equation of the form:</p>
+<div class="math notranslate nohighlight" id="equation-cond1">
+<span class="eqno">()<a class="headerlink" href="#equation-cond1" title="Link to this equation">#</a></span>\[y(x) = A(x)\,u_1(x) + B(x)\,u_2(x)\]</div>
+<p>We note that if <span class="math notranslate nohighlight">\(A(x),\, B(x)\)</span> here were just constants, then this would be a linear superposition of the homogeneous solutions - therefore in general these
+should contain some additive constant with each function.  In order to have two equations with two unknowns, we need to enforce a separate condition on <span class="math notranslate nohighlight">\(A(x),\, B(x)\)</span>,
+as we will see the most helpful condition to simplify later algebra turns out to be:</p>
+<div class="math notranslate nohighlight" id="equation-cond2">
+<span class="eqno">()<a class="headerlink" href="#equation-cond2" title="Link to this equation">#</a></span>\[A'(x)\,u_1(x) + B'(x)\,u_2(x) = 0\]</div>
+<p>If we try to constuct the form of <a class="reference internal" href="ODEreduction.html#equation-ode2general">()</a> using <a class="reference internal" href="#equation-cond1">()</a>, we will find:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{pmatrix} y_0 \\ {y_0}' \end{pmatrix} = \begin{pmatrix} y_1 &amp; y_2 \\ {y_1}' &amp; {y_2}'\end{pmatrix}\,\begin{pmatrix} A \\ B \end{pmatrix}\end{split}\]</div>
-<p>which means to find <span class="math notranslate nohighlight">\(A,\,B\)</span> we can use a matrix inverse:</p>
+\[\begin{split}y'(x) &amp;= \Big(A(x)\,u_1(x) + B(x)\,u_2(x)\Big)' \\
+&amp;= A'(x)\,u_1(x) + B'(x)\,u_2(x) + A(x)\,u_1'(x) + B(x)\,u_2'(x)\\
+&amp;= A(x)\,u_1'(x) + B(x)\,u_2'(x)\end{split}\]</div>
+<p>where we have used our condition <a class="reference internal" href="#equation-cond2">()</a> to reach the final line.  Likewise for second derivatives:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\frac{1}{y_1\,{y_2}' - {y_1}'\,y_2}\begin{pmatrix} {y_2}' &amp; -y_2 \\ -{y_1}' &amp; y_1\end{pmatrix}\,\begin{pmatrix} y_0 \\ {y_0}' \end{pmatrix} = \begin{pmatrix} A \\ B \end{pmatrix}\end{split}\]</div>
-<p>Therefore in order for <span class="math notranslate nohighlight">\(A,\,B\)</span> to <em>exist</em>, the matrix determinant must be non-zero - this is feature here that tells us if we have a funamental set of solutions:</p>
+\[y''(x) = A(x)\,u_1''(x) + B(x)\,u_2''(x) + A'(x)\,u_1'(x) + B'(x)\,u_2'(x)\]</div>
+<p>and so using the linear derivative operator:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}W(y_1,\,y_2)(x) = \begin{vmatrix} y_1 &amp; y_2 \\ {y_1}' &amp; {y_2}'\end{vmatrix}\end{split}\]</div>
-<p>We call this determinant the <strong>Wronskian</strong>.</p>
+\[\begin{split}L\, y(x) &amp;= A(x)\,u_1''(x) + B(x)\,u_2''(x) + A'(x)\,u_1'(x) + B'(x)\,u_2'(x) \\ &amp;+ p(x)\,(A(x)\,u_1'(x) + B(x)\,u_2'(x)) \\ &amp;+ q(x)\,(A(x)\,u_1(x) + B(x)\,u_2(x)) = f(x)\\
+&amp;= A(x)(u''(x) + u'(x) + u(x)) + B(x)(u''(x) + u'(x) + u(x)) \\
+&amp;+ A'(x)\,u_1'(x) + B'(x)\,u_2'(x)\\
+&amp;= A'(x)\,u_1'(x) + B'(x)\,u_2'(x) + A'(x)\,L\,u_1(x) + B'(x)\,L\,u_2(x)\\
+&amp;= A'(x)\,u_1'(x) + B'(x)\,u_2'(x)\end{split}\]</div>
+<p>where we have used the fact that the terms with <span class="math notranslate nohighlight">\(A(x),\, B(x)\)</span> coefficients are actually just the homogeneous equations, hence they equal zero.  So this leaves a coupled ODE system:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A'(x)\,u_1(x) + B'(x)\,u_2(x) &amp;= 0\\
+A'(x)\,u_1'(x) + B'(x)\,u_2'(x) &amp;= r(x)\end{split}\]</div>
+<p>which if we write as a matrix system <span class="math notranslate nohighlight">\(W(x)\,a = b\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+u_1(x) &amp; u_2(x) \\
+u_1'(x) &amp; u_2'(x)
+\end{pmatrix}
+\begin{pmatrix}
+A'(x) \\
+B'(x)
+\end{pmatrix} = 
+\begin{pmatrix}
+0 \\
+r(x)
+\end{pmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(W(x)\)</span> is the Wronskian of the system.</p>
+<p>So to find the solutions <span class="math notranslate nohighlight">\(a = W^{-1}\,b\)</span> we can invert this matrix as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+A'(x) \\
+B'(x)
+\end{pmatrix} = \frac{1}{W}\begin{pmatrix}
+u_2'(x) &amp; -u_2(x) \\
+-u_1'(x) &amp; u_1(x)
+\end{pmatrix}
+\begin{pmatrix}
+0 \\
+f(x)
+\end{pmatrix} = \frac{1}{W}\begin{pmatrix}
+-u_2(x)\,r(x) \\
+u_1(x)\,r(x)
+\end{pmatrix}\end{split}\]</div>
+<p>which means the final solutions can be found from:</p>
+<div class="math notranslate nohighlight" id="equation-varparsolns">
+<span class="eqno">()<a class="headerlink" href="#equation-varparsolns" title="Link to this equation">#</a></span>\[\begin{split}A(x) &amp;= -\int \frac{1}{W}\,u_2(x)\,r(x) \,\mathrm{d}x \\
+B(x) &amp;= \int \frac{1}{W}\,u_1(x)\,r(x) \,\mathrm{d}x \\\end{split}\]</div>
 <div class="seealso admonition">
 <p class="admonition-title">Worked example</p>
-<p>Show that the functions <span class="math notranslate nohighlight">\(y_1 = e^{\lambda x}\)</span> and <span class="math notranslate nohighlight">\(y_2 = x\,e^{\lambda x}\)</span> form a fundamental set of solutions.</p>
+<p>Lets try and solve the ODE:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}W(y_1,\,y_2)(x) = \begin{vmatrix} y_1 &amp; y_2 \\ {y_1}' &amp; {y_2}'\end{vmatrix} &amp;= 
-\begin{vmatrix} e^{\lambda x} &amp; x\,e^{\lambda x} \\ \lambda\,e^{\lambda x} &amp; \lambda\,x\,e^{\lambda x} + e^{\lambda x}\end{vmatrix}\\
-&amp;= e^{2\lambda x} (\lambda x + 1 - \lambda x) = e^{2\lambda x} \end{split}\]</div>
-<p>and clearly for any finite <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(W \neq 0\)</span>, hence we have a fundamental set.</p>
+\[y'' + 4y' + 3y = \cosh(2x)\]</div>
+<p>subject to the conditions <span class="math notranslate nohighlight">\(y(0) = -\frac{7}{15}, \,y'(0)=\frac{1}{15}\)</span>.  We note that this could be solved with method of undetermined coefficients, but this
+means we can double check our results later!</p>
+<p>The solutions to the homoegenous ODE can be found from the ansatz <span class="math notranslate nohighlight">\(y = e^{\lambda\,x}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\lambda^2 + 4\lambda + 3 = 0 &amp;\Rightarrow \lambda = -1,\, -3 \\
+u_1(x) &amp;= e^{-x} \\
+u_2(x) &amp;= e^{-3x}\end{split}\]</div>
+<p>which means that in order to construct the full solution:</p>
+<div class="math notranslate nohighlight">
+\[y(x) = A(x)\,u_1(x) + B(x)\,u_2(x)\]</div>
+<p>We need the Wronskian <span class="math notranslate nohighlight">\(W(x)\)</span> of the system, here given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W = \begin{vmatrix} 
+e^{-x} &amp; e^{-3x} \\
+-e^{-x} &amp; -3e^{-3x}
+\end{vmatrix} = -3e^{-4x} - (-e^{-4x}) = -2e^{-4x}\end{split}\]</div>
+<p>and so using <a class="reference internal" href="#equation-varparsolns">()</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A(x) &amp;= \frac{1}{2}\int e^{4x}\,e^{-3x}\,\cosh(2x) \,\mathrm{d}x  = \frac{1}{4}\int \Big(e^{3x}+e^{-x}\Big) \,\mathrm{d}x = \frac{1}{4}\Big(\frac{1}{3}e^{3x} - e^{-x}\Big) + C_1 \\
+B(x) &amp;= -\frac{1}{2}\int e^{4x}\,e^{-x}\,\cosh(2x) \,\mathrm{d}x = -\frac{1}{4}\int \Big(e^{5x} + e^{x}\Big) \,\mathrm{d}x = -\frac{1}{4}\Big(\frac{1}{5}e^{5x} + e^{x}\Big) + C_2\end{split}\]</div>
+<p>wher <span class="math notranslate nohighlight">\(C_1,\, C_2\)</span> are constants.  This means the final solution is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}y &amp;= \Big(\frac{1}{12}e^{3x} - \frac{1}{4}e^{-x}\Big)e^{-x} - \Big(\frac{1}{20}e^{5x} - \frac{1}{4}e^{x}\Big)e^{-3x} + \Big(C_1\,e^{-x} + C_2\,e^{-3x}\Big) \\
+&amp;= \frac{1}{12}e^{2x} - \frac{1}{4}e^{-2x} - \frac{1}{20}e^{2x} - \frac{1}{4}e^{-2x} + \Big(C_1\,e^{-x} + C_2\,e^{-3x}\Big)\\
+&amp;= \frac{1}{60}\Big(2e^{2x} - 30e^{-2x} \Big) + \Big(C_1\,e^{-x} + C_2\,e^{-3x}\Big)\end{split}\]</div>
+<p>Given the initial conditions, we find that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}y(0) &amp;= \frac{-28}{60} + \Big(C_1 + C_2\Big) = -\frac{7}{15} \Rightarrow C_1 + C_2 = 0\\
+y'(x) &amp;= \frac{1}{60}\Big(4e^{2x} + 60e^{-2x} \Big) + \Big(-C_1\,e^{-x} -3 C_2\,e^{-3x}\Big)\\
+y'(0) &amp;= \frac{64}{60} + \Big(-C_1 - 3C_2\Big) = \frac{1}{15} \Rightarrow -C_1 - 3C_2 = -1\end{split}\]</div>
+<p>which we can solve as <span class="math notranslate nohighlight">\(C_1 = 1/2,\, C_2 = -1/2\)</span>, which gives final solutions as:</p>
+<div class="math notranslate nohighlight">
+\[y(x) = \frac{1}{30}\Big(e^{2x} - 15e^{-2x} +15e^{-x} - 15 \,e^{-3x}\Big)\]</div>
+<p>which we can check gives the right answer as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}y(x) &amp;= \frac{1}{30}\Big(e^{2x} - 15e^{-2x} +15e^{-x} - 15 \,e^{-3x}\Big)\\
+y'(x) &amp;= \frac{1}{30}\Big(2e^{2x} + 30e^{-2x} - 15e^{-x} + 45 \,e^{-3x}\Big)\\
+y''(x) &amp;= \frac{1}{30}\Big(4e^{2x} - 60e^{-2x} + 15e^{-x} - 135 \,e^{-3x}\Big) \\
+\Rightarrow y'' + 4y' + 3y &amp;= \frac{1}{30}\Big[(4+8+3)e^{2x} + (-60 + 120 -45) e^{-2x} \\
+&amp;+ (15-60+45)e^{-x} + (-135+180-45)\,e^{-3x}\Big] \\
+&amp;= \frac{1}{30}\Big(15e^{2x} + 15 e^{-2x}\Big) = \cosh(2x)\end{split}\]</div>
+<p>and so the solutions are correct!</p>
 </div>
-<div class="seealso dropdown admonition">
-<p class="admonition-title">Further worked examples</p>
-<p>1. Show that the functions <span class="math notranslate nohighlight">\(y_1 = x^{n_1}\)</span> and <span class="math notranslate nohighlight">\(y_2 = x^{n_2}\)</span> form a fundamental set of solutions for <span class="math notranslate nohighlight">\(x &gt; 0\)</span></p>
-<p>Lets switch to <span class="math notranslate nohighlight">\(y_1 = e^{n_1\,\ln(x)},\, y_2 = e^{n_2\,\ln(x)}\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}W(y_1,\,y_2)(x) = \begin{vmatrix} y_1 &amp; y_2 \\ {y_1}' &amp; {y_2}'\end{vmatrix} &amp;= 
-\begin{vmatrix} e^{n_1\,\ln(x)} &amp; e^{n_2\,\ln(x)} \\ \frac{n_1}{x}\,e^{n_1\,\ln(x)} &amp; \frac{n_2}{x}\,e^{n_2\,\ln(x)} \end{vmatrix}\\
-&amp;= e^{(n_1+n_2)\,\ln(x)} \left(\frac{n_2}{x} - \frac{n_1}{x}\right) = (n_1 - n_1)\,x^{n_1+ n_2 - 1}\end{split}\]</div>
-<p>and clearly for any finite <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(n_1 \neq n_2\)</span>, <span class="math notranslate nohighlight">\(W \neq 0\)</span>, hence we have a fundamental set.</p>
-<p>2. Show that the functions <span class="math notranslate nohighlight">\(y_1 = x^{\lambda + \mu i} = e^{(\lambda + \mu i)\ln (x)}\)</span> and
-<span class="math notranslate nohighlight">\(y_2 = x^{\lambda - \mu i}= e^{(\lambda - \mu i)\ln (x)}\)</span> form a fundamental set of solutions, where <span class="math notranslate nohighlight">\(x &gt; 0\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}W(y_1,\,y_2)(x) = \begin{vmatrix} y_1 &amp; y_2 \\ {y_1}' &amp; {y_2}'\end{vmatrix} &amp;= 
-\begin{vmatrix} e^{(\lambda + \mu i)\ln (x)} &amp; e^{(\lambda - \mu i)\ln (x)} \\ \frac{(\lambda + \mu i)}{x}e^{(\lambda + \mu i)\ln (x)} &amp; \frac{(\lambda - \mu i)}{x}e^{(\lambda - \mu i)\ln (x)}\end{vmatrix}\\
-&amp;= e^{(\lambda^2 + \mu^2)\ln(x)}\left(\frac{\lambda - \mu i}{x} - \frac{\lambda + \\mu i}{x} \right) \\
-&amp;= -\frac{2\mu\,i\,e^{(\lambda^2 + \mu^2)\ln(x)}}{x} = -2\mu\,i\,x^{\lambda^2 + \mu^2-1}\end{split}\]</div>
-<p>and clearly for any finite <span class="math notranslate nohighlight">\(x &gt; 0\)</span>, <span class="math notranslate nohighlight">\(W \neq 0\)</span>, hence we have a fundamental set.</p>
-</div>
-</section>
-<section id="linear-independence-in-n-dimensions">
-<h2>Linear Independence in <span class="math notranslate nohighlight">\(n\)</span> dimensions<a class="headerlink" href="#linear-independence-in-n-dimensions" title="Link to this heading">#</a></h2>
-<p>To determine linear independence, we can differentiate</p>
-<div class="math notranslate nohighlight">
-\[c_1 y_1(x) + c_2 y_2(x) + \dots + c_n y_n(x) = 0\]</div>
-<p><span class="math notranslate nohighlight">\( n-1 \)</span> times to obtain a system of <span class="math notranslate nohighlight">\( n \)</span> linear equations:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-c_1 y_1(x) + c_2 y_2(x) + \dots + c_n y_n(x) &amp;= 0 \\
-c_1 y'_1(x) + c_2 y'_2(x) + \dots + c_n y'_n(x) &amp;= 0 \\
-\vdots \\
-c_1 y_1^{(n-1)}(x) + c_2 y_2^{(n-1)}(x) + \dots + c_n y_n^{(n-1)}(x) &amp;= 0
-\end{aligned}\end{split}\]</div>
-<p>The determinant of the matrix formed by the coefficients in front of <span class="math notranslate nohighlight">\( c_k \)</span> is called the <strong>Wronskian</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}W(y_1, y_2, \dots, y_n)(x) = 
-\begin{vmatrix}
-y_1(x) &amp; y_2(x) &amp; \dots &amp; y_n(x) \\
-y'_1(x) &amp; y'_2(x) &amp; \dots &amp; y'_n(x) \\
-\vdots &amp; \vdots &amp; \dots &amp; \vdots \\
-y_1^{(n-1)}(x) &amp; y_2^{(n-1)}(x) &amp; \dots &amp; y_n^{(n-1)}(x)
-\end{vmatrix}\end{split}\]</div>
-<p>The Wronskian <span class="math notranslate nohighlight">\( W(y_1, y_2, \dots, y_n)(x) \)</span> is a function of <span class="math notranslate nohighlight">\( x \)</span>.</p>
-<p>From linear algebra, we know that if <span class="math notranslate nohighlight">\( W(y_1, y_2, \dots, y_n)(x) \neq 0 \)</span>, then the only solution of the system of equations is <span class="math notranslate nohighlight">\( c_1 = c_2 = \dots = c_n = 0 \)</span>, meaning the functions <span class="math notranslate nohighlight">\( y_i(x) \)</span> are linearly independent. Conversely, if <span class="math notranslate nohighlight">\( W(y_1, y_2, \dots, y_n)(x) = 0 \)</span>, then the functions are linearly dependent.</p>
-<section id="example-n-2">
-<h3>Example: <span class="math notranslate nohighlight">\( n=2 \)</span><a class="headerlink" href="#example-n-2" title="Link to this heading">#</a></h3>
-<p>Consider <span class="math notranslate nohighlight">\( y_1(x) = f(x) \)</span> and <span class="math notranslate nohighlight">\( y_2(x) = g(x) \)</span>.</p>
-<p>A) Assume that <span class="math notranslate nohighlight">\( f(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span> are linearly dependent, meaning that there are non-zero coefficients <span class="math notranslate nohighlight">\( c_1 \)</span> and <span class="math notranslate nohighlight">\( c_2 \)</span> such that:</p>
-<div class="math notranslate nohighlight">
-\[c_1 f(x) + c_2 g(x) = 0\]</div>
-<p>In this case, the Wronskian <span class="math notranslate nohighlight">\( W(f, g)(x) \)</span> is zero. Indeed, if we differentiate the equation above:</p>
-<div class="math notranslate nohighlight">
-\[c_1 f'(x) + c_2 g'(x) = 0\]</div>
-<p>The Wronskian is:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}W(f, g)(x) = 
-\begin{vmatrix}
-f(x) &amp; g(x) \\
-f'(x) &amp; g'(x)
-\end{vmatrix} = f(x) g'(x) - f'(x) g(x)\end{split}\]</div>
-<p>Substituting for <span class="math notranslate nohighlight">\( f(x) = -\frac{c_2}{c_1} g(x) \)</span> and <span class="math notranslate nohighlight">\( f'(x) = -\frac{c_2}{c_1} g'(x) \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[W(f, g)(x) = -\frac{c_2}{c_1} g(x) g'(x) + \frac{c_2}{c_1} g'(x) g(x) = 0\]</div>
-<p>Thus, the Wronskian is zero, indicating linear dependence.</p>
-<p>B) Conversely, if <span class="math notranslate nohighlight">\( W(f, g) \neq 0 \)</span>, then <span class="math notranslate nohighlight">\( f(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span> are linearly independent. Consider the system of linear equations:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-c_1 f(x) + c_2 g(x) &amp;= 0 \\
-c_1 f'(x) + c_2 g'(x) &amp;= 0
-\end{aligned}\end{split}\]</div>
-<p>This can be represented as a matrix equation <span class="math notranslate nohighlight">\( Ac = b \)</span>, where <span class="math notranslate nohighlight">\( A \)</span> is the matrix formed by the coefficients <span class="math notranslate nohighlight">\( f(x), g(x), f'(x), g'(x) \)</span>, and <span class="math notranslate nohighlight">\( b = 0 \)</span>. Since the determinant <span class="math notranslate nohighlight">\( \text{det}(A) = W(f, g) \neq 0 \)</span>, the only solution is <span class="math notranslate nohighlight">\( c_1 = c_2 = 0 \)</span>, confirming linear independence.</p>
-</section>
 </section>
 </section>
 
@@ -553,24 +611,6 @@ c_1 f'(x) + c_2 g'(x) &amp;= 0
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="ODEs.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Linear Ordinary Differential Equations</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="variationofparameters.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Variation of Parameters</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -587,12 +627,8 @@ c_1 f'(x) + c_2 g'(x) &amp;= 0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-solution-of-an-inhomogeneous-equation">The general solution of an inhomogeneous equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence-of-functions">Linear Independence of Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence-in-n-dimensions">Linear Independence in <span class="math notranslate nohighlight">\(n\)</span> dimensions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-n-2">Example: <span class="math notranslate nohighlight">\( n=2 \)</span></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-systems">First order systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-systems">Second order systems</a></li>
 </ul>
   </nav></div>
 

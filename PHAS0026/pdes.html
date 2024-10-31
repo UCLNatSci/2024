@@ -1,0 +1,1351 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Partial Differential Equations &#8212; PHAS0026 Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pdes';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="PHAS0026 Notes - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="PHAS0026 Notes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to PHAS0026 - Mathematical Methods for Theoretical Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ODEs.html">Linear Ordinary Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="independent_functions.html">Independence of Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variationofparameters.html">Variation of Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laplacetransform.html">Laplace Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diracdelta.html">The Dirac Delta Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s functions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpdes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/pdes.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Partial Differential Equations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Partial Differential Equations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-pdes">Important PDEs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-wave-equation">The Wave Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-diffusion-equation">The Diffusion Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laplaces-equation">Laplace’s Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poissons-equation">Poisson’s Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodingers-equation">Schrödinger’s Equation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-form-of-the-linear-1st-order-pde">General form of the linear 1st order PDE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-c-x-y-r-x-y-0">Case of <span class="math notranslate nohighlight">\( C(x, y) = R(x, y) = 0 \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-r-x-y-0">Case of <span class="math notranslate nohighlight">\( R(x, y) = 0 \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-trivial-solutions-of-the-equation">Non-trivial Solutions of the Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneity">Homogeneity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-of-inhomogeneous-equations">Solutions of Inhomogeneous Equations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-2nd-order-pde">Linear 2nd Order PDE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-2nd-order-pde">Solving 2nd Order PDE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#condition-for-frac-d-2-f-p-dp-2-0">Condition for <span class="math notranslate nohighlight">\( \frac{d^2 f(p)}{dp^2} = 0 \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-trivial-solutions">Non-trivial Solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminant-and-classification">Discriminant and Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-wave-equation-vs-laplace-equation">Example: Wave Equation vs Laplace Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabolic-equation">Parabolic Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-h-x-y">Derivation of <span class="math notranslate nohighlight">\( h(x, y) \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">General Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Poisson’s Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-theorem">Divergence Theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-form-of-divergence">Integral Form of Divergence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#greens-identity">Green’s Identity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-poissons-equation">Solving Poisson’s Equation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions">Boundary Conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirichlet-boundary-conditions">Dirichlet Boundary Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-images">Method of Images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neumann-boundary-conditions">Neumann Boundary Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-to-neumann-s-boundary-problem">Solution to Neumann’s Boundary Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-pdes">Problems - PDEs</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-integral-transforms-to-solve-pdes">Using Integral Transforms to Solve PDEs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform">Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-theorem">Convolution Theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-theorem-in-laplace-transforms">Convolution Theorem in Laplace Transforms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-in-fourier-transform">Convolution in Fourier Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-distribution-in-an-infinite-bar">Temperature distribution in an infinite bar</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="partial-differential-equations">
+<h1>Partial Differential Equations<a class="headerlink" href="#partial-differential-equations" title="Link to this heading">#</a></h1>
+<section id="important-pdes">
+<h2>Important PDEs<a class="headerlink" href="#important-pdes" title="Link to this heading">#</a></h2>
+<p>Consider a function <span class="math notranslate nohighlight">\( u = u(x_1, x_2, \dots, x_n) \)</span>, which depends on <span class="math notranslate nohighlight">\( n \)</span> variables <span class="math notranslate nohighlight">\( x_1, x_2, \dots, x_n \)</span>. In physical problems, these variables are usually spatial coordinates, e.g., <span class="math notranslate nohighlight">\( x, y, z \)</span>, and time <span class="math notranslate nohighlight">\( t \)</span>. Depending on the problem at hand, it can be convenient to consider the function <span class="math notranslate nohighlight">\( u \)</span> in Cartesian, polar, or spherical coordinate systems:</p>
+<ul>
+<li><p>In Cartesian coordinates:</p>
+<div class="math notranslate nohighlight">
+\[u = u(x, y, z, t)\]</div>
+</li>
+<li><p>In polar coordinates:</p>
+<div class="math notranslate nohighlight">
+\[u = u(r, \theta, z, t)\]</div>
+</li>
+<li><p>In spherical coordinates:</p>
+<div class="math notranslate nohighlight">
+\[u = u(r, \theta, \phi, t)\]</div>
+</li>
+</ul>
+<section id="the-wave-equation">
+<h3>The Wave Equation<a class="headerlink" href="#the-wave-equation" title="Link to this heading">#</a></h3>
+<p>In Cartesian coordinates:</p>
+<div class="math notranslate nohighlight">
+\[r^2 u = \frac{1}{v^2} \frac{\partial^2 u}{\partial t^2}\]</div>
+<p>In polar coordinates:</p>
+<div class="math notranslate nohighlight">
+\[r^2 u = \left( \frac{\partial^2 u}{\partial r^2} + \frac{1}{r} \frac{\partial u}{\partial r} + \frac{1}{r^2} \left( \frac{\partial^2 u}{\partial \theta^2} + \frac{\partial^2 u}{\partial \phi^2} \right) \right)\]</div>
+<p>In spherical coordinates:</p>
+<div class="math notranslate nohighlight">
+\[r^2 u = \left( \frac{\partial^2 u}{\partial r^2} + \frac{2}{r} \frac{\partial u}{\partial r} + \frac{1}{r^2} \left( \frac{\partial^2 u}{\partial \theta^2} + \frac{\sin^2 \theta}{r} \frac{\partial^2 u}{\partial \phi^2} \right) \right)\]</div>
+<p>where <span class="math notranslate nohighlight">\( v \)</span> is the wave velocity.</p>
+<p>In the one-dimensional case, the wave equation is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 u(x,t)}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 u(x,t)}{\partial t^2}\]</div>
+</section>
+<hr class="docutils" />
+<section id="the-diffusion-equation">
+<h3>The Diffusion Equation<a class="headerlink" href="#the-diffusion-equation" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[k r^2 u = \frac{\partial u}{\partial t}\]</div>
+<p>This equation is also used to describe heat flow.</p>
+</section>
+<hr class="docutils" />
+<section id="laplaces-equation">
+<h3>Laplace’s Equation<a class="headerlink" href="#laplaces-equation" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[r^2 u = 0\]</div>
+</section>
+<hr class="docutils" />
+<section id="poissons-equation">
+<h3>Poisson’s Equation<a class="headerlink" href="#poissons-equation" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[r^2 u = \rho(r)\]</div>
+</section>
+<hr class="docutils" />
+<section id="schrodingers-equation">
+<h3>Schrödinger’s Equation<a class="headerlink" href="#schrodingers-equation" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[r^2 u + V(r) u = \frac{i \hbar}{2m} \frac{\partial u}{\partial t}\]</div>
+</section>
+</section>
+<section id="general-form-of-the-linear-1st-order-pde">
+<h2>General form of the linear 1st order PDE<a class="headerlink" href="#general-form-of-the-linear-1st-order-pde" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[A(x, y) \frac{\partial u}{\partial x} + B(x, y) \frac{\partial u}{\partial y} + C(x, y) u = R(x, y)\]</div>
+<p>where <span class="math notranslate nohighlight">\( A(x, y), B(x, y), C(x, y), \)</span> and <span class="math notranslate nohighlight">\( R(x, y) \)</span> are functions of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>. Importantly, there could be many solutions due to:</p>
+<ol class="arabic simple">
+<li><p>Integrating constants</p></li>
+<li><p>Existence of independent solutions.</p></li>
+</ol>
+<section id="case-of-c-x-y-r-x-y-0">
+<h3>Case of <span class="math notranslate nohighlight">\( C(x, y) = R(x, y) = 0 \)</span><a class="headerlink" href="#case-of-c-x-y-r-x-y-0" title="Link to this heading">#</a></h3>
+<p>If <span class="math notranslate nohighlight">\( C = R = 0 \)</span>, Eq. (7.1) becomes:</p>
+<div class="math notranslate nohighlight">
+\[A(x, y) \frac{\partial u}{\partial x} + B(x, y) \frac{\partial u}{\partial y} = 0\]</div>
+<p>Consider solutions of this equation in the form of:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = f(p)\]</div>
+<p>where <span class="math notranslate nohighlight">\( p \)</span> is a parameter formed by some fixed combination of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>. Note that <span class="math notranslate nohighlight">\( p \)</span> is a function of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>: <span class="math notranslate nohighlight">\( p(x, y) \)</span>.</p>
+<p>Use the chain rule of differentiation to obtain <span class="math notranslate nohighlight">\( \frac{\partial u}{\partial x} \)</span> and <span class="math notranslate nohighlight">\( \frac{\partial u}{\partial y} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u(x, y)}{\partial x} = \frac{df(p)}{dp} \frac{\partial p}{\partial x}, \quad \frac{\partial u(x, y)}{\partial y} = \frac{df(p)}{dp} \frac{\partial p}{\partial y}\]</div>
+<p>Substitute these into Eq. (7.2) and obtain:</p>
+<div class="math notranslate nohighlight">
+\[A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - \frac{df(p)}{dp} = 0\]</div>
+<p>This equation is satisfied if:</p>
+<div class="math notranslate nohighlight">
+\[\frac{df(p)}{dp} = 0\]</div>
+<p>which means that function <span class="math notranslate nohighlight">\( f(p) \)</span> is a constant, i.e., it has no dependence on <span class="math notranslate nohighlight">\( p \)</span> and, therefore, has no dependence on <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>. Alternatively, Eq. (7.3) is satisfied if:</p>
+<div class="math notranslate nohighlight">
+\[A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} = 0\]</div>
+<p>Notice that this equation is similar to Eq. (7.2), in which <span class="math notranslate nohighlight">\( u \)</span> is replaced with <span class="math notranslate nohighlight">\( p \)</span>.</p>
+<p>On the other hand, for <span class="math notranslate nohighlight">\( p \)</span> to remain a constant combination of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>, we should have:</p>
+<div class="math notranslate nohighlight">
+\[dp = \frac{\partial p}{\partial x}\mathrm{d}x + \frac{\partial p}{\partial y} dy = 0\]</div>
+<p>Note that this equation is identical to Eq. (7.4) if we set:</p>
+<div class="math notranslate nohighlight">
+\[dx = \frac{A(x, y)}{B(x, y)} dy\]</div>
+<p>Hence, instead of solving Eqs. (7.4) and (7.5), we can integrate the equation to find <span class="math notranslate nohighlight">\( p \)</span>.</p>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p>Consider:</p>
+<div class="math notranslate nohighlight">
+\[x^3 \frac{\partial u}{\partial x} + 3y^2 \frac{\partial u}{\partial y} = 0\]</div>
+<p>In this case, we have <span class="math notranslate nohighlight">\( A(x, y) = x^3 \)</span> and <span class="math notranslate nohighlight">\( B(x, y) = 3y^2 \)</span>. Following the previous discussion, this equation is converted to:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dx}{x^3} = \frac{dy}{3y^2}\]</div>
+<p>After integration:</p>
+<div class="math notranslate nohighlight">
+\[-\frac{1}{2x^2} = -\frac{1}{6y^3} + C\]</div>
+<p>This simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[1 = 1 + C \quad \text{where} \quad C = \frac{3y^2}{2x^3}\]</div>
+<p>Thus, the general solution of Eq. (7.6) is:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = f\left( \frac{3y - 2x^2}{6x^2y} \right)\]</div>
+</section>
+<section id="case-of-r-x-y-0">
+<h3>Case of <span class="math notranslate nohighlight">\( R(x, y) = 0 \)</span><a class="headerlink" href="#case-of-r-x-y-0" title="Link to this heading">#</a></h3>
+<p>If <span class="math notranslate nohighlight">\( R = 0 \)</span>, Equation (7.1) becomes:</p>
+<div class="math notranslate nohighlight">
+\[A(x, y) \frac{\partial u}{\partial x} + B(x, y) \frac{\partial u}{\partial y} + C(x, y) u = 0\]</div>
+<p>Apply the same logic as above but consider a solution in the form:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = h(x, y) f(p)\]</div>
+<p>In this case, we have:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial x} = \frac{\partial h(x, y)}{\partial x} f(p) + h(x, y) \frac{df(p)}{dp} \frac{\partial p}{\partial x}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial y} = \frac{\partial h(x, y)}{\partial y} f(p) + h(x, y) \frac{df(p)}{dp} \frac{\partial p}{\partial y}\]</div>
+<p>Substitute these derivatives into PDE (7.7):</p>
+<div class="math notranslate nohighlight">
+\[A(x, y) \left( \frac{\partial h}{\partial x} f(p) + h \frac{df(p)}{dp} \frac{\partial p}{\partial x} \right) + B(x, y) \left( \frac{\partial h}{\partial y} f(p) + h \frac{df(p)}{dp} \frac{\partial p}{\partial y} \right) + C(x, y) h f(p) = 0\]</div>
+<p>After rearranging the terms:</p>
+<div class="math notranslate nohighlight">
+\[A(x, y) \frac{\partial h}{\partial x} + B(x, y) \frac{\partial h}{\partial y} + C(x, y) h f(p) + A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - h \frac{df(p)}{dp} = 0\]</div>
+<p>The first term turns to zero if function <span class="math notranslate nohighlight">\( h(x, y) \)</span> is any solution of the original PDE given by Eq. (7.7). Let us assume that we have found such a function <span class="math notranslate nohighlight">\( h(x, y) \)</span>. Then, only the second term remains:</p>
+<div class="math notranslate nohighlight">
+\[A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - h \frac{df(p)}{dp} = 0\]</div>
+</section>
+<section id="non-trivial-solutions-of-the-equation">
+<h3>Non-trivial Solutions of the Equation<a class="headerlink" href="#non-trivial-solutions-of-the-equation" title="Link to this heading">#</a></h3>
+<p>Non-trivial solutions of this equation can be found by solving:</p>
+<div class="math notranslate nohighlight">
+\[A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} = 0\]</div>
+<p>In other words, the problem is reduced to the previously considered case of <span class="math notranslate nohighlight">\( C(x, y) = R(x, y) = 0 \)</span> given by Eq. (7.2).</p>
+</section>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Consider the equation:</p>
+<div class="math notranslate nohighlight">
+\[x \frac{\partial u}{\partial x} + 2 \frac{\partial u}{\partial y} - 2u = 0\]</div>
+<p>Here, <span class="math notranslate nohighlight">\( A(x, y) = x \)</span>, <span class="math notranslate nohighlight">\( B(x, y) = 2 \)</span>, <span class="math notranslate nohighlight">\( C(x, y) = -2 \)</span>. First, integrate:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dx}{x} = \frac{dy}{2}\]</div>
+<p>which gives:</p>
+<div class="math notranslate nohighlight">
+\[\ln x = \frac{1}{2} y + C, \quad x = c \exp\left(\frac{y}{2}\right),\]</div>
+<p>where <span class="math notranslate nohighlight">\( c \)</span> is a constant, which can be associated with the parameter <span class="math notranslate nohighlight">\( p \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[p = x \exp\left(-\frac{y}{2}\right).\]</div>
+<p>Therefore, a general solution of Equation (7.9) is given by:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = h(x, y) f\left( -x \exp\left(-\frac{y}{2}\right) \right),\]</div>
+<p>where <span class="math notranslate nohighlight">\( f \)</span> is an arbitrary function.</p>
+<p>It remains to find an expression for <span class="math notranslate nohighlight">\( h(x, y) \)</span>. In the simplest case, we can consider <span class="math notranslate nohighlight">\( h(x, y) \)</span> as a function of <span class="math notranslate nohighlight">\( x \)</span> only. Therefore, the corresponding equation with respect to <span class="math notranslate nohighlight">\( h(x) \)</span> is simplified to:</p>
+<div class="math notranslate nohighlight">
+\[A(x, y) \frac{\partial h}{\partial x} + B(x, y) \frac{\partial h}{\partial y} + C(x, y) h = 0\]</div>
+<div class="math notranslate nohighlight">
+\[x \frac{\partial h}{\partial x} - 2 h = 0\]</div>
+<p>and its particular solution is <span class="math notranslate nohighlight">\( h(x) = x^2 \)</span>.</p>
+<p>Alternatively, we can consider <span class="math notranslate nohighlight">\( h(x, y) \)</span> as a function of <span class="math notranslate nohighlight">\( y \)</span> only. According to Eq. (7.10), the corresponding equation with respect to <span class="math notranslate nohighlight">\( h(y) \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[2 \frac{\partial h}{\partial y} - 2h = 0,\]</div>
+<p>which has a particular solution <span class="math notranslate nohighlight">\( h(y) = e^y \)</span>.</p>
+<p>Hence, the corresponding two sets of general solutions are:</p>
+<div class="math notranslate nohighlight">
+\[u_1(x, y) = x^2 f\left( -x \exp\left(-\frac{y}{2}\right) \right), \quad u_2(x, y) = e^y g\left( -x \exp\left(-\frac{y}{2}\right) \right),\]</div>
+<p>where <span class="math notranslate nohighlight">\( f \)</span> and <span class="math notranslate nohighlight">\( g \)</span> are arbitrary functions of <span class="math notranslate nohighlight">\( x \exp\left(-\frac{y}{2}\right) \)</span>. The superposition:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = u_1(x, y) + u_2(x, y)\]</div>
+<p>is also a solution of the PDE (7.9).</p>
+</section>
+</section>
+<section id="homogeneity">
+<h2>Homogeneity<a class="headerlink" href="#homogeneity" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Homogeneous partial differential equation: If <span class="math notranslate nohighlight">\( u(x, y) \)</span> is a solution of a PDE, then <span class="math notranslate nohighlight">\( v(x, y) = c \cdot u(x, y) \)</span>, where <span class="math notranslate nohighlight">\( c \)</span> is an arbitrary constant, is also a solution of the same PDE.</p></li>
+<li><p>Homogeneous boundary conditions: If <span class="math notranslate nohighlight">\( u(x, y) \)</span> satisfies the boundary conditions, then <span class="math notranslate nohighlight">\( v(x, y) = c \cdot u(x, y) \)</span>, where <span class="math notranslate nohighlight">\( c \)</span> is an arbitrary constant, also satisfies the same boundary conditions.</p></li>
+</ul>
+<section id="solutions-of-inhomogeneous-equations">
+<h3>Solutions of Inhomogeneous Equations<a class="headerlink" href="#solutions-of-inhomogeneous-equations" title="Link to this heading">#</a></h3>
+<p>Given the equation:</p>
+<div class="math notranslate nohighlight">
+\[A(x, y) \frac{\partial u}{\partial x} + B(x, y) \frac{\partial u}{\partial y} + C(x, y) u(x, y) = R(x, y),\]</div>
+<p>and the boundary condition, for example, <span class="math notranslate nohighlight">\( u(0, y) = g(y) \)</span>, a general solution of this equation can be written as:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = v(x, y) + w(x, y),\]</div>
+<p>where <span class="math notranslate nohighlight">\( v(x, y) \)</span> is any solution of the non-homogeneous equation, and <span class="math notranslate nohighlight">\( w(x, y) \)</span> is a general solution of the homogeneous equation.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="linear-2nd-order-pde">
+<h2>Linear 2nd Order PDE<a class="headerlink" href="#linear-2nd-order-pde" title="Link to this heading">#</a></h2>
+<section id="classification">
+<h3>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h3>
+<p>The general form of the 2nd order PDE is given by:</p>
+<div class="math notranslate nohighlight">
+\[A(x, y) \frac{\partial^2 u}{\partial x^2} + B(x, y) \frac{\partial^2 u}{\partial x \partial y} + C(x, y) \frac{\partial^2 u}{\partial y^2} + D(x, y) \frac{\partial u}{\partial x} + E(x, y) \frac{\partial u}{\partial y} + F(x, y) u = R(x, y)\]</div>
+<p>We will work with a specific form of Eq. (7.11):</p>
+<div class="math notranslate nohighlight">
+\[A \frac{\partial^2 u}{\partial x^2} + B \frac{\partial^2 u}{\partial x \partial y} + C \frac{\partial^2 u}{\partial y^2} = 0\]</div>
+<p>where <span class="math notranslate nohighlight">\( A \)</span>, <span class="math notranslate nohighlight">\( B \)</span>, and <span class="math notranslate nohighlight">\( C \)</span> are constants. These equations are split into three groups according to the relations between coefficients <span class="math notranslate nohighlight">\( A \)</span>, <span class="math notranslate nohighlight">\( B \)</span>, and <span class="math notranslate nohighlight">\( C \)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( B^2 &gt; 4AC \)</span> – hyperbolic equations; they describe propagating oscillations (waves).</p></li>
+<li><p><span class="math notranslate nohighlight">\( B^2 = 4AC \)</span> – parabolic equations; they describe transport processes, such as heat conduction and diffusion.</p></li>
+<li><p><span class="math notranslate nohighlight">\( B^2 &lt; 4AC \)</span> – elliptic equations describe stationary systems, such as steady electric fields and temperature distributions.</p></li>
+</ul>
+</section>
+<section id="solving-2nd-order-pde">
+<h3>Solving 2nd Order PDE<a class="headerlink" href="#solving-2nd-order-pde" title="Link to this heading">#</a></h3>
+<p>Similarly to the case of the 1st order PDE, consider solutions in the form <span class="math notranslate nohighlight">\( u(x, y) = f(p) \)</span>. To find a suitable form of the parameter <span class="math notranslate nohighlight">\( p \)</span>, inspect partial derivatives of <span class="math notranslate nohighlight">\( u(x, y) \)</span> with respect to <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>.</p>
+<p>First derivatives are:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial x} = \frac{df(p)}{dp} \frac{\partial p}{\partial x}, \quad \frac{\partial u}{\partial y} = \frac{df(p)}{dp} \frac{\partial p}{\partial y}\]</div>
+<p>Then, second derivatives are:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 u}{\partial x^2} = \frac{\partial}{\partial x} \left( \frac{df(p)}{dp} \frac{\partial p}{\partial x} \right) = \frac{d^2 f(p)}{dp^2} \left( \frac{\partial p}{\partial x} \right)^2 + \frac{df(p)}{dp} \frac{\partial^2 p}{\partial x^2}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 u}{\partial y^2} = \frac{\partial}{\partial y} \left( \frac{df(p)}{dp} \frac{\partial p}{\partial y} \right) = \frac{d^2 f(p)}{dp^2} \left( \frac{\partial p}{\partial y} \right)^2 + \frac{df(p)}{dp} \frac{\partial^2 p}{\partial y^2}\]</div>
+<p>If we request that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial p}{\partial x} = \text{Constant} \quad \text{and} \quad \frac{\partial p}{\partial y} = \text{Constant},\]</div>
+<p>all second derivatives will have the same common factor of <span class="math notranslate nohighlight">\( \frac{d^2 f(p)}{dp^2} \)</span>, which simplifies solving Equation (7.12).</p>
+<p>It follows from the conditions <span class="math notranslate nohighlight">\( \frac{\partial p}{\partial x} = \text{Constant} \)</span> and <span class="math notranslate nohighlight">\( \frac{\partial p}{\partial y} = \text{Constant} \)</span> that parameter <span class="math notranslate nohighlight">\( p \)</span> is a linear function of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> simultaneously. Therefore, we choose it in the form:</p>
+<div class="math notranslate nohighlight">
+\[p = ax + by,\]</div>
+<p>where <span class="math notranslate nohighlight">\( a \)</span> and <span class="math notranslate nohighlight">\( b \)</span> are some constants. Thus, we can search for solutions of Eq. (7.12) in the form:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = f(ax + by).\]</div>
+<p>Then, calculate the derivatives for this particular form of the parameter <span class="math notranslate nohighlight">\( p \)</span> and substitute them in the original Equation (7.12). After the substitution, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[-Aa^2 - B ab + Cb^2 = \frac{d^2 f(p)}{dp^2}\]</div>
+<p>This equation is satisfied if either:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 f(p)}{dp^2} = 0 \quad \text{or} \quad Aa^2 + Bab + Cb^2 = 0.\]</div>
+</section>
+<section id="condition-for-frac-d-2-f-p-dp-2-0">
+<h3>Condition for <span class="math notranslate nohighlight">\( \frac{d^2 f(p)}{dp^2} = 0 \)</span><a class="headerlink" href="#condition-for-frac-d-2-f-p-dp-2-0" title="Link to this heading">#</a></h3>
+<p>The condition <span class="math notranslate nohighlight">\( \frac{d^2 f(p)}{dp^2} = 0 \)</span> means that <span class="math notranslate nohighlight">\( f(p) \)</span> is a linear function of <span class="math notranslate nohighlight">\( p \)</span>. Integrating this equation gives:</p>
+<div class="math notranslate nohighlight">
+\[\frac{df(p)}{dp} = k \quad \text{and} \quad f(p) = k p + m,\]</div>
+<p>where <span class="math notranslate nohighlight">\( k \)</span> and <span class="math notranslate nohighlight">\( m \)</span> are some constants.</p>
+<p>Using the expression for <span class="math notranslate nohighlight">\( p = ax + by \)</span>, we obtain a solution:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = f(p) = k p + m = k(ax + by) + m = \alpha x + \beta y + \gamma,\]</div>
+<p>where <span class="math notranslate nohighlight">\( \alpha = ka \)</span>, <span class="math notranslate nohighlight">\( \beta = kb \)</span>, and <span class="math notranslate nohighlight">\( \gamma = m \)</span>.</p>
+<p>Importantly, this form of <span class="math notranslate nohighlight">\( u(x, y) \)</span> has only zero second derivatives. Thus, it is a trivial solution of Eq. (7.12) because any linear function of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> is a solution of this equation.</p>
+</section>
+<section id="non-trivial-solutions">
+<h3>Non-trivial Solutions<a class="headerlink" href="#non-trivial-solutions" title="Link to this heading">#</a></h3>
+<p>Non-trivial solutions of Eq. (7.12) can be obtained by solving:</p>
+<div class="math notranslate nohighlight">
+\[A a^2 + B ab + C b^2 = 0.\]</div>
+<p>This expression can be considered as a quadratic equation with respect to <span class="math notranslate nohighlight">\( \beta = \frac{b}{a} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[C \beta^2 + B \beta + A = 0.\]</div>
+<p>Solving it gives:</p>
+<div class="math notranslate nohighlight">
+\[\beta_{1,2} = \frac{-B \pm \sqrt{B^2 - 4AC}}{2C}.\]</div>
+<p>Hence, parameter <span class="math notranslate nohighlight">\( p \)</span> may have two values:</p>
+<div class="math notranslate nohighlight">
+\[p_1 = a(x + \beta_1 y), \quad p_2 = a(x + \beta_2 y).\]</div>
+<p>The prefactor <span class="math notranslate nohighlight">\( a \)</span> can be omitted without loss of generality, and we can write:</p>
+<div class="math notranslate nohighlight">
+\[p_1 = x + \beta_1 y, \quad p_2 = x + \beta_2 y.\]</div>
+<p>Consequently, the solution <span class="math notranslate nohighlight">\( u(x, y) \)</span> becomes a superposition of two solutions:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = f(x + \beta_1 y) + g(x + \beta_2 y),\]</div>
+<p>where <span class="math notranslate nohighlight">\( f \)</span> and <span class="math notranslate nohighlight">\( g \)</span> are arbitrary functions.</p>
+</section>
+<section id="discriminant-and-classification">
+<h3>Discriminant and Classification<a class="headerlink" href="#discriminant-and-classification" title="Link to this heading">#</a></h3>
+<p>Note that we used the discriminant:</p>
+<div class="math notranslate nohighlight">
+\[D = B^2 - 4AC\]</div>
+<p>of the quadratic equation:</p>
+<div class="math notranslate nohighlight">
+\[C \beta^2 + B \beta + A = 0.\]</div>
+<p>The classification of the 2nd order PDE we have introduced above corresponds to different values of this discriminant:</p>
+<ol class="arabic simple">
+<li><p><strong>If <span class="math notranslate nohighlight">\( B^2 &gt; 4AC \)</span></strong>, the discriminant is positive, and <span class="math notranslate nohighlight">\( \beta_1 \)</span> and <span class="math notranslate nohighlight">\( \beta_2 \)</span> are real; such equations are called <strong>hyperbolic</strong>.</p></li>
+<li><p><strong>If <span class="math notranslate nohighlight">\( B^2 &lt; 4AC \)</span></strong>, the discriminant is negative, i.e., <span class="math notranslate nohighlight">\( \beta_1 \)</span> and <span class="math notranslate nohighlight">\( \beta_2 \)</span> are complex; such equations are called <strong>elliptic</strong>.</p></li>
+<li><p><strong>If <span class="math notranslate nohighlight">\( B^2 = 4AC \)</span></strong>, the discriminant is zero, and <span class="math notranslate nohighlight">\( \beta_1 = \beta_2 \)</span>; such equations are called <strong>parabolic</strong>.</p></li>
+</ol>
+</section>
+<section id="example-wave-equation-vs-laplace-equation">
+<h3>Example: Wave Equation vs Laplace Equation<a class="headerlink" href="#example-wave-equation-vs-laplace-equation" title="Link to this heading">#</a></h3>
+<p>Compare the two equations:</p>
+<ol class="arabic simple">
+<li><p><strong>Wave Equation</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 v}{\partial x^2} - \frac{1}{c^2} \frac{\partial^2 v}{\partial t^2} = 0,\]</div>
+<p>which corresponds to:</p>
+<div class="math notranslate nohighlight">
+\[\frac{B^2}{4AC} = 0,\]</div>
+<p>and has two real roots <span class="math notranslate nohighlight">\( \beta_1 = c \)</span> and <span class="math notranslate nohighlight">\( \beta_2 = -c \)</span>. Hence, the solution is:</p>
+<div class="math notranslate nohighlight">
+\[u(x, t) = f(x + ct) + g(x - ct).\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Laplace Equation</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0,\]</div>
+<p>where:</p>
+<div class="math notranslate nohighlight">
+\[\frac{B^2}{4AC} = 0,\]</div>
+<p>which has two imaginary roots <span class="math notranslate nohighlight">\( \beta_1 = i \)</span> and <span class="math notranslate nohighlight">\( \beta_2 = -i \)</span>. Hence, its solution is:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = f(x + iy) + g(x - iy).\]</div>
+</section>
+<section id="parabolic-equation">
+<h3>Parabolic Equation<a class="headerlink" href="#parabolic-equation" title="Link to this heading">#</a></h3>
+<p>Let us consider a special case where <span class="math notranslate nohighlight">\( B = 4AC \)</span>. Then <span class="math notranslate nohighlight">\( \beta_1 = \beta_2 \)</span>, and only one solution:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = f\left( x - \frac{B y}{2C} \right)\]</div>
+<p>exists. Similarly to the case of the 1st order PDE, we can try to find the second solution of the 2nd order PDE in the form:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = h(x, y) g\left( x - \frac{B y}{2C} \right),\]</div>
+<p>where <span class="math notranslate nohighlight">\( g \)</span> is an arbitrary function. The equation for <span class="math notranslate nohighlight">\( h(x, y) \)</span> can be obtained using the following considerations.</p>
+</section>
+<section id="derivation-of-h-x-y">
+<h3>Derivation of <span class="math notranslate nohighlight">\( h(x, y) \)</span><a class="headerlink" href="#derivation-of-h-x-y" title="Link to this heading">#</a></h3>
+<p>Calculate the first and second derivatives of <span class="math notranslate nohighlight">\( u(x, y) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial x} = \frac{\partial h}{\partial x} g(p) + h(x, y) \frac{dg(p)}{dp} \frac{\partial p}{\partial x},\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial y} = \frac{\partial h}{\partial y} g(p) + h(x, y) \frac{dg(p)}{dp} \frac{\partial p}{\partial y},\]</div>
+<p>where <span class="math notranslate nohighlight">\( p = x - \frac{B y}{2C} \)</span>. Substituting these into Eq. (7.12) and simplifying, we obtain an equation for <span class="math notranslate nohighlight">\( h(x, y) \)</span>.</p>
+</section>
+<section id="general-solution">
+<h3>General Solution<a class="headerlink" href="#general-solution" title="Link to this heading">#</a></h3>
+<p>The general solution of the original PDE is:</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = f\left( x - \frac{B y}{2C} \right) + x g\left( x - \frac{B y}{2C} \right).\]</div>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<p>In the example above, <span class="math notranslate nohighlight">\( h(x, y) = y \)</span> also satisfies Eq. (7.14). What would be the general solution of Eq. (7.12) in this case? Demonstrate that it is equivalent to the solution given by Eq. (7.15). Hint: express <span class="math notranslate nohighlight">\( x \)</span> via <span class="math notranslate nohighlight">\( p \)</span> and <span class="math notranslate nohighlight">\( y \)</span>.</p>
+</section>
+</section>
+<section id="id2">
+<h2>Poisson’s Equation<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Green’s functions in 3-dimensional space.</p>
+<p>Let us consider a linear PDE:</p>
+<div class="math notranslate nohighlight">
+\[L u(r) = \rho(r),\]</div>
+<p>where <span class="math notranslate nohighlight">\( L \)</span> is a linear PDE operator. Similarly to the case of ODEs, assume that we can find the solution <span class="math notranslate nohighlight">\( u(r) \)</span> with the help of Green’s function <span class="math notranslate nohighlight">\( G(r, r_0) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[u(r) = \int G(r, r_0) \rho(r_0) \, d^3 r_0. \tag{7.16}\]</div>
+<p>(Here and below, <span class="math notranslate nohighlight">\( d^3r \)</span> indicates integration over a volume in the space of coordinates <span class="math notranslate nohighlight">\( r \)</span>. Similarly, <span class="math notranslate nohighlight">\( d^2r \)</span> indicates integration over a surface.)</p>
+<p>Substitute this function <span class="math notranslate nohighlight">\( u(r) \)</span> into the original PDE and observe that <span class="math notranslate nohighlight">\( G(r, r_0) \)</span> should satisfy:</p>
+<div class="math notranslate nohighlight">
+\[L G(r, r_0) = -\delta(r - r_0),\]</div>
+<p>where <span class="math notranslate nohighlight">\( r_0 \)</span> is within the “volume of interest” <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<p>Alternatively, <span class="math notranslate nohighlight">\( G(r, r_0) \)</span> can be obtained as:</p>
+<div class="math notranslate nohighlight">
+\[G(r, r_0) = \sum_{n=1}^{\infty} \frac{u_n(r) u_n^*(r_0)}{-\lambda_n},\]</div>
+<p>where <span class="math notranslate nohighlight">\( u_n(r) \)</span> and <span class="math notranslate nohighlight">\( \lambda_n \)</span> (with <span class="math notranslate nohighlight">\( n = 1, 2, 3, \dots \)</span>) are eigenfunctions and eigenvalues of the PDE operator <span class="math notranslate nohighlight">\( L \)</span>.</p>
+<section id="divergence-theorem">
+<h3>Divergence Theorem<a class="headerlink" href="#divergence-theorem" title="Link to this heading">#</a></h3>
+<p>Here and below, <span class="math notranslate nohighlight">\(\mathrm{d}s \)</span> is a small element of the surface <span class="math notranslate nohighlight">\( S \)</span>, and <span class="math notranslate nohighlight">\( \mathbf{n}\mathrm{d}s \)</span> is a vector of magnitude <span class="math notranslate nohighlight">\(\mathrm{d}s \)</span> oriented perpendicular to the surface element <span class="math notranslate nohighlight">\(\mathrm{d}s \)</span>.</p>
+<p>For a sufficiently small but finite volume <span class="math notranslate nohighlight">\( v \)</span> enclosed by a surface <span class="math notranslate nohighlight">\( s \)</span>, we can write:</p>
+<div class="math notranslate nohighlight">
+\[(\mathbf{r} \cdot \mathbf{a}) v \approx \mathbf{a} \cdot\mathrm{d}s.\]</div>
+<p>If a volume <span class="math notranslate nohighlight">\( V \)</span> is split into such small volumes <span class="math notranslate nohighlight">\( v \)</span>, then summing over all <span class="math notranslate nohighlight">\( v \)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[\int_V (\mathbf{r} \cdot \mathbf{a}) dV = \int_S \mathbf{a} \cdot\mathrm{d}s,\]</div>
+<p>where <span class="math notranslate nohighlight">\( S \)</span> encloses the volume <span class="math notranslate nohighlight">\( V \)</span>.</p>
+</section>
+<section id="integral-form-of-divergence">
+<h3>Integral Form of Divergence<a class="headerlink" href="#integral-form-of-divergence" title="Link to this heading">#</a></h3>
+<p>The integral form of the divergence is:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r} \cdot \mathbf{a} = \lim_{V \to 0} \left( \int_S \mathbf{a} \cdot\mathrm{d}s \right).\]</div>
+</section>
+<section id="greens-identity">
+<h3>Green’s Identity<a class="headerlink" href="#greens-identity" title="Link to this heading">#</a></h3>
+<p>If <span class="math notranslate nohighlight">\( f(r) \)</span> and <span class="math notranslate nohighlight">\( g(r) \)</span> are continuous differentiable scalar functions defined in a volume <span class="math notranslate nohighlight">\( V \)</span> enclosed by a surface <span class="math notranslate nohighlight">\( S \)</span>, then one can construct vectors <span class="math notranslate nohighlight">\( f(r) \nabla g(r) \)</span> and <span class="math notranslate nohighlight">\( g(r) \nabla f(r) \)</span>. Applying the divergence theorem to the first vector gives:</p>
+<div class="math notranslate nohighlight">
+\[\int_S (f \nabla g) \cdot\mathrm{d}s = \int_V \nabla \cdot (f \nabla g) \, dV = \int_V \left[ f \nabla^2 g + (\nabla f) \cdot (\nabla g) \right] dV.\]</div>
+<p>A similar expression for <span class="math notranslate nohighlight">\( g(r) \nabla f(r) \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\int_S (g \nabla f) \cdot\mathrm{d}s = \int_V \nabla \cdot (g \nabla f) \, dV = \int_V \left[ g \nabla^2 f + (\nabla g) \cdot (\nabla f) \right] dV.\]</div>
+<p>By subtracting these two equations, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[\int_S \left[ (f \nabla g) - (g \nabla f) \right] \cdot\mathrm{d}s = \int_V \left[ f \nabla^2 g - g \nabla^2 f \right] dV. \tag{7.17}\]</div>
+<p>This equality is called <strong>Green’s second theorem</strong>. Note that the terms in the square brackets on the left are vectors, and on the right are scalars.</p>
+</section>
+<section id="solving-poissons-equation">
+<h3>Solving Poisson’s Equation<a class="headerlink" href="#solving-poissons-equation" title="Link to this heading">#</a></h3>
+<p>Consider the equation:</p>
+<div class="math notranslate nohighlight">
+\[\nabla^2 u(r) = \rho(r).\]</div>
+<p>To find the solution of it, use Green’s second theorem:</p>
+<div class="math notranslate nohighlight">
+\[\int_V \left[ -f \nabla^2 g - g \nabla^2 f \right] dV = \int_S \left[ f \nabla g - g \nabla f \right] \cdot\mathrm{d}s.\]</div>
+<p>Let us use <span class="math notranslate nohighlight">\( f = u(r) \)</span> and <span class="math notranslate nohighlight">\( g = G(r, r_0) \)</span>. Then, according to Eq. (7.17), we have:</p>
+<div class="math notranslate nohighlight">
+\[\int_V \left[ u(r) \nabla^2 G(r, r_0) - G(r, r_0) \nabla^2 u(r) \right] dV = \int_S \left[ u(r) \frac{\partial G(r, r_0)}{\partial n} - G(r, r_0) \frac{\partial u(r)}{\partial n} \right]\mathrm{d}s,\]</div>
+<p>where the normal derivatives are defined as:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u(r)}{\partial n} = [\nabla u(r)] \cdot \mathbf{n}, \quad \frac{\partial G(r, r_0)}{\partial n} = [\nabla G(r, r_0)] \cdot \mathbf{n}.\]</div>
+<p>When applied to Poisson’s equation, i.e., using the fact that <span class="math notranslate nohighlight">\( \nabla^2 G(r, r_0) = -\delta(r - r_0) \)</span> and <span class="math notranslate nohighlight">\( \nabla^2 u(r) = \rho(r) \)</span>, Green’s theorem gives:</p>
+<div class="math notranslate nohighlight">
+\[\int_V \left[ u(r) \delta(r - r_0) - G(r, r_0) \rho(r) \right] dV = \int_S \left[ u(r) \frac{\partial G(r, r_0)}{\partial n} - G(r, r_0) \frac{\partial u(r)}{\partial n} \right]\mathrm{d}s.\]</div>
+<p>Since <span class="math notranslate nohighlight">\( r_0 \)</span> is inside <span class="math notranslate nohighlight">\( V \)</span>, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[u(r_0) = \int_V G(r, r_0) \rho(r) \, dV + \int_S \left[ u(r) \frac{\partial G(r, r_0)}{\partial n} - G(r, r_0) \frac{\partial u(r)}{\partial n} \right]\mathrm{d}s.\]</div>
+<p>If <span class="math notranslate nohighlight">\( u(r) \)</span> satisfies homogeneous boundary conditions, i.e., <span class="math notranslate nohighlight">\( u(r) = 0 \)</span> everywhere at the surface <span class="math notranslate nohighlight">\( S \)</span>, then the surface integral can be eliminated by demanding that the same conditions apply to <span class="math notranslate nohighlight">\( G(r, r_0) \)</span>, and we obtain the familiar expression (see Eq. 7.16):</p>
+<div class="math notranslate nohighlight">
+\[u(r_0) = \int_V G(r, r_0) \rho(r) \, dV.\]</div>
+</section>
+</section>
+<section id="boundary-conditions">
+<h2>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Link to this heading">#</a></h2>
+<p>Three types of boundary conditions are often considered:</p>
+<ol class="arabic simple">
+<li><p>Dirichlet: The value of <span class="math notranslate nohighlight">\( u(r) \)</span> is specified at each point of the boundary.</p></li>
+<li><p>Neumann: The value of the normal derivative of <span class="math notranslate nohighlight">\( u(r) \)</span>, i.e., <span class="math notranslate nohighlight">\( \frac{\partial u}{\partial n} = \nabla u \cdot \mathbf{n} \)</span>, is specified at each point of the boundary.</p></li>
+<li><p>Cauchy: Both <span class="math notranslate nohighlight">\( u(r) \)</span> and <span class="math notranslate nohighlight">\( \frac{\partial u}{\partial n} \)</span> are specified at each point of the boundary.</p></li>
+</ol>
+<p>In the 3D case, these boundary conditions are specified on a 2D surface <span class="math notranslate nohighlight">\( S \)</span> bounding the volume <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<section id="dirichlet-boundary-conditions">
+<h3>Dirichlet Boundary Conditions<a class="headerlink" href="#dirichlet-boundary-conditions" title="Link to this heading">#</a></h3>
+<p>Let us require that <span class="math notranslate nohighlight">\( u(r) = f(r) \)</span> everywhere on the surface <span class="math notranslate nohighlight">\( S \)</span>. The expression for the function <span class="math notranslate nohighlight">\( u(r_0) \)</span> can be simplified if we demand that <span class="math notranslate nohighlight">\( G(r, r_0) = 0 \)</span> for all <span class="math notranslate nohighlight">\( r \in S \)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[u(r_0) = \int_V G(r, r_0) \rho(r) \, dV(r) + \int_S f(r) \frac{\partial G(r, r_0)}{\partial n} \,\mathrm{d}s(r).\]</div>
+<p>Since functions <span class="math notranslate nohighlight">\( \rho(r) \)</span> and <span class="math notranslate nohighlight">\( f(r) \)</span> are known, all that is left to do is to find <span class="math notranslate nohighlight">\( G(r, r_0) \)</span>, which satisfies Dirichlet boundary conditions.</p>
+<p>To this end, consider <span class="math notranslate nohighlight">\( G(r, r_0) \)</span> as a sum of two contributions:</p>
+<div class="math notranslate nohighlight">
+\[G(r, r_0) = F(r, r_0) + H(r, r_0),\]</div>
+<p>where function <span class="math notranslate nohighlight">\( F(r, r_0) \)</span>, called the fundamental solution, is defined so as:</p>
+<div class="math notranslate nohighlight">
+\[\nabla^2 G(r, r_0) = \nabla^2 F(r, r_0) = -\delta(r - r_0),\]</div>
+<p>i.e., <span class="math notranslate nohighlight">\( F(r, r_0) \)</span> corresponds to sources of, e.g., the electrostatic potential, inside volume <span class="math notranslate nohighlight">\( V \)</span>. However, it does not necessarily satisfy the boundary conditions. Therefore, function <span class="math notranslate nohighlight">\( H(r, r_0) \)</span> is chosen so as:</p>
+<div class="math notranslate nohighlight">
+\[\nabla^2 H(r, r_0) = 0\]</div>
+<p>inside volume <span class="math notranslate nohighlight">\( V \)</span>, i.e., it corresponds to no sources inside <span class="math notranslate nohighlight">\( V \)</span>, and it is fitted in such a way that the sum of <span class="math notranslate nohighlight">\( F(r, r_0) \)</span> and <span class="math notranslate nohighlight">\( H(r, r_0) \)</span> is required to satisfy the boundary conditions:</p>
+<div class="math notranslate nohighlight">
+\[G(r, r_0) = F(r, r_0) + H(r, r_0) = 0 \quad \text{for all } r \in S.\]</div>
+</section>
+<section id="method-of-images">
+<h3>Method of Images<a class="headerlink" href="#method-of-images" title="Link to this heading">#</a></h3>
+<p>A practical method for finding such <span class="math notranslate nohighlight">\( G(r, r_0) \)</span> is called the <strong>Method of Images</strong>. This method is applied in three steps as follows:</p>
+<ol class="arabic simple">
+<li><p><strong>Determine the fundamental solution</strong> <span class="math notranslate nohighlight">\( F(r, r_0) \)</span> from <span class="math notranslate nohighlight">\( \nabla^2 F(r, r_0) = -\delta(r - r_0) \)</span> and appropriate boundary conditions. For example, for a 3D case and <span class="math notranslate nohighlight">\( F(r, r_0) \to 0 \)</span> for <span class="math notranslate nohighlight">\( r \to \infty \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[F(r, r_0) = -\frac{1}{4 \pi |r - r_0|}.\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Add image sources outside <span class="math notranslate nohighlight">\( V \)</span></strong>: Position the sources at the points <span class="math notranslate nohighlight">\( r_n \)</span> and assign them amplitudes <span class="math notranslate nohighlight">\( q_n \)</span>, where <span class="math notranslate nohighlight">\( n = 1, 2, \dots, N \)</span> and <span class="math notranslate nohighlight">\( N \)</span> is some integer. These sources can be represented as a superposition of delta functions:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\sum_{n=1}^{N} q_n \delta(r - r_n).\]</div>
+<p>Note that at this point the values of <span class="math notranslate nohighlight">\( q_n \)</span> and <span class="math notranslate nohighlight">\( r_n \)</span> (for <span class="math notranslate nohighlight">\( n = 1, 2, \dots, N \)</span>) are undefined.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Use the fact that sources outside <span class="math notranslate nohighlight">\( V \)</span></strong> satisfy Laplace’s equation (not Poisson’s) inside <span class="math notranslate nohighlight">\( V \)</span>. Hence, we can write:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[G(r, r_0) = 0 \quad \text{for } r \in S.\]</div>
+</section>
+<section id="neumann-boundary-conditions">
+<h3>Neumann Boundary Conditions<a class="headerlink" href="#neumann-boundary-conditions" title="Link to this heading">#</a></h3>
+<p>Here, we request that the normal derivative of the function <span class="math notranslate nohighlight">\( u(r) \)</span> is known everywhere at the surface <span class="math notranslate nohighlight">\( S \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial n} = f(r) \quad \text{for } r \in S.\]</div>
+<p>Use this to simplify the general expression for <span class="math notranslate nohighlight">\( u(r_0) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[u(r_0) = \int_V G(r, r_0) \rho(r) \, dV(r) + \int_S \left[ u(r) \frac{\partial G(r, r_0)}{\partial n} - G(r, r_0) \frac{\partial u(r)}{\partial n} \right] \,\mathrm{d}s(r).\]</div>
+<p>obtained earlier. Also, notice that, according to the <strong>divergence theorem</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\int_S f(r) \,\mathrm{d}s = \int_V \nabla \cdot \mathbf{n} \,\mathrm{d}s = \int_V \nabla^2 u \, dV = \int_V \rho(r) \, dV.\]</div>
+<p>The same condition for the corresponding Green’s function reads:</p>
+<div class="math notranslate nohighlight">
+\[\int_{S} \frac{\partial G(r, r_0)}{\partial n} \,\mathrm{d}s = \int_S \mathbf{r} \cdot \mathbf{G} \,\mathrm{d}s = \int_V \nabla^2 G \, dV = \int_V -\delta(r - r_0) \, dV = 1.\]</div>
+<p>Therefore, we cannot request that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial G(r, r_0)}{\partial n} = 0 \quad \text{for} \quad r \in S.\]</div>
+<p>However, in order to choose the simplest possible value for <span class="math notranslate nohighlight">\( \frac{\partial G(r, r_0)}{\partial n} \)</span>, we can request that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial G(r, r_0)}{\partial n} = \frac{1}{A} \quad \text{for} \quad r \in S,\]</div>
+<p>where <span class="math notranslate nohighlight">\( A \)</span> is the total area of the bounding surface <span class="math notranslate nohighlight">\( S \)</span>.</p>
+</section>
+<section id="solution-to-neumann-s-boundary-problem">
+<h3>Solution to Neumann’s Boundary Problem<a class="headerlink" href="#solution-to-neumann-s-boundary-problem" title="Link to this heading">#</a></h3>
+<p>With this, the solution of the <strong>Neumann boundary problem</strong> becomes:</p>
+<div class="math notranslate nohighlight">
+\[u(r_0) = \int_V G(r, r_0) \rho(r) \, dV + A^{-1} \int_S u(r) \,\mathrm{d}s - \int_S G(r, r_0) f(r) \,\mathrm{d}s.\]</div>
+<p>Note that <span class="math notranslate nohighlight">\( \frac{1}{A} \int_S u(r) \,\mathrm{d}s \)</span> is a constant equal to the average value of <span class="math notranslate nohighlight">\( u(r) \)</span> at the surface <span class="math notranslate nohighlight">\( S \)</span>. If, for an infinite volume <span class="math notranslate nohighlight">\( V \)</span>, we request that <span class="math notranslate nohighlight">\( u(r) \to 0 \)</span> as <span class="math notranslate nohighlight">\( |r| \to \infty \)</span>, this term can be eliminated.</p>
+</section>
+</section>
+<section id="problems-pdes">
+<h2>Problems - PDEs<a class="headerlink" href="#problems-pdes" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Verify that any function of <span class="math notranslate nohighlight">\( p \)</span>, where <span class="math notranslate nohighlight">\( p = x^2 + 2y \)</span>, is a solution of:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial x} = x \frac{\partial u}{\partial y}.\]</div>
+<p>Then, determine whether <span class="math notranslate nohighlight">\( v(x, y) \)</span> is a solution of this PDE if:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\( v(x, y) = x^4 + 4x^2y + 4y^2 \)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\( v(x, y) = x^4 + 2x^2y + y^2 \)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\( v(x, y) = x^2(x^2 - 4) + 4y(x^2 - 2) + 4(y^2 - 1) \)</span>.</p></li>
+<li><p>Find solutions of the PDE:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{1}{x} \frac{\partial u}{\partial x} + \frac{1}{y} \frac{\partial u}{\partial y} = 0,\]</div>
+<p>with the following boundary conditions:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\( u(0, y) = y \)</span> (one-dimensional boundary condition),</p></li>
+<li><p><span class="math notranslate nohighlight">\( u(1, 1) = 1 \)</span> (zero-dimensional boundary condition).</p></li>
+<li><p>Find solutions of the PDE:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\sin x \frac{\partial u}{\partial x} + \cos x \frac{\partial u}{\partial y} = \cos x,\]</div>
+<p>with the following boundary conditions:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\( u(\pi/2, y) = 0 \)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\( u(\pi/2, y) = y(y + 1) \)</span>.</p></li>
+<li><p>Find the general solution of the PDE:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 u}{\partial x^2} - 3 \frac{\partial^2 u}{\partial x \partial y} + 2 \frac{\partial^2 u}{\partial y^2} = 0,\]</div>
+<p>and then:</p>
+<ol class="arabic simple">
+<li><p>Find <span class="math notranslate nohighlight">\( u(x, y) \)</span>, for which <span class="math notranslate nohighlight">\( u(x, 0) = -x^2 \)</span> and <span class="math notranslate nohighlight">\( \frac{\partial u}{\partial y}(x, 0) = 0 \)</span>,</p></li>
+<li><p>Find the value of <span class="math notranslate nohighlight">\( u(0, 1) \)</span> for such <span class="math notranslate nohighlight">\( u(x, y) \)</span>.</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="using-integral-transforms-to-solve-pdes">
+<h1>Using Integral Transforms to Solve PDEs<a class="headerlink" href="#using-integral-transforms-to-solve-pdes" title="Link to this heading">#</a></h1>
+<p>We have already introduced the Laplace integral transform and used it in order to solve ordinary differential equations. Here we will use Laplace and Fourier integral transforms to solve partial differential equations. The strategy of the integral transform method is to reduce the number of variables in a PDE and convert it to a simpler PDE or an ordinary differential equation.</p>
+<section id="laplace-transform">
+<h2>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Link to this heading">#</a></h2>
+<p>The Laplace transform is a natural method of choice if the problem concerns a process where at least one of the variables can have values from zero to infinity. We will demonstrate the application of integral transforms to solving PDEs using specific examples.</p>
+<section id="id3">
+<h3>Example:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Consider a semi-infinite tube filled initially with pure water and brought in contact with a salt solution maintained at a fixed concentration. Find the total amount of salt diffused into the tube by time <span class="math notranslate nohighlight">\(t\)</span> if the diffusion constant is <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>The semi-infinite tube is a one-dimensional system. Therefore, the concentration of salt in the tube, <span class="math notranslate nohighlight">\(u\)</span>, can be described using two variables only: <span class="math notranslate nohighlight">\(x\)</span> – the distance from the salt container, and <span class="math notranslate nohighlight">\(t\)</span> – duration of the contact. Hence, <span class="math notranslate nohighlight">\(u = u(x, t)\)</span>.</p>
+<p>The diffusion process is described by the equation:</p>
+<div class="math notranslate nohighlight">
+\[k \frac{\partial^2 u(x, t)}{\partial x^2} = \frac{\partial u(x, t)}{\partial t}\]</div>
+<p>with the following conditions:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u(0, t) = u_0\)</span>, i.e., the concentration of the salt solution “at the source” is the same at all times.</p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x, 0) = 0\)</span>, i.e., the tube contained pure water before it was brought into contact with the salt reservoir at <span class="math notranslate nohighlight">\(t = 0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(u(\infty, t) = 0\)</span>, i.e., salt will never reach the far end of the semi-infinite tube.</p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x, t)\)</span> is finite for all <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+</ul>
+<p>Our strategy is to convert this PDE into an ODE by eliminating the dependence on one of the variables. Taking the Laplace transform of both sides with respect to <span class="math notranslate nohighlight">\(t\)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[k \int_0^\infty \frac{\partial^2 u}{\partial x^2} e^{-st} \,\mathrm{d}t= \int_0^\infty \frac{\partial u}{\partial t} e^{-st} \,\mathrm{d}t.\]</div>
+<p>Swap the order of the <span class="math notranslate nohighlight">\(\frac{\partial^2}{\partial x^2}\)</span> and the <span class="math notranslate nohighlight">\(\int \dots\mathrm{d}t\)</span> operations:</p>
+<div class="math notranslate nohighlight">
+\[k \frac{\partial^2}{\partial x^2} \left( \int_0^\infty u(x, t) e^{-st} \,\mathrm{d}t\right) = k \frac{\partial^2}{\partial x^2} U(x, s),\]</div>
+<p>where <span class="math notranslate nohighlight">\(U(x, s)\)</span> is the Laplace transform of <span class="math notranslate nohighlight">\(u(x, t)\)</span>. Integrate the right-hand side by parts:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^\infty \frac{\partial u}{\partial t} e^{-st} \,\mathrm{d}t= u(x, t) e^{-st} \Big|_0^\infty + s \int_0^\infty u(x, t) e^{-st} \,\mathrm{d}t= s U(x, s) - u(x, 0).\]</div>
+<p>Taking into account the boundary condition <span class="math notranslate nohighlight">\(u(x, 0) = 0\)</span>, the diffusion equation becomes:</p>
+<div class="math notranslate nohighlight">
+\[k \frac{\partial^2}{\partial x^2} U(x, s) = s U(x, s). \]</div>
+<p>This is an ordinary differential equation with respect to <span class="math notranslate nohighlight">\(U(x, s)\)</span>. The solution to this equation is:</p>
+<div class="math notranslate nohighlight">
+\[U(x, s) = A(s) \exp \left( \sqrt{\frac{s}{k}} x \right) + B(s) \exp \left( - \sqrt{\frac{s}{k}} x \right), \]</div>
+<p>where <span class="math notranslate nohighlight">\(A(s)\)</span> and <span class="math notranslate nohighlight">\(B(s)\)</span> are, in general, functions of <span class="math notranslate nohighlight">\(s\)</span>. Only one of the terms in this equation is physically meaningful for this problem. Since <span class="math notranslate nohighlight">\(u(\infty, t) = 0\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[U(x, s) = B(s) \exp \left( - \sqrt{\frac{s}{k}} x \right).\]</div>
+<p>Function <span class="math notranslate nohighlight">\(B(s)\)</span> can be determined from the boundary conditions by calculating the Laplace transform of <span class="math notranslate nohighlight">\(u(0, t) = u_0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[U(0, s) = \int_0^\infty u_0 e^{-st} \,\mathrm{d}t= u_0 \int_0^\infty e^{-st} \,\mathrm{d}t= \frac{u_0}{s}.\]</div>
+<p>Hence,</p>
+<div class="math notranslate nohighlight">
+\[U(x, s) = \frac{u_0}{s} \exp \left( - \sqrt{\frac{s}{k}} x \right).\]</div>
+<p>Now, using a table of Laplace transforms, we can find the appropriate function <span class="math notranslate nohighlight">\(u(x, t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[u(x, t) = u_0 \left[ 1 - \text{erf} \left( \frac{x}{\sqrt{4kt}} \right) \right],\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\text{erf}(x) = \frac{2}{\sqrt{\pi}} \int_0^x e^{-p^2} \, dp.\]</div>
+<p>Finally, to find the total amount of salt diffused into the tube, we calculate:</p>
+<div class="math notranslate nohighlight">
+\[w(t) = \int_0^\infty u(x, t) \,\mathrm{d}x.\]</div>
+<p>However, since the problem requires only <span class="math notranslate nohighlight">\( w(t) \)</span>, we do not need to find <span class="math notranslate nohighlight">\( u(x,t) \)</span> explicitly.</p>
+<p>To find <span class="math notranslate nohighlight">\( w(t) \)</span>, we consider the Laplace transform of <span class="math notranslate nohighlight">\( w(t) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[W(s) = \int_0^\infty w(t) e^{-st}\mathrm{d}t= \int_0^\infty \left( \int_0^\infty u(x,t)\mathrm{d}x \right) e^{-st}\mathrm{d}t= \int_0^\infty \left( \int_0^\infty u(x,t)  e^{-st}\mathrm{d}t\right)dx\]</div>
+<p>The inner integral is the Laplace transform of <span class="math notranslate nohighlight">\( u(x,t) \)</span>, and hence:</p>
+<div class="math notranslate nohighlight">
+\[W(s) = \int_0^\infty U(x,s)\mathrm{d}x\]</div>
+<p>Substituting <span class="math notranslate nohighlight">\( U(x, s) \)</span>, the integral can be evaluated:</p>
+<div class="math notranslate nohighlight">
+\[W(s) = \frac{u_0}{\sqrt{k}} \int_0^\infty e^{-\sqrt{\frac{s}{k}} x}\mathrm{d}x = \frac{u_0}{\sqrt{k}} \cdot \frac{1}{\sqrt{s}}\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[W(s) = \frac{u_0}{\sqrt{k s}}\]</div>
+<p>Finally, <span class="math notranslate nohighlight">\( w(t) \)</span> can be found by consulting a table of Laplace transforms:</p>
+<div class="math notranslate nohighlight">
+\[w(t) = \frac{u_0 \sqrt{k}}{\sqrt{\pi}} t^{-1/2}\]</div>
+</section>
+<section id="id4">
+<h3>Exercise<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>A semi-infinite metal bar has an initial temperature <span class="math notranslate nohighlight">\( T = 0 \, \text{K} \)</span> everywhere along the bar. At time <span class="math notranslate nohighlight">\( t = 0 \)</span>, one end of the bar is brought into contact with a constant temperature heat reservoir at <span class="math notranslate nohighlight">\( T = 100 \, \text{K} \)</span>. Find the temperature distribution along the bar after time <span class="math notranslate nohighlight">\( t \)</span>.</p>
+</section>
+</section>
+<section id="convolution-theorem">
+<h2>Convolution Theorem<a class="headerlink" href="#convolution-theorem" title="Link to this heading">#</a></h2>
+<section id="convolution-theorem-in-laplace-transforms">
+<h3>Convolution Theorem in Laplace Transforms<a class="headerlink" href="#convolution-theorem-in-laplace-transforms" title="Link to this heading">#</a></h3>
+<p>Consider the product <span class="math notranslate nohighlight">\( H(p) G(p) \)</span>, where <span class="math notranslate nohighlight">\( H(p) \)</span> and <span class="math notranslate nohighlight">\( G(p) \)</span> are Laplace transforms of <span class="math notranslate nohighlight">\( h(t) \)</span> and <span class="math notranslate nohighlight">\( g(t) \)</span>, respectively.</p>
+<div class="math notranslate nohighlight">
+\[H(p) G(p) = \int_0^\infty h(s) e^{-ps}\mathrm{d}s \int_0^\infty g(t) e^{-pt}\mathrm{d}t= \int_0^\infty \int_0^\infty h(s) g(t) e^{-p(s + t)}\mathrm{d}s\mathrm{d}t.\]</div>
+<p>We can write this as:</p>
+<div class="math notranslate nohighlight">
+\[H(p) G(p) = \int_0^\infty \left( \int_0^r g(r - t) h(t) e^{-pr}\mathrm{d}t\right)\mathrm{d}r.\]</div>
+<p>This inner integral is called the convolution of functions <span class="math notranslate nohighlight">\( g(x) \)</span> and <span class="math notranslate nohighlight">\( h(x) \)</span>.</p>
+<div class="math notranslate nohighlight">
+\[H(p) G(p) = \int_0^\infty [h \ast g] e^{-pr}\mathrm{d}r,\]</div>
+<p>i.e., the Laplace transform of a convolution of functions <span class="math notranslate nohighlight">\( h(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span> equals the product of the Laplace transforms of these functions. In other words, <span class="math notranslate nohighlight">\( g \ast h \)</span> is the inverse Laplace transform of <span class="math notranslate nohighlight">\( H(p) G(p) \)</span>.</p>
+</section>
+</section>
+<section id="convolution-in-fourier-transform">
+<h2>Convolution in Fourier Transform<a class="headerlink" href="#convolution-in-fourier-transform" title="Link to this heading">#</a></h2>
+<p>Let us consider two functions <span class="math notranslate nohighlight">\( f(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span>. Their Fourier transforms can be defined as</p>
+<div class="math notranslate nohighlight">
+\[F(k) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(x)e^{-ikx}\mathrm{d}x\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[G(k) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} g(x)e^{-ikx}\mathrm{d}x.\]</div>
+<p>Note that other definitions of the Fourier transform may use a different factor in front of the integral.</p>
+<p>Is it possible to give meaning to the product <span class="math notranslate nohighlight">\( F(k)G(k) \)</span>? Rewrite <span class="math notranslate nohighlight">\( F(k)G(k) \)</span> as:</p>
+<p>For any fixed <span class="math notranslate nohighlight">\( t \)</span>, we can introduce a new variable <span class="math notranslate nohighlight">\( p = s+t \)</span>. Then, <span class="math notranslate nohighlight">\( s = p - t \)</span> and <span class="math notranslate nohighlight">\(\mathrm{d}s = dp \)</span>. Rewrite the integral in terms of variables <span class="math notranslate nohighlight">\( p \)</span> and <span class="math notranslate nohighlight">\( t \)</span>. Note that the integration limits remain unchanged:</p>
+<div class="math notranslate nohighlight">
+\[F(k)G(k) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(p-t)g(t) e^{-ikp} dp\mathrm{d}t.\]</div>
+<p>Change the order of integration with respect to <span class="math notranslate nohighlight">\(\mathrm{d}t\)</span> and <span class="math notranslate nohighlight">\( dp \)</span> and multiply both parts of the equation by <span class="math notranslate nohighlight">\( p^{2\pi} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2\pi} F(k)G(k) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(p-t) g(t) e^{-ikp} dp\mathrm{d}t.\]</div>
+<p>The integral in square parenthesis is called the convolution (note that the integration limits are different from those defined for the case of the Laplace transform):</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{+\infty} f(p-t)g(t)\mathrm{d}t.\]</div>
+<p>Thus the equation states that the product of the Fourier transforms of functions <span class="math notranslate nohighlight">\( f(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span> is proportional to the Fourier transform of a convolution of these functions. This statement is called the <strong>convolution theorem</strong>.</p>
+<section id="id5">
+<h3>Exercise<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Demonstrate that</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(p-t)g(t)\mathrm{d}t= \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(t-p)g(t)\mathrm{d}t.\]</div>
+</section>
+</section>
+<section id="temperature-distribution-in-an-infinite-bar">
+<h2>Temperature distribution in an infinite bar<a class="headerlink" href="#temperature-distribution-in-an-infinite-bar" title="Link to this heading">#</a></h2>
+<p>An infinite metal bar has the initial temperature distribution along the bar <span class="math notranslate nohighlight">\( f(x) \)</span>. Find the temperature distribution after time <span class="math notranslate nohighlight">\( t \)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\( u(x,t) \)</span> be the temperature at a point <span class="math notranslate nohighlight">\( x \)</span> along the bar at the time <span class="math notranslate nohighlight">\( t \)</span>. Assume that the far ends of the bar remain cold, i.e.</p>
+<div class="math notranslate nohighlight">
+\[u(\pm 1, t) = \frac{\partial u(x, t)}{\partial x} \Big|_{x=\pm 1} = 0.\]</div>
+<p>The temperature along the bar is described by the heat flow equation</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 u}{\partial x^2} = \frac{\partial u}{\partial t}.\]</div>
+<p>Natural boundary conditions for this problem are:</p>
+<ul class="simple">
+<li><p>The far ends of the bar remain cold: <span class="math notranslate nohighlight">\( u(x,t) \to 0 \)</span> for <span class="math notranslate nohighlight">\( x \to \pm 1 \)</span>.</p></li>
+<li><p>The temperature does not change at the ends of the bar: <span class="math notranslate nohighlight">\( \frac{\partial u(x, t)}{\partial x} \to 0 \)</span> for <span class="math notranslate nohighlight">\( x \to \pm 1 \)</span>.</p></li>
+</ul>
+<p>Apply the Fourier transform to both parts of the equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2\pi} \int_{-\infty}^{+\infty} \frac{\partial^2 u}{\partial x^2} e^{-ikx}\mathrm{d}x = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \frac{\partial u}{\partial t} e^{-ikx}\mathrm{d}x.\]</div>
+<p>The LHS can be integrated by parts:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{+\infty} \frac{\partial^2 u}{\partial x^2} e^{-ikx}\mathrm{d}x = -k^2 \int_{-\infty}^{+\infty} u(x,t) e^{-ikx}\mathrm{d}x,\]</div>
+<p>while in the RHS, <span class="math notranslate nohighlight">\( \frac{\partial}{\partial t} \)</span> can be moved outside of the integration. Thus, the PDE is transformed into:</p>
+<div class="math notranslate nohighlight">
+\[-k^2 U(k,t) = \frac{\partial U(k,t)}{\partial t}.\]</div>
+<p>The latter equation has a solution of the form:</p>
+<div class="math notranslate nohighlight">
+\[U(k,t) = U(k,0) e^{-k^2 \alpha t}.\]</div>
+<p>Function <span class="math notranslate nohighlight">\( U(k,0) \)</span> is defined from the initial condition at the time <span class="math notranslate nohighlight">\( t = 0 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[U(k,0) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} u(x,0) e^{-ikx}\mathrm{d}x = F(k),\]</div>
+<p>i.e. <span class="math notranslate nohighlight">\( U(k,0) \)</span> is given by the Fourier transform of the function <span class="math notranslate nohighlight">\( f(x) \)</span>.</p>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[U(k,t) = 2\pi F(k) G(k,t),\]</div>
+<p>where we introduced the function <span class="math notranslate nohighlight">\( G(k,t) \)</span> defined as:</p>
+<div class="math notranslate nohighlight">
+\[G(k,t) = e^{-k^2 \alpha t}.\]</div>
+<p>Function <span class="math notranslate nohighlight">\( G(k,t) \)</span> can be considered as a Fourier transform of some function <span class="math notranslate nohighlight">\( g(x,t) \)</span>. Since <span class="math notranslate nohighlight">\( U(k,t) \)</span> is represented as a product of two Fourier transforms, we can apply the convolution theorem to find <span class="math notranslate nohighlight">\( u(x,t) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[u(x,t) = \int_{-\infty}^{+\infty} g(x-s,t) f(s)\mathrm{d}s.\]</div>
+<p>In other words, the problem will be solved if we find function <span class="math notranslate nohighlight">\( g(x,t) \)</span> explicitly. Function <span class="math notranslate nohighlight">\( g(x,t) \)</span> can be found by the inverse Fourier transform of <span class="math notranslate nohighlight">\( G(k,t) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[g(x,t) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} e^{-k^2 \alpha t} e^{ikx} dk.\]</div>
+<p>To take this integral, first complete the square:</p>
+<div class="math notranslate nohighlight">
+\[g(x,t) = \frac{1}{\sqrt{4\pi \alpha t}} \int_{-\infty}^{+\infty} e^{-\frac{(k-ix)^2}{4\alpha t}} dk.\]</div>
+<p>Now, using the fact that:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{+\infty} e^{-a s^2}\mathrm{d}s = \sqrt{\frac{\pi}{a}},\]</div>
+<p>we obtain:</p>
+<div class="math notranslate nohighlight">
+\[g(x,t) = \frac{1}{\sqrt{4\pi \alpha t}} e^{-\frac{x^2}{4\alpha t}}.\]</div>
+<p>Finally, the temperature distribution at time <span class="math notranslate nohighlight">\( t \)</span> can be calculated, using function <span class="math notranslate nohighlight">\( g(x,t) \)</span> and the initial temperature distribution <span class="math notranslate nohighlight">\( f(x) \)</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Partial Differential Equations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-pdes">Important PDEs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-wave-equation">The Wave Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-diffusion-equation">The Diffusion Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laplaces-equation">Laplace’s Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poissons-equation">Poisson’s Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodingers-equation">Schrödinger’s Equation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-form-of-the-linear-1st-order-pde">General form of the linear 1st order PDE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-c-x-y-r-x-y-0">Case of <span class="math notranslate nohighlight">\( C(x, y) = R(x, y) = 0 \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-r-x-y-0">Case of <span class="math notranslate nohighlight">\( R(x, y) = 0 \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-trivial-solutions-of-the-equation">Non-trivial Solutions of the Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneity">Homogeneity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-of-inhomogeneous-equations">Solutions of Inhomogeneous Equations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-2nd-order-pde">Linear 2nd Order PDE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-2nd-order-pde">Solving 2nd Order PDE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#condition-for-frac-d-2-f-p-dp-2-0">Condition for <span class="math notranslate nohighlight">\( \frac{d^2 f(p)}{dp^2} = 0 \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-trivial-solutions">Non-trivial Solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminant-and-classification">Discriminant and Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-wave-equation-vs-laplace-equation">Example: Wave Equation vs Laplace Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabolic-equation">Parabolic Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-h-x-y">Derivation of <span class="math notranslate nohighlight">\( h(x, y) \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution">General Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Poisson’s Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-theorem">Divergence Theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-form-of-divergence">Integral Form of Divergence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#greens-identity">Green’s Identity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-poissons-equation">Solving Poisson’s Equation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions">Boundary Conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirichlet-boundary-conditions">Dirichlet Boundary Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-images">Method of Images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neumann-boundary-conditions">Neumann Boundary Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-to-neumann-s-boundary-problem">Solution to Neumann’s Boundary Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-pdes">Problems - PDEs</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-integral-transforms-to-solve-pdes">Using Integral Transforms to Solve PDEs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform">Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-theorem">Convolution Theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-theorem-in-laplace-transforms">Convolution Theorem in Laplace Transforms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-in-fourier-transform">Convolution in Fourier Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-distribution-in-an-infinite-bar">Temperature distribution in an infinite bar</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PHAS0026 Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

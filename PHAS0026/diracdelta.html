@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -188,10 +188,6 @@
 <li class="toctree-l1"><a class="reference internal" href="laplacetransform.html">Laplace Transforms</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The Dirac Delta Function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sturmliouville.html">Sturm-Liouville Theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="integraltransforms.html">Integral Transforms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pdes.html">Partial Differential Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tensors.html">Cartesian Tensors</a></li>
 </ul>
 
     </div>
@@ -388,6 +384,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-motivation">Some motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifting-property-of-the-delta-function">Sifting property of the delta function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-gaussian-distribution">The Gaussian distribution.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-delta-function">Properties of the <span class="math notranslate nohighlight">\( \delta \)</span>-function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-delta-ax">Calculating <span class="math notranslate nohighlight">\( \delta(ax) \)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-the-dirac-delta-function">Laplace transform of the Dirac delta function.</a></li>
@@ -395,7 +396,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-generalized-functions">Other generalized functions.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-distribution">Gaussian distribution.</a></li>
 </ul>
             </nav>
         </div>
@@ -431,6 +431,61 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\( f(x) \)</span> and all of its derivatives are continuous and finite functions of <span class="math notranslate nohighlight">\( x \)</span>;</p></li>
 <li><p><span class="math notranslate nohighlight">\( f(x) = 0 \)</span> for all values of <span class="math notranslate nohighlight">\( x \)</span> outside of some finite interval <span class="math notranslate nohighlight">\( [x_1, x_2] \)</span>.</p></li>
 </ol>
+</section>
+<section id="some-motivation">
+<h2>Some motivation<a class="headerlink" href="#some-motivation" title="Link to this heading">#</a></h2>
+<p>Before we define the Dirac delta-function, we need to be aware of the Mean-value theorem for integrals:</p>
+<p>If <span class="math notranslate nohighlight">\(g(x)\)</span> is continuous on <span class="math notranslate nohighlight">\([a, b]\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\int_{a}^{b} g(x) \, dx = (b-a) g(\bar{x}),\]</div>
+<p>for at least one <span class="math notranslate nohighlight">\(\bar{x}\)</span> with <span class="math notranslate nohighlight">\(a \le \bar{x} \le b\)</span>.</p>
+<p>The proof follows from the regular mean-value theorem for <span class="math notranslate nohighlight">\(G\)</span> say, by defining <span class="math notranslate nohighlight">\(g = G'\)</span>. Geometrically this means that the area under the curve is equivalent to that of a rectangle with length equal to the interval of integration.</p>
+<p>Now consider the following step-function:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f_k(x) = \left\{
+        \begin{array}{rl}
+        k/2, &amp; \text{if } |x| &lt; 1/k, \\
+        0, &amp; \text{if } |x| &gt; 1/k.
+        \end{array} \right.\end{split}\]</div>
+<p>Clearly we can see that an important property of this function is that</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f_k(x) dx = 1.\]</div>
+<p>As <span class="math notranslate nohighlight">\(k\)</span> increases, <span class="math notranslate nohighlight">\(f_k(x)\)</span> gets taller and thinner (see Figure 2.1). We define the Dirac delta function to be</p>
+<div class="math notranslate nohighlight">
+\[\delta(x) = \lim_{k \rightarrow \infty} f_k(x),\]</div>
+<p>although, of course, this limit doesn’t exist in the usual mathematical sense. Effectively <span class="math notranslate nohighlight">\(\delta(x)\)</span> is infinite at <span class="math notranslate nohighlight">\(x = 0\)</span> and zero at all other values of <span class="math notranslate nohighlight">\(x\)</span>. The key property however, is that its integral (area under the curve) is one.</p>
+<p><img alt="Graph of  for  (green),  (red) and  (blue)." src="_images/fig2-1.png" /></p>
+<section id="sifting-property-of-the-delta-function">
+<h3>Sifting property of the delta function<a class="headerlink" href="#sifting-property-of-the-delta-function" title="Link to this heading">#</a></h3>
+<p>The delta function is most useful in how it interacts with other functions. Consider</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} g(x) \delta(x) \, dx,\]</div>
+<p>where <span class="math notranslate nohighlight">\(g(x)\)</span> is a continuous function defined over <span class="math notranslate nohighlight">\((-\infty, \infty)\)</span>. Using our definition of the delta-function we can rewrite this as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\lim_{k \rightarrow \infty} \int^\infty_{-\infty} g(x) f_k(x) \, dx &amp;= \lim_{k \rightarrow \infty} \int^{1/k}_{-1/k} \frac{k}{2} g(x) \, dx\\
+&amp;= \lim_{k \rightarrow \infty} \frac{k}{2} g(\bar{x}) \left(\frac{1}{k} - \left(-\frac{1}{k} \right) \right),
+\end{align*}\end{split}\]</div>
+<p>for some <span class="math notranslate nohighlight">\(\bar{x}\)</span> in <span class="math notranslate nohighlight">\([-1/k, 1/k]\)</span>, using the mean-value theorem for integrals. Clearly, as <span class="math notranslate nohighlight">\(k \rightarrow \infty\)</span>, we must have <span class="math notranslate nohighlight">\(\bar{x} \rightarrow 0\)</span>. The expression above simplifies to</p>
+<div class="math notranslate nohighlight">
+\[g(0) \frac{k}{2} \frac{2}{k} = g(0).\]</div>
+<p>We have therefore established that for any continuous function <span class="math notranslate nohighlight">\(g\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} g(x)\delta(x) \, dx = g(0).\]</div>
+<p>This result can easily be generalized to</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} g(x)\delta(x - a) \, dx = g(a).\]</div>
+</section>
+<section id="the-gaussian-distribution">
+<h3>The Gaussian distribution.<a class="headerlink" href="#the-gaussian-distribution" title="Link to this heading">#</a></h3>
+<p>The normal distribution, also known as the Gaussian distribution, is given by</p>
+<div class="math notranslate nohighlight">
+\[g(x, a, \sigma) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x - a)^2}{2\sigma^2}}.\]</div>
+<p>In the limit of infinitely small <span class="math notranslate nohighlight">\( \sigma \)</span> (<span class="math notranslate nohighlight">\( \sigma \to 0 \)</span>), the function <span class="math notranslate nohighlight">\( g(x, a, \sigma) \)</span> behaves similarly to <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> in that:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\sigma \to 0} \int_{-\infty}^{\infty} f(x) g(x, a, \sigma)\mathrm{d}x= f(a).\]</div>
+<p>Yet, we will not equate <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> and <span class="math notranslate nohighlight">\( \lim_{\sigma \to 0} g(x, a, \sigma) \)</span> because <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> is a generalized function defined via its integral with other functions, while <span class="math notranslate nohighlight">\( g(x, a, \sigma) \)</span> is a function in the usual sense.</p>
+</section>
 </section>
 <section id="properties-of-the-delta-function">
 <h2>Properties of the <span class="math notranslate nohighlight">\( \delta \)</span>-function<a class="headerlink" href="#properties-of-the-delta-function" title="Link to this heading">#</a></h2>
@@ -516,16 +571,6 @@ document.write(`
 </ul>
 </section>
 </section>
-<section id="gaussian-distribution">
-<h2>Gaussian distribution.<a class="headerlink" href="#gaussian-distribution" title="Link to this heading">#</a></h2>
-<p>The normal distribution, also known as the Gaussian distribution, is given by</p>
-<div class="math notranslate nohighlight">
-\[g(x, a, \sigma) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x - a)^2}{2\sigma^2}}.\]</div>
-<p>In the limit of infinitely small <span class="math notranslate nohighlight">\( \sigma \)</span> (<span class="math notranslate nohighlight">\( \sigma \to 0 \)</span>), the function <span class="math notranslate nohighlight">\( g(x, a, \sigma) \)</span> behaves similarly to <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> in that:</p>
-<div class="math notranslate nohighlight">
-\[\lim_{\sigma \to 0} \int_{-\infty}^{\infty} f(x) g(x, a, \sigma)\mathrm{d}x= f(a).\]</div>
-<p>Yet, we will not equate <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> and <span class="math notranslate nohighlight">\( \lim_{\sigma \to 0} g(x, a, \sigma) \)</span> because <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> is a generalized function defined via its integral with other functions, while <span class="math notranslate nohighlight">\( g(x, a, \sigma) \)</span> is a function in the usual sense.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -593,6 +638,11 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-motivation">Some motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifting-property-of-the-delta-function">Sifting property of the delta function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-gaussian-distribution">The Gaussian distribution.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-delta-function">Properties of the <span class="math notranslate nohighlight">\( \delta \)</span>-function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-delta-ax">Calculating <span class="math notranslate nohighlight">\( \delta(ax) \)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-the-dirac-delta-function">Laplace transform of the Dirac delta function.</a></li>
@@ -600,7 +650,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-generalized-functions">Other generalized functions.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-distribution">Gaussian distribution.</a></li>
 </ul>
   </nav></div>
 

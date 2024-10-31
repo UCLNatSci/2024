@@ -134,7 +134,7 @@ Notice that this equation is similar to Eq. (7.2), in which $ u $ is replaced wi
 On the other hand, for $ p $ to remain a constant combination of $ x $ and $ y $, we should have:
 
 ```{math}
-dp = \frac{\partial p}{\partial x} dx + \frac{\partial p}{\partial y} dy = 0
+dp = \frac{\partial p}{\partial x}\mathrm{d}x + \frac{\partial p}{\partial y} dy = 0
 ```
 
 Note that this equation is identical to Eq. (7.4) if we set:
@@ -590,18 +590,18 @@ where $ u_n(r) $ and $ \lambda_n $ (with $ n = 1, 2, 3, \dots $) are eigenfuncti
 
 ### Divergence Theorem
 
-Here and below, $ dS $ is a small element of the surface $ S $, and $ \mathbf{n} dS $ is a vector of magnitude $ dS $ oriented perpendicular to the surface element $ dS $.
+Here and below, $\mathrm{d}s $ is a small element of the surface $ S $, and $ \mathbf{n}\mathrm{d}s $ is a vector of magnitude $\mathrm{d}s $ oriented perpendicular to the surface element $\mathrm{d}s $.
 
 For a sufficiently small but finite volume $ v $ enclosed by a surface $ s $, we can write:
 
 ```{math}
-(\mathbf{r} \cdot \mathbf{a}) v \approx \mathbf{a} \cdot dS.
+(\mathbf{r} \cdot \mathbf{a}) v \approx \mathbf{a} \cdot\mathrm{d}s.
 ```
 
 If a volume $ V $ is split into such small volumes $ v $, then summing over all $ v $ gives:
 
 ```{math}
-\int_V (\mathbf{r} \cdot \mathbf{a}) dV = \int_S \mathbf{a} \cdot dS,
+\int_V (\mathbf{r} \cdot \mathbf{a}) dV = \int_S \mathbf{a} \cdot\mathrm{d}s,
 ```
 
 where $ S $ encloses the volume $ V $.
@@ -611,7 +611,7 @@ where $ S $ encloses the volume $ V $.
 The integral form of the divergence is:
 
 ```{math}
-\mathbf{r} \cdot \mathbf{a} = \lim_{V \to 0} \left( \int_S \mathbf{a} \cdot dS \right).
+\mathbf{r} \cdot \mathbf{a} = \lim_{V \to 0} \left( \int_S \mathbf{a} \cdot\mathrm{d}s \right).
 ```
 
 ### Green’s Identity
@@ -619,19 +619,19 @@ The integral form of the divergence is:
 If $ f(r) $ and $ g(r) $ are continuous differentiable scalar functions defined in a volume $ V $ enclosed by a surface $ S $, then one can construct vectors $ f(r) \nabla g(r) $ and $ g(r) \nabla f(r) $. Applying the divergence theorem to the first vector gives:
 
 ```{math}
-\int_S (f \nabla g) \cdot dS = \int_V \nabla \cdot (f \nabla g) \, dV = \int_V \left[ f \nabla^2 g + (\nabla f) \cdot (\nabla g) \right] dV.
+\int_S (f \nabla g) \cdot\mathrm{d}s = \int_V \nabla \cdot (f \nabla g) \, dV = \int_V \left[ f \nabla^2 g + (\nabla f) \cdot (\nabla g) \right] dV.
 ```
 
 A similar expression for $ g(r) \nabla f(r) $ is:
 
 ```{math}
-\int_S (g \nabla f) \cdot dS = \int_V \nabla \cdot (g \nabla f) \, dV = \int_V \left[ g \nabla^2 f + (\nabla g) \cdot (\nabla f) \right] dV.
+\int_S (g \nabla f) \cdot\mathrm{d}s = \int_V \nabla \cdot (g \nabla f) \, dV = \int_V \left[ g \nabla^2 f + (\nabla g) \cdot (\nabla f) \right] dV.
 ```
 
 By subtracting these two equations, we obtain:
 
 ```{math}
-\int_S \left[ (f \nabla g) - (g \nabla f) \right] \cdot dS = \int_V \left[ f \nabla^2 g - g \nabla^2 f \right] dV. \tag{7.17}
+\int_S \left[ (f \nabla g) - (g \nabla f) \right] \cdot\mathrm{d}s = \int_V \left[ f \nabla^2 g - g \nabla^2 f \right] dV. \tag{7.17}
 ```
 
 This equality is called **Green’s second theorem**. Note that the terms in the square brackets on the left are vectors, and on the right are scalars.
@@ -647,13 +647,13 @@ Consider the equation:
 To find the solution of it, use Green’s second theorem:
 
 ```{math}
-\int_V \left[ -f \nabla^2 g - g \nabla^2 f \right] dV = \int_S \left[ f \nabla g - g \nabla f \right] \cdot dS.
+\int_V \left[ -f \nabla^2 g - g \nabla^2 f \right] dV = \int_S \left[ f \nabla g - g \nabla f \right] \cdot\mathrm{d}s.
 ```
 
 Let us use $ f = u(r) $ and $ g = G(r, r_0) $. Then, according to Eq. (7.17), we have:
 
 ```{math}
-\int_V \left[ u(r) \nabla^2 G(r, r_0) - G(r, r_0) \nabla^2 u(r) \right] dV = \int_S \left[ u(r) \frac{\partial G(r, r_0)}{\partial n} - G(r, r_0) \frac{\partial u(r)}{\partial n} \right] dS,
+\int_V \left[ u(r) \nabla^2 G(r, r_0) - G(r, r_0) \nabla^2 u(r) \right] dV = \int_S \left[ u(r) \frac{\partial G(r, r_0)}{\partial n} - G(r, r_0) \frac{\partial u(r)}{\partial n} \right]\mathrm{d}s,
 ```
 
 where the normal derivatives are defined as:
@@ -665,13 +665,13 @@ where the normal derivatives are defined as:
 When applied to Poisson’s equation, i.e., using the fact that $ \nabla^2 G(r, r_0) = -\delta(r - r_0) $ and $ \nabla^2 u(r) = \rho(r) $, Green’s theorem gives:
 
 ```{math}
-\int_V \left[ u(r) \delta(r - r_0) - G(r, r_0) \rho(r) \right] dV = \int_S \left[ u(r) \frac{\partial G(r, r_0)}{\partial n} - G(r, r_0) \frac{\partial u(r)}{\partial n} \right] dS.
+\int_V \left[ u(r) \delta(r - r_0) - G(r, r_0) \rho(r) \right] dV = \int_S \left[ u(r) \frac{\partial G(r, r_0)}{\partial n} - G(r, r_0) \frac{\partial u(r)}{\partial n} \right]\mathrm{d}s.
 ```
 
 Since $ r_0 $ is inside $ V $, we obtain:
 
 ```{math}
-u(r_0) = \int_V G(r, r_0) \rho(r) \, dV + \int_S \left[ u(r) \frac{\partial G(r, r_0)}{\partial n} - G(r, r_0) \frac{\partial u(r)}{\partial n} \right] dS.
+u(r_0) = \int_V G(r, r_0) \rho(r) \, dV + \int_S \left[ u(r) \frac{\partial G(r, r_0)}{\partial n} - G(r, r_0) \frac{\partial u(r)}{\partial n} \right]\mathrm{d}s.
 ```
 
 If $ u(r) $ satisfies homogeneous boundary conditions, i.e., $ u(r) = 0 $ everywhere at the surface $ S $, then the surface integral can be eliminated by demanding that the same conditions apply to $ G(r, r_0) $, and we obtain the familiar expression (see Eq. 7.16):
@@ -696,7 +696,7 @@ In the 3D case, these boundary conditions are specified on a 2D surface $ S $ bo
 Let us require that $ u(r) = f(r) $ everywhere on the surface $ S $. The expression for the function $ u(r_0) $ can be simplified if we demand that $ G(r, r_0) = 0 $ for all $ r \in S $. Then:
 
 ```{math}
-u(r_0) = \int_V G(r, r_0) \rho(r) \, dV(r) + \int_S f(r) \frac{\partial G(r, r_0)}{\partial n} \, dS(r).
+u(r_0) = \int_V G(r, r_0) \rho(r) \, dV(r) + \int_S f(r) \frac{\partial G(r, r_0)}{\partial n} \,\mathrm{d}s(r).
 ```
 
 Since functions $ \rho(r) $ and $ f(r) $ are known, all that is left to do is to find $ G(r, r_0) $, which satisfies Dirichlet boundary conditions.
@@ -760,18 +760,18 @@ Here, we request that the normal derivative of the function $ u(r) $ is known ev
 Use this to simplify the general expression for $ u(r_0) $:
 
 ```{math}
-u(r_0) = \int_V G(r, r_0) \rho(r) \, dV(r) + \int_S \left[ u(r) \frac{\partial G(r, r_0)}{\partial n} - G(r, r_0) \frac{\partial u(r)}{\partial n} \right] \, dS(r).
+u(r_0) = \int_V G(r, r_0) \rho(r) \, dV(r) + \int_S \left[ u(r) \frac{\partial G(r, r_0)}{\partial n} - G(r, r_0) \frac{\partial u(r)}{\partial n} \right] \,\mathrm{d}s(r).
 ```
 obtained earlier. Also, notice that, according to the **divergence theorem**:
 
 ```{math}
-\int_S f(r) \, dS = \int_V \nabla \cdot \mathbf{n} \, dS = \int_V \nabla^2 u \, dV = \int_V \rho(r) \, dV.
+\int_S f(r) \,\mathrm{d}s = \int_V \nabla \cdot \mathbf{n} \,\mathrm{d}s = \int_V \nabla^2 u \, dV = \int_V \rho(r) \, dV.
 ```
 
 The same condition for the corresponding Green’s function reads:
 
 ```{math}
-\int_{S} \frac{\partial G(r, r_0)}{\partial n} \, dS = \int_S \mathbf{r} \cdot \mathbf{G} \, dS = \int_V \nabla^2 G \, dV = \int_V -\delta(r - r_0) \, dV = 1.
+\int_{S} \frac{\partial G(r, r_0)}{\partial n} \,\mathrm{d}s = \int_S \mathbf{r} \cdot \mathbf{G} \,\mathrm{d}s = \int_V \nabla^2 G \, dV = \int_V -\delta(r - r_0) \, dV = 1.
 ```
 
 Therefore, we cannot request that:
@@ -793,10 +793,10 @@ where $ A $ is the total area of the bounding surface $ S $.
 With this, the solution of the **Neumann boundary problem** becomes:
 
 ```{math}
-u(r_0) = \int_V G(r, r_0) \rho(r) \, dV + A^{-1} \int_S u(r) \, dS - \int_S G(r, r_0) f(r) \, dS.
+u(r_0) = \int_V G(r, r_0) \rho(r) \, dV + A^{-1} \int_S u(r) \,\mathrm{d}s - \int_S G(r, r_0) f(r) \,\mathrm{d}s.
 ```
 
-Note that $ \frac{1}{A} \int_S u(r) \, dS $ is a constant equal to the average value of $ u(r) $ at the surface $ S $. If, for an infinite volume $ V $, we request that $ u(r) \to 0 $ as $ |r| \to \infty $, this term can be eliminated.
+Note that $ \frac{1}{A} \int_S u(r) \,\mathrm{d}s $ is a constant equal to the average value of $ u(r) $ at the surface $ S $. If, for an infinite volume $ V $, we request that $ u(r) \to 0 $ as $ |r| \to \infty $, this term can be eliminated.
 
 ## Problems - PDEs
 
@@ -844,4 +844,295 @@ and then:
 
 1. Find $ u(x, y) $, for which $ u(x, 0) = -x^2 $ and $ \frac{\partial u}{\partial y}(x, 0) = 0 $,
 2. Find the value of $ u(0, 1) $ for such $ u(x, y) $.
+
+# Using Integral Transforms to Solve PDEs
+
+We have already introduced the Laplace integral transform and used it in order to solve ordinary differential equations. Here we will use Laplace and Fourier integral transforms to solve partial differential equations. The strategy of the integral transform method is to reduce the number of variables in a PDE and convert it to a simpler PDE or an ordinary differential equation.
+
+## Laplace Transform
+
+The Laplace transform is a natural method of choice if the problem concerns a process where at least one of the variables can have values from zero to infinity. We will demonstrate the application of integral transforms to solving PDEs using specific examples.
+
+### Example:
+Consider a semi-infinite tube filled initially with pure water and brought in contact with a salt solution maintained at a fixed concentration. Find the total amount of salt diffused into the tube by time $t$ if the diffusion constant is $k$.
+
+The semi-infinite tube is a one-dimensional system. Therefore, the concentration of salt in the tube, $u$, can be described using two variables only: $x$ – the distance from the salt container, and $t$ – duration of the contact. Hence, $u = u(x, t)$.
+
+The diffusion process is described by the equation:
+
+```{math}
+k \frac{\partial^2 u(x, t)}{\partial x^2} = \frac{\partial u(x, t)}{\partial t}
+```
+
+with the following conditions:
+
+- $u(0, t) = u_0$, i.e., the concentration of the salt solution "at the source" is the same at all times.
+- $u(x, 0) = 0$, i.e., the tube contained pure water before it was brought into contact with the salt reservoir at $t = 0$.
+- $u(\infty, t) = 0$, i.e., salt will never reach the far end of the semi-infinite tube.
+- $u(x, t)$ is finite for all $x$ and $t$.
+
+Our strategy is to convert this PDE into an ODE by eliminating the dependence on one of the variables. Taking the Laplace transform of both sides with respect to $t$ gives:
+
+```{math}
+k \int_0^\infty \frac{\partial^2 u}{\partial x^2} e^{-st} \,\mathrm{d}t= \int_0^\infty \frac{\partial u}{\partial t} e^{-st} \,\mathrm{d}t.
+```
+
+Swap the order of the $\frac{\partial^2}{\partial x^2}$ and the $\int \dots\mathrm{d}t$ operations:
+
+```{math}
+k \frac{\partial^2}{\partial x^2} \left( \int_0^\infty u(x, t) e^{-st} \,\mathrm{d}t\right) = k \frac{\partial^2}{\partial x^2} U(x, s),
+```
+
+where $U(x, s)$ is the Laplace transform of $u(x, t)$. Integrate the right-hand side by parts:
+
+```{math}
+\int_0^\infty \frac{\partial u}{\partial t} e^{-st} \,\mathrm{d}t= u(x, t) e^{-st} \Big|_0^\infty + s \int_0^\infty u(x, t) e^{-st} \,\mathrm{d}t= s U(x, s) - u(x, 0).
+```
+
+Taking into account the boundary condition $u(x, 0) = 0$, the diffusion equation becomes:
+
+```{math}
+k \frac{\partial^2}{\partial x^2} U(x, s) = s U(x, s). 
+```
+
+This is an ordinary differential equation with respect to $U(x, s)$. The solution to this equation is:
+
+```{math}
+U(x, s) = A(s) \exp \left( \sqrt{\frac{s}{k}} x \right) + B(s) \exp \left( - \sqrt{\frac{s}{k}} x \right), 
+```
+
+where $A(s)$ and $B(s)$ are, in general, functions of $s$. Only one of the terms in this equation is physically meaningful for this problem. Since $u(\infty, t) = 0$, we have:
+
+```{math}
+U(x, s) = B(s) \exp \left( - \sqrt{\frac{s}{k}} x \right).
+```
+
+Function $B(s)$ can be determined from the boundary conditions by calculating the Laplace transform of $u(0, t) = u_0$:
+
+```{math}
+U(0, s) = \int_0^\infty u_0 e^{-st} \,\mathrm{d}t= u_0 \int_0^\infty e^{-st} \,\mathrm{d}t= \frac{u_0}{s}.
+```
+
+Hence,
+
+```{math}
+U(x, s) = \frac{u_0}{s} \exp \left( - \sqrt{\frac{s}{k}} x \right).
+```
+
+Now, using a table of Laplace transforms, we can find the appropriate function $u(x, t)$:
+
+```{math}
+u(x, t) = u_0 \left[ 1 - \text{erf} \left( \frac{x}{\sqrt{4kt}} \right) \right],
+```
+
+where
+
+```{math}
+\text{erf}(x) = \frac{2}{\sqrt{\pi}} \int_0^x e^{-p^2} \, dp.
+```
+
+Finally, to find the total amount of salt diffused into the tube, we calculate:
+
+```{math}
+w(t) = \int_0^\infty u(x, t) \,\mathrm{d}x.
+```
+
+However, since the problem requires only $ w(t) $, we do not need to find $ u(x,t) $ explicitly.
+
+To find $ w(t) $, we consider the Laplace transform of $ w(t) $:
+
+```{math}
+W(s) = \int_0^\infty w(t) e^{-st}\mathrm{d}t= \int_0^\infty \left( \int_0^\infty u(x,t)\mathrm{d}x \right) e^{-st}\mathrm{d}t= \int_0^\infty \left( \int_0^\infty u(x,t)  e^{-st}\mathrm{d}t\right)dx
+```
+
+The inner integral is the Laplace transform of $ u(x,t) $, and hence:
+
+```{math}
+W(s) = \int_0^\infty U(x,s)\mathrm{d}x
+```
+
+Substituting $ U(x, s) $, the integral can be evaluated:
+
+```{math}
+W(s) = \frac{u_0}{\sqrt{k}} \int_0^\infty e^{-\sqrt{\frac{s}{k}} x}\mathrm{d}x = \frac{u_0}{\sqrt{k}} \cdot \frac{1}{\sqrt{s}}
+```
+
+Thus:
+
+```{math}
+W(s) = \frac{u_0}{\sqrt{k s}}
+```
+
+Finally, $ w(t) $ can be found by consulting a table of Laplace transforms:
+
+```{math}
+w(t) = \frac{u_0 \sqrt{k}}{\sqrt{\pi}} t^{-1/2}
+```
+
+### Exercise
+
+A semi-infinite metal bar has an initial temperature $ T = 0 \, \text{K} $ everywhere along the bar. At time $ t = 0 $, one end of the bar is brought into contact with a constant temperature heat reservoir at $ T = 100 \, \text{K} $. Find the temperature distribution along the bar after time $ t $.
+
+## Convolution Theorem
+
+### Convolution Theorem in Laplace Transforms
+
+Consider the product $ H(p) G(p) $, where $ H(p) $ and $ G(p) $ are Laplace transforms of $ h(t) $ and $ g(t) $, respectively.
+
+```{math}
+H(p) G(p) = \int_0^\infty h(s) e^{-ps}\mathrm{d}s \int_0^\infty g(t) e^{-pt}\mathrm{d}t= \int_0^\infty \int_0^\infty h(s) g(t) e^{-p(s + t)}\mathrm{d}s\mathrm{d}t.
+```
+We can write this as:
+```{math}
+H(p) G(p) = \int_0^\infty \left( \int_0^r g(r - t) h(t) e^{-pr}\mathrm{d}t\right)\mathrm{d}r.
+```
+
+This inner integral is called the convolution of functions $ g(x) $ and $ h(x) $. 
+
+```{math}
+H(p) G(p) = \int_0^\infty [h \ast g] e^{-pr}\mathrm{d}r,
+```
+
+i.e., the Laplace transform of a convolution of functions $ h(x) $ and $ g(x) $ equals the product of the Laplace transforms of these functions. In other words, $ g \ast h $ is the inverse Laplace transform of $ H(p) G(p) $.
+
+## Convolution in Fourier Transform
+
+Let us consider two functions $ f(x) $ and $ g(x) $. Their Fourier transforms can be defined as
+
+```{math}
+F(k) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(x)e^{-ikx}\mathrm{d}x
+```
+
+and
+
+```{math}
+G(k) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} g(x)e^{-ikx}\mathrm{d}x.
+```
+
+Note that other definitions of the Fourier transform may use a different factor in front of the integral.
+
+Is it possible to give meaning to the product $ F(k)G(k) $? Rewrite $ F(k)G(k) $ as:
+
+For any fixed $ t $, we can introduce a new variable $ p = s+t $. Then, $ s = p - t $ and $\mathrm{d}s = dp $. Rewrite the integral in terms of variables $ p $ and $ t $. Note that the integration limits remain unchanged:
+
+```{math}
+F(k)G(k) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(p-t)g(t) e^{-ikp} dp\mathrm{d}t.
+```
+
+Change the order of integration with respect to $\mathrm{d}t$ and $ dp $ and multiply both parts of the equation by $ p^{2\pi} $:
+
+```{math}
+\frac{1}{2\pi} F(k)G(k) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(p-t) g(t) e^{-ikp} dp\mathrm{d}t.
+```
+
+The integral in square parenthesis is called the convolution (note that the integration limits are different from those defined for the case of the Laplace transform):
+
+```{math}
+\int_{-\infty}^{+\infty} f(p-t)g(t)\mathrm{d}t.
+```
+
+Thus the equation states that the product of the Fourier transforms of functions $ f(x) $ and $ g(x) $ is proportional to the Fourier transform of a convolution of these functions. This statement is called the **convolution theorem**.
+
+### Exercise
+Demonstrate that
+
+```{math}
+\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(p-t)g(t)\mathrm{d}t= \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(t-p)g(t)\mathrm{d}t.
+```
+
+## Temperature distribution in an infinite bar
+
+An infinite metal bar has the initial temperature distribution along the bar $ f(x) $. Find the temperature distribution after time $ t $.
+
+Let $ u(x,t) $ be the temperature at a point $ x $ along the bar at the time $ t $. Assume that the far ends of the bar remain cold, i.e.
+
+```{math}
+u(\pm 1, t) = \frac{\partial u(x, t)}{\partial x} \Big|_{x=\pm 1} = 0.
+```
+
+The temperature along the bar is described by the heat flow equation
+
+```{math}
+\frac{\partial^2 u}{\partial x^2} = \frac{\partial u}{\partial t}.
+```
+
+Natural boundary conditions for this problem are:
+- The far ends of the bar remain cold: $ u(x,t) \to 0 $ for $ x \to \pm 1 $.
+- The temperature does not change at the ends of the bar: $ \frac{\partial u(x, t)}{\partial x} \to 0 $ for $ x \to \pm 1 $.
+
+Apply the Fourier transform to both parts of the equation:
+
+```{math}
+\frac{1}{2\pi} \int_{-\infty}^{+\infty} \frac{\partial^2 u}{\partial x^2} e^{-ikx}\mathrm{d}x = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \frac{\partial u}{\partial t} e^{-ikx}\mathrm{d}x.
+```
+
+The LHS can be integrated by parts:
+
+```{math}
+\int_{-\infty}^{+\infty} \frac{\partial^2 u}{\partial x^2} e^{-ikx}\mathrm{d}x = -k^2 \int_{-\infty}^{+\infty} u(x,t) e^{-ikx}\mathrm{d}x,
+```
+
+while in the RHS, $ \frac{\partial}{\partial t} $ can be moved outside of the integration. Thus, the PDE is transformed into:
+
+```{math}
+-k^2 U(k,t) = \frac{\partial U(k,t)}{\partial t}.
+```
+
+The latter equation has a solution of the form:
+
+```{math}
+U(k,t) = U(k,0) e^{-k^2 \alpha t}.
+```
+
+Function $ U(k,0) $ is defined from the initial condition at the time $ t = 0 $:
+
+```{math}
+U(k,0) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} u(x,0) e^{-ikx}\mathrm{d}x = F(k),
+```
+
+i.e. $ U(k,0) $ is given by the Fourier transform of the function $ f(x) $.
+
+Thus,
+
+```{math}
+U(k,t) = 2\pi F(k) G(k,t),
+```
+
+where we introduced the function $ G(k,t) $ defined as:
+
+```{math}
+G(k,t) = e^{-k^2 \alpha t}.
+```
+
+Function $ G(k,t) $ can be considered as a Fourier transform of some function $ g(x,t) $. Since $ U(k,t) $ is represented as a product of two Fourier transforms, we can apply the convolution theorem to find $ u(x,t) $:
+
+```{math}
+u(x,t) = \int_{-\infty}^{+\infty} g(x-s,t) f(s)\mathrm{d}s.
+```
+
+In other words, the problem will be solved if we find function $ g(x,t) $ explicitly. Function $ g(x,t) $ can be found by the inverse Fourier transform of $ G(k,t) $:
+
+```{math}
+g(x,t) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} e^{-k^2 \alpha t} e^{ikx} dk.
+```
+
+To take this integral, first complete the square:
+
+```{math}
+g(x,t) = \frac{1}{\sqrt{4\pi \alpha t}} \int_{-\infty}^{+\infty} e^{-\frac{(k-ix)^2}{4\alpha t}} dk.
+```
+
+Now, using the fact that:
+
+```{math}
+\int_{-\infty}^{+\infty} e^{-a s^2}\mathrm{d}s = \sqrt{\frac{\pi}{a}},
+```
+
+we obtain:
+
+```{math}
+g(x,t) = \frac{1}{\sqrt{4\pi \alpha t}} e^{-\frac{x^2}{4\alpha t}}.
+```
+
+Finally, the temperature distribution at time $ t $ can be calculated, using function $ g(x,t) $ and the initial temperature distribution $ f(x) $.
 
