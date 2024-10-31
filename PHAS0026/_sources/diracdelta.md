@@ -55,7 +55,7 @@ Clearly we can see that an important property of this function is that
 ```{math}
 \int_{-\infty}^{\infty} f_k(x) dx = 1.
 ```
-As $k$ increases, $f_k(x)$ gets taller and thinner (see Figure 2.1). We define the Dirac delta function to be
+As $k$ increases, $f_k(x)$ gets taller and thinner (see the figure below). We define the Dirac delta function to be
 ```{math}
 \delta(x) = \lim_{k \rightarrow \infty} f_k(x),
 ```

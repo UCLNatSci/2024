@@ -16,7 +16,7 @@ There is an alternate notation for Laplace transforms. For convenience, we will 
 \mathcal{L}[f(t)] = F(p)
 ```
 
-With this alternate notation, note that the transform is really a function of a new variable, $p$, and that all the $t$’s will drop out in the integration process.
+With this alternate notation, note that the transform is really a function of a new variable, $p$, and that all the $t$’s will\mathrm{d}rop out in the integration process.
 
 We can start with a few facts about Laplace transform:
 
@@ -289,7 +289,7 @@ f(t) & \text{if } t \geq 0 \\
 \end{cases} 
 \end{split}
 ```
-In other words, it is assumed that the function is zero if $t < 0$. The first half of the integral will drop out since the function is zero, and we will get back to the original definition.
+In other words, it is assumed that the function is zero if $t < 0$. The first half of the integral will\mathrm{d}rop out since the function is zero, and we will get back to the original definition.
 
 We will return to this idea when we discuss the step function.
 
@@ -351,7 +351,7 @@ Consider Laplace transforms of $ f'(x) $ and $ f''(x) $, lets find these explici
 
    ```{math}
    \begin{split}
-   \mathcal{L}[f'] &= \left[ e^{-pt} f(t) \right]_0^\infty + p \int_0^\infty f(x) e^{-pt} \,dt = -f(0) + p \mathcal{L}[f] \\
+   \mathcal{L}[f'] &= \left[ e^{-pt} f(t) \right]_0^\infty + p \int_0^\infty f(x) e^{-pt} \,\mathrm{d}t = -f(0) + p \mathcal{L}[f] \\
    &= -f(0) + p F(p)
    \end{split}
    ```
@@ -375,7 +375,7 @@ Consider Laplace transforms of $ f'(x) $ and $ f''(x) $, lets find these explici
 
    ```{math}
    \begin{split}
-   \mathcal{L}[f''] &= \left[ e^{-pt} f'(t) \right]_0^\infty + p \int_0^\infty f(x) e^{-pt} \,f'(t)\,dt \\
+   \mathcal{L}[f''] &= \left[ e^{-pt} f'(t) \right]_0^\infty + p \int_0^\infty f(x) e^{-pt} \,f'(t)\,\mathrm{d}t \\
    &= -f'(0) + p \mathcal{L}[f'(t)] \\
    &= p(-f(0) + p F(p)) - f'(0) =  p^2\,F(p) - p f(0) - f'(0)
    \end{split}
@@ -674,29 +674,43 @@ More generally, assume that inverse Laplace transforms of $ H(p) $ and $ G(p) $ 
 Consider the product $ H(p) G(p) $, where $ H(p) $ and $ G(p) $ are Laplace transforms of $ h(t) $ and $ g(t) $, respectively.
 
 ```{math}
-H(p) G(p) = \int_0^\infty h(s) e^{-ps} ds \int_0^\infty g(t) e^{-pt} dt = \int_0^\infty \int_0^\infty h(s) g(t) e^{-p(s + t)} ds dt.
+H(p) G(p) = \int_0^\infty h(s) e^{-ps}\mathrm{d}s\int_0^\infty g(t) e^{-pt}\mathrm{d}t= \int_0^\infty \int_0^\infty h(s) g(t) e^{-p(s + t)}\mathrm{d}s\mathrm{d}t.
 ```
 
-Introduce a new variable $ r = s + t $ for any fixed $ t $. Then, $ s = r - t $ and $ ds = dr $. To define the limits of integration with respect to $ dr $, we notice that $ r = t $ if $ s = 0 $ and $ r = \infty $ if $ s = \infty $. Therefore,
+Introduce a new variable $ r = s + t $ for any fixed $ t $. Then, $ s = r - t $ and $\mathrm{d}s=\mathrm{d}r $. To define the limits of integration with respect to $\mathrm{d}r $, we notice that $ r = t $ if $ s = 0 $ and $ r = \infty $ if $ s = \infty $. Therefore,
 
 ```{math}
-H(p) G(p) = \int_0^\infty \left( \int_t^\infty h(r - t) g(t) e^{-pr} dr \right) dt.
+H(p) G(p) = \int_0^\infty \left( \int_t^\infty h(r - t) g(t) e^{-pr}\mathrm{d}r \right) \mathrm{d}t.
 ```
 
-We can change the order of integration with respect to $ t $ and $ r $, so as
+The figure (a) below shows schematically the order of integration in this equation: each horizontal line corresponds to the inner integration from $r=t$ to $r = \infty$, so all lines together cover one half of the first quadrilateral, which corresponds to the outer integral for $0 \leq t < \infty $
+
+![(a) Inner integral (over $r$): $t \leq r < 1$, outer integral (over $t$): $0 \leq t < 1$;(b) Inner integral (over $t$): $0 \leq t < r$, outer integral (over $r$): $0 \leq r < 1$.](convolution_integration.png)
+
+We can change the order of integration with respect to $t$ and $r$ in the equation, as illustrated in the above figure (b), so as:
 
 ```{math}
-H(p) G(p) = \int_0^\infty \left( \int_0^r g(r - t) h(t) e^{-pr} dt \right) dr = h \ast g.
+H(p) G(p) = \int_0^\infty \left( \int_0^r h(r-t) g(t) \mathrm{d}t\right) e^{-pr} \,dr = \int_0^\infty \left[h \ast g\right]e^{-pr} \,dr .
 ```
 
-This inner integral is called the convolution of functions $ g(x) $ and $ h(x) $. Thus, this integral can be written as
+This inner integral is called the convolution of functions $ g(x) $ and $ h(x) $:
 
 ```{math}
-H(p) G(p) = \int_0^\infty [h \ast g] e^{-pr} dr,
+h \ast g = \int_0^r h(r-t) g(t) \mathrm{d}t
+```
+Thus, this integral can be written as
+
+```{math}
+H(p) G(p) = \int_0^\infty [h \ast g] e^{-pr}\mathrm{d}r,
 ```
 
-i.e., the Laplace transform of a convolution of functions $ h(x) $ and $ g(x) $ equals the product of the Laplace transforms of these functions. In other words, $ g \ast h $ is the inverse Laplace transform of $ H(p) G(p) $.
+i.e., the Laplace transform of a convolution of functions $ h(x) $ and $ g(x) $ equals the product of the Laplace transforms of these functions. In other words, $ h \ast g $ is the inverse Laplace transform of $ H(p) G(p) $.
 
+What is interesting about this convolution integral is that it is commutative:
+
+```{math}
+h \ast g = g \ast h \Rightarrow \int_0^r h(r-t) g(t) \mathrm{d}t = \int_0^t g(t-r) h(r) \mathrm{d}r
+```
 ---
 
 ### Example

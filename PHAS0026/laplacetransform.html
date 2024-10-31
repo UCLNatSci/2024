@@ -440,7 +440,7 @@ document.write(`
 <p>There is an alternate notation for Laplace transforms. For convenience, we will often denote Laplace transforms as:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{L}[f(t)] = F(p)\]</div>
-<p>With this alternate notation, note that the transform is really a function of a new variable, <span class="math notranslate nohighlight">\(p\)</span>, and that all the <span class="math notranslate nohighlight">\(t\)</span>’s will drop out in the integration process.</p>
+<p>With this alternate notation, note that the transform is really a function of a new variable, <span class="math notranslate nohighlight">\(p\)</span>, and that all the <span class="math notranslate nohighlight">\(t\)</span>’s will\mathrm{d}rop out in the integration process.</p>
 <p>We can start with a few facts about Laplace transform:</p>
 <ul class="simple">
 <li><p>By definition, <span class="math notranslate nohighlight">\(\mathcal{L}[f]\)</span> does not depend on the behavior of <span class="math notranslate nohighlight">\(f(x)\)</span> for <span class="math notranslate nohighlight">\(x &lt; 0\)</span>.</p></li>
@@ -624,7 +624,7 @@ f(t) &amp; \text{if } t \geq 0 \\
 0 &amp; \text{if } t &lt; 0 
 \end{cases} 
 \end{split}\end{split}\]</div>
-<p>In other words, it is assumed that the function is zero if <span class="math notranslate nohighlight">\(t &lt; 0\)</span>. The first half of the integral will drop out since the function is zero, and we will get back to the original definition.</p>
+<p>In other words, it is assumed that the function is zero if <span class="math notranslate nohighlight">\(t &lt; 0\)</span>. The first half of the integral will\mathrm{d}rop out since the function is zero, and we will get back to the original definition.</p>
 <p>We will return to this idea when we discuss the step function.</p>
 </section>
 </section>
@@ -677,7 +677,7 @@ u' = -p\,e^{-pt} &amp; \qquad v = f(t)
 <p>Which means that:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{split}
-\mathcal{L}[f'] &amp;= \left[ e^{-pt} f(t) \right]_0^\infty + p \int_0^\infty f(x) e^{-pt} \,dt = -f(0) + p \mathcal{L}[f] \\
+\mathcal{L}[f'] &amp;= \left[ e^{-pt} f(t) \right]_0^\infty + p \int_0^\infty f(x) e^{-pt} \,\mathrm{d}t = -f(0) + p \mathcal{L}[f] \\
 &amp;= -f(0) + p F(p)
 \end{split}\end{split}\]</div>
 </li>
@@ -693,7 +693,7 @@ u' = -p\,e^{-pt} &amp; \qquad v = f'(t)
 <p>This gives:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{split}
-\mathcal{L}[f''] &amp;= \left[ e^{-pt} f'(t) \right]_0^\infty + p \int_0^\infty f(x) e^{-pt} \,f'(t)\,dt \\
+\mathcal{L}[f''] &amp;= \left[ e^{-pt} f'(t) \right]_0^\infty + p \int_0^\infty f(x) e^{-pt} \,f'(t)\,\mathrm{d}t \\
 &amp;= -f'(0) + p \mathcal{L}[f'(t)] \\
 &amp;= p(-f(0) + p F(p)) - f'(0) =  p^2\,F(p) - p f(0) - f'(0)
 \end{split}\end{split}\]</div>
@@ -880,17 +880,25 @@ u' = \frac{1}{2}t^{-1/2} &amp; \qquad v = -\frac{1}{p}e^{-pt}
 <h2>Calculating Inverse Transforms by Convolution<a class="headerlink" href="#calculating-inverse-transforms-by-convolution" title="Link to this heading">#</a></h2>
 <p>Consider the product <span class="math notranslate nohighlight">\( H(p) G(p) \)</span>, where <span class="math notranslate nohighlight">\( H(p) \)</span> and <span class="math notranslate nohighlight">\( G(p) \)</span> are Laplace transforms of <span class="math notranslate nohighlight">\( h(t) \)</span> and <span class="math notranslate nohighlight">\( g(t) \)</span>, respectively.</p>
 <div class="math notranslate nohighlight">
-\[H(p) G(p) = \int_0^\infty h(s) e^{-ps} ds \int_0^\infty g(t) e^{-pt} dt = \int_0^\infty \int_0^\infty h(s) g(t) e^{-p(s + t)} ds dt.\]</div>
-<p>Introduce a new variable <span class="math notranslate nohighlight">\( r = s + t \)</span> for any fixed <span class="math notranslate nohighlight">\( t \)</span>. Then, <span class="math notranslate nohighlight">\( s = r - t \)</span> and <span class="math notranslate nohighlight">\( ds = dr \)</span>. To define the limits of integration with respect to <span class="math notranslate nohighlight">\( dr \)</span>, we notice that <span class="math notranslate nohighlight">\( r = t \)</span> if <span class="math notranslate nohighlight">\( s = 0 \)</span> and <span class="math notranslate nohighlight">\( r = \infty \)</span> if <span class="math notranslate nohighlight">\( s = \infty \)</span>. Therefore,</p>
+\[H(p) G(p) = \int_0^\infty h(s) e^{-ps}\mathrm{d}s\int_0^\infty g(t) e^{-pt}\mathrm{d}t= \int_0^\infty \int_0^\infty h(s) g(t) e^{-p(s + t)}\mathrm{d}s\mathrm{d}t.\]</div>
+<p>Introduce a new variable <span class="math notranslate nohighlight">\( r = s + t \)</span> for any fixed <span class="math notranslate nohighlight">\( t \)</span>. Then, <span class="math notranslate nohighlight">\( s = r - t \)</span> and <span class="math notranslate nohighlight">\(\mathrm{d}s=\mathrm{d}r \)</span>. To define the limits of integration with respect to <span class="math notranslate nohighlight">\(\mathrm{d}r \)</span>, we notice that <span class="math notranslate nohighlight">\( r = t \)</span> if <span class="math notranslate nohighlight">\( s = 0 \)</span> and <span class="math notranslate nohighlight">\( r = \infty \)</span> if <span class="math notranslate nohighlight">\( s = \infty \)</span>. Therefore,</p>
 <div class="math notranslate nohighlight">
-\[H(p) G(p) = \int_0^\infty \left( \int_t^\infty h(r - t) g(t) e^{-pr} dr \right) dt.\]</div>
-<p>We can change the order of integration with respect to <span class="math notranslate nohighlight">\( t \)</span> and <span class="math notranslate nohighlight">\( r \)</span>, so as</p>
+\[H(p) G(p) = \int_0^\infty \left( \int_t^\infty h(r - t) g(t) e^{-pr}\mathrm{d}r \right) \mathrm{d}t.\]</div>
+<p>The figure (a) below shows schematically the order of integration in this equation: each horizontal line corresponds to the inner integration from <span class="math notranslate nohighlight">\(r=t\)</span> to <span class="math notranslate nohighlight">\(r = \infty\)</span>, so all lines together cover one half of the first quadrilateral, which corresponds to the outer integral for <span class="math notranslate nohighlight">\(0 \leq t &lt; \infty \)</span></p>
+<p><img alt="(a) Inner integral (over ): , outer integral (over ): ;(b) Inner integral (over ): , outer integral (over ): ." src="_images/convolution_integration.png" /></p>
+<p>We can change the order of integration with respect to <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(r\)</span> in the equation, as illustrated in the above figure (b), so as:</p>
 <div class="math notranslate nohighlight">
-\[H(p) G(p) = \int_0^\infty \left( \int_0^r g(r - t) h(t) e^{-pr} dt \right) dr = h \ast g.\]</div>
-<p>This inner integral is called the convolution of functions <span class="math notranslate nohighlight">\( g(x) \)</span> and <span class="math notranslate nohighlight">\( h(x) \)</span>. Thus, this integral can be written as</p>
+\[H(p) G(p) = \int_0^\infty \left( \int_0^r h(r-t) g(t) \mathrm{d}t\right) e^{-pr} \,dr = \int_0^\infty \left[h \ast g\right]e^{-pr} \,dr .\]</div>
+<p>This inner integral is called the convolution of functions <span class="math notranslate nohighlight">\( g(x) \)</span> and <span class="math notranslate nohighlight">\( h(x) \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[H(p) G(p) = \int_0^\infty [h \ast g] e^{-pr} dr,\]</div>
-<p>i.e., the Laplace transform of a convolution of functions <span class="math notranslate nohighlight">\( h(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span> equals the product of the Laplace transforms of these functions. In other words, <span class="math notranslate nohighlight">\( g \ast h \)</span> is the inverse Laplace transform of <span class="math notranslate nohighlight">\( H(p) G(p) \)</span>.</p>
+\[h \ast g = \int_0^r h(r-t) g(t) \mathrm{d}t\]</div>
+<p>Thus, this integral can be written as</p>
+<div class="math notranslate nohighlight">
+\[H(p) G(p) = \int_0^\infty [h \ast g] e^{-pr}\mathrm{d}r,\]</div>
+<p>i.e., the Laplace transform of a convolution of functions <span class="math notranslate nohighlight">\( h(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span> equals the product of the Laplace transforms of these functions. In other words, <span class="math notranslate nohighlight">\( h \ast g \)</span> is the inverse Laplace transform of <span class="math notranslate nohighlight">\( H(p) G(p) \)</span>.</p>
+<p>What is interesting about this convolution integral is that it is commutative:</p>
+<div class="math notranslate nohighlight">
+\[h \ast g = g \ast h \Rightarrow \int_0^r h(r-t) g(t) \mathrm{d}t = \int_0^t g(t-r) h(r) \mathrm{d}r\]</div>
 <hr class="docutils" />
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
