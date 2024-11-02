@@ -337,8 +337,8 @@ The second property to note is that the derivative of the step function is zero 
 Now that we have a new function to find the Laplace transform of:
 
 ```{math}
-\mathcal{L}[H(t-a)] &= \int_0^\infty H(t-a)\,e^{-pt}\,\mathrm{d}t\int_a^\infty e^{-pt}\,\mathrm{d}t \\
-&= \left[ -\frac{1}{p}e^{-pt}\right]_a^\infty = \frac{e^{-pa}}{p}
+\mathcal{L}[H(t-a)] &= \int_0^\infty H(t-a)\,e^{-pt}\,\mathrm{d}t = \int_a^\infty e^{-pt}\,\mathrm{d}t \\
+&= \left[ -\frac{1}{p}e^{-pt}\right]_a^\infty = \frac{e^{-pa}}{p}  \quad (\text{for } a > 0)
 ```
 
 
