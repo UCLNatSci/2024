@@ -383,8 +383,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-motivation">Some Motivation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-motivation">Some motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-motivation">More motivation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifting-property-of-the-delta-function">Sifting property of the delta function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-gaussian-distribution">The Gaussian distribution.</a></li>
 </ul>
@@ -394,6 +395,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-the-dirac-delta-function">Laplace transform of the Dirac delta function.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-of-the-dirac-delta-function">Derivatives of the Dirac delta function.</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-generalized-functions">Other generalized functions.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heaviside-step-function">The (Heaviside) Step Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform">Laplace Transform</a></li>
 </ul>
 </li>
 </ul>
@@ -409,6 +414,44 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-dirac-delta-function">
 <h1>The Dirac Delta Function<a class="headerlink" href="#the-dirac-delta-function" title="Link to this heading">#</a></h1>
+<section id="some-motivation">
+<h2>Some Motivation<a class="headerlink" href="#some-motivation" title="Link to this heading">#</a></h2>
+<p>Before we get to a definition, lets just think about the mean value theorem for a continuous function <span class="math notranslate nohighlight">\(f(x)\)</span> over some interval <span class="math notranslate nohighlight">\(x \in [a,\,b]\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\bar{f} = \frac{1}{b-a}\int_a^b f(x)\,\mathrm{d}x\]</div>
+<p>So if we define a function <span class="math notranslate nohighlight">\(D(x)\)</span> using the piecewise definition:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}D(x)=
+\begin{cases}
+\frac{1}{b-a} &amp; \text{if } a \leq x \leq b\\
+0 &amp; \text{if } \text{otherwise} 
+\end{cases}\end{split}\]</div>
+<p>If we therefore integrate this function alongside a continuous function <span class="math notranslate nohighlight">\(f(x)\)</span> over the same range:</p>
+<div class="math notranslate nohighlight">
+\[\int_a^b D(x)\,f(x)\,\mathrm{d}x = \frac{1}{b-a} \int_a^b f(x)\,\mathrm{d}x = \bar{f}\]</div>
+<p>Let’s now think about shrinking his range down to <span class="math notranslate nohighlight">\(x \in[a,\,a+\epsilon]\)</span> and find the limit of this as <span class="math notranslate nohighlight">\(\epsilon \rightarrow 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\epsilon \rightarrow 0} \int_a^{a+\epsilon} D(x)\,f(x)\,\mathrm{d}x\]</div>
+<p>Recall the fundamental theorem of calculus (FTC) for definite integrals:</p>
+<div class="math notranslate nohighlight">
+\[\int_a^b f'(x)\,\mathrm{d}x = f(b) - f(a)\]</div>
+<p>So if we pick some function <span class="math notranslate nohighlight">\(f(x) = g'(x)\)</span>, lets find:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\epsilon \rightarrow 0} \int_a^{a+\epsilon} D(x)\,g'(x)\,\mathrm{d}x = \lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon}\int_a^{a+\epsilon} \,g'(x)\,\mathrm{d}x\]</div>
+<p>Which using the FTC reduces to:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon}\left[g(a+\epsilon) - g(a) \right]\]</div>
+<p>Given that <span class="math notranslate nohighlight">\(g=g(x)\)</span>, we can think of this as a function expression in <span class="math notranslate nohighlight">\(x\)</span> evaluated at a particular point <span class="math notranslate nohighlight">\(x=a\)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon}\left[g(x+\epsilon) - g(x) \right]_{x=a}\]</div>
+<p>But now we see that is the definition of the derivative of <span class="math notranslate nohighlight">\(g(x)\)</span>! So this means:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon}\left[g(x+\epsilon) - g(x) \right]_{x=a} = \left[g'(x) \right]_{x=a} = g'(a) = f(a)\]</div>
+<p>Which is the original function in the integrand, but evaluated at <span class="math notranslate nohighlight">\(x=a\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\epsilon \rightarrow 0}\int_a^{a+\epsilon} D(x)\,f(x)\,\mathrm{d}x = f(a)\]</div>
+<p>The function which has this particular property is known as the Dirac Delta function <span class="math notranslate nohighlight">\(\delta(x)\)</span>. It is perhaps poor use of terminology to call this a <strong>function</strong>, it is best thought of a <em>distribution</em> at best.  The definition of <span class="math notranslate nohighlight">\(\delta(x)\)</span> does not really live outside of the integral definitions, but its properties can be well understood when it acts on other functions.</p>
+</section>
 <section id="definition">
 <h2>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
 <p>Let us introduce a function <span class="math notranslate nohighlight">\( \delta(x) \)</span> with properties:</p>
@@ -420,7 +463,7 @@ document.write(`
 \end{cases}\end{split}\]</div>
 <p>where constant <span class="math notranslate nohighlight">\( a \)</span> is finite and</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} \delta(x) \,\mathrm{d}x= 1.\]</div>
+\[\int_{-\infty}^{\infty} \delta(x) \,\mathrm{d}x = \int_{-\infty}^{\infty} \delta(x-a) \,\mathrm{d}x= 1.\]</div>
 <p>This function is also called the impulse function because it can be used to represent external perturbations: finite in magnitude and infinitely short in duration.</p>
 <p>The <span class="math notranslate nohighlight">\( \delta \)</span>-function belongs to a class of generalized functions, i.e., its properties are determined by the properties of integrals with probe functions <span class="math notranslate nohighlight">\( f(x) \)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -432,15 +475,9 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\( f(x) = 0 \)</span> for all values of <span class="math notranslate nohighlight">\( x \)</span> outside of some finite interval <span class="math notranslate nohighlight">\( [x_1, x_2] \)</span>.</p></li>
 </ol>
 </section>
-<section id="some-motivation">
-<h2>Some motivation<a class="headerlink" href="#some-motivation" title="Link to this heading">#</a></h2>
-<p>Before we define the Dirac delta-function, we need to be aware of the Mean-value theorem for integrals:</p>
-<p>If <span class="math notranslate nohighlight">\(g(x)\)</span> is continuous on <span class="math notranslate nohighlight">\([a, b]\)</span> then</p>
-<div class="math notranslate nohighlight">
-\[\int_{a}^{b} g(x) \, dx = (b-a) g(\bar{x}),\]</div>
-<p>for at least one <span class="math notranslate nohighlight">\(\bar{x}\)</span> with <span class="math notranslate nohighlight">\(a \le \bar{x} \le b\)</span>.</p>
-<p>The proof follows from the regular mean-value theorem for <span class="math notranslate nohighlight">\(G\)</span> say, by defining <span class="math notranslate nohighlight">\(g = G'\)</span>. Geometrically this means that the area under the curve is equivalent to that of a rectangle with length equal to the interval of integration.</p>
-<p>Now consider the following step-function:</p>
+<section id="more-motivation">
+<h2>More motivation<a class="headerlink" href="#more-motivation" title="Link to this heading">#</a></h2>
+<p>Consider the following step-function:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}f_k(x) = \left\{
         \begin{array}{rl}
@@ -480,11 +517,16 @@ document.write(`
 <h3>The Gaussian distribution.<a class="headerlink" href="#the-gaussian-distribution" title="Link to this heading">#</a></h3>
 <p>The normal distribution, also known as the Gaussian distribution, is given by</p>
 <div class="math notranslate nohighlight">
-\[g(x, a, \sigma) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x - a)^2}{2\sigma^2}}.\]</div>
-<p>In the limit of infinitely small <span class="math notranslate nohighlight">\( \sigma \)</span> (<span class="math notranslate nohighlight">\( \sigma \to 0 \)</span>), the function <span class="math notranslate nohighlight">\( g(x, a, \sigma) \)</span> behaves similarly to <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> in that:</p>
+\[g(x, \mu, \sigma) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}.\]</div>
+<p>lets simplify, centre on the origin so <span class="math notranslate nohighlight">\(\mu = 0\)</span> and take <span class="math notranslate nohighlight">\(2\sigma^2 = a^2\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\lim_{\sigma \to 0} \int_{-\infty}^{\infty} f(x) g(x, a, \sigma)\mathrm{d}x= f(a).\]</div>
-<p>Yet, we will not equate <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> and <span class="math notranslate nohighlight">\( \lim_{\sigma \to 0} g(x, a, \sigma) \)</span> because <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> is a generalized function defined via its integral with other functions, while <span class="math notranslate nohighlight">\( g(x, a, \sigma) \)</span> is a function in the usual sense.</p>
+\[g(x,a) = \frac{1}{a\sqrt{\pi}}e^{-(x/a)^2}\]</div>
+<p>in the limit of <span class="math notranslate nohighlight">\(a \rightarrow 0\)</span>, the function <span class="math notranslate nohighlight">\( g(x, a) \)</span> behaves similarly to <span class="math notranslate nohighlight">\( \delta(x) \)</span>, we can see this in the figure below:</p>
+<p><img alt="Gaussian approximation of the delta function" src="_images/Dirac_function_approximation.gif" /></p>
+<p>This means that:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\sigma \to 0} \int_{-\infty}^{\infty} f(x) g(x, a)\mathrm{d}x = f(0).\]</div>
+<p>Yet, we will not equate <span class="math notranslate nohighlight">\( \delta(x) \)</span> and <span class="math notranslate nohighlight">\( \lim_{\sigma \to 0} g(x, a) \)</span> because <span class="math notranslate nohighlight">\( \delta(x) \)</span> is a generalised function defined via its integral definition with other functions, whilst <span class="math notranslate nohighlight">\( g(x, a) \)</span> is a function defined in the usual sense.</p>
 </section>
 </section>
 <section id="properties-of-the-delta-function">
@@ -529,9 +571,9 @@ document.write(`
 </section>
 <section id="laplace-transform-of-the-dirac-delta-function">
 <h2>Laplace transform of the Dirac delta function.<a class="headerlink" href="#laplace-transform-of-the-dirac-delta-function" title="Link to this heading">#</a></h2>
-<p>Evaluate <span class="math notranslate nohighlight">\( L[\delta(x - a)] \)</span>:</p>
+<p>Evaluate <span class="math notranslate nohighlight">\( L[\delta(t - a)] \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[L[\delta(x - a)] = \int_{-\infty}^{\infty} \delta(x - a) e^{-px}\mathrm{d}x= e^{-pa} \quad (\text{for } a &gt; 0)\]</div>
+\[L[\delta(t - a)] = \int_{0}^{\infty} \delta(t - a) e^{-pt}\mathrm{d}x= e^{-pa} \quad (\text{for } a &gt; 0)\]</div>
 </section>
 <section id="derivatives-of-the-dirac-delta-function">
 <h2>Derivatives of the Dirac delta function.<a class="headerlink" href="#derivatives-of-the-dirac-delta-function" title="Link to this heading">#</a></h2>
@@ -569,6 +611,39 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\( x \delta'(x) = - \delta(x) \)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\( x^2 \delta''(x) = 2 \delta(x) \)</span>.</p></li>
 </ul>
+</section>
+</section>
+<section id="the-heaviside-step-function">
+<h2>The (Heaviside) Step Function<a class="headerlink" href="#the-heaviside-step-function" title="Link to this heading">#</a></h2>
+<p>Lets think about a different function for the moment, a simple step function entered on the origin:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H(x) = \begin{cases}
+1 &amp; \text{if } x &gt; 0\\
+0 &amp; \text{if } x &lt; 0
+\end{cases}\end{split}\]</div>
+<p>We will return to <span class="math notranslate nohighlight">\(H(0)\)</span> shortly, but it does not change the fundamental concepts of this function.</p>
+<p>The first property to note about the step function is that it has a sifting property also, so if we wish to restrict a function too a specific open ended range, such as <span class="math notranslate nohighlight">\(x &gt; a\)</span>, we can just use:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H(x-a)\,f(x) = \begin{cases}
+f(x) &amp; \text{if } x &gt; a\\
+0 &amp; \text{if } x &lt; a
+\end{cases}\end{split}\]</div>
+<p>And if we want to include a closed range of values <span class="math notranslate nohighlight">\(a &lt; x &lt; b\)</span> we can include another step function:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H(x-a)\,H(b-x)\,f(x) = \begin{cases}
+f(x) &amp; \text{if } a &lt; x &lt; b \\
+0 &amp; \text{if } \text{otherwise} 
+\end{cases}\end{split}\]</div>
+<p>This differs from the Dirac delta function which only picks out a value of a function <span class="math notranslate nohighlight">\(f(x)\)</span> at <span class="math notranslate nohighlight">\(x=a\)</span>.</p>
+<p>The second property to note is that the derivative of the step function is zero almost everywhere - except at the point where the jump occurs, so we can think of the step functions derivative as being related to the Dirac delta function:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x}\Big(H(x-a) \Big) = \delta(x-a)\]</div>
+<section id="laplace-transform">
+<h3>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Link to this heading">#</a></h3>
+<p>Now that we have a new function to find the Laplace transform of:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathcal{L}[H(t-a)] &amp;= \int_0^\infty H(t-a)\,e^{-pt}\,\mathrm{d}t\int_a^\infty e^{-pt}\,\mathrm{d}t \\
+&amp;= \left[ -\frac{1}{p}e^{-pt}\right]_a^\infty = \frac{e^{-pa}}{p}\end{split}\]</div>
 </section>
 </section>
 </section>
@@ -637,8 +712,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-motivation">Some Motivation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-motivation">Some motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-motivation">More motivation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifting-property-of-the-delta-function">Sifting property of the delta function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-gaussian-distribution">The Gaussian distribution.</a></li>
 </ul>
@@ -648,6 +724,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-the-dirac-delta-function">Laplace transform of the Dirac delta function.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-of-the-dirac-delta-function">Derivatives of the Dirac delta function.</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-generalized-functions">Other generalized functions.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heaviside-step-function">The (Heaviside) Step Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform">Laplace Transform</a></li>
 </ul>
 </li>
 </ul>

@@ -1,5 +1,61 @@
 # The Dirac Delta Function
 
+## Some Motivation
+
+Before we get to a definition, lets just think about the mean value theorem for a continuous function $f(x)$ over some interval $x \in [a,\,b]$:
+
+```{math}
+\bar{f} = \frac{1}{b-a}\int_a^b f(x)\,\mathrm{d}x
+```
+
+So if we define a function $D(x)$ using the piecewise definition:
+
+```{math}
+D(x)=
+\begin{cases}
+\frac{1}{b-a} & \text{if } a \leq x \leq b\\
+0 & \text{if } \text{otherwise} 
+\end{cases}
+```
+If we therefore integrate this function alongside a continuous function $f(x)$ over the same range:
+```{math}
+\int_a^b D(x)\,f(x)\,\mathrm{d}x = \frac{1}{b-a} \int_a^b f(x)\,\mathrm{d}x = \bar{f}
+```
+
+Let's now think about shrinking his range down to $x \in[a,\,a+\epsilon]$ and find the limit of this as $\epsilon \rightarrow 0$.  
+```{math}
+\lim_{\epsilon \rightarrow 0} \int_a^{a+\epsilon} D(x)\,f(x)\,\mathrm{d}x
+```
+Recall the fundamental theorem of calculus (FTC) for definite integrals:
+```{math}
+\int_a^b f'(x)\,\mathrm{d}x = f(b) - f(a)
+```
+So if we pick some function $f(x) = g'(x)$, lets find:
+```{math}
+\lim_{\epsilon \rightarrow 0} \int_a^{a+\epsilon} D(x)\,g'(x)\,\mathrm{d}x = \lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon}\int_a^{a+\epsilon} \,g'(x)\,\mathrm{d}x
+```
+Which using the FTC reduces to:
+```{math}
+\lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon}\left[g(a+\epsilon) - g(a) \right]
+```
+Given that $g=g(x)$, we can think of this as a function expression in $x$ evaluated at a particular point $x=a$, so:
+```{math}
+\lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon}\left[g(x+\epsilon) - g(x) \right]_{x=a}
+```
+But now we see that is the definition of the derivative of $g(x)$! So this means:
+```{math}
+\lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon}\left[g(x+\epsilon) - g(x) \right]_{x=a} = \left[g'(x) \right]_{x=a} = g'(a) = f(a)
+```
+Which is the original function in the integrand, but evaluated at $x=a$:
+```{math}
+\lim_{\epsilon \rightarrow 0}\int_a^{a+\epsilon} D(x)\,f(x)\,\mathrm{d}x = f(a)
+```
+
+The function which has this particular property is known as the Dirac Delta function $\delta(x)$. It is perhaps poor use of terminology to call this a **function**, it is best thought of a *distribution* at best.  The definition of $\delta(x)$ does not really live outside of the integral definitions, but its properties can be well understood when it acts on other functions.
+
+
+
+
 ## Definition
 Let us introduce a function $ \delta(x) $ with properties:
 
@@ -14,7 +70,7 @@ Let us introduce a function $ \delta(x) $ with properties:
 where constant $ a $ is finite and
 
 ```{math}
-\int_{-\infty}^{\infty} \delta(x) \,\mathrm{d}x= 1.
+\int_{-\infty}^{\infty} \delta(x) \,\mathrm{d}x = \int_{-\infty}^{\infty} \delta(x-a) \,\mathrm{d}x= 1.
 ```
 
 This function is also called the impulse function because it can be used to represent external perturbations: finite in magnitude and infinitely short in duration.
@@ -30,19 +86,9 @@ Where:
 2. $ f(x) $ and all of its derivatives are continuous and finite functions of $ x $;
 3. $ f(x) = 0 $ for all values of $ x $ outside of some finite interval $ [x_1, x_2] $.
 
-## Some motivation 
+## More motivation 
 
-Before we define the Dirac delta-function, we need to be aware of the Mean-value theorem for integrals:
-
-If $g(x)$ is continuous on $[a, b]$ then
-```{math}
-\int_{a}^{b} g(x) \, dx = (b-a) g(\bar{x}),
-```
-for at least one $\bar{x}$ with $a \le \bar{x} \le b$.
-
-The proof follows from the regular mean-value theorem for $G$ say, by defining $g = G'$. Geometrically this means that the area under the curve is equivalent to that of a rectangle with length equal to the interval of integration.
-
-Now consider the following step-function:
+Consider the following step-function:
 ```{math}
 f_k(x) = \left\{
         \begin{array}{rl}
@@ -90,24 +136,33 @@ This result can easily be generalized to
 ```
 
 
-
-
-
 ### The Gaussian distribution.
 
 The normal distribution, also known as the Gaussian distribution, is given by
 
 ```{math}
-g(x, a, \sigma) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x - a)^2}{2\sigma^2}}.
+g(x, \mu, \sigma) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}.
 ```
 
-In the limit of infinitely small $ \sigma $ ($ \sigma \to 0 $), the function $ g(x, a, \sigma) $ behaves similarly to $ \delta(x - a) $ in that:
+lets simplify, centre on the origin so $\mu = 0$ and take $2\sigma^2 = a^2$:
 
 ```{math}
-\lim_{\sigma \to 0} \int_{-\infty}^{\infty} f(x) g(x, a, \sigma)\mathrm{d}x= f(a).
+g(x,a) = \frac{1}{a\sqrt{\pi}}e^{-(x/a)^2}
+```
+in the limit of $a \rightarrow 0$, the function $ g(x, a) $ behaves similarly to $ \delta(x) $, we can see this in the figure below:
+
+![Gaussian approximation of the delta function](Dirac_function_approximation.gif)
+
+This means that:
+
+```{math}
+\lim_{\sigma \to 0} \int_{-\infty}^{\infty} f(x) g(x, a)\mathrm{d}x = f(0).
 ```
 
-Yet, we will not equate $ \delta(x - a) $ and $ \lim_{\sigma \to 0} g(x, a, \sigma) $ because $ \delta(x - a) $ is a generalized function defined via its integral with other functions, while $ g(x, a, \sigma) $ is a function in the usual sense.
+
+Yet, we will not equate $ \delta(x) $ and $ \lim_{\sigma \to 0} g(x, a) $ because $ \delta(x) $ is a generalised function defined via its integral definition with other functions, whilst $ g(x, a) $ is a function defined in the usual sense.
+
+
 
 
 
@@ -184,10 +239,10 @@ for any $ a \in \mathbb{R}$.
 
 ## Laplace transform of the Dirac delta function.
 
-Evaluate $ L[\delta(x - a)] $:
+Evaluate $ L[\delta(t - a)] $:
 
 ```{math}
-L[\delta(x - a)] = \int_{-\infty}^{\infty} \delta(x - a) e^{-px}\mathrm{d}x= e^{-pa} \quad (\text{for } a > 0)
+L[\delta(t - a)] = \int_{0}^{\infty} \delta(t - a) e^{-pt}\mathrm{d}x= e^{-pa} \quad (\text{for } a > 0)
 ```
 
 ## Derivatives of the Dirac delta function.
@@ -239,3 +294,51 @@ Thus,
 - $ x \delta(x) = 0 $,
 - $ x \delta'(x) = - \delta(x) $,
 - $ x^2 \delta''(x) = 2 \delta(x) $.
+
+## The (Heaviside) Step Function
+
+Lets think about a different function for the moment, a simple step function entered on the origin:
+```{math}
+H(x) = \begin{cases}
+1 & \text{if } x > 0\\
+0 & \text{if } x < 0
+\end{cases}
+```
+We will return to $H(0)$ shortly, but it does not change the fundamental concepts of this function.
+
+The first property to note about the step function is that it has a sifting property also, so if we wish to restrict a function too a specific open ended range, such as $x > a$, we can just use:
+```{math}
+H(x-a)\,f(x) = \begin{cases}
+f(x) & \text{if } x > a\\
+0 & \text{if } x < a
+\end{cases}
+```
+
+And if we want to include a closed range of values $a < x < b$ we can include another step function:
+```{math}
+H(x-a)\,H(b-x)\,f(x) = \begin{cases}
+f(x) & \text{if } a < x < b \\
+0 & \text{if } \text{otherwise} 
+\end{cases}
+```
+
+This differs from the Dirac delta function which only picks out a value of a function $f(x)$ at $x=a$.
+
+The second property to note is that the derivative of the step function is zero almost everywhere - except at the point where the jump occurs, so we can think of the step functions derivative as being related to the Dirac delta function:
+```{math}
+
+\frac{\mathrm{d}}{\mathrm{d}x}\Big(H(x-a) \Big) = \delta(x-a)
+```
+
+
+
+### Laplace Transform
+
+Now that we have a new function to find the Laplace transform of:
+
+```{math}
+\mathcal{L}[H(t-a)] &= \int_0^\infty H(t-a)\,e^{-pt}\,\mathrm{d}t\int_a^\infty e^{-pt}\,\mathrm{d}t \\
+&= \left[ -\frac{1}{p}e^{-pt}\right]_a^\infty = \frac{e^{-pa}}{p}
+```
+
+
