@@ -188,6 +188,7 @@
 <li class="toctree-l1"><a class="reference internal" href="laplacetransform.html">Laplace Transforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diracdelta.html">The Dirac Delta Function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="greensfunction.html">Green’s functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sturmliouville.html">Sturm-Liouville Theory</a></li>
 </ul>
 
     </div>
@@ -396,7 +397,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-c-x-y-r-x-y-0">Case of <span class="math notranslate nohighlight">\( C(x, y) = R(x, y) = 0 \)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-r-x-y-0">Case of <span class="math notranslate nohighlight">\( R(x, y) = 0 \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-trivial-solutions-of-the-equation">Non-trivial Solutions of the Equation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
 </ul>
 </li>
@@ -404,11 +404,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-of-inhomogeneous-equations">Solutions of Inhomogeneous Equations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-2nd-order-pde">Linear 2nd Order PDE</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-2nd-order-pdes">Linear 2nd Order PDEs</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-2nd-order-pde">Solving 2nd Order PDE</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#condition-for-frac-d-2-f-p-dp-2-0">Condition for <span class="math notranslate nohighlight">\( \frac{d^2 f(p)}{dp^2} = 0 \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-trivial-solutions">Non-trivial Solutions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminant-and-classification">Discriminant and Classification</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-wave-equation-vs-laplace-equation">Example: Wave Equation vs Laplace Equation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabolic-equation">Parabolic Equation</a></li>
@@ -431,7 +429,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-to-neumann-s-boundary-problem">Solution to Neumann’s Boundary Problem</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-pdes">Problems - PDEs</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-integral-transforms-to-solve-pdes">Using Integral Transforms to Solve PDEs</a><ul class="visible nav section-nav flex-column">
@@ -468,20 +465,15 @@ document.write(`
 <section id="important-pdes">
 <h2>Important PDEs<a class="headerlink" href="#important-pdes" title="Link to this heading">#</a></h2>
 <p>Consider a function <span class="math notranslate nohighlight">\( u = u(x_1, x_2, \dots, x_n) \)</span>, which depends on <span class="math notranslate nohighlight">\( n \)</span> variables <span class="math notranslate nohighlight">\( x_1, x_2, \dots, x_n \)</span>. In physical problems, these variables are usually spatial coordinates, e.g., <span class="math notranslate nohighlight">\( x, y, z \)</span>, and time <span class="math notranslate nohighlight">\( t \)</span>. Depending on the problem at hand, it can be convenient to consider the function <span class="math notranslate nohighlight">\( u \)</span> in Cartesian, polar, or spherical coordinate systems:</p>
-<ul>
-<li><p>In Cartesian coordinates:</p>
+<p>In Cartesian coordinates:</p>
 <div class="math notranslate nohighlight">
 \[u = u(x, y, z, t)\]</div>
-</li>
-<li><p>In polar coordinates:</p>
+<p>In polar coordinates:</p>
 <div class="math notranslate nohighlight">
 \[u = u(r, \theta, z, t)\]</div>
-</li>
-<li><p>In spherical coordinates:</p>
+<p>In spherical coordinates:</p>
 <div class="math notranslate nohighlight">
 \[u = u(r, \theta, \phi, t)\]</div>
-</li>
-</ul>
 <section id="the-wave-equation">
 <h3>The Wave Equation<a class="headerlink" href="#the-wave-equation" title="Link to this heading">#</a></h3>
 <p>In Cartesian coordinates:</p>
@@ -526,6 +518,7 @@ document.write(`
 </section>
 <section id="general-form-of-the-linear-1st-order-pde">
 <h2>General form of the linear 1st order PDE<a class="headerlink" href="#general-form-of-the-linear-1st-order-pde" title="Link to this heading">#</a></h2>
+<p>The general form of a linear first order partial differential equation with respect to function <span class="math notranslate nohighlight">\( u(x,y) \)</span> of two variables <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> can be written as:</p>
 <div class="math notranslate nohighlight">
 \[A(x, y) \frac{\partial u}{\partial x} + B(x, y) \frac{\partial u}{\partial y} + C(x, y) u = R(x, y)\]</div>
 <p>where <span class="math notranslate nohighlight">\( A(x, y), B(x, y), C(x, y), \)</span> and <span class="math notranslate nohighlight">\( R(x, y) \)</span> are functions of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>. Importantly, there could be many solutions due to:</p>
@@ -535,55 +528,61 @@ document.write(`
 </ol>
 <section id="case-of-c-x-y-r-x-y-0">
 <h3>Case of <span class="math notranslate nohighlight">\( C(x, y) = R(x, y) = 0 \)</span><a class="headerlink" href="#case-of-c-x-y-r-x-y-0" title="Link to this heading">#</a></h3>
-<p>If <span class="math notranslate nohighlight">\( C = R = 0 \)</span>, Eq. (7.1) becomes:</p>
+<p>If <span class="math notranslate nohighlight">\( C = R = 0 \)</span>, then the linear PDE equation becomes:</p>
 <div class="math notranslate nohighlight">
 \[A(x, y) \frac{\partial u}{\partial x} + B(x, y) \frac{\partial u}{\partial y} = 0\]</div>
 <p>Consider solutions of this equation in the form of:</p>
 <div class="math notranslate nohighlight">
 \[u(x, y) = f(p)\]</div>
-<p>where <span class="math notranslate nohighlight">\( p \)</span> is a parameter formed by some fixed combination of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>. Note that <span class="math notranslate nohighlight">\( p \)</span> is a function of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>: <span class="math notranslate nohighlight">\( p(x, y) \)</span>.</p>
-<p>Use the chain rule of differentiation to obtain <span class="math notranslate nohighlight">\( \frac{\partial u}{\partial x} \)</span> and <span class="math notranslate nohighlight">\( \frac{\partial u}{\partial y} \)</span>:</p>
+<p>where <span class="math notranslate nohighlight">\( p \)</span> is a parameter formed by some fixed combination of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> and hence <span class="math notranslate nohighlight">\( p = p(x, y) \)</span>.</p>
+<p>Using the multivariable chain rule we can obtain <span class="math notranslate nohighlight">\( \frac{\partial u}{\partial x} \)</span> and <span class="math notranslate nohighlight">\( \frac{\partial u}{\partial y} \)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial u(x, y)}{\partial x} = \frac{df(p)}{dp} \frac{\partial p}{\partial x}, \quad \frac{\partial u(x, y)}{\partial y} = \frac{df(p)}{dp} \frac{\partial p}{\partial y}\]</div>
-<p>Substitute these into Eq. (7.2) and obtain:</p>
+<p>Substituting these into our linear PDE equation and we obtain:</p>
 <div class="math notranslate nohighlight">
 \[A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - \frac{df(p)}{dp} = 0\]</div>
 <p>This equation is satisfied if:</p>
 <div class="math notranslate nohighlight">
 \[\frac{df(p)}{dp} = 0\]</div>
-<p>which means that function <span class="math notranslate nohighlight">\( f(p) \)</span> is a constant, i.e., it has no dependence on <span class="math notranslate nohighlight">\( p \)</span> and, therefore, has no dependence on <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>. Alternatively, Eq. (7.3) is satisfied if:</p>
+<p>which means that function <span class="math notranslate nohighlight">\( f(p) \)</span> is a constant, i.e., it has no dependence on <span class="math notranslate nohighlight">\( p \)</span> and, therefore, has no dependence on <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>. Alternatively this equation is satisfied if:</p>
 <div class="math notranslate nohighlight">
 \[A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} = 0\]</div>
-<p>Notice that this equation is similar to Eq. (7.2), in which <span class="math notranslate nohighlight">\( u \)</span> is replaced with <span class="math notranslate nohighlight">\( p \)</span>.</p>
+<p>Notice that this equation is similar to our original linear PDE equation, in which <span class="math notranslate nohighlight">\( u \)</span> is replaced with <span class="math notranslate nohighlight">\( p \)</span>.</p>
 <p>On the other hand, for <span class="math notranslate nohighlight">\( p \)</span> to remain a constant combination of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>, we should have:</p>
 <div class="math notranslate nohighlight">
 \[dp = \frac{\partial p}{\partial x}\mathrm{d}x + \frac{\partial p}{\partial y} dy = 0\]</div>
-<p>Note that this equation is identical to Eq. (7.4) if we set:</p>
+<p>Note that this equation is identical to our previous equation if we set:</p>
 <div class="math notranslate nohighlight">
 \[dx = \frac{A(x, y)}{B(x, y)} dy\]</div>
-<p>Hence, instead of solving Eqs. (7.4) and (7.5), we can integrate the equation to find <span class="math notranslate nohighlight">\( p \)</span>.</p>
+<p>Hence, instead of solving these two PDE equations directly, we can integrate the equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}x}{A(x, y)}  = \frac{\mathrm{d}y}{B(x, y)}\]</div>
+<p>to find <span class="math notranslate nohighlight">\( p \)</span>.</p>
 </section>
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
-<p>Consider:</p>
+<p>Consider the PDE:</p>
 <div class="math notranslate nohighlight">
-\[x^3 \frac{\partial u}{\partial x} + 3y^2 \frac{\partial u}{\partial y} = 0\]</div>
-<p>In this case, we have <span class="math notranslate nohighlight">\( A(x, y) = x^3 \)</span> and <span class="math notranslate nohighlight">\( B(x, y) = 3y^2 \)</span>. Following the previous discussion, this equation is converted to:</p>
+\[x^3 \frac{\partial u}{\partial x} + 3y^2 \frac{\partial u}{\partial y} = 0.\]</div>
+<p>In this case, we have <span class="math notranslate nohighlight">\( A(x, y) = x^3 \)</span> and <span class="math notranslate nohighlight">\( B(x, y) = 3y^2 \)</span>. Following the previous discussion, this equation is converted to</p>
 <div class="math notranslate nohighlight">
-\[\frac{dx}{x^3} = \frac{dy}{3y^2}\]</div>
-<p>After integration:</p>
+\[\frac{dx}{x^3} = \frac{dy}{3y^2}.\]</div>
+<p>After integration,</p>
 <div class="math notranslate nohighlight">
-\[-\frac{1}{2x^2} = -\frac{1}{6y^3} + C\]</div>
-<p>This simplifies to:</p>
+\[-\frac{1}{2x^2} = -\frac{1}{3y} + C \quad \Rightarrow \quad \frac{1}{2x^2} = \frac{1}{3y} + C.\]</div>
+<p>We can rearrange to find an expression for the constant here, which we will see is some fixed combination of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> and denote it as <span class="math notranslate nohighlight">\( p \)</span> (as remember <span class="math notranslate nohighlight">\(\mathrm{d}p = 0\)</span>):</p>
 <div class="math notranslate nohighlight">
-\[1 = 1 + C \quad \text{where} \quad C = \frac{3y^2}{2x^3}\]</div>
-<p>Thus, the general solution of Eq. (7.6) is:</p>
+\[C = \frac{1}{2x^2} - \frac{1}{3y} = \frac{3y - 2x^2}{6x^2y} = p.\]</div>
+<p>Hence, the general solution of our PDE here is an arbitrary function of the argument <span class="math notranslate nohighlight">\( \frac{3y - 2x^2}{6x^2y} \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[u(x, y) = f\left( \frac{3y - 2x^2}{6x^2y} \right)\]</div>
+\[u(x, y) = f \left( \frac{3y - 2x^2}{6x^2y} \right).\]</div>
+<p>To find particular solutions, we have to introduce the boundary conditions. For example, if we demand that <span class="math notranslate nohighlight">\( u(x, y) = 0 \)</span> at the point where <span class="math notranslate nohighlight">\( x = 2 \)</span> and <span class="math notranslate nohighlight">\( y = 2 \)</span>, then a <em>possible</em> particular solution is</p>
+<div class="math notranslate nohighlight">
+\[u(x, y) = \frac{3y - 2x^2}{6x^2y} + \frac{1}{24}.\]</div>
 </section>
 <section id="case-of-r-x-y-0">
 <h3>Case of <span class="math notranslate nohighlight">\( R(x, y) = 0 \)</span><a class="headerlink" href="#case-of-r-x-y-0" title="Link to this heading">#</a></h3>
-<p>If <span class="math notranslate nohighlight">\( R = 0 \)</span>, Equation (7.1) becomes:</p>
+<p>If <span class="math notranslate nohighlight">\( R = 0 \)</span>, our PDE equation becomes:</p>
 <div class="math notranslate nohighlight">
 \[A(x, y) \frac{\partial u}{\partial x} + B(x, y) \frac{\partial u}{\partial y} + C(x, y) u = 0\]</div>
 <p>Apply the same logic as above but consider a solution in the form:</p>
@@ -594,22 +593,19 @@ document.write(`
 \[\frac{\partial u}{\partial x} = \frac{\partial h(x, y)}{\partial x} f(p) + h(x, y) \frac{df(p)}{dp} \frac{\partial p}{\partial x}\]</div>
 <div class="math notranslate nohighlight">
 \[\frac{\partial u}{\partial y} = \frac{\partial h(x, y)}{\partial y} f(p) + h(x, y) \frac{df(p)}{dp} \frac{\partial p}{\partial y}\]</div>
-<p>Substitute these derivatives into PDE (7.7):</p>
+<p>Substitute these derivatives into our PDE here:</p>
 <div class="math notranslate nohighlight">
 \[A(x, y) \left( \frac{\partial h}{\partial x} f(p) + h \frac{df(p)}{dp} \frac{\partial p}{\partial x} \right) + B(x, y) \left( \frac{\partial h}{\partial y} f(p) + h \frac{df(p)}{dp} \frac{\partial p}{\partial y} \right) + C(x, y) h f(p) = 0\]</div>
 <p>After rearranging the terms:</p>
 <div class="math notranslate nohighlight">
 \[A(x, y) \frac{\partial h}{\partial x} + B(x, y) \frac{\partial h}{\partial y} + C(x, y) h f(p) + A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - h \frac{df(p)}{dp} = 0\]</div>
-<p>The first term turns to zero if function <span class="math notranslate nohighlight">\( h(x, y) \)</span> is any solution of the original PDE given by Eq. (7.7). Let us assume that we have found such a function <span class="math notranslate nohighlight">\( h(x, y) \)</span>. Then, only the second term remains:</p>
+<p>The first term turns to zero if function <span class="math notranslate nohighlight">\( h(x, y) \)</span> is any solution of our PDE here. Let us assume that we have found such a function <span class="math notranslate nohighlight">\( h(x, y) \)</span>. Then, only the second term remains:</p>
 <div class="math notranslate nohighlight">
 \[A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - h \frac{df(p)}{dp} = 0\]</div>
-</section>
-<section id="non-trivial-solutions-of-the-equation">
-<h3>Non-trivial Solutions of the Equation<a class="headerlink" href="#non-trivial-solutions-of-the-equation" title="Link to this heading">#</a></h3>
 <p>Non-trivial solutions of this equation can be found by solving:</p>
 <div class="math notranslate nohighlight">
 \[A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} = 0\]</div>
-<p>In other words, the problem is reduced to the previously considered case of <span class="math notranslate nohighlight">\( C(x, y) = R(x, y) = 0 \)</span> given by Eq. (7.2).</p>
+<p>In other words, the problem is reduced to the previously considered case of <span class="math notranslate nohighlight">\( C(x, y) = R(x, y) = 0 \)</span>.</p>
 </section>
 <section id="id1">
 <h3>Example<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
@@ -625,7 +621,7 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\( c \)</span> is a constant, which can be associated with the parameter <span class="math notranslate nohighlight">\( p \)</span>:</p>
 <div class="math notranslate nohighlight">
 \[p = x \exp\left(-\frac{y}{2}\right).\]</div>
-<p>Therefore, a general solution of Equation (7.9) is given by:</p>
+<p>Therefore, a general solution of our PDE here is given by:</p>
 <div class="math notranslate nohighlight">
 \[u(x, y) = h(x, y) f\left( -x \exp\left(-\frac{y}{2}\right) \right),\]</div>
 <p>where <span class="math notranslate nohighlight">\( f \)</span> is an arbitrary function.</p>
@@ -645,7 +641,7 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\( f \)</span> and <span class="math notranslate nohighlight">\( g \)</span> are arbitrary functions of <span class="math notranslate nohighlight">\( x \exp\left(-\frac{y}{2}\right) \)</span>. The superposition:</p>
 <div class="math notranslate nohighlight">
 \[u(x, y) = u_1(x, y) + u_2(x, y)\]</div>
-<p>is also a solution of the PDE (7.9).</p>
+<p>is also a solution of our PDE here.</p>
 </section>
 </section>
 <section id="homogeneity">
@@ -666,14 +662,14 @@ document.write(`
 </section>
 </section>
 <hr class="docutils" />
-<section id="linear-2nd-order-pde">
-<h2>Linear 2nd Order PDE<a class="headerlink" href="#linear-2nd-order-pde" title="Link to this heading">#</a></h2>
+<section id="linear-2nd-order-pdes">
+<h2>Linear 2nd Order PDEs<a class="headerlink" href="#linear-2nd-order-pdes" title="Link to this heading">#</a></h2>
 <section id="classification">
 <h3>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h3>
 <p>The general form of the 2nd order PDE is given by:</p>
 <div class="math notranslate nohighlight">
 \[A(x, y) \frac{\partial^2 u}{\partial x^2} + B(x, y) \frac{\partial^2 u}{\partial x \partial y} + C(x, y) \frac{\partial^2 u}{\partial y^2} + D(x, y) \frac{\partial u}{\partial x} + E(x, y) \frac{\partial u}{\partial y} + F(x, y) u = R(x, y)\]</div>
-<p>We will work with a specific form of Eq. (7.11):</p>
+<p>We will work with a specific form of this equation:</p>
 <div class="math notranslate nohighlight">
 \[A \frac{\partial^2 u}{\partial x^2} + B \frac{\partial^2 u}{\partial x \partial y} + C \frac{\partial^2 u}{\partial y^2} = 0\]</div>
 <p>where <span class="math notranslate nohighlight">\( A \)</span>, <span class="math notranslate nohighlight">\( B \)</span>, and <span class="math notranslate nohighlight">\( C \)</span> are constants. These equations are split into three groups according to the relations between coefficients <span class="math notranslate nohighlight">\( A \)</span>, <span class="math notranslate nohighlight">\( B \)</span>, and <span class="math notranslate nohighlight">\( C \)</span>:</p>
@@ -697,22 +693,19 @@ document.write(`
 <p>If we request that:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial p}{\partial x} = \text{Constant} \quad \text{and} \quad \frac{\partial p}{\partial y} = \text{Constant},\]</div>
-<p>all second derivatives will have the same common factor of <span class="math notranslate nohighlight">\( \frac{d^2 f(p)}{dp^2} \)</span>, which simplifies solving Equation (7.12).</p>
+<p>all second derivatives will have the same common factor of <span class="math notranslate nohighlight">\( \frac{d^2 f(p)}{dp^2} \)</span>, which simplifies solving our second order PDE equation.</p>
 <p>It follows from the conditions <span class="math notranslate nohighlight">\( \frac{\partial p}{\partial x} = \text{Constant} \)</span> and <span class="math notranslate nohighlight">\( \frac{\partial p}{\partial y} = \text{Constant} \)</span> that parameter <span class="math notranslate nohighlight">\( p \)</span> is a linear function of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> simultaneously. Therefore, we choose it in the form:</p>
 <div class="math notranslate nohighlight">
 \[p = ax + by,\]</div>
 <p>where <span class="math notranslate nohighlight">\( a \)</span> and <span class="math notranslate nohighlight">\( b \)</span> are some constants. Thus, we can search for solutions of Eq. (7.12) in the form:</p>
 <div class="math notranslate nohighlight">
 \[u(x, y) = f(ax + by).\]</div>
-<p>Then, calculate the derivatives for this particular form of the parameter <span class="math notranslate nohighlight">\( p \)</span> and substitute them in the original Equation (7.12). After the substitution, we obtain:</p>
+<p>Then, calculate the derivatives for this particular form of the parameter <span class="math notranslate nohighlight">\( p \)</span> and substitute them in the original second order PDE. After the substitution, we obtain:</p>
 <div class="math notranslate nohighlight">
 \[-Aa^2 - B ab + Cb^2 = \frac{d^2 f(p)}{dp^2}\]</div>
 <p>This equation is satisfied if either:</p>
 <div class="math notranslate nohighlight">
 \[\frac{d^2 f(p)}{dp^2} = 0 \quad \text{or} \quad Aa^2 + Bab + Cb^2 = 0.\]</div>
-</section>
-<section id="condition-for-frac-d-2-f-p-dp-2-0">
-<h3>Condition for <span class="math notranslate nohighlight">\( \frac{d^2 f(p)}{dp^2} = 0 \)</span><a class="headerlink" href="#condition-for-frac-d-2-f-p-dp-2-0" title="Link to this heading">#</a></h3>
 <p>The condition <span class="math notranslate nohighlight">\( \frac{d^2 f(p)}{dp^2} = 0 \)</span> means that <span class="math notranslate nohighlight">\( f(p) \)</span> is a linear function of <span class="math notranslate nohighlight">\( p \)</span>. Integrating this equation gives:</p>
 <div class="math notranslate nohighlight">
 \[\frac{df(p)}{dp} = k \quad \text{and} \quad f(p) = k p + m,\]</div>
@@ -722,10 +715,7 @@ document.write(`
 \[u(x, y) = f(p) = k p + m = k(ax + by) + m = \alpha x + \beta y + \gamma,\]</div>
 <p>where <span class="math notranslate nohighlight">\( \alpha = ka \)</span>, <span class="math notranslate nohighlight">\( \beta = kb \)</span>, and <span class="math notranslate nohighlight">\( \gamma = m \)</span>.</p>
 <p>Importantly, this form of <span class="math notranslate nohighlight">\( u(x, y) \)</span> has only zero second derivatives. Thus, it is a trivial solution of Eq. (7.12) because any linear function of <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> is a solution of this equation.</p>
-</section>
-<section id="non-trivial-solutions">
-<h3>Non-trivial Solutions<a class="headerlink" href="#non-trivial-solutions" title="Link to this heading">#</a></h3>
-<p>Non-trivial solutions of Eq. (7.12) can be obtained by solving:</p>
+<p>Non-trivial solutions of the second order PDE here can be obtained by solving:</p>
 <div class="math notranslate nohighlight">
 \[A a^2 + B ab + C b^2 = 0.\]</div>
 <p>This expression can be considered as a quadratic equation with respect to <span class="math notranslate nohighlight">\( \beta = \frac{b}{a} \)</span>:</p>
@@ -764,7 +754,7 @@ document.write(`
 <h3>Example: Wave Equation vs Laplace Equation<a class="headerlink" href="#example-wave-equation-vs-laplace-equation" title="Link to this heading">#</a></h3>
 <p>Compare the two equations:</p>
 <ol class="arabic simple">
-<li><p><strong>Wave Equation</strong>:</p></li>
+<li><p>Wave Equation:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[\frac{\partial^2 v}{\partial x^2} - \frac{1}{c^2} \frac{\partial^2 v}{\partial t^2} = 0,\]</div>
@@ -775,7 +765,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[u(x, t) = f(x + ct) + g(x - ct).\]</div>
 <ol class="arabic simple" start="2">
-<li><p><strong>Laplace Equation</strong>:</p></li>
+<li><p>Laplace Equation:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0,\]</div>
@@ -966,44 +956,6 @@ document.write(`
 \[u(r_0) = \int_V G(r, r_0) \rho(r) \, dV + A^{-1} \int_S u(r) \,\mathrm{d}s - \int_S G(r, r_0) f(r) \,\mathrm{d}s.\]</div>
 <p>Note that <span class="math notranslate nohighlight">\( \frac{1}{A} \int_S u(r) \,\mathrm{d}s \)</span> is a constant equal to the average value of <span class="math notranslate nohighlight">\( u(r) \)</span> at the surface <span class="math notranslate nohighlight">\( S \)</span>. If, for an infinite volume <span class="math notranslate nohighlight">\( V \)</span>, we request that <span class="math notranslate nohighlight">\( u(r) \to 0 \)</span> as <span class="math notranslate nohighlight">\( |r| \to \infty \)</span>, this term can be eliminated.</p>
 </section>
-</section>
-<section id="problems-pdes">
-<h2>Problems - PDEs<a class="headerlink" href="#problems-pdes" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Verify that any function of <span class="math notranslate nohighlight">\( p \)</span>, where <span class="math notranslate nohighlight">\( p = x^2 + 2y \)</span>, is a solution of:</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[\frac{\partial u}{\partial x} = x \frac{\partial u}{\partial y}.\]</div>
-<p>Then, determine whether <span class="math notranslate nohighlight">\( v(x, y) \)</span> is a solution of this PDE if:</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\( v(x, y) = x^4 + 4x^2y + 4y^2 \)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\( v(x, y) = x^4 + 2x^2y + y^2 \)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\( v(x, y) = x^2(x^2 - 4) + 4y(x^2 - 2) + 4(y^2 - 1) \)</span>.</p></li>
-<li><p>Find solutions of the PDE:</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[\frac{1}{x} \frac{\partial u}{\partial x} + \frac{1}{y} \frac{\partial u}{\partial y} = 0,\]</div>
-<p>with the following boundary conditions:</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\( u(0, y) = y \)</span> (one-dimensional boundary condition),</p></li>
-<li><p><span class="math notranslate nohighlight">\( u(1, 1) = 1 \)</span> (zero-dimensional boundary condition).</p></li>
-<li><p>Find solutions of the PDE:</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[\sin x \frac{\partial u}{\partial x} + \cos x \frac{\partial u}{\partial y} = \cos x,\]</div>
-<p>with the following boundary conditions:</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\( u(\pi/2, y) = 0 \)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\( u(\pi/2, y) = y(y + 1) \)</span>.</p></li>
-<li><p>Find the general solution of the PDE:</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[\frac{\partial^2 u}{\partial x^2} - 3 \frac{\partial^2 u}{\partial x \partial y} + 2 \frac{\partial^2 u}{\partial y^2} = 0,\]</div>
-<p>and then:</p>
-<ol class="arabic simple">
-<li><p>Find <span class="math notranslate nohighlight">\( u(x, y) \)</span>, for which <span class="math notranslate nohighlight">\( u(x, 0) = -x^2 \)</span> and <span class="math notranslate nohighlight">\( \frac{\partial u}{\partial y}(x, 0) = 0 \)</span>,</p></li>
-<li><p>Find the value of <span class="math notranslate nohighlight">\( u(0, 1) \)</span> for such <span class="math notranslate nohighlight">\( u(x, y) \)</span>.</p></li>
-</ol>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="using-integral-transforms-to-solve-pdes">
@@ -1238,7 +1190,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-c-x-y-r-x-y-0">Case of <span class="math notranslate nohighlight">\( C(x, y) = R(x, y) = 0 \)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-r-x-y-0">Case of <span class="math notranslate nohighlight">\( R(x, y) = 0 \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-trivial-solutions-of-the-equation">Non-trivial Solutions of the Equation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
 </ul>
 </li>
@@ -1246,11 +1197,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-of-inhomogeneous-equations">Solutions of Inhomogeneous Equations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-2nd-order-pde">Linear 2nd Order PDE</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-2nd-order-pdes">Linear 2nd Order PDEs</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-2nd-order-pde">Solving 2nd Order PDE</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#condition-for-frac-d-2-f-p-dp-2-0">Condition for <span class="math notranslate nohighlight">\( \frac{d^2 f(p)}{dp^2} = 0 \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-trivial-solutions">Non-trivial Solutions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminant-and-classification">Discriminant and Classification</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-wave-equation-vs-laplace-equation">Example: Wave Equation vs Laplace Equation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabolic-equation">Parabolic Equation</a></li>
@@ -1273,7 +1222,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-to-neumann-s-boundary-problem">Solution to Neumann’s Boundary Problem</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-pdes">Problems - PDEs</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-integral-transforms-to-solve-pdes">Using Integral Transforms to Solve PDEs</a><ul class="visible nav section-nav flex-column">

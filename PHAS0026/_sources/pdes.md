@@ -4,15 +4,15 @@
 
 Consider a function $ u = u(x_1, x_2, \dots, x_n) $, which depends on $ n $ variables $ x_1, x_2, \dots, x_n $. In physical problems, these variables are usually spatial coordinates, e.g., $ x, y, z $, and time $ t $. Depending on the problem at hand, it can be convenient to consider the function $ u $ in Cartesian, polar, or spherical coordinate systems:
 
-- In Cartesian coordinates:  
+In Cartesian coordinates:  
   ```{math}
   u = u(x, y, z, t)
   ```
-- In polar coordinates:  
+In polar coordinates:  
   ```{math}
   u = u(r, \theta, z, t)
   ```
-- In spherical coordinates:  
+In spherical coordinates:  
   ```{math}
   u = u(r, \theta, \phi, t)
   ```
@@ -80,6 +80,7 @@ r^2 u + V(r) u = \frac{i \hbar}{2m} \frac{\partial u}{\partial t}
 ```
 
 ## General form of the linear 1st order PDE
+The general form of a linear first order partial differential equation with respect to function $ u(x,y) $ of two variables $ x $ and $ y $ can be written as:
 
 ```{math}
 A(x, y) \frac{\partial u}{\partial x} + B(x, y) \frac{\partial u}{\partial y} + C(x, y) u = R(x, y)
@@ -91,7 +92,7 @@ where $ A(x, y), B(x, y), C(x, y), $ and $ R(x, y) $ are functions of $ x $ and 
 
 ### Case of $ C(x, y) = R(x, y) = 0 $
 
-If $ C = R = 0 $, Eq. (7.1) becomes:
+If $ C = R = 0 $, then the linear PDE equation becomes:
 
 ```{math}
 A(x, y) \frac{\partial u}{\partial x} + B(x, y) \frac{\partial u}{\partial y} = 0
@@ -103,15 +104,15 @@ Consider solutions of this equation in the form of:
 u(x, y) = f(p)
 ```
 
-where $ p $ is a parameter formed by some fixed combination of $ x $ and $ y $. Note that $ p $ is a function of $ x $ and $ y $: $ p(x, y) $.
+where $ p $ is a parameter formed by some fixed combination of $ x $ and $ y $ and hence $ p = p(x, y) $.
 
-Use the chain rule of differentiation to obtain $ \frac{\partial u}{\partial x} $ and $ \frac{\partial u}{\partial y} $:
+Using the multivariable chain rule we can obtain $ \frac{\partial u}{\partial x} $ and $ \frac{\partial u}{\partial y} $:
 
 ```{math}
 \frac{\partial u(x, y)}{\partial x} = \frac{df(p)}{dp} \frac{\partial p}{\partial x}, \quad \frac{\partial u(x, y)}{\partial y} = \frac{df(p)}{dp} \frac{\partial p}{\partial y}
 ```
 
-Substitute these into Eq. (7.2) and obtain:
+Substituting these into our linear PDE equation and we obtain:
 
 ```{math}
 A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - \frac{df(p)}{dp} = 0
@@ -123,13 +124,13 @@ This equation is satisfied if:
 \frac{df(p)}{dp} = 0
 ```
 
-which means that function $ f(p) $ is a constant, i.e., it has no dependence on $ p $ and, therefore, has no dependence on $ x $ and $ y $. Alternatively, Eq. (7.3) is satisfied if:
+which means that function $ f(p) $ is a constant, i.e., it has no dependence on $ p $ and, therefore, has no dependence on $ x $ and $ y $. Alternatively this equation is satisfied if:
 
 ```{math}
 A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} = 0
 ```
 
-Notice that this equation is similar to Eq. (7.2), in which $ u $ is replaced with $ p $.
+Notice that this equation is similar to our original linear PDE equation, in which $ u $ is replaced with $ p $.
 
 On the other hand, for $ p $ to remain a constant combination of $ x $ and $ y $, we should have:
 
@@ -137,49 +138,51 @@ On the other hand, for $ p $ to remain a constant combination of $ x $ and $ y $
 dp = \frac{\partial p}{\partial x}\mathrm{d}x + \frac{\partial p}{\partial y} dy = 0
 ```
 
-Note that this equation is identical to Eq. (7.4) if we set:
+Note that this equation is identical to our previous equation if we set:
 
 ```{math}
 dx = \frac{A(x, y)}{B(x, y)} dy
 ```
 
-Hence, instead of solving Eqs. (7.4) and (7.5), we can integrate the equation to find $ p $.
+Hence, instead of solving these two PDE equations directly, we can integrate the equation:
+```{math}
+\frac{\mathrm{d}x}{A(x, y)}  = \frac{\mathrm{d}y}{B(x, y)}
+```
+to find $ p $.
 
 ### Example
 
-Consider:
+Consider the PDE:
 
 ```{math}
-x^3 \frac{\partial u}{\partial x} + 3y^2 \frac{\partial u}{\partial y} = 0
+x^3 \frac{\partial u}{\partial x} + 3y^2 \frac{\partial u}{\partial y} = 0.
 ```
-
-In this case, we have $ A(x, y) = x^3 $ and $ B(x, y) = 3y^2 $. Following the previous discussion, this equation is converted to:
-
+In this case, we have $ A(x, y) = x^3 $ and $ B(x, y) = 3y^2 $. Following the previous discussion, this equation is converted to
 ```{math}
-\frac{dx}{x^3} = \frac{dy}{3y^2}
+\frac{dx}{x^3} = \frac{dy}{3y^2}.
 ```
-
-After integration:
-
+After integration,
 ```{math}
--\frac{1}{2x^2} = -\frac{1}{6y^3} + C
+-\frac{1}{2x^2} = -\frac{1}{3y} + C \quad \Rightarrow \quad \frac{1}{2x^2} = \frac{1}{3y} + C.
 ```
-
-This simplifies to:
-
+We can rearrange to find an expression for the constant here, which we will see is some fixed combination of $ x $ and $ y $ and denote it as $ p $ (as remember $\mathrm{d}p = 0$):
 ```{math}
-1 = 1 + C \quad \text{where} \quad C = \frac{3y^2}{2x^3}
+C = \frac{1}{2x^2} - \frac{1}{3y} = \frac{3y - 2x^2}{6x^2y} = p.
 ```
-
-Thus, the general solution of Eq. (7.6) is:
-
+Hence, the general solution of our PDE here is an arbitrary function of the argument $ \frac{3y - 2x^2}{6x^2y} $:
 ```{math}
-u(x, y) = f\left( \frac{3y - 2x^2}{6x^2y} \right)
+u(x, y) = f \left( \frac{3y - 2x^2}{6x^2y} \right).
 ```
+
+To find particular solutions, we have to introduce the boundary conditions. For example, if we demand that $ u(x, y) = 0 $ at the point where $ x = 2 $ and $ y = 2 $, then a *possible* particular solution is
+```{math}
+u(x, y) = \frac{3y - 2x^2}{6x^2y} + \frac{1}{24}.
+```
+
 
 ### Case of $ R(x, y) = 0 $
 
-If $ R = 0 $, Equation (7.1) becomes:
+If $ R = 0 $, our PDE equation becomes:
 
 ```{math}
 A(x, y) \frac{\partial u}{\partial x} + B(x, y) \frac{\partial u}{\partial y} + C(x, y) u = 0
@@ -201,7 +204,7 @@ In this case, we have:
 \frac{\partial u}{\partial y} = \frac{\partial h(x, y)}{\partial y} f(p) + h(x, y) \frac{df(p)}{dp} \frac{\partial p}{\partial y}
 ```
 
-Substitute these derivatives into PDE (7.7):
+Substitute these derivatives into our PDE here:
 
 ```{math}
 A(x, y) \left( \frac{\partial h}{\partial x} f(p) + h \frac{df(p)}{dp} \frac{\partial p}{\partial x} \right) + B(x, y) \left( \frac{\partial h}{\partial y} f(p) + h \frac{df(p)}{dp} \frac{\partial p}{\partial y} \right) + C(x, y) h f(p) = 0
@@ -213,12 +216,11 @@ After rearranging the terms:
 A(x, y) \frac{\partial h}{\partial x} + B(x, y) \frac{\partial h}{\partial y} + C(x, y) h f(p) + A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - h \frac{df(p)}{dp} = 0
 ```
 
-The first term turns to zero if function $ h(x, y) $ is any solution of the original PDE given by Eq. (7.7). Let us assume that we have found such a function $ h(x, y) $. Then, only the second term remains:
+The first term turns to zero if function $ h(x, y) $ is any solution of our PDE here. Let us assume that we have found such a function $ h(x, y) $. Then, only the second term remains:
 
 ```{math}
 A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - h \frac{df(p)}{dp} = 0
 ```
-### Non-trivial Solutions of the Equation
 
 Non-trivial solutions of this equation can be found by solving:
 
@@ -226,7 +228,7 @@ Non-trivial solutions of this equation can be found by solving:
 A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} = 0
 ```
 
-In other words, the problem is reduced to the previously considered case of $ C(x, y) = R(x, y) = 0 $ given by Eq. (7.2).
+In other words, the problem is reduced to the previously considered case of $ C(x, y) = R(x, y) = 0 $.
 
 ### Example
 
@@ -254,7 +256,7 @@ where $ c $ is a constant, which can be associated with the parameter $ p $:
 p = x \exp\left(-\frac{y}{2}\right).
 ```
 
-Therefore, a general solution of Equation (7.9) is given by:
+Therefore, a general solution of our PDE here is given by:
 
 ```{math}
 u(x, y) = h(x, y) f\left( -x \exp\left(-\frac{y}{2}\right) \right),
@@ -294,7 +296,7 @@ where $ f $ and $ g $ are arbitrary functions of $ x \exp\left(-\frac{y}{2}\righ
 u(x, y) = u_1(x, y) + u_2(x, y)
 ```
 
-is also a solution of the PDE (7.9).
+is also a solution of our PDE here.
 
 ## Homogeneity
 
@@ -319,7 +321,7 @@ where $ v(x, y) $ is any solution of the non-homogeneous equation, and $ w(x, y)
 
 ---
 
-## Linear 2nd Order PDE
+## Linear 2nd Order PDEs
 
 ### Classification
 
@@ -329,7 +331,7 @@ The general form of the 2nd order PDE is given by:
 A(x, y) \frac{\partial^2 u}{\partial x^2} + B(x, y) \frac{\partial^2 u}{\partial x \partial y} + C(x, y) \frac{\partial^2 u}{\partial y^2} + D(x, y) \frac{\partial u}{\partial x} + E(x, y) \frac{\partial u}{\partial y} + F(x, y) u = R(x, y)
 ```
 
-We will work with a specific form of Eq. (7.11):
+We will work with a specific form of this equation:
 
 ```{math}
 A \frac{\partial^2 u}{\partial x^2} + B \frac{\partial^2 u}{\partial x \partial y} + C \frac{\partial^2 u}{\partial y^2} = 0
@@ -367,7 +369,7 @@ If we request that:
 \frac{\partial p}{\partial x} = \text{Constant} \quad \text{and} \quad \frac{\partial p}{\partial y} = \text{Constant},
 ```
 
-all second derivatives will have the same common factor of $ \frac{d^2 f(p)}{dp^2} $, which simplifies solving Equation (7.12).
+all second derivatives will have the same common factor of $ \frac{d^2 f(p)}{dp^2} $, which simplifies solving our second order PDE equation.
 
 It follows from the conditions $ \frac{\partial p}{\partial x} = \text{Constant} $ and $ \frac{\partial p}{\partial y} = \text{Constant} $ that parameter $ p $ is a linear function of $ x $ and $ y $ simultaneously. Therefore, we choose it in the form:
 
@@ -381,7 +383,7 @@ where $ a $ and $ b $ are some constants. Thus, we can search for solutions of E
 u(x, y) = f(ax + by).
 ```
 
-Then, calculate the derivatives for this particular form of the parameter $ p $ and substitute them in the original Equation (7.12). After the substitution, we obtain:
+Then, calculate the derivatives for this particular form of the parameter $ p $ and substitute them in the original second order PDE. After the substitution, we obtain:
 
 ```{math}
 -Aa^2 - B ab + Cb^2 = \frac{d^2 f(p)}{dp^2}
@@ -392,7 +394,6 @@ This equation is satisfied if either:
 ```{math}
 \frac{d^2 f(p)}{dp^2} = 0 \quad \text{or} \quad Aa^2 + Bab + Cb^2 = 0.
 ```
-### Condition for $ \frac{d^2 f(p)}{dp^2} = 0 $
 
 The condition $ \frac{d^2 f(p)}{dp^2} = 0 $ means that $ f(p) $ is a linear function of $ p $. Integrating this equation gives:
 
@@ -412,9 +413,8 @@ where $ \alpha = ka $, $ \beta = kb $, and $ \gamma = m $.
 
 Importantly, this form of $ u(x, y) $ has only zero second derivatives. Thus, it is a trivial solution of Eq. (7.12) because any linear function of $ x $ and $ y $ is a solution of this equation.
 
-### Non-trivial Solutions
 
-Non-trivial solutions of Eq. (7.12) can be obtained by solving:
+Non-trivial solutions of the second order PDE here can be obtained by solving:
 
 ```{math}
 A a^2 + B ab + C b^2 = 0.
@@ -476,7 +476,7 @@ The classification of the 2nd order PDE we have introduced above corresponds to 
 
 Compare the two equations:
 
-1. **Wave Equation**:
+1. Wave Equation:
 
 ```{math}
 \frac{\partial^2 v}{\partial x^2} - \frac{1}{c^2} \frac{\partial^2 v}{\partial t^2} = 0,
@@ -494,7 +494,7 @@ and has two real roots $ \beta_1 = c $ and $ \beta_2 = -c $. Hence, the solution
 u(x, t) = f(x + ct) + g(x - ct).
 ```
 
-2. **Laplace Equation**:
+2. Laplace Equation:
 
 ```{math}
 \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0,
@@ -797,53 +797,6 @@ u(r_0) = \int_V G(r, r_0) \rho(r) \, dV + A^{-1} \int_S u(r) \,\mathrm{d}s - \in
 ```
 
 Note that $ \frac{1}{A} \int_S u(r) \,\mathrm{d}s $ is a constant equal to the average value of $ u(r) $ at the surface $ S $. If, for an infinite volume $ V $, we request that $ u(r) \to 0 $ as $ |r| \to \infty $, this term can be eliminated.
-
-## Problems - PDEs
-
-1. Verify that any function of $ p $, where $ p = x^2 + 2y $, is a solution of:
-
-```{math}
-\frac{\partial u}{\partial x} = x \frac{\partial u}{\partial y}.
-```
-
-Then, determine whether $ v(x, y) $ is a solution of this PDE if:
-
-1. $ v(x, y) = x^4 + 4x^2y + 4y^2 $,
-2. $ v(x, y) = x^4 + 2x^2y + y^2 $,
-3. $ v(x, y) = x^2(x^2 - 4) + 4y(x^2 - 2) + 4(y^2 - 1) $.
-
-2. Find solutions of the PDE:
-
-```{math}
-\frac{1}{x} \frac{\partial u}{\partial x} + \frac{1}{y} \frac{\partial u}{\partial y} = 0,
-```
-
-with the following boundary conditions:
-
-1. $ u(0, y) = y $ (one-dimensional boundary condition),
-2. $ u(1, 1) = 1 $ (zero-dimensional boundary condition).
-
-3. Find solutions of the PDE:
-
-```{math}
-\sin x \frac{\partial u}{\partial x} + \cos x \frac{\partial u}{\partial y} = \cos x,
-```
-
-with the following boundary conditions:
-
-1. $ u(\pi/2, y) = 0 $,
-2. $ u(\pi/2, y) = y(y + 1) $.
-
-4. Find the general solution of the PDE:
-
-```{math}
-\frac{\partial^2 u}{\partial x^2} - 3 \frac{\partial^2 u}{\partial x \partial y} + 2 \frac{\partial^2 u}{\partial y^2} = 0,
-```
-
-and then:
-
-1. Find $ u(x, y) $, for which $ u(x, 0) = -x^2 $ and $ \frac{\partial u}{\partial y}(x, 0) = 0 $,
-2. Find the value of $ u(0, 1) $ for such $ u(x, y) $.
 
 # Using Integral Transforms to Solve PDEs
 
