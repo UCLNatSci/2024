@@ -4,37 +4,30 @@
 
 Consider a function $ u = u(x_1, x_2, \dots, x_n) $, which depends on $ n $ variables $ x_1, x_2, \dots, x_n $. In physical problems, these variables are usually spatial coordinates, e.g., $ x, y, z $, and time $ t $. Depending on the problem at hand, it can be convenient to consider the function $ u $ in Cartesian, polar, or spherical coordinate systems:
 
-In Cartesian coordinates:  
-  ```{math}
-  u = u(x, y, z, t)
-  ```
-In polar coordinates:  
-  ```{math}
-  u = u(r, \theta, z, t)
-  ```
-In spherical coordinates:  
-  ```{math}
-  u = u(r, \theta, \phi, t)
-  ```
+In Cartesian coordinates:  $u = u(x, y, z, t)$
+
+In polar coordinates:  $u = u(r, \theta, z, t)$
+
+In spherical coordinates:  $u = u(r, \theta, \phi, t)$
 
 ### The Wave Equation
 
 In Cartesian coordinates:
 
 ```{math}
-r^2 u = \frac{1}{v^2} \frac{\partial^2 u}{\partial t^2}
+\nabla^2 u = \frac{1}{v^2} \frac{\partial^2 u}{\partial t^2}
 ```
 
 In polar coordinates:
 
 ```{math}
-r^2 u = \left( \frac{\partial^2 u}{\partial r^2} + \frac{1}{r} \frac{\partial u}{\partial r} + \frac{1}{r^2} \left( \frac{\partial^2 u}{\partial \theta^2} + \frac{\partial^2 u}{\partial \phi^2} \right) \right)
+\nabla^2 u = \left( \frac{\partial^2 u}{\partial r^2} + \frac{1}{r} \frac{\partial u}{\partial r} + \frac{1}{r^2} \left( \frac{\partial^2 u}{\partial \theta^2} + \frac{\partial^2 u}{\partial \phi^2} \right) \right)
 ```
 
 In spherical coordinates:
 
 ```{math}
-r^2 u = \left( \frac{\partial^2 u}{\partial r^2} + \frac{2}{r} \frac{\partial u}{\partial r} + \frac{1}{r^2} \left( \frac{\partial^2 u}{\partial \theta^2} + \frac{\sin^2 \theta}{r} \frac{\partial^2 u}{\partial \phi^2} \right) \right)
+\nabla^2 u = \left( \frac{\partial^2 u}{\partial r^2} + \frac{2}{r} \frac{\partial u}{\partial r} + \frac{1}{r^2} \left( \frac{\partial^2 u}{\partial \theta^2} + \frac{\sin^2 \theta}{r} \frac{\partial^2 u}{\partial \phi^2} \right) \right)
 ```
 
 where $ v $ is the wave velocity.
@@ -50,7 +43,7 @@ In the one-dimensional case, the wave equation is:
 ### The Diffusion Equation
 
 ```{math}
-k r^2 u = \frac{\partial u}{\partial t}
+k \nabla^2 u = \frac{\partial u}{\partial t}
 ```
 
 This equation is also used to describe heat flow.
@@ -60,7 +53,7 @@ This equation is also used to describe heat flow.
 ### Laplace’s Equation
 
 ```{math}
-r^2 u = 0
+\nabla^2 u = 0
 ```
 
 ---
@@ -68,7 +61,7 @@ r^2 u = 0
 ### Poisson’s Equation
 
 ```{math}
-r^2 u = \rho(r)
+\nabla^2 u = \rho(r)
 ```
 
 ---
@@ -76,7 +69,7 @@ r^2 u = \rho(r)
 ### Schrödinger’s Equation
 
 ```{math}
-r^2 u + V(r) u = \frac{i \hbar}{2m} \frac{\partial u}{\partial t}
+-\frac{\hbar^2}{2m}\nabla^2 u + V(r) u = \frac{i \hbar}{2m} \frac{\partial u}{\partial t}
 ```
 
 ## General form of the linear 1st order PDE

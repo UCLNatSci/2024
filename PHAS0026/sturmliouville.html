@@ -595,14 +595,14 @@ q(x) &amp;= 0 \\
 <h3>Eigenfunctions of the SL problem are real<a class="headerlink" href="#eigenfunctions-of-the-sl-problem-are-real" title="Link to this heading">#</a></h3>
 <p>Consider the equation:</p>
 <div class="math notranslate nohighlight">
-\[L y = \lambda \rho y,\]</div>
+\[\bar{L} y = \lambda \rho y,\]</div>
 <p>and its complex conjugate:</p>
 <div class="math notranslate nohighlight">
-\[(L y)^* = (\lambda \rho y)^*.\]</div>
-<p>Since <span class="math notranslate nohighlight">\( L(x) \)</span>, <span class="math notranslate nohighlight">\( \rho(x) \)</span>, and <span class="math notranslate nohighlight">\( \lambda \)</span> are all real:</p>
+\[(\bar{L} y)^* = (\lambda \rho y)^*.\]</div>
+<p>Since <span class="math notranslate nohighlight">\( \bar{L}(x) \)</span>, <span class="math notranslate nohighlight">\( \rho(x) \)</span>, and <span class="math notranslate nohighlight">\( \lambda \)</span> are all real:</p>
 <div class="math notranslate nohighlight">
-\[(L y)^* = L y^* = \lambda^* \rho y^* = \lambda \rho y^*.\]</div>
-<p>If <span class="math notranslate nohighlight">\( \phi(x) \)</span> is complex, we can set <span class="math notranslate nohighlight">\( \phi(x) = u(x) + iv(x) \)</span>, where <span class="math notranslate nohighlight">\( u(x) \)</span> and <span class="math notranslate nohighlight">\( v(x) \)</span> are real functions, and construct two non-trivial linear combinations of <span class="math notranslate nohighlight">\( \phi(x) \)</span> and <span class="math notranslate nohighlight">\( \phi^*(x) \)</span>:</p>
+\[(\bar{L} y)^* = \bar{L} y^* = \lambda^* \rho y^* = \lambda \rho y^*.\]</div>
+<p>If <span class="math notranslate nohighlight">\( \phi(x) \)</span> is complex, we can set <span class="math notranslate nohighlight">\( \phi(x) = u(x) + iv(x) \)</span>, where <span class="math notranslate nohighlight">\( u(x) \)</span> and <span class="math notranslate nohighlight">\( v(x) \)</span>  functions, and construct two non-trivial linear combinations of <span class="math notranslate nohighlight">\( \phi(x) \)</span> and <span class="math notranslate nohighlight">\( \phi^*(x) \)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\phi_1(x) = \phi(x) + \phi^*(x) = 2u(x), \quad \phi_2(x) = i(\phi(x) - \phi^*(x)) = 2v(x).\]</div>
 <p>Applying <span class="math notranslate nohighlight">\( \bar{L} \)</span> to <span class="math notranslate nohighlight">\( \phi_1 \)</span> and <span class="math notranslate nohighlight">\( \phi_2 \)</span> gives:</p>
@@ -811,7 +811,7 @@ q(x) &amp;= 0 \\
 <p>which is called <strong>spectral representation</strong>.</p>
 <p>Finally, previously we established that <span class="math notranslate nohighlight">\( G(x, t) \)</span> should satisfy the equation:</p>
 <div class="math notranslate nohighlight">
-\[L [G(x, t)] = \delta(x - t).\]</div>
+\[\bar{L} [G(x, t)] = \delta(x - t).\]</div>
 <p>Let us apply <span class="math notranslate nohighlight">\( L \)</span> to both parts of the spectral representation of <span class="math notranslate nohighlight">\( G(x, t) \)</span> using the SL operator:</p>
 <div class="math notranslate nohighlight">
 \[\sum_{n=1}^{\infty} \frac{1}{\lambda_n} \left[ \bar{L} \phi_n(x) \right] \phi_n(t) = \sum_{n=1}^{\infty} \frac{1}{\lambda_n} \left[ \lambda_n \rho(x) \phi_n(x) \right] \phi_n(t) = \rho(x) \sum_{n=1}^{\infty} \phi_n(x) \phi_n(t) = \delta(x-t).\]</div>
@@ -821,8 +821,8 @@ q(x) &amp;= 0 \\
 <h3>Generalization to more complex equations<a class="headerlink" href="#generalization-to-more-complex-equations" title="Link to this heading">#</a></h3>
 <p>We can generalize this approach to more complex equations of the form:</p>
 <div class="math notranslate nohighlight">
-\[Ly(x) - \mu \rho(x) y(x) = f(x),\]</div>
-<p>where <span class="math notranslate nohighlight">\( L \)</span> is Hermitian, and <span class="math notranslate nohighlight">\( \mu \)</span> is a constant. Similarly to what we discussed earlier, search for a solution <span class="math notranslate nohighlight">\( y(x) \)</span> in the form of a series <span class="math notranslate nohighlight">\( \sum c_n \phi_n(x) \)</span>. To find the coefficients <span class="math notranslate nohighlight">\( c_n \)</span>, substitute <span class="math notranslate nohighlight">\( y(x) \)</span> into the ODE:</p>
+\[\bar{L}y(x) - \mu \rho(x) y(x) = f(x),\]</div>
+<p>where <span class="math notranslate nohighlight">\( \bar{ L}\)</span> is Hermitian, and <span class="math notranslate nohighlight">\( \mu \)</span> is a constant. Similarly to what we discussed earlier, search for a solution <span class="math notranslate nohighlight">\( y(x) \)</span> in the form of a series <span class="math notranslate nohighlight">\( \sum c_n \phi_n(x) \)</span>. To find the coefficients <span class="math notranslate nohighlight">\( c_n \)</span>, substitute <span class="math notranslate nohighlight">\( y(x) \)</span> into the ODE:</p>
 <div class="math notranslate nohighlight">
 \[\rho(x) \sum_{n=1}^{\infty} (\lambda_n - \mu) c_n \phi_n(x) = \rho(x) \sum_{n=1}^{\infty} \phi_n(x) \left( \int_a^b \phi_n(t) f(t) \mathrm{d}t \right).\]</div>
 <p>Multiply both parts by <span class="math notranslate nohighlight">\( \phi_k(x) \)</span> and integrate over <span class="math notranslate nohighlight">\( \mathrm{d}x \)</span>:</p>
@@ -932,12 +932,12 @@ P_3(x) &amp;= \frac{1}{2}(5x^3 - 3x)\end{split}\]</div>
 \[(1 - x^2) y'' - x y' + \nu^2 y = 0.\]</div>
 <p>For integer <span class="math notranslate nohighlight">\( \nu \)</span>, these solutions are called <strong>Chebyshev polynomials</strong>. There are two types of Chebyshev polynomials:</p>
 <ol class="arabic simple">
-<li><p><strong>Chebyshev polynomials of the first kind</strong> <span class="math notranslate nohighlight">\( T_n(x) \)</span> are given by:</p></li>
+<li><p>Chebyshev polynomials of the first kind <span class="math notranslate nohighlight">\( T_n(x) \)</span> are given by:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[T_n(x) = \cos(n \arccos(x)).\]</div>
 <ol class="arabic simple" start="2">
-<li><p><strong>Chebyshev polynomials of the second kind</strong> <span class="math notranslate nohighlight">\( U_n(x) \)</span> are given by:</p></li>
+<li><p>Chebyshev polynomials of the second kind <span class="math notranslate nohighlight">\( U_n(x) \)</span> are given by:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[U_n(x) = \frac{\sin((n+1) \arccos(x))}{\sqrt{1 - x^2}}.\]</div>

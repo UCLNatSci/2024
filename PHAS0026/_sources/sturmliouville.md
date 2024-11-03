@@ -271,22 +271,22 @@ Thus, eigenvalues $ \lambda $ of the SL problem are real.
 Consider the equation:
 
 ```{math}
-L y = \lambda \rho y,
+\bar{L} y = \lambda \rho y,
 ```
 
 and its complex conjugate:
 
 ```{math}
-(L y)^* = (\lambda \rho y)^*.
+(\bar{L} y)^* = (\lambda \rho y)^*.
 ```
 
-Since $ L(x) $, $ \rho(x) $, and $ \lambda $ are all real:
+Since $ \bar{L}(x) $, $ \rho(x) $, and $ \lambda $ are all real:
 
 ```{math}
-(L y)^* = L y^* = \lambda^* \rho y^* = \lambda \rho y^*.
+(\bar{L} y)^* = \bar{L} y^* = \lambda^* \rho y^* = \lambda \rho y^*.
 ```
 
-If $ \phi(x) $ is complex, we can set $ \phi(x) = u(x) + iv(x) $, where $ u(x) $ and $ v(x) $ are real functions, and construct two non-trivial linear combinations of $ \phi(x) $ and $ \phi^*(x) $:
+If $ \phi(x) $ is complex, we can set $ \phi(x) = u(x) + iv(x) $, where $ u(x) $ and $ v(x) $  functions, and construct two non-trivial linear combinations of $ \phi(x) $ and $ \phi^*(x) $:
 
 ```{math}
 \phi_1(x) = \phi(x) + \phi^*(x) = 2u(x), \quad \phi_2(x) = i(\phi(x) - \phi^*(x)) = 2v(x).
@@ -623,7 +623,7 @@ which is called **spectral representation**.
 Finally, previously we established that $ G(x, t) $ should satisfy the equation:
 
 ```{math}
-L [G(x, t)] = \delta(x - t).
+\bar{L} [G(x, t)] = \delta(x - t).
 ```
 
 Let us apply $ L $ to both parts of the spectral representation of $ G(x, t) $ using the SL operator:
@@ -641,10 +641,10 @@ which is the condition for the completeness of the basis set formed by $ \phi_n(
 We can generalize this approach to more complex equations of the form:
 
 ```{math}
-Ly(x) - \mu \rho(x) y(x) = f(x),
+\bar{L}y(x) - \mu \rho(x) y(x) = f(x),
 ```
 
-where $ L $ is Hermitian, and $ \mu $ is a constant. Similarly to what we discussed earlier, search for a solution $ y(x) $ in the form of a series $ \sum c_n \phi_n(x) $. To find the coefficients $ c_n $, substitute $ y(x) $ into the ODE:
+where $ \bar{ L}$ is Hermitian, and $ \mu $ is a constant. Similarly to what we discussed earlier, search for a solution $ y(x) $ in the form of a series $ \sum c_n \phi_n(x) $. To find the coefficients $ c_n $, substitute $ y(x) $ into the ODE:
 
 ```{math}
 \rho(x) \sum_{n=1}^{\infty} (\lambda_n - \mu) c_n \phi_n(x) = \rho(x) \sum_{n=1}^{\infty} \phi_n(x) \left( \int_a^b \phi_n(t) f(t) \mathrm{d}t \right).
@@ -825,13 +825,13 @@ Chebyshev polynomials are solutions of the differential equation:
 
 For integer $ \nu $, these solutions are called **Chebyshev polynomials**. There are two types of Chebyshev polynomials:
 
-1. **Chebyshev polynomials of the first kind** $ T_n(x) $ are given by:
+1. Chebyshev polynomials of the first kind $ T_n(x) $ are given by:
 
 ```{math}
 T_n(x) = \cos(n \arccos(x)).
 ```
 
-2. **Chebyshev polynomials of the second kind** $ U_n(x) $ are given by:
+2. Chebyshev polynomials of the second kind $ U_n(x) $ are given by:
 
 ```{math}
 U_n(x) = \frac{\sin((n+1) \arccos(x))}{\sqrt{1 - x^2}}.

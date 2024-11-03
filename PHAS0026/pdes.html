@@ -465,26 +465,20 @@ document.write(`
 <section id="important-pdes">
 <h2>Important PDEs<a class="headerlink" href="#important-pdes" title="Link to this heading">#</a></h2>
 <p>Consider a function <span class="math notranslate nohighlight">\( u = u(x_1, x_2, \dots, x_n) \)</span>, which depends on <span class="math notranslate nohighlight">\( n \)</span> variables <span class="math notranslate nohighlight">\( x_1, x_2, \dots, x_n \)</span>. In physical problems, these variables are usually spatial coordinates, e.g., <span class="math notranslate nohighlight">\( x, y, z \)</span>, and time <span class="math notranslate nohighlight">\( t \)</span>. Depending on the problem at hand, it can be convenient to consider the function <span class="math notranslate nohighlight">\( u \)</span> in Cartesian, polar, or spherical coordinate systems:</p>
-<p>In Cartesian coordinates:</p>
-<div class="math notranslate nohighlight">
-\[u = u(x, y, z, t)\]</div>
-<p>In polar coordinates:</p>
-<div class="math notranslate nohighlight">
-\[u = u(r, \theta, z, t)\]</div>
-<p>In spherical coordinates:</p>
-<div class="math notranslate nohighlight">
-\[u = u(r, \theta, \phi, t)\]</div>
+<p>In Cartesian coordinates:  <span class="math notranslate nohighlight">\(u = u(x, y, z, t)\)</span></p>
+<p>In polar coordinates:  <span class="math notranslate nohighlight">\(u = u(r, \theta, z, t)\)</span></p>
+<p>In spherical coordinates:  <span class="math notranslate nohighlight">\(u = u(r, \theta, \phi, t)\)</span></p>
 <section id="the-wave-equation">
 <h3>The Wave Equation<a class="headerlink" href="#the-wave-equation" title="Link to this heading">#</a></h3>
 <p>In Cartesian coordinates:</p>
 <div class="math notranslate nohighlight">
-\[r^2 u = \frac{1}{v^2} \frac{\partial^2 u}{\partial t^2}\]</div>
+\[\nabla^2 u = \frac{1}{v^2} \frac{\partial^2 u}{\partial t^2}\]</div>
 <p>In polar coordinates:</p>
 <div class="math notranslate nohighlight">
-\[r^2 u = \left( \frac{\partial^2 u}{\partial r^2} + \frac{1}{r} \frac{\partial u}{\partial r} + \frac{1}{r^2} \left( \frac{\partial^2 u}{\partial \theta^2} + \frac{\partial^2 u}{\partial \phi^2} \right) \right)\]</div>
+\[\nabla^2 u = \left( \frac{\partial^2 u}{\partial r^2} + \frac{1}{r} \frac{\partial u}{\partial r} + \frac{1}{r^2} \left( \frac{\partial^2 u}{\partial \theta^2} + \frac{\partial^2 u}{\partial \phi^2} \right) \right)\]</div>
 <p>In spherical coordinates:</p>
 <div class="math notranslate nohighlight">
-\[r^2 u = \left( \frac{\partial^2 u}{\partial r^2} + \frac{2}{r} \frac{\partial u}{\partial r} + \frac{1}{r^2} \left( \frac{\partial^2 u}{\partial \theta^2} + \frac{\sin^2 \theta}{r} \frac{\partial^2 u}{\partial \phi^2} \right) \right)\]</div>
+\[\nabla^2 u = \left( \frac{\partial^2 u}{\partial r^2} + \frac{2}{r} \frac{\partial u}{\partial r} + \frac{1}{r^2} \left( \frac{\partial^2 u}{\partial \theta^2} + \frac{\sin^2 \theta}{r} \frac{\partial^2 u}{\partial \phi^2} \right) \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\( v \)</span> is the wave velocity.</p>
 <p>In the one-dimensional case, the wave equation is:</p>
 <div class="math notranslate nohighlight">
@@ -494,26 +488,26 @@ document.write(`
 <section id="the-diffusion-equation">
 <h3>The Diffusion Equation<a class="headerlink" href="#the-diffusion-equation" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
-\[k r^2 u = \frac{\partial u}{\partial t}\]</div>
+\[k \nabla^2 u = \frac{\partial u}{\partial t}\]</div>
 <p>This equation is also used to describe heat flow.</p>
 </section>
 <hr class="docutils" />
 <section id="laplaces-equation">
 <h3>Laplace’s Equation<a class="headerlink" href="#laplaces-equation" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
-\[r^2 u = 0\]</div>
+\[\nabla^2 u = 0\]</div>
 </section>
 <hr class="docutils" />
 <section id="poissons-equation">
 <h3>Poisson’s Equation<a class="headerlink" href="#poissons-equation" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
-\[r^2 u = \rho(r)\]</div>
+\[\nabla^2 u = \rho(r)\]</div>
 </section>
 <hr class="docutils" />
 <section id="schrodingers-equation">
 <h3>Schrödinger’s Equation<a class="headerlink" href="#schrodingers-equation" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
-\[r^2 u + V(r) u = \frac{i \hbar}{2m} \frac{\partial u}{\partial t}\]</div>
+\[-\frac{\hbar^2}{2m}\nabla^2 u + V(r) u = \frac{i \hbar}{2m} \frac{\partial u}{\partial t}\]</div>
 </section>
 </section>
 <section id="general-form-of-the-linear-1st-order-pde">
