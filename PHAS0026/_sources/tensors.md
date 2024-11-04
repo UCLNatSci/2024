@@ -9,7 +9,7 @@ How many independent variables are needed to describe the response of a solid to
 In this chapter, we will consider how representation of these properties changes upon transformation from one coordinate system to another. We will consider real variables only and focus on three-dimensional Euclidean space. Some of the definitions will be given for $ N $-dimensional space.
 
 ![Properties of Independent Variables](tensors_fig1.png)
-Examples of (a) *scalar* - volume of a cake; (b) *vector* v- elocity of a champaign cork; (c) relation between directions of forces and displacements of each point in a solid; (d) metric of Minkowski space.
+Examples of (a) *scalar* - volume of a cake; (b) *vector* - velocity of a champaign cork; (c) relation between directions of forces and displacements of each point in a solid; (d) metric of Minkowski space.
 
 ---
 
