@@ -45,6 +45,8 @@ where $ u_1, u_2, \dots, u_M $ are parameters and $ f_i(u_1, \dots, u_M) $ are f
 
 ### Kronecker delta ($ \delta $) symbol
 
+We can define the Kronecker delta symbol through:
+
 ```{math}
 \delta_{ij} = 
 \begin{cases}
@@ -52,6 +54,8 @@ where $ u_1, u_2, \dots, u_M $ are parameters and $ f_i(u_1, \dots, u_M) $ are f
 0 & \text{if} \, i \neq j
 \end{cases}
 ```
+
+In matrix language, this is nothing more than the identity matrix!
 
 ---
 
@@ -100,7 +104,7 @@ In order to avoid confusion, the same index should not be used more than twice i
 ```
 and
 ```{math}
-\left( \um_{i=1}^N a_i\,x_i\right)^2 = (a_x\,x_i)^2 = (a_i\,x_i)(a_j\,x_j) = a_i\,a_j\,x_i\,x_j \quad \text{but not} \quad a_i\,x_i\,a_j\,x_j
+\left( \sum_{i=1}^N a_i\,x_i\right)^2 = (a_x\,x_i)^2 = (a_i\,x_i)(a_j\,x_j) = a_i\,a_j\,x_i\,x_j \quad \text{but not} \quad a_i\,x_i\,a_j\,x_j
 ```
 
 To demonstrate the effect of the Kronecker symbol:
@@ -690,9 +694,9 @@ A_{i_1 \dots i_N} = \frac{1}{2} \left( T_{i_1 \dots i_N} - T_{i_1 \dots i_m \dot
 
 ---
 
-## Tensors $ \delta_{ij} $ and $ \epsilon_{ijk} $
+## The identity and permutation tensors
 
-### Permutation Symbol and Permutation Tensor
+### Permutation Symbol and Permutation Tensor $ \epsilon_{ijk} $
 
 The permutation symbol $ \epsilon_{ijk} $ is a three-index object defined as:
 
@@ -704,6 +708,8 @@ The permutation symbol $ \epsilon_{ijk} $ is a three-index object defined as:
 \end{cases}
 ```
 This is also called the *Levi-Civita symbol*, *Levi-Civita density*, *alternating* tensor, and *signature*. Notations $\varepsilon_{ijk}$ and $e_{ijk}$ are also used in literature.
+
+In matrix and vector language the $\epsilon$ tensor is used for the cross product $\mathbf{C} = \mathbf{A} \times \mathbf{B} \Rightarrow C_k = \epsilon_{ijk}\,A_i\,B_j$
 
 The permutation symbol satisfies the following relations:
 
@@ -762,9 +768,9 @@ Using the orthogonality of $ L $ ($\text{det}(L) = 1$),
 
 i.e., the properties of $ \epsilon_{ijk} $ do not change under orthogonal transformation, and the subscripts change as they should for the third-order tensor.
 
-### $4^{th}$ Order Alternating Tensor $ \epsilon_{ijkl} $
+### $4^{th}$ Order $ \epsilon_{ijkl} $
 
-The permutation symbol can be viewed as a tensor. Components of the rank 4 permutation tensor are defined as:
+The components of the rank 4 permutation tensor can be defined as:
 
 ```{math}
 \epsilon_{ijkl} =

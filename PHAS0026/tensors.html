@@ -420,10 +420,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decomposing-a-tensor-into-symmetric-and-antisymmetric-parts">Decomposing a Tensor into Symmetric and Antisymmetric Parts</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensors-delta-ij-and-epsilon-ijk">Tensors <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutation-symbol-and-permutation-tensor">Permutation Symbol and Permutation Tensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-identity-and-permutation-tensors">The identity and permutation tensors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutation-symbol-and-permutation-tensor-epsilon-ijk">Permutation Symbol and Permutation Tensor <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proving-that-delta-ij-and-epsilon-ijk-are-tensors">Proving that <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> are tensors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#th-order-alternating-tensor-epsilon-ijkl"><span class="math notranslate nohighlight">\(4^{th}\)</span> Order Alternating Tensor <span class="math notranslate nohighlight">\( \epsilon_{ijkl} \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#th-order-epsilon-ijkl"><span class="math notranslate nohighlight">\(4^{th}\)</span> Order <span class="math notranslate nohighlight">\( \epsilon_{ijkl} \)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-epsilon-ijk">Applications of <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span>:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isotropic-tensors">Isotropic Tensors</a></li>
 </ul>
@@ -482,12 +482,14 @@ Examples of (a) <em>scalar</em> - volume of a cake; (b) <em>vector</em> v- eloci
 <hr class="docutils" />
 <section id="kronecker-delta-delta-symbol">
 <h3>Kronecker delta (<span class="math notranslate nohighlight">\( \delta \)</span>) symbol<a class="headerlink" href="#kronecker-delta-delta-symbol" title="Link to this heading">#</a></h3>
+<p>We can define the Kronecker delta symbol through:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\delta_{ij} = 
 \begin{cases}
 1 &amp; \text{if} \, i = j \\
 0 &amp; \text{if} \, i \neq j
 \end{cases}\end{split}\]</div>
+<p>In matrix language, this is nothing more than the identity matrix!</p>
 </section>
 <hr class="docutils" />
 <section id="summation-convention">
@@ -520,7 +522,7 @@ a_{ij}\,b_{jk}\,C_{kan} &amp;= \sum_{j=1}^3\,\sum_{k=1}^3 a_{ij}\,b_{jk}\,C_{kmn
 \[\frac{d\bar{x}_j}{\partial x_i} = \frac{\partial \phi_j}{\partial x_i} \quad \text{but not} \quad \frac{d\bar{x}_j}{\partial x_j}.\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
-\[\left( \um_{i=1}^N a_i\,x_i\right)^2 = (a_x\,x_i)^2 = (a_i\,x_i)(a_j\,x_j) = a_i\,a_j\,x_i\,x_j \quad \text{but not} \quad a_i\,x_i\,a_j\,x_j\]</div>
+\[\left( \sum_{i=1}^N a_i\,x_i\right)^2 = (a_x\,x_i)^2 = (a_i\,x_i)(a_j\,x_j) = a_i\,a_j\,x_i\,x_j \quad \text{but not} \quad a_i\,x_i\,a_j\,x_j\]</div>
 <p>To demonstrate the effect of the Kronecker symbol:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}b_j\,\delta_{ij} &amp;= b_i \\
@@ -898,10 +900,10 @@ Stress in a loaded deformable body.</p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="tensors-delta-ij-and-epsilon-ijk">
-<h2>Tensors <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span><a class="headerlink" href="#tensors-delta-ij-and-epsilon-ijk" title="Link to this heading">#</a></h2>
-<section id="permutation-symbol-and-permutation-tensor">
-<h3>Permutation Symbol and Permutation Tensor<a class="headerlink" href="#permutation-symbol-and-permutation-tensor" title="Link to this heading">#</a></h3>
+<section id="the-identity-and-permutation-tensors">
+<h2>The identity and permutation tensors<a class="headerlink" href="#the-identity-and-permutation-tensors" title="Link to this heading">#</a></h2>
+<section id="permutation-symbol-and-permutation-tensor-epsilon-ijk">
+<h3>Permutation Symbol and Permutation Tensor <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span><a class="headerlink" href="#permutation-symbol-and-permutation-tensor-epsilon-ijk" title="Link to this heading">#</a></h3>
 <p>The permutation symbol <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> is a three-index object defined as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\epsilon_{ijk} = \begin{cases} 
@@ -910,6 +912,7 @@ Stress in a loaded deformable body.</p>
 0 &amp; \text{if } i = j \text{ or } i = k \text{ or } j = k 
 \end{cases}\end{split}\]</div>
 <p>This is also called the <em>Levi-Civita symbol</em>, <em>Levi-Civita density</em>, <em>alternating</em> tensor, and <em>signature</em>. Notations <span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span> and <span class="math notranslate nohighlight">\(e_{ijk}\)</span> are also used in literature.</p>
+<p>In matrix and vector language the <span class="math notranslate nohighlight">\(\epsilon\)</span> tensor is used for the cross product <span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{A} \times \mathbf{B} \Rightarrow C_k = \epsilon_{ijk}\,A_i\,B_j\)</span></p>
 <p>The permutation symbol satisfies the following relations:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\delta_{ij} \,\epsilon_{ijk} &amp;= 0 \\
@@ -946,9 +949,9 @@ Stress in a loaded deformable body.</p>
 \[\epsilon'_{ijk} = \epsilon_{ijk},\]</div>
 <p>i.e., the properties of <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> do not change under orthogonal transformation, and the subscripts change as they should for the third-order tensor.</p>
 </section>
-<section id="th-order-alternating-tensor-epsilon-ijkl">
-<h3><span class="math notranslate nohighlight">\(4^{th}\)</span> Order Alternating Tensor <span class="math notranslate nohighlight">\( \epsilon_{ijkl} \)</span><a class="headerlink" href="#th-order-alternating-tensor-epsilon-ijkl" title="Link to this heading">#</a></h3>
-<p>The permutation symbol can be viewed as a tensor. Components of the rank 4 permutation tensor are defined as:</p>
+<section id="th-order-epsilon-ijkl">
+<h3><span class="math notranslate nohighlight">\(4^{th}\)</span> Order <span class="math notranslate nohighlight">\( \epsilon_{ijkl} \)</span><a class="headerlink" href="#th-order-epsilon-ijkl" title="Link to this heading">#</a></h3>
+<p>The components of the rank 4 permutation tensor can be defined as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\epsilon_{ijkl} =
 \begin{cases}
@@ -1277,10 +1280,10 @@ c \epsilon_{ijk} &amp;= C_{il} C_{jm} C_{kn} \epsilon_{lmn}\end{split}\]</div>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decomposing-a-tensor-into-symmetric-and-antisymmetric-parts">Decomposing a Tensor into Symmetric and Antisymmetric Parts</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensors-delta-ij-and-epsilon-ijk">Tensors <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutation-symbol-and-permutation-tensor">Permutation Symbol and Permutation Tensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-identity-and-permutation-tensors">The identity and permutation tensors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutation-symbol-and-permutation-tensor-epsilon-ijk">Permutation Symbol and Permutation Tensor <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proving-that-delta-ij-and-epsilon-ijk-are-tensors">Proving that <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> are tensors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#th-order-alternating-tensor-epsilon-ijkl"><span class="math notranslate nohighlight">\(4^{th}\)</span> Order Alternating Tensor <span class="math notranslate nohighlight">\( \epsilon_{ijkl} \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#th-order-epsilon-ijkl"><span class="math notranslate nohighlight">\(4^{th}\)</span> Order <span class="math notranslate nohighlight">\( \epsilon_{ijkl} \)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-epsilon-ijk">Applications of <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span>:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isotropic-tensors">Isotropic Tensors</a></li>
 </ul>
