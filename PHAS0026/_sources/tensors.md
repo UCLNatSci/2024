@@ -104,7 +104,7 @@ In order to avoid confusion, the same index should not be used more than twice i
 ```
 and
 ```{math}
-\left( \sum_{i=1}^N a_i\,x_i\right)^2 = (a_x\,x_i)^2 = (a_i\,x_i)(a_j\,x_j) = a_i\,a_j\,x_i\,x_j \quad \text{but not} \quad a_i\,x_i\,a_j\,x_j
+\left( \sum_{i=1}^N a_i\,x_i\right)^2 = (a_x\,x_i)^2 = (a_i\,x_i)(a_j\,x_j) = a_i\,a_j\,x_i\,x_j \quad \text{but not} \quad a_i\,x_i\,a_i\,x_i
 ```
 
 To demonstrate the effect of the Kronecker symbol:
