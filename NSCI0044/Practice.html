@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -410,26 +410,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">Geometry</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">Statistics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Sequences and Series</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Partial Fractions, Remainder Theorem, and Algebraic Fractions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiply-up">Multiply up</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-values">Choose values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#substitute-in">Substitute in</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-what-happens-if-a-factor-is-repeated">Example 2: What happens if a factor is repeated?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Multiply up</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Choose values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-like-terms">Compare like terms</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Substitute in</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-what-happens-if-there-is-a-quadratic-factor-that-can-t-be-factorized">Example 3: What happens if there is a quadratic factor that can’t be factorized?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Multiply up</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Choose values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Compare like terms</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Substitute in</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Partial Fractions, Remainder Theorem, and Algebraic Fractions</a></li>
 </ul>
 </li>
 </ul>
@@ -826,164 +807,9 @@ Factor the numerator and denominator:</p></li>
 </ol>
 <p>Thus, the quotient is <span class="math notranslate nohighlight">\( 3x + 1 \)</span> and the remainder is <span class="math notranslate nohighlight">\( 4 \)</span>, so:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\frac{3x^2 - 5x + 2}{x - 2} = 3x + 1 + \frac{4}{x - 2}.
-\}\\
-````{admonition}
-:class: seealso, dropdown\\## Example 1: denominator consists of distinct linear factors\\Consider the rational expression:\\```{math}
-\frac{4x^2 + 3x - 16}{(x-2)(x+1)(2x-3)}\end{aligned}\end{align} \]</div>
-<p>It can be shown that this can be expressed in the form:</p>
-<div class="math notranslate nohighlight">
-\[\frac{A}{x-2} + \frac{B}{x+1} + \frac{C}{2x-3}\]</div>
-<p>(We can treat this fact as known). Our problem becomes finding the values of the unknown constants <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>.</p>
-<section id="multiply-up">
-<h3>Multiply up<a class="headerlink" href="#multiply-up" title="Link to this heading">#</a></h3>
-<p>We know that:</p>
-<div class="math notranslate nohighlight">
-\[\frac{4x^2 + 3x - 16}{(x-2)(x+1)(2x-3)} = \frac{A}{x-2} + \frac{B}{x+1} + \frac{C}{2x-3}\]</div>
-<p>We start by multiplying both sides by <span class="math notranslate nohighlight">\((x-2)(x+1)(2x-3)\)</span>. This gives:</p>
-<div class="math notranslate nohighlight">
-\[4x^2 + 3x - 16 = A(x+1)(2x-3) + B(x-2)(2x-3) + C(x-2)(x+1)\]</div>
-</section>
-<section id="choose-values">
-<h3>Choose values<a class="headerlink" href="#choose-values" title="Link to this heading">#</a></h3>
-<p>This is true for all values of <span class="math notranslate nohighlight">\(x\)</span>, so it’s true for any values of <span class="math notranslate nohighlight">\(x\)</span> we care to choose. The strategy is to choose values that make most of the terms vanish. In this case, those values are <span class="math notranslate nohighlight">\(x=2\)</span>, <span class="math notranslate nohighlight">\(x=-1\)</span>, and <span class="math notranslate nohighlight">\(x=\frac{3}{2}\)</span>.</p>
-<ul>
-<li><p>Starting with <span class="math notranslate nohighlight">\(x=2\)</span>, we obtain:</p>
-<div class="math notranslate nohighlight">
-\[4(2)^2 + 3(2) - 16 = A(3) + B(0) + C(0)\]</div>
-<p>Therefore, <span class="math notranslate nohighlight">\(6 = 3A\)</span>, giving <span class="math notranslate nohighlight">\(A = 2\)</span>.</p>
-</li>
-<li><p>Setting <span class="math notranslate nohighlight">\(x = -1\)</span>, we get:</p>
-<div class="math notranslate nohighlight">
-\[4(-1)^2 + 3(-1) - 16 = A(0) + B(-3)(-5) + C(0)\]</div>
-<p>Therefore, <span class="math notranslate nohighlight">\(-15 = 15B\)</span>, giving <span class="math notranslate nohighlight">\(B = -1\)</span>.</p>
-</li>
-<li><p>Finally, setting <span class="math notranslate nohighlight">\(x = \frac{3}{2}\)</span> gives:</p>
-<div class="math notranslate nohighlight">
-\[4\left(\frac{3}{2}\right)^2 + 3\left(\frac{3}{2}\right) - 16 = A(0) + B(0) + C\left(\frac{-2}{5}\right)\]</div>
-<p>Thus, <span class="math notranslate nohighlight">\(-25 = -45C\)</span>, giving <span class="math notranslate nohighlight">\(C = 2\)</span>.</p>
-</li>
-</ul>
-</section>
-<section id="substitute-in">
-<h3>Substitute in<a class="headerlink" href="#substitute-in" title="Link to this heading">#</a></h3>
-<p>We now know the values of <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>, and have that:</p>
-<div class="math notranslate nohighlight">
-\[\frac{4x^2 + 3x - 16}{(x-2)(x+1)(2x-3)} = \frac{2}{x-2} - \frac{1}{x+1} + \frac{2}{2x-3}\]</div>
-</section>
-</section>
-<section id="example-2-what-happens-if-a-factor-is-repeated">
-<h2>Example 2: What happens if a factor is repeated?<a class="headerlink" href="#example-2-what-happens-if-a-factor-is-repeated" title="Link to this heading">#</a></h2>
-<p>Problem: Resolve into partial fractions:</p>
-<div class="math notranslate nohighlight">
-\[\frac{3x^2 + 6x + 5}{(x+2)^2(x-3)}\]</div>
-<p>Two things change in these circumstances: first, the form of the partial fractions is altered, and secondly, our “choose values” technique from above will no longer take us all the way on its own.</p>
-<p>The partial fractions form of this expression is actually:</p>
-<div class="math notranslate nohighlight">
-\[\frac{A}{x+2} + \frac{B}{(x+2)^2} + \frac{C}{x-3}\]</div>
-<section id="id5">
-<h3>Multiply up<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
-<p>We know that:</p>
-<div class="math notranslate nohighlight">
-\[\frac{3x^2 + 6x + 5}{(x+2)^2(x-3)} = \frac{A}{x+2} + \frac{B}{(x+2)^2} + \frac{C}{x-3}\]</div>
-<p>We start by multiplying both sides by <span class="math notranslate nohighlight">\((x+2)^2(x-3)\)</span>. This gives:</p>
-<div class="math notranslate nohighlight">
-\[3x^2 + 6x + 5 = A(x+2)(x-3) + B(x-3) + C(x+2)^2\]</div>
-</section>
-<section id="id6">
-<h3>Choose values<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
-<p>Again, we try to choose values that make most of the terms vanish. In this case, those values are <span class="math notranslate nohighlight">\(x = -2\)</span> and <span class="math notranslate nohighlight">\(x = 3\)</span>.</p>
-<ul>
-<li><p>Starting with <span class="math notranslate nohighlight">\(x = -2\)</span>, we obtain:</p>
-<div class="math notranslate nohighlight">
-\[3(-2)^2 + 6(-2) + 5 = A(0) + B(-5) + C(0)\]</div>
-<p>Therefore, <span class="math notranslate nohighlight">\(5 = -5B\)</span>, giving <span class="math notranslate nohighlight">\(B = -1\)</span>.</p>
-</li>
-<li><p>Setting <span class="math notranslate nohighlight">\(x = 3\)</span>, we get:</p>
-<div class="math notranslate nohighlight">
-\[3(3)^2 + 6(3) + 5 = A(0) + B(0) + C(5^2)\]</div>
-<p>Therefore, <span class="math notranslate nohighlight">\(50 = 25C\)</span>, giving <span class="math notranslate nohighlight">\(C = 2\)</span>.</p>
-</li>
-</ul>
-<p>Unfortunately, this is where “choosing values” runs out of steam, and we don’t yet know the value of <span class="math notranslate nohighlight">\(A\)</span>. We turn to…</p>
-</section>
-<section id="compare-like-terms">
-<h3>Compare like terms<a class="headerlink" href="#compare-like-terms" title="Link to this heading">#</a></h3>
-<p>The quickest way to calculate the value of <span class="math notranslate nohighlight">\(A\)</span> is to compare the <span class="math notranslate nohighlight">\(x^2\)</span> terms in:</p>
-<div class="math notranslate nohighlight">
-\[3x^2 + 6x + 5\]</div>
-<p>and</p>
-<div class="math notranslate nohighlight">
-\[A(x+2)(x-3) + B(x-3) + C(x+2)^2\]</div>
-<p>This gives us <span class="math notranslate nohighlight">\(3 = A + C\)</span>, from which we get <span class="math notranslate nohighlight">\(A = 3 - C = 3 - 2 = 1\)</span>.</p>
-</section>
-<section id="id7">
-<h3>Substitute in<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
-<p>We now know the values of <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>, and have that:</p>
-<div class="math notranslate nohighlight">
-\[\frac{3x^2 + 6x + 5}{(x+2)^2(x-3)} = \frac{1}{x+2} - \frac{1}{(x+2)^2} + \frac{2}{x-3}\]</div>
-</section>
-</section>
-<section id="example-3-what-happens-if-there-is-a-quadratic-factor-that-can-t-be-factorized">
-<h2>Example 3: What happens if there is a quadratic factor that can’t be factorized?<a class="headerlink" href="#example-3-what-happens-if-there-is-a-quadratic-factor-that-can-t-be-factorized" title="Link to this heading">#</a></h2>
-<p>Problem: Resolve into partial fractions:</p>
-<div class="math notranslate nohighlight">
-\[\frac{2x^2 + 7}{(x+2)(x^2+1)}\]</div>
-<p>The partial fractions form of this expression is:</p>
-<div class="math notranslate nohighlight">
-\[\frac{A}{x+2} + \frac{Bx + C}{x^2 + 1}\]</div>
-<section id="id8">
-<h3>Multiply up<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
-<p>We know that:</p>
-<div class="math notranslate nohighlight">
-\[\frac{2x^2 + 7}{(x+2)(x^2 + 1)} = \frac{A}{x+2} + \frac{Bx + C}{x^2 + 1}\]</div>
-<p>We start by multiplying both sides by <span class="math notranslate nohighlight">\((x+2)(x^2+1)\)</span>. This gives:</p>
-<div class="math notranslate nohighlight">
-\[2x^2 + 7 = A(x^2 + 1) + (Bx + C)(x+2)\]</div>
-</section>
-<section id="id9">
-<h3>Choose values<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
-<p>Again, we try to choose values that make most of the terms vanish. In this case, the only candidate is <span class="math notranslate nohighlight">\(x = -2\)</span>.</p>
-<p>Setting <span class="math notranslate nohighlight">\(x = -2\)</span>, we obtain:</p>
-<div class="math notranslate nohighlight">
-\[2(-2)^2 + 7 = A((-2)^2 + 1) + (Bx + C)0\]</div>
-<p>Therefore, <span class="math notranslate nohighlight">\(15 = 5A\)</span>, giving <span class="math notranslate nohighlight">\(A = 3\)</span>.</p>
-</section>
-<section id="id10">
-<h3>Compare like terms<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
-<p>We start by comparing the <span class="math notranslate nohighlight">\(x^2\)</span> terms in:</p>
-<div class="math notranslate nohighlight">
-\[2x^2 + 7\]</div>
-<p>and</p>
-<div class="math notranslate nohighlight">
-\[A(x^2 + 1) + (Bx + C)(x + 2)\]</div>
-<p>This gives us <span class="math notranslate nohighlight">\(2 = A + B\)</span>, from which we get <span class="math notranslate nohighlight">\(B = 2 - A = 2 - 3 = -1\)</span>.</p>
-<p>We can then compare constant terms, obtaining <span class="math notranslate nohighlight">\(7 = A + 2C\)</span>, meaning <span class="math notranslate nohighlight">\(2C = 7 - A = 7 - 3 = 4\)</span>, and thus <span class="math notranslate nohighlight">\(C = 2\)</span>.</p>
-</section>
-<section id="id11">
-<h3>Substitute in<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
-<p>We now know the values of <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>, and have that:</p>
-<div class="math notranslate nohighlight">
-\[\frac{2x^2 + 7}{(x+2)(x^2 + 1)} = \frac{3}{x+2} + \frac{2 - x}{x^2 + 1}\]</div>
-<hr class="docutils" />
-<p>Note that it’s entirely possible for both a repeated linear factor and an unfactorisable quadratic factor to appear in the numerator, as in:</p>
-<div class="math notranslate nohighlight">
-\[\frac{5x^2 + 8x + 9}{(x-2)(x+1)^2(x^2+1)}\]</div>
-<p>In which case these techniques are combined. The partial fractions form of this example, for instance, is:</p>
-<div class="math notranslate nohighlight">
-\[\frac{A}{x-2} + \frac{B}{x+1} + \frac{C}{(x+1)^2} + \frac{Dx + E}{x^2+1}\]</div>
-<p>This fairly complicated example is left as an exercise to the keen reader (answer: <span class="math notranslate nohighlight">\(A = 1\)</span>, <span class="math notranslate nohighlight">\(B = -1\)</span>, <span class="math notranslate nohighlight">\(C = -1\)</span>, <span class="math notranslate nohighlight">\(D = 0\)</span>, <span class="math notranslate nohighlight">\(E = -2\)</span>).</p>
-<p>Note also that in all these cases, the degree of the numerator is less than that of the denominator. If the degrees are equal, the partial fractions form of the expression has a constant term, and if that of the numerator is one more than that of the denominator, there’s also an <span class="math notranslate nohighlight">\(x\)</span>-term; etc. For example, the partial fractions form of:</p>
-<div class="math notranslate nohighlight">
-\[\frac{x^3 + 2x^2 + 1}{(x+2)(x+1)}\]</div>
-<p>is:</p>
-<div class="math notranslate nohighlight">
-\[\frac{A}{x+B} + \frac{Cx}{x+2} + \frac{D}{x+1}\]</div>
-<p>This is also left as an exercise (answer: <span class="math notranslate nohighlight">\(A = 1\)</span>, <span class="math notranslate nohighlight">\(B = -1\)</span>, <span class="math notranslate nohighlight">\(C = -1\)</span>, <span class="math notranslate nohighlight">\(D = 2\)</span>).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
+\[\frac{3x^2 - 5x + 2}{x - 2} = 3x + 1 + \frac{4}{x - 2}.
+\}
+\]</div>
 </section>
 </section>
 
@@ -1060,26 +886,7 @@ Factor the numerator and denominator:</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">Geometry</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">Statistics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Sequences and Series</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Partial Fractions, Remainder Theorem, and Algebraic Fractions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiply-up">Multiply up</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-values">Choose values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#substitute-in">Substitute in</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-what-happens-if-a-factor-is-repeated">Example 2: What happens if a factor is repeated?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Multiply up</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Choose values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-like-terms">Compare like terms</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Substitute in</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-what-happens-if-there-is-a-quadratic-factor-that-can-t-be-factorized">Example 3: What happens if there is a quadratic factor that can’t be factorized?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Multiply up</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Choose values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Compare like terms</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Substitute in</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Partial Fractions, Remainder Theorem, and Algebraic Fractions</a></li>
 </ul>
 </li>
 </ul>
