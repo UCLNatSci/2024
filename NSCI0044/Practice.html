@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practice';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -184,11 +186,17 @@
 <li class="toctree-l1"><a class="reference internal" href="Trigonometry.html">Trigonometry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Limits.html">Limits and Infinities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series.html">Series</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Differentiation.html">Rates of Change and Differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Integration.html">Areas and Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ODEs.html">Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Stats.html">Statistics and Probability</a></li>
+
+
+
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Practice Problems</a></li>
+
 </ul>
 
     </div>
@@ -361,7 +369,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -377,6 +387,54 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Practice Problems</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-and-graphs">Functions and Graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometry">Trigonometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences-and-series">Sequences and Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-geometry">Coordinate Geometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability">Probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-linear-equations">Solving Linear Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-fractions-remainder-theorem-and-algebraic-fractions">Partial Fractions, Remainder Theorem, and Algebraic Fractions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problem-solutions">Practice Problem Solutions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Trigonometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">Geometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Sequences and Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Partial Fractions, Remainder Theorem, and Algebraic Fractions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiply-up">Multiply up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-values">Choose values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#substitute-in">Substitute in</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-what-happens-if-a-factor-is-repeated">Example 2: What happens if a factor is repeated?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Multiply up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Choose values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-like-terms">Compare like terms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Substitute in</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-what-happens-if-there-is-a-quadratic-factor-that-can-t-be-factorized">Example 3: What happens if there is a quadratic factor that can’t be factorized?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Multiply up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Choose values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Compare like terms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Substitute in</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -388,12 +446,545 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="practice-problems">
 <h1>Practice Problems<a class="headerlink" href="#practice-problems" title="Link to this heading">#</a></h1>
-<p>Partial Fractions</p>
+<section id="algebra">
+<h2>Algebra<a class="headerlink" href="#algebra" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>[
-\frac{4x^2 + 3x - 16}{(x-2)(x+1)(2x-3)}
-]</p></li>
+<li><p>Solve <span class="math notranslate nohighlight">\( 2x^2 - 3x - 5 = 0 \)</span>.</p></li>
+<li><p>Factorize <span class="math notranslate nohighlight">\( x^2 + 7x + 10 \)</span>.</p></li>
+<li><p>Simplify <span class="math notranslate nohighlight">\( \frac{3x^2 - 2x}{x^2 - 4} \)</span>.</p></li>
+<li><p>Expand and simplify <span class="math notranslate nohighlight">\( (x + 3)(x - 4) \)</span>.</p></li>
+<li><p>Solve for <span class="math notranslate nohighlight">\( x \)</span>: <span class="math notranslate nohighlight">\( \frac{2}{x + 1} = 3 \)</span>.</p></li>
 </ol>
+</section>
+<section id="functions-and-graphs">
+<h2>Functions and Graphs<a class="headerlink" href="#functions-and-graphs" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Sketch the graph of <span class="math notranslate nohighlight">\( y = 2x^2 - 3x + 1 \)</span>.</p></li>
+<li><p>Find the inverse of the function <span class="math notranslate nohighlight">\( f(x) = \frac{3x - 5}{2} \)</span>.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\( f(x) = 2x + 1 \)</span>, find the value of <span class="math notranslate nohighlight">\( f(3) \)</span>.</p></li>
+<li><p>Determine the domain and range of <span class="math notranslate nohighlight">\( f(x) = \sqrt{x-2} \)</span>.</p></li>
+<li><p>Find the turning points of the function <span class="math notranslate nohighlight">\( y = x^3 - 3x^2 + 2x \)</span>.</p></li>
+</ol>
+</section>
+<section id="trigonometry">
+<h2>Trigonometry<a class="headerlink" href="#trigonometry" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Solve <span class="math notranslate nohighlight">\( \sin \theta = \frac{1}{2} \)</span> for <span class="math notranslate nohighlight">\( 0^\circ \leq \theta &lt; 360^\circ \)</span>.</p></li>
+<li><p>Prove the identity: <span class="math notranslate nohighlight">\( \sin^2 \theta + \cos^2 \theta = 1 \)</span>.</p></li>
+<li><p>Find the exact value of <span class="math notranslate nohighlight">\( \tan 45^\circ \)</span>.</p></li>
+<li><p>Solve <span class="math notranslate nohighlight">\( \cos \theta = -\frac{1}{2} \)</span> for <span class="math notranslate nohighlight">\( 0^\circ \leq \theta &lt; 360^\circ \)</span>.</p></li>
+<li><p>Solve <span class="math notranslate nohighlight">\( \sin(\theta) = \frac{\sqrt{3}}{2} \)</span> for <span class="math notranslate nohighlight">\( 0 \leq \theta &lt; 2\pi \)</span> (in radians).</p></li>
+</ol>
+</section>
+<section id="sequences-and-series">
+<h2>Sequences and Series<a class="headerlink" href="#sequences-and-series" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Find the 10th term of the arithmetic sequence: <span class="math notranslate nohighlight">\( 2, 5, 8, 11, \dots \)</span>.</p></li>
+<li><p>Calculate the sum of the first 15 terms of the geometric series: <span class="math notranslate nohighlight">\( 3, 6, 12, 24, \dots \)</span>.</p></li>
+<li><p>The nth term of a sequence is given by <span class="math notranslate nohighlight">\( a_n = 4n - 1 \)</span>. Find the 20th term.</p></li>
+<li><p>Find the sum of the infinite geometric series <span class="math notranslate nohighlight">\( 1 + \frac{1}{2} + \frac{1}{4} + \dots \)</span>.</p></li>
+<li><p>If the first term of an arithmetic sequence is 5 and the common difference is 3, find the sum of the first 20 terms.</p></li>
+</ol>
+</section>
+<section id="coordinate-geometry">
+<h2>Coordinate Geometry<a class="headerlink" href="#coordinate-geometry" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Find the equation of the line passing through the points <span class="math notranslate nohighlight">\( (2, 3) \)</span> and <span class="math notranslate nohighlight">\( (4, 7) \)</span>.</p></li>
+<li><p>What is the distance between the points <span class="math notranslate nohighlight">\( (1, 2) \)</span> and <span class="math notranslate nohighlight">\( (4, 6) \)</span>?</p></li>
+<li><p>Find the midpoint of the line segment joining <span class="math notranslate nohighlight">\( (-3, 2) \)</span> and <span class="math notranslate nohighlight">\( (5, -4) \)</span>.</p></li>
+<li><p>Find the equation of the line parallel to <span class="math notranslate nohighlight">\( 3x - 4y = 12 \)</span> that passes through the point <span class="math notranslate nohighlight">\( (1, 2) \)</span>.</p></li>
+<li><p>Find the area of the triangle with vertices at <span class="math notranslate nohighlight">\( (1, 2) \)</span>, <span class="math notranslate nohighlight">\( (3, 4) \)</span>, and <span class="math notranslate nohighlight">\( (5, 0) \)</span>.</p></li>
+</ol>
+</section>
+<section id="probability">
+<h2>Probability<a class="headerlink" href="#probability" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>A bag contains 5 red balls and 3 blue balls. What is the probability of drawing a red ball?</p></li>
+<li><p>Two dice are rolled. What is the probability of getting a sum of 8?</p></li>
+<li><p>A deck of cards contains 52 cards. What is the probability of drawing a queen?</p></li>
+<li><p>A coin is flipped three times. What is the probability of getting exactly two heads?</p></li>
+<li><p>A box contains 10 marbles: 4 red, 3 blue, and 3 green. If one marble is drawn at random, what is the probability it is either red or green?</p></li>
+</ol>
+</section>
+<section id="solving-linear-equations">
+<h2>Solving Linear Equations<a class="headerlink" href="#solving-linear-equations" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Solve <span class="math notranslate nohighlight">\( 3x - 5 = 16 \)</span>.</p></li>
+<li><p>Solve the system of equations:</p>
+<div class="math notranslate nohighlight">
+\[2x + y = 7 \quad \text{and} \quad x - y = 1.\]</div>
+</li>
+<li><p>Solve for <span class="math notranslate nohighlight">\( x \)</span>: <span class="math notranslate nohighlight">\( 5x + 3 = 2x + 12 \)</span>.</p></li>
+<li><p>Solve the system of equations:</p>
+<div class="math notranslate nohighlight">
+\[4x - 2y = 10 \quad \text{and} \quad 3x + y = 9.\]</div>
+</li>
+<li><p>Solve <span class="math notranslate nohighlight">\( 2(x - 1) = 3(x + 2) - 4 \)</span>.</p></li>
+</ol>
+</section>
+<section id="partial-fractions-remainder-theorem-and-algebraic-fractions">
+<h2>Partial Fractions, Remainder Theorem, and Algebraic Fractions<a class="headerlink" href="#partial-fractions-remainder-theorem-and-algebraic-fractions" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Express <span class="math notranslate nohighlight">\( \frac{3x + 5}{(x - 1)(x + 2)} \)</span> as the sum of partial fractions.</p></li>
+<li><p>Use the remainder theorem to find the remainder when <span class="math notranslate nohighlight">\( x^3 - 4x^2 + 3x - 2 \)</span> is divided by <span class="math notranslate nohighlight">\( x - 1 \)</span>.</p></li>
+<li><p>Simplify <span class="math notranslate nohighlight">\( \frac{x^2 + 5x + 6}{x^2 - 1} \)</span>.</p></li>
+<li><p>Find the value of the constant <span class="math notranslate nohighlight">\( k \)</span> such that <span class="math notranslate nohighlight">\( \frac{x^2 + 2x + k}{x + 1} \)</span> has a remainder of 5 when divided by <span class="math notranslate nohighlight">\( x + 1 \)</span>.</p></li>
+<li><p>Use long division to divide <span class="math notranslate nohighlight">\( \frac{x^3 - 2x^2 + 3x - 4}{x - 1} \)</span> and find the quotient and remainder.</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="practice-problem-solutions">
+<h1>Practice Problem Solutions<a class="headerlink" href="#practice-problem-solutions" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>Algebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Solve <span class="math notranslate nohighlight">\( 3x - 5 = 16 \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[3x = 21 \quad \Rightarrow \quad x = 7.\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Solve the system of equations:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[2x + y = 7 \quad \text{and} \quad x - y = 1.\]</div>
+<p>Add the equations:</p>
+<div class="math notranslate nohighlight">
+\[(2x + y) + (x - y) = 7 + 1 \quad \Rightarrow \quad 3x = 8 \quad \Rightarrow \quad x = \frac{8}{3}.\]</div>
+<p>Substitute <span class="math notranslate nohighlight">\( x = \frac{8}{3} \)</span> into <span class="math notranslate nohighlight">\( 2x + y = 7 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[2\left(\frac{8}{3}\right) + y = 7 \quad \Rightarrow \quad \frac{16}{3} + y = 7 \quad \Rightarrow \quad y = 7 - \frac{16}{3} = \frac{5}{3}.\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Solve for <span class="math notranslate nohighlight">\( x \)</span>: <span class="math notranslate nohighlight">\( 5x + 3 = 2x + 12 \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[3x = 9 \quad \Rightarrow \quad x = 3.\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Solve the system of equations:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[4x - 2y = 10 \quad \text{and} \quad 3x + y = 9.\]</div>
+<p>Multiply the second equation by 2:</p>
+<div class="math notranslate nohighlight">
+\[6x + 2y = 18.\]</div>
+<p>Add the equations:</p>
+<div class="math notranslate nohighlight">
+\[(4x - 2y) + (6x + 2y) = 10 + 18 \quad \Rightarrow \quad 10x = 28 \quad \Rightarrow \quad x = \frac{28}{10} = 2.8.\]</div>
+<p>Substitute <span class="math notranslate nohighlight">\( x = 2.8 \)</span> into <span class="math notranslate nohighlight">\( 3x + y = 9 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[3(2.8) + y = 9 \quad \Rightarrow \quad 8.4 + y = 9 \quad \Rightarrow \quad y = 0.6.\]</div>
+<ol class="arabic simple" start="5">
+<li><p>Solve <span class="math notranslate nohighlight">\( 2(x - 1) = 3(x + 2) - 4 \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[2x - 2 = 3x + 6 - 4 \quad \Rightarrow \quad 2x - 2 = 3x + 2 \quad \Rightarrow \quad -2 = x + 2 \quad \Rightarrow \quad x = -4.\]</div>
+</section>
+<hr class="docutils" />
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Find the range of <span class="math notranslate nohighlight">\( f(x) = 2x + 3 \)</span> when <span class="math notranslate nohighlight">\( x \)</span> is in the set <span class="math notranslate nohighlight">\( \{1, 2, 3\} \)</span>:
+For <span class="math notranslate nohighlight">\( x = 1 \)</span>: <span class="math notranslate nohighlight">\( f(1) = 2(1) + 3 = 5 \)</span>.</p></li>
+</ol>
+<p>For <span class="math notranslate nohighlight">\( x = 2 \)</span>: <span class="math notranslate nohighlight">\( f(2) = 2(2) + 3 = 7 \)</span>.</p>
+<p>For <span class="math notranslate nohighlight">\( x = 3 \)</span>: <span class="math notranslate nohighlight">\( f(3) = 2(3) + 3 = 9 \)</span>.</p>
+<p>Thus, the range is <span class="math notranslate nohighlight">\( \{5, 7, 9\} \)</span>.</p>
+<ol class="arabic simple" start="2">
+<li><p>Solve <span class="math notranslate nohighlight">\( f(x) = 0 \)</span> for <span class="math notranslate nohighlight">\( f(x) = 3x^2 - 5x + 2 \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[3x^2 - 5x + 2 = 0.\]</div>
+<p>Use the quadratic formula:</p>
+<div class="math notranslate nohighlight">
+\[x = \frac{-(-5) \pm \sqrt{(-5)^2 - 4(3)(2)}}{2(3)} = \frac{5 \pm \sqrt{25 - 24}}{6} = \frac{5 \pm \sqrt{1}}{6} = \frac{5 \pm 1}{6}.\]</div>
+<p>Thus, <span class="math notranslate nohighlight">\( x = \frac{6}{6} = 1 \)</span> or <span class="math notranslate nohighlight">\( x = \frac{4}{6} = \frac{2}{3} \)</span>.</p>
+<ol class="arabic simple" start="3">
+<li><p>Find the domain of <span class="math notranslate nohighlight">\( f(x) = \frac{1}{x-2} \)</span>:
+The domain is all real numbers except <span class="math notranslate nohighlight">\( x = 2 \)</span>, where the denominator is zero. Thus, the domain is <span class="math notranslate nohighlight">\( x \in \mathbb{R} \setminus \{2\} \)</span>.</p></li>
+<li><p>Find the inverse of <span class="math notranslate nohighlight">\( f(x) = 2x + 1 \)</span>:
+To find the inverse, swap <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> and solve for <span class="math notranslate nohighlight">\( y \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[x = 2y + 1 \quad \Rightarrow \quad x - 1 = 2y \quad \Rightarrow \quad y = \frac{x - 1}{2}.\]</div>
+<p>Thus, the inverse is <span class="math notranslate nohighlight">\( f^{-1}(x) = \frac{x - 1}{2} \)</span>.</p>
+<ol class="arabic simple" start="5">
+<li><p>Solve <span class="math notranslate nohighlight">\( f(x) = 4 \)</span> for <span class="math notranslate nohighlight">\( f(x) = x^2 - 3x + 2 \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[x^2 - 3x + 2 = 4 \quad \Rightarrow \quad x^2 - 3x - 2 = 0.\]</div>
+<p>Factor the quadratic:</p>
+<div class="math notranslate nohighlight">
+\[(x - 2)(x - (-1)) = 0.\]</div>
+<p>Thus, <span class="math notranslate nohighlight">\( x = 2 \)</span> or <span class="math notranslate nohighlight">\( x = -1 \)</span>.</p>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h2>Trigonometry<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Solve <span class="math notranslate nohighlight">\( \sin x = \frac{1}{2} \)</span> for <span class="math notranslate nohighlight">\( 0^\circ \leq x \leq 360^\circ \)</span>:
+The solutions are <span class="math notranslate nohighlight">\( x = 30^\circ \)</span> and <span class="math notranslate nohighlight">\( x = 150^\circ \)</span>.</p></li>
+<li><p>Find the exact value of <span class="math notranslate nohighlight">\( \cos 45^\circ \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\cos 45^\circ = \frac{\sqrt{2}}{2}.\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Find the period of <span class="math notranslate nohighlight">\( f(x) = \sin(3x) \)</span>:
+The period of <span class="math notranslate nohighlight">\( f(x) = \sin(kx) \)</span> is <span class="math notranslate nohighlight">\( \frac{360^\circ}{k} \)</span>, so for <span class="math notranslate nohighlight">\( k = 3 \)</span>, the period is:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{360^\circ}{3} = 120^\circ.\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Solve <span class="math notranslate nohighlight">\( \tan x = 1 \)</span> for <span class="math notranslate nohighlight">\( 0^\circ \leq x \leq 360^\circ \)</span>:
+The solutions are <span class="math notranslate nohighlight">\( x = 45^\circ \)</span> and <span class="math notranslate nohighlight">\( x = 225^\circ \)</span>.</p></li>
+<li><p>Find <span class="math notranslate nohighlight">\( \sin \theta \)</span> if <span class="math notranslate nohighlight">\( \theta = 60^\circ \)</span> (radians):</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\theta = 60^\circ = \frac{\pi}{3} \text{ radians}.\]</div>
+<div class="math notranslate nohighlight">
+\[\sin\left( \frac{\pi}{3} \right) = \frac{\sqrt{3}}{2}.\]</div>
+</section>
+<hr class="docutils" />
+<section id="geometry">
+<h2>Geometry<a class="headerlink" href="#geometry" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Find the distance between the points <span class="math notranslate nohighlight">\( (1, 2) \)</span> and <span class="math notranslate nohighlight">\( (4, 6) \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[d = \sqrt{(4 - 1)^2 + (6 - 2)^2} = \sqrt{9 + 16} = \sqrt{25} = 5.\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Find the midpoint of the line segment joining <span class="math notranslate nohighlight">\( (-3, 2) \)</span> and <span class="math notranslate nohighlight">\( (5, -4) \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{Midpoint} = \left( \frac{-3 + 5}{2}, \frac{2 + (-4)}{2} \right) = (1, -1).\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Find the equation of the line parallel to <span class="math notranslate nohighlight">\( 3x - 4y = 12 \)</span> that passes through the point <span class="math notranslate nohighlight">\( (1, 2) \)</span>:
+Rearranging <span class="math notranslate nohighlight">\( 3x - 4y = 12 \)</span> gives <span class="math notranslate nohighlight">\( y = \frac{3}{4}x - 3 \)</span>. The slope is <span class="math notranslate nohighlight">\( \frac{3}{4} \)</span>.
+Using the point-slope form:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[y - 2 = \frac{3}{4}(x - 1) \quad \Rightarrow \quad y = \frac{3}{4}x + \frac{5}{4}.\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Find the area of the triangle with vertices at <span class="math notranslate nohighlight">\( (1, 2) \)</span>, <span class="math notranslate nohighlight">\( (3, 4) \)</span>, and <span class="math notranslate nohighlight">\( (5, 0) \)</span>:
+Using the area formula for a triangle with vertices <span class="math notranslate nohighlight">\( (x_1, y_1) \)</span>, <span class="math notranslate nohighlight">\( (x_2, y_2) \)</span>, and <span class="math notranslate nohighlight">\( (x_3, y_3) \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{Area} = \frac{1}{2} \left| x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2) \right|\]</div>
+<div class="math notranslate nohighlight">
+\[= \frac{1}{2} \left| 1(4 - 0) + 3(0 - 2) + 5(2 - 4) \right| = \frac{1}{2} \left| 4 - 6 - 10 \right| = \frac{1}{2} \times 12 = 6.\]</div>
+<ol class="arabic simple" start="5">
+<li><p>Find the circumference of a circle with radius 7 cm:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[C = 2\pi r = 2\pi \times 7 = 14\pi \text{ cm}.\]</div>
+</section>
+<hr class="docutils" />
+<section id="statistics">
+<h2>Statistics<a class="headerlink" href="#statistics" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Find the mean of the data set <span class="math notranslate nohighlight">\( 3, 7, 8, 5, 10 \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{Mean} = \frac{3 + 7 + 8 + 5 + 10}{5} = \frac{33}{5} = 6.6.\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Calculate the median of the data set <span class="math notranslate nohighlight">\( 4, 1, 7, 3, 6 \)</span>:
+Sort the data: <span class="math notranslate nohighlight">\( 1, 3, 4, 6, 7 \)</span>. The median is the middle value:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{Median} = 4.\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Find the mode of the data set <span class="math notranslate nohighlight">\( 2, 4, 4, 6, 7, 7, 7 \)</span>:
+The mode is the most frequent number:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{Mode} = 7.\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Find the standard deviation of the data set <span class="math notranslate nohighlight">\( 2, 4, 6, 8 \)</span>:
+First, find the mean:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{Mean} = \frac{2 + 4 + 6 + 8}{4} = 5.\]</div>
+<p>Then, find the squared differences from the mean:</p>
+<div class="math notranslate nohighlight">
+\[(2 - 5)^2 = 9, \quad (4 - 5)^2 = 1, \quad (6 - 5)^2 = 1, \quad (8 - 5)^2 = 9.\]</div>
+<p>The variance is the average of these squared differences:</p>
+<div class="math notranslate nohighlight">
+\[\text{Variance} = \frac{9 + 1 + 1 + 9}{4} = 5.\]</div>
+<p>Thus, the standard deviation is:</p>
+<div class="math notranslate nohighlight">
+\[\text{Standard Deviation} = \sqrt{5} \approx 2.24.\]</div>
+<ol class="arabic simple" start="5">
+<li><p>Find the probability of drawing a red card from a standard deck of cards:
+There are 52 cards in total, with 26 red cards (hearts and diamonds):</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{Probability} = \frac{26}{52} = \frac{1}{2}.\]</div>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>Sequences and Series<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Find the 5th term of the arithmetic sequence: <span class="math notranslate nohighlight">\( 2, 5, 8, 11, \dots \)</span>:
+The common difference is 3. The nth term formula is:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[a_n = a_1 + (n-1) \times d.\]</div>
+<p>For the 5th term:</p>
+<div class="math notranslate nohighlight">
+\[a_5 = 2 + (5-1) \times 3 = 2 + 12 = 14.\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Find the sum of the first 6 terms of the geometric sequence: <span class="math notranslate nohighlight">\( 3, 6, 12, 24, \dots \)</span>:
+The first term is <span class="math notranslate nohighlight">\( a_1 = 3 \)</span> and the common ratio is <span class="math notranslate nohighlight">\( r = 2 \)</span>. The sum of the first <span class="math notranslate nohighlight">\( n \)</span> terms of a geometric sequence is:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[S_n = \frac{a_1(1 - r^n)}{1 - r}.\]</div>
+<p>For <span class="math notranslate nohighlight">\( n = 6 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[S_6 = \frac{3(1 - 2^6)}{1 - 2} = \frac{3(1 - 64)}{-1} = \frac{3 \times (-63)}{-1} = 189.\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Find the 10th term of the Fibonacci sequence:
+The Fibonacci sequence is defined by <span class="math notranslate nohighlight">\( F_1 = 1 \)</span>, <span class="math notranslate nohighlight">\( F_2 = 1 \)</span>, and <span class="math notranslate nohighlight">\( F_n = F_{n-1} + F_{n-2} \)</span>.
+The first 10 terms are:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[1, 1, 2, 3, 5, 8, 13, 21, 34, 55.\]</div>
+<p>Thus, the 10th term is <span class="math notranslate nohighlight">\( 55 \)</span>.</p>
+<ol class="arabic simple" start="4">
+<li><p>Find the sum of the first 8 terms of the arithmetic sequence: <span class="math notranslate nohighlight">\( 4, 8, 12, 16, \dots \)</span>:
+The first term is <span class="math notranslate nohighlight">\( a_1 = 4 \)</span> and the common difference is <span class="math notranslate nohighlight">\( d = 4 \)</span>. The sum of the first <span class="math notranslate nohighlight">\( n \)</span> terms is:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[S_n = \frac{n}{2} \times (2a_1 + (n-1) \times d).\]</div>
+<p>For <span class="math notranslate nohighlight">\( n = 8 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[S_8 = \frac{8}{2} \times (2 \times 4 + (8-1) \times 4) = 4 \times (8 + 28) = 4 \times 36 = 144.\]</div>
+<ol class="arabic simple" start="5">
+<li><p>Find the sum of the first 5 terms of the geometric sequence: <span class="math notranslate nohighlight">\( 1, 3, 9, 27, \dots \)</span>:
+The first term is <span class="math notranslate nohighlight">\( a_1 = 1 \)</span> and the common ratio is <span class="math notranslate nohighlight">\( r = 3 \)</span>. The sum of the first <span class="math notranslate nohighlight">\( n \)</span> terms is:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[S_n = \frac{a_1(1 - r^n)}{1 - r}.\]</div>
+<p>For <span class="math notranslate nohighlight">\( n = 5 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[S_5 = \frac{1(1 - 3^5)}{1 - 3} = \frac{1(1 - 243)}{-2} = \frac{-242}{-2} = 121.\]</div>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h2>Partial Fractions, Remainder Theorem, and Algebraic Fractions<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Decompose <span class="math notranslate nohighlight">\( \frac{5x + 3}{x^2 + 2x - 3} \)</span> into partial fractions:
+Factor the denominator:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[x^2 + 2x - 3 = (x - 1)(x + 3).\]</div>
+<p>Write the partial fraction decomposition:</p>
+<div class="math notranslate nohighlight">
+\[\frac{5x + 3}{(x - 1)(x + 3)} = \frac{A}{x - 1} + \frac{B}{x + 3}.\]</div>
+<p>Multiply both sides by <span class="math notranslate nohighlight">\( (x - 1)(x + 3) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[5x + 3 = A(x + 3) + B(x - 1).\]</div>
+<p>Expanding both sides:</p>
+<div class="math notranslate nohighlight">
+\[5x + 3 = (A + B)x + (3A - B).\]</div>
+<p>Equate the coefficients of <span class="math notranslate nohighlight">\( x \)</span> and the constant term:</p>
+<div class="math notranslate nohighlight">
+\[A + B = 5 \quad \text{and} \quad 3A - B = 3.\]</div>
+<p>Solve the system of equations:</p>
+<div class="math notranslate nohighlight">
+\[A = 2, \quad B = 3.\]</div>
+<p>Thus, the partial fraction decomposition is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{5x + 3}{(x - 1)(x + 3)} = \frac{2}{x - 1} + \frac{3}{x + 3}.\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Use the remainder theorem to find the remainder when <span class="math notranslate nohighlight">\( f(x) = 3x^3 + 2x^2 - 5x + 4 \)</span> is divided by <span class="math notranslate nohighlight">\( x - 2 \)</span>:
+The remainder is <span class="math notranslate nohighlight">\( f(2) \)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f(2) = 3(2)^3 + 2(2)^2 - 5(2) + 4 = 3(8) + 2(4) - 10 + 4 = 24 + 8 - 10 + 4 = 26.\]</div>
+<p>The remainder is <span class="math notranslate nohighlight">\( 26 \)</span>.</p>
+<ol class="arabic simple" start="3">
+<li><p>Simplify the expression <span class="math notranslate nohighlight">\( \frac{x^2 + 2x - 3}{x^2 + x - 6} \)</span>:
+Factor the numerator and denominator:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{x^2 + 2x - 3}{x^2 + x - 6} = \frac{(x - 1)(x + 3)}{(x - 2)(x + 3)}.\]</div>
+<p>Cancel the common factor <span class="math notranslate nohighlight">\( x + 3 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{x - 1}{x - 2}.\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Simplify the expression <span class="math notranslate nohighlight">\( \frac{2x^2 + 5x - 3}{x^2 + 4x - 5} \)</span>:
+Factor the numerator and denominator:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{2x^2 + 5x - 3}{x^2 + 4x - 5} = \frac{(2x - 1)(x + 3)}{(x - 1)(x + 5)}.\]</div>
+<ol class="arabic simple" start="5">
+<li><p>Perform polynomial long division: <span class="math notranslate nohighlight">\( \frac{3x^2 - 5x + 2}{x - 2} \)</span>:</p></li>
+<li><p>Divide the leading term <span class="math notranslate nohighlight">\( 3x^2 \)</span> by <span class="math notranslate nohighlight">\( x \)</span>: <span class="math notranslate nohighlight">\( 3x \)</span>.</p></li>
+<li><p>Multiply <span class="math notranslate nohighlight">\( 3x \)</span> by <span class="math notranslate nohighlight">\( x - 2 \)</span>: <span class="math notranslate nohighlight">\( 3x^2 - 6x \)</span>.</p></li>
+<li><p>Subtract <span class="math notranslate nohighlight">\( (3x^2 - 6x) \)</span> from <span class="math notranslate nohighlight">\( 3x^2 - 5x + 2 \)</span>: <span class="math notranslate nohighlight">\( x + 2 \)</span>.</p></li>
+<li><p>Divide <span class="math notranslate nohighlight">\( x \)</span> by <span class="math notranslate nohighlight">\( x \)</span>: <span class="math notranslate nohighlight">\( 1 \)</span>.</p></li>
+<li><p>Multiply <span class="math notranslate nohighlight">\( 1 \)</span> by <span class="math notranslate nohighlight">\( x - 2 \)</span>: <span class="math notranslate nohighlight">\( x - 2 \)</span>.</p></li>
+<li><p>Subtract <span class="math notranslate nohighlight">\( (x - 2) \)</span> from <span class="math notranslate nohighlight">\( x + 2 \)</span>: <span class="math notranslate nohighlight">\( 4 \)</span>.</p></li>
+</ol>
+<p>Thus, the quotient is <span class="math notranslate nohighlight">\( 3x + 1 \)</span> and the remainder is <span class="math notranslate nohighlight">\( 4 \)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\frac{3x^2 - 5x + 2}{x - 2} = 3x + 1 + \frac{4}{x - 2}.
+\}\\
+````{admonition}
+:class: seealso, dropdown\\## Example 1: denominator consists of distinct linear factors\\Consider the rational expression:\\```{math}
+\frac{4x^2 + 3x - 16}{(x-2)(x+1)(2x-3)}\end{aligned}\end{align} \]</div>
+<p>It can be shown that this can be expressed in the form:</p>
+<div class="math notranslate nohighlight">
+\[\frac{A}{x-2} + \frac{B}{x+1} + \frac{C}{2x-3}\]</div>
+<p>(We can treat this fact as known). Our problem becomes finding the values of the unknown constants <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<section id="multiply-up">
+<h3>Multiply up<a class="headerlink" href="#multiply-up" title="Link to this heading">#</a></h3>
+<p>We know that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{4x^2 + 3x - 16}{(x-2)(x+1)(2x-3)} = \frac{A}{x-2} + \frac{B}{x+1} + \frac{C}{2x-3}\]</div>
+<p>We start by multiplying both sides by <span class="math notranslate nohighlight">\((x-2)(x+1)(2x-3)\)</span>. This gives:</p>
+<div class="math notranslate nohighlight">
+\[4x^2 + 3x - 16 = A(x+1)(2x-3) + B(x-2)(2x-3) + C(x-2)(x+1)\]</div>
+</section>
+<section id="choose-values">
+<h3>Choose values<a class="headerlink" href="#choose-values" title="Link to this heading">#</a></h3>
+<p>This is true for all values of <span class="math notranslate nohighlight">\(x\)</span>, so it’s true for any values of <span class="math notranslate nohighlight">\(x\)</span> we care to choose. The strategy is to choose values that make most of the terms vanish. In this case, those values are <span class="math notranslate nohighlight">\(x=2\)</span>, <span class="math notranslate nohighlight">\(x=-1\)</span>, and <span class="math notranslate nohighlight">\(x=\frac{3}{2}\)</span>.</p>
+<ul>
+<li><p>Starting with <span class="math notranslate nohighlight">\(x=2\)</span>, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[4(2)^2 + 3(2) - 16 = A(3) + B(0) + C(0)\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(6 = 3A\)</span>, giving <span class="math notranslate nohighlight">\(A = 2\)</span>.</p>
+</li>
+<li><p>Setting <span class="math notranslate nohighlight">\(x = -1\)</span>, we get:</p>
+<div class="math notranslate nohighlight">
+\[4(-1)^2 + 3(-1) - 16 = A(0) + B(-3)(-5) + C(0)\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(-15 = 15B\)</span>, giving <span class="math notranslate nohighlight">\(B = -1\)</span>.</p>
+</li>
+<li><p>Finally, setting <span class="math notranslate nohighlight">\(x = \frac{3}{2}\)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[4\left(\frac{3}{2}\right)^2 + 3\left(\frac{3}{2}\right) - 16 = A(0) + B(0) + C\left(\frac{-2}{5}\right)\]</div>
+<p>Thus, <span class="math notranslate nohighlight">\(-25 = -45C\)</span>, giving <span class="math notranslate nohighlight">\(C = 2\)</span>.</p>
+</li>
+</ul>
+</section>
+<section id="substitute-in">
+<h3>Substitute in<a class="headerlink" href="#substitute-in" title="Link to this heading">#</a></h3>
+<p>We now know the values of <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>, and have that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{4x^2 + 3x - 16}{(x-2)(x+1)(2x-3)} = \frac{2}{x-2} - \frac{1}{x+1} + \frac{2}{2x-3}\]</div>
+</section>
+</section>
+<section id="example-2-what-happens-if-a-factor-is-repeated">
+<h2>Example 2: What happens if a factor is repeated?<a class="headerlink" href="#example-2-what-happens-if-a-factor-is-repeated" title="Link to this heading">#</a></h2>
+<p>Problem: Resolve into partial fractions:</p>
+<div class="math notranslate nohighlight">
+\[\frac{3x^2 + 6x + 5}{(x+2)^2(x-3)}\]</div>
+<p>Two things change in these circumstances: first, the form of the partial fractions is altered, and secondly, our “choose values” technique from above will no longer take us all the way on its own.</p>
+<p>The partial fractions form of this expression is actually:</p>
+<div class="math notranslate nohighlight">
+\[\frac{A}{x+2} + \frac{B}{(x+2)^2} + \frac{C}{x-3}\]</div>
+<section id="id5">
+<h3>Multiply up<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>We know that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{3x^2 + 6x + 5}{(x+2)^2(x-3)} = \frac{A}{x+2} + \frac{B}{(x+2)^2} + \frac{C}{x-3}\]</div>
+<p>We start by multiplying both sides by <span class="math notranslate nohighlight">\((x+2)^2(x-3)\)</span>. This gives:</p>
+<div class="math notranslate nohighlight">
+\[3x^2 + 6x + 5 = A(x+2)(x-3) + B(x-3) + C(x+2)^2\]</div>
+</section>
+<section id="id6">
+<h3>Choose values<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>Again, we try to choose values that make most of the terms vanish. In this case, those values are <span class="math notranslate nohighlight">\(x = -2\)</span> and <span class="math notranslate nohighlight">\(x = 3\)</span>.</p>
+<ul>
+<li><p>Starting with <span class="math notranslate nohighlight">\(x = -2\)</span>, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[3(-2)^2 + 6(-2) + 5 = A(0) + B(-5) + C(0)\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(5 = -5B\)</span>, giving <span class="math notranslate nohighlight">\(B = -1\)</span>.</p>
+</li>
+<li><p>Setting <span class="math notranslate nohighlight">\(x = 3\)</span>, we get:</p>
+<div class="math notranslate nohighlight">
+\[3(3)^2 + 6(3) + 5 = A(0) + B(0) + C(5^2)\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(50 = 25C\)</span>, giving <span class="math notranslate nohighlight">\(C = 2\)</span>.</p>
+</li>
+</ul>
+<p>Unfortunately, this is where “choosing values” runs out of steam, and we don’t yet know the value of <span class="math notranslate nohighlight">\(A\)</span>. We turn to…</p>
+</section>
+<section id="compare-like-terms">
+<h3>Compare like terms<a class="headerlink" href="#compare-like-terms" title="Link to this heading">#</a></h3>
+<p>The quickest way to calculate the value of <span class="math notranslate nohighlight">\(A\)</span> is to compare the <span class="math notranslate nohighlight">\(x^2\)</span> terms in:</p>
+<div class="math notranslate nohighlight">
+\[3x^2 + 6x + 5\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[A(x+2)(x-3) + B(x-3) + C(x+2)^2\]</div>
+<p>This gives us <span class="math notranslate nohighlight">\(3 = A + C\)</span>, from which we get <span class="math notranslate nohighlight">\(A = 3 - C = 3 - 2 = 1\)</span>.</p>
+</section>
+<section id="id7">
+<h3>Substitute in<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>We now know the values of <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>, and have that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{3x^2 + 6x + 5}{(x+2)^2(x-3)} = \frac{1}{x+2} - \frac{1}{(x+2)^2} + \frac{2}{x-3}\]</div>
+</section>
+</section>
+<section id="example-3-what-happens-if-there-is-a-quadratic-factor-that-can-t-be-factorized">
+<h2>Example 3: What happens if there is a quadratic factor that can’t be factorized?<a class="headerlink" href="#example-3-what-happens-if-there-is-a-quadratic-factor-that-can-t-be-factorized" title="Link to this heading">#</a></h2>
+<p>Problem: Resolve into partial fractions:</p>
+<div class="math notranslate nohighlight">
+\[\frac{2x^2 + 7}{(x+2)(x^2+1)}\]</div>
+<p>The partial fractions form of this expression is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{A}{x+2} + \frac{Bx + C}{x^2 + 1}\]</div>
+<section id="id8">
+<h3>Multiply up<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>We know that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{2x^2 + 7}{(x+2)(x^2 + 1)} = \frac{A}{x+2} + \frac{Bx + C}{x^2 + 1}\]</div>
+<p>We start by multiplying both sides by <span class="math notranslate nohighlight">\((x+2)(x^2+1)\)</span>. This gives:</p>
+<div class="math notranslate nohighlight">
+\[2x^2 + 7 = A(x^2 + 1) + (Bx + C)(x+2)\]</div>
+</section>
+<section id="id9">
+<h3>Choose values<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>Again, we try to choose values that make most of the terms vanish. In this case, the only candidate is <span class="math notranslate nohighlight">\(x = -2\)</span>.</p>
+<p>Setting <span class="math notranslate nohighlight">\(x = -2\)</span>, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[2(-2)^2 + 7 = A((-2)^2 + 1) + (Bx + C)0\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(15 = 5A\)</span>, giving <span class="math notranslate nohighlight">\(A = 3\)</span>.</p>
+</section>
+<section id="id10">
+<h3>Compare like terms<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>We start by comparing the <span class="math notranslate nohighlight">\(x^2\)</span> terms in:</p>
+<div class="math notranslate nohighlight">
+\[2x^2 + 7\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[A(x^2 + 1) + (Bx + C)(x + 2)\]</div>
+<p>This gives us <span class="math notranslate nohighlight">\(2 = A + B\)</span>, from which we get <span class="math notranslate nohighlight">\(B = 2 - A = 2 - 3 = -1\)</span>.</p>
+<p>We can then compare constant terms, obtaining <span class="math notranslate nohighlight">\(7 = A + 2C\)</span>, meaning <span class="math notranslate nohighlight">\(2C = 7 - A = 7 - 3 = 4\)</span>, and thus <span class="math notranslate nohighlight">\(C = 2\)</span>.</p>
+</section>
+<section id="id11">
+<h3>Substitute in<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>We now know the values of <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>, and have that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{2x^2 + 7}{(x+2)(x^2 + 1)} = \frac{3}{x+2} + \frac{2 - x}{x^2 + 1}\]</div>
+<hr class="docutils" />
+<p>Note that it’s entirely possible for both a repeated linear factor and an unfactorisable quadratic factor to appear in the numerator, as in:</p>
+<div class="math notranslate nohighlight">
+\[\frac{5x^2 + 8x + 9}{(x-2)(x+1)^2(x^2+1)}\]</div>
+<p>In which case these techniques are combined. The partial fractions form of this example, for instance, is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{A}{x-2} + \frac{B}{x+1} + \frac{C}{(x+1)^2} + \frac{Dx + E}{x^2+1}\]</div>
+<p>This fairly complicated example is left as an exercise to the keen reader (answer: <span class="math notranslate nohighlight">\(A = 1\)</span>, <span class="math notranslate nohighlight">\(B = -1\)</span>, <span class="math notranslate nohighlight">\(C = -1\)</span>, <span class="math notranslate nohighlight">\(D = 0\)</span>, <span class="math notranslate nohighlight">\(E = -2\)</span>).</p>
+<p>Note also that in all these cases, the degree of the numerator is less than that of the denominator. If the degrees are equal, the partial fractions form of the expression has a constant term, and if that of the numerator is one more than that of the denominator, there’s also an <span class="math notranslate nohighlight">\(x\)</span>-term; etc. For example, the partial fractions form of:</p>
+<div class="math notranslate nohighlight">
+\[\frac{x^3 + 2x^2 + 1}{(x+2)(x+1)}\]</div>
+<p>is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{A}{x+B} + \frac{Cx}{x+2} + \frac{D}{x+1}\]</div>
+<p>This is also left as an exercise (answer: <span class="math notranslate nohighlight">\(A = 1\)</span>, <span class="math notranslate nohighlight">\(B = -1\)</span>, <span class="math notranslate nohighlight">\(C = -1\)</span>, <span class="math notranslate nohighlight">\(D = 2\)</span>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -441,6 +1032,61 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Practice Problems</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-and-graphs">Functions and Graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometry">Trigonometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences-and-series">Sequences and Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-geometry">Coordinate Geometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability">Probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-linear-equations">Solving Linear Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-fractions-remainder-theorem-and-algebraic-fractions">Partial Fractions, Remainder Theorem, and Algebraic Fractions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problem-solutions">Practice Problem Solutions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Trigonometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">Geometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Sequences and Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Partial Fractions, Remainder Theorem, and Algebraic Fractions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiply-up">Multiply up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-values">Choose values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#substitute-in">Substitute in</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-what-happens-if-a-factor-is-repeated">Example 2: What happens if a factor is repeated?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Multiply up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Choose values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-like-terms">Compare like terms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Substitute in</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-what-happens-if-there-is-a-quadratic-factor-that-can-t-be-factorized">Example 3: What happens if there is a quadratic factor that can’t be factorized?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Multiply up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Choose values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Compare like terms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Substitute in</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
