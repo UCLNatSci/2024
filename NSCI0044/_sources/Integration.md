@@ -43,492 +43,464 @@ We can now take the limit of $ \Delta x \rightarrow 0 $ to get an infinitesimal 
 \lim_{\Delta x \rightarrow 0} \left(\sum_{i=1}^{N} f(x_i) \Delta x \right) \longrightarrow \int_a^b f(x)\,\mathrm{d}x
 ```
 
-We call this quantity the **Definite Integral** of the function $ f(x) $ between the **limits** $ [a,\,b] $, and the symbol $ \int $ is known as the **Integration Operator**. The function $ f(x) $ here is also called the **Integrand** and the process of finding an integral is known as **Integration**. If we want to work out the value of an integral without specific limits, this turns out to be a well-understood mathematical process too, known as finding the **Indefinite Integral**:
+We call this quantity the **Integral** of the function $ f(x) $ between the limits $ [a,\,b] $, and the symbol $ \int $ is known as the Integration Operator. The function $ f(x) $ here is also called the Integrand and the process of finding an integral is known as Integration. 
+
+## Definite and Indefinite Integrals
+
+### Indefinite Integrals
+
+An indefinite integral represents a family of functions and is denoted as:
 
 ```{math}
-\int f'(x)\,\mathrm{d}x = f(x) + C
+\int f(x) \, \mathrm{d}x
 ```
 
-where $ C $ is a constant. This process is called finding the **Anti-Derivative** and knowing a function’s anti-derivative means we can find the value of a function’s definite integral:
+It gives the antiderivative, which is a function whose derivative is $ f(x) $. The result always includes a constant $ C $, since the derivative of a constant is zero.
+
+### Definite Integrals
+
+A definite integral computes the area under the curve of $ f(x) $ from $ x = a $ to $ x = b $ and is denoted as:
 
 ```{math}
-\int_a^b f'(x)\,\mathrm{d}x = \Bigg[ f(x)\Bigg]_a^b = f(b) - f(a)
+\int_a^b f(x) \, \mathrm{d}x
 ```
 
-This statement is known as **The Fundamental Theorem of Calculus**. 
+The result of a definite integral is a number and represents the net area under the curve between the limits $ a $ and $ b $.
 
-An example: Find $ \int_0^1 x\,\mathrm{d}x $:
 
-First, we have to split up the interval, and $ f(x) $, into $ N $ equally spaced sections:
+
+---
+
+## Fundamental Theorem of Calculus (FTC)
+
+The Fundamental Theorem of Calculus connects differentiation and integration and has two parts:
+
+- Part 1: If $ f(x) $ is continuous on $[a, b]$, then the function $ F(x) $, defined by:
+
+  ```{math}
+  F(x) = \int_a^x f(t) \, \mathrm{d}t
+  ```
+
+  is continuous on $[a, b]$, differentiable on $(a, b)$, and $ F'(x) = f(x) $.
+
+- Part 2: If $ f(x) $ is continuous on $[a, b]$, then:
+
+  ```{math}
+  \int_a^b f(x) \, \mathrm{d}x = F(b) - F(a)
+  ```
+
+  where $ F(x) $ is any antiderivative of $ f(x) $.
+
+---
+
+## Common Methods for Finding Antiderivatives
+
+### Polynomial Functions
+
+For polynomials, the integral is straightforward using the power rule for integration:
 
 ```{math}
-\Delta x = \frac{1}{N} \Longrightarrow f(x_i) = \frac{i}{N}
+\int x^n \, \mathrm{d}x = \frac{x^{n+1}}{n+1} + C \quad \text{for} \quad n \neq -1
 ```
 
-We can also switch limits from $ \Delta x \rightarrow 0 $ to $ N \rightarrow \infty $:
+### Trigonometric Functions
+
+For simple trigonometric functions, use the following standard integrals:
+
+- ```{math}
+  \int \sin(x) \, \mathrm{d}x = -\cos(x) + C
+  ```
+- ```{math}
+  \int \cos(x) \, \mathrm{d}x = \sin(x) + C
+  ```
+
+### Exponential Functions
+
+For exponential functions, the general rule is:
 
 ```{math}
-I = \lim_{\Delta x \rightarrow 0} \left[ \sum_{i=1}^{N} \left(\frac{i}{N}\right)\left(\frac{1}{N}\right)\right] = \lim_{N \rightarrow \infty} \left[\frac{1}{N^2}\left(\sum_{i=1}^{N} i \right)\right] = \lim_{N \rightarrow \infty}\frac{N(N+1)}{2N^2} = \frac{1}{2}
+\int e^{ax} \, \mathrm{d}x = \frac{e^{ax}}{a} + C
 ```
 
-where we have used the expression for the sum: $ \sum_{i=1}^N i = \frac{1}{2}N(N+1) $.
-
-We can apply what we know about differentiation to reverse the process to evaluate common integrals, for instance, if we know that:
+For base $ b $ exponentials:
 
 ```{math}
-f(x) = x^n \Rightarrow f'(x) = n\,x^{n-1} \Longrightarrow f(x) = \frac{x^{n+1}}{n+1} \Rightarrow f'(x) = x^n
+\int b^x \, \mathrm{d}x = \frac{b^x}{\ln(b)} + C
 ```
 
-Since $\frac{\mathrm{d}}{\mathrm{d}x}\big(x^0\big) = 0$, indefinite integrals must include a constant:
+Where does this come from? Remember that we can write:
+```{math}
+y = b^x \Rightarrow \ln(y) = \ln(b^x) = x\ln(b)
+```
+Hence if we exponentiate both sides:
+```{math}
+y = e^{x \ln(b)}
+```
+So taking the integral of this means:
+```{math}
+\int e^{x \ln(b)}\,\mathrm{d}x = \frac{e^{x \ln(b)} }{\ln(b)} + C = \frac{b^x}{\ln(b)} + C
+```
+
+### Logarithmic Functions
+
+For logarithmic functions, the integral of the reciprocal function is:
 
 ```{math}
-\int f'(x)\,\mathrm{d}x = f(x) + C
+\int \frac{1}{x} \, \mathrm{d}x = \ln|x| + C
 ```
 
-### Signed and Unsigned Areas
+---
 
-The value of the definite integral $\int_a^b f(x)\,\mathrm{d}x$ is the area between the function and the $x$ axis over the interval $[a,\,b]$ and it turns out the value of this integral is signed:
+## Reversing Differentiation Rules into Integration
 
-![Signed Area](SignedArea.png)
+In addition to the basic rules for calculating antiderivatives, there are specific techniques that arise when you reverse common differentiation rules, such as the product rule and the chain rule. These techniques help solve integrals that might otherwise be difficult.
 
-Areas above the $x$ axis produce a positive value of the integral and areas below the $x$ axis produce a negative value of the integral. The unsigned area is given by:
+### Integration by Parts (Product Rule Reversal)
 
-```
-\left|\int_a^b |f(x)|\,\mathrm{d}x \right|
-```
+The product rule for differentiation states:
 
-An example:
-
-```
-I_1 = \int_1^2 (-4x)\,\mathrm{d}x = \left[-\frac{4}{2}x^2\right]_0^1 = -2\bigg[ 2^2 - 1^2\bigg] = -2(3) = -6 < 0
+```{math}
+\frac{d}{dx} \left( u(x) v(x) \right) = u'(x) v(x) + u(x) v'(x)
 ```
 
-```
-I_2 = \int_1^2 4x\,\mathrm{d}x = \left[\frac{4}{2}x^2\right]_0^1 = 2\bigg[ 2^2 - 1^2\bigg] = 2(3) = 6 > 0
-```
+When reversing this rule to solve integrals, we use integration by parts. The formula for integration by parts is:
 
-### Limits
-
-The limits of a definite integral can be swapped around, introducing a minus sign, this is equivalent to evaluating the integral the opposite way round:
-
-```
-\int_a^b f'(x)\,\mathrm{d}x = f(b)-f(a) = -\bigg(f(a) - f(b) \bigg) = - \int_b^a f'(x)\,\mathrm{d}x
+```{math}
+\int u(x) v'(x) \, \mathrm{d}x = u(x) v(x) - \int v(x) u'(x) \, \mathrm{d}x
 ```
 
-An example:
+In this formula:
+- $ u(x) $ is a function you choose to differentiate (its derivative is $ u'(x) $),
+- $ v'(x) $ is the function you choose to integrate (its integral is $ v(x) $).
 
+Steps for using integration by parts:
+1. Identify parts of the integrand to assign to $u(x)$ and $v'(x)$.
+2. Differentiate $u(x)$ to get $u'(x)$.
+3. Integrate $v'(x)$ to get $v(x)$.
+4. Substitute into the formula and simplify the resulting integral.
+
+---
+
+### LATE Method for Integration by Parts
+
+The LATE method is a mnemonic that can help choose the best parts of the integrand to assign to $ u(x) $ and $ v'(x) $ when using integration by parts. The letters stand for:
+
+- L: Logarithmic functions (if present)
+- A: Algebraic functions (polynomials)
+- T: Trigonometric functions
+- E: Exponential functions
+
+Steps for using LATE:
+1. First, choose $ u(x) $ from the category that appears first in LATE.
+2. Choose $ v'(x) $ from the remaining part of the integrand.
+3. Apply integration by parts as usual.
+
+### Example 1: Polynomial and Exponential
+
+Consider the integral:
+
+```{math}
+\int x e^x \, \mathrm{d}x
 ```
-I_3 = \int_1^4 x^2\,\mathrm{d}x = \bigg[\frac{1}{3}x^3\bigg]_1^2 = \frac{1}{3}\left(4^3 - 1^3\right) = \frac{63}{3} = 21
+
+Using the LATE method:
+- $ u(x) = x $ (Algebraic function)
+- $ v'(x) = e^x $ (Exponential function)
+
+Now, differentiate $ u(x) $ and integrate $ v'(x) $:
+- $ u'(x) = 1 $
+- $ v(x) = e^x $
+
+Now apply the formula for integration by parts:
+
+```{math}
+\int x e^x \, \mathrm{d}x = x e^x - \int e^x \, \mathrm{d}x
 ```
 
-```
-I_4 = \int_4^1 x^2\,\mathrm{d}x = \bigg[\frac{1}{3}x^3\bigg]_2^1 = \frac{1}{3}\left(1^3 - 4^3\right) = -\frac{63}{3} = -21
-```
-
-### Area Between Curves
-
-Suppose we have two functions, we can find the area between the two curves by subtracting the two integrals:
-
-![Area Between Curves](AreaBetweenCurves.png)
-
-which is written as:
-
-```
-\int_a^b \bigg( g(x) - f(x)\bigg)\,\mathrm{d}x
+```{math}
+= x e^x - e^x + C
 ```
 
-where $g(x)$ is the upper curve and $f(x)$ is the lower curve. If the area between the curves is above the $x$ axis, then this is area should be positive and if we find a negative answer, then we have switched the order of the curves.
+---
 
-### Mean Value of a Function
+### Example 2: Trigonometric and Exponential
 
-For a function, $f(x)$, being integrated over a range $[a,\,b]$, is it possible to find a constant function which would have the same area over that range?
+Consider the integral:
 
+```{math}
+\int e^x \sin(x) \, \mathrm{d}x
 ```
-c = \frac{1}{b-a}\int_a^b f(x)\,\mathrm{d}x
+
+Using the LATE method:
+- $ u(x) = \sin(x) $ (Trigonometric function)
+- $ v'(x) = e^x $ (Exponential function)
+
+Now, differentiate $ u(x) $ and integrate $ v'(x) $:
+- $ u'(x) = \cos(x) $
+- $ v(x) = e^x $
+
+Now apply the formula for integration by parts:
+
+```{math}
+\int e^x \sin(x) \, \mathrm{d}x = e^x \sin(x) - \int e^x \cos(x) \, \mathrm{d}x
 ```
 
+Now, we need to apply integration by parts again to the new integral $ \int e^x \cos(x) \, \mathrm{d}x $. Using LATE again:
+
+- $ u(x) = \cos(x) $
+- $ v'(x) = e^x $
+
+Following the same steps:
+
+```{math}
+\int e^x \cos(x) \, \mathrm{d}x = e^x \cos(x) - \int e^x \sin(x) \, \mathrm{d}x
+```
+
+Thus, we end up with an equation involving the original integral. Solving this, we obtain the result:
+
+```{math}
+\int e^x \sin(x) \, \mathrm{d}x = \frac{e^x (\sin(x) - \cos(x))}{2} + C
+```
+
+---
+
+## Mean Value Theorem for Integrals
+
+The Mean Value Theorem for Integrals states that if $ f(x) $ is continuous on the interval $ [a, b] $, then there exists at least one point $ c \in [a, b] $ such that:
+
+```{math}
+f(c) = \frac{1}{b - a} \int_a^b f(x) \, \mathrm{d}x
+```
+
+This means that the average value of the function over the interval is equal to the value of the function at some point $ c $ within the interval. This can be helpful when interpreting integrals in terms of average values.
+
+We can see this graphically:
 ![Constant Function](ConstantFunction.png)
 
+## Signed and Unsigned Areas
 
-## Common Anti-Derivatives
+### Introduction
+The concept of **signed** and **unsigned** areas is important when dealing with integrals, particularly in the context of areas between curves or under curves in the plane.
 
-#### Polynomial
+- **Unsigned Area** refers to the total geometric area between a curve and the x-axis, treating all areas as positive, regardless of whether the curve is above or below the axis.
+- **Signed Area** considers the direction of the curve relative to the x-axis. Areas above the x-axis are positive, and areas below the x-axis are negative.
 
-| $ f'(x) $ | $ f(x) $ |
-|-------------|------------|
-| $ a $ | $ 0 $ |
-| $ a x^n $ | $ \frac{a x^{n+1}}{n+1} $ |
-| $ (ax+b)^n $ | $ \frac{1}{a} \frac{(ax+b)^{n+1}}{n+1} $ |
-| $ \frac{a}{x} $ | $ a\ln(x) $ |
-| $ \frac{1}{ax+b} $ | $ \frac{1}{a}\ln(ax+b) $ |
+#### Geometric Interpretation
+- **Unsigned Area**: The total area between the curve and the x-axis is computed without considering whether the curve is above or below the x-axis. All areas are treated as positive.
+- **Signed Area**: This accounts for whether the curve is above or below the x-axis. The area above the x-axis is positive, and the area below the x-axis is negative. The signed area is useful for determining net area, like in physical applications where direction matters (e.g., work or displacement).
 
-#### Trigonometric
-
-| $ f'(x) $ | $ f(x) $ |
-|-------------|------------|
-| $ \sin(x) $ | $ -\cos(x) $ |
-| $ \sin(ax+b) $ | $ -\frac{1}{a}\cos(ax+b) $ |
-| $ \cos(x) $ | $ \sin(x) $ |
-| $ \cos(ax+b) $ | $ \frac{1}{a}\sin(ax+b) $ |
-| $ \sec^2(x) $ | $ \tan(x) $ |
-| $ \sec(x)\,\tan(x) $ | $ \sec(x) $ |
-| $ \csc(x)\,\cot(x) $ | $ -\csc(x) $ |
-| $ \csc^2(x) $ | $ -\cot(x) $ |
-
-#### Exponential
-
-| $ f'(x) $ | $ f(x) $ |
-|-------------|------------|
-| $ ae^x $ | $ ae^x $ |
-| $ e^{ax+b} $ | $ \frac{1}{a}e^{ax+b} $ |
-| $ a^x $ | $ \frac{a^x}{\ln(a)} $ |
-
-#### Hyperbolic
-
-| $ f'(x) $ | $ f(x) $ |
-|-------------|------------|
-| $ \sinh(x) $ | $ \cosh(x) $ |
-| $ \sinh(ax+b) $ | $ \frac{1}{a}\cosh(ax+b) $ |
-| $ \cosh(x) $ | $ \sinh(x) $ |
-| $ \cosh(ax+b) $ | $ \frac{1}{a}\sinh(ax+b) $ |
-| $ \mathrm{sech}^2(x) $ | $ \tanh(x) $ |
-| $ \mathrm{sech}(x)\,\tanh(x) $ | $ -\mathrm{sech}(x) $ |
-| $ \mathrm{cosech}(x)\,\cot(x) $ | $ -\mathrm{cosech}(x) $ |
-| $ \mathrm{cosech}^2(x) $ | $ -\coth(x) $ |
-
-#### Inverse Trigonometric
-
-| $ f'(x) $ | $ f(x) $ |
-|-------------|------------|
-| $ \frac{1}{\sqrt{a^2 - x^2}} $ | $ \arcsin\left(\frac{x}{a}\right) $ |
-| $ -\frac{1}{\sqrt{a^2 - x^2}} $ | $ \arccos\left(\frac{x}{a}\right) $ |
-| $ \frac{1}{a^2 + x^2} $ | $ \frac{1}{a}\arctan\left(\frac{x}{a}\right) $ |
-
-#### Inverse Hyperbolic
-
-| $ f'(x) $ | $ f(x) $ |
-|-------------|------------|
-| $ \frac{1}{\sqrt{x^2 + a^2}} $ | $ \textrm{arsinh}\left(\frac{x}{a}\right) $ |
-| $ \frac{1}{\sqrt{x^2 - a^2}} $ | $ \textrm{arcosh}\left(\frac{x}{a}\right) $ |
-| $ \frac{1}{a^2 - x^2} $ | $ \textrm{artanh}\left(\frac{x}{a}\right) $ |
+We can see this in the figure below:
+![Signed Area](SignedArea.png)
 
 
-## Integration by Parts
+### Unsigned Area
+The unsigned area between a curve and the x-axis is calculated by taking the absolute value of the integrand, ensuring that no part of the area contributes negatively.
 
-Recall the product rule:
-```{math}
-\frac{\mathrm{d}d}{\mathrm{d}x}\bigg(f(x) \,g(x) \bigg) = \frac{\mathrm{d}f(x)}{\mathrm{d}x} g(x) + f(x) \frac{\mathrm{d}g(x)}{\mathrm{d}x}
-```
-
-We can rearrange this and integrate *w.r.t.* $x$:
-```{math}
-\frac{\mathrm{d}f(x)}{\mathrm{d}x} g(x) = \frac{\mathrm{d}d}{\mathrm{d}x}\bigg(f(x) \,g(x) \bigg) -  f(x) \frac{\mathrm{d}g(x)}{\mathrm{d}x}
-```
-```{math}
-\int \frac{\mathrm{d}f(x)}{\mathrm{d}x} g(x)\,\mathrm{d}x = \int\frac{\mathrm{d}d}{\mathrm{d}x}\bigg(f(x) \,g(x) \bigg)\,\mathrm{d}x -  \int f(x) \frac{\mathrm{d}g(x)}{\mathrm{d}x}\,\mathrm{d}x
-```
-
-By the fundamental theorem of calculus, the first term on the RHS becomes simplified:
-```{math}
-\int f'(x) \,g(x)\,\mathrm{d}x = f(x) \,g(x) - \int f(x) \,g'(x)\,\mathrm{d}x
-```
-
-Sometimes this form of an integral allows us to make progress in solving a problem, because the term $\int f(x)\,g'(x)\,\mathrm{d}x$ may be easier to integrate than $\int f'(x) \,g(x) \,\mathrm{d}x$.
-
-An example:
-```{math}
-I_1 = \int x \, e^{x}\,\mathrm{d}x
-```
-
-Firstly we need to split it up into $f'$ and $g$:
-```{math}
-f' = e^x, \quad g = x
-```
-```{math}
-f = e^x,\quad g' = 1
-```
-```{math}
-I_1 = x e^x - \int e^x\,\mathrm{d}x = (x-1)e^x + C
-```
-
-Given the form of a particular integration, how do we know which function to pick for $f'(x)$ and which for $g(x)$? A simple way is to use the mnemonic **LIATE**:
-
-- **L**ogarithmic Term
-- **I**nverse Term
-- **A**lgebraic Term
-- **T**rigonometric Term
-- **E**xponential Term
-
-This list tells the order of preference for the term to be differentiated – $g(x) \rightarrow g'(x)$. The exponential function is at the bottom because it is usually the easiest to integrate, while the logarithmic term is usually the hardest.
-
-An example, integrate:
-```{math}
-I_2 = \int x \ln(x)\,\mathrm{d}x
-```
-
-Since **L** falls before **A** in **LIATE**, we pick:
-```{math}
-f' = x, \quad g = \ln(x)
-```
-```{math}
-f = \frac{1}{2}x^2, \quad g' = \frac{1}{x}
-```
-
-And so integrating by parts we find:
-```{math}
-I_2 = \frac{1}{2} \,x^2 \,\ln(x) - \int \frac{1}{2} \,x \,\mathrm{d}x = \frac{1}{2} \, x^2 \left(\ln(x) - \frac{1}{2} \right) + C
-```
-
-What about definite integrals? Same story but with limits:
-```{math}
-\int_a^b f' \,g\,\mathrm{d}x = \bigg[f \,g\bigg]_a^b -  \int_a^b f \, g'\,\mathrm{d}x
-```
-
-Sometimes it is not always obvious that there *are* two functions in the integration expression. However, this can be remedied using a simple trick.
-
-An example:
-```{math}
-I_3 = \int \ln(x)\,\mathrm{d}x
-```
-
-This should be seen as:
-```{math}
-I_3 = \int x^0\,\ln(x)\,\mathrm{d}x
-```
-
-Since we have both **L** and **A** from **LIATE**, we pick:
-```{math}
-f' = x^0, \quad g = \ln(x)
-```
-```{math}
-f = x^1
-```
-## Integration Techniques
-
-- **Chain Rule in Reverse**
-  1. 
+- **Formula for Unsigned Area**:
   ```{math}
-  I = \int [f(x)]^n\,f'(x)\,\mathrm{d}x = \frac{\left[f(x)\right]^{n+1}}{n+1} + C
+  \text{Unsigned Area} = \int_a^b \left| f(x) \right| \, dx
   ```
-  An example: 
+  where $ f(x) $ is the function describing the curve.
+
+#### Example of Unsigned Area
+Find the unsigned area between the curve $y = x^2 - 4$ and the x-axis from $x = -3$ to $x = 3$.
+
+- **Step 1:** Identify the points where the curve intersects the x-axis. Set $ f(x) = 0 $:
   ```{math}
-  I_1 = \int \sin^2(x)\cos(x)\,\mathrm{d}x \\ 
-  f(x) = \sin(x) \Rightarrow f'(x) = \cos(x) \\ 
-  I_1 = \frac{1}{3}\sin^3(x) + C
+  x^2 - 4 = 0 \quad \Rightarrow \quad x = \pm 2
+  ```
+  So, the curve intersects the x-axis at $x = -2$ and $x = 2$.
+
+- **Step 2:** Break the integral into two parts, where the curve is either above or below the x-axis.
+  ```{math}
+  \text{Unsigned Area} = \int_{-3}^{-2} \left| x^2 - 4 \right| \, dx + \int_{-2}^{2} \left| x^2 - 4 \right| \, dx + \int_{2}^{3} \left| x^2 - 4 \right| \, dx
+  ```
+  Since $x^2 - 4$ is negative between $[-3, -2]$ and $[2, 3]$, we use the absolute value to change the sign:
+  ```{math}
+  \text{Unsigned Area} = \int_{-3}^{-2} -(x^2 - 4) \, dx + \int_{-2}^{2} (4 - x^2) \, dx + \int_{2}^{3} -(x^2 - 4) \, dx
   ```
 
-  2. 
-  ```{math}
-  I = \int \frac{f'(x)}{f(x)}\,\mathrm{d}x = \ln(f(x)) + C
-  ```
-  An example:
-  ```{math}
-  I_2 = \int \frac{x}{3x^2 + 7}\,\mathrm{d}x \\ 
-  f(x) = 3x^2 + 7 \Rightarrow f'(x) = 6x \\ 
-  I_2 = \frac{1}{6} \int \frac{6x}{3x^2 + 7}\,\mathrm{d}x = \frac{1}{6} \ln(3x^2 + 7) + C
-  ```
-  
-  A trigonometric example:
-  ```{math}
-  I_3 = \int \tan(x)\,\mathrm{d}x = \int \frac{\sin(x)}{\cos(x)}\,\mathrm{d}x\\
-  f(x) = \cos(x) \Rightarrow f'(x) = - \sin(x)\\ 
-  I_3 = -\int \frac{-\sin(x)}{\cos(x)}\,\mathrm{d}x = - \ln(\cos(x)) + C 
-  ```
+- **Step 3:** Evaluate each integral and sum the areas.
 
-  3. 
+### Signed Area
+The signed area between a curve and the x-axis is computed directly using the integral of the function. The sign of the area depends on whether the curve is above or below the x-axis.
+
+- **Formula for Signed Area**:
   ```{math}
-  I = \int f'(x) e^{f(x)}\,\mathrm{d}x = e^{f(x)} + C
+  \text{Signed Area} = \int_a^b f(x) \, dx
   ```
-  An example:
+  where:
+  - If $ f(x) > 0 $, the area is positive (above the x-axis),
+  - If $ f(x) < 0 $, the area is negative (below the x-axis).
+
+#### Example of Signed Area
+Find the signed area between the curve $y = x^2 - 4$ and the x-axis from $x = -3$ to $x = 3$.
+
+- **Step 1:** Set up the integral:
   ```{math}
-  I_4 = \int \cos(x) \,e^{\sin(x)}\,\mathrm{d}x\\
-  f(x) = \sin(x) \Rightarrow f'(x) = \cos(x) \\
-  I_4  = e^{\sin(x)} + C 
+  \text{Signed Area} = \int_{-3}^3 (x^2 - 4) \, dx
   ```
 
-- **Double Angle Identities**  
-Recall the trigonometric double angle identities:
+- **Step 2:** Evaluate the integral:
+  ```{math}
+  \int_{-3}^3 (x^2 - 4) \, dx = \left[ \frac{x^3}{3} - 4x \right]_{-3}^{3}
+  ```
+
+- **Step 3:** Compute the values at the limits:
+  ```{math}
+  \left( \frac{3^3}{3} - 4(3) \right) - \left( \frac{(-3)^3}{3} - 4(-3) \right)
+  = \left( \frac{27}{3} - 12 \right) - \left( \frac{-27}{3} + 12 \right)
+  ```
+  ```{math}
+  = (9 - 12) - (-9 + 12) = -3 + 3 = 0
+  ```
+  The signed area is $ 0 $, meaning the positive area (above the x-axis) cancels out the negative area (below the x-axis).
+
+### Differences Between Signed and Unsigned Area
+| Concept        | Signed Area                                | Unsigned Area                             |
+|----------------|--------------------------------------------|-------------------------------------------|
+| **Definition** | Area considering the sign (positive above x-axis, negative below) | Total geometric area, treating all as positive |
+| **Formula**    | $ \int_a^b f(x) \, dx $                 | $ \int_a^b |f(x)| \, dx $              |
+| **Use**        | Useful for net area (e.g., work, displacement) | Useful when total area matters, regardless of direction |
+| **Example**    | Area between $ y = x^2 - 4 $ and the x-axis from $x = -3$ to $x = 3$ | Area between $ y = x^2 - 4 $ and the x-axis from $x = -3$ to $x = 3$ |
+
+### Applications
+- **Signed Area**: Often used in physics (e.g., calculating work done by a force or displacement) and economics (e.g., calculating net profit or loss).
+- **Unsigned Area**: Commonly used in geometry, calculus, and probability when the total area is important, irrespective of direction.
+
+### Summary
+- The **signed area** considers the direction of the curve relative to the x-axis (positive for above the x-axis, negative for below).
+- The **unsigned area** treats all areas as positive, regardless of the curve's position relative to the x-axis.
+- Both concepts are useful in different contexts, and integrals can be adapted based on whether we need the signed or unsigned area.
+
+
+## Area Between Two Curves
+
+### Concept
+The area between two curves $y = f(x)$ and $y = g(x)$ (where $ f(x) \geq g(x) $ for $x \in [a, b]$) is the integral of the difference between the two functions over the interval $[a, b]$.
+
+The formula for the area $ A $ between the curves is:
 ```{math}
-\cos(2x) = 2 \cos^2(x) - 1 \Rightarrow \cos^2(x) = \frac{1}{2}(1 + \cos(2x)) 
+A = \int_a^b \left[ f(x) - g(x) \right] \, dx
 ```
-```{math}
-\cos(2x) = 1 - 2 \sin^2(x) \Rightarrow \sin^2(x) = \frac{1}{2}(1 - \cos(2x)) 
-```
-Using these we can simplify integrals:
-```{math}
-I_5 = \int \sin^2(x)\,\mathrm{d}x = \int \frac{1}{2}(1 - \cos(2x))\,\mathrm{d}x = \frac{1}{2}\left(x - \frac{1}{2}\sin(2x)\right) + C 
-```
-```{math}
-I_6 = \int \cos^2(x)\,\mathrm{d}x = \int \frac{1}{2}(1 + \cos(2x))\,\mathrm{d}x = \frac{1}{2}\left(x + \frac{1}{2}\sin(2x)\right) + C
-```
+where:
+- $ f(x) $ is the upper curve,
+- $ g(x) $ is the lower curve,
+- $ [a, b] $ is the interval over which the area is computed.
 
-- **Integrating Twice**  
-Consider the following integral:
-```{math}
-I_7 = \int e^x\, \sin(x)\,\mathrm{d}x
-```
-this is a good candidate to integrate by parts, we have **T** and **E** in **LIATE**:
-```{math}
-f'(x) = e^x, \quad g(x) = \sin(x) 
-```
-```{math}
-f(x) = e^x, \quad g'(x) = \cos(x) 
-```
-```{math}
-I_7 = e^x\, \sin(x) - \int e^x\,\cos(x)\,\mathrm{d}x
-```
-This does not appear to be any easier to work out! However, if we integrate by parts again:
-```{math}
-f'(x) = e^x, \quad g(x) = \cos(x) 
-```
-```{math}
-f(x) = e^x, \quad g'(x) = -\sin(x) 
-```
-```{math}
-I_7 = e^x\, \sin(x) - e^x\,\cos(x) - \int e^x\,\sin(x)\,\mathrm{d}x 
-```
-It appears we still have not simplified the problem, but now look at the last term:
-```{math}
-I_7 = e^x\, \sin(x) - e^x\,\cos(x) - I_7 + C
-```
-```{math}
-\Rightarrow 2I_7 = e^x\, \sin(x) - e^x\,\cos(x) + C
-```
-```{math}
-I_7 = \frac{1}{2}\,e^x\, \left(\sin(x) - \cos(x)\right) + C
-```
-and so we see by integrating twice, the integral has been solved.  
+#### Geometrical Interpretation
+This integral represents the net area between the curves, which is the total area between them (above the x-axis and below the curves) over the specified interval.
+
+We can see this in the figure below:
+![Area Between Curves](AreaBetweenCurves.png)
+
+### Steps to Compute the Area
+
+#### Set up the Integral
+- Identify the functions $ f(x) $ and $ g(x) $.
+- Ensure that $ f(x) \geq g(x) $ over the interval $[a, b]$.
+- Set up the integral:
+  ```{math}
+  A = \int_a^b \left[ f(x) - g(x) \right] \, dx
+  ```
+
+#### Solve the Integral
+- Perform the integration to find the area.
+
+#### Verify the Limits of Integration
+- Make sure that the interval $[a, b]$ is correct, and check that the curves do not intersect in the interval unless explicitly accounted for.
+
+### Example 1: Area Between Two Curves $y = x^2$ and $y = x + 2$
+
+Find the area between the curves $y = x^2$ and $y = x + 2$ from $x = 0$ to $x = 2$.
+
+- **Step 1:** Set up the integral. The upper curve is $y = x + 2$ and the lower curve is $y = x^2$ in the interval $[0, 2]$, so the area is:
+  ```{math}
+  A = \int_0^2 \left[ (x + 2) - x^2 \right] \, dx
+  ```
+
+- **Step 2:** Solve the integral:
+  ```{math}
+  A = \int_0^2 \left( x + 2 - x^2 \right) \, dx
+  ```
+  ```{math}
+  A = \left[ \frac{x^2}{2} + 2x - \frac{x^3}{3} \right]_0^2
+  ```
+  ```{math}
+  A = \left( \frac{2^2}{2} + 2(2) - \frac{2^3}{3} \right) - \left( 0 + 0 - 0 \right)
+  ```
+  ```{math}
+  A = \left( 2 + 4 - \frac{8}{3} \right)
+  ```
+  ```{math}
+  A = 6 - \frac{8}{3} = \frac{18}{3} - \frac{8}{3} = \frac{10}{3}
+  ```
+  The area between the curves is $ \frac{10}{3} $ square units.
+
+### Example 2: Area Between Two Curves $y = \sqrt{x}$ and $y = 2x$
+
+Find the area between the curves $y = \sqrt{x}$ and $y = 2x$ from $x = 0$ to $x = 1$.
+
+- **Step 1:** Set up the integral. The upper curve is $y = \sqrt{x}$ and the lower curve is $y = 2x$ in the interval $[0, 1]$, so the area is:
+  ```{math}
+  A = \int_0^1 \left[ \sqrt{x} - 2x \right] \, dx
+  ```
+
+- **Step 2:** Solve the integral:
+  ```{math}
+  A = \int_0^1 \left( x^{1/2} - 2x \right) \, dx
+  ```
+  ```{math}
+  A = \left[ \frac{2}{3} x^{3/2} - x^2 \right]_0^1
+  ```
+  ```{math}
+  A = \left( \frac{2}{3} \cdot 1^{3/2} - 1^2 \right) - \left( 0 - 0 \right)
+  ```
+  ```{math}
+  A = \frac{2}{3} - 1 = -\frac{1}{3}
+  ```
+  The area between the curves is $ \frac{1}{3} $ square units.
+
+### Cases to Consider
+
+#### When the Curves Intersect
+If the curves intersect at points within the interval, the integral may need to be split into multiple parts where the upper and lower curves change. In this case, solve for the points of intersection and adjust the limits of integration.
+
+#### Symmetry
+In some cases, symmetry about the x-axis or y-axis may simplify the calculation by allowing you to calculate the area over half the interval and then doubling it.
+
+#### Applications
+The concept of the area between curves is useful in various fields, such as:
+- Finding the work done by a force when the force varies with distance.
+- Determining the probability in probability density functions.
+- Calculating the center of mass or moments of inertia for physical systems.
 
 
-## Integration by Substitution - Polynomial
 
-Sometimes we can solve an integration problem by substituting in a function, which recasts it in a simpler way. Consider a typical indefinite integral of a function $ f(x) $ **wrt** $ x $:
+---
 
-```{math}
-I = \int f(x) \,\mathrm{d}x
-```
+## Summary of Key Techniques
 
-Sometimes we can pick a different function $ u=u(x) $, substitute this into the integral, and change the variable we are integrating **wrt**:
+- Integration by Parts: Reverses the product rule for differentiation.
+  ```{math}
+  \int u \, \mathrm{d}v = uv - \int v \, \mathrm{d}u
+  ```
 
-```{math}
-\frac{\mathrm{d}u}{\mathrm{d}x} = u' \Rightarrow \mathrm{d}x = \frac{\mathrm{d}u}{u'}
-```
+- LATE Method for Integration by Parts: A strategy for selecting $ u(x) $ and $ v'(x) $ based on the order: Logarithmic, Algebraic, Trigonometric, Exponential.
 
-```{math}
-I = \int \frac{f(u)}{u'}\,\mathrm{d}u
-```
+- Substitution (u-substitution): Reverses the chain rule for differentiation.
+  ```{math}
+  \int f(g(x)) g'(x) \, \mathrm{d}x = \int f(u) \, \mathrm{d}u
+  ```
 
-Hopefully, this resulting integral is now in a simpler form to solve. An example:
+- Power Rule (for functions raised to a power): Reverses the chain rule with powers.
+  ```{math}
+  \int (g(x))^n \, g'(x) \, \mathrm{d}x = \frac{(g(x))^{n+1}}{n+1} + C
+  ```
 
-```{math}
-I_1 = \int \frac{1}{\sqrt{x} + 1}\,\mathrm{d}x
-```
+- Mean Value Theorem for Integrals: Averages the value of a function over an interval.
+  ```{math}
+  f(c) = \frac{1}{b - a} \int_a^b f(x) \, \mathrm{d}x
+  ```
 
-The choice of substitution $ u = \sqrt{x} $ here can transform this into:
-
-```{math}
-\frac{\mathrm{d}u}{\mathrm{d}x} = \frac{1}{2}x^{-1/2} \Rightarrow \mathrm{d}x = 2u \,\mathrm{d}u
-```
-
-```{math}
-I_1 = \int \frac{2u}{u + 1}\,\mathrm{d}u = 2\int \frac{u+1-1}{u+1}\,\mathrm{d}u = 2\int \left(1 - \frac{1}{u+1}\right)\,\mathrm{d}u 
-```
-```{math}
-= 2 \left( u - \ln(u+1)\right) + C = 2\left(\sqrt{x} - \ln (\sqrt{x} + 1) \right) + C
-```
-
-For definite integrals, with substitution $ u = u(x) $, we need to think about the limits:
-
-```{math}
-I = \int_a^b f(x) \,\mathrm{d}x = \int_{u(a)}^{u(b)} \frac{f(u)}{u'}\,\mathrm{d}u = \int_{x=a}^{x=b} \frac{f(u)}{u'}\,\mathrm{d}u
-```
-
-This last expression allows us to avoid substituting in any limits until the end of the calculation. An example:
-
-```{math}
-I_2 = \int_0^1 \, \frac{e^{\sqrt{x}}}{\sqrt{x}}\,\mathrm{d}x
-```
-
-Using a suitably chosen substitution
-
-```{math}
-u = \sqrt{x} \Rightarrow \mathrm{d}x = 2u \,\mathrm{d}u 
-```
-
-```{math}
-I_2 = \int_{x=0}^{x=1} \frac{2u\,e^u}{u}\,\mathrm{d}u = 2\int_{x=0}^{x=1} e^u\,\mathrm{d}u = 2\bigg[e^u\bigg]_{x=0}^{x=1} 
-```
-```{math}
-= 2\bigg[e^{\sqrt{x}}\bigg]_{0}^{1} = 2e^{1} - 2
-```
-
-## Integration by Substitution - Trigonometric
-
-Sometimes a trigonometric substitution is required.
-
-An example:
-
-```{math}
-I_3 = \int \frac{1}{\sqrt{1-x^2}} \,\mathrm{d}x
-```
-
-Our choice of substitution is
-
-```{math}
-x = \sin(t) \Rightarrow \mathrm{d}x = \cos(t) \,\mathrm{d}t
-```
-
-Since $ \sin^2(t) + \cos^2(t) = 1 \Rightarrow \cos^2(t) = 1 - \sin^2(t) $
-
-```{math}
-I_3 = \int \frac{\cos(t)}{\sqrt{1-\sin^2(t)}}\,\mathrm{d}t = \int \frac{\cos(t)}{\cos(t)}\,\mathrm{d}t 
-```
-```{math}
-= \int \,\mathrm{d}t = t + C 
-```
-
-Since $ x = \sin(t) \Rightarrow t = \arcsin(x) $, then:
-
-```{math}
-I_3 = \arcsin(x) + C
-```
-
-A more complicated example:
-
-```{math}
-I_4 = \int\frac{1}{a^2 + x^2}\,\mathrm{d}x
-```
-
-where $ a $ is some constant. Firstly, let's pick $ a=1 $ to simplify and use the substitution $ x = \tan(t) $:
-
-```{math}
-\frac{\mathrm{d}x}{\mathrm{d}t} = \sec^2(t) \Rightarrow \mathrm{d}x = \sec^2(t) \,\mathrm{d}t
-```
-
-```{math}
-I_4 = \int \frac{1}{1 + x^2}\,\mathrm{d}t = \int \frac{\sec^2(t)}{1 + \tan^2(t)}\,\mathrm{d}t
-```
-
-Since $ 1 + \tan^2(t) = \sec^2(t) $:
-
-```{math}
-I_4 = \int \frac{\sec^2(t)}{\sec^2(t)}\,\mathrm{d}t = \int \,\mathrm{d}t = t + C 
-```
-
-Given $ x = \tan(t) \Rightarrow t = \arctan(x) $, then:
-
-```{math}
-I_4 = \arctan(x) + C
-```
-
-However, in general $ a \neq 1 $ here, so we need to adapt the substitution:
-
-```{math}
-x = a\tan(t) \Rightarrow \frac{\mathrm{d}x}{\mathrm{d}t} = a\sec^2(t)
-```
-
-```{math}
-I_4 &= \int \frac{a \sec^2(t)}{a^2 + a^2 \tan^2(t)}\,\mathrm{d}t \\
-&= \int \frac{1}{a}\,\mathrm{d}t = \frac{t}{a} + C \\
-\Rightarrow I_4 &= \frac{1}{a}\arctan\left(\frac{x}{a}\right) + C
-```
+By understanding how differentiation rules are reversed, you can solve more complex integrals involving products, compositions, and powers of functions.

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Differential Equations &#8212; NSCI0044 Notes</title>
   
@@ -15,52 +14,51 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ODEs';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -141,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="NSCI0044 Notes - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="NSCI0044 Notes - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -166,6 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Integration.html">Areas and Integration</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Stats.html">Statistics and Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practice.html">Practice Problems</a></li>
 </ul>
 
     </div>
@@ -181,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -190,14 +216,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -319,24 +345,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -352,6 +382,44 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-differential-equations">Introduction to Differential Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-differential-equations">Types of Differential Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-types-of-first-order-differential-equations">Common Types of First-Order Differential Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-differential-equations">Applications of Differential Equations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-equations">Separable Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-requiring-an-integrating-factor">Equations Requiring an Integrating Factor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Examples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-rate-of-a-chemical-reaction">Understanding the Rate of a Chemical Reaction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-rate-law">Writing a Rate Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-differential-equation">Setting Up the Differential Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations-for-different-reaction-orders">Differential Equations for Different Reaction Orders</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-reactions">First-Order Reactions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-reactions">Second-Order Reactions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-single-reactant-e-g-2a-rightarrow-b">Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \rightarrow B \)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-two-reactants-e-g-a-b-rightarrow-c">Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \rightarrow C \)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-complex-reactions">Handling Complex Reactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudo-first-order-reactions">Pseudo-First-Order Reactions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#autocatalytic-reactions">Autocatalytic Reactions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -359,10 +427,287 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="differential-equations">
-<h1>Differential Equations<a class="headerlink" href="#differential-equations" title="Permalink to this heading">#</a></h1>
+<h1>Differential Equations<a class="headerlink" href="#differential-equations" title="Link to this heading">#</a></h1>
+<section id="introduction-to-differential-equations">
+<h2>Introduction to Differential Equations<a class="headerlink" href="#introduction-to-differential-equations" title="Link to this heading">#</a></h2>
+<p>A <em>differential equation</em> is an equation that relates a function to its derivatives. Differential equations describe how a quantity changes in relation to other quantities and are used to model a wide variety of physical, biological, and economic systems. In these equations, the unknown is often a function, such as <span class="math notranslate nohighlight">\( y(x) \)</span>, and the goal is to solve for this function given its rate of change or its relationships with other variables.</p>
+<section id="types-of-differential-equations">
+<h3>Types of Differential Equations<a class="headerlink" href="#types-of-differential-equations" title="Link to this heading">#</a></h3>
+<p>Differential equations come in many forms, but they can generally be classified by:</p>
+<ol class="arabic simple">
+<li><p><em>Order</em>: The order of a differential equation is the highest derivative that appears in the equation. For example:</p>
+<ul class="simple">
+<li><p>A <strong>first-order</strong> differential equation involves only the first derivative, <span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}x}\)</span>.</p></li>
+<li><p>A <strong>second-order</strong> differential equation involves up to the second derivative, <span class="math notranslate nohighlight">\(\frac{\mathrm{d}^2 y}{\mathrm{d}x^2}\)</span>.</p></li>
+</ul>
+</li>
+<li><p><em>Linearity</em>: A differential equation is called <strong>linear</strong> if the unknown function and its derivatives appear to the first power and are not multiplied together. If terms like <span class="math notranslate nohighlight">\( y^2 \)</span> or <span class="math notranslate nohighlight">\( y \cdot \frac{\mathrm{d}y}{\mathrm{d}x} \)</span> appear, the equation is <strong>nonlinear</strong>.</p></li>
+</ol>
+</section>
+<section id="common-types-of-first-order-differential-equations">
+<h3>Common Types of First-Order Differential Equations<a class="headerlink" href="#common-types-of-first-order-differential-equations" title="Link to this heading">#</a></h3>
+<p>For first-order differential equations, which involve only the first derivative of the function, some common forms include:</p>
+<ul class="simple">
+<li><p><strong>Separable Equations</strong>: These can be expressed as the product of a function of <span class="math notranslate nohighlight">\( x \)</span> and a function of <span class="math notranslate nohighlight">\( y \)</span>. They can be solved by separating variables and integrating both sides.</p></li>
+<li><p><strong>Linear Equations</strong>: These have the form <span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}x} + p(x) y = q(x)\)</span>, where <span class="math notranslate nohighlight">\( p(x) \)</span> and <span class="math notranslate nohighlight">\( q(x) \)</span> are functions of <span class="math notranslate nohighlight">\( x \)</span>. They can be solved using an <strong>integrating factor</strong>.</p></li>
+</ul>
+</section>
+<section id="applications-of-differential-equations">
+<h3>Applications of Differential Equations<a class="headerlink" href="#applications-of-differential-equations" title="Link to this heading">#</a></h3>
+<p>Differential equations are essential in modeling real-world phenomena where change is involved. Some common applications include:</p>
+<ul class="simple">
+<li><p><em>Physics</em>: Modeling motion, fluid dynamics, and thermodynamics.</p></li>
+<li><p><em>Biology</em>: Modeling population dynamics, the spread of diseases, and biological processes.</p></li>
+<li><p><em>Economics</em>: Modeling growth, interest rates, and market behavior.</p></li>
+<li><p><em>Chemistry</em>: Modeling reaction rates and chemical kinetics.</p></li>
+</ul>
+<p>In each case, a differential equation provides a relationship that defines how variables evolve over time or in response to changes in other variables. Solving a differential equation allows us to predict future behavior, understand stability, or analyze system responses to different inputs.</p>
+<p>Differential equations are the backbone of mathematical modeling, and learning to solve them provides a powerful toolset for understanding and predicting dynamic systems.</p>
+</section>
+</section>
+<section id="separable-equations">
+<h2>Separable Equations<a class="headerlink" href="#separable-equations" title="Link to this heading">#</a></h2>
+<p>A separable equation has the form:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}y}{\mathrm{d}x} = g(x) h(y)\]</div>
+<p>This allows us to rewrite it as:</p>
+<div class="math notranslate nohighlight">
+\[h(y) \, \mathrm{d}y = g(x) \, \mathrm{d}x\]</div>
+<p>so that we can integrate each side separately.</p>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Solve the equation:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}y}{\mathrm{d}x} = x y\]</div>
+<p>Rewrite as:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{y} \, \mathrm{d}y = x \, \mathrm{d}x\]</div>
+<p>Integrate both sides:</p>
+<div class="math notranslate nohighlight">
+\[\int \frac{1}{y} \, \mathrm{d}y = \int x \, \mathrm{d}x\]</div>
+<p>This gives:</p>
+<div class="math notranslate nohighlight">
+\[\ln |y| = \frac{x^2}{2} + C\]</div>
+<p>Exponentiate both sides to solve for <span class="math notranslate nohighlight">\( y \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y = C e^{x^2 / 2}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Consider the equation:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{3y}{2x}\]</div>
+<ol class="arabic">
+<li><p>Rewrite it to separate variables:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{y} \, \mathrm{d}y = \frac{3}{2x} \, \mathrm{d}x\]</div>
+</li>
+<li><p>Integrate both sides:</p>
+<div class="math notranslate nohighlight">
+\[\int \frac{1}{y} \, \mathrm{d}y = \int \frac{3}{2x} \, \mathrm{d}x\]</div>
+</li>
+<li><p>This yields:</p>
+<div class="math notranslate nohighlight">
+\[\ln |y| = \frac{3}{2} \ln |x| + C\]</div>
+</li>
+<li><p>Simplify by exponentiating both sides:</p>
+<div class="math notranslate nohighlight">
+\[y = e^C \cdot x^{3/2}\]</div>
+</li>
+<li><p>Letting <span class="math notranslate nohighlight">\( e^C = C' \)</span>, where <span class="math notranslate nohighlight">\( C' \)</span> is a new constant, we get the solution:</p>
+<div class="math notranslate nohighlight">
+\[y = C' x^{3/2}\]</div>
+</li>
+</ol>
+<p>In this example, we separated the variables, integrated both sides, and then simplified to find the solution. The result, <span class="math notranslate nohighlight">\( y = C' x^{3/2} \)</span>, shows how <span class="math notranslate nohighlight">\( y \)</span> changes as a power function of <span class="math notranslate nohighlight">\( x \)</span>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="equations-requiring-an-integrating-factor">
+<h2>Equations Requiring an Integrating Factor<a class="headerlink" href="#equations-requiring-an-integrating-factor" title="Link to this heading">#</a></h2>
+<p>For linear first-order equations of the form:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}y}{\mathrm{d}x} + p(x) y = q(x)\]</div>
+<p>we use an <strong>integrating factor</strong> <span class="math notranslate nohighlight">\( \mu(x) = e^{\int p(x) \, \mathrm{d}x} \)</span> to simplify the equation.</p>
+<section id="id1">
+<h3>Examples<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Solve the equation:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}y}{\mathrm{d}x} - \frac{y}{x} = x^2\]</div>
+<p>Identify <span class="math notranslate nohighlight">\( p(x) = -\frac{1}{x} \)</span>, so the integrating factor <span class="math notranslate nohighlight">\( \mu(x) \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\mu(x) = e^{\int -\frac{1}{x} \, \mathrm{d}x} = e^{-\ln |x|} = \frac{1}{x}\]</div>
+<p>Multiply through by <span class="math notranslate nohighlight">\( \mu(x) = \frac{1}{x} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{x} \frac{\mathrm{d}y}{\mathrm{d}x} - \frac{y}{x^2} = x\]</div>
+<p>which simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} \left( \frac{y}{x} \right) = x\]</div>
+<p>Integrate both sides with respect to <span class="math notranslate nohighlight">\( x \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{y}{x} = \int x \, \mathrm{d}x = \frac{x^2}{2} + C\]</div>
+<p>Multiply by <span class="math notranslate nohighlight">\( x \)</span> to solve for <span class="math notranslate nohighlight">\( y \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y = \frac{x^3}{2} + C x\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Consider the equation:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}y}{\mathrm{d}x} + \frac{2}{x} y = x\]</div>
+<ol class="arabic">
+<li><p>Identify <span class="math notranslate nohighlight">\( p(x) = \frac{2}{x} \)</span>, so the integrating factor <span class="math notranslate nohighlight">\( \mu(x) \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\mu(x) = e^{\int \frac{2}{x} \, \mathrm{d}x} = e^{2 \ln |x|} = x^2\]</div>
+</li>
+<li><p>Multiply the entire equation by <span class="math notranslate nohighlight">\( \mu(x) = x^2 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[x^2 \frac{\mathrm{d}y}{\mathrm{d}x} + 2x y = x^3\]</div>
+<p>The left side is now the derivative of <span class="math notranslate nohighlight">\( x^2 y \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} (x^2 y) = x^3\]</div>
+</li>
+<li><p>Integrate both sides with respect to <span class="math notranslate nohighlight">\( x \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[x^2 y = \int x^3 \, \mathrm{d}x\]</div>
+</li>
+<li><p>Integrate the right side:</p>
+<div class="math notranslate nohighlight">
+\[x^2 y = \frac{x^4}{4} + C\]</div>
+</li>
+<li><p>Finally, solve for <span class="math notranslate nohighlight">\( y \)</span> by dividing by <span class="math notranslate nohighlight">\( x^2 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y = \frac{x^2}{4} + \frac{C}{x^2}\]</div>
+</li>
+</ol>
+<p>This solution, <span class="math notranslate nohighlight">\( y = \frac{x^2}{4} + \frac{C}{x^2} \)</span>, combines a particular solution and a constant term that depends on the initial conditions. By using the integrating factor, we converted the left side into an exact derivative, allowing us to integrate both sides directly.</p>
+<hr class="docutils" />
+<p>These examples provide an overview of how each method is applied to solve first-order ODEs. Separable equations work well when terms can be split by variables, while linear equations benefit from integrating factors to make the differential form exact.</p>
+</section>
+</section>
+<section id="understanding-the-rate-of-a-chemical-reaction">
+<h2>Understanding the Rate of a Chemical Reaction<a class="headerlink" href="#understanding-the-rate-of-a-chemical-reaction" title="Link to this heading">#</a></h2>
+<p>In a chemical reaction, the rate at which reactants are converted into products depends on the concentration of the reactants. This relationship between reaction rate and concentration is often governed by <strong>rate laws</strong>, which describe how the rate changes as a function of the concentrations of the reactants.</p>
+<section id="writing-a-rate-law">
+<h3>Writing a Rate Law<a class="headerlink" href="#writing-a-rate-law" title="Link to this heading">#</a></h3>
+<p>The rate law for a reaction is an expression that quantifies the reaction rate in terms of the reactant concentrations. For a general reaction where reactant <span class="math notranslate nohighlight">\( A \)</span> transforms into product <span class="math notranslate nohighlight">\( B \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[A \rightarrow B\]</div>
+<p>If this reaction is first-order with respect to <span class="math notranslate nohighlight">\( A \)</span>, the rate law is written as:</p>
+<div class="math notranslate nohighlight">
+\[\text{Rate} = k[A]\]</div>
+<p>where <span class="math notranslate nohighlight">\( k \)</span> is the rate constant. Here, the rate of change in concentration of <span class="math notranslate nohighlight">\( A \)</span> is proportional to <span class="math notranslate nohighlight">\([A]\)</span>.</p>
+</section>
+<section id="setting-up-the-differential-equation">
+<h3>Setting Up the Differential Equation<a class="headerlink" href="#setting-up-the-differential-equation" title="Link to this heading">#</a></h3>
+<p>To convert the rate law into a differential equation, we recognize that the rate of the reaction describes the <strong>rate of change of the concentration</strong> of the reactant or product with respect to time. If we let <span class="math notranslate nohighlight">\([A](t)\)</span> represent the concentration of <span class="math notranslate nohighlight">\( A \)</span> at time <span class="math notranslate nohighlight">\( t \)</span>, the rate of decrease in <span class="math notranslate nohighlight">\([A]\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A]\]</div>
+<p>This negative sign indicates that the concentration of <span class="math notranslate nohighlight">\( A \)</span> decreases over time as it converts into <span class="math notranslate nohighlight">\( B \)</span>. This differential equation can then be solved to find <span class="math notranslate nohighlight">\([A](t)\)</span> as a function of time.</p>
+</section>
+<section id="differential-equations-for-different-reaction-orders">
+<h3>Differential Equations for Different Reaction Orders<a class="headerlink" href="#differential-equations-for-different-reaction-orders" title="Link to this heading">#</a></h3>
+<p>The rate of a reaction tells us how fast the concentration of a reactant or product changes with time. This rate depends on the reaction order, which determines how the concentration of reactants affects the reaction rate. Let’s examine differential equations for first-order, second-order, and some mixed-order reactions in detail.</p>
+<section id="first-order-reactions">
+<h4>First-Order Reactions<a class="headerlink" href="#first-order-reactions" title="Link to this heading">#</a></h4>
+<p>For a first-order reaction, the rate of reaction is directly proportional to the concentration of a single reactant. A classic example is:</p>
+<div class="math notranslate nohighlight">
+\[A \rightarrow B\]</div>
+<p>The rate law for this reaction is:</p>
+<div class="math notranslate nohighlight">
+\[\text{Rate} = k[A]\]</div>
+<p>where <span class="math notranslate nohighlight">\( k \)</span> is the rate constant. This means that the rate of decrease in the concentration of <span class="math notranslate nohighlight">\( A \)</span> is proportional to <span class="math notranslate nohighlight">\([A]\)</span>, leading to the differential equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A]\]</div>
+<p><strong>Solution:</strong></p>
+<p>This differential equation is separable, and we can solve it by rearranging terms:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}[A]}{[A]} = -k \, \mathrm{d}t\]</div>
+<p>Integrating both sides with respect to <span class="math notranslate nohighlight">\( t \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\ln |[A]| = -kt + C\]</div>
+<p>Exponentiating both sides:</p>
+<div class="math notranslate nohighlight">
+\[[A](t) = [A]_0 e^{-kt}\]</div>
+<p>where <span class="math notranslate nohighlight">\([A]_0\)</span> is the initial concentration of <span class="math notranslate nohighlight">\( A \)</span> at <span class="math notranslate nohighlight">\( t = 0 \)</span>. This exponential decay function describes how the concentration of <span class="math notranslate nohighlight">\( A \)</span> decreases over time in a first-order reaction.</p>
+</section>
+<section id="second-order-reactions">
+<h4>Second-Order Reactions<a class="headerlink" href="#second-order-reactions" title="Link to this heading">#</a></h4>
+<p>Second-order reactions involve rate laws that are proportional to the <strong>square</strong> of a reactant’s concentration or to the <strong>product</strong> of two different reactant concentrations. Second-order reactions can be classified into different types:</p>
+</section>
+<section id="second-order-single-reactant-e-g-2a-rightarrow-b">
+<h4>Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \rightarrow B \)</span>)<a class="headerlink" href="#second-order-single-reactant-e-g-2a-rightarrow-b" title="Link to this heading">#</a></h4>
+<p>For a reaction where two molecules of <span class="math notranslate nohighlight">\( A \)</span> react to form <span class="math notranslate nohighlight">\( B \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[2A \rightarrow B\]</div>
+<p>the rate law is:</p>
+<div class="math notranslate nohighlight">
+\[\text{Rate} = k[A]^2\]</div>
+<p>This means that the rate of change of <span class="math notranslate nohighlight">\([A]\)</span> is proportional to the square of <span class="math notranslate nohighlight">\([A]\)</span>, leading to the differential equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A]^2\]</div>
+<p><strong>Solution:</strong></p>
+<p>To solve this differential equation, we separate variables:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{[A]^2} \, \mathrm{d}[A] = -k \, \mathrm{d}t\]</div>
+<p>Integrate both sides:</p>
+<div class="math notranslate nohighlight">
+\[-\frac{1}{[A]} = kt + C\]</div>
+<p>Solving for <span class="math notranslate nohighlight">\([A]\)</span>, we get:</p>
+<div class="math notranslate nohighlight">
+\[[A](t) = \frac{1}{kt + \frac{1}{[A]_0}}\]</div>
+<p>where <span class="math notranslate nohighlight">\([A]_0\)</span> is the initial concentration of <span class="math notranslate nohighlight">\( A \)</span>. In this form, we see that the concentration <span class="math notranslate nohighlight">\([A]\)</span> decreases over time in a manner inversely proportional to time, unlike the exponential decay in first-order reactions.</p>
+</section>
+<section id="second-order-two-reactants-e-g-a-b-rightarrow-c">
+<h4>Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \rightarrow C \)</span>)<a class="headerlink" href="#second-order-two-reactants-e-g-a-b-rightarrow-c" title="Link to this heading">#</a></h4>
+<p>For a reaction where two different reactants, <span class="math notranslate nohighlight">\( A \)</span> and <span class="math notranslate nohighlight">\( B \)</span>, combine to form a product <span class="math notranslate nohighlight">\( C \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[A + B \rightarrow C\]</div>
+<p>the rate law is:</p>
+<div class="math notranslate nohighlight">
+\[\text{Rate} = k[A][B]\]</div>
+<p>This leads to the system of differential equations:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A][B]\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}[B]}{\mathrm{d}t} = -k[A][B]\]</div>
+<p>If the initial concentrations of <span class="math notranslate nohighlight">\( A \)</span> and <span class="math notranslate nohighlight">\( B \)</span> are equal, say <span class="math notranslate nohighlight">\([A]_0 = [B]_0\)</span>, then we can assume <span class="math notranslate nohighlight">\([A] = [B]\)</span> throughout the reaction. This simplifies the rate law to:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A]^2\]</div>
+<p>and we solve it as in the first type of second-order reaction.</p>
+<p>However, if <span class="math notranslate nohighlight">\([A]_0 \neq [B]_0\)</span>, we need to solve the differential equation with both <span class="math notranslate nohighlight">\([A]\)</span> and <span class="math notranslate nohighlight">\([B]\)</span> changing over time, which can be more complex and typically requires integration using initial concentrations and stoichiometric relationships.</p>
+</section>
+</section>
+<section id="handling-complex-reactions">
+<h3>Handling Complex Reactions<a class="headerlink" href="#handling-complex-reactions" title="Link to this heading">#</a></h3>
+<p>Some reactions may exhibit rate laws that do not fit neatly into first or second order; for example, reactions that are <strong>pseudo-first-order</strong> or involve autocatalysis.</p>
+<section id="pseudo-first-order-reactions">
+<h4>Pseudo-First-Order Reactions<a class="headerlink" href="#pseudo-first-order-reactions" title="Link to this heading">#</a></h4>
+<p>A reaction might be second-order in principle, but if one reactant’s concentration is held constant (e.g., because it is in large excess), the reaction can appear to be first-order with respect to the other reactant. For example, if <span class="math notranslate nohighlight">\( A + B \rightarrow C \)</span> occurs with <span class="math notranslate nohighlight">\([B]\)</span> in large excess, we treat <span class="math notranslate nohighlight">\([B]\)</span> as approximately constant, giving a rate law:</p>
+<div class="math notranslate nohighlight">
+\[\text{Rate} = k'[A]\]</div>
+<p>where <span class="math notranslate nohighlight">\( k' = k[B] \)</span> is an effective rate constant. The reaction then follows pseudo-first-order kinetics:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k'[A]\]</div>
+<p>which we solve as a first-order reaction.</p>
+</section>
+<section id="autocatalytic-reactions">
+<h4>Autocatalytic Reactions<a class="headerlink" href="#autocatalytic-reactions" title="Link to this heading">#</a></h4>
+<p>In autocatalysis, one of the products acts as a catalyst for the reaction, meaning the reaction rate depends on both the concentration of the reactant and the concentration of a product. For example, if:</p>
+<div class="math notranslate nohighlight">
+\[A + B \rightarrow 2A\]</div>
+<p>with <span class="math notranslate nohighlight">\( A \)</span> also acting as a catalyst, the rate law might be:</p>
+<div class="math notranslate nohighlight">
+\[\text{Rate} = k[A][B]\]</div>
+<p>This leads to a differential equation similar to those for second-order reactions but requires special treatment due to the product’s role in catalyzing the reaction.</p>
+</section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -390,11 +735,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Integration.html"
@@ -414,15 +758,57 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-differential-equations">Introduction to Differential Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-differential-equations">Types of Differential Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-types-of-first-order-differential-equations">Common Types of First-Order Differential Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-differential-equations">Applications of Differential Equations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-equations">Separable Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-requiring-an-integrating-factor">Equations Requiring an Integrating Factor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Examples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-rate-of-a-chemical-reaction">Understanding the Rate of a Chemical Reaction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-rate-law">Writing a Rate Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-differential-equation">Setting Up the Differential Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations-for-different-reaction-orders">Differential Equations for Different Reaction Orders</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-reactions">First-Order Reactions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-reactions">Second-Order Reactions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-single-reactant-e-g-2a-rightarrow-b">Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \rightarrow B \)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-two-reactants-e-g-a-b-rightarrow-c">Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \rightarrow C \)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-complex-reactions">Handling Complex Reactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudo-first-order-reactions">Pseudo-First-Order Reactions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#autocatalytic-reactions">Autocatalytic Reactions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -440,9 +826,10 @@ By NSCI0044 Team
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -466,8 +853,8 @@ By NSCI0044 Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

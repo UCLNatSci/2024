@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Areas and Integration &#8212; NSCI0044 Notes</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Integration';</script>
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="NSCI0044 Notes - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="NSCI0044 Notes - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -164,10 +187,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Trigonometry.html">Trigonometry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Limits.html">Limits and Infinities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series.html">Series</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Differentiation.html">Rates of Change and Differentiation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Areas and Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ODEs.html">Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Stats.html">Statistics and Probability</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Practice.html">Practice Problems</a></li>
 </ul>
 
     </div>
@@ -183,7 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -192,14 +221,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -321,26 +350,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -361,26 +392,68 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-integration">Definition of Integration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signed-and-unsigned-areas">Signed and Unsigned Areas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limits">Limits</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-between-curves">Area Between Curves</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-value-of-a-function">Mean Value of a Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-integration">Definition of Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definite-and-indefinite-integrals">Definite and Indefinite Integrals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indefinite-integrals">Indefinite Integrals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definite-integrals">Definite Integrals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-anti-derivatives">Common Anti-Derivatives</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial">Polynomial</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric">Trigonometric</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential">Exponential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic">Hyperbolic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric">Inverse Trigonometric</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-hyperbolic">Inverse Hyperbolic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamental-theorem-of-calculus-ftc">Fundamental Theorem of Calculus (FTC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-methods-for-finding-antiderivatives">Common Methods for Finding Antiderivatives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-functions">Polynomial Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-functions">Trigonometric Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-functions">Exponential Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-functions">Logarithmic Functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts">Integration by Parts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-techniques">Integration Techniques</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-substitution-polynomial">Integration by Substitution - Polynomial</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-substitution-trigonometric">Integration by Substitution - Trigonometric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversing-differentiation-rules-into-integration">Reversing Differentiation Rules into Integration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts-product-rule-reversal">Integration by Parts (Product Rule Reversal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#late-method-for-integration-by-parts">LATE Method for Integration by Parts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-polynomial-and-exponential">Example 1: Polynomial and Exponential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-trigonometric-and-exponential">Example 2: Trigonometric and Exponential</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-value-theorem-for-integrals">Mean Value Theorem for Integrals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signed-and-unsigned-areas">Signed and Unsigned Areas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation">Geometric Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsigned-area">Unsigned Area</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-unsigned-area">Example of Unsigned Area</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signed-area">Signed Area</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-signed-area">Example of Signed Area</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-signed-and-unsigned-area">Differences Between Signed and Unsigned Area</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#area-between-two-curves">Area Between Two Curves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept">Concept</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrical-interpretation">Geometrical Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-compute-the-area">Steps to Compute the Area</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-the-integral">Set up the Integral</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-integral">Solve the Integral</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-the-limits-of-integration">Verify the Limits of Integration</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-area-between-two-curves-y-x-2-and-y-x-2">Example 1: Area Between Two Curves <span class="math notranslate nohighlight">\(y = x^2\)</span> and <span class="math notranslate nohighlight">\(y = x + 2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-area-between-two-curves-y-sqrt-x-and-y-2x">Example 2: Area Between Two Curves <span class="math notranslate nohighlight">\(y = \sqrt{x}\)</span> and <span class="math notranslate nohighlight">\(y = 2x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cases-to-consider">Cases to Consider</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#when-the-curves-intersect">When the Curves Intersect</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetry">Symmetry</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-techniques">Summary of Key Techniques</a></li>
 </ul>
             </nav>
         </div>
@@ -390,12 +463,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="areas-and-integration">
-<h1>Areas and Integration<a class="headerlink" href="#areas-and-integration" title="Permalink to this heading">#</a></h1>
+<h1>Areas and Integration<a class="headerlink" href="#areas-and-integration" title="Link to this heading">#</a></h1>
 <section id="definition-of-integration">
-<h2>Definition of Integration<a class="headerlink" href="#definition-of-integration" title="Permalink to this heading">#</a></h2>
+<h2>Definition of Integration<a class="headerlink" href="#definition-of-integration" title="Link to this heading">#</a></h2>
 <p>Let’s start with a function <span class="math notranslate nohighlight">\( f(x) \)</span>, suppose we are interested in finding the area between the <span class="math notranslate nohighlight">\( x \)</span> axis and the function? If the function is constant or at least linear, this is fairly straightforward:</p>
 <p><img alt="Linear Function" src="_images/LinearFunction.png" /></p>
 <div class="math notranslate nohighlight">
@@ -417,452 +490,460 @@ document.write(`
 <p>We can now take the limit of <span class="math notranslate nohighlight">\( \Delta x \rightarrow 0 \)</span> to get an infinitesimal <span class="math notranslate nohighlight">\( \mathrm{d}x \)</span>, so we can go from summing up small finite areas to infinitesimal areas:</p>
 <div class="math notranslate nohighlight">
 \[\lim_{\Delta x \rightarrow 0} \left(\sum_{i=1}^{N} f(x_i) \Delta x \right) \longrightarrow \int_a^b f(x)\,\mathrm{d}x\]</div>
-<p>We call this quantity the <strong>Definite Integral</strong> of the function <span class="math notranslate nohighlight">\( f(x) \)</span> between the <strong>limits</strong> <span class="math notranslate nohighlight">\( [a,\,b] \)</span>, and the symbol <span class="math notranslate nohighlight">\( \int \)</span> is known as the <strong>Integration Operator</strong>. The function <span class="math notranslate nohighlight">\( f(x) \)</span> here is also called the <strong>Integrand</strong> and the process of finding an integral is known as <strong>Integration</strong>. If we want to work out the value of an integral without specific limits, this turns out to be a well-understood mathematical process too, known as finding the <strong>Indefinite Integral</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\int f'(x)\,\mathrm{d}x = f(x) + C\]</div>
-<p>where <span class="math notranslate nohighlight">\( C \)</span> is a constant. This process is called finding the <strong>Anti-Derivative</strong> and knowing a function’s anti-derivative means we can find the value of a function’s definite integral:</p>
-<div class="math notranslate nohighlight">
-\[\int_a^b f'(x)\,\mathrm{d}x = \Bigg[ f(x)\Bigg]_a^b = f(b) - f(a)\]</div>
-<p>This statement is known as <strong>The Fundamental Theorem of Calculus</strong>.</p>
-<p>An example: Find <span class="math notranslate nohighlight">\( \int_0^1 x\,\mathrm{d}x \)</span>:</p>
-<p>First, we have to split up the interval, and <span class="math notranslate nohighlight">\( f(x) \)</span>, into <span class="math notranslate nohighlight">\( N \)</span> equally spaced sections:</p>
-<div class="math notranslate nohighlight">
-\[\Delta x = \frac{1}{N} \Longrightarrow f(x_i) = \frac{i}{N}\]</div>
-<p>We can also switch limits from <span class="math notranslate nohighlight">\( \Delta x \rightarrow 0 \)</span> to <span class="math notranslate nohighlight">\( N \rightarrow \infty \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[I = \lim_{\Delta x \rightarrow 0} \left[ \sum_{i=1}^{N} \left(\frac{i}{N}\right)\left(\frac{1}{N}\right)\right] = \lim_{N \rightarrow \infty} \left[\frac{1}{N^2}\left(\sum_{i=1}^{N} i \right)\right] = \lim_{N \rightarrow \infty}\frac{N(N+1)}{2N^2} = \frac{1}{2}\]</div>
-<p>where we have used the expression for the sum: <span class="math notranslate nohighlight">\( \sum_{i=1}^N i = \frac{1}{2}N(N+1) \)</span>.</p>
-<p>We can apply what we know about differentiation to reverse the process to evaluate common integrals, for instance, if we know that:</p>
-<div class="math notranslate nohighlight">
-\[f(x) = x^n \Rightarrow f'(x) = n\,x^{n-1} \Longrightarrow f(x) = \frac{x^{n+1}}{n+1} \Rightarrow f'(x) = x^n\]</div>
-<p>Since <span class="math notranslate nohighlight">\(\frac{\mathrm{d}}{\mathrm{d}x}\big(x^0\big) = 0\)</span>, indefinite integrals must include a constant:</p>
-<div class="math notranslate nohighlight">
-\[\int f'(x)\,\mathrm{d}x = f(x) + C\]</div>
-<section id="signed-and-unsigned-areas">
-<h3>Signed and Unsigned Areas<a class="headerlink" href="#signed-and-unsigned-areas" title="Permalink to this heading">#</a></h3>
-<p>The value of the definite integral <span class="math notranslate nohighlight">\(\int_a^b f(x)\,\mathrm{d}x\)</span> is the area between the function and the <span class="math notranslate nohighlight">\(x\)</span> axis over the interval <span class="math notranslate nohighlight">\([a,\,b]\)</span> and it turns out the value of this integral is signed:</p>
-<p><img alt="Signed Area" src="_images/SignedArea.png" /></p>
-<p>Areas above the <span class="math notranslate nohighlight">\(x\)</span> axis produce a positive value of the integral and areas below the <span class="math notranslate nohighlight">\(x\)</span> axis produce a negative value of the integral. The unsigned area is given by:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">left</span><span class="o">|</span>\<span class="n">int_a</span><span class="o">^</span><span class="n">b</span> <span class="o">|</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">|</span>\<span class="p">,</span>\<span class="n">mathrm</span><span class="p">{</span><span class="n">d</span><span class="p">}</span><span class="n">x</span> \<span class="n">right</span><span class="o">|</span>
-</pre></div>
-</div>
-<p>An example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I_1</span> <span class="o">=</span> \<span class="n">int_1</span><span class="o">^</span><span class="mi">2</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="n">x</span><span class="p">)</span>\<span class="p">,</span>\<span class="n">mathrm</span><span class="p">{</span><span class="n">d</span><span class="p">}</span><span class="n">x</span> <span class="o">=</span> \<span class="n">left</span><span class="p">[</span><span class="o">-</span>\<span class="n">frac</span><span class="p">{</span><span class="mi">4</span><span class="p">}{</span><span class="mi">2</span><span class="p">}</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span>\<span class="n">right</span><span class="p">]</span><span class="n">_0</span><span class="o">^</span><span class="mi">1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>\<span class="n">bigg</span><span class="p">[</span> <span class="mi">2</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="o">^</span><span class="mi">2</span>\<span class="n">bigg</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">6</span> <span class="o">&lt;</span> <span class="mi">0</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I_2</span> <span class="o">=</span> \<span class="n">int_1</span><span class="o">^</span><span class="mi">2</span> <span class="mi">4</span><span class="n">x</span>\<span class="p">,</span>\<span class="n">mathrm</span><span class="p">{</span><span class="n">d</span><span class="p">}</span><span class="n">x</span> <span class="o">=</span> \<span class="n">left</span><span class="p">[</span>\<span class="n">frac</span><span class="p">{</span><span class="mi">4</span><span class="p">}{</span><span class="mi">2</span><span class="p">}</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span>\<span class="n">right</span><span class="p">]</span><span class="n">_0</span><span class="o">^</span><span class="mi">1</span> <span class="o">=</span> <span class="mi">2</span>\<span class="n">bigg</span><span class="p">[</span> <span class="mi">2</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="o">^</span><span class="mi">2</span>\<span class="n">bigg</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">&gt;</span> <span class="mi">0</span>
-</pre></div>
-</div>
+<p>We call this quantity the <strong>Integral</strong> of the function <span class="math notranslate nohighlight">\( f(x) \)</span> between the limits <span class="math notranslate nohighlight">\( [a,\,b] \)</span>, and the symbol <span class="math notranslate nohighlight">\( \int \)</span> is known as the Integration Operator. The function <span class="math notranslate nohighlight">\( f(x) \)</span> here is also called the Integrand and the process of finding an integral is known as Integration.</p>
 </section>
-<section id="limits">
-<h3>Limits<a class="headerlink" href="#limits" title="Permalink to this heading">#</a></h3>
-<p>The limits of a definite integral can be swapped around, introducing a minus sign, this is equivalent to evaluating the integral the opposite way round:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">int_a</span><span class="o">^</span><span class="n">b</span> <span class="sa">f</span><span class="s1">&#39;(x)\,\mathrm</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">x = f(b)-f(a) = -</span><span class="se">\b</span><span class="s1">igg(f(a) - f(b) </span><span class="se">\b</span><span class="s1">igg) = - \int_b^a f&#39;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>\<span class="p">,</span>\<span class="n">mathrm</span><span class="p">{</span><span class="n">d</span><span class="p">}</span><span class="n">x</span>
-</pre></div>
-</div>
-<p>An example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I_3</span> <span class="o">=</span> \<span class="n">int_1</span><span class="o">^</span><span class="mi">4</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span>\<span class="p">,</span>\<span class="n">mathrm</span><span class="p">{</span><span class="n">d</span><span class="p">}</span><span class="n">x</span> <span class="o">=</span> \<span class="n">bigg</span><span class="p">[</span>\<span class="n">frac</span><span class="p">{</span><span class="mi">1</span><span class="p">}{</span><span class="mi">3</span><span class="p">}</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span>\<span class="n">bigg</span><span class="p">]</span><span class="n">_1</span><span class="o">^</span><span class="mi">2</span> <span class="o">=</span> \<span class="n">frac</span><span class="p">{</span><span class="mi">1</span><span class="p">}{</span><span class="mi">3</span><span class="p">}</span>\<span class="n">left</span><span class="p">(</span><span class="mi">4</span><span class="o">^</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">1</span><span class="o">^</span><span class="mi">3</span>\<span class="n">right</span><span class="p">)</span> <span class="o">=</span> \<span class="n">frac</span><span class="p">{</span><span class="mi">63</span><span class="p">}{</span><span class="mi">3</span><span class="p">}</span> <span class="o">=</span> <span class="mi">21</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I_4</span> <span class="o">=</span> \<span class="n">int_4</span><span class="o">^</span><span class="mi">1</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span>\<span class="p">,</span>\<span class="n">mathrm</span><span class="p">{</span><span class="n">d</span><span class="p">}</span><span class="n">x</span> <span class="o">=</span> \<span class="n">bigg</span><span class="p">[</span>\<span class="n">frac</span><span class="p">{</span><span class="mi">1</span><span class="p">}{</span><span class="mi">3</span><span class="p">}</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span>\<span class="n">bigg</span><span class="p">]</span><span class="n">_2</span><span class="o">^</span><span class="mi">1</span> <span class="o">=</span> \<span class="n">frac</span><span class="p">{</span><span class="mi">1</span><span class="p">}{</span><span class="mi">3</span><span class="p">}</span>\<span class="n">left</span><span class="p">(</span><span class="mi">1</span><span class="o">^</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span><span class="o">^</span><span class="mi">3</span>\<span class="n">right</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span>\<span class="n">frac</span><span class="p">{</span><span class="mi">63</span><span class="p">}{</span><span class="mi">3</span><span class="p">}</span> <span class="o">=</span> <span class="o">-</span><span class="mi">21</span>
-</pre></div>
-</div>
+<section id="definite-and-indefinite-integrals">
+<h2>Definite and Indefinite Integrals<a class="headerlink" href="#definite-and-indefinite-integrals" title="Link to this heading">#</a></h2>
+<section id="indefinite-integrals">
+<h3>Indefinite Integrals<a class="headerlink" href="#indefinite-integrals" title="Link to this heading">#</a></h3>
+<p>An indefinite integral represents a family of functions and is denoted as:</p>
+<div class="math notranslate nohighlight">
+\[\int f(x) \, \mathrm{d}x\]</div>
+<p>It gives the antiderivative, which is a function whose derivative is <span class="math notranslate nohighlight">\( f(x) \)</span>. The result always includes a constant <span class="math notranslate nohighlight">\( C \)</span>, since the derivative of a constant is zero.</p>
 </section>
-<section id="area-between-curves">
-<h3>Area Between Curves<a class="headerlink" href="#area-between-curves" title="Permalink to this heading">#</a></h3>
-<p>Suppose we have two functions, we can find the area between the two curves by subtracting the two integrals:</p>
-<p><img alt="Area Between Curves" src="_images/AreaBetweenCurves.png" /></p>
-<p>which is written as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">int_a</span><span class="o">^</span><span class="n">b</span> \<span class="n">bigg</span><span class="p">(</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>\<span class="n">bigg</span><span class="p">)</span>\<span class="p">,</span>\<span class="n">mathrm</span><span class="p">{</span><span class="n">d</span><span class="p">}</span><span class="n">x</span>
-</pre></div>
-</div>
-<p>where <span class="math notranslate nohighlight">\(g(x)\)</span> is the upper curve and <span class="math notranslate nohighlight">\(f(x)\)</span> is the lower curve. If the area between the curves is above the <span class="math notranslate nohighlight">\(x\)</span> axis, then this is area should be positive and if we find a negative answer, then we have switched the order of the curves.</p>
-</section>
-<section id="mean-value-of-a-function">
-<h3>Mean Value of a Function<a class="headerlink" href="#mean-value-of-a-function" title="Permalink to this heading">#</a></h3>
-<p>For a function, <span class="math notranslate nohighlight">\(f(x)\)</span>, being integrated over a range <span class="math notranslate nohighlight">\([a,\,b]\)</span>, is it possible to find a constant function which would have the same area over that range?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> \<span class="n">frac</span><span class="p">{</span><span class="mi">1</span><span class="p">}{</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">}</span>\<span class="n">int_a</span><span class="o">^</span><span class="n">b</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>\<span class="p">,</span>\<span class="n">mathrm</span><span class="p">{</span><span class="n">d</span><span class="p">}</span><span class="n">x</span>
-</pre></div>
-</div>
-<p><img alt="Constant Function" src="_images/ConstantFunction.png" /></p>
+<section id="definite-integrals">
+<h3>Definite Integrals<a class="headerlink" href="#definite-integrals" title="Link to this heading">#</a></h3>
+<p>A definite integral computes the area under the curve of <span class="math notranslate nohighlight">\( f(x) \)</span> from <span class="math notranslate nohighlight">\( x = a \)</span> to <span class="math notranslate nohighlight">\( x = b \)</span> and is denoted as:</p>
+<div class="math notranslate nohighlight">
+\[\int_a^b f(x) \, \mathrm{d}x\]</div>
+<p>The result of a definite integral is a number and represents the net area under the curve between the limits <span class="math notranslate nohighlight">\( a \)</span> and <span class="math notranslate nohighlight">\( b \)</span>.</p>
 </section>
 </section>
-<section id="common-anti-derivatives">
-<h2>Common Anti-Derivatives<a class="headerlink" href="#common-anti-derivatives" title="Permalink to this heading">#</a></h2>
-<section id="polynomial">
-<h3>Polynomial<a class="headerlink" href="#polynomial" title="Permalink to this heading">#</a></h3>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\( f'(x) \)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\( f(x) \)</span></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( a \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( 0 \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( a x^n \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \frac{a x^{n+1}}{n+1} \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( (ax+b)^n \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \frac{1}{a} \frac{(ax+b)^{n+1}}{n+1} \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( \frac{a}{x} \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( a\ln(x) \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \frac{1}{ax+b} \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \frac{1}{a}\ln(ax+b) \)</span></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="trigonometric">
-<h3>Trigonometric<a class="headerlink" href="#trigonometric" title="Permalink to this heading">#</a></h3>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\( f'(x) \)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\( f(x) \)</span></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \sin(x) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( -\cos(x) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( \sin(ax+b) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( -\frac{1}{a}\cos(ax+b) \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \cos(x) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \sin(x) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( \cos(ax+b) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \frac{1}{a}\sin(ax+b) \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \sec^2(x) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \tan(x) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( \sec(x)\,\tan(x) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \sec(x) \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \csc(x)\,\cot(x) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( -\csc(x) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( \csc^2(x) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( -\cot(x) \)</span></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="exponential">
-<h3>Exponential<a class="headerlink" href="#exponential" title="Permalink to this heading">#</a></h3>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\( f'(x) \)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\( f(x) \)</span></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( ae^x \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( ae^x \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( e^{ax+b} \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \frac{1}{a}e^{ax+b} \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( a^x \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \frac{a^x}{\ln(a)} \)</span></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="hyperbolic">
-<h3>Hyperbolic<a class="headerlink" href="#hyperbolic" title="Permalink to this heading">#</a></h3>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\( f'(x) \)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\( f(x) \)</span></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \sinh(x) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \cosh(x) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( \sinh(ax+b) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \frac{1}{a}\cosh(ax+b) \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \cosh(x) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \sinh(x) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( \cosh(ax+b) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \frac{1}{a}\sinh(ax+b) \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \mathrm{sech}^2(x) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \tanh(x) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( \mathrm{sech}(x)\,\tanh(x) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( -\mathrm{sech}(x) \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \mathrm{cosech}(x)\,\cot(x) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( -\mathrm{cosech}(x) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( \mathrm{cosech}^2(x) \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( -\coth(x) \)</span></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="inverse-trigonometric">
-<h3>Inverse Trigonometric<a class="headerlink" href="#inverse-trigonometric" title="Permalink to this heading">#</a></h3>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\( f'(x) \)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\( f(x) \)</span></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \frac{1}{\sqrt{a^2 - x^2}} \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \arcsin\left(\frac{x}{a}\right) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( -\frac{1}{\sqrt{a^2 - x^2}} \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \arccos\left(\frac{x}{a}\right) \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \frac{1}{a^2 + x^2} \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \frac{1}{a}\arctan\left(\frac{x}{a}\right) \)</span></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="inverse-hyperbolic">
-<h3>Inverse Hyperbolic<a class="headerlink" href="#inverse-hyperbolic" title="Permalink to this heading">#</a></h3>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\( f'(x) \)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\( f(x) \)</span></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \frac{1}{\sqrt{x^2 + a^2}} \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \textrm{arsinh}\left(\frac{x}{a}\right) \)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( \frac{1}{\sqrt{x^2 - a^2}} \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \textrm{arcosh}\left(\frac{x}{a}\right) \)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \frac{1}{a^2 - x^2} \)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\( \textrm{artanh}\left(\frac{x}{a}\right) \)</span></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="integration-by-parts">
-<h2>Integration by Parts<a class="headerlink" href="#integration-by-parts" title="Permalink to this heading">#</a></h2>
-<p>Recall the product rule:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}d}{\mathrm{d}x}\bigg(f(x) \,g(x) \bigg) = \frac{\mathrm{d}f(x)}{\mathrm{d}x} g(x) + f(x) \frac{\mathrm{d}g(x)}{\mathrm{d}x}\]</div>
-<p>We can rearrange this and integrate <em>w.r.t.</em> <span class="math notranslate nohighlight">\(x\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}f(x)}{\mathrm{d}x} g(x) = \frac{\mathrm{d}d}{\mathrm{d}x}\bigg(f(x) \,g(x) \bigg) -  f(x) \frac{\mathrm{d}g(x)}{\mathrm{d}x}\]</div>
-<div class="math notranslate nohighlight">
-\[\int \frac{\mathrm{d}f(x)}{\mathrm{d}x} g(x)\,\mathrm{d}x = \int\frac{\mathrm{d}d}{\mathrm{d}x}\bigg(f(x) \,g(x) \bigg)\,\mathrm{d}x -  \int f(x) \frac{\mathrm{d}g(x)}{\mathrm{d}x}\,\mathrm{d}x\]</div>
-<p>By the fundamental theorem of calculus, the first term on the RHS becomes simplified:</p>
-<div class="math notranslate nohighlight">
-\[\int f'(x) \,g(x)\,\mathrm{d}x = f(x) \,g(x) - \int f(x) \,g'(x)\,\mathrm{d}x\]</div>
-<p>Sometimes this form of an integral allows us to make progress in solving a problem, because the term <span class="math notranslate nohighlight">\(\int f(x)\,g'(x)\,\mathrm{d}x\)</span> may be easier to integrate than <span class="math notranslate nohighlight">\(\int f'(x) \,g(x) \,\mathrm{d}x\)</span>.</p>
-<p>An example:</p>
-<div class="math notranslate nohighlight">
-\[I_1 = \int x \, e^{x}\,\mathrm{d}x\]</div>
-<p>Firstly we need to split it up into <span class="math notranslate nohighlight">\(f'\)</span> and <span class="math notranslate nohighlight">\(g\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[f' = e^x, \quad g = x\]</div>
-<div class="math notranslate nohighlight">
-\[f = e^x,\quad g' = 1\]</div>
-<div class="math notranslate nohighlight">
-\[I_1 = x e^x - \int e^x\,\mathrm{d}x = (x-1)e^x + C\]</div>
-<p>Given the form of a particular integration, how do we know which function to pick for <span class="math notranslate nohighlight">\(f'(x)\)</span> and which for <span class="math notranslate nohighlight">\(g(x)\)</span>? A simple way is to use the mnemonic <strong>LIATE</strong>:</p>
-<ul class="simple">
-<li><p><strong>L</strong>ogarithmic Term</p></li>
-<li><p><strong>I</strong>nverse Term</p></li>
-<li><p><strong>A</strong>lgebraic Term</p></li>
-<li><p><strong>T</strong>rigonometric Term</p></li>
-<li><p><strong>E</strong>xponential Term</p></li>
-</ul>
-<p>This list tells the order of preference for the term to be differentiated – <span class="math notranslate nohighlight">\(g(x) \rightarrow g'(x)\)</span>. The exponential function is at the bottom because it is usually the easiest to integrate, while the logarithmic term is usually the hardest.</p>
-<p>An example, integrate:</p>
-<div class="math notranslate nohighlight">
-\[I_2 = \int x \ln(x)\,\mathrm{d}x\]</div>
-<p>Since <strong>L</strong> falls before <strong>A</strong> in <strong>LIATE</strong>, we pick:</p>
-<div class="math notranslate nohighlight">
-\[f' = x, \quad g = \ln(x)\]</div>
-<div class="math notranslate nohighlight">
-\[f = \frac{1}{2}x^2, \quad g' = \frac{1}{x}\]</div>
-<p>And so integrating by parts we find:</p>
-<div class="math notranslate nohighlight">
-\[I_2 = \frac{1}{2} \,x^2 \,\ln(x) - \int \frac{1}{2} \,x \,\mathrm{d}x = \frac{1}{2} \, x^2 \left(\ln(x) - \frac{1}{2} \right) + C\]</div>
-<p>What about definite integrals? Same story but with limits:</p>
-<div class="math notranslate nohighlight">
-\[\int_a^b f' \,g\,\mathrm{d}x = \bigg[f \,g\bigg]_a^b -  \int_a^b f \, g'\,\mathrm{d}x\]</div>
-<p>Sometimes it is not always obvious that there <em>are</em> two functions in the integration expression. However, this can be remedied using a simple trick.</p>
-<p>An example:</p>
-<div class="math notranslate nohighlight">
-\[I_3 = \int \ln(x)\,\mathrm{d}x\]</div>
-<p>This should be seen as:</p>
-<div class="math notranslate nohighlight">
-\[I_3 = \int x^0\,\ln(x)\,\mathrm{d}x\]</div>
-<p>Since we have both <strong>L</strong> and <strong>A</strong> from <strong>LIATE</strong>, we pick:</p>
-<div class="math notranslate nohighlight">
-\[f' = x^0, \quad g = \ln(x)\]</div>
-<div class="math notranslate nohighlight">
-\[f = x^1\]</div>
-</section>
-<section id="integration-techniques">
-<h2>Integration Techniques<a class="headerlink" href="#integration-techniques" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<section id="fundamental-theorem-of-calculus-ftc">
+<h2>Fundamental Theorem of Calculus (FTC)<a class="headerlink" href="#fundamental-theorem-of-calculus-ftc" title="Link to this heading">#</a></h2>
+<p>The Fundamental Theorem of Calculus connects differentiation and integration and has two parts:</p>
 <ul>
-<li><p><strong>Chain Rule in Reverse</strong>
-1.</p>
+<li><p>Part 1: If <span class="math notranslate nohighlight">\( f(x) \)</span> is continuous on <span class="math notranslate nohighlight">\([a, b]\)</span>, then the function <span class="math notranslate nohighlight">\( F(x) \)</span>, defined by:</p>
 <div class="math notranslate nohighlight">
-\[I = \int [f(x)]^n\,f'(x)\,\mathrm{d}x = \frac{\left[f(x)\right]^{n+1}}{n+1} + C\]</div>
-<p>An example:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}I_1 = \int \sin^2(x)\cos(x)\,\mathrm{d}x \\ 
-f(x) = \sin(x) \Rightarrow f'(x) = \cos(x) \\ 
-I_1 = \frac{1}{3}\sin^3(x) + C\end{split}\]</div>
-<ol class="arabic simple" start="2">
-<li></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[I = \int \frac{f'(x)}{f(x)}\,\mathrm{d}x = \ln(f(x)) + C\]</div>
-<p>An example:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}I_2 = \int \frac{x}{3x^2 + 7}\,\mathrm{d}x \\ 
-f(x) = 3x^2 + 7 \Rightarrow f'(x) = 6x \\ 
-I_2 = \frac{1}{6} \int \frac{6x}{3x^2 + 7}\,\mathrm{d}x = \frac{1}{6} \ln(3x^2 + 7) + C\end{split}\]</div>
-<p>A trigonometric example:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}I_3 = \int \tan(x)\,\mathrm{d}x = \int \frac{\sin(x)}{\cos(x)}\,\mathrm{d}x\\
-f(x) = \cos(x) \Rightarrow f'(x) = - \sin(x)\\ 
-I_3 = -\int \frac{-\sin(x)}{\cos(x)}\,\mathrm{d}x = - \ln(\cos(x)) + C \end{split}\]</div>
-<ol class="arabic simple" start="3">
-<li></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[I = \int f'(x) e^{f(x)}\,\mathrm{d}x = e^{f(x)} + C\]</div>
-<p>An example:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}I_4 = \int \cos(x) \,e^{\sin(x)}\,\mathrm{d}x\\
-f(x) = \sin(x) \Rightarrow f'(x) = \cos(x) \\
-I_4  = e^{\sin(x)} + C \end{split}\]</div>
+\[F(x) = \int_a^x f(t) \, \mathrm{d}t\]</div>
+<p>is continuous on <span class="math notranslate nohighlight">\([a, b]\)</span>, differentiable on <span class="math notranslate nohighlight">\((a, b)\)</span>, and <span class="math notranslate nohighlight">\( F'(x) = f(x) \)</span>.</p>
 </li>
-<li><p><strong>Double Angle Identities</strong><br />
-Recall the trigonometric double angle identities:</p></li>
+<li><p>Part 2: If <span class="math notranslate nohighlight">\( f(x) \)</span> is continuous on <span class="math notranslate nohighlight">\([a, b]\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[\int_a^b f(x) \, \mathrm{d}x = F(b) - F(a)\]</div>
+<p>where <span class="math notranslate nohighlight">\( F(x) \)</span> is any antiderivative of <span class="math notranslate nohighlight">\( f(x) \)</span>.</p>
+</li>
 </ul>
+</section>
+<hr class="docutils" />
+<section id="common-methods-for-finding-antiderivatives">
+<h2>Common Methods for Finding Antiderivatives<a class="headerlink" href="#common-methods-for-finding-antiderivatives" title="Link to this heading">#</a></h2>
+<section id="polynomial-functions">
+<h3>Polynomial Functions<a class="headerlink" href="#polynomial-functions" title="Link to this heading">#</a></h3>
+<p>For polynomials, the integral is straightforward using the power rule for integration:</p>
 <div class="math notranslate nohighlight">
-\[\cos(2x) = 2 \cos^2(x) - 1 \Rightarrow \cos^2(x) = \frac{1}{2}(1 + \cos(2x)) \]</div>
+\[\int x^n \, \mathrm{d}x = \frac{x^{n+1}}{n+1} + C \quad \text{for} \quad n \neq -1\]</div>
+</section>
+<section id="trigonometric-functions">
+<h3>Trigonometric Functions<a class="headerlink" href="#trigonometric-functions" title="Link to this heading">#</a></h3>
+<p>For simple trigonometric functions, use the following standard integrals:</p>
+<ul>
+<li><div class="math notranslate nohighlight">
+\[\int \sin(x) \, \mathrm{d}x = -\cos(x) + C\]</div>
+</li>
+<li><div class="math notranslate nohighlight">
+\[\int \cos(x) \, \mathrm{d}x = \sin(x) + C\]</div>
+</li>
+</ul>
+</section>
+<section id="exponential-functions">
+<h3>Exponential Functions<a class="headerlink" href="#exponential-functions" title="Link to this heading">#</a></h3>
+<p>For exponential functions, the general rule is:</p>
 <div class="math notranslate nohighlight">
-\[\cos(2x) = 1 - 2 \sin^2(x) \Rightarrow \sin^2(x) = \frac{1}{2}(1 - \cos(2x)) \]</div>
-<p>Using these we can simplify integrals:</p>
+\[\int e^{ax} \, \mathrm{d}x = \frac{e^{ax}}{a} + C\]</div>
+<p>For base <span class="math notranslate nohighlight">\( b \)</span> exponentials:</p>
 <div class="math notranslate nohighlight">
-\[I_5 = \int \sin^2(x)\,\mathrm{d}x = \int \frac{1}{2}(1 - \cos(2x))\,\mathrm{d}x = \frac{1}{2}\left(x - \frac{1}{2}\sin(2x)\right) + C \]</div>
+\[\int b^x \, \mathrm{d}x = \frac{b^x}{\ln(b)} + C\]</div>
+<p>Where does this come from? Remember that we can write:</p>
 <div class="math notranslate nohighlight">
-\[I_6 = \int \cos^2(x)\,\mathrm{d}x = \int \frac{1}{2}(1 + \cos(2x))\,\mathrm{d}x = \frac{1}{2}\left(x + \frac{1}{2}\sin(2x)\right) + C\]</div>
+\[y = b^x \Rightarrow \ln(y) = \ln(b^x) = x\ln(b)\]</div>
+<p>Hence if we exponentiate both sides:</p>
+<div class="math notranslate nohighlight">
+\[y = e^{x \ln(b)}\]</div>
+<p>So taking the integral of this means:</p>
+<div class="math notranslate nohighlight">
+\[\int e^{x \ln(b)}\,\mathrm{d}x = \frac{e^{x \ln(b)} }{\ln(b)} + C = \frac{b^x}{\ln(b)} + C\]</div>
+</section>
+<section id="logarithmic-functions">
+<h3>Logarithmic Functions<a class="headerlink" href="#logarithmic-functions" title="Link to this heading">#</a></h3>
+<p>For logarithmic functions, the integral of the reciprocal function is:</p>
+<div class="math notranslate nohighlight">
+\[\int \frac{1}{x} \, \mathrm{d}x = \ln|x| + C\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="reversing-differentiation-rules-into-integration">
+<h2>Reversing Differentiation Rules into Integration<a class="headerlink" href="#reversing-differentiation-rules-into-integration" title="Link to this heading">#</a></h2>
+<p>In addition to the basic rules for calculating antiderivatives, there are specific techniques that arise when you reverse common differentiation rules, such as the product rule and the chain rule. These techniques help solve integrals that might otherwise be difficult.</p>
+<section id="integration-by-parts-product-rule-reversal">
+<h3>Integration by Parts (Product Rule Reversal)<a class="headerlink" href="#integration-by-parts-product-rule-reversal" title="Link to this heading">#</a></h3>
+<p>The product rule for differentiation states:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx} \left( u(x) v(x) \right) = u'(x) v(x) + u(x) v'(x)\]</div>
+<p>When reversing this rule to solve integrals, we use integration by parts. The formula for integration by parts is:</p>
+<div class="math notranslate nohighlight">
+\[\int u(x) v'(x) \, \mathrm{d}x = u(x) v(x) - \int v(x) u'(x) \, \mathrm{d}x\]</div>
+<p>In this formula:</p>
 <ul class="simple">
-<li><p><strong>Integrating Twice</strong><br />
-Consider the following integral:</p></li>
+<li><p><span class="math notranslate nohighlight">\( u(x) \)</span> is a function you choose to differentiate (its derivative is <span class="math notranslate nohighlight">\( u'(x) \)</span>),</p></li>
+<li><p><span class="math notranslate nohighlight">\( v'(x) \)</span> is the function you choose to integrate (its integral is <span class="math notranslate nohighlight">\( v(x) \)</span>).</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[I_7 = \int e^x\, \sin(x)\,\mathrm{d}x\]</div>
-<p>this is a good candidate to integrate by parts, we have <strong>T</strong> and <strong>E</strong> in <strong>LIATE</strong>:</p>
-<div class="math notranslate nohighlight">
-\[f'(x) = e^x, \quad g(x) = \sin(x) \]</div>
-<div class="math notranslate nohighlight">
-\[f(x) = e^x, \quad g'(x) = \cos(x) \]</div>
-<div class="math notranslate nohighlight">
-\[I_7 = e^x\, \sin(x) - \int e^x\,\cos(x)\,\mathrm{d}x\]</div>
-<p>This does not appear to be any easier to work out! However, if we integrate by parts again:</p>
-<div class="math notranslate nohighlight">
-\[f'(x) = e^x, \quad g(x) = \cos(x) \]</div>
-<div class="math notranslate nohighlight">
-\[f(x) = e^x, \quad g'(x) = -\sin(x) \]</div>
-<div class="math notranslate nohighlight">
-\[I_7 = e^x\, \sin(x) - e^x\,\cos(x) - \int e^x\,\sin(x)\,\mathrm{d}x \]</div>
-<p>It appears we still have not simplified the problem, but now look at the last term:</p>
-<div class="math notranslate nohighlight">
-\[I_7 = e^x\, \sin(x) - e^x\,\cos(x) - I_7 + C\]</div>
-<div class="math notranslate nohighlight">
-\[\Rightarrow 2I_7 = e^x\, \sin(x) - e^x\,\cos(x) + C\]</div>
-<div class="math notranslate nohighlight">
-\[I_7 = \frac{1}{2}\,e^x\, \left(\sin(x) - \cos(x)\right) + C\]</div>
-<p>and so we see by integrating twice, the integral has been solved.</p>
+<p>Steps for using integration by parts:</p>
+<ol class="arabic simple">
+<li><p>Identify parts of the integrand to assign to <span class="math notranslate nohighlight">\(u(x)\)</span> and <span class="math notranslate nohighlight">\(v'(x)\)</span>.</p></li>
+<li><p>Differentiate <span class="math notranslate nohighlight">\(u(x)\)</span> to get <span class="math notranslate nohighlight">\(u'(x)\)</span>.</p></li>
+<li><p>Integrate <span class="math notranslate nohighlight">\(v'(x)\)</span> to get <span class="math notranslate nohighlight">\(v(x)\)</span>.</p></li>
+<li><p>Substitute into the formula and simplify the resulting integral.</p></li>
+</ol>
 </section>
-<section id="integration-by-substitution-polynomial">
-<h2>Integration by Substitution - Polynomial<a class="headerlink" href="#integration-by-substitution-polynomial" title="Permalink to this heading">#</a></h2>
-<p>Sometimes we can solve an integration problem by substituting in a function, which recasts it in a simpler way. Consider a typical indefinite integral of a function <span class="math notranslate nohighlight">\( f(x) \)</span> <strong>wrt</strong> <span class="math notranslate nohighlight">\( x \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[I = \int f(x) \,\mathrm{d}x\]</div>
-<p>Sometimes we can pick a different function <span class="math notranslate nohighlight">\( u=u(x) \)</span>, substitute this into the integral, and change the variable we are integrating <strong>wrt</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}u}{\mathrm{d}x} = u' \Rightarrow \mathrm{d}x = \frac{\mathrm{d}u}{u'}\]</div>
-<div class="math notranslate nohighlight">
-\[I = \int \frac{f(u)}{u'}\,\mathrm{d}u\]</div>
-<p>Hopefully, this resulting integral is now in a simpler form to solve. An example:</p>
-<div class="math notranslate nohighlight">
-\[I_1 = \int \frac{1}{\sqrt{x} + 1}\,\mathrm{d}x\]</div>
-<p>The choice of substitution <span class="math notranslate nohighlight">\( u = \sqrt{x} \)</span> here can transform this into:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}u}{\mathrm{d}x} = \frac{1}{2}x^{-1/2} \Rightarrow \mathrm{d}x = 2u \,\mathrm{d}u\]</div>
-<div class="math notranslate nohighlight">
-\[I_1 = \int \frac{2u}{u + 1}\,\mathrm{d}u = 2\int \frac{u+1-1}{u+1}\,\mathrm{d}u = 2\int \left(1 - \frac{1}{u+1}\right)\,\mathrm{d}u \]</div>
-<div class="math notranslate nohighlight">
-\[= 2 \left( u - \ln(u+1)\right) + C = 2\left(\sqrt{x} - \ln (\sqrt{x} + 1) \right) + C\]</div>
-<p>For definite integrals, with substitution <span class="math notranslate nohighlight">\( u = u(x) \)</span>, we need to think about the limits:</p>
-<div class="math notranslate nohighlight">
-\[I = \int_a^b f(x) \,\mathrm{d}x = \int_{u(a)}^{u(b)} \frac{f(u)}{u'}\,\mathrm{d}u = \int_{x=a}^{x=b} \frac{f(u)}{u'}\,\mathrm{d}u\]</div>
-<p>This last expression allows us to avoid substituting in any limits until the end of the calculation. An example:</p>
-<div class="math notranslate nohighlight">
-\[I_2 = \int_0^1 \, \frac{e^{\sqrt{x}}}{\sqrt{x}}\,\mathrm{d}x\]</div>
-<p>Using a suitably chosen substitution</p>
-<div class="math notranslate nohighlight">
-\[u = \sqrt{x} \Rightarrow \mathrm{d}x = 2u \,\mathrm{d}u \]</div>
-<div class="math notranslate nohighlight">
-\[I_2 = \int_{x=0}^{x=1} \frac{2u\,e^u}{u}\,\mathrm{d}u = 2\int_{x=0}^{x=1} e^u\,\mathrm{d}u = 2\bigg[e^u\bigg]_{x=0}^{x=1} \]</div>
-<div class="math notranslate nohighlight">
-\[= 2\bigg[e^{\sqrt{x}}\bigg]_{0}^{1} = 2e^{1} - 2\]</div>
+<hr class="docutils" />
+<section id="late-method-for-integration-by-parts">
+<h3>LATE Method for Integration by Parts<a class="headerlink" href="#late-method-for-integration-by-parts" title="Link to this heading">#</a></h3>
+<p>The LATE method is a mnemonic that can help choose the best parts of the integrand to assign to <span class="math notranslate nohighlight">\( u(x) \)</span> and <span class="math notranslate nohighlight">\( v'(x) \)</span> when using integration by parts. The letters stand for:</p>
+<ul class="simple">
+<li><p>L: Logarithmic functions (if present)</p></li>
+<li><p>A: Algebraic functions (polynomials)</p></li>
+<li><p>T: Trigonometric functions</p></li>
+<li><p>E: Exponential functions</p></li>
+</ul>
+<p>Steps for using LATE:</p>
+<ol class="arabic simple">
+<li><p>First, choose <span class="math notranslate nohighlight">\( u(x) \)</span> from the category that appears first in LATE.</p></li>
+<li><p>Choose <span class="math notranslate nohighlight">\( v'(x) \)</span> from the remaining part of the integrand.</p></li>
+<li><p>Apply integration by parts as usual.</p></li>
+</ol>
 </section>
-<section id="integration-by-substitution-trigonometric">
-<h2>Integration by Substitution - Trigonometric<a class="headerlink" href="#integration-by-substitution-trigonometric" title="Permalink to this heading">#</a></h2>
-<p>Sometimes a trigonometric substitution is required.</p>
-<p>An example:</p>
+<section id="example-1-polynomial-and-exponential">
+<h3>Example 1: Polynomial and Exponential<a class="headerlink" href="#example-1-polynomial-and-exponential" title="Link to this heading">#</a></h3>
+<p>Consider the integral:</p>
 <div class="math notranslate nohighlight">
-\[I_3 = \int \frac{1}{\sqrt{1-x^2}} \,\mathrm{d}x\]</div>
-<p>Our choice of substitution is</p>
+\[\int x e^x \, \mathrm{d}x\]</div>
+<p>Using the LATE method:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( u(x) = x \)</span> (Algebraic function)</p></li>
+<li><p><span class="math notranslate nohighlight">\( v'(x) = e^x \)</span> (Exponential function)</p></li>
+</ul>
+<p>Now, differentiate <span class="math notranslate nohighlight">\( u(x) \)</span> and integrate <span class="math notranslate nohighlight">\( v'(x) \)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( u'(x) = 1 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( v(x) = e^x \)</span></p></li>
+</ul>
+<p>Now apply the formula for integration by parts:</p>
 <div class="math notranslate nohighlight">
-\[x = \sin(t) \Rightarrow \mathrm{d}x = \cos(t) \,\mathrm{d}t\]</div>
-<p>Since <span class="math notranslate nohighlight">\( \sin^2(t) + \cos^2(t) = 1 \Rightarrow \cos^2(t) = 1 - \sin^2(t) \)</span></p>
+\[\int x e^x \, \mathrm{d}x = x e^x - \int e^x \, \mathrm{d}x\]</div>
 <div class="math notranslate nohighlight">
-\[I_3 = \int \frac{\cos(t)}{\sqrt{1-\sin^2(t)}}\,\mathrm{d}t = \int \frac{\cos(t)}{\cos(t)}\,\mathrm{d}t \]</div>
+\[= x e^x - e^x + C\]</div>
+</section>
+<hr class="docutils" />
+<section id="example-2-trigonometric-and-exponential">
+<h3>Example 2: Trigonometric and Exponential<a class="headerlink" href="#example-2-trigonometric-and-exponential" title="Link to this heading">#</a></h3>
+<p>Consider the integral:</p>
 <div class="math notranslate nohighlight">
-\[= \int \,\mathrm{d}t = t + C \]</div>
-<p>Since <span class="math notranslate nohighlight">\( x = \sin(t) \Rightarrow t = \arcsin(x) \)</span>, then:</p>
+\[\int e^x \sin(x) \, \mathrm{d}x\]</div>
+<p>Using the LATE method:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( u(x) = \sin(x) \)</span> (Trigonometric function)</p></li>
+<li><p><span class="math notranslate nohighlight">\( v'(x) = e^x \)</span> (Exponential function)</p></li>
+</ul>
+<p>Now, differentiate <span class="math notranslate nohighlight">\( u(x) \)</span> and integrate <span class="math notranslate nohighlight">\( v'(x) \)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( u'(x) = \cos(x) \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( v(x) = e^x \)</span></p></li>
+</ul>
+<p>Now apply the formula for integration by parts:</p>
 <div class="math notranslate nohighlight">
-\[I_3 = \arcsin(x) + C\]</div>
-<p>A more complicated example:</p>
+\[\int e^x \sin(x) \, \mathrm{d}x = e^x \sin(x) - \int e^x \cos(x) \, \mathrm{d}x\]</div>
+<p>Now, we need to apply integration by parts again to the new integral <span class="math notranslate nohighlight">\( \int e^x \cos(x) \, \mathrm{d}x \)</span>. Using LATE again:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( u(x) = \cos(x) \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( v'(x) = e^x \)</span></p></li>
+</ul>
+<p>Following the same steps:</p>
 <div class="math notranslate nohighlight">
-\[I_4 = \int\frac{1}{a^2 + x^2}\,\mathrm{d}x\]</div>
-<p>where <span class="math notranslate nohighlight">\( a \)</span> is some constant. Firstly, let’s pick <span class="math notranslate nohighlight">\( a=1 \)</span> to simplify and use the substitution <span class="math notranslate nohighlight">\( x = \tan(t) \)</span>:</p>
+\[\int e^x \cos(x) \, \mathrm{d}x = e^x \cos(x) - \int e^x \sin(x) \, \mathrm{d}x\]</div>
+<p>Thus, we end up with an equation involving the original integral. Solving this, we obtain the result:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}x}{\mathrm{d}t} = \sec^2(t) \Rightarrow \mathrm{d}x = \sec^2(t) \,\mathrm{d}t\]</div>
+\[\int e^x \sin(x) \, \mathrm{d}x = \frac{e^x (\sin(x) - \cos(x))}{2} + C\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="mean-value-theorem-for-integrals">
+<h2>Mean Value Theorem for Integrals<a class="headerlink" href="#mean-value-theorem-for-integrals" title="Link to this heading">#</a></h2>
+<p>The Mean Value Theorem for Integrals states that if <span class="math notranslate nohighlight">\( f(x) \)</span> is continuous on the interval <span class="math notranslate nohighlight">\( [a, b] \)</span>, then there exists at least one point <span class="math notranslate nohighlight">\( c \in [a, b] \)</span> such that:</p>
 <div class="math notranslate nohighlight">
-\[I_4 = \int \frac{1}{1 + x^2}\,\mathrm{d}t = \int \frac{\sec^2(t)}{1 + \tan^2(t)}\,\mathrm{d}t\]</div>
-<p>Since <span class="math notranslate nohighlight">\( 1 + \tan^2(t) = \sec^2(t) \)</span>:</p>
+\[f(c) = \frac{1}{b - a} \int_a^b f(x) \, \mathrm{d}x\]</div>
+<p>This means that the average value of the function over the interval is equal to the value of the function at some point <span class="math notranslate nohighlight">\( c \)</span> within the interval. This can be helpful when interpreting integrals in terms of average values.</p>
+<p>We can see this graphically:
+<img alt="Constant Function" src="_images/ConstantFunction.png" /></p>
+</section>
+<section id="signed-and-unsigned-areas">
+<h2>Signed and Unsigned Areas<a class="headerlink" href="#signed-and-unsigned-areas" title="Link to this heading">#</a></h2>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h3>
+<p>The concept of <strong>signed</strong> and <strong>unsigned</strong> areas is important when dealing with integrals, particularly in the context of areas between curves or under curves in the plane.</p>
+<ul class="simple">
+<li><p><strong>Unsigned Area</strong> refers to the total geometric area between a curve and the x-axis, treating all areas as positive, regardless of whether the curve is above or below the axis.</p></li>
+<li><p><strong>Signed Area</strong> considers the direction of the curve relative to the x-axis. Areas above the x-axis are positive, and areas below the x-axis are negative.</p></li>
+</ul>
+<section id="geometric-interpretation">
+<h4>Geometric Interpretation<a class="headerlink" href="#geometric-interpretation" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Unsigned Area</strong>: The total area between the curve and the x-axis is computed without considering whether the curve is above or below the x-axis. All areas are treated as positive.</p></li>
+<li><p><strong>Signed Area</strong>: This accounts for whether the curve is above or below the x-axis. The area above the x-axis is positive, and the area below the x-axis is negative. The signed area is useful for determining net area, like in physical applications where direction matters (e.g., work or displacement).</p></li>
+</ul>
+<p>We can see this in the figure below:
+<img alt="Signed Area" src="_images/SignedArea.png" /></p>
+</section>
+</section>
+<section id="unsigned-area">
+<h3>Unsigned Area<a class="headerlink" href="#unsigned-area" title="Link to this heading">#</a></h3>
+<p>The unsigned area between a curve and the x-axis is calculated by taking the absolute value of the integrand, ensuring that no part of the area contributes negatively.</p>
+<ul>
+<li><p><strong>Formula for Unsigned Area</strong>:</p>
 <div class="math notranslate nohighlight">
-\[I_4 = \int \frac{\sec^2(t)}{\sec^2(t)}\,\mathrm{d}t = \int \,\mathrm{d}t = t + C \]</div>
-<p>Given <span class="math notranslate nohighlight">\( x = \tan(t) \Rightarrow t = \arctan(x) \)</span>, then:</p>
+\[\text{Unsigned Area} = \int_a^b \left| f(x) \right| \, dx\]</div>
+<p>where <span class="math notranslate nohighlight">\( f(x) \)</span> is the function describing the curve.</p>
+</li>
+</ul>
+<section id="example-of-unsigned-area">
+<h4>Example of Unsigned Area<a class="headerlink" href="#example-of-unsigned-area" title="Link to this heading">#</a></h4>
+<p>Find the unsigned area between the curve <span class="math notranslate nohighlight">\(y = x^2 - 4\)</span> and the x-axis from <span class="math notranslate nohighlight">\(x = -3\)</span> to <span class="math notranslate nohighlight">\(x = 3\)</span>.</p>
+<ul>
+<li><p><strong>Step 1:</strong> Identify the points where the curve intersects the x-axis. Set <span class="math notranslate nohighlight">\( f(x) = 0 \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[I_4 = \arctan(x) + C\]</div>
-<p>However, in general <span class="math notranslate nohighlight">\( a \neq 1 \)</span> here, so we need to adapt the substitution:</p>
+\[x^2 - 4 = 0 \quad \Rightarrow \quad x = \pm 2\]</div>
+<p>So, the curve intersects the x-axis at <span class="math notranslate nohighlight">\(x = -2\)</span> and <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
+</li>
+<li><p><strong>Step 2:</strong> Break the integral into two parts, where the curve is either above or below the x-axis.</p>
 <div class="math notranslate nohighlight">
-\[x = a\tan(t) \Rightarrow \frac{\mathrm{d}x}{\mathrm{d}t} = a\sec^2(t)\]</div>
+\[\text{Unsigned Area} = \int_{-3}^{-2} \left| x^2 - 4 \right| \, dx + \int_{-2}^{2} \left| x^2 - 4 \right| \, dx + \int_{2}^{3} \left| x^2 - 4 \right| \, dx\]</div>
+<p>Since <span class="math notranslate nohighlight">\(x^2 - 4\)</span> is negative between <span class="math notranslate nohighlight">\([-3, -2]\)</span> and <span class="math notranslate nohighlight">\([2, 3]\)</span>, we use the absolute value to change the sign:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}I_4 &amp;= \int \frac{a \sec^2(t)}{a^2 + a^2 \tan^2(t)}\,\mathrm{d}t \\
-&amp;= \int \frac{1}{a}\,\mathrm{d}t = \frac{t}{a} + C \\
-\Rightarrow I_4 &amp;= \frac{1}{a}\arctan\left(\frac{x}{a}\right) + C\end{split}\]</div>
+\[\text{Unsigned Area} = \int_{-3}^{-2} -(x^2 - 4) \, dx + \int_{-2}^{2} (4 - x^2) \, dx + \int_{2}^{3} -(x^2 - 4) \, dx\]</div>
+</li>
+<li><p><strong>Step 3:</strong> Evaluate each integral and sum the areas.</p></li>
+</ul>
+</section>
+</section>
+<section id="signed-area">
+<h3>Signed Area<a class="headerlink" href="#signed-area" title="Link to this heading">#</a></h3>
+<p>The signed area between a curve and the x-axis is computed directly using the integral of the function. The sign of the area depends on whether the curve is above or below the x-axis.</p>
+<ul>
+<li><p><strong>Formula for Signed Area</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\text{Signed Area} = \int_a^b f(x) \, dx\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\( f(x) &gt; 0 \)</span>, the area is positive (above the x-axis),</p></li>
+<li><p>If <span class="math notranslate nohighlight">\( f(x) &lt; 0 \)</span>, the area is negative (below the x-axis).</p></li>
+</ul>
+</li>
+</ul>
+<section id="example-of-signed-area">
+<h4>Example of Signed Area<a class="headerlink" href="#example-of-signed-area" title="Link to this heading">#</a></h4>
+<p>Find the signed area between the curve <span class="math notranslate nohighlight">\(y = x^2 - 4\)</span> and the x-axis from <span class="math notranslate nohighlight">\(x = -3\)</span> to <span class="math notranslate nohighlight">\(x = 3\)</span>.</p>
+<ul>
+<li><p><strong>Step 1:</strong> Set up the integral:</p>
+<div class="math notranslate nohighlight">
+\[\text{Signed Area} = \int_{-3}^3 (x^2 - 4) \, dx\]</div>
+</li>
+<li><p><strong>Step 2:</strong> Evaluate the integral:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-3}^3 (x^2 - 4) \, dx = \left[ \frac{x^3}{3} - 4x \right]_{-3}^{3}\]</div>
+</li>
+<li><p><strong>Step 3:</strong> Compute the values at the limits:</p>
+<div class="math notranslate nohighlight">
+\[\left( \frac{3^3}{3} - 4(3) \right) - \left( \frac{(-3)^3}{3} - 4(-3) \right)
+= \left( \frac{27}{3} - 12 \right) - \left( \frac{-27}{3} + 12 \right)\]</div>
+<div class="math notranslate nohighlight">
+\[= (9 - 12) - (-9 + 12) = -3 + 3 = 0\]</div>
+<p>The signed area is <span class="math notranslate nohighlight">\( 0 \)</span>, meaning the positive area (above the x-axis) cancels out the negative area (below the x-axis).</p>
+</li>
+</ul>
+</section>
+</section>
+<section id="differences-between-signed-and-unsigned-area">
+<h3>Differences Between Signed and Unsigned Area<a class="headerlink" href="#differences-between-signed-and-unsigned-area" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concept</p></th>
+<th class="head"><p>Signed Area</p></th>
+<th class="head"><p>Unsigned Area</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Definition</strong></p></td>
+<td><p>Area considering the sign (positive above x-axis, negative below)</p></td>
+<td><p>Total geometric area, treating all as positive</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Formula</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\( \int_a^b f(x) \, dx \)</span></p></td>
+<td><p>$ \int_a^b</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Use</strong></p></td>
+<td><p>Useful for net area (e.g., work, displacement)</p></td>
+<td><p>Useful when total area matters, regardless of direction</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example</strong></p></td>
+<td><p>Area between <span class="math notranslate nohighlight">\( y = x^2 - 4 \)</span> and the x-axis from <span class="math notranslate nohighlight">\(x = -3\)</span> to <span class="math notranslate nohighlight">\(x = 3\)</span></p></td>
+<td><p>Area between <span class="math notranslate nohighlight">\( y = x^2 - 4 \)</span> and the x-axis from <span class="math notranslate nohighlight">\(x = -3\)</span> to <span class="math notranslate nohighlight">\(x = 3\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="applications">
+<h3>Applications<a class="headerlink" href="#applications" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Signed Area</strong>: Often used in physics (e.g., calculating work done by a force or displacement) and economics (e.g., calculating net profit or loss).</p></li>
+<li><p><strong>Unsigned Area</strong>: Commonly used in geometry, calculus, and probability when the total area is important, irrespective of direction.</p></li>
+</ul>
+</section>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The <strong>signed area</strong> considers the direction of the curve relative to the x-axis (positive for above the x-axis, negative for below).</p></li>
+<li><p>The <strong>unsigned area</strong> treats all areas as positive, regardless of the curve’s position relative to the x-axis.</p></li>
+<li><p>Both concepts are useful in different contexts, and integrals can be adapted based on whether we need the signed or unsigned area.</p></li>
+</ul>
+</section>
+</section>
+<section id="area-between-two-curves">
+<h2>Area Between Two Curves<a class="headerlink" href="#area-between-two-curves" title="Link to this heading">#</a></h2>
+<section id="concept">
+<h3>Concept<a class="headerlink" href="#concept" title="Link to this heading">#</a></h3>
+<p>The area between two curves <span class="math notranslate nohighlight">\(y = f(x)\)</span> and <span class="math notranslate nohighlight">\(y = g(x)\)</span> (where <span class="math notranslate nohighlight">\( f(x) \geq g(x) \)</span> for <span class="math notranslate nohighlight">\(x \in [a, b]\)</span>) is the integral of the difference between the two functions over the interval <span class="math notranslate nohighlight">\([a, b]\)</span>.</p>
+<p>The formula for the area <span class="math notranslate nohighlight">\( A \)</span> between the curves is:</p>
+<div class="math notranslate nohighlight">
+\[A = \int_a^b \left[ f(x) - g(x) \right] \, dx\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( f(x) \)</span> is the upper curve,</p></li>
+<li><p><span class="math notranslate nohighlight">\( g(x) \)</span> is the lower curve,</p></li>
+<li><p><span class="math notranslate nohighlight">\( [a, b] \)</span> is the interval over which the area is computed.</p></li>
+</ul>
+<section id="geometrical-interpretation">
+<h4>Geometrical Interpretation<a class="headerlink" href="#geometrical-interpretation" title="Link to this heading">#</a></h4>
+<p>This integral represents the net area between the curves, which is the total area between them (above the x-axis and below the curves) over the specified interval.</p>
+<p>We can see this in the figure below:
+<img alt="Area Between Curves" src="_images/AreaBetweenCurves.png" /></p>
+</section>
+</section>
+<section id="steps-to-compute-the-area">
+<h3>Steps to Compute the Area<a class="headerlink" href="#steps-to-compute-the-area" title="Link to this heading">#</a></h3>
+<section id="set-up-the-integral">
+<h4>Set up the Integral<a class="headerlink" href="#set-up-the-integral" title="Link to this heading">#</a></h4>
+<ul>
+<li><p>Identify the functions <span class="math notranslate nohighlight">\( f(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span>.</p></li>
+<li><p>Ensure that <span class="math notranslate nohighlight">\( f(x) \geq g(x) \)</span> over the interval <span class="math notranslate nohighlight">\([a, b]\)</span>.</p></li>
+<li><p>Set up the integral:</p>
+<div class="math notranslate nohighlight">
+\[A = \int_a^b \left[ f(x) - g(x) \right] \, dx\]</div>
+</li>
+</ul>
+</section>
+<section id="solve-the-integral">
+<h4>Solve the Integral<a class="headerlink" href="#solve-the-integral" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Perform the integration to find the area.</p></li>
+</ul>
+</section>
+<section id="verify-the-limits-of-integration">
+<h4>Verify the Limits of Integration<a class="headerlink" href="#verify-the-limits-of-integration" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Make sure that the interval <span class="math notranslate nohighlight">\([a, b]\)</span> is correct, and check that the curves do not intersect in the interval unless explicitly accounted for.</p></li>
+</ul>
+</section>
+</section>
+<section id="example-1-area-between-two-curves-y-x-2-and-y-x-2">
+<h3>Example 1: Area Between Two Curves <span class="math notranslate nohighlight">\(y = x^2\)</span> and <span class="math notranslate nohighlight">\(y = x + 2\)</span><a class="headerlink" href="#example-1-area-between-two-curves-y-x-2-and-y-x-2" title="Link to this heading">#</a></h3>
+<p>Find the area between the curves <span class="math notranslate nohighlight">\(y = x^2\)</span> and <span class="math notranslate nohighlight">\(y = x + 2\)</span> from <span class="math notranslate nohighlight">\(x = 0\)</span> to <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
+<ul>
+<li><p><strong>Step 1:</strong> Set up the integral. The upper curve is <span class="math notranslate nohighlight">\(y = x + 2\)</span> and the lower curve is <span class="math notranslate nohighlight">\(y = x^2\)</span> in the interval <span class="math notranslate nohighlight">\([0, 2]\)</span>, so the area is:</p>
+<div class="math notranslate nohighlight">
+\[A = \int_0^2 \left[ (x + 2) - x^2 \right] \, dx\]</div>
+</li>
+<li><p><strong>Step 2:</strong> Solve the integral:</p>
+<div class="math notranslate nohighlight">
+\[A = \int_0^2 \left( x + 2 - x^2 \right) \, dx\]</div>
+<div class="math notranslate nohighlight">
+\[A = \left[ \frac{x^2}{2} + 2x - \frac{x^3}{3} \right]_0^2\]</div>
+<div class="math notranslate nohighlight">
+\[A = \left( \frac{2^2}{2} + 2(2) - \frac{2^3}{3} \right) - \left( 0 + 0 - 0 \right)\]</div>
+<div class="math notranslate nohighlight">
+\[A = \left( 2 + 4 - \frac{8}{3} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[A = 6 - \frac{8}{3} = \frac{18}{3} - \frac{8}{3} = \frac{10}{3}\]</div>
+<p>The area between the curves is <span class="math notranslate nohighlight">\( \frac{10}{3} \)</span> square units.</p>
+</li>
+</ul>
+</section>
+<section id="example-2-area-between-two-curves-y-sqrt-x-and-y-2x">
+<h3>Example 2: Area Between Two Curves <span class="math notranslate nohighlight">\(y = \sqrt{x}\)</span> and <span class="math notranslate nohighlight">\(y = 2x\)</span><a class="headerlink" href="#example-2-area-between-two-curves-y-sqrt-x-and-y-2x" title="Link to this heading">#</a></h3>
+<p>Find the area between the curves <span class="math notranslate nohighlight">\(y = \sqrt{x}\)</span> and <span class="math notranslate nohighlight">\(y = 2x\)</span> from <span class="math notranslate nohighlight">\(x = 0\)</span> to <span class="math notranslate nohighlight">\(x = 1\)</span>.</p>
+<ul>
+<li><p><strong>Step 1:</strong> Set up the integral. The upper curve is <span class="math notranslate nohighlight">\(y = \sqrt{x}\)</span> and the lower curve is <span class="math notranslate nohighlight">\(y = 2x\)</span> in the interval <span class="math notranslate nohighlight">\([0, 1]\)</span>, so the area is:</p>
+<div class="math notranslate nohighlight">
+\[A = \int_0^1 \left[ \sqrt{x} - 2x \right] \, dx\]</div>
+</li>
+<li><p><strong>Step 2:</strong> Solve the integral:</p>
+<div class="math notranslate nohighlight">
+\[A = \int_0^1 \left( x^{1/2} - 2x \right) \, dx\]</div>
+<div class="math notranslate nohighlight">
+\[A = \left[ \frac{2}{3} x^{3/2} - x^2 \right]_0^1\]</div>
+<div class="math notranslate nohighlight">
+\[A = \left( \frac{2}{3} \cdot 1^{3/2} - 1^2 \right) - \left( 0 - 0 \right)\]</div>
+<div class="math notranslate nohighlight">
+\[A = \frac{2}{3} - 1 = -\frac{1}{3}\]</div>
+<p>The area between the curves is <span class="math notranslate nohighlight">\( \frac{1}{3} \)</span> square units.</p>
+</li>
+</ul>
+</section>
+<section id="cases-to-consider">
+<h3>Cases to Consider<a class="headerlink" href="#cases-to-consider" title="Link to this heading">#</a></h3>
+<section id="when-the-curves-intersect">
+<h4>When the Curves Intersect<a class="headerlink" href="#when-the-curves-intersect" title="Link to this heading">#</a></h4>
+<p>If the curves intersect at points within the interval, the integral may need to be split into multiple parts where the upper and lower curves change. In this case, solve for the points of intersection and adjust the limits of integration.</p>
+</section>
+<section id="symmetry">
+<h4>Symmetry<a class="headerlink" href="#symmetry" title="Link to this heading">#</a></h4>
+<p>In some cases, symmetry about the x-axis or y-axis may simplify the calculation by allowing you to calculate the area over half the interval and then doubling it.</p>
+</section>
+<section id="id1">
+<h4>Applications<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>The concept of the area between curves is useful in various fields, such as:</p>
+<ul class="simple">
+<li><p>Finding the work done by a force when the force varies with distance.</p></li>
+<li><p>Determining the probability in probability density functions.</p></li>
+<li><p>Calculating the center of mass or moments of inertia for physical systems.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="summary-of-key-techniques">
+<h2>Summary of Key Techniques<a class="headerlink" href="#summary-of-key-techniques" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Integration by Parts: Reverses the product rule for differentiation.</p>
+<div class="math notranslate nohighlight">
+\[\int u \, \mathrm{d}v = uv - \int v \, \mathrm{d}u\]</div>
+</li>
+<li><p>LATE Method for Integration by Parts: A strategy for selecting <span class="math notranslate nohighlight">\( u(x) \)</span> and <span class="math notranslate nohighlight">\( v'(x) \)</span> based on the order: Logarithmic, Algebraic, Trigonometric, Exponential.</p></li>
+<li><p>Substitution (u-substitution): Reverses the chain rule for differentiation.</p>
+<div class="math notranslate nohighlight">
+\[\int f(g(x)) g'(x) \, \mathrm{d}x = \int f(u) \, \mathrm{d}u\]</div>
+</li>
+<li><p>Power Rule (for functions raised to a power): Reverses the chain rule with powers.</p>
+<div class="math notranslate nohighlight">
+\[\int (g(x))^n \, g'(x) \, \mathrm{d}x = \frac{(g(x))^{n+1}}{n+1} + C\]</div>
+</li>
+<li><p>Mean Value Theorem for Integrals: Averages the value of a function over an interval.</p>
+<div class="math notranslate nohighlight">
+\[f(c) = \frac{1}{b - a} \int_a^b f(x) \, \mathrm{d}x\]</div>
+</li>
+</ul>
+<p>By understanding how differentiation rules are reversed, you can solve more complex integrals involving products, compositions, and powers of functions.</p>
 </section>
 </section>
 
@@ -891,11 +972,10 @@ Consider the following integral:</p></li>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Differentiation.html"
@@ -915,10 +995,7 @@ Consider the following integral:</p></li>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -927,32 +1004,75 @@ Consider the following integral:</p></li>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-integration">Definition of Integration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signed-and-unsigned-areas">Signed and Unsigned Areas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limits">Limits</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-between-curves">Area Between Curves</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-value-of-a-function">Mean Value of a Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-integration">Definition of Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definite-and-indefinite-integrals">Definite and Indefinite Integrals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indefinite-integrals">Indefinite Integrals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definite-integrals">Definite Integrals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-anti-derivatives">Common Anti-Derivatives</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial">Polynomial</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric">Trigonometric</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential">Exponential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic">Hyperbolic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric">Inverse Trigonometric</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-hyperbolic">Inverse Hyperbolic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamental-theorem-of-calculus-ftc">Fundamental Theorem of Calculus (FTC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-methods-for-finding-antiderivatives">Common Methods for Finding Antiderivatives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-functions">Polynomial Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-functions">Trigonometric Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-functions">Exponential Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-functions">Logarithmic Functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts">Integration by Parts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-techniques">Integration Techniques</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-substitution-polynomial">Integration by Substitution - Polynomial</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-substitution-trigonometric">Integration by Substitution - Trigonometric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversing-differentiation-rules-into-integration">Reversing Differentiation Rules into Integration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts-product-rule-reversal">Integration by Parts (Product Rule Reversal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#late-method-for-integration-by-parts">LATE Method for Integration by Parts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-polynomial-and-exponential">Example 1: Polynomial and Exponential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-trigonometric-and-exponential">Example 2: Trigonometric and Exponential</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-value-theorem-for-integrals">Mean Value Theorem for Integrals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signed-and-unsigned-areas">Signed and Unsigned Areas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation">Geometric Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsigned-area">Unsigned Area</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-unsigned-area">Example of Unsigned Area</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signed-area">Signed Area</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-signed-area">Example of Signed Area</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-signed-and-unsigned-area">Differences Between Signed and Unsigned Area</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#area-between-two-curves">Area Between Two Curves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept">Concept</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrical-interpretation">Geometrical Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-compute-the-area">Steps to Compute the Area</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-the-integral">Set up the Integral</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-the-integral">Solve the Integral</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-the-limits-of-integration">Verify the Limits of Integration</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-area-between-two-curves-y-x-2-and-y-x-2">Example 1: Area Between Two Curves <span class="math notranslate nohighlight">\(y = x^2\)</span> and <span class="math notranslate nohighlight">\(y = x + 2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-area-between-two-curves-y-sqrt-x-and-y-2x">Example 2: Area Between Two Curves <span class="math notranslate nohighlight">\(y = \sqrt{x}\)</span> and <span class="math notranslate nohighlight">\(y = 2x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cases-to-consider">Cases to Consider</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#when-the-curves-intersect">When the Curves Intersect</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetry">Symmetry</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-techniques">Summary of Key Techniques</a></li>
 </ul>
   </nav></div>
 
@@ -974,9 +1094,10 @@ By NSCI0044 Team
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1000,8 +1121,8 @@ By NSCI0044 Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

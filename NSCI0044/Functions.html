@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Functions &#8212; NSCI0044 Notes</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Functions';</script>
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="NSCI0044 Notes - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="NSCI0044 Notes - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -168,6 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Integration.html">Areas and Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ODEs.html">Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Stats.html">Statistics and Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practice.html">Practice Problems</a></li>
 </ul>
 
     </div>
@@ -183,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -192,14 +216,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -321,26 +345,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -384,16 +410,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="functions">
-<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h1>
+<h1>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
 <section id="inverse-functions">
-<h2>Inverse Functions<a class="headerlink" href="#inverse-functions" title="Permalink to this heading">#</a></h2>
+<h2>Inverse Functions<a class="headerlink" href="#inverse-functions" title="Link to this heading">#</a></h2>
 <p>So far we have defined a function <span class="math notranslate nohighlight">\( y=y(x) \)</span>, but given this, is it possible to reverse the function to find <span class="math notranslate nohighlight">\( x=x(y) \)</span>? This reversing of the function process is called finding the <strong>inverse</strong> function. The notation for the inverse of a function <span class="math notranslate nohighlight">\( f(x) \)</span> is <span class="math notranslate nohighlight">\( f^{-1}(x) \)</span>. This is often confused with the <strong>reciprocal</strong> function <span class="math notranslate nohighlight">\( \frac{1}{f(x)} \)</span>. For trigonometric functions, the prefix “arc” is commonly added to indicate the inverse function, such as <span class="math notranslate nohighlight">\( \arcsin(x) \)</span> etc.</p>
 </section>
 <section id="algorithm-for-finding-inverse">
-<h2>Algorithm for Finding Inverse<a class="headerlink" href="#algorithm-for-finding-inverse" title="Permalink to this heading">#</a></h2>
+<h2>Algorithm for Finding Inverse<a class="headerlink" href="#algorithm-for-finding-inverse" title="Link to this heading">#</a></h2>
 <p>A simple method of finding the inverse of a function is first to write it out using two variables, for example, using <span class="math notranslate nohighlight">\( x \)</span> as the independent variable and <span class="math notranslate nohighlight">\( y \)</span> as the dependent variable:</p>
 <div class="math notranslate nohighlight">
 \[f(x): \quad y = (x+1)^2 - 3\]</div>
@@ -413,24 +439,24 @@ document.write(`
 \[f^{-1}(x) = \sqrt{x}, \, x \in [0,\infty), \, f^{-1}(x) \in [0,\infty)\]</div>
 </section>
 <section id="examples-of-well-known-inverse-functions">
-<h2>Examples of Well-Known Inverse Functions<a class="headerlink" href="#examples-of-well-known-inverse-functions" title="Permalink to this heading">#</a></h2>
+<h2>Examples of Well-Known Inverse Functions<a class="headerlink" href="#examples-of-well-known-inverse-functions" title="Link to this heading">#</a></h2>
 <p>The exponential and logarithm functions are the inverse of each other, and if we plot them, we can see the mirror image over the line <span class="math notranslate nohighlight">\( y = x \)</span>.</p>
 <p><img alt="Exponential and Logarithm" src="_images/ExpLog.png" /></p>
 <p><img alt="Inverse Trigonometric Functions" src="_images/ArcSinCos2.png" /></p>
 </section>
 <section id="even-and-odd-functions">
-<h2>Even and Odd Functions<a class="headerlink" href="#even-and-odd-functions" title="Permalink to this heading">#</a></h2>
+<h2>Even and Odd Functions<a class="headerlink" href="#even-and-odd-functions" title="Link to this heading">#</a></h2>
 <p>In mathematics, an even function is a real function such that <span class="math notranslate nohighlight">\( f(-x) = f(x) \)</span> for every <span class="math notranslate nohighlight">\( x \)</span> in its domain. Similarly, an odd function is a function such that <span class="math notranslate nohighlight">\( f(-x) = -f(x) \)</span> for every <span class="math notranslate nohighlight">\( x \)</span> in its domain.</p>
 <p>They are named for the parity of the powers of the power functions which satisfy each condition: the function <span class="math notranslate nohighlight">\( f(x) = x^n \)</span> is even if <span class="math notranslate nohighlight">\(n\)</span> is an even integer, and it is odd if <span class="math notranslate nohighlight">\(n\)</span> is an odd integer.</p>
 <p>Even functions are those real functions whose graph is self-symmetric with respect to the <span class="math notranslate nohighlight">\( y \)</span>-axis, and odd functions are those whose graph is self-symmetric with respect to the origin.</p>
 <p>If the domain of a real function is self-symmetric with respect to the origin, then the function can be uniquely decomposed as the sum of an even function and an odd function.</p>
 <section id="definition-and-examples">
-<h3>Definition and examples<a class="headerlink" href="#definition-and-examples" title="Permalink to this heading">#</a></h3>
+<h3>Definition and examples<a class="headerlink" href="#definition-and-examples" title="Link to this heading">#</a></h3>
 <p>Evenness and oddness are generally considered for real functions, that is, real-valued functions of a real variable. However, the concepts may be more generally defined for functions whose domain and codomain both have a notion of additive inverse. This includes abelian groups, all rings, all fields, and all vector spaces. Thus, for example, a real function could be odd or even (or neither), as could a complex-valued function of a vector variable, and so on.</p>
 <p>The given examples are real functions, to illustrate the symmetry of their graphs.</p>
 </section>
 <section id="even-functions">
-<h3>Even functions<a class="headerlink" href="#even-functions" title="Permalink to this heading">#</a></h3>
+<h3>Even functions<a class="headerlink" href="#even-functions" title="Link to this heading">#</a></h3>
 <p><img alt="Function " src="_images/funx2.png" /><br />
 <span class="math notranslate nohighlight">\( f(x) = x^2 \)</span> is an example of an even function.</p>
 <p>A real function <span class="math notranslate nohighlight">\( f \)</span> is even if, for every <span class="math notranslate nohighlight">\( x \)</span> in its domain, <span class="math notranslate nohighlight">\( -x \)</span> is also in its domain and:</p>
@@ -450,7 +476,7 @@ document.write(`
 </ul>
 </section>
 <section id="odd-functions">
-<h3>Odd functions<a class="headerlink" href="#odd-functions" title="Permalink to this heading">#</a></h3>
+<h3>Odd functions<a class="headerlink" href="#odd-functions" title="Link to this heading">#</a></h3>
 <p><img alt="Function " src="_images/funx3.png" /><br />
 <span class="math notranslate nohighlight">\( f(x) = x^3 \)</span> is an example of an odd function.</p>
 <p>A real function <span class="math notranslate nohighlight">\( f \)</span> is odd if, for every <span class="math notranslate nohighlight">\( x \)</span> in its domain, <span class="math notranslate nohighlight">\( -x \)</span> is also in its domain and:</p>
@@ -472,14 +498,14 @@ document.write(`
 <span class="math notranslate nohighlight">\( f(x) = x^3 + 1 \)</span> is neither even nor odd.</p>
 </section>
 <section id="uniqueness">
-<h3>Uniqueness<a class="headerlink" href="#uniqueness" title="Permalink to this heading">#</a></h3>
+<h3>Uniqueness<a class="headerlink" href="#uniqueness" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>If a function is both even and odd, it is equal to 0 everywhere it is defined.</p></li>
 <li><p>If a function is odd, the <strong>absolute value</strong> of that function is an even function.</p></li>
 </ul>
 </section>
 <section id="addition-and-subtraction">
-<h3>Addition and subtraction<a class="headerlink" href="#addition-and-subtraction" title="Permalink to this heading">#</a></h3>
+<h3>Addition and subtraction<a class="headerlink" href="#addition-and-subtraction" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The <strong>sum</strong> of two even functions is even.</p></li>
 <li><p>The sum of two odd functions is odd.</p></li>
@@ -489,7 +515,7 @@ document.write(`
 </ul>
 </section>
 <section id="multiplication-and-division">
-<h3>Multiplication and division<a class="headerlink" href="#multiplication-and-division" title="Permalink to this heading">#</a></h3>
+<h3>Multiplication and division<a class="headerlink" href="#multiplication-and-division" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The <strong>product</strong> of two even functions is an even function.</p>
 <ul>
@@ -504,7 +530,7 @@ document.write(`
 </ul>
 </section>
 <section id="composition">
-<h3>Composition<a class="headerlink" href="#composition" title="Permalink to this heading">#</a></h3>
+<h3>Composition<a class="headerlink" href="#composition" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The <strong>composition</strong> of two even functions is even.</p></li>
 <li><p>The composition of two odd functions is odd.</p></li>
@@ -513,7 +539,7 @@ document.write(`
 </ul>
 </section>
 <section id="evenodd-decomposition">
-<h3>Even–odd decomposition<a class="headerlink" href="#evenodd-decomposition" title="Permalink to this heading">#</a></h3>
+<h3>Even–odd decomposition<a class="headerlink" href="#evenodd-decomposition" title="Link to this heading">#</a></h3>
 <p>If a real function has a domain that is self-symmetric with respect to the origin, it may be uniquely decomposed as the sum of an even and an odd function, which are called respectively the <strong>even part</strong> and the <strong>odd part</strong> of the function, and are defined by</p>
 <div class="math notranslate nohighlight">
 \[f_\text{even}(x) = \frac{f(x) + f(-x)}{2},\]</div>
@@ -559,11 +585,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Algebra.html"
@@ -583,10 +608,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -594,6 +616,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -636,9 +659,10 @@ By NSCI0044 Team
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -662,8 +686,8 @@ By NSCI0044 Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
