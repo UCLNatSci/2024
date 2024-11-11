@@ -1,0 +1,1367 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Visualising fluid motion &#8212; Electromagnetism, Fluids and Waves</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Electromagnetism, Fluids and Waves</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Electromagnetism
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/EMmaths.html">
+   2. Mathematical Preliminaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/electrostatics.html">
+   3. Electrostatics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/solvingEsystems.html">
+   4. Solving Electrostatic Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/Efieldenergy.html">
+   5. Energy in an Electric Field
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/magneticfields.html">
+   6. Magnetism
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/magneticforces.html">
+   7. Magnetic Forces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/ampereslaw.html">
+   8. Ampère’s Circuital Law
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/faradayslaw.html">
+   9. Faraday’s Law
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/maxwelleqns.html">
+   10. Differential Forms and Maxwell’s Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/solvingmaxwell.html">
+   11. Solutions to Maxwell’s Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/EMenergy.html">
+   12. Energy in an Electromagnetic field
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/EMpotentials.html">
+   13. Electromagnetic Scalar and Vector Potentials
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/fluids/visualise.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ffluids/visualise.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/fluids/visualise.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/fluids/visualise.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#streamlines">
+   Streamlines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-stream-function">
+   The stream function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#particle-paths">
+   Particle paths
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#streaklines">
+   Streaklines
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Visualising fluid motion</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#streamlines">
+   Streamlines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-stream-function">
+   The stream function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#particle-paths">
+   Particle paths
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#streaklines">
+   Streaklines
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="visualising-fluid-motion">
+<span id="ch-visualise"></span><h1>Visualising fluid motion<a class="headerlink" href="#visualising-fluid-motion" title="Permalink to this headline">#</a></h1>
+<p><strong>In this section:</strong></p>
+<ul class="simple">
+<li><p>Can snapshots of the velocity field tell us about the paths taken by individual fluid particles?</p></li>
+<li><p>Does a streak of dye injected into a fluid tell us about the paths taken by individual fluid particles?</p></li>
+<li><p>What is a “stream function” and does every flow have one?</p></li>
+</ul>
+<section id="streamlines">
+<h2>Streamlines<a class="headerlink" href="#streamlines" title="Permalink to this headline">#</a></h2>
+<p>A streamline is a curve that is parallel to the velocity field <span class="math notranslate nohighlight">\(\underline{u}(\underline{x},t)\)</span> at a given, <strong>fixed time</strong> <span class="math notranslate nohighlight">\(t\)</span> and passes through a given point <span class="math notranslate nohighlight">\(\underline{x}_0\)</span>. A family of streamlines at time <span class="math notranslate nohighlight">\(t\)</span> provides a snapshot of the velocity field.</p>
+<p>To illustrate the concepts, we will take</p>
+<div class="math notranslate nohighlight" id="equation-examplev">
+<span class="eqno">()<a class="headerlink" href="#equation-examplev" title="Permalink to this equation">#</a></span>\[\underline{u}=(1,-2te^{-t^2}).\]</div>
+<p>This field has no spatial dependence, so the streamlines are straight lines with slope <span class="math notranslate nohighlight">\(-2t e^{-t^2}\)</span>. The direction of the streamlines changes at each instant, as shown in the figure below. The upper plot shows the slope function plotted against the time. The second row of plots shows the streamlines at intervals <span class="math notranslate nohighlight">\(t=[0.00,0.75,1.50,2.25,3.00]\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">U</span><span class="o">=</span><span class="n">V</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">start</span><span class="o">=</span><span class="p">[[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="o">-</span><span class="mf">1.5</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">]]</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">spec</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">slope</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">tvals</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">3.35</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">n</span><span class="o">=</span><span class="mi">5</span>    <span class="c1">#number of subplots</span>
+
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">spec</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">s</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([]),</span> <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([])</span>
+    <span class="n">t</span><span class="o">=</span><span class="mi">3</span><span class="o">*</span><span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1">#ax.set_title(&#39;t=&#39;+str(t))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">streamplot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">slope</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">V</span><span class="p">,</span><span class="n">start_points</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">spec</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tvals</span><span class="p">,</span><span class="n">slope</span><span class="p">(</span><span class="n">tvals</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.35</span><span class="p">,</span><span class="mf">3.35</span><span class="p">,</span><span class="o">-</span><span class="mf">0.9</span><span class="p">,</span><span class="mf">0.1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">2.25</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;$-2t e^{-t^2}$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\getlimits.py:172: RuntimeWarning: divide by zero encountered in exp2
+  eps=exp2(ld(-112)),
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\getlimits.py:51: RuntimeWarning: divide by zero encountered in log10
+  self.precision = int(-log10(self.eps))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\getlimits.py:52: RuntimeWarning: divide by zero encountered in power
+  self.resolution = float_to_float(float_conv(10) ** (-self.precision))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\getlimits.py:184: RuntimeWarning: divide by zero encountered in exp2
+  epsneg_f80 = exp2(ld(-64))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\getlimits.py:185: RuntimeWarning: divide by zero encountered in exp2
+  tiny_f80 = exp2(ld(-16382))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\getlimits.py:199: RuntimeWarning: divide by zero encountered in exp2
+  eps=exp2(ld(-63)),
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\getlimits.py:211: RuntimeWarning: divide by zero encountered in nextafter
+  huge_dd = (umath.nextafter(ld(inf), ld(0))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\getlimits.py:224: RuntimeWarning: divide by zero encountered in exp2
+  eps=exp2(ld(-105)),
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\getlimits.py:225: RuntimeWarning: divide by zero encountered in exp2
+  epsneg= exp2(ld(-106)),
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\getlimits.py:227: RuntimeWarning: divide by zero encountered in exp2
+  tiny=exp2(ld(-1022)))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\__init__.py:343: RuntimeWarning: divide by zero encountered in subtract
+  if not abs(x.dot(x) - 2.0) &lt; 1e-5:
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\__init__.py:343: RuntimeWarning: divide by zero encountered in absolute
+  if not abs(x.dot(x) - 2.0) &lt; 1e-5:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\function_base.py:127: RuntimeWarning: divide by zero encountered in multiply
+  start = asanyarray(start) * 1.0
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\function_base.py:128: RuntimeWarning: divide by zero encountered in multiply
+  stop  = asanyarray(stop)  * 1.0
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\function_base.py:134: RuntimeWarning: divide by zero encountered in double_scalars
+  delta = stop - start
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\function_base.py:141: RuntimeWarning: divide by zero encountered in double_scalars
+  step = delta / div
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\_methods.py:56: RuntimeWarning: divide by zero encountered in reduce
+  return umr_any(a, axis, dtype, out, keepdims)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\function_base.py:151: RuntimeWarning: divide by zero encountered in multiply
+  y *= step
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\function_base.py:161: RuntimeWarning: divide by zero encountered in add
+  y += start
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\colors.py:989: RuntimeWarning: divide by zero encountered in double_scalars
+  [(1.0 - x, y1, y0) for x, y0, y1 in reversed(data)])
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\markers.py:796: RuntimeWarning: divide by zero encountered in true_divide
+  np.array([(-1, -3), (+1, -3), (+1, -1), (+3, -1), (+3, +1), (+1, +1),
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\markers.py:800: RuntimeWarning: divide by zero encountered in true_divide
+  np.array([(+3, 0), (+3, +1), (+1, +1), (+1, +3),
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\markers.py:820: RuntimeWarning: divide by zero encountered in true_divide
+  np.array([(-1, -2), (0, -1), (+1, -2), (+2, -1), (+1, 0), (+2, +1),
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\markers.py:825: RuntimeWarning: divide by zero encountered in true_divide
+  np.array([(+1, 0), (+2, +1), (+1, +2), (0, +1),
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\tri\triinterpolate.py:668: RuntimeWarning: divide by zero encountered in true_divide
+  gauss_w = np.ones([9], dtype=np.float64) / 9.
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\function_base.py:127: RuntimeWarning: divide by zero encountered in multiply
+  start = asanyarray(start) * 1.0
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\function_base.py:128: RuntimeWarning: divide by zero encountered in multiply
+  stop  = asanyarray(stop)  * 1.0
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\function_base.py:134: RuntimeWarning: divide by zero encountered in double_scalars
+  delta = stop - start
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\function_base.py:141: RuntimeWarning: divide by zero encountered in double_scalars
+  step = delta / div
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\_methods.py:56: RuntimeWarning: divide by zero encountered in reduce
+  return umr_any(a, axis, dtype, out, keepdims)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\function_base.py:151: RuntimeWarning: divide by zero encountered in multiply
+  y *= step
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\function_base.py:161: RuntimeWarning: divide by zero encountered in add
+  y += start
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\figure.py:2251: RuntimeWarning: divide by zero encountered in isfinite
+  if not np.isfinite(figsize).all() or (np.array(figsize) &lt; 0).any():
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\_methods.py:62: RuntimeWarning: divide by zero encountered in reduce
+  return umr_all(a, axis, dtype, out, keepdims)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\figure.py:2251: RuntimeWarning: divide by zero encountered in less
+  if not np.isfinite(figsize).all() or (np.array(figsize) &lt; 0).any():
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2031: RuntimeWarning: divide by zero encountered in double_scalars
+  self._mtx[0, 0] *= sx
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2032: RuntimeWarning: divide by zero encountered in double_scalars
+  self._mtx[0, 1] *= sx
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2033: RuntimeWarning: divide by zero encountered in double_scalars
+  self._mtx[0, 2] *= sx
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2034: RuntimeWarning: divide by zero encountered in double_scalars
+  self._mtx[1, 0] *= sy
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2035: RuntimeWarning: divide by zero encountered in double_scalars
+  self._mtx[1, 1] *= sy
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2036: RuntimeWarning: divide by zero encountered in double_scalars
+  self._mtx[1, 2] *= sy
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:378: RuntimeWarning: divide by zero encountered in double_scalars
+  return points[1, 0] - points[0, 0]
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:384: RuntimeWarning: divide by zero encountered in double_scalars
+  return points[1, 1] - points[0, 1]
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\lib\function_base.py:1281: RuntimeWarning: divide by zero encountered in subtract
+  a = op(a[slice1], a[slice2])
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\ticker.py:2142: RuntimeWarning: divide by zero encountered in less_equal
+  if np.any(np.diff(steps) &lt;= 0) or steps[-1] &gt; 10 or steps[0] &lt; 1:
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\fromnumeric.py:87: RuntimeWarning: divide by zero encountered in reduce
+  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\ticker.py:2155: RuntimeWarning: divide by zero encountered in multiply
+  return np.concatenate([0.1 * steps[:-1], steps, [10 * steps[1]]])
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\ticker.py:2155: RuntimeWarning: divide by zero encountered in double_scalars
+  return np.concatenate([0.1 * steps[:-1], steps, [10 * steps[1]]])
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axes\_base.py:3438: RuntimeWarning: divide by zero encountered in isfinite
+  and not np.isfinite(converted_limit)):
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2827: RuntimeWarning: divide by zero encountered in isfinite
+  if (not np.isfinite(vmin)) or (not np.isfinite(vmax)):
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2840: RuntimeWarning: divide by zero encountered in double_scalars
+  if maxabsvalue &lt; (1e6 / tiny) * np.finfo(float).tiny:
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2012: RuntimeWarning: divide by zero encountered in double_scalars
+  self._mtx[0, 2] += tx
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2013: RuntimeWarning: divide by zero encountered in double_scalars
+  self._mtx[1, 2] += ty
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\gridspec.py:202: RuntimeWarning: divide by zero encountered in subtract
+  fig_tops, fig_bottoms = (top - cell_hs).reshape((-1, 2)).T
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\gridspec.py:203: RuntimeWarning: divide by zero encountered in add
+  fig_lefts, fig_rights = (left + cell_ws).reshape((-1, 2)).T
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\_methods.py:43: RuntimeWarning: divide by zero encountered in reduce
+  return umr_minimum(a, axis, None, out, keepdims, initial, where)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\_methods.py:39: RuntimeWarning: divide by zero encountered in reduce
+  return umr_maximum(a, axis, None, out, keepdims, initial, where)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:1041: RuntimeWarning: divide by zero encountered in not_equal
+  if np.any(self._points != other.get_points()):
+C:\Users\alimo\AppData\Local\Temp/ipykernel_21884/2050004932.py:14: RuntimeWarning: divide by zero encountered in exp
+  return -2*t*np.exp(-t**2)
+C:\Users\alimo\AppData\Local\Temp/ipykernel_21884/2050004932.py:14: RuntimeWarning: divide by zero encountered in double_scalars
+  return -2*t*np.exp(-t**2)
+C:\Users\alimo\AppData\Local\Temp/ipykernel_21884/2050004932.py:25: RuntimeWarning: divide by zero encountered in multiply
+  ax.streamplot(X,Y,U,slope(t)*V,start_points=start,density=10)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\numeric.py:2362: RuntimeWarning: divide by zero encountered in isfinite
+  xfin = isfinite(x)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\numeric.py:2363: RuntimeWarning: divide by zero encountered in isfinite
+  yfin = isfinite(y)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\numeric.py:2346: RuntimeWarning: divide by zero encountered in subtract
+  return less_equal(abs(x-y), atol + rtol * abs(y))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\numeric.py:2346: RuntimeWarning: divide by zero encountered in absolute
+  return less_equal(abs(x-y), atol + rtol * abs(y))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\numeric.py:2346: RuntimeWarning: divide by zero encountered in multiply
+  return less_equal(abs(x-y), atol + rtol * abs(y))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\numeric.py:2346: RuntimeWarning: divide by zero encountered in add
+  return less_equal(abs(x-y), atol + rtol * abs(y))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\numeric.py:2346: RuntimeWarning: divide by zero encountered in less_equal
+  return less_equal(abs(x-y), atol + rtol * abs(y))
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:336: RuntimeWarning: divide by zero encountered in greater
+  if not (np.diff(x) &gt; 0).all():
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:338: RuntimeWarning: divide by zero encountered in greater
+  if not (np.diff(y) &gt; 0).all():
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:344: RuntimeWarning: divide by zero encountered in double_scalars
+  self.dx = x[1] - x[0]
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:345: RuntimeWarning: divide by zero encountered in double_scalars
+  self.dy = y[1] - y[0]
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:350: RuntimeWarning: divide by zero encountered in double_scalars
+  self.width = x[-1] - x[0]
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:351: RuntimeWarning: divide by zero encountered in double_scalars
+  self.height = y[-1] - y[0]
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:353: RuntimeWarning: divide by zero encountered in double_scalars
+  if not np.allclose(np.diff(x), self.width / (self.nx - 1)):
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\numeric.py:2346: RuntimeWarning: divide by zero encountered in double_scalars
+  return less_equal(abs(x-y), atol + rtol * abs(y))
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:355: RuntimeWarning: divide by zero encountered in double_scalars
+  if not np.allclose(np.diff(y), self.height / (self.ny - 1)):
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:381: RuntimeWarning: divide by zero encountered in multiply
+  self.nx, self.ny = (30 * np.broadcast_to(density, 2)).astype(int)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:271: RuntimeWarning: divide by zero encountered in long_scalars
+  self.x_grid2mask = (mask.nx - 1) / (grid.nx - 1)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:272: RuntimeWarning: divide by zero encountered in long_scalars
+  self.y_grid2mask = (mask.ny - 1) / (grid.ny - 1)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:274: RuntimeWarning: divide by zero encountered in double_scalars
+  self.x_mask2grid = 1. / self.x_grid2mask
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:275: RuntimeWarning: divide by zero encountered in double_scalars
+  self.y_mask2grid = 1. / self.y_grid2mask
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:277: RuntimeWarning: divide by zero encountered in double_scalars
+  self.x_data2grid = 1. / grid.dx
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:278: RuntimeWarning: divide by zero encountered in double_scalars
+  self.y_data2grid = 1. / grid.dy
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:2365: RuntimeWarning: divide by zero encountered in isfinite
+  condition = ~(np.isfinite(a))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:2365: RuntimeWarning: divide by zero encountered in invert
+  condition = ~(np.isfinite(a))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:1024: RuntimeWarning: divide by zero encountered in logical_or
+  m = umath.logical_or(ma, getmaskarray(b))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:1160: RuntimeWarning: divide by zero encountered in isfinite
+  m = ~umath.isfinite(result)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:1160: RuntimeWarning: divide by zero encountered in invert
+  m = ~umath.isfinite(result)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:1161: RuntimeWarning: divide by zero encountered in bitwise_or
+  m |= getmask(a)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:1162: RuntimeWarning: divide by zero encountered in bitwise_or
+  m |= getmask(b)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:853: RuntimeWarning: divide by zero encountered in absolute
+  return umath.absolute(a) * self.tolerance &gt;= umath.absolute(b)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:853: RuntimeWarning: divide by zero encountered in multiply
+  return umath.absolute(a) * self.tolerance &gt;= umath.absolute(b)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:853: RuntimeWarning: divide by zero encountered in greater_equal
+  return umath.absolute(a) * self.tolerance &gt;= umath.absolute(b)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:1166: RuntimeWarning: divide by zero encountered in bitwise_or
+  m |= domain(da, db)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:1178: RuntimeWarning: divide by zero encountered in multiply
+  masked_da = umath.multiply(m, da)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:1181: RuntimeWarning: divide by zero encountered in add
+  result += masked_da
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:6849: RuntimeWarning: divide by zero encountered in isfinite
+  invalid = np.logical_not(np.isfinite(result.view(ndarray)))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:6849: RuntimeWarning: divide by zero encountered in logical_not
+  invalid = np.logical_not(np.isfinite(result.view(ndarray)))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:937: RuntimeWarning: divide by zero encountered in isfinite
+  m = ~umath.isfinite(result)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:937: RuntimeWarning: divide by zero encountered in invert
+  m = ~umath.isfinite(result)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:885: RuntimeWarning: divide by zero encountered in less
+  return umath.less(x, self.critical_value)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:938: RuntimeWarning: divide by zero encountered in bitwise_or
+  m |= self.domain(d)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\ma\core.py:939: RuntimeWarning: divide by zero encountered in bitwise_or
+  m |= getmask(a)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:157: RuntimeWarning: divide by zero encountered in double_scalars
+  if not (grid.x_origin &lt;= xs &lt;= grid.x_origin + grid.width and
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:158: RuntimeWarning: divide by zero encountered in double_scalars
+  grid.y_origin &lt;= ys &lt;= grid.y_origin + grid.height):
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:165: RuntimeWarning: divide by zero encountered in subtract
+  sp2[:, 0] -= grid.x_origin
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:166: RuntimeWarning: divide by zero encountered in subtract
+  sp2[:, 1] -= grid.y_origin
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:289: RuntimeWarning: divide by zero encountered in double_scalars
+  return xd * self.x_data2grid, yd * self.y_data2grid
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:282: RuntimeWarning: divide by zero encountered in double_scalars
+  return (int(xi * self.x_grid2mask + 0.5),
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:283: RuntimeWarning: divide by zero encountered in double_scalars
+  int(yi * self.y_grid2mask + 0.5))
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:538: RuntimeWarning: divide by zero encountered in true_divide
+  maxds = min(1. / dmap.mask.nx, 1. / dmap.mask.ny, 0.1)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:657: RuntimeWarning: divide by zero encountered in double_scalars
+  xt = xi - x
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:658: RuntimeWarning: divide by zero encountered in double_scalars
+  yt = yi - y
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:659: RuntimeWarning: divide by zero encountered in double_scalars
+  a0 = a00 * (1 - xt) + a01 * xt
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:660: RuntimeWarning: divide by zero encountered in double_scalars
+  a1 = a10 * (1 - xt) + a11 * xt
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:661: RuntimeWarning: divide by zero encountered in double_scalars
+  ai = a0 * (1 - yt) + a1 * yt
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:447: RuntimeWarning: divide by zero encountered in double_scalars
+  dt_ds = 1. / ds_dt
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:450: RuntimeWarning: divide by zero encountered in double_scalars
+  return ui * dt_ds, vi * dt_ds
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:559: RuntimeWarning: divide by zero encountered in double_scalars
+  k2x, k2y = f(xi + ds * k1x, yi + ds * k1y)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:573: RuntimeWarning: divide by zero encountered in double_scalars
+  dx1 = ds * k1x
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:574: RuntimeWarning: divide by zero encountered in double_scalars
+  dy1 = ds * k1y
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:575: RuntimeWarning: divide by zero encountered in double_scalars
+  dx2 = ds * 0.5 * (k1x + k2x)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:576: RuntimeWarning: divide by zero encountered in double_scalars
+  dy2 = ds * 0.5 * (k1y + k2y)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:580: RuntimeWarning: divide by zero encountered in double_scalars
+  error = np.hypot((dx2 - dx1) / (nx - 1), (dy2 - dy1) / (ny - 1))
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:580: RuntimeWarning: divide by zero encountered in hypot
+  error = np.hypot((dx2 - dx1) / (nx - 1), (dy2 - dy1) / (ny - 1))
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:584: RuntimeWarning: divide by zero encountered in double_scalars
+  xi += dx2
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:585: RuntimeWarning: divide by zero encountered in double_scalars
+  yi += dy2
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:590: RuntimeWarning: divide by zero encountered in double_scalars
+  if stotal + ds &gt; maxlength:
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:592: RuntimeWarning: divide by zero encountered in double_scalars
+  stotal += ds
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:612: RuntimeWarning: divide by zero encountered in double_scalars
+  dsx = xi / -cx
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:622: RuntimeWarning: divide by zero encountered in double_scalars
+  xf_traj.append(xi + cx * ds)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:623: RuntimeWarning: divide by zero encountered in double_scalars
+  yf_traj.append(yi + cy * ds)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:568: RuntimeWarning: divide by zero encountered in double_scalars
+  stotal += ds
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:476: RuntimeWarning: divide by zero encountered in double_scalars
+  stotal += s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:614: RuntimeWarning: divide by zero encountered in double_scalars
+  dsx = (nx - 1 - xi) / cx
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:486: RuntimeWarning: divide by zero encountered in double_scalars
+  stotal += s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:292: RuntimeWarning: divide by zero encountered in true_divide
+  return xg / self.x_data2grid, yg / self.y_data2grid
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:189: RuntimeWarning: divide by zero encountered in add
+  tx += grid.x_origin
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:190: RuntimeWarning: divide by zero encountered in add
+  ty += grid.y_origin
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:196: RuntimeWarning: divide by zero encountered in hypot
+  s = np.cumsum(np.hypot(np.diff(tx), np.diff(ty)))
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:197: RuntimeWarning: divide by zero encountered in double_scalars
+  n = np.searchsorted(s, s[-1] / 2.)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:199: RuntimeWarning: divide by zero encountered in int_scalars
+  arrow_head = (np.mean(tx[n:n + 2]), np.mean(ty[n:n + 2]))
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\_methods.py:75: RuntimeWarning: divide by zero encountered in int_scalars
+  items *= arr.shape[mu.normalize_axis_index(ax, arr.ndim)]
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\_methods.py:178: RuntimeWarning: divide by zero encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\core\_methods.py:188: RuntimeWarning: divide by zero encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:396: RuntimeWarning: divide by zero encountered in double_scalars
+  return (x0, y0, x1 - x0, y1 - y0)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:1760: RuntimeWarning: divide by zero encountered in equal
+  return np.all(self.get_matrix() == other.get_matrix())
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2622: RuntimeWarning: divide by zero encountered in double_scalars
+  x_scale = 1.0 / inw
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2623: RuntimeWarning: divide by zero encountered in double_scalars
+  y_scale = 1.0 / inh
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2624: RuntimeWarning: divide by zero encountered in double_scalars
+  self._mtx = np.array([[x_scale, 0.0    , (-inl*x_scale)],
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:2625: RuntimeWarning: divide by zero encountered in double_scalars
+  [0.0    , y_scale, (-inb*y_scale)],
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:2550: RuntimeWarning: divide by zero encountered in double_scalars
+  x12, y12 = (x1 + x2) / 2., (y1 + y2) / 2.
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:2551: RuntimeWarning: divide by zero encountered in double_scalars
+  dx, dy = x2 - x1, y2 - y1
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:2555: RuntimeWarning: divide by zero encountered in double_scalars
+  cx, cy = x12 + f * dy, y12 - f * dx
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\bezier.py:418: RuntimeWarning: divide by zero encountered in double_scalars
+  return (x - cx) ** 2 + (y - cy) ** 2 &lt; r2
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\bezier.py:363: RuntimeWarning: divide by zero encountered in not_equal
+  if inside(ctl_points[-2:]) != begin_inside:
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:2939: RuntimeWarning: divide by zero encountered in true_divide
+  vertices = path.vertices / [1, aspect_ratio]
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3026: RuntimeWarning: divide by zero encountered in hypot
+  head_dist = np.hypot(head_length, head_width)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3027: RuntimeWarning: divide by zero encountered in double_scalars
+  cos_t, sin_t = head_length / head_dist, head_width / head_dist
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:2990: RuntimeWarning: divide by zero encountered in double_scalars
+  dx, dy = x0 - x1, y0 - y1
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:2992: RuntimeWarning: divide by zero encountered in hypot
+  cp_distance = np.hypot(dx, dy)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:2996: RuntimeWarning: divide by zero encountered in double_scalars
+  pad_projected = (.5 * linewidth / sin_t)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3003: RuntimeWarning: divide by zero encountered in double_scalars
+  ddx = pad_projected * dx / cp_distance
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3004: RuntimeWarning: divide by zero encountered in double_scalars
+  ddy = pad_projected * dy / cp_distance
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3007: RuntimeWarning: divide by zero encountered in double_scalars
+  dx = dx / cp_distance * head_dist
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3008: RuntimeWarning: divide by zero encountered in double_scalars
+  dy = dy / cp_distance * head_dist
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3010: RuntimeWarning: divide by zero encountered in double_scalars
+  dx1, dy1 = cos_t * dx + sin_t * dy, -sin_t * dx + cos_t * dy
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3011: RuntimeWarning: divide by zero encountered in double_scalars
+  dx2, dy2 = cos_t * dx - sin_t * dy, sin_t * dx + cos_t * dy
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3013: RuntimeWarning: divide by zero encountered in double_scalars
+  vertices_arrow = [(x1 + ddx + dx1, y1 + ddy + dy1),
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3014: RuntimeWarning: divide by zero encountered in double_scalars
+  (x1 + ddx, y1 + ddy),
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3015: RuntimeWarning: divide by zero encountered in double_scalars
+  (x1 + ddx + dx2, y1 + ddy + dy2)]
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3057: RuntimeWarning: divide by zero encountered in double_scalars
+  _path = [Path(np.concatenate([[(x0 + ddxA, y0 + ddyA)],
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:3059: RuntimeWarning: divide by zero encountered in double_scalars
+  [(x3 + ddxB, y3 + ddyB)]]),
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\patches.py:2950: RuntimeWarning: divide by zero encountered in multiply
+  Path(p.vertices * [1, aspect_ratio], p.codes))
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\path.py:336: RuntimeWarning: divide by zero encountered in not_equal
+  not_stop_mask = codes != cls.STOP
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\lib\arraysetops.py:579: RuntimeWarning: divide by zero encountered in not_equal
+  mask &amp;= (ar1 != a)
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\lib\arraysetops.py:579: RuntimeWarning: divide by zero encountered in bitwise_and
+  mask &amp;= (ar1 != a)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axes\_base.py:2284: RuntimeWarning: divide by zero encountered in isfinite
+  if not np.any(np.isfinite(xys)):
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\lines.py:69: RuntimeWarning: divide by zero encountered in double_scalars
+  scaled_offset = offset * lw
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:218: RuntimeWarning: divide by zero encountered in double_scalars
+  lc.sticky_edges.x[:] = [grid.x_origin, grid.x_origin + grid.width]
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:219: RuntimeWarning: divide by zero encountered in double_scalars
+  lc.sticky_edges.y[:] = [grid.y_origin, grid.y_origin + grid.height]
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axes\_base.py:2065: RuntimeWarning: divide by zero encountered in isinf
+  if not np.isinf(datalim.minpos).all():
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axes\_base.py:2708: RuntimeWarning: divide by zero encountered in isfinite
+  x_values = np.extract(np.isfinite(x_values), x_values)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axes\_base.py:2725: RuntimeWarning: divide by zero encountered in int_scalars
+  i0 = stickies.searchsorted(x0 + tol) - 1
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axes\_base.py:2737: RuntimeWarning: divide by zero encountered in double_scalars
+  delta = (x1t - x0t) * margin
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axes\_base.py:2738: RuntimeWarning: divide by zero encountered in isfinite
+  if not np.isfinite(delta):
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axes\_base.py:2740: RuntimeWarning: divide by zero encountered in double_scalars
+  x0, x1 = inverse_trans.transform([x0t - delta, x1t + delta])
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:598: RuntimeWarning: divide by zero encountered in double_scalars
+  ds = min(maxds, 0.85 * ds * (maxerror / error) ** 0.5)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:620: RuntimeWarning: divide by zero encountered in double_scalars
+  dsy = (ny - 1 - yi) / cy
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\streamplot.py:618: RuntimeWarning: divide by zero encountered in double_scalars
+  dsy = yi / -cy
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_21884</span><span class="o">/</span><span class="mf">2050004932.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">t</span><span class="o">=</span><span class="mi">3</span><span class="o">*</span><span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="c1">#ax.set_title(&#39;t=&#39;+str(t))</span>
+<span class="ne">---&gt; </span><span class="mi">25</span>     <span class="n">ax</span><span class="o">.</span><span class="n">streamplot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">slope</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">V</span><span class="p">,</span><span class="n">start_points</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> 
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">spec</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\matplotlib\__init__.py</span> in <span class="ni">inner</span><span class="nt">(ax, data, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1359</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1360</span>         <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1361</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="nb">map</span><span class="p">(</span><span class="n">sanitize_sequence</span><span class="p">,</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1362</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1363</span>         <span class="n">bound</span> <span class="o">=</span> <span class="n">new_sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\matplotlib\streamplot.py</span> in <span class="ni">streamplot</span><span class="nt">(axes, x, y, u, v, density, linewidth, color, cmap, norm, arrowsize, arrowstyle, minlength, transform, zorder, start_points, maxlength, integration_direction)</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span>         <span class="n">p</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">FancyArrowPatch</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span>             <span class="n">arrow_tail</span><span class="p">,</span> <span class="n">arrow_head</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span> <span class="o">**</span><span class="n">arrow_kw</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">213</span>         <span class="n">axes</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>         <span class="n">arrows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span> 
+
+<span class="nn">~\anaconda3\lib\site-packages\matplotlib\axes\_base.py</span> in <span class="ni">add_patch</span><span class="nt">(self, p)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2168</span>         <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">get_clip_path</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2169</span>             <span class="n">p</span><span class="o">.</span><span class="n">set_clip_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">patch</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2170</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_update_patch_limits</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2171</span>         <span class="bp">self</span><span class="o">.</span><span class="n">patches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2172</span>         <span class="n">p</span><span class="o">.</span><span class="n">_remove_method</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">patches</span><span class="o">.</span><span class="n">remove</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\matplotlib\axes\_base.py</span> in <span class="ni">_update_patch_limits</span><span class="nt">(self, patch)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2186</span>                 <span class="p">((</span><span class="ow">not</span> <span class="n">patch</span><span class="o">.</span><span class="n">get_width</span><span class="p">())</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">patch</span><span class="o">.</span><span class="n">get_height</span><span class="p">()))):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2187</span>             <span class="k">return</span>
+<span class="ne">-&gt; </span><span class="mi">2188</span>         <span class="n">p</span> <span class="o">=</span> <span class="n">patch</span><span class="o">.</span><span class="n">get_path</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">2189</span>         <span class="n">vertices</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">vertices</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">codes</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">p</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2190</span>             <span class="n">p</span><span class="o">.</span><span class="n">codes</span><span class="p">,</span> <span class="p">(</span><span class="n">mpath</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">CLOSEPOLY</span><span class="p">,</span> <span class="n">mpath</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">STOP</span><span class="p">),</span> <span class="n">invert</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\matplotlib\patches.py</span> in <span class="ni">get_path</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4201</span>         <span class="ow">in</span> <span class="n">display</span> <span class="n">coordinates</span><span class="o">.</span>
+<span class="g g-Whitespace">   </span><span class="mi">4202</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4203</span><span class="s2">         _path, fillable = self.get_path_in_displaycoord()</span>
+<span class="g g-Whitespace">   </span><span class="mi">4204</span><span class="s2">         if np.iterable(fillable):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4205</span><span class="s2">             _path = Path.make_compound_path(*_path)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\matplotlib\patches.py</span> in <span class="ni">get_path_in_displaycoord</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4223</span><span class="s2">             _path = self.get_transform().transform_path(self._path_original)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4224</span><span class="s2"> </span>
+<span class="ne">-&gt; </span><span class="mi">4225</span><span class="s2">         _path, fillable = self.get_arrowstyle()(</span>
+<span class="g g-Whitespace">   </span><span class="mi">4226</span><span class="s2">             _path,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4227</span><span class="s2">             self.get_mutation_scale() * dpi_cor,</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\matplotlib\patches.py</span> in <span class="ni">__call__</span><span class="nt">(self, path, mutation_size, linewidth, aspect_ratio)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2940</span><span class="s2">                 path_shrunk = Path(vertices, path.codes)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2941</span><span class="s2">                 # call transmute method with squeezed height.</span>
+<span class="ne">-&gt; </span><span class="mi">2942</span><span class="s2">                 path_mutated, fillable = self.transmute(path_shrunk,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2943</span><span class="s2">                                                         mutation_size,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2944</span><span class="s2">                                                         linewidth)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\matplotlib\patches.py</span> in <span class="ni">transmute</span><span class="nt">(self, path, mutation_size, linewidth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3055</span><span class="s2">             # This simple code will not work if ddx, ddy is greater than the</span>
+<span class="g g-Whitespace">   </span><span class="mi">3056</span><span class="s2">             # separation between vertices.</span>
+<span class="ne">-&gt; </span><span class="mi">3057</span><span class="s2">             _path = [Path(np.concatenate([[(x0 + ddxA, y0 + ddyA)],</span>
+<span class="g g-Whitespace">   </span><span class="mi">3058</span><span class="s2">                                           path.vertices[1:-1],</span>
+<span class="g g-Whitespace">   </span><span class="mi">3059</span><span class="s2">                                           [(x3 + ddxB, y3 + ddyB)]]),</span>
+
+<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">concatenate</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alimo\anaconda3\lib\site-packages\matplotlib_inline\backend_inline.py:247: RuntimeWarning: divide by zero encountered in greater
+  return rgbaArr[:, :3].dot((.299, .587, .114)) &gt; .5
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:390: RuntimeWarning: divide by zero encountered in subtract
+  return points[1] - points[0]
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:827: RuntimeWarning: divide by zero encountered in double_scalars
+  return Bbox.from_extents(x0, y0, x0 + width, y0 + height)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\figure.py:3118: RuntimeWarning: divide by zero encountered in double_scalars
+  w_pad = w_pad / width
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\figure.py:3119: RuntimeWarning: divide by zero encountered in double_scalars
+  h_pad = h_pad / height
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axis.py:1273: RuntimeWarning: divide by zero encountered in double_scalars
+  tol = (hi - lo) * 1e-5
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axis.py:2100: RuntimeWarning: divide by zero encountered in double_scalars
+  (x, bottom - self.labelpad * self.figure.dpi / 72)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axis.py:2132: RuntimeWarning: divide by zero encountered in double_scalars
+  y = bottom - self.OFFSETTEXTPAD * self.figure.dpi / 72
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axis.py:2373: RuntimeWarning: divide by zero encountered in double_scalars
+  (left - self.labelpad * self.figure.dpi / 72, y)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axis.py:2399: RuntimeWarning: divide by zero encountered in double_scalars
+  (x, top + self.OFFSETTEXTPAD * self.figure.dpi / 72)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:692: RuntimeWarning: divide by zero encountered in maximum
+  x0 = np.maximum(bbox1.xmin, bbox2.xmin)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:693: RuntimeWarning: divide by zero encountered in minimum
+  x1 = np.minimum(bbox1.xmax, bbox2.xmax)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:694: RuntimeWarning: divide by zero encountered in maximum
+  y0 = np.maximum(bbox1.ymin, bbox2.ymin)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\transforms.py:695: RuntimeWarning: divide by zero encountered in minimum
+  y1 = np.minimum(bbox1.ymax, bbox2.ymax)
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\axes\_base.py:4473: RuntimeWarning: divide by zero encountered in equal
+  if np.all(clip_extent.extents == axbbox.extents):
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\spines.py:180: RuntimeWarning: divide by zero encountered in double_scalars
+  bb0.x0 = bb0.x0 - padout
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\spines.py:181: RuntimeWarning: divide by zero encountered in double_scalars
+  bb0.x1 = bb0.x1 + padin
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\spines.py:183: RuntimeWarning: divide by zero encountered in double_scalars
+  bb0.y0 = bb0.y0 - padout
+C:\Users\alimo\anaconda3\lib\site-packages\matplotlib\spines.py:184: RuntimeWarning: divide by zero encountered in double_scalars
+  bb0.y1 = bb0.y1 + padin
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\lib\arraysetops.py:327: RuntimeWarning: divide by zero encountered in not_equal
+  mask[1:] = aux[1:] != aux[:-1]
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\lib\arraysetops.py:432: RuntimeWarning: divide by zero encountered in equal
+  mask = aux[1:] == aux[:-1]
+C:\Users\alimo\anaconda3\lib\site-packages\numpy\lib\arraysetops.py:583: RuntimeWarning: divide by zero encountered in equal
+  mask |= (ar1 == a)
+</pre></div>
+</div>
+</div>
+</div>
+<p>To find an equation governing each streamline, we assume a parameterisation of the form <span class="math notranslate nohighlight">\(\underline{x}(s)=(x(s),y(s)_,z(s))\)</span>. Since the streamline is tangent to the velocity field it must satisfy the following equation, where <span class="math notranslate nohighlight">\(t\)</span> is treated as constant:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5aea0d65-adfd-4c07-a815-dcf257b91e9e">
+<span class="eqno">()<a class="headerlink" href="#equation-5aea0d65-adfd-4c07-a815-dcf257b91e9e" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{\mathrm{d}\underline{x}}{\mathrm{d}s}=\underline{u}(\underline{x},t).\end{equation}\]</div>
+<p>Integrating the problem gives a family of streamlines. For the example given in equation <a class="reference internal" href="#equation-examplev">()</a>, the streamlines satisfy</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e6ec4636-7a4f-4b7f-9d8c-202fca7ca77b">
+<span class="eqno">()<a class="headerlink" href="#equation-e6ec4636-7a4f-4b7f-9d8c-202fca7ca77b" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{\mathrm{d}x}{\mathrm{d}s}=1, \quad \frac{\mathrm{d}y}{\mathrm{d}s}=-2te^{-t^2}.\end{equation}\]</div>
+<p>The solution that passes through a given point <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> is given by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-20a9172d-25da-4c95-9efe-40e7efcfd8f2">
+<span class="eqno">()<a class="headerlink" href="#equation-20a9172d-25da-4c95-9efe-40e7efcfd8f2" title="Permalink to this equation">#</a></span>\[\begin{equation}\underline{x}=(x_0+s, y_0-2te^{-t^2}s).\end{equation}\]</div>
+<div class="exercise admonition" id="ex-streams">
+
+<p class="admonition-title"></p>
+<section id="exercise-content">
+<p>Find a parameterisation governing the streamlines of the flow <span class="math notranslate nohighlight">\(\underline{u}=(2x,2yt)\)</span>.</p>
+</section>
+</div>
+<div class="toggle docutils container">
+<p>The streamline for this problem that passes through satisfy <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> is given as follows:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}\frac{\mathrm{d}x}{\mathrm{d}s}=2x, \quad \frac{\mathrm{d}y}{\mathrm{d}s}=2ts \quad \rightarrow \quad (x,y)=(x_0 e^{2s},y_0 e^{2ts}).\end{equation*}\]</div>
+<p>Note that the streamlines satisfy <span class="math notranslate nohighlight">\(y=kx e^{t}\)</span>, where <span class="math notranslate nohighlight">\(k=y_0/x_0\)</span>.</p>
+</div>
+</section>
+<section id="the-stream-function">
+<h2>The stream function<a class="headerlink" href="#the-stream-function" title="Permalink to this headline">#</a></h2>
+<p>The stream function is a useful mathematical tool that can be used to find the streamlines for some types of flow. It applies only to two-dimensional flows <span class="math notranslate nohighlight">\(\underline{u}(\underline{x},t)\)</span> that satisfy <span class="math notranslate nohighlight">\(\nabla.\underline{u}=0\)</span>. The latter condition means that the fluid is <em>incompressible</em>. We will explore the incompressibility condition in later sections of the notes.</p>
+<p>The stream function <span class="math notranslate nohighlight">\(\psi(x,y)\)</span> satisfies</p>
+<div class="math notranslate nohighlight" id="equation-streamfun">
+<span class="eqno">()<a class="headerlink" href="#equation-streamfun" title="Permalink to this equation">#</a></span>\[\underline{u}=\left(\frac{\partial\psi}{\partial y},-\frac{\partial\psi}{\partial x}\right)\]</div>
+<p>The incompressibility condition <span class="math notranslate nohighlight">\(\nabla.\underline{u}=0\)</span> is required for consistency, due to the equivalence of the mixed second derivatives (Schwarz’ condition):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-68e3b1a1-abb4-48fa-b44d-c2f75948f0bb">
+<span class="eqno">()<a class="headerlink" href="#equation-68e3b1a1-abb4-48fa-b44d-c2f75948f0bb" title="Permalink to this equation">#</a></span>\[\begin{equation}\nabla.\underline{u}=\frac{\partial^2\psi}{\partial x\partial y}-\frac{\partial^2 \psi}{\partial y\partial x}=0\end{equation}\]</div>
+<p>The stream function also satisfies <span class="math notranslate nohighlight">\(\underline{u}.\nabla\psi=0\)</span> :</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c5e7f3e7-c8c6-4d4e-a31a-7ced7e75ef06">
+<span class="eqno">()<a class="headerlink" href="#equation-c5e7f3e7-c8c6-4d4e-a31a-7ced7e75ef06" title="Permalink to this equation">#</a></span>\[\begin{equation}\underline{u}.\nabla\psi=\frac{\partial\psi}{\partial y}\frac{\partial\psi}{\partial x}+ \left(-\frac{\partial\psi}{\partial x}\right)\frac{\partial\psi}{\partial y}=0\end{equation}\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(\nabla\psi\)</span> is perpendicular to <span class="math notranslate nohighlight">\(\underline{u}\)</span>, and so the contours of <span class="math notranslate nohighlight">\(\psi\)</span> are <strong>parallel</strong> to <span class="math notranslate nohighlight">\(\underline{u}\)</span>.</p>
+<p>In conclusion, the contours of <span class="math notranslate nohighlight">\(\psi\)</span> are streamlines of the flow.</p>
+<div class="exercise admonition" id="ex-strfun">
+
+<p class="admonition-title"></p>
+<section id="exercise-content">
+<p>Find the stream function for the flow <span class="math notranslate nohighlight">\(\underline{u}=\left(x^2y,-xy^2\right)\)</span>.<br />
+Use the stream function to produce a contour plot of the flow on <span class="math notranslate nohighlight">\(-2\leq x,y\leq 2\)</span>.</p>
+</section>
+</div>
+<div class="toggle docutils container">
+<p><span class="math notranslate nohighlight">\(\underline{u}=(x^2y,-xy^2)=\left(\frac{\partial\psi}{\partial y},-\frac{\partial\psi}{\partial x}\right) \quad \rightarrow \psi = \frac{x^2 y^2}{2}\)</span></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">F</span><span class="o">=</span><span class="p">(</span><span class="n">X</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="c1"># options to prettify the plot</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([]),</span> <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mf">0.005</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Note: Some three-dimensional flows can also be treated as two-dimensional. This is the case for flows that are <em>axisymmetric</em>, meaning that they are symmetric about a given axis. An example of an axisymmetric flow is shown in the image below, which is from another CFD simulation <a class="reference external" href="https://uk.comsol.com/blogs/creating-2d-models-from-3d-geometries-in-comsol-multiphysics/">produced</a> using the commercial software COMSOL.</p>
+<br>
+<a class="reference internal image-reference" href="../_images/non-newtonian.png" id="metweather"><img alt="alternative text" class="align-center" id="metweather" src="../_images/non-newtonian.png" style="width: 491.20000000000005px; height: 344.8px;" /></a>
+<br>
+</section>
+<section id="particle-paths">
+<h2>Particle paths<a class="headerlink" href="#particle-paths" title="Permalink to this headline">#</a></h2>
+<p>The streamlines indicate the direction of motion of fluid particles at a given moment. If the fluid is not steady (time-independent), then the streamlines do <strong>not</strong> show the paths taken by the fluid particles. This is illustrated by the below animation, which tracks several selected fluid particles as they move tangent to the evolving velocity field given in equation <a class="reference internal" href="#equation-examplev">()</a>.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">animation</span><span class="p">,</span> <span class="n">rc</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">xgrid</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">ygrid</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span> <span class="n">ygrid</span><span class="p">)</span>
+
+<span class="n">t</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">U</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">V</span><span class="o">=-</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">tmax</span><span class="p">,</span><span class="n">fnum</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">t</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">y0</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">y0</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t0</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">#x = np.linspace(1, 3, 1000)</span>
+
+<span class="k">class</span> <span class="nc">testAnimation</span><span class="p">:</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># First set up the figure, the axis, and the plot element we want to animate</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">UVC</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">scat</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+  <span class="c1"># initialization function: plot the background of each frame</span>
+  <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">UVC</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scat</span><span class="p">)</span>
+
+  <span class="c1"># animation function. This is called sequentially  </span>
+  <span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+      <span class="n">t</span><span class="o">=</span><span class="n">tmax</span><span class="o">/</span><span class="n">fnum</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
+      <span class="n">V</span><span class="o">=-</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">UVC</span><span class="o">.</span><span class="n">set_UVC</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
+      <span class="n">tgrid</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">scat</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">),</span> <span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span>
+      <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">UVC</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scat</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">anim</span>
+    <span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">animate</span><span class="p">,</span> <span class="n">init_func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">init</span><span class="p">,</span>
+                             <span class="n">frames</span><span class="o">=</span><span class="n">fnum</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1000</span><span class="o">*</span><span class="n">tmax</span><span class="o">/</span><span class="n">fnum</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="n">vis</span> <span class="o">=</span> <span class="n">testAnimation</span><span class="p">()</span>
+<span class="n">vis</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="c1"># Note: below is the part which makes it work on Colab</span>
+<span class="n">rc</span><span class="p">(</span><span class="s1">&#39;animation&#39;</span><span class="p">,</span> <span class="n">html</span><span class="o">=</span><span class="s1">&#39;jshtml&#39;</span><span class="p">)</span>
+
+<span class="c1">#anim.save(&#39;fluid.gif&#39;, writer = &#39;imagemagick&#39;, fps=10)</span>
+
+<span class="n">anim</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>According to the definition of velocity, we can find the particle paths by solving the problem</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3819a8ad-5826-462e-b05c-053bcb3be356">
+<span class="eqno">()<a class="headerlink" href="#equation-3819a8ad-5826-462e-b05c-053bcb3be356" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{\mathrm{d}\underline{x}}{\mathrm{d}t}=\underline{u}(\underline{x},t).\end{equation}\]</div>
+<p>For the example given in equation <a class="reference internal" href="#equation-examplev">()</a>, the particle paths satisfy</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b7d061e2-2a5f-4f60-81b5-ebe3885d9e13">
+<span class="eqno">()<a class="headerlink" href="#equation-b7d061e2-2a5f-4f60-81b5-ebe3885d9e13" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{\mathrm{d}x}{\mathrm{d}t}=1, \quad \frac{\mathrm{d}y}{\mathrm{d}t}=-2te^{-t^2}.\end{equation}\]</div>
+<p>The solution that passes through a given point <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> is given by</p>
+<div class="math notranslate nohighlight" id="equation-ptrajectory">
+<span class="eqno">()<a class="headerlink" href="#equation-ptrajectory" title="Permalink to this equation">#</a></span>\[\underline{x} (t-t_0+x_0,e^{-t^2}-e^{-t_0^2}+y_0).\]</div>
+<p>In this example, the velocity approaches a constant value <span class="math notranslate nohighlight">\((1,0)\)</span> as <span class="math notranslate nohighlight">\(t\)</span> increases. Since the evolved velocity field is “steady” (time-independent) the particle paths and streamlines for this flow eventually coincide.</p>
+<div class="exercise admonition" id="ex-ppaths">
+
+<p class="admonition-title"></p>
+<section id="exercise-content">
+<p>Find the particle paths for the flow <span class="math notranslate nohighlight">\(\underline{u}=(\alpha,\beta t,0)\)</span>, where <span class="math notranslate nohighlight">\(\alpha, \beta\)</span> are positive constants. Describe the shape of your solutions.</p>
+</section>
+</div>
+<div class="toggle docutils container">
+<p><strong>Streamlines :</strong></p>
+<p><span class="math notranslate nohighlight">\(\frac{\mathrm{d}x}{\mathrm{d}s}=\alpha \quad \rightarrow \quad x=\alpha s + x_0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}s}=\beta t \quad \rightarrow \quad y=\beta t s + y_0\)</span></p>
+<p>Combining the two expressions gives <span class="math notranslate nohighlight">\(y=\frac{\beta t}{\alpha}(x-x_0)+y_0\)</span>. This is the equation of the streamline at time <span class="math notranslate nohighlight">\(t\)</span> that passes through <span class="math notranslate nohighlight">\((x_0,y_0)\)</span>.</p>
+<p><strong>Particle paths :</strong></p>
+<p><span class="math notranslate nohighlight">\(\frac{\mathrm{d}x}{\mathrm{d}t}=\alpha \quad \rightarrow \quad x=\alpha t +x_0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}=\beta t \quad \rightarrow \quad y=\beta \frac{t^2}{2}+y_0\)</span></p>
+<p>Combining the two expressions gives <span class="math notranslate nohighlight">\(y=\frac{\beta}{2 \alpha^2}(x-x_0)^2+y_0\)</span>. This is the path of a particle released from <span class="math notranslate nohighlight">\((x_0,y_0)\)</span> at time <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
+<p>For this example, the streamlines are straight lines, and the particle paths are parabolas.</p>
+<div class="warning admonition">
+<p class="admonition-title">Note</p>
+<p>In the case of the streamlines, we may obtain the following result using the chain rule</p>
+<p><span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\beta t}{\alpha} \quad \Rightarrow \quad y=\frac{\beta t}{\alpha}x+c\)</span></p>
+<p>However, we cannot use this treatment to solve for the particle paths since in that case <span class="math notranslate nohighlight">\(x=x(t)\)</span>, <span class="math notranslate nohighlight">\(y=y(t)\)</span> and so <span class="math notranslate nohighlight">\(t\)</span> must not be treated as constant.</p>
+</div>
+</div>
+</section>
+<section id="streaklines">
+<h2>Streaklines<a class="headerlink" href="#streaklines" title="Permalink to this headline">#</a></h2>
+<p>Fluid particles that pass through the same point at different times generally follow different paths. A streakline is the locus of all particles that have passed through a given point <span class="math notranslate nohighlight">\(\underline{x}_0\)</span>. This is what we see when we inject smoke or dye into a moving fluid. We can find streaklines by solving the particle path problem for a range of release times <span class="math notranslate nohighlight">\(t_0\)</span>. We may plot the result at a given time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>The animation below shows a sequence of particles injected at intervals into the fluid described by equation <a class="reference internal" href="#equation-examplev">()</a>. Due to the changing vector field, the particles follow different trajectories depending on the time of release. The <span class="math notranslate nohighlight">\((x,y)\)</span> trajectory of a particle released at time <span class="math notranslate nohighlight">\(t_0\)</span> is given in equation <a class="reference internal" href="#equation-ptrajectory">()</a>. The set of particles together define a streakline.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">animation</span><span class="p">,</span> <span class="n">rc</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">xgrid</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">ygrid</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span> <span class="n">ygrid</span><span class="p">)</span>
+
+<span class="n">t</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">U</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">V</span><span class="o">=-</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">tmax</span><span class="p">,</span><span class="n">fnum</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">t</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+  <span class="k">return</span> <span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t0</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">#x = np.linspace(1, 3, 1000)</span>
+
+<span class="k">class</span> <span class="nc">testAnimation</span><span class="p">:</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># First set up the figure, the axis, and the plot element we want to animate</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">UVC</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">scat</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+  <span class="c1"># initialization function: plot the background of each frame</span>
+  <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">UVC</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scat</span><span class="p">)</span>
+
+  <span class="c1"># animation function. This is called sequentially  </span>
+  <span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+      <span class="n">t</span><span class="o">=</span><span class="n">tmax</span><span class="o">/</span><span class="n">fnum</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
+      <span class="n">V</span><span class="o">=-</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">UVC</span><span class="o">.</span><span class="n">set_UVC</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
+      <span class="n">tgrid</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">scat</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">tgrid</span><span class="p">,</span><span class="n">t</span><span class="p">),</span> <span class="n">y</span><span class="p">(</span><span class="n">tgrid</span><span class="p">,</span><span class="n">t</span><span class="p">))</span>
+      <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">UVC</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scat</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">anim</span>
+    <span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">animate</span><span class="p">,</span> <span class="n">init_func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">init</span><span class="p">,</span>
+                             <span class="n">frames</span><span class="o">=</span><span class="n">fnum</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1000</span><span class="o">*</span><span class="n">tmax</span><span class="o">/</span><span class="n">fnum</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="n">vis</span> <span class="o">=</span> <span class="n">testAnimation</span><span class="p">()</span>
+<span class="n">vis</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="c1"># Note: below is the part which makes it work on Colab</span>
+<span class="n">rc</span><span class="p">(</span><span class="s1">&#39;animation&#39;</span><span class="p">,</span> <span class="n">html</span><span class="o">=</span><span class="s1">&#39;jshtml&#39;</span><span class="p">)</span>
+
+<span class="c1">#anim.save(&#39;fluid.gif&#39;, writer = &#39;imagemagick&#39;, fps=10)</span>
+
+<span class="n">anim</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The image below is a classic photograph taken from <em>An Album of Fluid Motion</em> (1982) by Van Dyke. The image shows streaklines over an airfoil in an oncoming fluid flow. The streaklines are illustrated by smoke particles that have been injected into the flow upstream. The flow is mostly very smooth, due to great care taken by the experimenters to reduce air disturbances, but notice some disturbance occuring in the fluid near to the trailing edge of the airfoil. We will investigate this phenomenon soon.</p>
+<br>
+<a class="reference internal image-reference" href="../_images/bbl.png" id="bbl"><img alt="alternative description" class="align-center" id="bbl" src="../_images/bbl.png" style="width: 1063.2px; height: 420.8px;" /></a>
+<br>
+<p>If you are interested to see images and videos of fluid flow that have been recorded more recently, you could take a look at the <a class="reference external" href="https://gfm.aps.org/">Gallery of Fluid Motion</a>, presented by the Americal Physics Society Division of Fluid Dynamics. Many of the modern entries are computer simulations of fluid, rather than experimental footage.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./fluids"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ali Mozaffari and Ella Metcalfe<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

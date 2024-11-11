@@ -1,0 +1,982 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>17. Dynamics of Systems of Particles &#8212; Classical Mechanics and Electromagnetism</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classicalmechanics/systemsofparticles';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="16. Gravitation and Central Forces" href="gravity.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Classical Mechanics and Electromagnetism NSCI0033
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Electromagnetism</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMmaths.html">1. Mathematical Preliminaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/electrostatics.html">2. Electrostatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingEsystems.html">3. Solving Electrostatic Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/Efieldenergy.html">4. Energy in an Electric Field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticfields.html">5. Magnetism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticforces.html">6. Magnetic Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/ampereslaw.html">7. Ampère’s Circuital Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/faradayslaw.html">8. Faraday’s Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/maxwelleqns.html">9. Differential Forms and Maxwell’s Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingmaxwell.html">10. Solutions to Maxwell’s Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMenergy.html">11. Energy in an Electromagnetic field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMpotentials.html">12. Electromagnetic Scalar and Vector Potentials</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Mechanics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="particledynamics.html">13. Particle Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newtonslaws.html">14. Newton’s Laws of Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oscillations.html">15. Oscillations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gravity.html">16. Gravitation and Central Forces</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">17. Dynamics of Systems of Particles</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fclassicalmechanics/systemsofparticles.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/classicalmechanics/systemsofparticles.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dynamics of Systems of Particles</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-and-linear-momentum">17.1. Centre of Mass and Linear Momentum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-and-kinetic-energy-of-a-system">17.2. Angular Momentum and Kinetic Energy of a System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-body-problem-and-reduced-mass">17.3. The Two-Body Problem and Reduced Mass</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-star-systems">17.3.1. Binary Star Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-of-collisions">17.3.2. Dynamics of Collisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-collisions-single-axis-of-motion">17.3.2.1. Direct Collisions (Single Axis of Motion)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#impulse">17.3.2.2. Impulse</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-collisions">17.3.2.3. Oblique Collisions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-coordinates">17.3.3. Centre Of Mass Coordinates</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-of-rigid-bodies">17.4. Rotation of Rigid Bodies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-of-a-rigid-body">17.4.1. Centre of Mass of a Rigid Body</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moment-of-inertia">17.4.2. Moment of Inertia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parallel-axis-theorem">17.4.3. The Parallel Axis Theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#towards-lagrangian-mechanics-non-examinable">17.4.4. Towards Lagrangian Mechanics (Non-Examinable)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltons-variational-principle">17.4.4.1. Hamilton’s Variational Principle</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagranges-equations">17.4.5. Lagrange’s Equations</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dynamics-of-systems-of-particles">
+<h1><span class="section-number">17. </span>Dynamics of Systems of Particles<a class="headerlink" href="#dynamics-of-systems-of-particles" title="Permalink to this heading">#</a></h1>
+<p>In this unit, we will develop some general physical principles which we can use to study the behaviour of systems for which we wish to describe the motion of two or more particles. Then we will apply these general rules to specific examples of such systems.</p>
+<section id="centre-of-mass-and-linear-momentum">
+<h2><span class="section-number">17.1. </span>Centre of Mass and Linear Momentum<a class="headerlink" href="#centre-of-mass-and-linear-momentum" title="Permalink to this heading">#</a></h2>
+<p>We begin with some definitions. In general, we are considering a system of <span class="math notranslate nohighlight">\(N\)</span> particles, each of mass <span class="math notranslate nohighlight">\(m_j\)</span> (<span class="math notranslate nohighlight">\(j=1,2,...,N\)</span>), situated at vector positions <span class="math notranslate nohighlight">\(\vec{r}_j\)</span>. Using this notation, the <strong>center of mass</strong> of the system is the point with position:</p>
+<div class="math notranslate nohighlight">
+\[\vec{r}_{cm} = \dfrac{\sum_{j=1}^N m_j\,\vec{r}_j}{\sum_{j=1}^N m_j}.\]</div>
+<p>Thus implies that the <span class="math notranslate nohighlight">\(x\)</span> coordinate (in a Cartesian frame) of the centre of mass is given by <span class="math notranslate nohighlight">\(x_{cm}=\frac{\sum_{j=1}^N m_j\,x_j}{\sum_{j=1}^N m_j}\)</span>, with analogous expressions for <span class="math notranslate nohighlight">\(y_{cm}\)</span> and <span class="math notranslate nohighlight">\(z_{cm}\)</span>.</p>
+<p>The total linear momentum of our ensemble of particles is just the sum of all the individual momenta:</p>
+<div class="math notranslate nohighlight">
+\[\vec{p} = \sum_j \vec{p}_j = \sum_j m_j\,\vec{v}_j.\]</div>
+<p>By definition, <span class="math notranslate nohighlight">\(\vec{v}_j = \dot{\vec{r}}_j\)</span>. Hence:</p>
+<div class="math notranslate nohighlight">
+\[\vec{p} = \sum_j m_j\,\dot{\vec{r}}_j = M\,\dot{\vec{r}}_{cm},\]</div>
+<p>where <span class="math notranslate nohighlight">\(M=\sum_j m_j\)</span> is the total mass, and the velocity of the centre of mass is <span class="math notranslate nohighlight">\(\vec{v}_{cm} = \dot{\vec{r}}_{cm}\)</span>. Thus the total linear momentum of our system of moving particles is equivalent to their total mass multiplied by the velocity of their centre of mass, as defined above.</p>
+<p>Let’s keep to a general treatment for the moment, and imagine that any particle with integer label <span class="math notranslate nohighlight">\(i\)</span> is subject to two types of force. The first is purely external (i.e., arises from a source completely outside the system), which we shall denote <span class="math notranslate nohighlight">\(\vec{F}_i\)</span>. The second type of force is the force which may be exerted on particle <span class="math notranslate nohighlight">\(i\)</span> by any or all of the other particles in the system (for example, gravitational force). We represent this as the force on particle <span class="math notranslate nohighlight">\(i\)</span> due to particle <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(\vec{F}_{ij}\)</span>, with, of course, <span class="math notranslate nohighlight">\(\vec{F}_{ii}=0\)</span>. The equation of motion for particle <span class="math notranslate nohighlight">\(i\)</span> thus becomes:</p>
+<div class="math notranslate nohighlight">
+\[m_i\,\dot{\vec{v}}_i = \dot{\vec{p}}_i = \vec{F}_i + \sum_{j=1}^N \vec{F}_{ij}.\]</div>
+<p>Now, we can in fact write <span class="math notranslate nohighlight">\(N\)</span> versions of the above equation, for each possible value of <span class="math notranslate nohighlight">\(i\)</span>. If we added all of these together, we would obtain:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^N \dot{\vec{p}}_i = \sum_{i=1}^N \vec{F}_i + \sum_{i=1}^N \sum_{j=1}^N \vec{F}_{ij}.\]</div>
+<p>Now in the double summation, we would expect <span class="math notranslate nohighlight">\(\vec{F}_{ij} = -\vec{F}_{ji}\)</span> (for every action, there is an equal and opposite reaction). Hence the summed terms cancel and the double summation reduces to zero. We are left with:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^N \dot{\vec{p}}_i = \dot{\vec{p}} = \sum_{i=1}^N \vec{F}_i,\]</div>
+<p>where by definition <span class="math notranslate nohighlight">\(\dot{\vec{p}}\)</span> is equal to <span class="math notranslate nohighlight">\(M\vec{a}_{cm}\)</span>, the total mass of the system multiplied by the acceleration of the centre of mass.</p>
+<p>Thus, the acceleration of the centre of mass of our system of particles is equivalent to the acceleration of a single particle of mass <span class="math notranslate nohighlight">\(M\)</span> being acted on by the sum of all the external forces. For the case where all the particles are moving in a region of uniform gravitational acceleration <span class="math notranslate nohighlight">\(\vec{g}\)</span>, this implies that <span class="math notranslate nohighlight">\(M\vec{a}_{cm} = M\vec{g}\)</span>. In other words, if a projectile moving in a region of uniform <span class="math notranslate nohighlight">\(\vec{g}\)</span> were to explode during flight, the centre of mass of the pieces would follow the same path as the projectile would have followed, had it not exploded.</p>
+<p>For the case of a system which is not acted on by <em>any</em> external forces, we would have <span class="math notranslate nohighlight">\(\dot{\vec{p}} = 0\)</span> – that is, the total linear momentum of the system is conserved in the absence of external forces. This statement is otherwise known as the principle of conservation of linear momentum.</p>
+<p><strong>Example Problem</strong></p>
+<p>At some point in its trajectory, a ballistic missile of mass <span class="math notranslate nohighlight">\(m\)</span> breaks up into three fragments of mass <span class="math notranslate nohighlight">\(m/3\)</span> each. One of the fragments continues on with an initial velocity of one-half the original velocity <span class="math notranslate nohighlight">\(\vec{v_0}\)</span> of the missile just before breakup. The other two pieces go off at right angles to each other with equal speeds. Find the initial speeds of the later two fragments in terms of <span class="math notranslate nohighlight">\(\vec{v_0}\)</span>.</p>
+<p>Conservation of momentum implies for the fragments (labelled <span class="math notranslate nohighlight">\(1,2,3\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\frac{m}{3} (\vec{v_1} + \vec{v_2} + \vec{v_3}) = m\vec{v_0}\]</div>
+<p>Since we are given <span class="math notranslate nohighlight">\(\vec{v_1} = \frac{\vec{v_0}}{2}\)</span>, this becomes:</p>
+<div class="math notranslate nohighlight">
+\[\vec{v_2} + \vec{v_3} = 3 \vec{v_0} - \frac{\vec{v_0}}{2} = \frac{5}{2} \vec{v_0}\]</div>
+<p>Taking the scalar product of both sides with itself, and noting that <span class="math notranslate nohighlight">\(\vec{v_2}\cdot\vec{v_3}=0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[v_2^2 + v_3^2 = 2v_2^2 = \left(\frac{5}{2}\right)^2 v_0^2\]</div>
+<div class="math notranslate nohighlight">
+\[\rightarrow v_2 = v_3 = \frac{5}{2\sqrt{2}}\,v_0 \approx 1.77 v_0.\]</div>
+</section>
+<section id="angular-momentum-and-kinetic-energy-of-a-system">
+<h2><span class="section-number">17.2. </span>Angular Momentum and Kinetic Energy of a System<a class="headerlink" href="#angular-momentum-and-kinetic-energy-of-a-system" title="Permalink to this heading">#</a></h2>
+<p>It seems logical to assign the total angular momentum, <span class="math notranslate nohighlight">\( \vec{L} \)</span>, of our system as the sum of the individual angular momenta of its constituent particles:</p>
+<div class="math notranslate nohighlight">
+\[\vec{L} = \sum_i m_i\,\vec{r}_i \times \vec{v}_i.\]</div>
+<p>To check whether or not total angular momentum is conserved, let’s calculate its time derivative:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\vec{L}}{dt} = \sum_i m_i\,\dot{\vec{r}}_i \times \vec{v}_i + \sum_i m_i\,\vec{r}_i \times \dot{\vec{v}}_i.\]</div>
+<p>The first summation on the right-hand side vanishes, since, by definition, <span class="math notranslate nohighlight">\( \vec{v}_i = \dot{\vec{r}}_i \)</span>. We can rewrite the second summation as follows, noting that the vector <span class="math notranslate nohighlight">\( m_i\,\dot{\vec{v}}_i \)</span>, through Newton’s second law, is equal to the sum of all the forces acting on the particle with label <span class="math notranslate nohighlight">\( i \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\vec{L}}{dt} = \sum_i \vec{r}_i \times (\vec{F}_i + \sum_j \vec{F}_{ij}).\]</div>
+<p>Now consider a pair of distinct particles with labels <span class="math notranslate nohighlight">\( i \)</span> and <span class="math notranslate nohighlight">\( j \)</span>. The sum of the two corresponding terms in the double summation, involving their mutual internal forces, is <span class="math notranslate nohighlight">\( \vec{r}_i \times \vec{F}_{ij} + \vec{r}_j \times \vec{F}_{ji} \)</span>. Since <span class="math notranslate nohighlight">\( \vec{F}_{ij} = -\vec{F}_{ji} \)</span>, this is equal to <span class="math notranslate nohighlight">\( (\vec{r}_i - \vec{r}_j) \times \vec{F}_{ij} \)</span>. Now, the difference <span class="math notranslate nohighlight">\( (\vec{r}_i - \vec{r}_j) \)</span> is simply the vector directed from the location of particle <span class="math notranslate nohighlight">\( j \)</span> to particle <span class="math notranslate nohighlight">\( i \)</span>. If the internal forces are of a central nature, i.e., collinear with the vector separations between the pairs of particles in our system, then this cross product vanishes. Hence, we are left with:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\vec{L}}{dt} = \sum_i \vec{r}_i \times \vec{F}_i.\]</div>
+<p>Therefore, <strong>in the absence of external forces, the total angular momentum of the system is conserved</strong>, as well as its total linear momentum.</p>
+<p>When the external forces are non-zero, equation (eq:dangmom) indicates that the total angular momentum will change with time, and its rate of change is given by the total moment of force, or <strong>torque</strong>, acting on the system.</p>
+<p>The concept of the centre of mass can help us gain a little more insight into the nature of the individual motions which comprise the total angular momentum. We can rewrite the position of each particle as the sum of the position of the centre of mass plus the position of the particle relative to the centre of mass:</p>
+<div class="math notranslate nohighlight">
+\[\vec{r}_i = \vec{r}_{cm} + \overline{\vec{r}}_i.\]</div>
+<p>Taking the derivative with time of both sides of this equation reveals that, as expected, the velocity of each particle is the sum of the centre-of-mass velocity plus the velocity of the particle relative to the centre of mass:</p>
+<div class="math notranslate nohighlight">
+\[\vec{v}_i = \vec{v}_{cm} + \overline{\vec{v}}_i.\]</div>
+<p>Using this notation, the total angular momentum becomes:</p>
+<div class="math notranslate nohighlight">
+\[\vec{L} = \sum_{i=1}^N m_i\,(\vec{r}_{cm} + \overline{\vec{r}}_i) \times (\vec{v}_{cm} + \overline{\vec{v}}_i)\]</div>
+<div class="math notranslate nohighlight">
+\[= \sum_{i=1}^N m_i\,(\vec{r}_{cm} \times \vec{v}_{cm}) + \sum_{i=1}^N m_i\,(\vec{r}_{cm} \times \overline{\vec{v}}_i) + \sum_{i=1}^N m_i\,(\overline{\vec{r}}_{i} \times {\vec{v}}_{cm}) + \sum_{i=1}^N m_i\,(\overline{\vec{r}}_{i} \times \overline{\vec{v}}_i).\]</div>
+<p>Let us now analyse each of the four final summations in the equation above:</p>
+<ul class="simple">
+<li><p>The first summation equals <span class="math notranslate nohighlight">\( \left(\sum_{i=1}^N m_i\right)\,(\vec{r}_{cm} \times \vec{v}_{cm}) \)</span>, and is the angular momentum associated with a particle of mass equal to the total mass of the system, which moves coincidentally with the centre of mass of the system.</p></li>
+<li><p>The second summation equals <span class="math notranslate nohighlight">\( \vec{r}_{cm} \times \sum_{i=1}^N m_i\,\overline{\vec{v}}_i \)</span>. Since, by definition <span class="math notranslate nohighlight">\( \overline{\vec{v}}_i = \vec{v}_i - \vec{v}_{cm} \)</span>, the factor <span class="math notranslate nohighlight">\( \sum_{i=1}^N m_i\,\overline{\vec{v}}_i = \vec{p} - M \vec{v}_{cm} \)</span>, where <span class="math notranslate nohighlight">\( \vec{p} \)</span> is the total linear momentum of the system, and <span class="math notranslate nohighlight">\( M \)</span> the total mass. But by definition <span class="math notranslate nohighlight">\( \vec{p} = M \vec{v}_{cm} \)</span>, and thus the second summation in the expansion for total angular momentum is zero.</p></li>
+<li><p>The third summation equals <span class="math notranslate nohighlight">\( \left(\sum_{i=1}^N m_i\,\overline{\vec{r}}_{i}\right) \times {\vec{v}}_{cm} \)</span>. Since <span class="math notranslate nohighlight">\( \overline{\vec{r}}_{i} = \vec{r}_i - \vec{r}_{cm} \)</span>, this can be written as <span class="math notranslate nohighlight">\( \left(\sum_{i=1}^N m_i\,(\vec{r}_i - \vec{r}_{cm})\right) \times {\vec{v}}_{cm} \)</span>. But since by definition <span class="math notranslate nohighlight">\( \sum_{i=1}^N m_i\,\vec{r}_i = M \vec{r}_{cm} \)</span>, the third summation also evaluates to zero.</p></li>
+<li><p>The fourth and final summation equals <span class="math notranslate nohighlight">\( \sum_{i=1}^N m_i\,(\overline{\vec{r}}_{i} \times \overline{\vec{v}}_i) \)</span>, which can be thought of as the angular momentum carried by the motion of all the particles relative to the motion of the centre of mass.</p></li>
+</ul>
+<p>We can summarise the results above with the statement that the total angular momentum of a system can be expressed as the sum of two terms. The first is the angular momentum of a fictitious particle with mass equal to the total mass of the system whose position and velocity coincide with the actual centre of mass. This component of the total angular momentum is sometimes referred to as `orbital angular momentum’.</p>
+<p>The second component of a system’s total angular momentum, as stated above, is the angular momentum carried by the motions of the particles relative to that of the centre of mass. This component of the total angular momentum is sometimes referred to as `spin angular momentum’.</p>
+<p>We will now consider an appropriate definition of the <strong>total kinetic energy</strong> of our system of particles. Again, it seems logical to adopt a definition of the sum of the individual kinetic energies of all the constituent particles:</p>
+<div class="math notranslate nohighlight">
+\[T = \sum_{i=1}^N \frac{1}{2} m_i v_i^2 = \sum_{i=1}^N \frac{1}{2} m_i \vec{v}_i \cdot \vec{v}_i.\]</div>
+<p>As for the case of angular momentum, we can express the system’s total kinetic energy as the sum of two energy terms as follows (proof is fairly straightforward using the definition of <span class="math notranslate nohighlight">\( \overline{v}_i \)</span>, and is left to the reader):</p>
+<div class="math notranslate nohighlight">
+\[T = \frac{1}{2} M v_{cm}^2 + \sum_{i} \frac{1}{2} m_i \overline{v}_i^2.\]</div>
+<p>The first term is the kinetic energy of translation of the whole system, and the second is the kinetic energy of motion relative to the centre of mass.</p>
+</section>
+<section id="the-two-body-problem-and-reduced-mass">
+<h2><span class="section-number">17.3. </span>The Two-Body Problem and Reduced Mass<a class="headerlink" href="#the-two-body-problem-and-reduced-mass" title="Permalink to this heading">#</a></h2>
+<p><img alt="A system of two bodies with masses  and , with respective positions  and  relative to the centre of mass." src="../_images/twobody.png" /></p>
+<p>Consider a system consisting of two bodies of masses <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span>, as shown in the figure above. Using our previous notation, we can assign these masses with positions <span class="math notranslate nohighlight">\(\overline{\vec{r}}_1\)</span> and <span class="math notranslate nohighlight">\(\overline{\vec{r}}_2\)</span> relative to the centre of mass of the system, which we take to be at the origin for convenience. The position of the centre of mass lies somewhere on the line connecting the two bodies, since we must satisfy the definition of the centre of mass position:</p>
+<div class="math notranslate nohighlight">
+\[  \dfrac{m_1}{m_1+m_2}\,\overline{\vec{r}}_1 + \dfrac{m_2}{m_1+m_2}\,\overline{\vec{r}}_2 = \vec{0} \quad \Rightarrow \quad m_1\,\overline{\vec{r}}_1 = - m_2 \, \overline{\vec{r}}_2.\]</div>
+<p>Now, if the two bodies exert a gravitational force on each other, the equation of motion for bodies 1 and 2 can be written as:</p>
+<div class="math notranslate nohighlight">
+\[    m_1\,\dfrac{d^2\overline{\vec{r}}_1}{dt^2} = \vec{F}_{12} = -\dfrac{G m_1 m_2}{R^3} \vec{R}, \quad
+    m_2\,\dfrac{d^2\overline{\vec{r}}_2}{dt^2} = \vec{F}_{21} =  \dfrac{G m_1 m_2}{R^3} \vec{R}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec{R}=\overline{\vec{r}}_1-\overline{\vec{r}}_2\)</span> is the vector going from <span class="math notranslate nohighlight">\(m_2\)</span> to <span class="math notranslate nohighlight">\(m_1\)</span>, as shown.</p>
+<p>It is interesting to consider the dynamical evolution of the system by calculating the acceleration of the vector separation <span class="math notranslate nohighlight">\(\vec{R}\)</span>, which is equal to <span class="math notranslate nohighlight">\(\ddot{\vec{R}} = \dfrac{d^2\overline{\vec{r}}_1}{dt^2}-\dfrac{d^2\overline{\vec{r}}_2}{dt^2}\)</span>. Using the equations above, we find that this expression is equivalent to:</p>
+<div class="math notranslate nohighlight">
+\[    \ddot{\vec{R}} = -\dfrac{G m_1 m_2}{R^3}\vec{R} \left(\dfrac{1}{m_1} + \dfrac{1}{m_2}\right).\]</div>
+<p>If we now define the <strong>reduced mass <span class="math notranslate nohighlight">\(\mu\)</span></strong> of the system through <span class="math notranslate nohighlight">\(\dfrac{1}{\mu} = \dfrac{1}{m_1} + \dfrac{1}{m_2}\)</span>, or equivalently <span class="math notranslate nohighlight">\(\mu = \dfrac{m_1 m_2}{m_1 + m_2}\)</span>, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[    \mu\,\ddot{\vec{R}} = -\dfrac{G m_1 m_2}{R^2}\vec{e}_R,\]</div>
+<p>where the unit vector <span class="math notranslate nohighlight">\(\vec{e}_R = \vec{R}/|\vec{R}|\)</span>. This equation tells us that when we consider the motion of either body <strong>relative to the other</strong>, as represented by the behaviour of the vector <span class="math notranslate nohighlight">\(\vec{R}\)</span>, the acceleration is always radially inwards towards the centre of mass and has magnitude <span class="math notranslate nohighlight">\(\dfrac{G m_1 m_2}{\mu R^2} = \dfrac{G M}{R^2}\)</span>, where <span class="math notranslate nohighlight">\(M = m_1 + m_2\)</span>.</p>
+<p>Therefore, for the simple case where <span class="math notranslate nohighlight">\(R\)</span> is constant, the angular velocity <span class="math notranslate nohighlight">\(\Omega\)</span> with which both bodies rotate about the centre of mass (whose acceleration must be zero) must satisfy:</p>
+<div class="math notranslate nohighlight">
+\[    R \Omega^2 = \dfrac{G M}{R^2},\]</div>
+<p>implying that the period of rotation is <span class="math notranslate nohighlight">\(P = \dfrac{2\pi}{\Omega} = \sqrt{\dfrac{4\pi^2}{GM}R^3}\)</span>.</p>
+<p>Previously, when considering the orbits of planets about the Sun, we assumed that the Sun was fixed in its position. This is equivalent to assuming that the orbiting body has a mass very small compared to the Sun, or, in the present context, that the reduced mass of the Sun-planet system is approximately equal to <span class="math notranslate nohighlight">\(M_{\odot}\)</span>, since <span class="math notranslate nohighlight">\(m \ll M_{\odot}\)</span>. The above equation shows us that there is a small correction to the orbital period when one more accurately considers the motion of the planet about the actual centre of mass of the Sun-planet system. If we express <span class="math notranslate nohighlight">\(M\)</span> in units of Solar mass, and orbital radius <span class="math notranslate nohighlight">\(a\)</span> in units of astronomical units (AU, the mean distance from the Earth to the Sun), we obtain a formula for the orbital period in units of years:</p>
+<div class="math notranslate nohighlight">
+\[    P/\mathrm{yr} = \left(\dfrac{M}{M_{\odot}}\right)^{-1/2} \left(\dfrac{a}{\mathrm{AU}}\right)^{3/2}.\]</div>
+<p>For most planets in the Solar System, the added mass term in this formula for orbital period makes very little difference – for example, the Earth-to-Sun mass ratio is only <span class="math notranslate nohighlight">\(\sim 1/330000\)</span>. For the most massive planet, Jupiter, this ratio is <span class="math notranslate nohighlight">\(\sim 1/1000\)</span>, which changes the ‘fixed Sun’ value for Jupiter’s orbital period by about <span class="math notranslate nohighlight">\(0.05\%\)</span>. One can note, however, that for systems where the masses of the two bodies are more comparable, this correction would be much more important to take into account.</p>
+<section id="binary-star-systems">
+<h3><span class="section-number">17.3.1. </span>Binary Star Systems<a class="headerlink" href="#binary-star-systems" title="Permalink to this heading">#</a></h3>
+<p>Half of all the stars in our galaxy are actually two-body systems, in which two stars revolve about their common centre of mass. The distances between the component stars can vary widely. The star Sirius is actually a binary system consisting of the luminous star known as Sirius, of mass <span class="math notranslate nohighlight">\(\sim 2.1\,M_{\odot}\)</span>; and a much fainter white dwarf star, of mass <span class="math notranslate nohighlight">\(\sim 1.05\,M_{\odot}\)</span>, which is situated at distances <span class="math notranslate nohighlight">\(\sim 20\,\mathrm{AU}\)</span> from its bright companion. The corresponding orbital period of the system is <span class="math notranslate nohighlight">\(\sim 50 \,\mathrm{yr}\)</span>.</p>
+<p>The X-ray source Cygnus X-1 is a binary system consisting of a <span class="math notranslate nohighlight">\(\sim20\,M_{\odot}\)</span> star whose companion is a black hole of similar mass. Their distance of separation is a comparatively small ~<span class="math notranslate nohighlight">\(0.2\,\mathrm{AU}\)</span>. Matter from the outer layers of the larger `regular’ star in this system is being accreted by the black hole. As the material falls towards the black hole, it forms an accretion disc. As the matter in this disc orbits the black hole, it can lose energy by frictional heating and crash down into it, heating to temperatures exceeding tens of millions of degrees which makes the hot gas radiate strongly in the X-ray waveband.</p>
+<p><img alt="Artist's impression of Cygnus X-1" src="../_images/Cygnus_X-1.png" /><br />
+<em>Credit: ESA/HST</em></p>
+</section>
+<section id="dynamics-of-collisions">
+<h3><span class="section-number">17.3.2. </span>Dynamics of Collisions<a class="headerlink" href="#dynamics-of-collisions" title="Permalink to this heading">#</a></h3>
+<p>When two bodies collide, the forces they exert on each other during the time of contact can be considered internal forces in the system consisting of the two bodies alone. Thus total linear momentum must be conserved and the total vector momentum of the bodies before and after the collision must be equal:</p>
+<div class="math notranslate nohighlight">
+\[m_1\,\vec{v}_1 + m_2\,\vec{v}_2 = m_1\,\vec{v'}_1 + m_2\,\vec{v'}_2.\]</div>
+<p>In terms of the energy balance of the system, we can write:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{1}{2} m_1 v_1^2 + \dfrac{1}{2} m_2 v_2^2 = \dfrac{1}{2} m_1 {v'_1}^2 + \dfrac{1}{2} m_2 v_2'^2 + Q,\]</div>
+<p>where <span class="math notranslate nohighlight">\(Q\)</span> indicates that part of the initial total kinetic energy which is dissipated as, for example, heat energy during the collision. If <span class="math notranslate nohighlight">\(Q=0\)</span>, no energy loss occurs and the collision is said to be <strong>elastic</strong>. The cases <span class="math notranslate nohighlight">\(Q&gt;0\)</span> and <span class="math notranslate nohighlight">\(Q&lt;0\)</span> respectively represent <strong>exoergic</strong> and <strong>endoergic</strong> collisions.</p>
+<section id="direct-collisions-single-axis-of-motion">
+<h4><span class="section-number">17.3.2.1. </span>Direct Collisions (Single Axis of Motion)<a class="headerlink" href="#direct-collisions-single-axis-of-motion" title="Permalink to this heading">#</a></h4>
+<p>If our two colliding particles are constrained to move back and forth along only one coordinate axis – let us call it the <span class="math notranslate nohighlight">\(x\)</span> axis – the momentum conservation reads:</p>
+<div class="math notranslate nohighlight">
+\[m_1\,\dot{x}_1 + m_2\,\dot{x}_2 = m_1\,\dot{x}'_1 + m_2\,\dot{x}'_2.\]</div>
+<p>In principle, we can calculate the velocities after the collision (the primed quantities) if we know the velocities before the collision and if we also know something about the energy difference <span class="math notranslate nohighlight">\(Q\)</span>. It is convenient to define a <strong>coefficient of restitution <span class="math notranslate nohighlight">\(\epsilon\)</span></strong>, which is the ratio of the speed at which the bodies approach each other before collision to the speed at which they recede from each other after the collision:</p>
+<div class="math notranslate nohighlight">
+\[\epsilon = \dfrac{|\dot{x}'_2-\dot{x}'_1|}{|\dot{x}_2-\dot{x}_1|} = \dfrac{v'}{v}.\]</div>
+<p>For elastic collisions (<span class="math notranslate nohighlight">\(Q=0\)</span>), <span class="math notranslate nohighlight">\(\epsilon=1\)</span>.</p>
+<p>For <strong>totally inelastic collisions</strong>, the bodies stick together after colliding and so <span class="math notranslate nohighlight">\(\epsilon=0\)</span>. More generally, of course, <span class="math notranslate nohighlight">\(\epsilon\)</span> will lie somewhere between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>From the momentum conservation equation, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[\dot{x}'_2 = \dfrac{(m_1/m_2)\,(\dot{x}_1-\dot{x}'_1) + \dot{x}_2}.\]</div>
+<p>Substituting this into the definition of <span class="math notranslate nohighlight">\(\epsilon^2\)</span>, we get:</p>
+<div class="math notranslate nohighlight">
+\[\epsilon^2\,(\dot{x}_2-\dot{x}_1)^2 = (\dot{x}'_2-\dot{x}'_1)^2 \]</div>
+<p>Solving this quadratic equation in <span class="math notranslate nohighlight">\((\dot{x}_1-\dot{x}'_1)\)</span>, we find the velocity after collision:</p>
+<div class="math notranslate nohighlight">
+\[\dot{x}'_1 = \dfrac{(m_1-\epsilon m_2)\,\dot{x_1} + (m_2 + \epsilon m_2)\,\dot{x_2}}{m_1+m_2}.\]</div>
+<p>The solution for <span class="math notranslate nohighlight">\(\dot{x}'_2\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\dot{x}'_2 = \dfrac{(m_1 + \epsilon m_1)\,\dot{x_1} + (m_2 - \epsilon m_1)\,\dot{x_2}}{m_1+m_2}.\]</div>
+<p>For anelastic collisions with <span class="math notranslate nohighlight">\(\epsilon=0\)</span>, where the bodies stick together after collision, we find that the post-collision velocities agree, <span class="math notranslate nohighlight">\(\dot{x}'_2 = \dot{x}'_1\)</span>, as expected. For the elastic case <span class="math notranslate nohighlight">\(\epsilon=1, m_1=m_2\)</span>, the bodies simply exchange velocities after collision – <span class="math notranslate nohighlight">\(\dot{x}'_1 = \dot{x}_2, \dot{x}'_2 = \dot{x}_1\)</span>.</p>
+</section>
+<section id="impulse">
+<h4><span class="section-number">17.3.2.2. </span>Impulse<a class="headerlink" href="#impulse" title="Permalink to this heading">#</a></h4>
+<p>The concept of impulse is usually associated with forces which act for relatively short times, such as the forces between colliding bodies. If the bodies are in contact for an interval of time <span class="math notranslate nohighlight">\(t_1\rightarrow t_1 + \Delta t\)</span>, and the force acting on one body is <span class="math notranslate nohighlight">\(\vec{F}\)</span>, then the corresponding change in its momentum is:</p>
+<div class="math notranslate nohighlight">
+\[\Delta({m\vec{v}}) =\int_{t_1}^{t_1 + \Delta t} \vec{F}\,dt.\]</div>
+<p>The time integral of force in this equation is known as the <strong>impulse</strong>, and has units of momentum.</p>
+</section>
+<section id="oblique-collisions">
+<h4><span class="section-number">17.3.2.3. </span>Oblique Collisions<a class="headerlink" href="#oblique-collisions" title="Permalink to this heading">#</a></h4>
+<p>In this section, we consider the more general case of collisions where the motion of the colliding bodies is not confined to a straight line. We start by considering the case of a particle of mass <span class="math notranslate nohighlight">\(m_1\)</span> with initial velocity <span class="math notranslate nohighlight">\(\vec{v}_1\)</span> which strikes a particle of mass <span class="math notranslate nohighlight">\(m_2\)</span> which is initially at rest. The conservation of total momentum must still apply, provided we use the vector sum of momenta.</p>
+<div class="math notranslate nohighlight">
+\[m_1\,\vec{v}_1 = m_1\,\vec{v}'_1 + m_2\,\vec{v}'_2.\]</div>
+<p>The energy balance may be written:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2} m_1 v_1^2 = \frac{1}{2} m_1\,{v}'^2_1 + \frac{1}{2} m_2\,{v}'^2_2 + Q,\]</div>
+<p>where we again use the symbol <span class="math notranslate nohighlight">\(Q\)</span> to denote total energy loss or gain.</p>
+<p>For the special case <span class="math notranslate nohighlight">\(m_1 = m_2 = m\)</span>, the energy balance condition may be written (now using symbols for momenta <span class="math notranslate nohighlight">\(\vec{p} = m \vec{v}\)</span>, with magnitude <span class="math notranslate nohighlight">\(p = m v\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[p_1^2 = {p}'^2_1 + {p}'^2_2 + 2 m Q.\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\vec{p}_1 = \vec{p}'_1 + \vec{p}'_2\)</span>, <span class="math notranslate nohighlight">\(p_1^2\)</span> is also equal to:</p>
+<div class="math notranslate nohighlight">
+\[\vec{p}_1 \cdot \vec{p}_1 = (\vec{p}'_1 + \vec{p}'_2)\cdot(\vec{p}'_1 + \vec{p}'_2)
+= {{p}'_1}^2 + {{p}'_2}^2 + 2 \vec{p}'_1 \cdot \vec{p}'_2.\]</div>
+<p>Comparing the last two equations shows that <span class="math notranslate nohighlight">\(\vec{p}'_1 \cdot \vec{p}'_2 = m Q\)</span>. Thus for elastic collisions where <span class="math notranslate nohighlight">\(Q=0\)</span>, the final directions of motion of the incident and the target particle are orthogonal.</p>
+</section>
+</section>
+<section id="centre-of-mass-coordinates">
+<h3><span class="section-number">17.3.3. </span>Centre Of Mass Coordinates<a class="headerlink" href="#centre-of-mass-coordinates" title="Permalink to this heading">#</a></h3>
+<p>Figure <img alt="cofmcoord" src="../_images/cofmcoord.png" /> shows the same collision between two particles in two different coordinate frames. In the so-called laboratory frame, we observe an incident particle of mass <span class="math notranslate nohighlight">\( m_1 \)</span> and velocity <span class="math notranslate nohighlight">\( \vec{v}_1 \)</span> striking a stationary target particle of mass <span class="math notranslate nohighlight">\( m_2 \)</span>. After the collision, both particles are in motion and their velocities make angles <span class="math notranslate nohighlight">\( \phi_1 \)</span> and <span class="math notranslate nohighlight">\( \phi_2 \)</span> with the direction of the incident velocity.</p>
+<p>Now, if we consider the same collision in the centre-of-mass coordinates, in which the centre of mass is stationary, the picture changes. We recall that for a system such as this, with two particles and no external forces, the centre of mass does not accelerate and remains situated on the line connecting the two particles. In the frame of reference where the centre of mass is stationary, the total momentum before collision and after collision must be zero. Thus, in the centre-of-mass frame, the particles move in opposite directions before the collision, both approaching the stationary centre of mass. And after the collision, their velocities make the same angle <span class="math notranslate nohighlight">\( \theta \)</span> with their initial directions of motion.</p>
+<p><img alt="cofmcoord" src="../_images/cofmcoord.png" /><br />
+<em>The same collision viewed in laboratory (left) and centre-of-mass (right) coordinates.</em></p>
+<p>The momentum conservation and energy balance in the centre-of-mass coordinates can be written:</p>
+<div class="math notranslate nohighlight">
+\[\overline{\vec{p}}_1 + \overline{\vec{p}}_2 = 0 = \overline{\vec{p}}_1' + \overline{\vec{p}}_2',\]</div>
+<div class="math notranslate nohighlight">
+\[\dfrac{\overline{{{p}}_1}^2}{2 m_1} + 
+\dfrac{\overline{{{p}}_2}^2}{2 m_2} = 
+\dfrac{\overline{{{p}}'_1}^2}{2 m_1} + 
+\dfrac{\overline{{{p}}'_2}^2}{2 m_2} + Q.\]</div>
+<p>Since the first equation implies the momentum magnitude relations</p>
+<div class="math notranslate nohighlight">
+\[\overline{{p}_1}^2 = \overline{{p}_2}^2, \quad \overline{{p}'_1}^2 = \overline{{p}'_2}^2,\]</div>
+<p>the energy balance becomes:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{\overline{{{p}}_1}^2}{2\mu} 
+= 
+\dfrac{\overline{{{p}}'_1}^2}{2 \mu} + 
+Q,\]</div>
+<p>where we use the usual definition of reduced mass <span class="math notranslate nohighlight">\( \mu \)</span>, introduced in section 2.2.</p>
+<p><img alt="labcmvels" src="../_images/labcmvels.png" /><br />
+<em>The relation between velocity in the laboratory and centre-of-mass frames.</em></p>
+<p>Let us now consider the relationship between the velocity in the laboratory and the centre-of-mass frames of reference. Figure <img alt="labcmvels" src="../_images/labcmvels.png" /> illustrates the definition of the post-collision velocity in these two frames:</p>
+<div class="math notranslate nohighlight">
+\[\overline{\vec{v}}'_1 = \vec{v}'_1 - \vec{v}_{cm} = \vec{v}'_1 - \dfrac{m_1 \vec{v}_1}{m_1 + m_2}\]</div>
+<p>The diagram shows, using the orientation angles indicated, that:</p>
+<div class="math notranslate nohighlight">
+\[v'_1 \, \sin{\phi_1} = \overline{v'}_1 \, \sin\theta, \quad
+v'_1 \, \cos{\phi_1} = \overline{v'}_1\, \cos\theta + v_{cm}\]</div>
+<p>Dividing these equations gives us a reasonably simple relation between the scattering angles in the two frames:</p>
+<div class="math notranslate nohighlight">
+\[\tan{\phi_1} = \dfrac{\sin\theta}{\cos\theta + \gamma},\]</div>
+<p>where <span class="math notranslate nohighlight">\( \gamma = v_{cm}/\overline{v'}_1 = \dfrac{m_1 {v}_1/\overline{v'}_1}{m_1 + m_2} \)</span>.</p>
+<p>For the special case of elastic collision where <span class="math notranslate nohighlight">\( Q = 0 \)</span>, the energy conservation equation tells us that, in the centre-of-mass frame, <span class="math notranslate nohighlight">\( \overline{p}_1 = \overline{p'}_1 \)</span> — that is, <span class="math notranslate nohighlight">\( \overline{v}_1 = \overline{v'}_1 \)</span>. It follows that:</p>
+<div class="math notranslate nohighlight">
+\[\overline{v'}_1 = \overline{v}_1 = v_1 - v_{cm} = \dfrac{m_2 v_1}{m_1 + m_2}.\]</div>
+<p>We then obtain:</p>
+<div class="math notranslate nohighlight">
+\[\gamma = \dfrac{m_1 {v}_1}{m_1 + m_2} \dfrac{m_1 + m_2}{m_2 v_1} = \dfrac{m_1}{m_2}.\]</div>
+<p>This value of <span class="math notranslate nohighlight">\( \gamma \)</span> for the elastic collision case indicates that, for the case where the target mass <span class="math notranslate nohighlight">\( m_2 \)</span> is extremely large compared to the mass <span class="math notranslate nohighlight">\( m_1 \)</span> of the incident particle, <span class="math notranslate nohighlight">\( \gamma \rightarrow 1 \)</span> and the two angles <span class="math notranslate nohighlight">\( \theta \)</span> and <span class="math notranslate nohighlight">\( \phi \)</span> approach equal value. For the case where these masses are equal, <span class="math notranslate nohighlight">\( \gamma = 1 \)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\tan\phi_1 = \tan\left(\dfrac{\theta}{2}\right),\]</div>
+<p>i.e., the scattering angle in the centre-of-mass frame is twice the value it has in the lab frame. Similar reasoning applied to the target particle shows that it has a scattering angle of <span class="math notranslate nohighlight">\( (\pi-\theta)/2 \)</span> in the laboratory system. Therefore, when an incident particle strikes a target of equal mass in the lab frame, the post-collision velocities are perpendicular to each other.</p>
+<p><em>{PUT ROCKET PROBLEM IN PROBLEM SET}</em></p>
+</section>
+</section>
+<section id="rotation-of-rigid-bodies">
+<h2><span class="section-number">17.4. </span>Rotation of Rigid Bodies<a class="headerlink" href="#rotation-of-rigid-bodies" title="Permalink to this heading">#</a></h2>
+<p>A rigid body may be considered a system of particles (mass elements) whose positions relative to each other remain fixed. In this section, we consider the properties of rotational motion of a rigid body, for the case where the axis of rotation maintains a fixed direction in space.</p>
+<section id="centre-of-mass-of-a-rigid-body">
+<h3><span class="section-number">17.4.1. </span>Centre of Mass of a Rigid Body<a class="headerlink" href="#centre-of-mass-of-a-rigid-body" title="Permalink to this heading">#</a></h3>
+<p>Our previous definition of the centre of mass of a system of discrete particles can be generalized by an integral definition for a rigid, extended body. Using Cartesian coordinates, the position of the centre of mass thus becomes:</p>
+<div class="math notranslate nohighlight">
+\[x_{cm} = \dfrac{\int_{\mathcal{V}} \rho\,x\,d\mathcal{V}}
+                   {\int_{\mathcal{V}} \rho\,d\mathcal{V}}, \quad
+y_{cm} = \dfrac{\int_{\mathcal{V}} \rho\,y\,d\mathcal{V}}
+                   {\int_{\mathcal{V}} \rho\,d\mathcal{V}}, \quad
+z_{cm} = \dfrac{\int_{\mathcal{V}} \rho\,z\,d\mathcal{V}}
+                   {\int_{\mathcal{V}} \rho\,d\mathcal{V}},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho\)</span> is the local density of the body and <span class="math notranslate nohighlight">\(d\mathcal{V}\)</span> is an infinitesimal volume element.</p>
+<p>For the case of a body which takes the form of a thin shell, we could replace the mass element in the above definitions by <span class="math notranslate nohighlight">\(\rho_S\,dS\)</span> where <span class="math notranslate nohighlight">\(\rho_S\)</span> is a surface density (mass per unit area) and <span class="math notranslate nohighlight">\(dS\)</span> is a surface element.<br />
+For the case of a body which takes the form of a thin wire, we could replace the mass element in the above definitions by <span class="math notranslate nohighlight">\(\rho_{\ell}\,d\ell\)</span> where <span class="math notranslate nohighlight">\(\rho_{\ell}\)</span> is a linear density (mass per unit length) and <span class="math notranslate nohighlight">\(d{\ell}\)</span> is a length element.</p>
+<p>If a rigid body has a mass distribution which is symmetric about a plane, then its centre of symmetry will lie in that same plane. To demonstrate this, we can consider a body which is symmetric about the <span class="math notranslate nohighlight">\(xy\)</span>-plane. We can divide the body up into pairs of equal mass elements, <span class="math notranslate nohighlight">\(dM_i\)</span> and <span class="math notranslate nohighlight">\(dM_i'\)</span>, which have equal and opposite <span class="math notranslate nohighlight">\(z\)</span>-coordinates, <span class="math notranslate nohighlight">\(z_i\)</span> and <span class="math notranslate nohighlight">\(z_i' = -z_i\)</span>. The <span class="math notranslate nohighlight">\(z\)</span>-coordinate of its centre of mass will thus be:</p>
+<div class="math notranslate nohighlight">
+\[z_{cm} = \dfrac{\int (z_i\,dM_i + z_i'\,dM_i')}{\int (dM_i + dM_i')} = 0.\]</div>
+<p>A similar result applies for a body which has an axis or a line of symmetry.</p>
+<p><strong>Solid Homogeneous Hemisphere</strong></p>
+<p>A body which has the form of a solid half-sphere with a uniform density <span class="math notranslate nohighlight">\(\rho\)</span> will have symmetry about the radius which is perpendicular to its plane face. Hence its centre of mass will lie on this line, which we will adopt as the <span class="math notranslate nohighlight">\(z\)</span>-axis.</p>
+<p><img alt="Coordinates for calculating the centre of mass of a solid hemisphere." src="../_images/hemisphere.png" /></p>
+<p>Now we can divide the hemisphere into a series of thin circular discs (see Figure \ref{fig:hemisphere}) of infinitesimal thickness <span class="math notranslate nohighlight">\( dz \)</span> and variable radius <span class="math notranslate nohighlight">\( r = \sqrt{a^2 - z^2} \)</span>, where <span class="math notranslate nohighlight">\( a \)</span> is the radius of the hemisphere and <span class="math notranslate nohighlight">\( z \)</span> is the axial coordinate of the disc. The mass of a disc will thus be:</p>
+<div class="math notranslate nohighlight">
+\[dM = \pi \rho \, r^2 \,dz.\]</div>
+<p>Integrating to obtain the specific axial location of the centre of mass gives:</p>
+<div class="math notranslate nohighlight">
+\[z_{cm} = \dfrac{\int_{z=0}^a z\,\pi \rho \, {(a^2 - z^2)} \,dz}
+    {\int_{z=0}^a \pi \rho \, {(a^2 - z^2)} \,dz} \notag
+    = \dfrac{\pi \rho \, {(a^2 \,\dfrac{1}{2} a^2 - \dfrac{1}{4} a^4)}}
+    {\pi \rho \, {(a^2 a - \dfrac{1}{3} a^3)}} = \dfrac{3}{8} a.\]</div>
+<p><strong>Thin Hemispherical Shell</strong></p>
+<p>For the case of a thin hemispherical shell, we use the angular coordinate <span class="math notranslate nohighlight">\( \theta \)</span> (see Figure \ref{fig:hemisphere}) to divide the shell’s surface into circular strips of mass <span class="math notranslate nohighlight">\( \rho_S \, dS = 2\pi \rho_S a\, \cos\theta\, a\, d\theta \)</span>.</p>
+<p>Note that <span class="math notranslate nohighlight">\( \cos\theta\,d\theta = d(\sin\theta) \)</span>. Since
+<span class="math notranslate nohighlight">\(\sin\theta = z/a\)</span>, then <span class="math notranslate nohighlight">\( d(\sin\theta) = dz/a \)</span>. Therefore:</p>
+<div class="math notranslate nohighlight">
+\[z_{cm} = \dfrac{\int_{z=0}^a \, 2\pi \rho_S a\, z\, dz}
+                   {\int_{z=0}^a \, 2\pi \rho_S a\, dz} = \dfrac{1}{2} a.\]</div>
+<p><strong>Thin Semicircular Lamina</strong></p>
+<p>A <strong>lamina</strong> is a body that has the form of a thin layer or plate. Consider a semicircular lamina of uniform density <span class="math notranslate nohighlight">\( \rho \)</span> which occupies the following points in Cartesian space:</p>
+<div class="math notranslate nohighlight">
+\[x = R \cos{\phi}, ~~ z = R \sin{\phi}, ~~ -\Delta y/2 \leq y \leq \Delta y/2,\]</div>
+<p>where the cylindrical coordinates satisfy <span class="math notranslate nohighlight">\( 0 \leq R \leq a \)</span>, where <span class="math notranslate nohighlight">\( a \)</span> is the radius of the semicircle, and <span class="math notranslate nohighlight">\( 0 \leq \phi \leq \pi \)</span>. Using the cylindrical coordinates, we can calculate the <span class="math notranslate nohighlight">\( z \)</span>-coordinate of the centre of mass as follows:</p>
+<div class="math notranslate nohighlight">
+\[z_{cm} = \dfrac{\int_{R=0}^a \int_{\phi=0}^\pi \, z \rho \, R \, dR \, d\phi}{\int_{R=0}^a \int_{\phi=0}^\pi \, \rho \, R \, dR \, d\phi} \notag
+    = \dfrac{\int_{R=0}^a \, R^2\, dR \, \int_{\phi=0}^\pi \, \sin{\phi} \, d\phi}{\int_{R=0}^a R\, dR \, \int_{\phi=0}^\pi \, d\phi} \notag
+    = \dfrac{\frac{1}{3}\,a^3\cdot 2}{\frac{1}{2}\,a^2\cdot \pi}
+    = \dfrac{4a}{3\pi}.\]</div>
+</section>
+<section id="moment-of-inertia">
+<h3><span class="section-number">17.4.2. </span>Moment of Inertia<a class="headerlink" href="#moment-of-inertia" title="Permalink to this heading">#</a></h3>
+<p>Consider now the rotation of a rigid body about a fixed axis, which we shall refer to as the <span class="math notranslate nohighlight">\( z \)</span>-axis. The path of a single point in the moving body may be described by coordinates <span class="math notranslate nohighlight">\( (x_i, y_i, z_i) \)</span> where <span class="math notranslate nohighlight">\( z_i \)</span> remains fixed and the other coordinates describe a circular path <span class="math notranslate nohighlight">\( x_i^2 + y_i^2 = r_i^2 \)</span>, where <span class="math notranslate nohighlight">\( r_i \)</span> is the constant perpendicular distance of the point from the axis of rotation.</p>
+<p>The speed of the element of mass <span class="math notranslate nohighlight">\( m_i \)</span> located at this point will be</p>
+<div class="math notranslate nohighlight">
+\[v_i = r_i\, \omega,\]</div>
+<p>where <span class="math notranslate nohighlight">\( \omega \)</span> is the magnitude of the angular velocity of rotation. The individual velocity components of <span class="math notranslate nohighlight">\( m_i \)</span> are:</p>
+<div class="math notranslate nohighlight">
+\[\dot{x}_i = -v_i\, \sin\phi_i, ~~~ \dot{y}_i = v_i\, \cos\phi, ~~~ \dot{z}_i = 0.\]</div>
+<p>Here the azimuthal angle <span class="math notranslate nohighlight">\( \phi_i \)</span> is defined by <span class="math notranslate nohighlight">\( x_i = r_i\, \cos\phi_i, y_i = r_i\, \sin\phi_i \)</span>.</p>
+<p>These velocity components can also be calculated by using the vector identity:</p>
+<div class="math notranslate nohighlight">
+\[\vec{v}_i = \vec{\omega} \times \vec{r}_i,\]</div>
+<p>with <span class="math notranslate nohighlight">\( \vec{\omega} = \omega\, \vec{e_z} \)</span>.</p>
+<p>Using these definitions, we can now calculate the <strong>total kinetic energy of rotation</strong> for the rigid body:</p>
+<div class="math notranslate nohighlight">
+\[T_{rot} = \sum_i \, \frac{1}{2} m_i v_i^2 \notag
+            = \frac{1}{2}\, (\sum_i \, m_i r_i^2) \, \omega^2 \notag
+            = \frac{1}{2}\, I_z \, \omega^2,\]</div>
+<p>where <span class="math notranslate nohighlight">\( I_z = \sum_i \, m_i r_i^2 \)</span> is known as the body’s <strong>moment of inertia</strong> about its axis of rotation.</p>
+<p>The angular momentum of a single mass element is
+<span class="math notranslate nohighlight">\( \vec{r}_i \times m_i \vec{v}_i \)</span>. The <span class="math notranslate nohighlight">\( z \)</span>-component of this cross product is</p>
+<div class="math notranslate nohighlight">
+\[m_i (x_i \dot{y}_i - y_i \dot{x}_i) = m_i (x_i^2 + y_i^2) \omega
+= m_i r_i^2 \omega.\]</div>
+<p>The total <span class="math notranslate nohighlight">\( z \)</span>-component of the angular momentum, is thus:</p>
+<div class="math notranslate nohighlight">
+\[L_z = \sum_i m_i r_i^2 \omega = I_z \omega.\]</div>
+<p>Since the body in question is constrained to rotate about the <span class="math notranslate nohighlight">\( z \)</span>-axis, the rate of change of its angular momentum component in the <span class="math notranslate nohighlight">\( z \)</span>-direction is equal to the corresponding component of the moment of any external forces in that direction:</p>
+<div class="math notranslate nohighlight">
+\[N_z = \dfrac{dL_z}{dt} = \dfrac{d(I_z \omega)}{dt}.\]</div>
+<p>For a rigid body, <span class="math notranslate nohighlight">\( I_z \)</span> is constant, so <span class="math notranslate nohighlight">\( N_z = I_z\, \dfrac{d\omega}{dt} \)</span>.</p>
+<p>We can therefore consider physical quantities defined for translational motion alongside their counterparts for rotational motion:</p>
+<ul class="simple">
+<li><p><strong>Linear Momentum</strong>: <span class="math notranslate nohighlight">\( p_x = m v_x \)</span> <strong>Angular Momentum</strong>: <span class="math notranslate nohighlight">\( L_z = I_z \omega \)</span></p></li>
+<li><p><strong>Force</strong>: <span class="math notranslate nohighlight">\( F_x = m \dot{v}_x \)</span> <strong>Torque</strong>: <span class="math notranslate nohighlight">\( N_z = I_z \dot{\omega} \)</span></p></li>
+<li><p><strong>Kinetic Energy</strong>: <span class="math notranslate nohighlight">\( T = \frac{1}{2} m v^2 \)</span> <strong>Kinetic Energy</strong>: <span class="math notranslate nohighlight">\( T_{rot} = \frac{1}{2} I_z \omega^2 \)</span></p></li>
+</ul>
+<p>For bodies which are extended or continuous (as opposed to collections of discrete particles), we can generalize the previous definition of the moment of inertia from a sum to an integral:</p>
+<div class="math notranslate nohighlight">
+\[I = \int R^2\,dM,\]</div>
+<p>where <span class="math notranslate nohighlight">\( dM = \rho \, \mathcal{V} \)</span> is a mass element, whose volume is <span class="math notranslate nohighlight">\( d\mathcal{V} \)</span>, at a location where the density is <span class="math notranslate nohighlight">\( \rho \)</span>. Let us now consider some examples of how we calculate the moment of inertia of different bodies.</p>
+<p><strong>Moment of Inertia of a Thin Rod</strong></p>
+<p><img alt="Coordinates for calculating the moment of inertia of a rod: (a) about one end and (b) about the centre of the rod." src="../_images/rodmoi.png" /></p>
+<p>Figure 1 shows appropriate coordinates for calculating the moment of inertia of a thin rod of total mass <span class="math notranslate nohighlight">\(m\)</span> and length <span class="math notranslate nohighlight">\(a\)</span>. In the first example, the rod rotates about an axis perpendicular to itself which passes through one of its ends. The appropriate moment of inertia is thus:</p>
+<div class="math notranslate nohighlight">
+\[\int_{x=0}^a\,(m/a)\,x^2\,dx = ma^2/3.\]</div>
+<p>In the second example, the axis of rotation passes through the midpoint of the rod, and the moment of inertia becomes:</p>
+<div class="math notranslate nohighlight">
+\[\int_{x=-a/2}^{a/2}\,(m/a)\,x^2\,dx = ma^2/12.\]</div>
+<p><strong>Moment of Inertia of a Thin Spherical Shell</strong></p>
+<p>Consider a thin spherical shell rotating about the <span class="math notranslate nohighlight">\(z\)</span> axis, which passes through the origin, taken to be the centre of the sphere. Using spherical coordinates and assuming the shell has a uniform surface density <span class="math notranslate nohighlight">\(\sigma\)</span> and radius <span class="math notranslate nohighlight">\(a\)</span>, a surface element can be expressed as <span class="math notranslate nohighlight">\(dS = a^2\,\sin\theta\,d\theta\,d\phi\)</span>.</p>
+<p>The shell can be divided into circular strips whose surface elements all have a constant value of the coordinate <span class="math notranslate nohighlight">\(z\)</span>, which equals
+<span class="math notranslate nohighlight">\(a\,\cos\theta\)</span>. The perpendicular distance of any point on such a strip from the <span class="math notranslate nohighlight">\(z\)</span> axis is <span class="math notranslate nohighlight">\(R=a\,\sin\theta=\sqrt{a^2-z^2}\)</span>. The mass of a strip is
+<span class="math notranslate nohighlight">\(dM =  2\pi\sigma R \,a\,d\theta\)</span>. Hence the integrand
+<span class="math notranslate nohighlight">\(R^2 dM = R^3\,(2\pi\sigma \,a\,d\theta) = (2\pi\sigma \,a^4\,\sin^3\theta\,d\theta)\)</span>.</p>
+<p>The moment of inertia is thus:</p>
+<div class="math notranslate nohighlight">
+\[2\pi\sigma\,a^4\,\int_{\theta=0}^\pi   \sin^3\theta\,d\theta 
+    = 2\pi\sigma\,a^4\,\int_{1}^{-1}   -(1-u^2)\,du,\]</div>
+<p>using auxiliary variable <span class="math notranslate nohighlight">\(u=\cos\theta\)</span>. We finally obtain:</p>
+<div class="math notranslate nohighlight">
+\[2\pi\sigma\,a^4\,\int_{-1}^{1}   (1-u^2)\,du = 2\pi\sigma\,a^4\,(2 - \frac{1}{3}\cdot 2) = (8\pi/3)\,\sigma\,a^4.\]</div>
+<p>This final evaluation can also be written as
+<span class="math notranslate nohighlight">\(\frac{2}{3} M_s a^2\)</span>, where the mass of the shell is <span class="math notranslate nohighlight">\(M_s = 4\pi \sigma a^2\)</span>.</p>
+</section>
+<section id="the-parallel-axis-theorem">
+<h3><span class="section-number">17.4.3. </span>The Parallel Axis Theorem<a class="headerlink" href="#the-parallel-axis-theorem" title="Permalink to this heading">#</a></h3>
+<p>Consider the moment of inertia about the <span class="math notranslate nohighlight">\(z\)</span> axis for a rigid body of arbitrary shape, which can be considered to be composed of mass elements <span class="math notranslate nohighlight">\(\delta m_i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[I_z = \sum_i \, \delta m_i\,(x_i^2 + y_i^2).\]</div>
+<p>Using our previous `overbar’ notation for coordinates relative to the body’s centre of mass, we can write <span class="math notranslate nohighlight">\(x_i = x_{cm} + \overline{x}_i\)</span>, with a similar expression for the <span class="math notranslate nohighlight">\(y\)</span> coordinate. Hence our moment of inertia becomes:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}I_z &amp;= \sum_i \, \delta m_i\,((x_{cm} + \overline{x}_i)^2 +
+     (y_{cm} + \overline{y}_i)^2) \notag \\
+     &amp;= \sum_i \, \delta m_i\,(\overline{x}_i^2 + \overline{y}_i^2) +
+        \sum_i \, \delta m_i\,({x}_{cm}^2 + {y}_{cm}^2) \notag \\
+     &amp;+ 2 x_{cm}\,\sum_i \, \delta m_i\,\overline{x}_i
+      + 2 y_{cm}\,\sum_i \, \delta m_i\,\overline{y}_i.\end{split}\]</div>
+<p>In the final expression above, the first summation is simply the moment of inertia taken about an axis – let’s label it <span class="math notranslate nohighlight">\(z'\)</span> – which is parallel to the <span class="math notranslate nohighlight">\(z\)</span> axis and which passes through the body’s own centre of mass. The second summation is the total mass of the body multiplied by the square of the perpendicular distance between the <span class="math notranslate nohighlight">\(z\)</span> axis and the <span class="math notranslate nohighlight">\(z'\)</span> axis.</p>
+<p>For the final two summations, we can note that, according to the definition of the centre of mass, we would expect:</p>
+<div class="math notranslate nohighlight">
+\[    \sum_i \delta m_i\,\overline{x}_i = \sum_i \delta m_i\,\overline{y}_i = 0.\]</div>
+<p>Hence, the expression for the moment of inertia reduces to:</p>
+<div class="math notranslate nohighlight">
+\[    I_z = \sum_i \, \delta m_i\,(\overline{x}_i^2 + \overline{y}_i^2) + M_d^2,\]</div>
+<p>which expresses, in mathematical form, the <strong>Parallel Axis Theorem</strong> for moments of inertia: <em>The moment of inertia of a rigid body taken about any axis is equal to the moment of inertia about a parallel axis passing through the centre of mass, plus the product of the mass of the body and the square of the perpendicular distance between the two axes.</em></p>
+</section>
+<section id="towards-lagrangian-mechanics-non-examinable">
+<h3><span class="section-number">17.4.4. </span>Towards Lagrangian Mechanics (Non-Examinable)<a class="headerlink" href="#towards-lagrangian-mechanics-non-examinable" title="Permalink to this heading">#</a></h3>
+<p>An elegant alternative formalism for investigating the time-dependent motion of a system of particles evolved from the work of Leibniz (1646-1716), Bernoulli (1667-1748), D’Alembert (1717-1783) and Lagrange (1736-1813). As an introduction to Lagrangian mechanics, we take the approach in this section of describing how Lagrange’s equations can be derived from a variational principle developed by Hamilton (1805-1865), and consider a couple of simple applications.</p>
+<section id="hamiltons-variational-principle">
+<h4><span class="section-number">17.4.4.1. </span>Hamilton’s Variational Principle<a class="headerlink" href="#hamiltons-variational-principle" title="Permalink to this heading">#</a></h4>
+<p>Defining the <strong>Lagrangian</strong> function <span class="math notranslate nohighlight">\(L = T - V\)</span> as the difference between the potential and kinetic energy of a system of particles, Hamilton’s principle is related to the evolution of the system between two times, <span class="math notranslate nohighlight">\(t_1\)</span> and <span class="math notranslate nohighlight">\(t_2\)</span>. Out of the many possible ways that the positions and velocities of the constituent particles could evolve between these times, the <em>actual motion</em> is the <code class="docutils literal notranslate"><span class="pre">trajectory</span></code> (evolution in time of positions and velocities) of the system which either maximizes or minimizes the integral:</p>
+<div class="math notranslate nohighlight">
+\[    J = \int_{t_1}^{t_2} L\,dt,\]</div>
+<p>where we recognize that, generally, the Lagrangian will be a function of time. This condition is mathematically equivalent to the statement that a small increment or <code class="docutils literal notranslate"><span class="pre">perturbation</span></code> in the value of <span class="math notranslate nohighlight">\(J\)</span>, taken with respect to its minimum or maximum value, must be zero:</p>
+<div class="math notranslate nohighlight">
+\[    \delta J = \delta \int_{t_1}^{t_2} L\,dt = 0.\]</div>
+<p>This variation <span class="math notranslate nohighlight">\(\delta J\)</span> corresponds to a path for the system where the particle positions and velocities are infinitesimally different from those which occur for the <code class="docutils literal notranslate"><span class="pre">optimal</span></code> path — that is, the actual motion of the system for which <span class="math notranslate nohighlight">\(J\)</span> takes on an extreme value. When calculating <span class="math notranslate nohighlight">\(\delta J\)</span>, however, all the parameters of the system are taken to be the same at the end times <span class="math notranslate nohighlight">\(t_1\)</span>, <span class="math notranslate nohighlight">\(t_2\)</span> as they are for the optimal path.</p>
+<p>Let’s consider the simple example of a single particle moving under the influence of a uniform gravitational acceleration <span class="math notranslate nohighlight">\(g\)</span> (for example close to the surface of the Earth). If the vertical coordinate above ground is denoted <span class="math notranslate nohighlight">\(y\)</span>, then the Lagrangian can be written simply as <span class="math notranslate nohighlight">\(L = \frac{m \dot{y}^2}{2} - m g y\)</span>. The corresponding variation in Hamilton’s integral becomes:</p>
+<div class="math notranslate nohighlight">
+\[    \delta J = \int_{t_1}^{t_2} \delta\left( \frac{m \dot{y}^2}{2} - m g y \right) \, dt.\]</div>
+<p>Now, <span class="math notranslate nohighlight">\(\delta y\)</span> is a function of time which represents the small difference in <span class="math notranslate nohighlight">\(y\)</span> between the actual motion of the particle and a conceptual trajectory which is infinitesimally different, at each time <span class="math notranslate nohighlight">\(t\)</span>, by an amount <span class="math notranslate nohighlight">\(\delta y\)</span>, and where <span class="math notranslate nohighlight">\(\delta y = 0\)</span> at <span class="math notranslate nohighlight">\(t=t_1,t_2\)</span>. Since, according to this definition, the corresponding increment in velocity would be <span class="math notranslate nohighlight">\(\delta \dot{y} = \frac{d}{dt} (\delta y)\)</span>, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[    \delta J = \int_{t_1}^{t_2} \left( m \dot{y}\,\delta \dot{y} - m g \, dy \right) \, dt,\]</div>
+<p>where:</p>
+<div class="math notranslate nohighlight">
+\[    \int_{t_1}^{t_2} m \dot{y}\,\delta \dot{y} \, dt = \int_{t_1}^{t_2} m \dot{y}\,
+    \frac{d}{dt}(\delta y) \, dt.\]</div>
+<p>Integrating the final expression by parts gives:</p>
+<div class="math notranslate nohighlight">
+\[   \int_{t_1}^{t_2} m \dot{y}\,
+    \frac{d}{dt}(\delta y) \, dt = \left[ m \dot{y} \, \delta y\right]_{t_1}^{t_2} -
+    \int_{t_1}^{t_2} m \ddot{y}\,\delta y\,dt.\]</div>
+<p>Now the first term on the right-hand side of the above equation vanishes, since
+<span class="math notranslate nohighlight">\(\delta y = 0\)</span> at the endpoints of integration. Our original expression for
+<span class="math notranslate nohighlight">\(\delta J\)</span> thus becomes:</p>
+<div class="math notranslate nohighlight">
+\[    \delta J = \int_{t_1}^{t_2} (-m \ddot{y} - m g)\,\delta y\,dt = 0.\]</div>
+<p>Since this condition must hold for any conceptual path which is infinitesimally close to the actual motion, the only way it can be satisfied is if the integrand itself is zero for all times during the motion. That is:</p>
+<div class="math notranslate nohighlight">
+\[-m \ddot{y} - m g = 0,\]</div>
+<p>which is equivalent to Newton’s Second Law for a particle falling in a uniform gravitational field.</p>
+</section>
+</section>
+<section id="lagranges-equations">
+<h3><span class="section-number">17.4.5. </span>Lagrange’s Equations<a class="headerlink" href="#lagranges-equations" title="Permalink to this heading">#</a></h3>
+<p>We may repeat this kind of calculation for a more general case, where we have a system of particles whose positions can be described by a set of <strong>generalized</strong> coordinates <span class="math notranslate nohighlight">\(q_i\)</span>, each of which is some function of time. The <span class="math notranslate nohighlight">\(q_i\)</span> are referred to as generalized because in this formalism they can be distances, angles, or some combination of these kinds of quantities. For each function <span class="math notranslate nohighlight">\(q_i\)</span>, there is of course a generalized velocity <span class="math notranslate nohighlight">\(\dot{q_i}\)</span>. Applying Hamilton’s principle to these more general parameters, one can prove (we give the result here without proof) that the motion of the system is constrained by the following equations:</p>
+<div class="math notranslate nohighlight">
+\[    \dfrac{\partial L}{\partial q_i} - \dfrac{d}{dt} \left( \dfrac{\partial L}{\partial \dot{q_i}} \right) = 0. \]</div>
+<p>These are the desired Lagrangian equations of motion for a system acting under conservative forces. If the equations are used to describe a motion where one or more particles are constrained in some sense (e.g., a particle constrained to move only on the surface of a sphere), then that constraint must be <strong>holonomic</strong>. In other words, it must be mathematically expressible by the condition that the value of some function <span class="math notranslate nohighlight">\(f\)</span> is zero at all times, where <span class="math notranslate nohighlight">\(f\)</span> can only be a function of the generalized coordinates and time.</p>
+<p>We end this section by considering the motion of a single particle in a central field.</p>
+<p>The potential energy of the particle, of mass <span class="math notranslate nohighlight">\(m\)</span>, in the gravitational field of the central body, of mass <span class="math notranslate nohighlight">\(M\)</span> (<span class="math notranslate nohighlight">\(M &gt;&gt; m\)</span>, with <span class="math notranslate nohighlight">\(M\)</span> stationary at the origin), is simply</p>
+<div class="math notranslate nohighlight">
+\[V = -\dfrac{G M m}{r},\]</div>
+<p>where <span class="math notranslate nohighlight">\(r\)</span> denotes radial distance from the origin. The kinetic energy is</p>
+<div class="math notranslate nohighlight">
+\[T = \frac{1}{2}\,m\,(\dot{r}^2 + r^2\,\dot{\theta}^2),\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is an angular coordinate. The particle is constrained to move in a single plane, as we have explored in the section “Gravity”. The Lagrangian is:</p>
+<div class="math notranslate nohighlight">
+\[L = T - V = \frac{1}{2}\,m\,(\dot{r}^2 + r^2\,\dot{\theta}^2) + \dfrac{GMm}{r}.\]</div>
+<p>Equation <span class="math notranslate nohighlight">\(\ref{eq:lagrange}\)</span>, for the radial distance coordinate, reads:</p>
+<div class="math notranslate nohighlight">
+\[    \dfrac{\partial L}{\partial r} = \dfrac{d}{dt} \left( \dfrac{\partial L}{\partial \dot{r}}  \right)     \rightarrow 
+    m r \,\dot{\theta}^2 -\dfrac{G M m}{r^2} = m \ddot{r} \rightarrow 
+    -\dfrac{G M}{r^2} = \ddot{r} - r \,\dot{\theta}^2.\]</div>
+<p>Equation <span class="math notranslate nohighlight">\(\ref{eq:lagrange}\)</span>, for the angular coordinate, reads:</p>
+<div class="math notranslate nohighlight">
+\[    \dfrac{\partial L}{\partial \theta} = \dfrac{d}{dt} \left( \dfrac{\partial L}{\partial \dot{\theta}}  \right)     \rightarrow 
+    0 = \dfrac{d}{dt} \left( m r^2 \dot{\theta} \right).\]</div>
+<p>Thus, the treatment of the problem using Lagrange’s formalism easily allows us to derive the radial equation of motion of the particle, as well as the mathematical expression of the conservation of its angular momentum.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./classicalmechanics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="gravity.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Gravitation and Central Forces</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-and-linear-momentum">17.1. Centre of Mass and Linear Momentum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-and-kinetic-energy-of-a-system">17.2. Angular Momentum and Kinetic Energy of a System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-body-problem-and-reduced-mass">17.3. The Two-Body Problem and Reduced Mass</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-star-systems">17.3.1. Binary Star Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-of-collisions">17.3.2. Dynamics of Collisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-collisions-single-axis-of-motion">17.3.2.1. Direct Collisions (Single Axis of Motion)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#impulse">17.3.2.2. Impulse</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-collisions">17.3.2.3. Oblique Collisions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-coordinates">17.3.3. Centre Of Mass Coordinates</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-of-rigid-bodies">17.4. Rotation of Rigid Bodies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-of-a-rigid-body">17.4.1. Centre of Mass of a Rigid Body</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moment-of-inertia">17.4.2. Moment of Inertia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parallel-axis-theorem">17.4.3. The Parallel Axis Theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#towards-lagrangian-mechanics-non-examinable">17.4.4. Towards Lagrangian Mechanics (Non-Examinable)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltons-variational-principle">17.4.4.1. Hamilton’s Variational Principle</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagranges-equations">17.4.5. Lagrange’s Equations</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Natural Sciences
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Rotational reference frames &#8212; Electromagnetism, Fluids and Waves</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Electromagnetism, Fluids and Waves</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Electromagnetism
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/EMmaths.html">
+   2. Mathematical Preliminaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/electrostatics.html">
+   3. Electrostatics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/solvingEsystems.html">
+   4. Solving Electrostatic Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/Efieldenergy.html">
+   5. Energy in an Electric Field
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/magneticfields.html">
+   6. Magnetism
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/magneticforces.html">
+   7. Magnetic Forces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/ampereslaw.html">
+   8. Ampère’s Circuital Law
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/faradayslaw.html">
+   9. Faraday’s Law
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/maxwelleqns.html">
+   10. Differential Forms and Maxwell’s Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/solvingmaxwell.html">
+   11. Solutions to Maxwell’s Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/EMenergy.html">
+   12. Energy in an Electromagnetic field
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../electromagnetism/EMpotentials.html">
+   13. Electromagnetic Scalar and Vector Potentials
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ffluids/rotfram.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/fluids/rotfram.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#its-all-a-matter-of-perspective">
+   It’s all a matter of perspective
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transformation-of-newtons-law">
+   Transformation of Newton’s law
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-to-the-navier-stokes-equations">
+   Application to the Navier-Stokes equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Rotational reference frames</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#its-all-a-matter-of-perspective">
+   It’s all a matter of perspective
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transformation-of-newtons-law">
+   Transformation of Newton’s law
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-to-the-navier-stokes-equations">
+   Application to the Navier-Stokes equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="rotational-reference-frames">
+<span id="ch-rotfram"></span><h1>Rotational reference frames<a class="headerlink" href="#rotational-reference-frames" title="Permalink to this headline">#</a></h1>
+<p>This section of the notes is based on Chapter 17 of <span id="id1">[<a class="reference internal" href="../markdown.html#id4" title="Gregory R. Douglas. Classical Mechanics : An Undergraduate Text. Cambridge University Press, 2006.">Dou06</a>]</span>, which is available in digitised form from UCL library. The material is concerned with relativistic transformation of Newton’s second law of motion from an inertial frame of reference to a rotating frame of reference, such as the frame of the rotating Earth. It introduces the important idea of the <em>Coriolis force</em>, which influences large scale fluid motions on the Earth surface, such as ocean currents. The Coriolis force can be neglected in all of the scenarios that we will consider in this course.</p>
+<div class="theorem admonition">
+<p class="admonition-title">Hurricanes</p>
+<p>A neat video explanation of how the Coriolis force determines the direction of hurricanes in the North and South hemisphere can be found at
+<a class="reference external" href="https://www.nationalgeographic.org/encyclopedia/coriolis-effect/">National Geographic</a></p>
+<p>Note: it is popularly thought that the same effect causes bathtub vortices to drain in different directions in the North and South hemispheres, but on this small scale the Coriolis forces involved are insignificant compared with other sources of fluid disturbance. To demonstrate the Coriolis effect in a bathtub would require a very large tub containing very still water that is then drained through a very small hole under very controlled conditions. The experiment has been <a class="reference external" href="https://www.nature.com/articles/2071084a0.pdf">done</a>!</p>
+<p>For the same reason, the direction of rotation of a tornado is not due to the Coriolis effect. Tornadoes are relatively small in size compared to hurricanes. Tornadoes typically due to a strong shear wind gradient, which creates a line of vortices rotating about an axis parallel to the ground. The vortex line is then tilted upwards and stretched by warm updrafts.</p>
+</div>
+<section id="its-all-a-matter-of-perspective">
+<h2>It’s all a matter of perspective<a class="headerlink" href="#its-all-a-matter-of-perspective" title="Permalink to this headline">#</a></h2>
+<p>In the image below, <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{F}^{\prime}\)</span> are two different frames of reference, which are in relative motion. Each frame is defined by its own origin and vector basis, <span class="math notranslate nohighlight">\(\mathcal{F}:\{O;\underline{e}_1,\underline{e}_2,\underline{e}_3\}\)</span> and  <span class="math notranslate nohighlight">\(\mathcal{F}^{\prime}:\{O^{\prime};{\underline{e}_1}^{\prime},{\underline{e}_2}^{\prime},{\underline{e}_3}^{\prime}\}\)</span>. We take <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> to be a fixed (“true”) frame, and suppose that frame <span class="math notranslate nohighlight">\(\mathcal{F}^{\prime}\)</span> is embedded in a rigid body <span class="math notranslate nohighlight">\(\mathcal{B}^{\prime}\)</span>, which is moving with translational velocity <span class="math notranslate nohighlight">\(\underline{V}\)</span> and angular velocity <span class="math notranslate nohighlight">\(\underline{\Omega}\)</span> relative to <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>, as shown.</p>
+<br>
+<a class="reference internal image-reference" href="../_images/rot_frame.png" id="rotational-reference-frame"><img alt="alternative description" class="align-center" id="rotational-reference-frame" src="../_images/rot_frame.png" style="width: 613.8px; height: 328.2px;" /></a>
+<br>
+<p>We now consider the motion of an arbitrary point <span class="math notranslate nohighlight">\(P\)</span> as measured by an observer within each frame. We will take <span class="math notranslate nohighlight">\(\underline{r}\)</span> to be the position of the point relative to frame <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> and <span class="math notranslate nohighlight">\(\underline{r}^{\prime}\)</span> to be the position relative to frame <span class="math notranslate nohighlight">\(\mathcal{F}^{\prime}\)</span>. According to the triangle law for vectors, we may then write</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ef062c99-c7f4-4aff-8b85-3660beaa6bdf">
+<span class="eqno">()<a class="headerlink" href="#equation-ef062c99-c7f4-4aff-8b85-3660beaa6bdf" title="Permalink to this equation">#</a></span>\[\begin{equation}\underline{r}=\underline{D}+\underline{r}^{\prime},\end{equation}\]</div>
+<p>in which <span class="math notranslate nohighlight">\(\underline{D}\)</span> is the position vector of <span class="math notranslate nohighlight">\(O^{\prime}\)</span> relative to frame <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>. Differentiating this expression gives the rate of change of position of point <span class="math notranslate nohighlight">\(P\)</span>. We will examine the change from the perspective of frame <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>, as indicated by the subscript in the expression below:</p>
+<div class="math notranslate nohighlight" id="equation-rotfram1">
+<span class="eqno">()<a class="headerlink" href="#equation-rotfram1" title="Permalink to this equation">#</a></span>\[\left(\frac{\mathcal{d}\underline{r}}{\mathcal{d}t}\right)_{\mathcal{F}}=
+\left(\frac{\mathcal{d}\underline{D}}{\mathcal{d}t}\right)_{\mathcal{F}}+
+\left(\frac{\mathcal{d}\underline{r}^{\prime}}{\mathcal{d}t}\right)_{\mathcal{F}}.\]</div>
+<p>The term on the left is the velocity of <span class="math notranslate nohighlight">\(P\)</span> seen by an observer in frame <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>. The first term on the right is the translational velocity of body <span class="math notranslate nohighlight">\(\mathcal{B}^{\prime}\)</span>. The second term on the right is a little more complicated, because vector <span class="math notranslate nohighlight">\(\underline{r}^{\prime}\)</span> was defined relative to frame <span class="math notranslate nohighlight">\(\mathcal{F}^{\prime}\)</span> but the time derivative is taken with respect to frame <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>. We must account for the fact that the basis vectors in <span class="math notranslate nohighlight">\(\mathcal{F}^{\prime}\)</span> are <em>changing</em> relative to frame <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>, due to the angular rotation of body <span class="math notranslate nohighlight">\(\mathcal{B}^{\prime}\)</span>. Seen from the perspective of frame <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>, the basis vectors satisfy</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ec4239c7-13fe-4b72-baf9-eb8a512b9d18">
+<span class="eqno">()<a class="headerlink" href="#equation-ec4239c7-13fe-4b72-baf9-eb8a512b9d18" title="Permalink to this equation">#</a></span>\[\begin{equation}\left(\frac{\mathrm{d}{\underline{e}_j}^{\prime}}{\mathrm{d}t}\right)_{\mathcal{F}}=\underline{\Omega}\times{\underline{e}_j}^{\prime}\end{equation}\]</div>
+<p>and hence for a general vector <span class="math notranslate nohighlight">\(\underline{h}={h_1}^{\prime}{\underline{e}_1}^{\prime}+{h_2}^{\prime}{\underline{e}_2}^{\prime}+{h_3}^{\prime}{\underline{e}_3}^{\prime}\)</span>
+we have the following result :</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f602d591-0fd3-4831-91a8-5656262bbd33">
+<span class="eqno">()<a class="headerlink" href="#equation-f602d591-0fd3-4831-91a8-5656262bbd33" title="Permalink to this equation">#</a></span>\[\begin{align}\left[\frac{\mathrm{d}\underline{h}^{\prime}}{\mathrm{d}t}\right]_{\mathcal{F}}&amp;=\left[(\dot{h_1}^{\prime}{\underline{e}_1}^{\prime}+\dot{h_2}^{\prime}{\underline{e}_2}^{\prime}+\dot{h_3}^{\prime}{\underline{e}_3}^{\prime})+({h_1}^{\prime}\dot{\underline{e}_1}^{\prime}+{h_2}^{\prime}\dot{\underline{e}_2}^{\prime}+{h_3}^{\prime}\dot{\underline{e}_3}^{\prime})\right]_{\mathcal{F}}\\
+&amp;=\left[\frac{\mathrm{d}\underline{h}^{\prime}}{\mathrm{d}t}+(\underline{\Omega}\times\underline{h}^{\prime})\right]_{\mathcal{F}^{\prime}}.\end{align}\]</div>
+<p>Putting this together with result <a class="reference internal" href="#equation-rotfram1">()</a> we obtain</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4bcb9926-70fc-429a-8577-7d9ebbf28393">
+<span class="eqno">()<a class="headerlink" href="#equation-4bcb9926-70fc-429a-8577-7d9ebbf28393" title="Permalink to this equation">#</a></span>\[\begin{equation}\underline{v}=\underline{V}+\underline{v}^{\prime}+(\underline{\Omega}\times\underline{r}^{\prime}),\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\underline{v}\)</span> is the velocity measured in frame <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> and <span class="math notranslate nohighlight">\(\underline{v}^{\prime}\)</span> is the velocity measured in frame <span class="math notranslate nohighlight">\(\mathcal{F}^{\prime}\)</span>. Differentiating this expression again gives a result for the acceleration:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-aa9303bf-7a01-46ed-9204-c8acf52cdc65">
+<span class="eqno">()<a class="headerlink" href="#equation-aa9303bf-7a01-46ed-9204-c8acf52cdc65" title="Permalink to this equation">#</a></span>\[\begin{equation}\left[\frac{\mathrm{d}\underline{v}}{\mathrm{d}t}\right]_{\mathcal{F}}=\left[\frac{\mathrm{d}\underline{V}}{\mathrm{d}t}\right]_{\mathcal{F}}+\left[\frac{\mathrm{d}}{\mathrm{d}t}\biggr(\underline{v}^{\prime}+(\Omega\times\underline{r}^{\prime})\biggr)\right]_{\mathcal{F}^{\prime}}+\Omega\times\biggr(\underline{v}^{\prime}+(\Omega\times\underline{r}^{\prime})\biggr),\end{equation}\]</div>
+<p>which simplifies to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4dd02ad7-5b09-4386-a26d-7993cdb5ca6c">
+<span class="eqno">()<a class="headerlink" href="#equation-4dd02ad7-5b09-4386-a26d-7993cdb5ca6c" title="Permalink to this equation">#</a></span>\[\begin{equation}\underline{a} =\underline{A}+\underline{a}^{\prime}+(\dot{\underline{\Omega}}\times\underline{r}^{\prime})+2(\underline{\Omega}\times\underline{v}^{\prime})+\underline{\Omega}\times(\underline{\Omega}\times\underline{r}^{\prime})\end{equation}\]</div>
+<p>in which <span class="math notranslate nohighlight">\(\underline{a}\)</span>, <span class="math notranslate nohighlight">\(\underline{a}^{\prime}\)</span> are the accelerations observed in each frame and <span class="math notranslate nohighlight">\(\underline{A}\)</span> is the translational acceleration of <span class="math notranslate nohighlight">\(\mathcal{F}^{\prime}\)</span>.</p>
+</section>
+<section id="transformation-of-newtons-law">
+<h2>Transformation of Newton’s law<a class="headerlink" href="#transformation-of-newtons-law" title="Permalink to this headline">#</a></h2>
+<p>Recall that Newton’s second law <span class="math notranslate nohighlight">\(\underline{F}=m\underline{a}\)</span> was defined for an inertial frame of reference. If the displacement, velocity and acceleration are measured from the perspective of our rotational frame of reference, the law becomes</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a5c6b41c-3c88-41f0-a23b-6c701d2f89c5">
+<span class="eqno">()<a class="headerlink" href="#equation-a5c6b41c-3c88-41f0-a23b-6c701d2f89c5" title="Permalink to this equation">#</a></span>\[\begin{equation}\underline{F}=m\biggr[\underline{A}+\underline{a}^{\prime}+(\dot{\underline{\Omega}}\times\underline{r}^{\prime})+2(\underline{\Omega}\times\underline{v}^{\prime})+\underline{\Omega}\times(\underline{\Omega}\times\underline{r}^{\prime})\biggr].\end{equation}\]</div>
+<p>The result can be rearranged in the manner</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8628bd0e-31fe-4273-834b-127db7b63960">
+<span class="eqno">()<a class="headerlink" href="#equation-8628bd0e-31fe-4273-834b-127db7b63960" title="Permalink to this equation">#</a></span>\[\begin{equation}m\underline{a}^{\prime}=\underline{F}+(-m\underline{A})+(-m\dot{\underline{\Omega}}\times\underline{r}^{\prime})+(-2m\underline{\Omega}\times\underline{v}^{\prime})+(-m\underline{\Omega}\times(\underline{\Omega}\times\underline{r}^{\prime})),\end{equation}\]</div>
+<p>which resembles the standard Newton’s second law with the addition of extra terms; which are described as “fictitious forces”. The term <span class="math notranslate nohighlight">\((-2m\underline{\Omega}\times\underline{v}^{\prime})\)</span> is known as the Coriolis force, and the term <span class="math notranslate nohighlight">\((-m\underline{\Omega}\times(\underline{\Omega}\times\underline{r}^{\prime}))\)</span> is known as the Centripetal force.</p>
+<p><em>Note: the semantic distinction of what is “actual” and what is “fictitious” is made purely so that Newton’s law holds in its inertial form.</em></p>
+<p><strong>Example</strong></p>
+<p>Consider a person walking at constant speed towards the centre of a roundabout that is rotating at constant angular velocity <span class="math notranslate nohighlight">\(\Omega\)</span>, as illustrated below:</p>
+<br>
+<a class="reference internal image-reference" href="../_images/roundabout.png" id="a-person-on-a-roundabout"><img alt="alternative description" class="align-center" id="a-person-on-a-roundabout" src="../_images/roundabout.png" style="width: 636.3px; height: 252.7px;" /></a>
+<br>
+<p>The origin of reference frame <span class="math notranslate nohighlight">\(\mathcal{F}^{\prime}\)</span> is stationary with respect to the inertial frame <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>, so <span class="math notranslate nohighlight">\(\underline{A}=0\)</span> in the transformed Newton’s law. The roundabout is rotating at constant angular velocity, so <span class="math notranslate nohighlight">\(\dot{\underline{\Omega}}=0\)</span>. The person is not accelerating from the perspective of frame <span class="math notranslate nohighlight">\(\mathcal{F}^{\prime}\)</span>, so <span class="math notranslate nohighlight">\(\underline{a}^{\prime}=0\)</span>.</p>
+<p>We have <span class="math notranslate nohighlight">\(\underline{\Omega}=\Omega{\underline{e}_3}^{\prime}\)</span> and <span class="math notranslate nohighlight">\(\underline{v}^{\prime}=-V{\underline{e}_1}^{\prime}\)</span>. For the displacement we may write <span class="math notranslate nohighlight">\(\underline{r}^{\prime}=(R-Vt){\underline{e}_1}^{\prime}\)</span> where <span class="math notranslate nohighlight">\(R\)</span> is the radius of the roundabout and <span class="math notranslate nohighlight">\(t\)</span> is the time since the person started their motion.</p>
+<p>Let <span class="math notranslate nohighlight">\(\underline{X}\)</span> be the force exerted by the roundabout on the person. The total force on the person is therefore given by <span class="math notranslate nohighlight">\(\underline{X}-mg{\underline{e}_3}^{\prime}\)</span> and the transformed Newton’s law gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}\underline{X}-mg{\underline{e}_3}^{\prime} &amp;= 2m(\underline{\Omega}\times\underline{v}^{\prime})+m(\underline{\Omega}\times(\underline{\Omega}\times\underline{r}^{\prime}))\\\Rightarrow\quad \underline{X}&amp;=-m(R-Vt)\Omega^2{\underline{e}_1}^{\prime}-2m\Omega V{\underline{e}_2}^{\prime}+mg{\underline{e}_3}^{\prime}\end{align*}\]</div>
+<p>The reaction forces to the left and to the centre oppose the Coriolis and centripetal forces, respectively. Since the person is not a point, they must also lean forward and to the left to counter these two forces.</p>
+</section>
+<section id="application-to-the-navier-stokes-equations">
+<span id="rotfram-navstok"></span><h2>Application to the Navier-Stokes equations<a class="headerlink" href="#application-to-the-navier-stokes-equations" title="Permalink to this headline">#</a></h2>
+<p>Treating the Earth as a uniformly rotating body with angular velocity <span class="math notranslate nohighlight">\(\underline{\Omega}\)</span> gives</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4a4ac2b5-b7f4-43b4-aa77-41cf1a2f87a0">
+<span class="eqno">()<a class="headerlink" href="#equation-4a4ac2b5-b7f4-43b4-aa77-41cf1a2f87a0" title="Permalink to this equation">#</a></span>\[\begin{equation}\left(\frac{\mathrm{D}\underline{u}}{\mathrm{D}t}\right)_{\mathcal{F}}=\left(\frac{\mathrm{D}\underline{u}}{\mathrm{D}t}\right)_{\mathcal{F}^{\prime}}+2(\underline{\Omega}\times\underline{u})+\underline{\Omega}\times(\underline{\Omega}\times\underline{x}).\end{equation}\]</div>
+<p>Hence, in the Earth frame of reference the conservation of momentum equation becomes</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c312ea50-0fdd-4924-9c23-cab09ee4f586">
+<span class="eqno">()<a class="headerlink" href="#equation-c312ea50-0fdd-4924-9c23-cab09ee4f586" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{\partial \underline{u}}{\partial t}+(\underline{u}.\nabla\underline{u})+\biggr[2(\underline{\Omega}\times\underline{u})+\underline{\Omega}\times(\underline{\Omega}\times\underline{x})\biggr]=-\frac{1}{\rho}\nabla p+\nu \nabla^2\underline{u}\end{equation}\]</div>
+<p>The equation can be simplified by using the following vector identity, which applies when <span class="math notranslate nohighlight">\(\underline{\Omega}\)</span> is constant:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2b947bc9-a0d2-4066-9cd0-586ab3a25bc4">
+<span class="eqno">()<a class="headerlink" href="#equation-2b947bc9-a0d2-4066-9cd0-586ab3a25bc4" title="Permalink to this equation">#</a></span>\[\begin{equation}\underline{\Omega}\times(\underline{\Omega}\times\underline{x})=-\nabla\left(\frac{1}{2}(\underline{\Omega}\times\underline{x})^2\right).\end{equation}\]</div>
+<p>By defining a reduced pressure <span class="math notranslate nohighlight">\(p_R=p-\frac{1}{2}\rho(\underline{\Omega}\times\underline{x})^2\)</span> we may therefore write</p>
+<div class="math notranslate nohighlight" id="equation-rotfram-navstok-eqn">
+<span class="eqno">()<a class="headerlink" href="#equation-rotfram-navstok-eqn" title="Permalink to this equation">#</a></span>\[\frac{\partial \underline{u}}{\partial t}+(\underline{u}.\nabla\underline{u})=-\frac{1}{\rho}\nabla p_R+\nu\nabla^2\underline{u}-2(\underline{\Omega}\times\underline{u}).\]</div>
+<p>The term <span class="math notranslate nohighlight">\(-2(\underline{\Omega}\times\underline{u})\)</span> is called the Coriolis force.</p>
+<div class="exercise admonition" id="fluids/rotfram-exercise-0">
+
+<p class="admonition-title"></p>
+<section id="exercise-content">
+<p>The Rossby number is defined by</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Ro}=\frac{U}{Lf}, \quad f=2\Omega\sin(\phi),\]</div>
+<p>where <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(L\)</span> are characteristic velocity and length scales of the phenomenon, <span class="math notranslate nohighlight">\(\Omega = 7.2921 × 10^{−5} \mathrm{rad/s}\)</span> is the angular frequency of planetary rotation and <span class="math notranslate nohighlight">\(\phi\)</span> is the latitude. The quantity <span class="math notranslate nohighlight">\(f\)</span> is called the Coriolis frequency.</p>
+<p>The Rossby measures the ratio of inertial to Coriolis forces. If this number is much smaller than one then Coriolis forces dominate. If the number is much bigger than one then inertial terms dominate. For Rossby numbers close to one, both inertial and Coriolis forces are important.</p>
+<p>a. When Hurricane Katrina made landfall in Louisiana at <span class="math notranslate nohighlight">\(23.4^{\circ}\)</span>N latitude, it was registered a category 3 hurricane, covering a diameter of approximately 400 miles, with wind speeds up to 125mph. Estimate the Rossby number using these values and state which forces would need to be taken into modelling consideration.</p>
+<p>b. Are Coriolis forces important near to the equator?</p>
+<p>c. Jupiter rotates much faster than the Earth. Do you think that Coriolis forces are more prevalent on Earth or on Jupiter? By looking up the rotation rates of the Earth and Jupiter, calculate the ratio of Coriolis forces on Earth and on Jupiter (at equivalent latitude)</p>
+<p>d. Estimate the Rossby number for a bathtub in central London. Use your own estimates for the appropriate length scale and speed of the water!</p>
+</section>
+</div>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">Dou06</a></span></dt>
+<dd><p>Gregory R. Douglas. <em>Classical Mechanics : An Undergraduate Text</em>. Cambridge University Press, 2006.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./fluids"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ali Mozaffari and Ella Metcalfe<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
