@@ -184,7 +184,7 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Electromagnetism</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematical Methods</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../maths.html">1. Mathematical Preliminaries</a></li>
 </ul>
@@ -406,24 +406,24 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion">4.1. Simple Harmonic Motion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator">4.1.1. Harmonic Oscillator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-rotating-vector-representation">4.1.2. Simple Harmonic Motion: Rotating Vector Representation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator-with-constant-external-force">4.1.3. Harmonic Oscillator with Constant External Force</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-pendulum">4.1.3.1. Simple Pendulum</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-energy">4.1.3.2. Simple Harmonic Motion: Energy</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damped-harmonic-motion">4.1.4. Damped Harmonic Motion</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overdamping">4.1.4.1. Overdamping</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-damping">4.1.4.2. Critical Damping</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#underdamping">4.1.4.3. Underdamping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-rotating-vector-representation">4.2. Simple Harmonic Motion: Rotating Vector Representation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator-with-constant-external-force">4.3. Harmonic Oscillator with Constant External Force</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-pendulum">4.4. Simple Pendulum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-energy">4.4.1. Simple Harmonic Motion: Energy</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forced-harmonic-motion-and-resonance">4.1.5. Forced Harmonic Motion and Resonance</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitude-of-the-motion">4.1.5.1. Amplitude of the Motion</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sharpness-of-the-resonance-quality-factor">4.1.5.2. “Sharpness” of the Resonance: Quality Factor</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-difference">4.1.5.3. Phase Difference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#damped-harmonic-motion">4.5. Damped Harmonic Motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overdamping">4.5.1. Overdamping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-damping">4.5.2. Critical Damping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underdamping">4.5.3. Underdamping</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forced-harmonic-motion-and-resonance">4.6. Forced Harmonic Motion and Resonance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitude-of-the-motion">4.6.1. Amplitude of the Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharpness-of-the-resonance-quality-factor">4.6.2. “Sharpness” of the Resonance: Quality Factor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-difference">4.6.3. Phase Difference</a></li>
 </ul>
 </li>
 </ul>
@@ -463,14 +463,15 @@ In order to satisfy this equation, we require <strong><span class="math notransl
 <p>from which we obtain <span class="math notranslate nohighlight">\(\tan\phi_0 = \omega_0 x_0 / v_0\)</span>. Note that if the mass is released from rest at time zero (<span class="math notranslate nohighlight">\(v_0 = 0\)</span>) from some non-zero positive displacement <span class="math notranslate nohighlight">\(x_0\)</span>, then <span class="math notranslate nohighlight">\(\phi_0 = \pi/2\)</span> and so <span class="math notranslate nohighlight">\(x_0\)</span> will be the maximum positive displacement, which will re-occur during the motion with the period <span class="math notranslate nohighlight">\(T_0\)</span>.</p>
 <p>Note that these equations can also be used to show that the amplitude of the motion must satisfy <strong><span class="math notranslate nohighlight">\(A^2 = x_0^2 + v_0^2/\omega_0^2\)</span></strong>.</p>
 </section>
+</section>
 <section id="simple-harmonic-motion-rotating-vector-representation">
-<h3><span class="section-number">4.1.2. </span>Simple Harmonic Motion: Rotating Vector Representation<a class="headerlink" href="#simple-harmonic-motion-rotating-vector-representation" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">4.2. </span>Simple Harmonic Motion: Rotating Vector Representation<a class="headerlink" href="#simple-harmonic-motion-rotating-vector-representation" title="Link to this heading">#</a></h2>
 <p>Consider Figure \ref{fig:rotvecplot}, which shows the rotating position vector <span class="math notranslate nohighlight">\(\vec{A}\)</span> of a point P which executes circular motion with a uniform speed. The angle made by this vector with the <span class="math notranslate nohighlight">\(x\)</span> axis is <span class="math notranslate nohighlight">\(\theta = \theta_0 + \omega_0\,t\)</span>. The <span class="math notranslate nohighlight">\(x\)</span> coordinate of P, for the given geometry, will therefore be <span class="math notranslate nohighlight">\(x=A\,\cos(\omega_0\,t+\theta_0)\)</span>.</p>
 <p>We could also use the angle <span class="math notranslate nohighlight">\(\phi = \phi_0+\omega_0\,t\)</span> made with the <span class="math notranslate nohighlight">\(y\)</span> axis to describe this motion, and note that <span class="math notranslate nohighlight">\(x = A\sin\phi = A\,\sin(\omega_0\,t+\phi_0)\)</span>. Whichever choice we make, we observe that the value of <span class="math notranslate nohighlight">\(x\)</span> (the projection of the vector onto the <span class="math notranslate nohighlight">\(x\)</span> axis) oscillates according to simple harmonic motion as the rotation of P proceeds. This suggests that a linear combination of sine and cosine functions could be used to represent the general solution for simple harmonic motion.</p>
 <p><img alt="Simple harmonic motion as a projection of uniform circular motion (from the book by Fowles and Cassiday)." src="../_images/rotvecplot.png" /></p>
 </section>
 <section id="harmonic-oscillator-with-constant-external-force">
-<h3><span class="section-number">4.1.3. </span>Harmonic Oscillator with Constant External Force<a class="headerlink" href="#harmonic-oscillator-with-constant-external-force" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">4.3. </span>Harmonic Oscillator with Constant External Force<a class="headerlink" href="#harmonic-oscillator-with-constant-external-force" title="Link to this heading">#</a></h2>
 <p>In the last section, we considered harmonic motion in the horizontal direction, where the only force on the moving mass was that due to the spring being stretched or compressed. The character of the motion changes in interesting ways if we add an external force to the system. As a simple example, we consider (see Figure \ref{fig:shmvert}) a mass on a mounted spring which can only move in the <em>vertical</em> direction, and we include the effects of the vertical downward acceleration, <span class="math notranslate nohighlight">\(g\)</span>, due to gravity.</p>
 <p>We obtain the following equation of motion by adding a gravitational term to an equation similar to the “spring equation” from the last section. We also use here a non-zero quantity <span class="math notranslate nohighlight">\(X_e\)</span> to represent the unperturbed length of the spring. We take the convention of the mass position <span class="math notranslate nohighlight">\(X\)</span> being positive downwards for this example:</p>
 <div class="math notranslate nohighlight">
@@ -480,8 +481,9 @@ In order to satisfy this equation, we require <strong><span class="math notransl
 <div class="math notranslate nohighlight">
 \[m\,\dfrac{d}{dt^2}(X-X_e') = -k\,(X-X_e) + mg \rightarrow m\,\ddot{x} = -k\,(X-X_e') -k\,(X_e'-X_e) + mg \rightarrow m\,\ddot{x} = -k\,x.\]</div>
 <p>This is an important result. Any constant external force does not change harmonic motion, <strong>provided we measure displacement from the shifted equilibrium position</strong> which is introduced by that force.</p>
+</section>
 <section id="simple-pendulum">
-<h4><span class="section-number">4.1.3.1. </span>Simple Pendulum<a class="headerlink" href="#simple-pendulum" title="Link to this heading">#</a></h4>
+<h2><span class="section-number">4.4. </span>Simple Pendulum<a class="headerlink" href="#simple-pendulum" title="Link to this heading">#</a></h2>
 <p>The simple pendulum consists of a plumb bob of mass <span class="math notranslate nohighlight">\(m\)</span> attached to the end of a light string of fixed length <span class="math notranslate nohighlight">\(l\)</span>, whose other end is mounted at a fixed point (see Figure \ref{fig:pendulum}). The position can be described by the angle <span class="math notranslate nohighlight">\(\theta\)</span> or equivalently the arc length <span class="math notranslate nohighlight">\(s = l\,\theta\)</span>. The component of the gravitational force on the bob along its direction of motion is <span class="math notranslate nohighlight">\(F = -m\,g\,\sin\theta\)</span> (with <span class="math notranslate nohighlight">\(g&gt;0\)</span>). Even though the bob moves in a curved path, its equation of motion is one-dimensional:</p>
 <div class="math notranslate nohighlight">
 \[m\,\ddot{s} = -m\,g\,\sin\theta.\]</div>
@@ -490,9 +492,8 @@ In order to satisfy this equation, we require <strong><span class="math notransl
 \[m\,l\,\ddot{\theta} = -m\,g\,\theta \rightarrow \ddot{\theta} = -\dfrac{g}{l}\,\theta\]</div>
 <p>This now has the same form as the harmonic motion equations we have encountered previously. Provided the small-amplitude approximation is valid, the pendulum motion is periodic, with angular frequency <span class="math notranslate nohighlight">\(\omega_0=\sqrt{g/l}\)</span> and period <span class="math notranslate nohighlight">\(T_0 = 2\pi\,\sqrt{l/g}\)</span>. Using these expressions, we find, for example, that a small-amplitude pendulum moving at sea level, at latitude <span class="math notranslate nohighlight">\(45^{\circ}\)</span>, where <span class="math notranslate nohighlight">\(g=9.8062\,\mathrm{m\cdot s^{-2}}\)</span>, will have a period of <span class="math notranslate nohighlight">\(2\,\mathrm{s}\)</span> if it is of length <span class="math notranslate nohighlight">\(0.9936\,\mathrm{m}\)</span>.</p>
 <p><img alt="The simple pendulum (from the book by Fowles and Cassiday)." src="../_images/pendulum.png" /></p>
-</section>
 <section id="simple-harmonic-motion-energy">
-<h4><span class="section-number">4.1.3.2. </span>Simple Harmonic Motion: Energy<a class="headerlink" href="#simple-harmonic-motion-energy" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">4.4.1. </span>Simple Harmonic Motion: Energy<a class="headerlink" href="#simple-harmonic-motion-energy" title="Link to this heading">#</a></h3>
 <p>If we recall the form of restoring force for the simple harmonic oscillator from section \ref{sec:shmo}, <span class="math notranslate nohighlight">\(F=-k\,x\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> is the displacement from equilibrium of the oscillating mass, we observe that this same force can be expressed as <span class="math notranslate nohighlight">\(F=-\dfrac{dV}{dx}\)</span>, where the function <strong><span class="math notranslate nohighlight">\(V=\frac{1}{2}kx^2\)</span></strong> can be identified as the <strong>potential energy</strong> of the system. If, for example, we apply an external force <span class="math notranslate nohighlight">\(F_{ext}\)</span> to the mass, equal and opposite to the force exerted by the spring, we could move it from equilibrium <span class="math notranslate nohighlight">\(x=0\)</span> to some final displacement <span class="math notranslate nohighlight">\(x=x_f\)</span>. The work we need to do in order to achieve this is</p>
 <div class="math notranslate nohighlight">
 \[W = \int_{x=0}^{x_f} kx\,dx = \frac{1}{2} k x_f^2.\]</div>
@@ -516,7 +517,7 @@ In order to satisfy this equation, we require <strong><span class="math notransl
 </section>
 </section>
 <section id="damped-harmonic-motion">
-<h3><span class="section-number">4.1.4. </span>Damped Harmonic Motion<a class="headerlink" href="#damped-harmonic-motion" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">4.5. </span>Damped Harmonic Motion<a class="headerlink" href="#damped-harmonic-motion" title="Link to this heading">#</a></h2>
 <p>In this section, we explore solutions for the motion of a mass moving on the end of a spring, with the inclusion of a viscous retarding force, which is a linear function of velocity. We can write this as <span class="math notranslate nohighlight">\( F_v = -c \dot{x} \)</span>, where <span class="math notranslate nohighlight">\( c \)</span> is a positive constant, and <span class="math notranslate nohighlight">\( x \)</span> again denotes displacement from the equilibrium position. The modified equation of motion is:</p>
 <div class="math notranslate nohighlight">
 \[    \ddot{x} + \frac{c}{m} \dot{x} + \frac{k}{m} x = 0.\]</div>
@@ -536,13 +537,13 @@ In order to satisfy this equation, we require <strong><span class="math notransl
 <p>where <span class="math notranslate nohighlight">\( \gamma = c / (2m) \)</span> and <span class="math notranslate nohighlight">\( \omega_0 = \sqrt{k/m} \)</span> is the angular frequency of the simple harmonic case without the retarding force.</p>
 <p>The physical description of the motion falls into three cases, according to the value of the parameter <span class="math notranslate nohighlight">\( q = \sqrt{\gamma^2 - \omega_0^2} \)</span>. We now consider these three cases, which are: <strong>overdamping</strong> (<span class="math notranslate nohighlight">\( q \)</span> real and positive); <strong>critical damping</strong> (<span class="math notranslate nohighlight">\( q = 0 \)</span>); and <strong>underdamping</strong> (<span class="math notranslate nohighlight">\( q \)</span> imaginary).</p>
 <section id="overdamping">
-<h4><span class="section-number">4.1.4.1. </span>Overdamping<a class="headerlink" href="#overdamping" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">4.5.1. </span>Overdamping<a class="headerlink" href="#overdamping" title="Link to this heading">#</a></h3>
 <p>For this case, both terms in the general solution become decaying exponential functions with decay time constants equal to
 <span class="math notranslate nohighlight">\( \tau_1 = 1 / (\gamma - q) \)</span> and <span class="math notranslate nohighlight">\( \tau_2 = 1 / (\gamma + q) \)</span>. The coefficients <span class="math notranslate nohighlight">\( A_i \)</span> will depend on the initial conditions of the problem. In general, the mass, initially displaced and then released from rest, will gradually return to the equilibrium position but will not exhibit oscillation due to the strong damping force (see Figure \ref{fig:ovcritdamp}).</p>
 <p><img alt="Displacement versus time for critically damped and overdamped oscillators, released from rest after an initial displacement (from the book by Fowles and Cassiday)." src="../_images/ovcritdamp.png" /></p>
 </section>
 <section id="critical-damping">
-<h4><span class="section-number">4.1.4.2. </span>Critical Damping<a class="headerlink" href="#critical-damping" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">4.5.2. </span>Critical Damping<a class="headerlink" href="#critical-damping" title="Link to this heading">#</a></h3>
 <p>In this case, the values of both <span class="math notranslate nohighlight">\( \lambda_1 \)</span> and <span class="math notranslate nohighlight">\( \lambda_2 \)</span> become equal to <span class="math notranslate nohighlight">\( -\gamma \)</span>. So, to find two independent solutions, we return to the original differential equation and use <span class="math notranslate nohighlight">\( \omega_0^2 = \gamma^2 \)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\ddot{x} + 2 \gamma \dot{x} + \gamma^2 x = 0\]</div>
@@ -558,7 +559,7 @@ In order to satisfy this equation, we require <strong><span class="math notransl
 <p>Here, <span class="math notranslate nohighlight">\( B \)</span> is another constant of integration. The two distinct terms are a decaying exponential modulated by a function linear in time and a decaying exponential. Again, the motion is non-oscillatory and returns to equilibrium asymptotically (see Figure \ref{fig:ovcritdamp}).</p>
 </section>
 <section id="underdamping">
-<h4><span class="section-number">4.1.4.3. </span>Underdamping<a class="headerlink" href="#underdamping" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">4.5.3. </span>Underdamping<a class="headerlink" href="#underdamping" title="Link to this heading">#</a></h3>
 <p>Physically, the retarding force in this case is weak enough that it does not suppress oscillatory behavior entirely. Let us quantify this behavior by exploring the nature of the solution for <span class="math notranslate nohighlight">\( x \)</span> when <span class="math notranslate nohighlight">\( q \)</span> is
 imaginary.</p>
 <p>Let us define <span class="math notranslate nohighlight">\( q = i\omega_d \)</span>, where <span class="math notranslate nohighlight">\( \omega_d = \sqrt{k/m - c^2 / (4m^2)} \)</span> is positive and real, and, as we shall see, is associated with the oscillatory part of the solution. Note that <span class="math notranslate nohighlight">\( \omega_d = \sqrt{\omega_0^2 - \gamma^2} \)</span>, which tells us that the frequency <span class="math notranslate nohighlight">\( \omega_d \)</span> of our damped oscillator is not the same as the frequency <span class="math notranslate nohighlight">\( \omega_0 \)</span> for undamped motion.</p>
@@ -584,7 +585,7 @@ imaginary.</p>
 </section>
 </section>
 <section id="forced-harmonic-motion-and-resonance">
-<h3><span class="section-number">4.1.5. </span>Forced Harmonic Motion and Resonance<a class="headerlink" href="#forced-harmonic-motion-and-resonance" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">4.6. </span>Forced Harmonic Motion and Resonance<a class="headerlink" href="#forced-harmonic-motion-and-resonance" title="Link to this heading">#</a></h2>
 <p>In this section, we extend our study of harmonic motion to investigate the interesting dynamical effects of adding an external force to the oscillator problem. We will consider a periodic external force of a frequency which is generally different from the “natural” frequency of the oscillator (which we have studied in the preceding sections). We will determine how the nature of the motion is affected by how similar or different the frequencies of the driving force and the natural oscillation in the absence of this driving are.</p>
 <p>We will start by considering the general problem of an oscillator subject to both <strong>damping</strong> and the <strong>driving</strong> influence of the external force. We will see that the general solution is a superposition of oscillations at different frequencies and that the amplitude of the oscillations depends on how close the natural and the driving frequencies are.</p>
 <p>To make the mathematics more tractable, we will represent oscillating functions in time as complex-valued. For example, the complex function <span class="math notranslate nohighlight">\( e^{i\omega t} \)</span> implicitly represents a periodically varying physical quantity represented by its real part: <span class="math notranslate nohighlight">\( \Re(e^{i\omega t}) = \cos(\omega t) \)</span>.</p>
@@ -622,7 +623,7 @@ imaginary.</p>
 \[\Re(x_p(t)) = \frac{F_0/m}{\sqrt{(\omega_0^2 - \omega^2)^2 + 4\gamma^2 \omega^2}} \cos(\omega t - \phi_{dr}).\]</div>
 <p>This steady-state behavior has two important aspects: (1) the response of the oscillating mass lags the driving force by phase <span class="math notranslate nohighlight">\( \phi_{dr} \)</span>; and (2) the amplitude of the position depends on the driving frequency. This leads to the phenomenon of <strong>resonance</strong>, where the amplitude maximizes when the driving frequency is close to the natural frequency.</p>
 <section id="amplitude-of-the-motion">
-<h4><span class="section-number">4.1.5.1. </span>Amplitude of the Motion<a class="headerlink" href="#amplitude-of-the-motion" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">4.6.1. </span>Amplitude of the Motion<a class="headerlink" href="#amplitude-of-the-motion" title="Link to this heading">#</a></h3>
 <p>The real-valued amplitude of the steady-state motion is given by:</p>
 <div class="math notranslate nohighlight">
 \[A_{dr}(\omega) = \frac{F_0/m}{\sqrt{(\omega_0^2 - \omega^2)^2 + 4\gamma^2 \omega^2}}.\]</div>
@@ -636,7 +637,7 @@ imaginary.</p>
 <p>In practical applications, resonance may be avoided to prevent large oscillations. Damping can be implemented in systems, such as stiff rubber mountings in electric motors, to ensure that resonant frequency is far from the operating frequency.</p>
 </section>
 <section id="sharpness-of-the-resonance-quality-factor">
-<h4><span class="section-number">4.1.5.2. </span>“Sharpness” of the Resonance: Quality Factor<a class="headerlink" href="#sharpness-of-the-resonance-quality-factor" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">4.6.2. </span>“Sharpness” of the Resonance: Quality Factor<a class="headerlink" href="#sharpness-of-the-resonance-quality-factor" title="Link to this heading">#</a></h3>
 <p>Figure \ref{fig:ampplot} shows a plot of the function <span class="math notranslate nohighlight">\( A(\omega) \)</span> from equation \ref{eq:ampfn}. The “sharpness” of the peak in amplitude, which occurs at frequency <span class="math notranslate nohighlight">\( \omega_{dr} \)</span>, depends on the damping parameter <span class="math notranslate nohighlight">\( \gamma \)</span>. We can quantify how “sharp” or broad this local maximum is.</p>
 <p><img alt="A plot of the steady-state amplitude of the damped, driven oscillator as a function of the driving frequency. The legend indicates example values of  used. Note that the vertical axis is on a logarithmic scale, and both quantities are normalized according to the natural scales shown in the axis labels." src="../_images/ampplot.png" />
 <em>Figure 1: Steady-state amplitude of the damped, driven oscillator</em></p>
@@ -649,7 +650,7 @@ imaginary.</p>
 <p>Thus, at the two frequencies <span class="math notranslate nohighlight">\( \omega = \omega_0 \pm \gamma \)</span>, the amplitude value is <span class="math notranslate nohighlight">\( \frac{A_{max}}{\sqrt{2}} \)</span>. Since the total (potential plus kinetic) energy scales as the amplitude squared, these frequencies are the <strong>half-power points</strong> of the oscillator response. A practical measure of the “sharpness” of the resonance peak is the ratio <span class="math notranslate nohighlight">\( Q = \omega_0 / (2 \gamma) \)</span>, the approximate frequency of maximum amplitude divided by the frequency interval between the half-power points. This value, <span class="math notranslate nohighlight">\( Q \)</span>, is known as the <strong>quality factor</strong>. Another interpretation of <span class="math notranslate nohighlight">\( Q \)</span> is that <span class="math notranslate nohighlight">\( 1 / Q \approx 2 \gamma / \omega_0 \)</span>, the fractional width of the resonance peak relative to the resonant frequency.</p>
 </section>
 <section id="phase-difference">
-<h4><span class="section-number">4.1.5.3. </span>Phase Difference<a class="headerlink" href="#phase-difference" title="Link to this heading">#</a></h4>
+<h3><span class="section-number">4.6.3. </span>Phase Difference<a class="headerlink" href="#phase-difference" title="Link to this heading">#</a></h3>
 <p>Now, let’s examine the phase difference between the damped, driven oscillator and the external driving force, which determines the steady-state response:</p>
 <div class="math notranslate nohighlight">
 \[\phi_{dr}(\omega) = \arctan \left( \frac{2 \gamma \omega}{\omega_0^2 - \omega^2} \right).\]</div>
@@ -658,7 +659,6 @@ imaginary.</p>
 <p>In Figure \ref{fig:phiplot}, the phase difference undergoes a <span class="math notranslate nohighlight">\( \pi \)</span> shift as the driving frequency crosses the resonant frequency, with a sharper change for smaller values of <span class="math notranslate nohighlight">\( \gamma / \omega_0 \)</span>. When <span class="math notranslate nohighlight">\( \omega &lt;&lt; \omega_0 \)</span>, <span class="math notranslate nohighlight">\( \phi_{dr} \rightarrow 0 \)</span>, and the driving force and response are in phase, with the mass moving slowly under the external force.</p>
 <p>At resonance, the response amplitude can be significant. The ratio of the maximum amplitude to the amplitude in the low-frequency limit is <span class="math notranslate nohighlight">\( A_{max} / A(\omega \rightarrow 0) = \frac{\omega_0^2}{2 \gamma \sqrt{\omega_0^2 - \gamma^2}} \)</span>. For <span class="math notranslate nohighlight">\( \gamma &lt;&lt; \omega_0 \)</span>, this approaches the quality factor <span class="math notranslate nohighlight">\( \omega_0 / (2 \gamma) \)</span>.</p>
 <p>At <span class="math notranslate nohighlight">\( \omega = \omega_0 \)</span>, <span class="math notranslate nohighlight">\( \phi_{dr} = \pi/2 \)</span>, meaning the oscillator lags a quarter cycle behind the driving force. For high frequencies <span class="math notranslate nohighlight">\( \omega &gt;&gt; \omega_0 \)</span>, the phase difference reaches <span class="math notranslate nohighlight">\( \pi \)</span>, and the amplitude decreases to <span class="math notranslate nohighlight">\( F_0 / (m \omega^2) \)</span>. Here, the high-frequency driving force causes the mass to behave as if it is free, with the spring imposing an antiphase relation between the driving force and the oscillator’s response.</p>
-</section>
 </section>
 </section>
 </section>
@@ -729,24 +729,24 @@ imaginary.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion">4.1. Simple Harmonic Motion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator">4.1.1. Harmonic Oscillator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-rotating-vector-representation">4.1.2. Simple Harmonic Motion: Rotating Vector Representation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator-with-constant-external-force">4.1.3. Harmonic Oscillator with Constant External Force</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-pendulum">4.1.3.1. Simple Pendulum</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-energy">4.1.3.2. Simple Harmonic Motion: Energy</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damped-harmonic-motion">4.1.4. Damped Harmonic Motion</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overdamping">4.1.4.1. Overdamping</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-damping">4.1.4.2. Critical Damping</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#underdamping">4.1.4.3. Underdamping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-rotating-vector-representation">4.2. Simple Harmonic Motion: Rotating Vector Representation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator-with-constant-external-force">4.3. Harmonic Oscillator with Constant External Force</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-pendulum">4.4. Simple Pendulum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-energy">4.4.1. Simple Harmonic Motion: Energy</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forced-harmonic-motion-and-resonance">4.1.5. Forced Harmonic Motion and Resonance</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitude-of-the-motion">4.1.5.1. Amplitude of the Motion</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sharpness-of-the-resonance-quality-factor">4.1.5.2. “Sharpness” of the Resonance: Quality Factor</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-difference">4.1.5.3. Phase Difference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#damped-harmonic-motion">4.5. Damped Harmonic Motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overdamping">4.5.1. Overdamping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-damping">4.5.2. Critical Damping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underdamping">4.5.3. Underdamping</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forced-harmonic-motion-and-resonance">4.6. Forced Harmonic Motion and Resonance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitude-of-the-motion">4.6.1. Amplitude of the Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharpness-of-the-resonance-quality-factor">4.6.2. “Sharpness” of the Resonance: Quality Factor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-difference">4.6.3. Phase Difference</a></li>
 </ul>
 </li>
 </ul>

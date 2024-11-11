@@ -184,7 +184,7 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Electromagnetism</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematical Methods</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Mathematical Preliminaries</a></li>
 </ul>
@@ -404,9 +404,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux">1.1. Flux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-and-stokes-theorems">1.2. Divergence and Stokes Theorems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-decomposition">1.3. Helmholtz Decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinary-differential-equations">1.1. Ordinary Differential Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-homogeneous-odes">1.1.1. Second-Order Homogeneous ODEs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-inhomogeneous-odes">1.1.2. Second-Order Inhomogeneous ODEs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forcing-terms-and-particular-solutions">1.1.3. Forcing Terms and Particular Solutions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux">1.2. Flux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-and-stokes-theorems">1.3. Divergence and Stokes Theorems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-decomposition">1.4. Helmholtz Decomposition</a></li>
 </ul>
             </nav>
         </div>
@@ -420,8 +426,129 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="mathematical-preliminaries">
 <h1><span class="section-number">1. </span>Mathematical Preliminaries<a class="headerlink" href="#mathematical-preliminaries" title="Link to this heading">#</a></h1>
+<section id="ordinary-differential-equations">
+<h2><span class="section-number">1.1. </span>Ordinary Differential Equations<a class="headerlink" href="#ordinary-differential-equations" title="Link to this heading">#</a></h2>
+<p>One area we need to confident in is solving second-order ordinary differential equations (ODEs), both homogeneous and inhomogeneous.</p>
+<section id="second-order-homogeneous-odes">
+<h3><span class="section-number">1.1.1. </span>Second-Order Homogeneous ODEs<a class="headerlink" href="#second-order-homogeneous-odes" title="Link to this heading">#</a></h3>
+<p>A second-order homogeneous ODE has the form:</p>
+<div class="math notranslate nohighlight">
+\[a x'' + b x' + c x = 0\]</div>
+<p>where <span class="math notranslate nohighlight">\( a \)</span>, <span class="math notranslate nohighlight">\( b \)</span>, and <span class="math notranslate nohighlight">\( c \)</span> are constants.</p>
+<p><em>Steps to Solve:</em></p>
+<ol class="arabic">
+<li><p>Write the Characteristic Equation:
+Substitute <span class="math notranslate nohighlight">\( x = e^{\lambda t} \)</span> into the equation, which leads to the characteristic equation:</p>
+<div class="math notranslate nohighlight">
+\[a \lambda^2 + b \lambda + c = 0\]</div>
+</li>
+<li><p>Solve for <span class="math notranslate nohighlight">\(\lambda\)</span>:
+Use the quadratic formula to find the roots, <span class="math notranslate nohighlight">\(\lambda_1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\lambda = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</div>
+</li>
+<li><p>Determine the Solution Based on the Roots:</p>
+<ul>
+<li><p>Distinct Real Roots (<span class="math notranslate nohighlight">\(\lambda_1 \neq \lambda_2\)</span>): The solution is</p>
+<div class="math notranslate nohighlight">
+\[x(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}\]</div>
+</li>
+<li><p>Repeated Real Roots (<span class="math notranslate nohighlight">\(\lambda_1 = \lambda_2\)</span>): The solution is</p>
+<div class="math notranslate nohighlight">
+\[x(t) = (C_1 + C_2 t) e^{\lambda t}\]</div>
+</li>
+<li><p>Complex Roots (<span class="math notranslate nohighlight">\(\lambda = \alpha \pm \beta i\)</span>): The solution is</p>
+<div class="math notranslate nohighlight">
+\[x(t) = e^{\alpha t} (C_1 \cos(\beta t) + C_2 \sin(\beta t))\]</div>
+</li>
+</ul>
+</li>
+</ol>
+<p><em>Example</em>
+For <span class="math notranslate nohighlight">\( x'' - 5x' + 6x = 0 \)</span>:</p>
+<ul class="simple">
+<li><p>Characteristic equation: <span class="math notranslate nohighlight">\(\lambda^2 - 5\lambda + 6 = 0\)</span></p></li>
+<li><p>Roots: <span class="math notranslate nohighlight">\(\lambda_1 = 2\)</span>, <span class="math notranslate nohighlight">\(\lambda_2 = 3\)</span></p></li>
+<li><p>Solution: <span class="math notranslate nohighlight">\( x(t) = C_1 e^{2t} + C_2 e^{3t} \)</span></p></li>
+</ul>
+</section>
+<section id="second-order-inhomogeneous-odes">
+<h3><span class="section-number">1.1.2. </span>Second-Order Inhomogeneous ODEs<a class="headerlink" href="#second-order-inhomogeneous-odes" title="Link to this heading">#</a></h3>
+<p>A second-order inhomogeneous ODE has the form:</p>
+<div class="math notranslate nohighlight">
+\[a x'' + b x' + c x = g(t)\]</div>
+<p>where <span class="math notranslate nohighlight">\( g(t) \)</span> is a non-zero function, known as the forcing function or inhomogeneous term.</p>
+<p><em>Steps to Solve:</em></p>
+<ol class="arabic">
+<li><p>Find the Complementary Solution (<span class="math notranslate nohighlight">\(x_c\)</span>):
+Solve the associated homogeneous equation (as above), which gives the complementary solution <span class="math notranslate nohighlight">\( x_c \)</span>.</p></li>
+<li><p>Find the Particular Solution (<span class="math notranslate nohighlight">\(x_p\)</span>):
+Use an appropriate method to find a particular solution <span class="math notranslate nohighlight">\( x_p \)</span> that satisfies the full equation.</p>
+<p>Methods for Finding <span class="math notranslate nohighlight">\(x_p\)</span>:</p>
+<ul class="simple">
+<li><p>Method of Undetermined Coefficients:
+If <span class="math notranslate nohighlight">\( g(t) \)</span> is a polynomial, exponential, sine, or cosine function, guess a form for <span class="math notranslate nohighlight">\( x_p \)</span> and determine the coefficients by substitution.</p></li>
+<li><p>Variation of Parameters:
+If <span class="math notranslate nohighlight">\( g(t) \)</span> is more complicated, use variation of parameters to express <span class="math notranslate nohighlight">\( x_p \)</span> in terms of integrals involving <span class="math notranslate nohighlight">\( x_c \)</span>.</p></li>
+</ul>
+</li>
+<li><p>Write the General Solution:
+The general solution to the inhomogeneous ODE is the sum of the complementary and particular solutions:</p>
+<div class="math notranslate nohighlight">
+\[x(t) = x_c(t) + x_p(t)\]</div>
+</li>
+</ol>
+</section>
+<section id="forcing-terms-and-particular-solutions">
+<h3><span class="section-number">1.1.3. </span>Forcing Terms and Particular Solutions<a class="headerlink" href="#forcing-terms-and-particular-solutions" title="Link to this heading">#</a></h3>
+<p>The method of undetermined coefficients is often used to find <span class="math notranslate nohighlight">\( x_p(t) \)</span> based on the type of forcing function <span class="math notranslate nohighlight">\( g(t) \)</span>. Here are common types of forcing terms and the typical forms to try for <span class="math notranslate nohighlight">\( x_p \)</span>.</p>
+<p><em>Polynomial Forcing Term</em>
+If <span class="math notranslate nohighlight">\( g(t) = P_n(t) \)</span>, a polynomial of degree <span class="math notranslate nohighlight">\( n \)</span> (e.g., <span class="math notranslate nohighlight">\( g(t) = t^2 + 3t + 4 \)</span>), then assume</p>
+<div class="math notranslate nohighlight">
+\[x_p(t) = A_n t^n + A_{n-1} t^{n-1} + \dots + A_0\]</div>
+<p>where <span class="math notranslate nohighlight">\( A_n, A_{n-1}, \dots, A_0 \)</span> are constants to be determined.</p>
+<p><em>Exponential Forcing Term</em>
+If <span class="math notranslate nohighlight">\( g(t) = e^{\alpha t} \)</span>:</p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\( e^{\alpha t} \)</span> is <strong>not</strong> part of <span class="math notranslate nohighlight">\( x_c \)</span>, assume</p>
+<div class="math notranslate nohighlight">
+\[x_p(t) = A e^{\alpha t}\]</div>
+</li>
+<li><p>If <span class="math notranslate nohighlight">\( e^{\alpha t} \)</span> <strong>is</strong> part of <span class="math notranslate nohighlight">\( x_c \)</span>, multiply by <span class="math notranslate nohighlight">\( t \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[x_p(t) = A t e^{\alpha t}\]</div>
+</li>
+<li><p>If <span class="math notranslate nohighlight">\( e^{\alpha t} \)</span> appears in <span class="math notranslate nohighlight">\( x_c \)</span> with multiplicity <span class="math notranslate nohighlight">\( m \)</span>, multiply by <span class="math notranslate nohighlight">\( t^m \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[x_p(t) = A t^m e^{\alpha t}\]</div>
+</li>
+</ul>
+<p><em>Trigonometric Forcing Term</em>
+If <span class="math notranslate nohighlight">\( g(t) = \cos(\beta t) \)</span> or <span class="math notranslate nohighlight">\( g(t) = \sin(\beta t) \)</span>:</p>
+<ul>
+<li><p>If neither <span class="math notranslate nohighlight">\( \cos(\beta t) \)</span> nor <span class="math notranslate nohighlight">\( \sin(\beta t) \)</span> is part of <span class="math notranslate nohighlight">\( x_c \)</span>, assume</p>
+<div class="math notranslate nohighlight">
+\[x_p(t) = A \cos(\beta t) + B \sin(\beta t)\]</div>
+</li>
+<li><p>If <span class="math notranslate nohighlight">\( \cos(\beta t) \)</span> or <span class="math notranslate nohighlight">\( \sin(\beta t) \)</span> is part of <span class="math notranslate nohighlight">\( x_c \)</span>, multiply by <span class="math notranslate nohighlight">\( t \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[x_p(t) = (A t) \cos(\beta t) + (B t) \sin(\beta t)\]</div>
+</li>
+</ul>
+<p><em>Example</em>
+For <span class="math notranslate nohighlight">\( x'' - 5x' + 6x = e^{3t} \)</span>:</p>
+<ul>
+<li><p>Complementary Solution <span class="math notranslate nohighlight">\( x_c \)</span>: Solve <span class="math notranslate nohighlight">\( x'' - 5x' + 6x = 0 \)</span> (as done in the homogeneous example above), giving <span class="math notranslate nohighlight">\( x_c = C_1 e^{2t} + C_2 e^{3t} \)</span>.</p></li>
+<li><p>Particular Solution <span class="math notranslate nohighlight">\( x_p \)</span>: Try <span class="math notranslate nohighlight">\( x_p = A t e^{3t} \)</span> (since <span class="math notranslate nohighlight">\( e^{3t} \)</span> is part of <span class="math notranslate nohighlight">\( x_c \)</span>), substitute and solve for <span class="math notranslate nohighlight">\( A \)</span>.</p></li>
+<li><p>General Solution: Combine both solutions:</p>
+<div class="math notranslate nohighlight">
+\[x(t) = x_c(t) + x_p(t) = C_1 e^{2t} + C_2 e^{3t} + A t e^{3t}\]</div>
+</li>
+</ul>
+</section>
+</section>
 <section id="flux">
-<h2><span class="section-number">1.1. </span>Flux<a class="headerlink" href="#flux" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.2. </span>Flux<a class="headerlink" href="#flux" title="Link to this heading">#</a></h2>
 <p>Lets think about a house pipe, as depicted in <a class="reference internal" href="#hosepipe"><span class="std std-numref">Fig. 1.1</span></a> with water of density <span class="math notranslate nohighlight">\(\rho\)</span>, moving through a hose pipe of cross sectional
 area <span class="math notranslate nohighlight">\(A\)</span> with a velocity of <span class="math notranslate nohighlight">\(\bf v\)</span>,</p>
 <figure class="align-default" id="hosepipe">
@@ -479,7 +606,7 @@ perpendicular <span class="math notranslate nohighlight">\(\bf F_\perp\)</span> 
 \[\Phi = \iint_A \left({\bf F} \cdot {\bf n}\right) \,\mathrm{d} A = \iint_A {\bf F} \cdot \mathrm{d} {\bf A}\]</div>
 </section>
 <section id="divergence-and-stokes-theorems">
-<h2><span class="section-number">1.2. </span>Divergence and Stokes Theorems<a class="headerlink" href="#divergence-and-stokes-theorems" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.3. </span>Divergence and Stokes Theorems<a class="headerlink" href="#divergence-and-stokes-theorems" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>For a vector field <span class="math notranslate nohighlight">\(\bf F\)</span> within some volume <span class="math notranslate nohighlight">\(V\)</span>, bounded by a surface area <span class="math notranslate nohighlight">\(A\)</span> with surface normal <span class="math notranslate nohighlight">\(\bf n\)</span>, as depicted in
 <a class="reference internal" href="#divergencetheorem"><span class="std std-numref">Fig. 1.5</span></a>, then we can relate:</p></li>
@@ -505,7 +632,7 @@ perpendicular <span class="math notranslate nohighlight">\(\bf F_\perp\)</span> 
 </figure>
 </section>
 <section id="helmholtz-decomposition">
-<h2><span class="section-number">1.3. </span>Helmholtz Decomposition<a class="headerlink" href="#helmholtz-decomposition" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.4. </span>Helmholtz Decomposition<a class="headerlink" href="#helmholtz-decomposition" title="Link to this heading">#</a></h2>
 <p>The Helmholtz decomposition, shown in Equation <a class="reference internal" href="#equation-helmholtzdecomp">(1.1)</a> states that a suitably smooth vector field <span class="math notranslate nohighlight">\(\bf F\)</span> can, in general, be decomposed
 into two components:</p>
 <div class="math notranslate nohighlight" id="equation-helmholtzdecomp">
@@ -578,9 +705,15 @@ into two components:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux">1.1. Flux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-and-stokes-theorems">1.2. Divergence and Stokes Theorems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-decomposition">1.3. Helmholtz Decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinary-differential-equations">1.1. Ordinary Differential Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-homogeneous-odes">1.1.1. Second-Order Homogeneous ODEs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-inhomogeneous-odes">1.1.2. Second-Order Inhomogeneous ODEs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forcing-terms-and-particular-solutions">1.1.3. Forcing Terms and Particular Solutions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux">1.2. Flux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-and-stokes-theorems">1.3. Divergence and Stokes Theorems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-decomposition">1.4. Helmholtz Decomposition</a></li>
 </ul>
   </nav></div>
 

@@ -35,7 +35,7 @@ from which we obtain $\tan\phi_0 = \omega_0 x_0 / v_0$. Note that if the mass is
 
 Note that these equations can also be used to show that the amplitude of the motion must satisfy **$A^2 = x_0^2 + v_0^2/\omega_0^2$**.
 
-### Simple Harmonic Motion: Rotating Vector Representation
+## Simple Harmonic Motion: Rotating Vector Representation
 
 Consider Figure \ref{fig:rotvecplot}, which shows the rotating position vector $\vec{A}$ of a point P which executes circular motion with a uniform speed. The angle made by this vector with the $x$ axis is $\theta = \theta_0 + \omega_0\,t$. The $x$ coordinate of P, for the given geometry, will therefore be $x=A\,\cos(\omega_0\,t+\theta_0)$. 
 
@@ -43,7 +43,7 @@ We could also use the angle $\phi = \phi_0+\omega_0\,t$ made with the $y$ axis t
 
 ![Simple harmonic motion as a projection of uniform circular motion (from the book by Fowles and Cassiday).](Figs/rotvecplot.png)
 
-### Harmonic Oscillator with Constant External Force
+## Harmonic Oscillator with Constant External Force
 
 In the last section, we considered harmonic motion in the horizontal direction, where the only force on the moving mass was that due to the spring being stretched or compressed. The character of the motion changes in interesting ways if we add an external force to the system. As a simple example, we consider (see Figure \ref{fig:shmvert}) a mass on a mounted spring which can only move in the *vertical* direction, and we include the effects of the vertical downward acceleration, $g$, due to gravity.
 
@@ -62,7 +62,7 @@ m\,\dfrac{d}{dt^2}(X-X_e') = -k\,(X-X_e) + mg \rightarrow m\,\ddot{x} = -k\,(X-X
 
 This is an important result. Any constant external force does not change harmonic motion, **provided we measure displacement from the shifted equilibrium position** which is introduced by that force.
 
-#### Simple Pendulum
+## Simple Pendulum
 The simple pendulum consists of a plumb bob of mass $m$ attached to the end of a light string of fixed length $l$, whose other end is mounted at a fixed point (see Figure \ref{fig:pendulum}). The position can be described by the angle $\theta$ or equivalently the arc length $s = l\,\theta$. The component of the gravitational force on the bob along its direction of motion is $F = -m\,g\,\sin\theta$ (with $g>0$). Even though the bob moves in a curved path, its equation of motion is one-dimensional:
 ```{math}
 m\,\ddot{s} = -m\,g\,\sin\theta.
@@ -75,7 +75,7 @@ This now has the same form as the harmonic motion equations we have encountered 
 
 ![The simple pendulum (from the book by Fowles and Cassiday).](Figs/pendulum.png)
 
-#### Simple Harmonic Motion: Energy
+### Simple Harmonic Motion: Energy
 If we recall the form of restoring force for the simple harmonic oscillator from section \ref{sec:shmo}, $F=-k\,x$, where $x$ is the displacement from equilibrium of the oscillating mass, we observe that this same force can be expressed as $F=-\dfrac{dV}{dx}$, where the function **$V=\frac{1}{2}kx^2$** can be identified as the **potential energy** of the system. If, for example, we apply an external force $F_{ext}$ to the mass, equal and opposite to the force exerted by the spring, we could move it from equilibrium $x=0$ to some final displacement $x=x_f$. The work we need to do in order to achieve this is
 ```{math}
 W = \int_{x=0}^{x_f} kx\,dx = \frac{1}{2} k x_f^2.
@@ -107,7 +107,7 @@ We see from the geometry of Figure \ref{fig:pendulum} that $h=l - l\,\cos\theta$
 E = \dfrac{1}{2}\,m \dot{s}^2 +\dfrac{1}{2}\,\dfrac{mg}{l}\,s^2.
 ```
 
-### Damped Harmonic Motion
+## Damped Harmonic Motion
 In this section, we explore solutions for the motion of a mass moving on the end of a spring, with the inclusion of a viscous retarding force, which is a linear function of velocity. We can write this as $ F_v = -c \dot{x} $, where $ c $ is a positive constant, and $ x $ again denotes displacement from the equilibrium position. The modified equation of motion is:
 ```{math}
     \ddot{x} + \frac{c}{m} \dot{x} + \frac{k}{m} x = 0.
@@ -193,7 +193,7 @@ x(t) = \exp(-\gamma t) A \cos(\omega_d t + \theta_0).
 ```
 We note that the presence of the real factor $ \exp(-\gamma t) $ produces an exponential decay of the oscillation amplitude with time. The underdamped oscillator has a frequency smaller than the undamped one.
 
-### Forced Harmonic Motion and Resonance
+## Forced Harmonic Motion and Resonance
 
 In this section, we extend our study of harmonic motion to investigate the interesting dynamical effects of adding an external force to the oscillator problem. We will consider a periodic external force of a frequency which is generally different from the “natural” frequency of the oscillator (which we have studied in the preceding sections). We will determine how the nature of the motion is affected by how similar or different the frequencies of the driving force and the natural oscillation in the absence of this driving are.
 
@@ -250,7 +250,7 @@ The homogeneous solution decays as $ e^{-\gamma t} $. Physically, this means tha
 
 This steady-state behavior has two important aspects: (1) the response of the oscillating mass lags the driving force by phase $ \phi_{dr} $; and (2) the amplitude of the position depends on the driving frequency. This leads to the phenomenon of **resonance**, where the amplitude maximizes when the driving frequency is close to the natural frequency.
 
-#### Amplitude of the Motion
+### Amplitude of the Motion
 The real-valued amplitude of the steady-state motion is given by:
 ```{math}
 A_{dr}(\omega) = \frac{F_0/m}{\sqrt{(\omega_0^2 - \omega^2)^2 + 4\gamma^2 \omega^2}}.
@@ -267,7 +267,7 @@ A_{max} \approx \frac{F_0}{2 \gamma m \omega_0}.
 ```
 In practical applications, resonance may be avoided to prevent large oscillations. Damping can be implemented in systems, such as stiff rubber mountings in electric motors, to ensure that resonant frequency is far from the operating frequency.
 
-#### "Sharpness" of the Resonance: Quality Factor
+### "Sharpness" of the Resonance: Quality Factor
 
 Figure \ref{fig:ampplot} shows a plot of the function $ A(\omega) $ from equation \ref{eq:ampfn}. The “sharpness” of the peak in amplitude, which occurs at frequency $ \omega_{dr} $, depends on the damping parameter $ \gamma $. We can quantify how “sharp” or broad this local maximum is.
 
@@ -288,7 +288,7 @@ A_{dr}(\omega) \approx \frac{A_{max} \gamma}{\sqrt{(\omega_0 - \omega)^2 + \gamm
 
 Thus, at the two frequencies $ \omega = \omega_0 \pm \gamma $, the amplitude value is $ \frac{A_{max}}{\sqrt{2}} $. Since the total (potential plus kinetic) energy scales as the amplitude squared, these frequencies are the **half-power points** of the oscillator response. A practical measure of the “sharpness” of the resonance peak is the ratio $ Q = \omega_0 / (2 \gamma) $, the approximate frequency of maximum amplitude divided by the frequency interval between the half-power points. This value, $ Q $, is known as the **quality factor**. Another interpretation of $ Q $ is that $ 1 / Q \approx 2 \gamma / \omega_0 $, the fractional width of the resonance peak relative to the resonant frequency.
 
-#### Phase Difference
+### Phase Difference
 
 Now, let's examine the phase difference between the damped, driven oscillator and the external driving force, which determines the steady-state response:
 

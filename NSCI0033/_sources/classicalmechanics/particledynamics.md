@@ -63,7 +63,7 @@ The particle's journey 'finishes' when it strikes the ground at $ z = 0 $, at wh
 t_{\mathrm{end}} = \sqrt{2h/g}.
 ```
 
-### Example: Circular Motion
+## Example: Circular Motion
 
 Of course, the Cartesian coordinate system is not our only choice for describing particle motion. Other coordinate systems also follow the basic definitions of velocity and acceleration, however, the corresponding expressions may look a little different in coordinate systems where the unit vectors are locally defined -- in other words, where the coordinate unit vectors may change direction as the particle moves.
 
@@ -114,7 +114,7 @@ And so, our expression for acceleration becomes:
 
 which always points towards the centre of the rotation (i.e., the origin, in this example), and has a magnitude $ b\omega^2 = \frac{v_{\phi}^2}{b} $, where the uniform rotational speed $ v_{\phi} = b\omega $. This type of acceleration, associated with rotational motion, is known as **centripetal acceleration**. Because it acts perpendicularly to the direction of motion, it changes the particle's direction, but not its speed.
 
-### Example: Rolling Wheel
+## Example: Rolling Wheel
 
 Consider a point on the moving rim of a rolling wheel of radius $ b $. Let the position of this point be at a height $ 2b $ above the ground (i.e., uppermost point on the rim) at time zero. As time proceeds, the position of the center of the wheel can be described by:
 
@@ -158,11 +158,11 @@ We recognize that this acceleration is always directed from the moving point tow
 
 ---
 
-### Velocity and Acceleration with Three-Dimensional Spatial Coordinates
+## Velocity and Acceleration with Three-Dimensional Spatial Coordinates
 
 When we consider particle motion in three dimensions, logically we need three coordinates to specify vector quantities such as position, velocity, and acceleration. The general relationships still hold -- for example, velocity is the rate of change of position with respect to time. In this section, we extend some of the ideas from the previous section to derive appropriate formulae for these quantities in the **cylindrical** and **spherical** coordinate systems for three-dimensional space.
 
-### Cylindrical Coordinates
+## Cylindrical Coordinates
 
 An illustration of cylindrical coordinates and associated, locally defined unit vectors is shown in the figure below. The three coordinates are: $ R $ (cylindrical radial distance), which is the perpendicular distance of the point of interest from some reference axis (here chosen to be the Cartesian $ z $-axis); $ \phi $, the azimuthal angle between the $ x $-axis and the projection of the position vector onto the $ xy $-plane; and $ z $, which is identical to the usual Cartesian $ z $-coordinate.
 
@@ -206,7 +206,8 @@ If we now use this result and the equation for $ \frac{d\vec{e_R}}{dt} $ when we
 ```
 
 We can identify the term $ -R\,\dot{\phi}^2\,\vec{e_R} $ in this expression as the centripetal acceleration associated with that component of the motion which represents rotation about the $ z $-axis.
-### Spherical Coordinates
+
+## Spherical Coordinates
 
 In this section, we repeat the same general strategy for deriving formulas for velocity and acceleration in the **spherical polar coordinates** for three-dimensional space. We remind ourselves, from the previous section, that this strategy involves expressing the local unit vectors of our coordinate system in a form that is relatively straightforward to differentiate — the Cartesian form of these vectors is a good choice here. Differentiation then allows us to express the time derivatives of each of our local unit vectors in terms of other unit vectors in the triad, which in turn allows us to make final derivations of the spherical polar implementations of velocity and acceleration of a moving particle. Note that the vectors which we obtain for a particle's velocity and acceleration ultimately must have the same final magnitude and direction in all coordinate systems. However, the different orientations of unit coordinate vectors in these different systems mean that the individual **components** of acceleration and velocity are indeed dependent on our choice of coordinates.
 
@@ -274,7 +275,7 @@ Collecting terms corresponding to each component of the acceleration vector, thi
 \vec{a} = (\ddot{r} - r \dot{\theta}^2 - r \sin^2\theta \, \dot{\phi}^2)\,\vec{e_r} + (r \ddot{\theta} + 2 \dot{r} \dot{\theta} - r \sin\theta \cos\theta\, \dot{\phi}^2)\,\vec{e_{\theta}} + (r \sin\theta\, \ddot{\phi} + 2 \sin\theta\, \dot{r} \dot{\phi} + 2 r\, \cos\theta\, \dot{\theta} \dot{\phi})\,\vec{e_{\phi}}.
 ```
 
-#### Example 1 - Circular Orbital Motion
+### Example 1 - Circular Orbital Motion
 
 We may consider the following simple example of describing motion in spherical coordinates. A particle of mass $m$ follows a circular orbit of constant radius $r_0$ with respect to the center of a spherically symmetric planet of mass $M$. For simplicity, we consider part of such an orbit where $\phi$ is constant. The only force on the orbiting particle is in the radial direction towards the planet center, and has magnitude $\frac{GMm}{r_0^2}$, where $G$ is the classical gravitational constant. In vector notation, the force is $\vec{F} = -\frac{GMm}{r_0^2}\,\vec{e_r}$, and so the acceleration is $\vec{a} = \frac{\vec{F}}{m} = -\frac{GM}{r_0^2}\,\vec{e_r}$. But we know from our general acceleration formula that the radial acceleration must also be equal to:
 
@@ -296,7 +297,7 @@ T = \frac{2\pi}{|\dot{\theta}|} = \sqrt{\frac{4\pi^2}{GM}}\,r_0^{3/2}.
 
 This is a simple example of one of Kepler's laws of gravitational motion. Note that the conditions of constant $\dot{\theta}$ and constant $\phi$ for this simple example confirm that $a_{\theta}$ and $a_{\phi}$ indeed evaluate to zero, as required.
 
-#### Example 2 - Elliptical Motion
+### Example 2 - Elliptical Motion
 
 This problem comes from Chapter 1 in the book by Fowles and Cassiday. A small ball is fastened to a long rubber band and twirled around in such a way that the ball moves in an elliptical path, given by the equation:
 

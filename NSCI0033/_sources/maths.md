@@ -1,5 +1,123 @@
 # Mathematical Preliminaries
 
+## Ordinary Differential Equations
+One area we need to confident in is solving second-order ordinary differential equations (ODEs), both homogeneous and inhomogeneous.
+
+### Second-Order Homogeneous ODEs
+
+A second-order homogeneous ODE has the form:
+```{math}
+a x'' + b x' + c x = 0
+```
+where $ a $, $ b $, and $ c $ are constants.
+
+*Steps to Solve:*
+1. Write the Characteristic Equation:
+   Substitute $ x = e^{\lambda t} $ into the equation, which leads to the characteristic equation:
+   ```{math}
+   a \lambda^2 + b \lambda + c = 0
+   ```
+
+2. Solve for $\lambda$:
+   Use the quadratic formula to find the roots, $\lambda_1$ and $\lambda_2$:
+   ```{math}
+   \lambda = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+   ```
+
+3. Determine the Solution Based on the Roots:
+   - Distinct Real Roots ($\lambda_1 \neq \lambda_2$): The solution is
+     ```{math}
+     x(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}
+     ```
+   - Repeated Real Roots ($\lambda_1 = \lambda_2$): The solution is
+     ```{math}
+     x(t) = (C_1 + C_2 t) e^{\lambda t}
+     ```
+   - Complex Roots ($\lambda = \alpha \pm \beta i$): The solution is
+     ```{math}
+     x(t) = e^{\alpha t} (C_1 \cos(\beta t) + C_2 \sin(\beta t))
+     ```
+
+*Example*
+For $ x'' - 5x' + 6x = 0 $:
+   - Characteristic equation: $\lambda^2 - 5\lambda + 6 = 0$
+   - Roots: $\lambda_1 = 2$, $\lambda_2 = 3$
+   - Solution: $ x(t) = C_1 e^{2t} + C_2 e^{3t} $
+
+### Second-Order Inhomogeneous ODEs
+
+A second-order inhomogeneous ODE has the form:
+```{math}
+a x'' + b x' + c x = g(t)
+```
+where $ g(t) $ is a non-zero function, known as the forcing function or inhomogeneous term.
+
+*Steps to Solve:*
+1. Find the Complementary Solution ($x_c$):
+   Solve the associated homogeneous equation (as above), which gives the complementary solution $ x_c $.
+
+2. Find the Particular Solution ($x_p$):
+   Use an appropriate method to find a particular solution $ x_p $ that satisfies the full equation.
+
+   Methods for Finding $x_p$:
+   - Method of Undetermined Coefficients:
+     If $ g(t) $ is a polynomial, exponential, sine, or cosine function, guess a form for $ x_p $ and determine the coefficients by substitution.
+   - Variation of Parameters:
+     If $ g(t) $ is more complicated, use variation of parameters to express $ x_p $ in terms of integrals involving $ x_c $.
+
+3. Write the General Solution:
+   The general solution to the inhomogeneous ODE is the sum of the complementary and particular solutions:
+   ```{math}
+   x(t) = x_c(t) + x_p(t)
+   ```
+### Forcing Terms and Particular Solutions
+
+The method of undetermined coefficients is often used to find $ x_p(t) $ based on the type of forcing function $ g(t) $. Here are common types of forcing terms and the typical forms to try for $ x_p $.
+
+*Polynomial Forcing Term*
+If $ g(t) = P_n(t) $, a polynomial of degree $ n $ (e.g., $ g(t) = t^2 + 3t + 4 $), then assume
+```{math}
+x_p(t) = A_n t^n + A_{n-1} t^{n-1} + \dots + A_0
+```
+where $ A_n, A_{n-1}, \dots, A_0 $ are constants to be determined.
+
+*Exponential Forcing Term*
+If $ g(t) = e^{\alpha t} $:
+   - If $ e^{\alpha t} $ is **not** part of $ x_c $, assume
+     ```{math}
+     x_p(t) = A e^{\alpha t}
+     ```
+   - If $ e^{\alpha t} $ **is** part of $ x_c $, multiply by $ t $:
+     ```{math}
+     x_p(t) = A t e^{\alpha t}
+     ```
+   - If $ e^{\alpha t} $ appears in $ x_c $ with multiplicity $ m $, multiply by $ t^m $:
+     ```{math}
+     x_p(t) = A t^m e^{\alpha t}
+     ```
+
+*Trigonometric Forcing Term*
+If $ g(t) = \cos(\beta t) $ or $ g(t) = \sin(\beta t) $:
+   - If neither $ \cos(\beta t) $ nor $ \sin(\beta t) $ is part of $ x_c $, assume
+     ```{math}
+     x_p(t) = A \cos(\beta t) + B \sin(\beta t)
+     ```
+   - If $ \cos(\beta t) $ or $ \sin(\beta t) $ is part of $ x_c $, multiply by $ t $:
+     ```{math}
+     x_p(t) = (A t) \cos(\beta t) + (B t) \sin(\beta t)
+     ```
+
+
+*Example*
+For $ x'' - 5x' + 6x = e^{3t} $:
+   - Complementary Solution $ x_c $: Solve $ x'' - 5x' + 6x = 0 $ (as done in the homogeneous example above), giving $ x_c = C_1 e^{2t} + C_2 e^{3t} $.
+   - Particular Solution $ x_p $: Try $ x_p = A t e^{3t} $ (since $ e^{3t} $ is part of $ x_c $), substitute and solve for $ A $.
+   - General Solution: Combine both solutions:
+     ```{math}
+     x(t) = x_c(t) + x_p(t) = C_1 e^{2t} + C_2 e^{3t} + A t e^{3t}
+     ```
+
+
 ## Flux
 Lets think about a house pipe, as depicted in {numref}`HosePipe` with water of density $\rho$, moving through a hose pipe of cross sectional 
 area $A$ with a velocity of $\bf v$,
