@@ -1,76 +1,72 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13. Particle Dynamics &#8212; Classical Mechanics and Electromagnetism</title>
+    <title>2. Particle Dynamics &#8212; Classical Mechanics and Electromagnetism</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css?v=3e5b5be6" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classicalmechanics/particledynamics';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="14. Newton’s Laws of Motion" href="newtonslaws.html" />
-    <link rel="prev" title="12. Electromagnetic Scalar and Vector Potentials" href="../electromagnetism/EMpotentials.html" />
+    <link rel="next" title="3. Newton’s Laws of Motion" href="newtonslaws.html" />
+    <link rel="prev" title="1. Mathematical Preliminaries" href="../maths.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -80,19 +76,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -114,12 +114,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -134,9 +142,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -146,12 +158,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Classical Mechanics and Electromagnetism - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Classical Mechanics and Electromagnetism - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -163,26 +186,29 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Electromagnetism</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMmaths.html">1. Mathematical Preliminaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/electrostatics.html">2. Electrostatics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingEsystems.html">3. Solving Electrostatic Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/Efieldenergy.html">4. Energy in an Electric Field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticfields.html">5. Magnetism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticforces.html">6. Magnetic Forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/ampereslaw.html">7. Ampère’s Circuital Law</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/faradayslaw.html">8. Faraday’s Law</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/maxwelleqns.html">9. Differential Forms and Maxwell’s Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingmaxwell.html">10. Solutions to Maxwell’s Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMenergy.html">11. Energy in an Electromagnetic field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMpotentials.html">12. Electromagnetic Scalar and Vector Potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maths.html">1. Mathematical Preliminaries</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Mechanics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Particle Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="newtonslaws.html">14. Newton’s Laws of Motion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oscillations.html">15. Oscillations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gravity.html">16. Gravitation and Central Forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="systemsofparticles.html">17. Dynamics of Systems of Particles</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Particle Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newtonslaws.html">3. Newton’s Laws of Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oscillations.html">4. Oscillations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gravity.html">5. Gravitation and Central Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="systemsofparticles.html">6. Dynamics of Systems of Particles</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Electromagnetism</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/electrostatics.html">7. Electrostatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingEsystems.html">8. Solving Electrostatic Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/Efieldenergy.html">9. Energy in an Electric Field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticfields.html">10. Magnetism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticforces.html">11. Magnetic Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/ampereslaw.html">12. Ampère’s Circuital Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/faradayslaw.html">13. Faraday’s Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/maxwelleqns.html">14. Differential Forms and Maxwell’s Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingmaxwell.html">15. Solutions to Maxwell’s Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMenergy.html">16. Energy in an Electromagnetic field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMpotentials.html">17. Electromagnetic Scalar and Vector Potentials</a></li>
 </ul>
 
     </div>
@@ -198,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -207,14 +233,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -336,26 +362,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -376,14 +404,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-functions-describing-velocity-and-acceleration-of-a-moving-particle">13.1. Vector Functions describing Velocity and Acceleration of a Moving Particle</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-circular-motion">13.1.1. Example: Circular Motion</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-rolling-wheel">13.1.2. Example: Rolling Wheel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-and-acceleration-with-three-dimensional-spatial-coordinates">13.1.3. Velocity and Acceleration with Three-Dimensional Spatial Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cylindrical-coordinates">13.1.4. Cylindrical Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-coordinates">13.1.5. Spherical Coordinates</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-circular-orbital-motion">13.1.5.1. Example 1 - Circular Orbital Motion</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-elliptical-motion">13.1.5.2. Example 2 - Elliptical Motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-functions-describing-velocity-and-acceleration-of-a-moving-particle">2.1. Vector Functions describing Velocity and Acceleration of a Moving Particle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-circular-motion">2.1.1. Example: Circular Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-rolling-wheel">2.1.2. Example: Rolling Wheel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-and-acceleration-with-three-dimensional-spatial-coordinates">2.1.3. Velocity and Acceleration with Three-Dimensional Spatial Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cylindrical-coordinates">2.1.4. Cylindrical Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-coordinates">2.1.5. Spherical Coordinates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-circular-orbital-motion">2.1.5.1. Example 1 - Circular Orbital Motion</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-elliptical-motion">2.1.5.2. Example 2 - Elliptical Motion</a></li>
 </ul>
 </li>
 </ul>
@@ -397,12 +425,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="particle-dynamics">
-<h1><span class="section-number">13. </span>Particle Dynamics<a class="headerlink" href="#particle-dynamics" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2. </span>Particle Dynamics<a class="headerlink" href="#particle-dynamics" title="Link to this heading">#</a></h1>
 <section id="vector-functions-describing-velocity-and-acceleration-of-a-moving-particle">
-<h2><span class="section-number">13.1. </span>Vector Functions describing Velocity and Acceleration of a Moving Particle<a class="headerlink" href="#vector-functions-describing-velocity-and-acceleration-of-a-moving-particle" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1. </span>Vector Functions describing Velocity and Acceleration of a Moving Particle<a class="headerlink" href="#vector-functions-describing-velocity-and-acceleration-of-a-moving-particle" title="Link to this heading">#</a></h2>
 <p>In this unit, we wish to quantify the motion of a particle, or a group of particles, which move in response to different types of <strong>forces</strong>.<br />
 To do this, we will use vector functions to represent the position, velocity, and acceleration of particles in different coordinate systems.<br />
 We start with the case of <strong>Cartesian</strong> coordinates, the simplest case. The vector position of our particle with respect to the origin, at some time <span class="math notranslate nohighlight">\( t \)</span>, can be written (using bold typeface convention for vector quantity):</p>
@@ -436,7 +464,7 @@ If the body is initially at rest (zero velocity) at a height <span class="math n
 <div class="math notranslate nohighlight">
 \[t_{\mathrm{end}} = \sqrt{2h/g}.\]</div>
 <section id="example-circular-motion">
-<h3><span class="section-number">13.1.1. </span>Example: Circular Motion<a class="headerlink" href="#example-circular-motion" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.1.1. </span>Example: Circular Motion<a class="headerlink" href="#example-circular-motion" title="Link to this heading">#</a></h3>
 <p>Of course, the Cartesian coordinate system is not our only choice for describing particle motion. Other coordinate systems also follow the basic definitions of velocity and acceleration, however, the corresponding expressions may look a little different in coordinate systems where the unit vectors are locally defined – in other words, where the coordinate unit vectors may change direction as the particle moves.</p>
 <p>A simple example of this is a particle executing <strong>circular motion</strong> in the Cartesian <span class="math notranslate nohighlight">\( xy \)</span>-plane. If the particle moves on a circular path of constant radius <span class="math notranslate nohighlight">\( b \)</span>, then we may specify its position using two Cartesian coordinates which are themselves functions of time:</p>
 <div class="math notranslate nohighlight">
@@ -464,7 +492,7 @@ In a general polar coordinate system, <span class="math notranslate nohighlight"
 <p>which always points towards the centre of the rotation (i.e., the origin, in this example), and has a magnitude <span class="math notranslate nohighlight">\( b\omega^2 = \frac{v_{\phi}^2}{b} \)</span>, where the uniform rotational speed <span class="math notranslate nohighlight">\( v_{\phi} = b\omega \)</span>. This type of acceleration, associated with rotational motion, is known as <strong>centripetal acceleration</strong>. Because it acts perpendicularly to the direction of motion, it changes the particle’s direction, but not its speed.</p>
 </section>
 <section id="example-rolling-wheel">
-<h3><span class="section-number">13.1.2. </span>Example: Rolling Wheel<a class="headerlink" href="#example-rolling-wheel" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.1.2. </span>Example: Rolling Wheel<a class="headerlink" href="#example-rolling-wheel" title="Link to this heading">#</a></h3>
 <p>Consider a point on the moving rim of a rolling wheel of radius <span class="math notranslate nohighlight">\( b \)</span>. Let the position of this point be at a height <span class="math notranslate nohighlight">\( 2b \)</span> above the ground (i.e., uppermost point on the rim) at time zero. As time proceeds, the position of the center of the wheel can be described by:</p>
 <div class="math notranslate nohighlight">
 \[\vec{r}_{w}(t) = b\,\omega\,t\,\vec{\hat{x}} + b\,\vec{\hat{y}},\]</div>
@@ -488,11 +516,11 @@ In a general polar coordinate system, <span class="math notranslate nohighlight"
 </section>
 <hr class="docutils" />
 <section id="velocity-and-acceleration-with-three-dimensional-spatial-coordinates">
-<h3><span class="section-number">13.1.3. </span>Velocity and Acceleration with Three-Dimensional Spatial Coordinates<a class="headerlink" href="#velocity-and-acceleration-with-three-dimensional-spatial-coordinates" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.1.3. </span>Velocity and Acceleration with Three-Dimensional Spatial Coordinates<a class="headerlink" href="#velocity-and-acceleration-with-three-dimensional-spatial-coordinates" title="Link to this heading">#</a></h3>
 <p>When we consider particle motion in three dimensions, logically we need three coordinates to specify vector quantities such as position, velocity, and acceleration. The general relationships still hold – for example, velocity is the rate of change of position with respect to time. In this section, we extend some of the ideas from the previous section to derive appropriate formulae for these quantities in the <strong>cylindrical</strong> and <strong>spherical</strong> coordinate systems for three-dimensional space.</p>
 </section>
 <section id="cylindrical-coordinates">
-<h3><span class="section-number">13.1.4. </span>Cylindrical Coordinates<a class="headerlink" href="#cylindrical-coordinates" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.1.4. </span>Cylindrical Coordinates<a class="headerlink" href="#cylindrical-coordinates" title="Link to this heading">#</a></h3>
 <p>An illustration of cylindrical coordinates and associated, locally defined unit vectors is shown in the figure below. The three coordinates are: <span class="math notranslate nohighlight">\( R \)</span> (cylindrical radial distance), which is the perpendicular distance of the point of interest from some reference axis (here chosen to be the Cartesian <span class="math notranslate nohighlight">\( z \)</span>-axis); <span class="math notranslate nohighlight">\( \phi \)</span>, the azimuthal angle between the <span class="math notranslate nohighlight">\( x \)</span>-axis and the projection of the position vector onto the <span class="math notranslate nohighlight">\( xy \)</span>-plane; and <span class="math notranslate nohighlight">\( z \)</span>, which is identical to the usual Cartesian <span class="math notranslate nohighlight">\( z \)</span>-coordinate.</p>
 <p><img alt="Illustration of cylindrical coordinates and unit vectors" src="../_images/cylcoords.png" /></p>
 <p>Now, the position vector of any moving particle with respect to the origin can be expressed, using the corresponding (locally defined) unit vectors in this system, as:</p>
@@ -517,7 +545,7 @@ In a general polar coordinate system, <span class="math notranslate nohighlight"
 <p>We can identify the term <span class="math notranslate nohighlight">\( -R\,\dot{\phi}^2\,\vec{e_R} \)</span> in this expression as the centripetal acceleration associated with that component of the motion which represents rotation about the <span class="math notranslate nohighlight">\( z \)</span>-axis.</p>
 </section>
 <section id="spherical-coordinates">
-<h3><span class="section-number">13.1.5. </span>Spherical Coordinates<a class="headerlink" href="#spherical-coordinates" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.1.5. </span>Spherical Coordinates<a class="headerlink" href="#spherical-coordinates" title="Link to this heading">#</a></h3>
 <p>In this section, we repeat the same general strategy for deriving formulas for velocity and acceleration in the <strong>spherical polar coordinates</strong> for three-dimensional space. We remind ourselves, from the previous section, that this strategy involves expressing the local unit vectors of our coordinate system in a form that is relatively straightforward to differentiate — the Cartesian form of these vectors is a good choice here. Differentiation then allows us to express the time derivatives of each of our local unit vectors in terms of other unit vectors in the triad, which in turn allows us to make final derivations of the spherical polar implementations of velocity and acceleration of a moving particle. Note that the vectors which we obtain for a particle’s velocity and acceleration ultimately must have the same final magnitude and direction in all coordinate systems. However, the different orientations of unit coordinate vectors in these different systems mean that the individual <strong>components</strong> of acceleration and velocity are indeed dependent on our choice of coordinates.</p>
 <p><img alt="Spherical Coordinates and Unit Vectors" src="../_images/spherecoords.png" /><br />
 <em>Illustration of spherical coordinates and unit vectors (from the book by Fowles and Cassiday).</em></p>
@@ -556,7 +584,7 @@ In a general polar coordinate system, <span class="math notranslate nohighlight"
 <div class="math notranslate nohighlight">
 \[\vec{a} = (\ddot{r} - r \dot{\theta}^2 - r \sin^2\theta \, \dot{\phi}^2)\,\vec{e_r} + (r \ddot{\theta} + 2 \dot{r} \dot{\theta} - r \sin\theta \cos\theta\, \dot{\phi}^2)\,\vec{e_{\theta}} + (r \sin\theta\, \ddot{\phi} + 2 \sin\theta\, \dot{r} \dot{\phi} + 2 r\, \cos\theta\, \dot{\theta} \dot{\phi})\,\vec{e_{\phi}}.\]</div>
 <section id="example-1-circular-orbital-motion">
-<h4><span class="section-number">13.1.5.1. </span>Example 1 - Circular Orbital Motion<a class="headerlink" href="#example-1-circular-orbital-motion" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">2.1.5.1. </span>Example 1 - Circular Orbital Motion<a class="headerlink" href="#example-1-circular-orbital-motion" title="Link to this heading">#</a></h4>
 <p>We may consider the following simple example of describing motion in spherical coordinates. A particle of mass <span class="math notranslate nohighlight">\(m\)</span> follows a circular orbit of constant radius <span class="math notranslate nohighlight">\(r_0\)</span> with respect to the center of a spherically symmetric planet of mass <span class="math notranslate nohighlight">\(M\)</span>. For simplicity, we consider part of such an orbit where <span class="math notranslate nohighlight">\(\phi\)</span> is constant. The only force on the orbiting particle is in the radial direction towards the planet center, and has magnitude <span class="math notranslate nohighlight">\(\frac{GMm}{r_0^2}\)</span>, where <span class="math notranslate nohighlight">\(G\)</span> is the classical gravitational constant. In vector notation, the force is <span class="math notranslate nohighlight">\(\vec{F} = -\frac{GMm}{r_0^2}\,\vec{e_r}\)</span>, and so the acceleration is <span class="math notranslate nohighlight">\(\vec{a} = \frac{\vec{F}}{m} = -\frac{GM}{r_0^2}\,\vec{e_r}\)</span>. But we know from our general acceleration formula that the radial acceleration must also be equal to:</p>
 <div class="math notranslate nohighlight">
 \[a_r = \ddot{r} - r \dot{\theta}^2 = -r_0\,\dot{\theta}^2.\]</div>
@@ -569,7 +597,7 @@ In a general polar coordinate system, <span class="math notranslate nohighlight"
 <p>This is a simple example of one of Kepler’s laws of gravitational motion. Note that the conditions of constant <span class="math notranslate nohighlight">\(\dot{\theta}\)</span> and constant <span class="math notranslate nohighlight">\(\phi\)</span> for this simple example confirm that <span class="math notranslate nohighlight">\(a_{\theta}\)</span> and <span class="math notranslate nohighlight">\(a_{\phi}\)</span> indeed evaluate to zero, as required.</p>
 </section>
 <section id="example-2-elliptical-motion">
-<h4><span class="section-number">13.1.5.2. </span>Example 2 - Elliptical Motion<a class="headerlink" href="#example-2-elliptical-motion" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">2.1.5.2. </span>Example 2 - Elliptical Motion<a class="headerlink" href="#example-2-elliptical-motion" title="Link to this heading">#</a></h4>
 <p>This problem comes from Chapter 1 in the book by Fowles and Cassiday. A small ball is fastened to a long rubber band and twirled around in such a way that the ball moves in an elliptical path, given by the equation:</p>
 <div class="math notranslate nohighlight">
 \[\vec{r}(t) = \vec{e_x}\,b\,\cos(\omega t) + \vec{e_y}\,2b\,\sin(\omega t),\]</div>
@@ -612,19 +640,18 @@ In a general polar coordinate system, <span class="math notranslate nohighlight"
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../electromagnetism/EMpotentials.html"
+       href="../maths.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>Electromagnetic Scalar and Vector Potentials</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Mathematical Preliminaries</p>
       </div>
     </a>
     <a class="right-next"
@@ -632,14 +659,11 @@ In a general polar coordinate system, <span class="math notranslate nohighlight"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Newton’s Laws of Motion</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Newton’s Laws of Motion</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -648,20 +672,21 @@ In a general polar coordinate system, <span class="math notranslate nohighlight"
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-functions-describing-velocity-and-acceleration-of-a-moving-particle">13.1. Vector Functions describing Velocity and Acceleration of a Moving Particle</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-circular-motion">13.1.1. Example: Circular Motion</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-rolling-wheel">13.1.2. Example: Rolling Wheel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-and-acceleration-with-three-dimensional-spatial-coordinates">13.1.3. Velocity and Acceleration with Three-Dimensional Spatial Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cylindrical-coordinates">13.1.4. Cylindrical Coordinates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-coordinates">13.1.5. Spherical Coordinates</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-circular-orbital-motion">13.1.5.1. Example 1 - Circular Orbital Motion</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-elliptical-motion">13.1.5.2. Example 2 - Elliptical Motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-functions-describing-velocity-and-acceleration-of-a-moving-particle">2.1. Vector Functions describing Velocity and Acceleration of a Moving Particle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-circular-motion">2.1.1. Example: Circular Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-rolling-wheel">2.1.2. Example: Rolling Wheel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-and-acceleration-with-three-dimensional-spatial-coordinates">2.1.3. Velocity and Acceleration with Three-Dimensional Spatial Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cylindrical-coordinates">2.1.4. Cylindrical Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-coordinates">2.1.5. Spherical Coordinates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-circular-orbital-motion">2.1.5.1. Example 1 - Circular Orbital Motion</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-elliptical-motion">2.1.5.2. Example 2 - Elliptical Motion</a></li>
 </ul>
 </li>
 </ul>
@@ -687,9 +712,10 @@ By Natural Sciences
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -713,8 +739,8 @@ By Natural Sciences
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

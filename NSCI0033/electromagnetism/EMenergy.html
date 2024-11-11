@@ -1,76 +1,72 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11. Energy in an Electromagnetic field &#8212; Classical Mechanics and Electromagnetism</title>
+    <title>16. Energy in an Electromagnetic field &#8212; Classical Mechanics and Electromagnetism</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css?v=3e5b5be6" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'electromagnetism/EMenergy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="12. Electromagnetic Scalar and Vector Potentials" href="EMpotentials.html" />
-    <link rel="prev" title="10. Solutions to Maxwell’s Equations" href="solvingmaxwell.html" />
+    <link rel="next" title="17. Electromagnetic Scalar and Vector Potentials" href="EMpotentials.html" />
+    <link rel="prev" title="15. Solutions to Maxwell’s Equations" href="solvingmaxwell.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -80,19 +76,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -114,12 +114,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -134,9 +142,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -146,12 +158,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Classical Mechanics and Electromagnetism - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Classical Mechanics and Electromagnetism - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -162,27 +185,30 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Electromagnetism</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="EMmaths.html">1. Mathematical Preliminaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="electrostatics.html">2. Electrostatics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solvingEsystems.html">3. Solving Electrostatic Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Efieldenergy.html">4. Energy in an Electric Field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="magneticfields.html">5. Magnetism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="magneticforces.html">6. Magnetic Forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ampereslaw.html">7. Ampère’s Circuital Law</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faradayslaw.html">8. Faraday’s Law</a></li>
-<li class="toctree-l1"><a class="reference internal" href="maxwelleqns.html">9. Differential Forms and Maxwell’s Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solvingmaxwell.html">10. Solutions to Maxwell’s Equations</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Energy in an Electromagnetic field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EMpotentials.html">12. Electromagnetic Scalar and Vector Potentials</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../maths.html">1. Mathematical Preliminaries</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Mechanics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../classicalmechanics/particledynamics.html">13. Particle Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../classicalmechanics/newtonslaws.html">14. Newton’s Laws of Motion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../classicalmechanics/oscillations.html">15. Oscillations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../classicalmechanics/gravity.html">16. Gravitation and Central Forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../classicalmechanics/systemsofparticles.html">17. Dynamics of Systems of Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classicalmechanics/particledynamics.html">2. Particle Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classicalmechanics/newtonslaws.html">3. Newton’s Laws of Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classicalmechanics/oscillations.html">4. Oscillations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classicalmechanics/gravity.html">5. Gravitation and Central Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classicalmechanics/systemsofparticles.html">6. Dynamics of Systems of Particles</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Electromagnetism</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="electrostatics.html">7. Electrostatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solvingEsystems.html">8. Solving Electrostatic Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Efieldenergy.html">9. Energy in an Electric Field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="magneticfields.html">10. Magnetism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="magneticforces.html">11. Magnetic Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ampereslaw.html">12. Ampère’s Circuital Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faradayslaw.html">13. Faraday’s Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxwelleqns.html">14. Differential Forms and Maxwell’s Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solvingmaxwell.html">15. Solutions to Maxwell’s Equations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. Energy in an Electromagnetic field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EMpotentials.html">17. Electromagnetic Scalar and Vector Potentials</a></li>
 </ul>
 
     </div>
@@ -198,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -207,14 +233,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -336,26 +362,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -376,10 +404,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-intrinsic-energy-from-potentials">11.1. Deriving Intrinsic Energy from Potentials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-flux-and-poynting-vector">11.2. Energy Flux and Poynting Vector</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electromagnetic-plane-waves">11.3. Electromagnetic Plane Waves</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-impedance">11.4. Characteristic Impedance*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-intrinsic-energy-from-potentials">16.1. Deriving Intrinsic Energy from Potentials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-flux-and-poynting-vector">16.2. Energy Flux and Poynting Vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electromagnetic-plane-waves">16.3. Electromagnetic Plane Waves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-impedance">16.4. Characteristic Impedance*</a></li>
 </ul>
             </nav>
         </div>
@@ -389,19 +417,19 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="energy-in-an-electromagnetic-field">
-<h1><span class="section-number">11. </span>Energy in an Electromagnetic field<a class="headerlink" href="#energy-in-an-electromagnetic-field" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">16. </span>Energy in an Electromagnetic field<a class="headerlink" href="#energy-in-an-electromagnetic-field" title="Link to this heading">#</a></h1>
 <p>Whilst we are now comfortable with the idea of electric and magnetic fields (and how the two are inextricably linked), we can return
 to an idea from the waves section, namely where are all the sources of energy in this system?</p>
 <section id="deriving-intrinsic-energy-from-potentials">
-<h2><span class="section-number">11.1. </span>Deriving Intrinsic Energy from Potentials<a class="headerlink" href="#deriving-intrinsic-energy-from-potentials" title="Permalink to this heading">#</a></h2>
-<p>Recall the intrinsic electrostatic potential energy <span class="math notranslate nohighlight">\(U_E\)</span> from a system of charges from Equation <a class="reference internal" href="Efieldenergy.html#equation-elecpotenergy">(4.1)</a>, we can
+<h2><span class="section-number">16.1. </span>Deriving Intrinsic Energy from Potentials<a class="headerlink" href="#deriving-intrinsic-energy-from-potentials" title="Link to this heading">#</a></h2>
+<p>Recall the intrinsic electrostatic potential energy <span class="math notranslate nohighlight">\(U_E\)</span> from a system of charges from Equation <a class="reference internal" href="Efieldenergy.html#equation-elecpotenergy">(9.1)</a>, we can
 modify this to consider a continuous charge density <span class="math notranslate nohighlight">\(\rho({\bf r})\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[U_E = \frac{1}{2}\sum_{i=1}^N Q_i\,{V_E}({\bf r}_i) \rightarrow U_E  = \frac{1}{2}\iiint \rho({\bf r}) \,V_E({\bf r}) \, \mathrm{d} V \]</div>
-<p>Given Equation <a class="reference internal" href="maxwelleqns.html#equation-dive">(9.1)</a>, we can rewrite this using Gauss’s law in differential form:</p>
+<p>Given Equation <a class="reference internal" href="maxwelleqns.html#equation-dive">(14.1)</a>, we can rewrite this using Gauss’s law in differential form:</p>
 <div class="math notranslate nohighlight">
 \[U_E  = \frac{1}{2}\,\epsilon_0\,\iiint V_E\,(\nabla\cdot {\bf E})\, \, \mathrm{d} V \]</div>
 <p>For some vector field <span class="math notranslate nohighlight">\({\bf A}\)</span> and scalar field <span class="math notranslate nohighlight">\(B\)</span>, we find the following vector identity applies:</p>
@@ -411,7 +439,7 @@ modify this to consider a continuous charge density <span class="math notranslat
 <p>and therefore the potential energy result becomes:</p>
 <div class="math notranslate nohighlight">
 \[U_E  = \frac{1}{2}\,\epsilon_0\,\left[\iiint \nabla\cdot (V_E\,{\bf E}) \, \mathrm{d} V - \iiint {\bf E}\cdot (\nabla\,V_E) \, \mathrm{d} V\right]\]</div>
-<p>Using the divergence theorem on the first term and applying the definition of <span class="math notranslate nohighlight">\(V_E\)</span> from Equation <a class="reference internal" href="Efieldenergy.html#equation-efieldgradpotential">(4.3)</a>, this reduces to:</p>
+<p>Using the divergence theorem on the first term and applying the definition of <span class="math notranslate nohighlight">\(V_E\)</span> from Equation <a class="reference internal" href="Efieldenergy.html#equation-efieldgradpotential">(9.3)</a>, this reduces to:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}U_E &amp;=\frac{1}{2}\,\epsilon_0\,\left[\iint V_E\,{\bf E} \cdot \mathrm{d} {\bf A} - \iiint {\bf E}\cdot (-{\bf E}) \, \mathrm{d} V\right] \\
 &amp;=\frac{1}{2}\,\epsilon_0\,\left[-\iint V_E\,(\nabla V_E) \cdot \mathrm{d} {\bf A} - \iiint {\bf E}\cdot (-{\bf E}) \, \mathrm{d} V\right] \\
@@ -422,18 +450,18 @@ Then we can define the energy density <span class="math notranslate nohighlight"
 \[U_E = \iiint u_E\,\mathrm{d} V= \iiint \frac{1}{2}\,\epsilon_0\,E^2 \, \mathrm{d} V \Longrightarrow u_E = \frac{1}{2}\,\epsilon_0\,E^2 \]</div>
 </section>
 <section id="energy-flux-and-poynting-vector">
-<h2><span class="section-number">11.2. </span>Energy Flux and Poynting Vector<a class="headerlink" href="#energy-flux-and-poynting-vector" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.2. </span>Energy Flux and Poynting Vector<a class="headerlink" href="#energy-flux-and-poynting-vector" title="Link to this heading">#</a></h2>
 <p>To find the total energy density we would need to repeat this process for <span class="math notranslate nohighlight">\({\bf B}\)</span> (which is fairly lengthy!), but we can consider this problem
-through analogy.  The form of the Equation <a class="reference internal" href="maxwelleqns.html#equation-curlb">(9.3)</a> in vacuum reveals that the units of the <span class="math notranslate nohighlight">\({\bf B}\)</span> field related to the <span class="math notranslate nohighlight">\({\bf E}\)</span> field by:</p>
+through analogy.  The form of the Equation <a class="reference internal" href="maxwelleqns.html#equation-curlb">(14.3)</a> in vacuum reveals that the units of the <span class="math notranslate nohighlight">\({\bf B}\)</span> field related to the <span class="math notranslate nohighlight">\({\bf E}\)</span> field by:</p>
 <div class="math notranslate nohighlight" id="equation-e-cb">
-<span class="eqno">(11.1)<a class="headerlink" href="#equation-e-cb" title="Permalink to this equation">#</a></span>\[\frac{[B]}{[\textrm{Length}]} = \epsilon_0\,\mu_0\,\frac{[E]}{[\textrm{Time}]} \Rightarrow [B] = [E]\,[\textrm{Speed}]\,\epsilon_0\,\mu_0 \]</div>
-<p>Equation <a class="reference internal" href="solvingmaxwell.html#equation-speedoflight">(10.2)</a> says <span class="math notranslate nohighlight">\(c = 1/\sqrt{\epsilon_0\,\mu_0}\)</span>, hence using <span class="math notranslate nohighlight">\(c\)</span> as the wave speed, <span class="math notranslate nohighlight">\(u_B\)</span> has the form:</p>
+<span class="eqno">(16.1)<a class="headerlink" href="#equation-e-cb" title="Link to this equation">#</a></span>\[\frac{[B]}{[\textrm{Length}]} = \epsilon_0\,\mu_0\,\frac{[E]}{[\textrm{Time}]} \Rightarrow [B] = [E]\,[\textrm{Speed}]\,\epsilon_0\,\mu_0 \]</div>
+<p>Equation <a class="reference internal" href="solvingmaxwell.html#equation-speedoflight">(15.2)</a> says <span class="math notranslate nohighlight">\(c = 1/\sqrt{\epsilon_0\,\mu_0}\)</span>, hence using <span class="math notranslate nohighlight">\(c\)</span> as the wave speed, <span class="math notranslate nohighlight">\(u_B\)</span> has the form:</p>
 <div class="math notranslate nohighlight">
 \[u_B = \frac{1}{2}\,\epsilon_0\,c^2\,B^2 = \frac{1}{2\,\mu_0}\,B^2\]</div>
 <p>Therefore the total intrinsic energy density of electromagnetic fields is given by:</p>
 <div class="math notranslate nohighlight">
 \[u = u_E + u_B = \frac{1}{2}\left(\epsilon_0\,E^2 + \frac{1}{\mu_0}\,B^2 \right)\]</div>
-<p>Equations for <span class="math notranslate nohighlight">\(u\)</span> also appear within Maxwell’s equations, take Equations <a class="reference internal" href="maxwelleqns.html#equation-curlb">(9.3)</a> and <a class="reference internal" href="maxwelleqns.html#equation-curle">(9.4)</a>:</p>
+<p>Equations for <span class="math notranslate nohighlight">\(u\)</span> also appear within Maxwell’s equations, take Equations <a class="reference internal" href="maxwelleqns.html#equation-curlb">(14.3)</a> and <a class="reference internal" href="maxwelleqns.html#equation-curle">(14.4)</a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{1}{\mu_0}{\bf E} \cdot \nabla \times {\bf B} &amp;=\left({\bf J} + \epsilon_0\frac{\partial {\bf E}}{\partial t} \right)\cdot {\bf E} = 
 {\bf J} \cdot {\bf E} + \frac{\partial}{\partial t}\left( \frac{1}{2}\epsilon_0 E^2 \right) \label{eqn:Spart1}\\
@@ -458,8 +486,8 @@ generated per unit volume per unit time.  Thus we can see that the Poynting vect
 <span class="math notranslate nohighlight">\({\bf J}\cdot {\bf E}\)</span> relates to the energy given to free charges with current density <span class="math notranslate nohighlight">\({\bf J}\)</span>.</p>
 </section>
 <section id="electromagnetic-plane-waves">
-<h2><span class="section-number">11.3. </span>Electromagnetic Plane Waves<a class="headerlink" href="#electromagnetic-plane-waves" title="Permalink to this heading">#</a></h2>
-<p>Recall the plane wave solutions from Equation <a class="reference internal" href="solvingmaxwell.html#equation-planewavesolns">(10.4)</a>:</p>
+<h2><span class="section-number">16.3. </span>Electromagnetic Plane Waves<a class="headerlink" href="#electromagnetic-plane-waves" title="Link to this heading">#</a></h2>
+<p>Recall the plane wave solutions from Equation <a class="reference internal" href="solvingmaxwell.html#equation-planewavesolns">(15.4)</a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}{\bf E} &amp;=\begin{bmatrix}
  E_0 \\
@@ -483,23 +511,23 @@ generated per unit volume per unit time.  Thus we can see that the Poynting vect
  S_0
 \end{bmatrix}\,\exp(2i(k_z z  - \omega t))\end{split}\]</div>
 <p>which suggests for wave oscillations in the <span class="math notranslate nohighlight">\(({\bf x},\,{\bf y})\)</span> planes, the wave energy is transmitted in the <span class="math notranslate nohighlight">\({\bf z}\)</span> direction,
-as we see in <a class="reference internal" href="solvingmaxwell.html#emplanewaves"><span class="std std-numref">Fig. 10.1</span></a> (we knew this from the Waves chapter).  Interestingly the energy flux speed is also given by
+as we see in <a class="reference internal" href="solvingmaxwell.html#emplanewaves"><span class="std std-numref">Fig. 15.1</span></a> (we knew this from the Waves chapter).  Interestingly the energy flux speed is also given by
 <span class="math notranslate nohighlight">\(v_S = c = v_{E,\,B}\)</span> but the wavelength <span class="math notranslate nohighlight">\(\lambda_S = \frac{1}{2}\lambda_{E,\,B}\)</span> and frequency <span class="math notranslate nohighlight">\(f_S = 2\,f_{E,\,B}\)</span> are changed.</p>
 </section>
 <section id="characteristic-impedance">
-<h2><span class="section-number">11.4. </span>Characteristic Impedance*<a class="headerlink" href="#characteristic-impedance" title="Permalink to this heading">#</a></h2>
-<p>Another way to view these results is through Equation <a class="reference internal" href="solvingmaxwell.html#equation-kebperp">(10.3)</a>,</p>
+<h2><span class="section-number">16.4. </span>Characteristic Impedance*<a class="headerlink" href="#characteristic-impedance" title="Link to this heading">#</a></h2>
+<p>Another way to view these results is through Equation <a class="reference internal" href="solvingmaxwell.html#equation-kebperp">(15.3)</a>,</p>
 <div class="math notranslate nohighlight">
 \[{\bf S} = \,\frac{1}{\mu_0}{\bf E}\times {\bf B} = \frac{1}{\mu_0}{\bf E}\times \left(\frac{1}{\omega} {\bf k} \times {\bf E}\right) 
 = \frac{1}{\omega\,\mu_0} \bigg[ \left({\bf E}\cdot {\bf E}\right){\bf k} - \left({\bf E} \cdot {\bf k} \right){\bf E} \bigg]\]</div>
-<p>where we have used the triple vector product expression, and given Equation <a class="reference internal" href="solvingmaxwell.html#equation-kebperp">(10.3)</a> shows that <span class="math notranslate nohighlight">\(\bf E,\, k\)</span> are perpendicular:</p>
+<p>where we have used the triple vector product expression, and given Equation <a class="reference internal" href="solvingmaxwell.html#equation-kebperp">(15.3)</a> shows that <span class="math notranslate nohighlight">\(\bf E,\, k\)</span> are perpendicular:</p>
 <div class="math notranslate nohighlight">
 \[{\bf S} = \frac{1}{\omega\,\mu_0}|{\bf E}|^2\,\,{\bf k} = \frac{k_z}{\omega\,\mu_0}|{\bf E}|^2\,\,\hat{{\bf z}}\]</div>
 <p>Given that <span class="math notranslate nohighlight">\(\omega / k_z = c\)</span> here, this means we can write the expression as:</p>
 <div class="math notranslate nohighlight">
 \[{\bf S} = \frac{1}{c\,\mu_0}\,|{\bf E}|^2\,\,\hat{{\bf z}}\]</div>
 <p>For a plane wave this will be a time varying expression, however recall in the Waves section we discussed time averaging waves when finding
-their power. For the plane wave propograting along the <span class="math notranslate nohighlight">\(z\)</span> axis in <a class="reference internal" href="solvingmaxwell.html#equation-planewavesolns">(10.4)</a>:</p>
+their power. For the plane wave propograting along the <span class="math notranslate nohighlight">\(z\)</span> axis in <a class="reference internal" href="solvingmaxwell.html#equation-planewavesolns">(15.4)</a>:</p>
 <div class="math notranslate nohighlight">
 \[{\bf E} = \textrm{Re}\Big[{\bf E_0}\,\exp(i({\bf k \cdot x} - \omega t))\Big] = {\bf E_0}\,\cos(k_z x - \omega t)\]</div>
 <p>therefore we find that:</p>
@@ -538,11 +566,10 @@ their power. For the plane wave propograting along the <span class="math notrans
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="solvingmaxwell.html"
@@ -550,7 +577,7 @@ their power. For the plane wave propograting along the <span class="math notrans
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Solutions to Maxwell’s Equations</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Solutions to Maxwell’s Equations</p>
       </div>
     </a>
     <a class="right-next"
@@ -558,14 +585,11 @@ their power. For the plane wave propograting along the <span class="math notrans
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>Electromagnetic Scalar and Vector Potentials</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>Electromagnetic Scalar and Vector Potentials</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -574,16 +598,17 @@ their power. For the plane wave propograting along the <span class="math notrans
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-intrinsic-energy-from-potentials">11.1. Deriving Intrinsic Energy from Potentials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-flux-and-poynting-vector">11.2. Energy Flux and Poynting Vector</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electromagnetic-plane-waves">11.3. Electromagnetic Plane Waves</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-impedance">11.4. Characteristic Impedance*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-intrinsic-energy-from-potentials">16.1. Deriving Intrinsic Energy from Potentials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-flux-and-poynting-vector">16.2. Energy Flux and Poynting Vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electromagnetic-plane-waves">16.3. Electromagnetic Plane Waves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-impedance">16.4. Characteristic Impedance*</a></li>
 </ul>
   </nav></div>
 
@@ -605,9 +630,10 @@ By Natural Sciences
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -631,8 +657,8 @@ By Natural Sciences
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

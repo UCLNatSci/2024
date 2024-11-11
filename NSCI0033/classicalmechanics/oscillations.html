@@ -1,76 +1,72 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>15. Oscillations &#8212; Classical Mechanics and Electromagnetism</title>
+    <title>4. Oscillations &#8212; Classical Mechanics and Electromagnetism</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css?v=3e5b5be6" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classicalmechanics/oscillations';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="16. Gravitation and Central Forces" href="gravity.html" />
-    <link rel="prev" title="14. Newton’s Laws of Motion" href="newtonslaws.html" />
+    <link rel="next" title="5. Gravitation and Central Forces" href="gravity.html" />
+    <link rel="prev" title="3. Newton’s Laws of Motion" href="newtonslaws.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -80,19 +76,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -114,12 +114,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -134,9 +142,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -146,12 +158,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Classical Mechanics and Electromagnetism - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Classical Mechanics and Electromagnetism - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -163,26 +186,29 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Electromagnetism</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMmaths.html">1. Mathematical Preliminaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/electrostatics.html">2. Electrostatics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingEsystems.html">3. Solving Electrostatic Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/Efieldenergy.html">4. Energy in an Electric Field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticfields.html">5. Magnetism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticforces.html">6. Magnetic Forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/ampereslaw.html">7. Ampère’s Circuital Law</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/faradayslaw.html">8. Faraday’s Law</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/maxwelleqns.html">9. Differential Forms and Maxwell’s Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingmaxwell.html">10. Solutions to Maxwell’s Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMenergy.html">11. Energy in an Electromagnetic field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMpotentials.html">12. Electromagnetic Scalar and Vector Potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maths.html">1. Mathematical Preliminaries</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Mechanics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="particledynamics.html">13. Particle Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="newtonslaws.html">14. Newton’s Laws of Motion</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Oscillations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gravity.html">16. Gravitation and Central Forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="systemsofparticles.html">17. Dynamics of Systems of Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="particledynamics.html">2. Particle Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newtonslaws.html">3. Newton’s Laws of Motion</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Oscillations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gravity.html">5. Gravitation and Central Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="systemsofparticles.html">6. Dynamics of Systems of Particles</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Electromagnetism</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/electrostatics.html">7. Electrostatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingEsystems.html">8. Solving Electrostatic Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/Efieldenergy.html">9. Energy in an Electric Field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticfields.html">10. Magnetism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticforces.html">11. Magnetic Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/ampereslaw.html">12. Ampère’s Circuital Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/faradayslaw.html">13. Faraday’s Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/maxwelleqns.html">14. Differential Forms and Maxwell’s Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingmaxwell.html">15. Solutions to Maxwell’s Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMenergy.html">16. Energy in an Electromagnetic field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMpotentials.html">17. Electromagnetic Scalar and Vector Potentials</a></li>
 </ul>
 
     </div>
@@ -198,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -207,14 +233,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -336,26 +362,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -376,24 +404,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion">15.1. Simple Harmonic Motion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator">15.1.1. Harmonic Oscillator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-rotating-vector-representation">15.1.2. Simple Harmonic Motion: Rotating Vector Representation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator-with-constant-external-force">15.1.3. Harmonic Oscillator with Constant External Force</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-pendulum">15.1.3.1. Simple Pendulum</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-energy">15.1.3.2. Simple Harmonic Motion: Energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion">4.1. Simple Harmonic Motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator">4.1.1. Harmonic Oscillator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-rotating-vector-representation">4.1.2. Simple Harmonic Motion: Rotating Vector Representation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator-with-constant-external-force">4.1.3. Harmonic Oscillator with Constant External Force</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-pendulum">4.1.3.1. Simple Pendulum</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-energy">4.1.3.2. Simple Harmonic Motion: Energy</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damped-harmonic-motion">15.1.4. Damped Harmonic Motion</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overdamping">15.1.4.1. Overdamping</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-damping">15.1.4.2. Critical Damping</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#underdamping">15.1.4.3. Underdamping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damped-harmonic-motion">4.1.4. Damped Harmonic Motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overdamping">4.1.4.1. Overdamping</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-damping">4.1.4.2. Critical Damping</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#underdamping">4.1.4.3. Underdamping</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forced-harmonic-motion-and-resonance">15.1.5. Forced Harmonic Motion and Resonance</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitude-of-the-motion">15.1.5.1. Amplitude of the Motion</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sharpness-of-the-resonance-quality-factor">15.1.5.2. “Sharpness” of the Resonance: Quality Factor</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-difference">15.1.5.3. Phase Difference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forced-harmonic-motion-and-resonance">4.1.5. Forced Harmonic Motion and Resonance</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitude-of-the-motion">4.1.5.1. Amplitude of the Motion</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sharpness-of-the-resonance-quality-factor">4.1.5.2. “Sharpness” of the Resonance: Quality Factor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-difference">4.1.5.3. Phase Difference</a></li>
 </ul>
 </li>
 </ul>
@@ -407,15 +435,15 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="oscillations">
-<h1><span class="section-number">15. </span>Oscillations<a class="headerlink" href="#oscillations" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Oscillations<a class="headerlink" href="#oscillations" title="Link to this heading">#</a></h1>
 <p>In this unit, we will study systems whose motion displays characteristics which repeat in time - that is, they are <strong>periodic</strong>. We will also examine the physical processes through which periodic dynamics can arise.</p>
 <section id="simple-harmonic-motion">
-<h2><span class="section-number">15.1. </span>Simple Harmonic Motion<a class="headerlink" href="#simple-harmonic-motion" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Simple Harmonic Motion<a class="headerlink" href="#simple-harmonic-motion" title="Link to this heading">#</a></h2>
 <section id="harmonic-oscillator">
-<h3><span class="section-number">15.1.1. </span>Harmonic Oscillator<a class="headerlink" href="#harmonic-oscillator" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.1.1. </span>Harmonic Oscillator<a class="headerlink" href="#harmonic-oscillator" title="Link to this heading">#</a></h3>
 <p>We start by considering the simple system of a mass <span class="math notranslate nohighlight">\(m\)</span> which is attached to one end of a horizontal spring, whose other end is fixed to a wall - see Figure \ref{fig:shmplot}. The equilibrium position of the mass is that position where the force on it is zero, which also corresponds to the position of minimum potential energy of the system, as we shall see.</p>
 <p><img alt="A horizontal spring carrying a mass , stretched in the  direction, experiences a restoring force as shown. In general, the restoring force points towards the equilibrium position  where there is zero force on the mass." src="../_images/shmplot.png" /></p>
 <p>For simplicity, we use a single coordinate <span class="math notranslate nohighlight">\(x\)</span> to describe the position of the mass, and take <span class="math notranslate nohighlight">\(x=0\)</span> for its equilibrium position. For positive displacements <span class="math notranslate nohighlight">\(x&gt;0\)</span> the spring is stretched, and so will exert a negative restoring force on the mass which attempts to move it back towards equilibrium. Similarly, a compressed spring (<span class="math notranslate nohighlight">\(x&lt;0\)</span>) exerts a positive restoring force. If this restoring force can be written as <span class="math notranslate nohighlight">\(F = -kx\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is a positive constant, then the equation of horizontal motion becomes:</p>
@@ -436,13 +464,13 @@ In order to satisfy this equation, we require <strong><span class="math notransl
 <p>Note that these equations can also be used to show that the amplitude of the motion must satisfy <strong><span class="math notranslate nohighlight">\(A^2 = x_0^2 + v_0^2/\omega_0^2\)</span></strong>.</p>
 </section>
 <section id="simple-harmonic-motion-rotating-vector-representation">
-<h3><span class="section-number">15.1.2. </span>Simple Harmonic Motion: Rotating Vector Representation<a class="headerlink" href="#simple-harmonic-motion-rotating-vector-representation" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.1.2. </span>Simple Harmonic Motion: Rotating Vector Representation<a class="headerlink" href="#simple-harmonic-motion-rotating-vector-representation" title="Link to this heading">#</a></h3>
 <p>Consider Figure \ref{fig:rotvecplot}, which shows the rotating position vector <span class="math notranslate nohighlight">\(\vec{A}\)</span> of a point P which executes circular motion with a uniform speed. The angle made by this vector with the <span class="math notranslate nohighlight">\(x\)</span> axis is <span class="math notranslate nohighlight">\(\theta = \theta_0 + \omega_0\,t\)</span>. The <span class="math notranslate nohighlight">\(x\)</span> coordinate of P, for the given geometry, will therefore be <span class="math notranslate nohighlight">\(x=A\,\cos(\omega_0\,t+\theta_0)\)</span>.</p>
 <p>We could also use the angle <span class="math notranslate nohighlight">\(\phi = \phi_0+\omega_0\,t\)</span> made with the <span class="math notranslate nohighlight">\(y\)</span> axis to describe this motion, and note that <span class="math notranslate nohighlight">\(x = A\sin\phi = A\,\sin(\omega_0\,t+\phi_0)\)</span>. Whichever choice we make, we observe that the value of <span class="math notranslate nohighlight">\(x\)</span> (the projection of the vector onto the <span class="math notranslate nohighlight">\(x\)</span> axis) oscillates according to simple harmonic motion as the rotation of P proceeds. This suggests that a linear combination of sine and cosine functions could be used to represent the general solution for simple harmonic motion.</p>
 <p><img alt="Simple harmonic motion as a projection of uniform circular motion (from the book by Fowles and Cassiday)." src="../_images/rotvecplot.png" /></p>
 </section>
 <section id="harmonic-oscillator-with-constant-external-force">
-<h3><span class="section-number">15.1.3. </span>Harmonic Oscillator with Constant External Force<a class="headerlink" href="#harmonic-oscillator-with-constant-external-force" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.1.3. </span>Harmonic Oscillator with Constant External Force<a class="headerlink" href="#harmonic-oscillator-with-constant-external-force" title="Link to this heading">#</a></h3>
 <p>In the last section, we considered harmonic motion in the horizontal direction, where the only force on the moving mass was that due to the spring being stretched or compressed. The character of the motion changes in interesting ways if we add an external force to the system. As a simple example, we consider (see Figure \ref{fig:shmvert}) a mass on a mounted spring which can only move in the <em>vertical</em> direction, and we include the effects of the vertical downward acceleration, <span class="math notranslate nohighlight">\(g\)</span>, due to gravity.</p>
 <p>We obtain the following equation of motion by adding a gravitational term to an equation similar to the “spring equation” from the last section. We also use here a non-zero quantity <span class="math notranslate nohighlight">\(X_e\)</span> to represent the unperturbed length of the spring. We take the convention of the mass position <span class="math notranslate nohighlight">\(X\)</span> being positive downwards for this example:</p>
 <div class="math notranslate nohighlight">
@@ -453,7 +481,7 @@ In order to satisfy this equation, we require <strong><span class="math notransl
 \[m\,\dfrac{d}{dt^2}(X-X_e') = -k\,(X-X_e) + mg \rightarrow m\,\ddot{x} = -k\,(X-X_e') -k\,(X_e'-X_e) + mg \rightarrow m\,\ddot{x} = -k\,x.\]</div>
 <p>This is an important result. Any constant external force does not change harmonic motion, <strong>provided we measure displacement from the shifted equilibrium position</strong> which is introduced by that force.</p>
 <section id="simple-pendulum">
-<h4><span class="section-number">15.1.3.1. </span>Simple Pendulum<a class="headerlink" href="#simple-pendulum" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">4.1.3.1. </span>Simple Pendulum<a class="headerlink" href="#simple-pendulum" title="Link to this heading">#</a></h4>
 <p>The simple pendulum consists of a plumb bob of mass <span class="math notranslate nohighlight">\(m\)</span> attached to the end of a light string of fixed length <span class="math notranslate nohighlight">\(l\)</span>, whose other end is mounted at a fixed point (see Figure \ref{fig:pendulum}). The position can be described by the angle <span class="math notranslate nohighlight">\(\theta\)</span> or equivalently the arc length <span class="math notranslate nohighlight">\(s = l\,\theta\)</span>. The component of the gravitational force on the bob along its direction of motion is <span class="math notranslate nohighlight">\(F = -m\,g\,\sin\theta\)</span> (with <span class="math notranslate nohighlight">\(g&gt;0\)</span>). Even though the bob moves in a curved path, its equation of motion is one-dimensional:</p>
 <div class="math notranslate nohighlight">
 \[m\,\ddot{s} = -m\,g\,\sin\theta.\]</div>
@@ -464,7 +492,7 @@ In order to satisfy this equation, we require <strong><span class="math notransl
 <p><img alt="The simple pendulum (from the book by Fowles and Cassiday)." src="../_images/pendulum.png" /></p>
 </section>
 <section id="simple-harmonic-motion-energy">
-<h4><span class="section-number">15.1.3.2. </span>Simple Harmonic Motion: Energy<a class="headerlink" href="#simple-harmonic-motion-energy" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">4.1.3.2. </span>Simple Harmonic Motion: Energy<a class="headerlink" href="#simple-harmonic-motion-energy" title="Link to this heading">#</a></h4>
 <p>If we recall the form of restoring force for the simple harmonic oscillator from section \ref{sec:shmo}, <span class="math notranslate nohighlight">\(F=-k\,x\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> is the displacement from equilibrium of the oscillating mass, we observe that this same force can be expressed as <span class="math notranslate nohighlight">\(F=-\dfrac{dV}{dx}\)</span>, where the function <strong><span class="math notranslate nohighlight">\(V=\frac{1}{2}kx^2\)</span></strong> can be identified as the <strong>potential energy</strong> of the system. If, for example, we apply an external force <span class="math notranslate nohighlight">\(F_{ext}\)</span> to the mass, equal and opposite to the force exerted by the spring, we could move it from equilibrium <span class="math notranslate nohighlight">\(x=0\)</span> to some final displacement <span class="math notranslate nohighlight">\(x=x_f\)</span>. The work we need to do in order to achieve this is</p>
 <div class="math notranslate nohighlight">
 \[W = \int_{x=0}^{x_f} kx\,dx = \frac{1}{2} k x_f^2.\]</div>
@@ -488,7 +516,7 @@ In order to satisfy this equation, we require <strong><span class="math notransl
 </section>
 </section>
 <section id="damped-harmonic-motion">
-<h3><span class="section-number">15.1.4. </span>Damped Harmonic Motion<a class="headerlink" href="#damped-harmonic-motion" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.1.4. </span>Damped Harmonic Motion<a class="headerlink" href="#damped-harmonic-motion" title="Link to this heading">#</a></h3>
 <p>In this section, we explore solutions for the motion of a mass moving on the end of a spring, with the inclusion of a viscous retarding force, which is a linear function of velocity. We can write this as <span class="math notranslate nohighlight">\( F_v = -c \dot{x} \)</span>, where <span class="math notranslate nohighlight">\( c \)</span> is a positive constant, and <span class="math notranslate nohighlight">\( x \)</span> again denotes displacement from the equilibrium position. The modified equation of motion is:</p>
 <div class="math notranslate nohighlight">
 \[    \ddot{x} + \frac{c}{m} \dot{x} + \frac{k}{m} x = 0.\]</div>
@@ -508,13 +536,13 @@ In order to satisfy this equation, we require <strong><span class="math notransl
 <p>where <span class="math notranslate nohighlight">\( \gamma = c / (2m) \)</span> and <span class="math notranslate nohighlight">\( \omega_0 = \sqrt{k/m} \)</span> is the angular frequency of the simple harmonic case without the retarding force.</p>
 <p>The physical description of the motion falls into three cases, according to the value of the parameter <span class="math notranslate nohighlight">\( q = \sqrt{\gamma^2 - \omega_0^2} \)</span>. We now consider these three cases, which are: <strong>overdamping</strong> (<span class="math notranslate nohighlight">\( q \)</span> real and positive); <strong>critical damping</strong> (<span class="math notranslate nohighlight">\( q = 0 \)</span>); and <strong>underdamping</strong> (<span class="math notranslate nohighlight">\( q \)</span> imaginary).</p>
 <section id="overdamping">
-<h4><span class="section-number">15.1.4.1. </span>Overdamping<a class="headerlink" href="#overdamping" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">4.1.4.1. </span>Overdamping<a class="headerlink" href="#overdamping" title="Link to this heading">#</a></h4>
 <p>For this case, both terms in the general solution become decaying exponential functions with decay time constants equal to
 <span class="math notranslate nohighlight">\( \tau_1 = 1 / (\gamma - q) \)</span> and <span class="math notranslate nohighlight">\( \tau_2 = 1 / (\gamma + q) \)</span>. The coefficients <span class="math notranslate nohighlight">\( A_i \)</span> will depend on the initial conditions of the problem. In general, the mass, initially displaced and then released from rest, will gradually return to the equilibrium position but will not exhibit oscillation due to the strong damping force (see Figure \ref{fig:ovcritdamp}).</p>
 <p><img alt="Displacement versus time for critically damped and overdamped oscillators, released from rest after an initial displacement (from the book by Fowles and Cassiday)." src="../_images/ovcritdamp.png" /></p>
 </section>
 <section id="critical-damping">
-<h4><span class="section-number">15.1.4.2. </span>Critical Damping<a class="headerlink" href="#critical-damping" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">4.1.4.2. </span>Critical Damping<a class="headerlink" href="#critical-damping" title="Link to this heading">#</a></h4>
 <p>In this case, the values of both <span class="math notranslate nohighlight">\( \lambda_1 \)</span> and <span class="math notranslate nohighlight">\( \lambda_2 \)</span> become equal to <span class="math notranslate nohighlight">\( -\gamma \)</span>. So, to find two independent solutions, we return to the original differential equation and use <span class="math notranslate nohighlight">\( \omega_0^2 = \gamma^2 \)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\ddot{x} + 2 \gamma \dot{x} + \gamma^2 x = 0\]</div>
@@ -530,7 +558,7 @@ In order to satisfy this equation, we require <strong><span class="math notransl
 <p>Here, <span class="math notranslate nohighlight">\( B \)</span> is another constant of integration. The two distinct terms are a decaying exponential modulated by a function linear in time and a decaying exponential. Again, the motion is non-oscillatory and returns to equilibrium asymptotically (see Figure \ref{fig:ovcritdamp}).</p>
 </section>
 <section id="underdamping">
-<h4><span class="section-number">15.1.4.3. </span>Underdamping<a class="headerlink" href="#underdamping" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">4.1.4.3. </span>Underdamping<a class="headerlink" href="#underdamping" title="Link to this heading">#</a></h4>
 <p>Physically, the retarding force in this case is weak enough that it does not suppress oscillatory behavior entirely. Let us quantify this behavior by exploring the nature of the solution for <span class="math notranslate nohighlight">\( x \)</span> when <span class="math notranslate nohighlight">\( q \)</span> is
 imaginary.</p>
 <p>Let us define <span class="math notranslate nohighlight">\( q = i\omega_d \)</span>, where <span class="math notranslate nohighlight">\( \omega_d = \sqrt{k/m - c^2 / (4m^2)} \)</span> is positive and real, and, as we shall see, is associated with the oscillatory part of the solution. Note that <span class="math notranslate nohighlight">\( \omega_d = \sqrt{\omega_0^2 - \gamma^2} \)</span>, which tells us that the frequency <span class="math notranslate nohighlight">\( \omega_d \)</span> of our damped oscillator is not the same as the frequency <span class="math notranslate nohighlight">\( \omega_0 \)</span> for undamped motion.</p>
@@ -556,7 +584,7 @@ imaginary.</p>
 </section>
 </section>
 <section id="forced-harmonic-motion-and-resonance">
-<h3><span class="section-number">15.1.5. </span>Forced Harmonic Motion and Resonance<a class="headerlink" href="#forced-harmonic-motion-and-resonance" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.1.5. </span>Forced Harmonic Motion and Resonance<a class="headerlink" href="#forced-harmonic-motion-and-resonance" title="Link to this heading">#</a></h3>
 <p>In this section, we extend our study of harmonic motion to investigate the interesting dynamical effects of adding an external force to the oscillator problem. We will consider a periodic external force of a frequency which is generally different from the “natural” frequency of the oscillator (which we have studied in the preceding sections). We will determine how the nature of the motion is affected by how similar or different the frequencies of the driving force and the natural oscillation in the absence of this driving are.</p>
 <p>We will start by considering the general problem of an oscillator subject to both <strong>damping</strong> and the <strong>driving</strong> influence of the external force. We will see that the general solution is a superposition of oscillations at different frequencies and that the amplitude of the oscillations depends on how close the natural and the driving frequencies are.</p>
 <p>To make the mathematics more tractable, we will represent oscillating functions in time as complex-valued. For example, the complex function <span class="math notranslate nohighlight">\( e^{i\omega t} \)</span> implicitly represents a periodically varying physical quantity represented by its real part: <span class="math notranslate nohighlight">\( \Re(e^{i\omega t}) = \cos(\omega t) \)</span>.</p>
@@ -594,7 +622,7 @@ imaginary.</p>
 \[\Re(x_p(t)) = \frac{F_0/m}{\sqrt{(\omega_0^2 - \omega^2)^2 + 4\gamma^2 \omega^2}} \cos(\omega t - \phi_{dr}).\]</div>
 <p>This steady-state behavior has two important aspects: (1) the response of the oscillating mass lags the driving force by phase <span class="math notranslate nohighlight">\( \phi_{dr} \)</span>; and (2) the amplitude of the position depends on the driving frequency. This leads to the phenomenon of <strong>resonance</strong>, where the amplitude maximizes when the driving frequency is close to the natural frequency.</p>
 <section id="amplitude-of-the-motion">
-<h4><span class="section-number">15.1.5.1. </span>Amplitude of the Motion<a class="headerlink" href="#amplitude-of-the-motion" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">4.1.5.1. </span>Amplitude of the Motion<a class="headerlink" href="#amplitude-of-the-motion" title="Link to this heading">#</a></h4>
 <p>The real-valued amplitude of the steady-state motion is given by:</p>
 <div class="math notranslate nohighlight">
 \[A_{dr}(\omega) = \frac{F_0/m}{\sqrt{(\omega_0^2 - \omega^2)^2 + 4\gamma^2 \omega^2}}.\]</div>
@@ -608,7 +636,7 @@ imaginary.</p>
 <p>In practical applications, resonance may be avoided to prevent large oscillations. Damping can be implemented in systems, such as stiff rubber mountings in electric motors, to ensure that resonant frequency is far from the operating frequency.</p>
 </section>
 <section id="sharpness-of-the-resonance-quality-factor">
-<h4><span class="section-number">15.1.5.2. </span>“Sharpness” of the Resonance: Quality Factor<a class="headerlink" href="#sharpness-of-the-resonance-quality-factor" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">4.1.5.2. </span>“Sharpness” of the Resonance: Quality Factor<a class="headerlink" href="#sharpness-of-the-resonance-quality-factor" title="Link to this heading">#</a></h4>
 <p>Figure \ref{fig:ampplot} shows a plot of the function <span class="math notranslate nohighlight">\( A(\omega) \)</span> from equation \ref{eq:ampfn}. The “sharpness” of the peak in amplitude, which occurs at frequency <span class="math notranslate nohighlight">\( \omega_{dr} \)</span>, depends on the damping parameter <span class="math notranslate nohighlight">\( \gamma \)</span>. We can quantify how “sharp” or broad this local maximum is.</p>
 <p><img alt="A plot of the steady-state amplitude of the damped, driven oscillator as a function of the driving frequency. The legend indicates example values of  used. Note that the vertical axis is on a logarithmic scale, and both quantities are normalized according to the natural scales shown in the axis labels." src="../_images/ampplot.png" />
 <em>Figure 1: Steady-state amplitude of the damped, driven oscillator</em></p>
@@ -621,7 +649,7 @@ imaginary.</p>
 <p>Thus, at the two frequencies <span class="math notranslate nohighlight">\( \omega = \omega_0 \pm \gamma \)</span>, the amplitude value is <span class="math notranslate nohighlight">\( \frac{A_{max}}{\sqrt{2}} \)</span>. Since the total (potential plus kinetic) energy scales as the amplitude squared, these frequencies are the <strong>half-power points</strong> of the oscillator response. A practical measure of the “sharpness” of the resonance peak is the ratio <span class="math notranslate nohighlight">\( Q = \omega_0 / (2 \gamma) \)</span>, the approximate frequency of maximum amplitude divided by the frequency interval between the half-power points. This value, <span class="math notranslate nohighlight">\( Q \)</span>, is known as the <strong>quality factor</strong>. Another interpretation of <span class="math notranslate nohighlight">\( Q \)</span> is that <span class="math notranslate nohighlight">\( 1 / Q \approx 2 \gamma / \omega_0 \)</span>, the fractional width of the resonance peak relative to the resonant frequency.</p>
 </section>
 <section id="phase-difference">
-<h4><span class="section-number">15.1.5.3. </span>Phase Difference<a class="headerlink" href="#phase-difference" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">4.1.5.3. </span>Phase Difference<a class="headerlink" href="#phase-difference" title="Link to this heading">#</a></h4>
 <p>Now, let’s examine the phase difference between the damped, driven oscillator and the external driving force, which determines the steady-state response:</p>
 <div class="math notranslate nohighlight">
 \[\phi_{dr}(\omega) = \arctan \left( \frac{2 \gamma \omega}{\omega_0^2 - \omega^2} \right).\]</div>
@@ -660,11 +688,10 @@ imaginary.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="newtonslaws.html"
@@ -672,7 +699,7 @@ imaginary.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Newton’s Laws of Motion</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Newton’s Laws of Motion</p>
       </div>
     </a>
     <a class="right-next"
@@ -680,14 +707,11 @@ imaginary.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">16. </span>Gravitation and Central Forces</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Gravitation and Central Forces</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -696,30 +720,31 @@ imaginary.</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion">15.1. Simple Harmonic Motion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator">15.1.1. Harmonic Oscillator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-rotating-vector-representation">15.1.2. Simple Harmonic Motion: Rotating Vector Representation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator-with-constant-external-force">15.1.3. Harmonic Oscillator with Constant External Force</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-pendulum">15.1.3.1. Simple Pendulum</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-energy">15.1.3.2. Simple Harmonic Motion: Energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion">4.1. Simple Harmonic Motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator">4.1.1. Harmonic Oscillator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-rotating-vector-representation">4.1.2. Simple Harmonic Motion: Rotating Vector Representation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator-with-constant-external-force">4.1.3. Harmonic Oscillator with Constant External Force</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-pendulum">4.1.3.1. Simple Pendulum</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-harmonic-motion-energy">4.1.3.2. Simple Harmonic Motion: Energy</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damped-harmonic-motion">15.1.4. Damped Harmonic Motion</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overdamping">15.1.4.1. Overdamping</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-damping">15.1.4.2. Critical Damping</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#underdamping">15.1.4.3. Underdamping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damped-harmonic-motion">4.1.4. Damped Harmonic Motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overdamping">4.1.4.1. Overdamping</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-damping">4.1.4.2. Critical Damping</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#underdamping">4.1.4.3. Underdamping</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forced-harmonic-motion-and-resonance">15.1.5. Forced Harmonic Motion and Resonance</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitude-of-the-motion">15.1.5.1. Amplitude of the Motion</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sharpness-of-the-resonance-quality-factor">15.1.5.2. “Sharpness” of the Resonance: Quality Factor</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-difference">15.1.5.3. Phase Difference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forced-harmonic-motion-and-resonance">4.1.5. Forced Harmonic Motion and Resonance</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitude-of-the-motion">4.1.5.1. Amplitude of the Motion</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sharpness-of-the-resonance-quality-factor">4.1.5.2. “Sharpness” of the Resonance: Quality Factor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-difference">4.1.5.3. Phase Difference</a></li>
 </ul>
 </li>
 </ul>
@@ -745,9 +770,10 @@ By Natural Sciences
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -771,8 +797,8 @@ By Natural Sciences
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

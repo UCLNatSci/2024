@@ -1,75 +1,72 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>17. Dynamics of Systems of Particles &#8212; Classical Mechanics and Electromagnetism</title>
+    <title>6. Dynamics of Systems of Particles &#8212; Classical Mechanics and Electromagnetism</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyle.css?v=3e5b5be6" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classicalmechanics/systemsofparticles';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="16. Gravitation and Central Forces" href="gravity.html" />
+    <link rel="next" title="7. Electrostatics" href="../electromagnetism/electrostatics.html" />
+    <link rel="prev" title="5. Gravitation and Central Forces" href="gravity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -79,19 +76,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,12 +114,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +142,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -145,12 +158,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Classical Mechanics and Electromagnetism - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Classical Mechanics and Electromagnetism - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -162,26 +186,29 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Electromagnetism</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMmaths.html">1. Mathematical Preliminaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/electrostatics.html">2. Electrostatics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingEsystems.html">3. Solving Electrostatic Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/Efieldenergy.html">4. Energy in an Electric Field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticfields.html">5. Magnetism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticforces.html">6. Magnetic Forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/ampereslaw.html">7. Ampère’s Circuital Law</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/faradayslaw.html">8. Faraday’s Law</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/maxwelleqns.html">9. Differential Forms and Maxwell’s Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingmaxwell.html">10. Solutions to Maxwell’s Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMenergy.html">11. Energy in an Electromagnetic field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMpotentials.html">12. Electromagnetic Scalar and Vector Potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maths.html">1. Mathematical Preliminaries</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Mechanics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="particledynamics.html">13. Particle Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="newtonslaws.html">14. Newton’s Laws of Motion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oscillations.html">15. Oscillations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gravity.html">16. Gravitation and Central Forces</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">17. Dynamics of Systems of Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="particledynamics.html">2. Particle Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newtonslaws.html">3. Newton’s Laws of Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oscillations.html">4. Oscillations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gravity.html">5. Gravitation and Central Forces</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Dynamics of Systems of Particles</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Electromagnetism</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/electrostatics.html">7. Electrostatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingEsystems.html">8. Solving Electrostatic Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/Efieldenergy.html">9. Energy in an Electric Field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticfields.html">10. Magnetism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/magneticforces.html">11. Magnetic Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/ampereslaw.html">12. Ampère’s Circuital Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/faradayslaw.html">13. Faraday’s Law</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/maxwelleqns.html">14. Differential Forms and Maxwell’s Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/solvingmaxwell.html">15. Solutions to Maxwell’s Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMenergy.html">16. Energy in an Electromagnetic field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../electromagnetism/EMpotentials.html">17. Electromagnetic Scalar and Vector Potentials</a></li>
 </ul>
 
     </div>
@@ -197,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -206,14 +233,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -335,26 +362,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -375,28 +404,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-and-linear-momentum">17.1. Centre of Mass and Linear Momentum</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-and-kinetic-energy-of-a-system">17.2. Angular Momentum and Kinetic Energy of a System</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-body-problem-and-reduced-mass">17.3. The Two-Body Problem and Reduced Mass</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-star-systems">17.3.1. Binary Star Systems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-of-collisions">17.3.2. Dynamics of Collisions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-collisions-single-axis-of-motion">17.3.2.1. Direct Collisions (Single Axis of Motion)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#impulse">17.3.2.2. Impulse</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-collisions">17.3.2.3. Oblique Collisions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-and-linear-momentum">6.1. Centre of Mass and Linear Momentum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-and-kinetic-energy-of-a-system">6.2. Angular Momentum and Kinetic Energy of a System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-body-problem-and-reduced-mass">6.3. The Two-Body Problem and Reduced Mass</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-star-systems">6.3.1. Binary Star Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-of-collisions">6.3.2. Dynamics of Collisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-collisions-single-axis-of-motion">6.3.2.1. Direct Collisions (Single Axis of Motion)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#impulse">6.3.2.2. Impulse</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-collisions">6.3.2.3. Oblique Collisions</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-coordinates">17.3.3. Centre Of Mass Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-coordinates">6.3.3. Centre Of Mass Coordinates</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-of-rigid-bodies">17.4. Rotation of Rigid Bodies</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-of-a-rigid-body">17.4.1. Centre of Mass of a Rigid Body</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moment-of-inertia">17.4.2. Moment of Inertia</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parallel-axis-theorem">17.4.3. The Parallel Axis Theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#towards-lagrangian-mechanics-non-examinable">17.4.4. Towards Lagrangian Mechanics (Non-Examinable)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltons-variational-principle">17.4.4.1. Hamilton’s Variational Principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-of-rigid-bodies">6.4. Rotation of Rigid Bodies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-of-a-rigid-body">6.4.1. Centre of Mass of a Rigid Body</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moment-of-inertia">6.4.2. Moment of Inertia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parallel-axis-theorem">6.4.3. The Parallel Axis Theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#towards-lagrangian-mechanics-non-examinable">6.4.4. Towards Lagrangian Mechanics (Non-Examinable)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltons-variational-principle">6.4.4.1. Hamilton’s Variational Principle</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagranges-equations">17.4.5. Lagrange’s Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagranges-equations">6.4.5. Lagrange’s Equations</a></li>
 </ul>
 </li>
 </ul>
@@ -408,13 +437,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dynamics-of-systems-of-particles">
-<h1><span class="section-number">17. </span>Dynamics of Systems of Particles<a class="headerlink" href="#dynamics-of-systems-of-particles" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Dynamics of Systems of Particles<a class="headerlink" href="#dynamics-of-systems-of-particles" title="Link to this heading">#</a></h1>
 <p>In this unit, we will develop some general physical principles which we can use to study the behaviour of systems for which we wish to describe the motion of two or more particles. Then we will apply these general rules to specific examples of such systems.</p>
 <section id="centre-of-mass-and-linear-momentum">
-<h2><span class="section-number">17.1. </span>Centre of Mass and Linear Momentum<a class="headerlink" href="#centre-of-mass-and-linear-momentum" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Centre of Mass and Linear Momentum<a class="headerlink" href="#centre-of-mass-and-linear-momentum" title="Link to this heading">#</a></h2>
 <p>We begin with some definitions. In general, we are considering a system of <span class="math notranslate nohighlight">\(N\)</span> particles, each of mass <span class="math notranslate nohighlight">\(m_j\)</span> (<span class="math notranslate nohighlight">\(j=1,2,...,N\)</span>), situated at vector positions <span class="math notranslate nohighlight">\(\vec{r}_j\)</span>. Using this notation, the <strong>center of mass</strong> of the system is the point with position:</p>
 <div class="math notranslate nohighlight">
 \[\vec{r}_{cm} = \dfrac{\sum_{j=1}^N m_j\,\vec{r}_j}{\sum_{j=1}^N m_j}.\]</div>
@@ -453,7 +482,7 @@ document.write(`
 \[\rightarrow v_2 = v_3 = \frac{5}{2\sqrt{2}}\,v_0 \approx 1.77 v_0.\]</div>
 </section>
 <section id="angular-momentum-and-kinetic-energy-of-a-system">
-<h2><span class="section-number">17.2. </span>Angular Momentum and Kinetic Energy of a System<a class="headerlink" href="#angular-momentum-and-kinetic-energy-of-a-system" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>Angular Momentum and Kinetic Energy of a System<a class="headerlink" href="#angular-momentum-and-kinetic-energy-of-a-system" title="Link to this heading">#</a></h2>
 <p>It seems logical to assign the total angular momentum, <span class="math notranslate nohighlight">\( \vec{L} \)</span>, of our system as the sum of the individual angular momenta of its constituent particles:</p>
 <div class="math notranslate nohighlight">
 \[\vec{L} = \sum_i m_i\,\vec{r}_i \times \vec{v}_i.\]</div>
@@ -497,7 +526,7 @@ document.write(`
 <p>The first term is the kinetic energy of translation of the whole system, and the second is the kinetic energy of motion relative to the centre of mass.</p>
 </section>
 <section id="the-two-body-problem-and-reduced-mass">
-<h2><span class="section-number">17.3. </span>The Two-Body Problem and Reduced Mass<a class="headerlink" href="#the-two-body-problem-and-reduced-mass" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>The Two-Body Problem and Reduced Mass<a class="headerlink" href="#the-two-body-problem-and-reduced-mass" title="Link to this heading">#</a></h2>
 <p><img alt="A system of two bodies with masses  and , with respective positions  and  relative to the centre of mass." src="../_images/twobody.png" /></p>
 <p>Consider a system consisting of two bodies of masses <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span>, as shown in the figure above. Using our previous notation, we can assign these masses with positions <span class="math notranslate nohighlight">\(\overline{\vec{r}}_1\)</span> and <span class="math notranslate nohighlight">\(\overline{\vec{r}}_2\)</span> relative to the centre of mass of the system, which we take to be at the origin for convenience. The position of the centre of mass lies somewhere on the line connecting the two bodies, since we must satisfy the definition of the centre of mass position:</p>
 <div class="math notranslate nohighlight">
@@ -523,14 +552,14 @@ document.write(`
 \[    P/\mathrm{yr} = \left(\dfrac{M}{M_{\odot}}\right)^{-1/2} \left(\dfrac{a}{\mathrm{AU}}\right)^{3/2}.\]</div>
 <p>For most planets in the Solar System, the added mass term in this formula for orbital period makes very little difference – for example, the Earth-to-Sun mass ratio is only <span class="math notranslate nohighlight">\(\sim 1/330000\)</span>. For the most massive planet, Jupiter, this ratio is <span class="math notranslate nohighlight">\(\sim 1/1000\)</span>, which changes the ‘fixed Sun’ value for Jupiter’s orbital period by about <span class="math notranslate nohighlight">\(0.05\%\)</span>. One can note, however, that for systems where the masses of the two bodies are more comparable, this correction would be much more important to take into account.</p>
 <section id="binary-star-systems">
-<h3><span class="section-number">17.3.1. </span>Binary Star Systems<a class="headerlink" href="#binary-star-systems" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.3.1. </span>Binary Star Systems<a class="headerlink" href="#binary-star-systems" title="Link to this heading">#</a></h3>
 <p>Half of all the stars in our galaxy are actually two-body systems, in which two stars revolve about their common centre of mass. The distances between the component stars can vary widely. The star Sirius is actually a binary system consisting of the luminous star known as Sirius, of mass <span class="math notranslate nohighlight">\(\sim 2.1\,M_{\odot}\)</span>; and a much fainter white dwarf star, of mass <span class="math notranslate nohighlight">\(\sim 1.05\,M_{\odot}\)</span>, which is situated at distances <span class="math notranslate nohighlight">\(\sim 20\,\mathrm{AU}\)</span> from its bright companion. The corresponding orbital period of the system is <span class="math notranslate nohighlight">\(\sim 50 \,\mathrm{yr}\)</span>.</p>
 <p>The X-ray source Cygnus X-1 is a binary system consisting of a <span class="math notranslate nohighlight">\(\sim20\,M_{\odot}\)</span> star whose companion is a black hole of similar mass. Their distance of separation is a comparatively small ~<span class="math notranslate nohighlight">\(0.2\,\mathrm{AU}\)</span>. Matter from the outer layers of the larger `regular’ star in this system is being accreted by the black hole. As the material falls towards the black hole, it forms an accretion disc. As the matter in this disc orbits the black hole, it can lose energy by frictional heating and crash down into it, heating to temperatures exceeding tens of millions of degrees which makes the hot gas radiate strongly in the X-ray waveband.</p>
 <p><img alt="Artist's impression of Cygnus X-1" src="../_images/Cygnus_X-1.png" /><br />
 <em>Credit: ESA/HST</em></p>
 </section>
 <section id="dynamics-of-collisions">
-<h3><span class="section-number">17.3.2. </span>Dynamics of Collisions<a class="headerlink" href="#dynamics-of-collisions" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.3.2. </span>Dynamics of Collisions<a class="headerlink" href="#dynamics-of-collisions" title="Link to this heading">#</a></h3>
 <p>When two bodies collide, the forces they exert on each other during the time of contact can be considered internal forces in the system consisting of the two bodies alone. Thus total linear momentum must be conserved and the total vector momentum of the bodies before and after the collision must be equal:</p>
 <div class="math notranslate nohighlight">
 \[m_1\,\vec{v}_1 + m_2\,\vec{v}_2 = m_1\,\vec{v'}_1 + m_2\,\vec{v'}_2.\]</div>
@@ -539,7 +568,7 @@ document.write(`
 \[\dfrac{1}{2} m_1 v_1^2 + \dfrac{1}{2} m_2 v_2^2 = \dfrac{1}{2} m_1 {v'_1}^2 + \dfrac{1}{2} m_2 v_2'^2 + Q,\]</div>
 <p>where <span class="math notranslate nohighlight">\(Q\)</span> indicates that part of the initial total kinetic energy which is dissipated as, for example, heat energy during the collision. If <span class="math notranslate nohighlight">\(Q=0\)</span>, no energy loss occurs and the collision is said to be <strong>elastic</strong>. The cases <span class="math notranslate nohighlight">\(Q&gt;0\)</span> and <span class="math notranslate nohighlight">\(Q&lt;0\)</span> respectively represent <strong>exoergic</strong> and <strong>endoergic</strong> collisions.</p>
 <section id="direct-collisions-single-axis-of-motion">
-<h4><span class="section-number">17.3.2.1. </span>Direct Collisions (Single Axis of Motion)<a class="headerlink" href="#direct-collisions-single-axis-of-motion" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">6.3.2.1. </span>Direct Collisions (Single Axis of Motion)<a class="headerlink" href="#direct-collisions-single-axis-of-motion" title="Link to this heading">#</a></h4>
 <p>If our two colliding particles are constrained to move back and forth along only one coordinate axis – let us call it the <span class="math notranslate nohighlight">\(x\)</span> axis – the momentum conservation reads:</p>
 <div class="math notranslate nohighlight">
 \[m_1\,\dot{x}_1 + m_2\,\dot{x}_2 = m_1\,\dot{x}'_1 + m_2\,\dot{x}'_2.\]</div>
@@ -563,14 +592,14 @@ document.write(`
 <p>For anelastic collisions with <span class="math notranslate nohighlight">\(\epsilon=0\)</span>, where the bodies stick together after collision, we find that the post-collision velocities agree, <span class="math notranslate nohighlight">\(\dot{x}'_2 = \dot{x}'_1\)</span>, as expected. For the elastic case <span class="math notranslate nohighlight">\(\epsilon=1, m_1=m_2\)</span>, the bodies simply exchange velocities after collision – <span class="math notranslate nohighlight">\(\dot{x}'_1 = \dot{x}_2, \dot{x}'_2 = \dot{x}_1\)</span>.</p>
 </section>
 <section id="impulse">
-<h4><span class="section-number">17.3.2.2. </span>Impulse<a class="headerlink" href="#impulse" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">6.3.2.2. </span>Impulse<a class="headerlink" href="#impulse" title="Link to this heading">#</a></h4>
 <p>The concept of impulse is usually associated with forces which act for relatively short times, such as the forces between colliding bodies. If the bodies are in contact for an interval of time <span class="math notranslate nohighlight">\(t_1\rightarrow t_1 + \Delta t\)</span>, and the force acting on one body is <span class="math notranslate nohighlight">\(\vec{F}\)</span>, then the corresponding change in its momentum is:</p>
 <div class="math notranslate nohighlight">
 \[\Delta({m\vec{v}}) =\int_{t_1}^{t_1 + \Delta t} \vec{F}\,dt.\]</div>
 <p>The time integral of force in this equation is known as the <strong>impulse</strong>, and has units of momentum.</p>
 </section>
 <section id="oblique-collisions">
-<h4><span class="section-number">17.3.2.3. </span>Oblique Collisions<a class="headerlink" href="#oblique-collisions" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">6.3.2.3. </span>Oblique Collisions<a class="headerlink" href="#oblique-collisions" title="Link to this heading">#</a></h4>
 <p>In this section, we consider the more general case of collisions where the motion of the colliding bodies is not confined to a straight line. We start by considering the case of a particle of mass <span class="math notranslate nohighlight">\(m_1\)</span> with initial velocity <span class="math notranslate nohighlight">\(\vec{v}_1\)</span> which strikes a particle of mass <span class="math notranslate nohighlight">\(m_2\)</span> which is initially at rest. The conservation of total momentum must still apply, provided we use the vector sum of momenta.</p>
 <div class="math notranslate nohighlight">
 \[m_1\,\vec{v}_1 = m_1\,\vec{v}'_1 + m_2\,\vec{v}'_2.\]</div>
@@ -589,7 +618,7 @@ document.write(`
 </section>
 </section>
 <section id="centre-of-mass-coordinates">
-<h3><span class="section-number">17.3.3. </span>Centre Of Mass Coordinates<a class="headerlink" href="#centre-of-mass-coordinates" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.3.3. </span>Centre Of Mass Coordinates<a class="headerlink" href="#centre-of-mass-coordinates" title="Link to this heading">#</a></h3>
 <p>Figure <img alt="cofmcoord" src="../_images/cofmcoord.png" /> shows the same collision between two particles in two different coordinate frames. In the so-called laboratory frame, we observe an incident particle of mass <span class="math notranslate nohighlight">\( m_1 \)</span> and velocity <span class="math notranslate nohighlight">\( \vec{v}_1 \)</span> striking a stationary target particle of mass <span class="math notranslate nohighlight">\( m_2 \)</span>. After the collision, both particles are in motion and their velocities make angles <span class="math notranslate nohighlight">\( \phi_1 \)</span> and <span class="math notranslate nohighlight">\( \phi_2 \)</span> with the direction of the incident velocity.</p>
 <p>Now, if we consider the same collision in the centre-of-mass coordinates, in which the centre of mass is stationary, the picture changes. We recall that for a system such as this, with two particles and no external forces, the centre of mass does not accelerate and remains situated on the line connecting the two particles. In the frame of reference where the centre of mass is stationary, the total momentum before collision and after collision must be zero. Thus, in the centre-of-mass frame, the particles move in opposite directions before the collision, both approaching the stationary centre of mass. And after the collision, their velocities make the same angle <span class="math notranslate nohighlight">\( \theta \)</span> with their initial directions of motion.</p>
 <p><img alt="cofmcoord" src="../_images/cofmcoord.png" /><br />
@@ -639,10 +668,10 @@ v'_1 \, \cos{\phi_1} = \overline{v'}_1\, \cos\theta + v_{cm}\]</div>
 </section>
 </section>
 <section id="rotation-of-rigid-bodies">
-<h2><span class="section-number">17.4. </span>Rotation of Rigid Bodies<a class="headerlink" href="#rotation-of-rigid-bodies" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>Rotation of Rigid Bodies<a class="headerlink" href="#rotation-of-rigid-bodies" title="Link to this heading">#</a></h2>
 <p>A rigid body may be considered a system of particles (mass elements) whose positions relative to each other remain fixed. In this section, we consider the properties of rotational motion of a rigid body, for the case where the axis of rotation maintains a fixed direction in space.</p>
 <section id="centre-of-mass-of-a-rigid-body">
-<h3><span class="section-number">17.4.1. </span>Centre of Mass of a Rigid Body<a class="headerlink" href="#centre-of-mass-of-a-rigid-body" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.4.1. </span>Centre of Mass of a Rigid Body<a class="headerlink" href="#centre-of-mass-of-a-rigid-body" title="Link to this heading">#</a></h3>
 <p>Our previous definition of the centre of mass of a system of discrete particles can be generalized by an integral definition for a rigid, extended body. Using Cartesian coordinates, the position of the centre of mass thus becomes:</p>
 <div class="math notranslate nohighlight">
 \[x_{cm} = \dfrac{\int_{\mathcal{V}} \rho\,x\,d\mathcal{V}}
@@ -689,7 +718,7 @@ For the case of a body which takes the form of a thin wire, we could replace the
     = \dfrac{4a}{3\pi}.\]</div>
 </section>
 <section id="moment-of-inertia">
-<h3><span class="section-number">17.4.2. </span>Moment of Inertia<a class="headerlink" href="#moment-of-inertia" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.4.2. </span>Moment of Inertia<a class="headerlink" href="#moment-of-inertia" title="Link to this heading">#</a></h3>
 <p>Consider now the rotation of a rigid body about a fixed axis, which we shall refer to as the <span class="math notranslate nohighlight">\( z \)</span>-axis. The path of a single point in the moving body may be described by coordinates <span class="math notranslate nohighlight">\( (x_i, y_i, z_i) \)</span> where <span class="math notranslate nohighlight">\( z_i \)</span> remains fixed and the other coordinates describe a circular path <span class="math notranslate nohighlight">\( x_i^2 + y_i^2 = r_i^2 \)</span>, where <span class="math notranslate nohighlight">\( r_i \)</span> is the constant perpendicular distance of the point from the axis of rotation.</p>
 <p>The speed of the element of mass <span class="math notranslate nohighlight">\( m_i \)</span> located at this point will be</p>
 <div class="math notranslate nohighlight">
@@ -755,7 +784,7 @@ For the case of a body which takes the form of a thin wire, we could replace the
 <span class="math notranslate nohighlight">\(\frac{2}{3} M_s a^2\)</span>, where the mass of the shell is <span class="math notranslate nohighlight">\(M_s = 4\pi \sigma a^2\)</span>.</p>
 </section>
 <section id="the-parallel-axis-theorem">
-<h3><span class="section-number">17.4.3. </span>The Parallel Axis Theorem<a class="headerlink" href="#the-parallel-axis-theorem" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.4.3. </span>The Parallel Axis Theorem<a class="headerlink" href="#the-parallel-axis-theorem" title="Link to this heading">#</a></h3>
 <p>Consider the moment of inertia about the <span class="math notranslate nohighlight">\(z\)</span> axis for a rigid body of arbitrary shape, which can be considered to be composed of mass elements <span class="math notranslate nohighlight">\(\delta m_i\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[I_z = \sum_i \, \delta m_i\,(x_i^2 + y_i^2).\]</div>
@@ -777,10 +806,10 @@ For the case of a body which takes the form of a thin wire, we could replace the
 <p>which expresses, in mathematical form, the <strong>Parallel Axis Theorem</strong> for moments of inertia: <em>The moment of inertia of a rigid body taken about any axis is equal to the moment of inertia about a parallel axis passing through the centre of mass, plus the product of the mass of the body and the square of the perpendicular distance between the two axes.</em></p>
 </section>
 <section id="towards-lagrangian-mechanics-non-examinable">
-<h3><span class="section-number">17.4.4. </span>Towards Lagrangian Mechanics (Non-Examinable)<a class="headerlink" href="#towards-lagrangian-mechanics-non-examinable" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.4.4. </span>Towards Lagrangian Mechanics (Non-Examinable)<a class="headerlink" href="#towards-lagrangian-mechanics-non-examinable" title="Link to this heading">#</a></h3>
 <p>An elegant alternative formalism for investigating the time-dependent motion of a system of particles evolved from the work of Leibniz (1646-1716), Bernoulli (1667-1748), D’Alembert (1717-1783) and Lagrange (1736-1813). As an introduction to Lagrangian mechanics, we take the approach in this section of describing how Lagrange’s equations can be derived from a variational principle developed by Hamilton (1805-1865), and consider a couple of simple applications.</p>
 <section id="hamiltons-variational-principle">
-<h4><span class="section-number">17.4.4.1. </span>Hamilton’s Variational Principle<a class="headerlink" href="#hamiltons-variational-principle" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">6.4.4.1. </span>Hamilton’s Variational Principle<a class="headerlink" href="#hamiltons-variational-principle" title="Link to this heading">#</a></h4>
 <p>Defining the <strong>Lagrangian</strong> function <span class="math notranslate nohighlight">\(L = T - V\)</span> as the difference between the potential and kinetic energy of a system of particles, Hamilton’s principle is related to the evolution of the system between two times, <span class="math notranslate nohighlight">\(t_1\)</span> and <span class="math notranslate nohighlight">\(t_2\)</span>. Out of the many possible ways that the positions and velocities of the constituent particles could evolve between these times, the <em>actual motion</em> is the <code class="docutils literal notranslate"><span class="pre">trajectory</span></code> (evolution in time of positions and velocities) of the system which either maximizes or minimizes the integral:</p>
 <div class="math notranslate nohighlight">
 \[    J = \int_{t_1}^{t_2} L\,dt,\]</div>
@@ -815,7 +844,7 @@ For the case of a body which takes the form of a thin wire, we could replace the
 </section>
 </section>
 <section id="lagranges-equations">
-<h3><span class="section-number">17.4.5. </span>Lagrange’s Equations<a class="headerlink" href="#lagranges-equations" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.4.5. </span>Lagrange’s Equations<a class="headerlink" href="#lagranges-equations" title="Link to this heading">#</a></h3>
 <p>We may repeat this kind of calculation for a more general case, where we have a system of particles whose positions can be described by a set of <strong>generalized</strong> coordinates <span class="math notranslate nohighlight">\(q_i\)</span>, each of which is some function of time. The <span class="math notranslate nohighlight">\(q_i\)</span> are referred to as generalized because in this formalism they can be distances, angles, or some combination of these kinds of quantities. For each function <span class="math notranslate nohighlight">\(q_i\)</span>, there is of course a generalized velocity <span class="math notranslate nohighlight">\(\dot{q_i}\)</span>. Applying Hamilton’s principle to these more general parameters, one can prove (we give the result here without proof) that the motion of the system is constrained by the following equations:</p>
 <div class="math notranslate nohighlight">
 \[    \dfrac{\partial L}{\partial q_i} - \dfrac{d}{dt} \left( \dfrac{\partial L}{\partial \dot{q_i}} \right) = 0. \]</div>
@@ -869,11 +898,10 @@ For the case of a body which takes the form of a thin wire, we could replace the
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="gravity.html"
@@ -881,13 +909,19 @@ For the case of a body which takes the form of a thin wire, we could replace the
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">16. </span>Gravitation and Central Forces</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Gravitation and Central Forces</p>
       </div>
     </a>
-</div></div>
-  
+    <a class="right-next"
+       href="../electromagnetism/electrostatics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Electrostatics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-
                 </footer>
               
             </div>
@@ -896,34 +930,35 @@ For the case of a body which takes the form of a thin wire, we could replace the
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-and-linear-momentum">17.1. Centre of Mass and Linear Momentum</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-and-kinetic-energy-of-a-system">17.2. Angular Momentum and Kinetic Energy of a System</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-body-problem-and-reduced-mass">17.3. The Two-Body Problem and Reduced Mass</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-star-systems">17.3.1. Binary Star Systems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-of-collisions">17.3.2. Dynamics of Collisions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-collisions-single-axis-of-motion">17.3.2.1. Direct Collisions (Single Axis of Motion)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#impulse">17.3.2.2. Impulse</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-collisions">17.3.2.3. Oblique Collisions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-and-linear-momentum">6.1. Centre of Mass and Linear Momentum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-and-kinetic-energy-of-a-system">6.2. Angular Momentum and Kinetic Energy of a System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-body-problem-and-reduced-mass">6.3. The Two-Body Problem and Reduced Mass</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-star-systems">6.3.1. Binary Star Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-of-collisions">6.3.2. Dynamics of Collisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-collisions-single-axis-of-motion">6.3.2.1. Direct Collisions (Single Axis of Motion)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#impulse">6.3.2.2. Impulse</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-collisions">6.3.2.3. Oblique Collisions</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-coordinates">17.3.3. Centre Of Mass Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-coordinates">6.3.3. Centre Of Mass Coordinates</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-of-rigid-bodies">17.4. Rotation of Rigid Bodies</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-of-a-rigid-body">17.4.1. Centre of Mass of a Rigid Body</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moment-of-inertia">17.4.2. Moment of Inertia</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parallel-axis-theorem">17.4.3. The Parallel Axis Theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#towards-lagrangian-mechanics-non-examinable">17.4.4. Towards Lagrangian Mechanics (Non-Examinable)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltons-variational-principle">17.4.4.1. Hamilton’s Variational Principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-of-rigid-bodies">6.4. Rotation of Rigid Bodies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-of-a-rigid-body">6.4.1. Centre of Mass of a Rigid Body</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moment-of-inertia">6.4.2. Moment of Inertia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parallel-axis-theorem">6.4.3. The Parallel Axis Theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#towards-lagrangian-mechanics-non-examinable">6.4.4. Towards Lagrangian Mechanics (Non-Examinable)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltons-variational-principle">6.4.4.1. Hamilton’s Variational Principle</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagranges-equations">17.4.5. Lagrange’s Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagranges-equations">6.4.5. Lagrange’s Equations</a></li>
 </ul>
 </li>
 </ul>
@@ -947,9 +982,10 @@ By Natural Sciences
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -973,8 +1009,8 @@ By Natural Sciences
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
