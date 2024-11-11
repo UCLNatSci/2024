@@ -116,11 +116,11 @@ Let $ X $ be a random variable uniformly distributed between 0 and 1. The probab
 - Continuous Uniform: Used in modeling situations where every outcome in a continuous interval is equally likely, such as the selection of a random time between 0 and 1 hour or generating random numbers in a specified range for simulations.
 
 
-# Binomial Distribution
+## Binomial Distribution
 
 The binomial distribution describes the number of successes in a fixed number of independent trials of a binary (yes/no, success/failure) experiment. It is often used to model situations where there are two possible outcomes for each trial, such as flipping a coin.
 
-## Binomial Distribution Basics
+### Binomial Distribution Basics
 
 The binomial distribution is characterized by:
 - The number of trials $ n $
@@ -137,11 +137,11 @@ where:
 - $ n $ is the number of trials
 - $ k $ is the number of successes
 
-## Example 1: Flipping a Fair Coin
+#### Example 1: Flipping a Fair Coin
 
 Consider flipping a fair coin $ n = 10 $ times, and we want to calculate the probability of getting exactly $ k $ heads (successes) in those 10 flips. In this case, the probability of getting heads (success) on any single flip is $ p = 0.5 $.
 
-### Probability of Getting Exactly 5 Heads:
+*Probability of Getting Exactly 5 Heads:*
 We can calculate the probability of getting exactly 5 heads out of 10 flips using the binomial formula:
 ```{math}
 P(X = 5) = \binom{10}{5} (0.5)^5 (0.5)^{10-5} = \binom{10}{5} (0.5)^{10}
@@ -156,7 +156,7 @@ P(X = 5) = 252 \times (0.5)^{10} = 252 \times \frac{1}{1024} \approx 0.2461
 ```
 So, the probability of getting exactly 5 heads in 10 flips of a fair coin is approximately 0.2461.
 
-### Expected Value and Variance:
+*Expected Value and Variance:*
 For a binomial distribution, the expected value $ E[X] $ and variance $ \text{Var}(X) $ are given by:
 ```{math}
 E[X] = n \cdot p
@@ -173,11 +173,11 @@ E[X] = 10 \cdot 0.5 = 5
 ```
 The expected number of heads is 5, and the variance is 2.5.
 
-## Example 2: Flipping an Unfair Coin
+### Example 2: Flipping an Unfair Coin
 
 Now, consider flipping an unfair coin $ n = 10 $ times, where the probability of getting heads (success) is $ p = 0.7 $ and the probability of getting tails (failure) is $ 1 - p = 0.3 $.
 
-### Probability of Getting Exactly 7 Heads:
+*Probability of Getting Exactly 7 Heads:*
 We can calculate the probability of getting exactly 7 heads out of 10 flips using the binomial formula:
 ```{math}
 P(X = 7) = \binom{10}{7} (0.7)^7 (0.3)^{10-7}
@@ -192,7 +192,7 @@ P(X = 7) = 120 \times (0.7)^7 \times (0.3)^3 \approx 120 \times 0.0823543 \times
 ```
 So, the probability of getting exactly 7 heads in 10 flips of an unfair coin is approximately 0.267.
 
-### Expected Value and Variance:
+*Expected Value and Variance:*
 For an unfair coin with $ p = 0.7 $ and $ n = 10 $ flips:
 ```{math}
 E[X] = 10 \cdot 0.7 = 7
@@ -202,18 +202,18 @@ E[X] = 10 \cdot 0.7 = 7
 ```
 The expected number of heads is 7, and the variance is 2.1.
 
-## Key Properties of the Binomial Distribution
+### Key Properties of the Binomial Distribution
 - Independence: The trials are independent, meaning the outcome of one flip does not affect the others.
 - Fixed Number of Trials: The number of trials $ n $ is fixed in advance.
 - Binary Outcomes: Each trial has two possible outcomes: success (e.g., heads) or failure (e.g., tails).
 - Constant Probability: The probability of success $ p $ remains constant across all trials.
 
-## Applications of the Binomial Distribution
+### Applications of the Binomial Distribution
 - Coin Flips: As shown in the examples, the binomial distribution is commonly used for modeling the number of heads in a series of coin flips.
 - Quality Control: It can be used in quality control for determining the number of defective items in a batch.
 - Survey Sampling: The binomial distribution is useful when analyzing the number of people who respond in a certain way in a survey, given a fixed number of respondents.
 
-## Normal Approximation to the Binomial Distribution
+### Normal Approximation to the Binomial Distribution
 For large values of $ n $, the binomial distribution can be approximated by a normal distribution with the same mean and variance:
 ```{math}
 N(\mu, \sigma^2) \quad \text{where} \quad \mu = n \cdot p \quad \text{and} \quad \sigma^2 = n \cdot p \cdot (1 - p)
@@ -221,13 +221,13 @@ N(\mu, \sigma^2) \quad \text{where} \quad \mu = n \cdot p \quad \text{and} \quad
 This approximation becomes more accurate as $ n $ increases, especially when both $ n \cdot p $ and $ n \cdot (1 - p) $ are greater than 5.
 
 
-# Poisson Distribution
+## Poisson Distribution
 
 The Poisson distribution is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space. These events must occur with a known constant mean rate and independently of the time since the last event.
 
 It is often used to model the number of events that happen in a fixed interval (e.g., number of phone calls at a call center in an hour, number of accidents at an intersection in a day, etc.).
 
-## Poisson Distribution Basics
+### Poisson Distribution Basics
 
 The Poisson distribution is characterized by a single parameter $ \lambda $, which represents the average number of events in the given interval. The probability mass function (PMF) for the Poisson distribution is:
 
@@ -241,7 +241,7 @@ Where:
 - $ e $ is Euler's number (approximately 2.71828),
 - $ k! $ is the factorial of $ k $.
 
-## Key Properties of the Poisson Distribution
+### Key Properties of the Poisson Distribution
 
 - Mean: The mean of a Poisson distribution is equal to its rate parameter $ \lambda $.
   ```{math}
@@ -257,7 +257,7 @@ Where:
 
 - Constant Rate: Events occur at a constant average rate $ \lambda $ over the interval, and the time between events is exponentially distributed.
 
-## Example: Number of Customer Arrivals at a Store
+### Example: Number of Customer Arrivals at a Store
 
 Let’s say the average number of customers arriving at a store per hour is 5. This can be modeled as a Poisson distribution with $ \lambda = 5 $ for a one-hour period.
 
@@ -284,7 +284,7 @@ P(X = 3) = \frac{125 \times 0.0067379}{6} \approx 0.1404
 
 So, the probability that exactly 3 customers will arrive in one hour is approximately 0.1404 (or 14.04%).
 
-### Probability of 0 Customers Arriving in One Hour:
+*Probability of 0 Customers Arriving in One Hour:*
 
 We can calculate the probability of 0 customers arriving in one hour:
 
@@ -294,7 +294,7 @@ P(X = 0) = \frac{5^0 e^{-5}}{0!} = \frac{1 \times 0.0067379}{1} = 0.0067379
 
 So, the probability that no customers arrive in one hour is approximately 0.0067 (or 0.67%).
 
-## Applications of the Poisson Distribution
+### Applications of the Poisson Distribution
 
 The Poisson distribution is widely used in various fields for modeling count-based data, such as:
 - Customer service: Modeling the number of customer calls, complaints, or arrivals.
@@ -302,7 +302,7 @@ The Poisson distribution is widely used in various fields for modeling count-bas
 - Traffic flow: Modeling the number of cars passing through a toll booth or traffic light within a fixed time period.
 - Queuing theory: Modeling the number of customers arriving at a service point in a given time period.
 
-## Relation to the Exponential Distribution
+### Relation to the Exponential Distribution
 
 The Poisson distribution is related to the exponential distribution. The time between events in a Poisson process follows an exponential distribution with rate parameter $ \lambda $. The exponential distribution is used to model the time between successive events in a Poisson process.
 
@@ -314,7 +314,7 @@ F(t) = 1 - e^{-\lambda t}
 
 Where $ t $ is the time between events and $ \lambda $ is the rate of events.
 
-## Normal Approximation to the Poisson Distribution
+### Normal Approximation to the Poisson Distribution
 
 For large values of $ \lambda $, the Poisson distribution can be approximated by a normal distribution with mean $ \lambda $ and variance $ \lambda $. This approximation is most accurate when $ \lambda $ is large (typically when $ \lambda > 10 $).
 
@@ -325,11 +325,11 @@ N(\mu = \lambda, \sigma^2 = \lambda)
 
 This allows the use of normal distribution tools (e.g., z-scores) to approximate Poisson probabilities when $ \lambda $ is large.
 
-# Normal Distribution
+## Normal Distribution
 
 The normal distribution, also known as the Gaussian distribution, is one of the most widely used probability distributions in statistics. It is used to model a wide range of natural phenomena, such as heights, test scores, and measurement errors. The normal distribution is characterized by its bell-shaped curve, which is symmetric about the mean.
 
-## Normal Distribution Basics
+### Normal Distribution Basics
 
 The probability density function (PDF) of the normal distribution is given by the formula:
 
@@ -355,7 +355,7 @@ The normal distribution is fully characterized by its mean $ \mu $ and standard 
   - Approximately 95% lies within two standard deviations.
   - Approximately 99.7% lies within three standard deviations.
 
-## Standard Normal Distribution
+### Standard Normal Distribution
 
 A standard normal distribution is a normal distribution with a mean of 0 and a standard deviation of 1. It is denoted as $ Z $ and has the following probability density function:
 
@@ -377,7 +377,7 @@ Where:
 
 By converting any normal distribution to the standard normal distribution using the z-score, we can use z-tables (or standard normal distribution tables) to find probabilities associated with a given value.
 
-##  Example: Heights of People
+###  Example: Heights of People
 
 Suppose the heights of adult women in the United States are normally distributed with a mean height of $ \mu = 64 $ inches and a standard deviation of $ \sigma = 3 $ inches. Let’s calculate the probability that a randomly selected woman is taller than 68 inches.
 
@@ -394,20 +394,20 @@ P(X > 68) = 1 - 0.9082 = 0.0918
 
 Thus, the probability that a randomly selected woman is taller than 68 inches is approximately 9.18%.
 
-##  Properties of the Normal Distribution
+###  Properties of the Normal Distribution
 
 - Mean, Median, and Mode: In a normal distribution, the mean, median, and mode all coincide at the center of the distribution.
 - 68-95-99.7 Rule: This rule, also known as the empirical rule, states the percentage of data that lies within 1, 2, and 3 standard deviations of the mean, respectively.
 - Skewness and Kurtosis: The normal distribution has skewness = 0 (it is symmetric), and kurtosis = 3 (it has a moderate peak).
 
-## Applications of the Normal Distribution
+### Applications of the Normal Distribution
 
 - Measurement Errors: Many physical measurements (e.g., lengths, weights, times) are modeled as normally distributed because of the Central Limit Theorem.
 - Central Limit Theorem (CLT): The CLT states that the distribution of the sum (or average) of a large number of independent, identically distributed random variables approaches a normal distribution, regardless of the original distribution. This is why normal distributions often arise in practice, even for non-normal underlying distributions.
 - Quality Control: In manufacturing, the normal distribution is used to model variations in products or processes and to set control limits for quality testing.
 - Finance: Stock returns are often assumed to follow a normal distribution for risk assessment and pricing options.
 
-## Normal Approximation to the Binomial Distribution
+### Normal Approximation to the Binomial Distribution
 
 When the number of trials $ n $ is large and the probability of success $ p $ is not too close to 0 or 1, the binomial distribution can be approximated by a normal distribution. The normal approximation is valid when both $ np $ and $ n(1 - p) $ are greater than 5.
 
@@ -418,17 +418,99 @@ The mean and variance of the approximating normal distribution are:
 
 For large $ n $, this approximation makes it easier to compute binomial probabilities using the normal distribution.
 
-## Normal Distribution and the Central Limit Theorem
+## Central Limit Theorem (CLT)
 
-The Central Limit Theorem (CLT) is one of the most important results in statistics. It states that if we take a large number of independent samples from any distribution (with finite mean and variance), the sampling distribution of the sample mean will approach a normal distribution as the sample size $ n $ increases, regardless of the original distribution.
+### Overview
+- *Statement*: The Central Limit Theorem (CLT) states that the distribution of the sum (or average) of a large number of independent, identically distributed (i.i.d.) random variables, each with finite mean and variance, approaches a normal distribution as the sample size $ n $ grows.
+- *Implication*: Regardless of the original distribution of the data (e.g., uniform, skewed, etc.), the sampling distribution of the sample mean will approximate normality as $ n $ becomes large.
+
+### Key Concepts
+1. *Independence and Identical Distribution*:
+   - The CLT requires that samples are independent of each other and identically distributed.
+2. *Finite Mean and Variance*:
+   - Each random variable $ X_i $ in the sample has a finite mean $ \mu $ and variance $ \sigma^2 $.
+3. *Convergence to Normality*:
+   - As $ n \to \infty $, the distribution of the sample mean $ \bar{X} $ converges to a normal distribution:
+     ```{math}
+     \bar{X} \sim \mathcal{N}\left(\mu, \frac{\sigma^2}{n}\right)
+     ```
+4. *Standardized Form*:
+   - The standardized sum of random variables $ S_n = \frac{\sum_{i=1}^n X_i - n \mu}{\sigma \sqrt{n}} $ will approach a standard normal distribution $ \mathcal{N}(0,1) $ as $ n $ becomes large.
+
+### Why CLT Matters
+- *Statistical Inference*: It justifies many inferential statistics techniques, especially confidence intervals and hypothesis tests, by allowing the use of the normal distribution as an approximation.
+- *Practical Applications*: Enables accurate predictions about population parameters (like the mean) using sample statistics, even if the population distribution is unknown or non-normal.
+
+### Practical Considerations
+- *Sample Size*: In practice, a sample size of $ n \geq 30 $ is often considered sufficient for the CLT to hold, although this depends on the skewness of the original distribution.
+- *Non-Identical Distributions*: CLT has variations that apply to non-identical distributions under certain conditions (e.g., the Lindeberg–Lévy CLT).
+
+### Example
+If we sample from a skewed distribution (e.g., exponential), the sample mean of sufficiently large samples will still approximately follow a normal distribution due to the CLT.
+
+The CLT is fundamental in probability and statistics as it bridges the gap between general distributions and the normal distribution, which is widely used in statistical analysis.
+
+---
+
+### CLT with Binomial and Poisson Distributions
+
+#### Binomial Distribution Example
+
+Suppose we have a binomial distribution $ X \sim \text{Binomial}(n, p) $, where:
+- $ n $ is the number of trials,
+- $ p $ is the probability of success in each trial.
+
+The binomial distribution has:
+- **Mean** $ \mu = np $,
+- **Variance** $ \sigma^2 = np(1 - p) $.
+
+#### Applying the CLT to a Binomial Distribution
+As the number of trials $ n $ becomes large, the distribution of the binomial random variable $ X $ approaches a normal distribution. For large $ n $, we can approximate $ X $ as:
+```{math}
+X \approx \mathcal{N}(np, np(1 - p))
+```
+This approximation becomes better as $ n $ grows, especially if $ p $ is not too close to 0 or 1.
+
+*Example*
+If we toss a coin 100 times ($ n = 100 $) with a probability $ p = 0.5 $ of landing heads, the number of heads $ X $ can be approximated by:
+```{math}
+X \sim \mathcal{N}(50, 25)
+```
+Thus, we can say $ X \approx \mathcal{N}(50, 25) $ or $ X \approx \mathcal{N}(50, 5^2) $, where the standard deviation is $ 5 $.
+
+#### Poisson Distribution Example
+
+Suppose we have a Poisson distribution $ X \sim \text{Poisson}(\lambda) $, where:
+- $ \lambda $ is the average rate of occurrences over a fixed interval.
+
+The Poisson distribution has:
+- **Mean** $ \mu = \lambda $,
+- **Variance** $ \sigma^2 = \lambda $.
+
+#### Applying the CLT to a Poisson Distribution
+As $ \lambda $ becomes large, the Poisson distribution approaches a normal distribution. For large $ \lambda $, we can approximate $ X $ as:
+```{math}
+X \approx \mathcal{N}(\lambda, \lambda)
+```
+
+*Example*
+Suppose a factory machine has a malfunction rate of 10 malfunctions per hour ($ \lambda = 10 $). For a large number of occurrences (say $ \lambda \geq 10 $), the number of malfunctions $ X $ in a given hour can be approximated as:
+```{math}
+X \approx \mathcal{N}(10, 10)
+```
+or $ X \approx \mathcal{N}(10, \sqrt{10}^2) $, where the standard deviation is approximately $ \sqrt{10} \approx 3.16 $.
+
+### Summary
+- In both examples, the *CLT allows us to approximate the discrete distributions (binomial and Poisson) with a normal distribution* when the parameters $ n $ (for binomial) or $ \lambda $ (for Poisson) are large.
+- This approximation simplifies analysis and calculations, especially when computing probabilities or working with large sample data.
 
 This explains why the normal distribution is so commonly observed in practice, even in situations where the underlying distribution is not normal.
 
-# Hypothesis Testing
+## Hypothesis Testing
 
 Hypothesis testing is a statistical method used to make inferences or decisions about a population based on sample data. It involves formulating a hypothesis, collecting data, and determining whether the data supports or contradicts the hypothesis.
 
-## Steps in Hypothesis Testing
+### Steps in Hypothesis Testing
 
 1. *State the Hypotheses*:
    - Null hypothesis ($ H_0 $): The hypothesis that there is no effect, difference, or relationship.
@@ -446,7 +528,7 @@ Hypothesis testing is a statistical method used to make inferences or decisions 
 5. *Make a Decision*:
    - Compare the test statistic to critical values (or p-value) to decide whether to reject or fail to reject the null hypothesis.
 
-## Type I and Type II Errors
+### Type I and Type II Errors
 
 - Type I Error (False Positive):
   - Occurs when the null hypothesis is rejected when it is actually true. This is a false positive.
@@ -460,18 +542,18 @@ Hypothesis testing is a statistical method used to make inferences or decisions 
 
 The relationship between Type I and Type II errors is that reducing the probability of one type of error increases the probability of the other. The power of a test, $ 1 - \beta $, is the probability of correctly rejecting a false null hypothesis.
 
-## Examples of Hypothesis Testing
+### Examples of Hypothesis Testing
 
-### Binomial Distribution Example
+#### Binomial Distribution Example
 
-#### Scenario:
+*Scenario:*
 Suppose a factory claims that 90% of its light bulbs pass the quality control test. You take a random sample of 100 bulbs and find that 85 of them pass. You want to test if the true proportion of passing bulbs is different from 90%.
 
-#### Hypotheses:
+*Hypotheses:*
 - Null Hypothesis ($ H_0 $): $ p = 0.9 $ (the proportion of passing bulbs is 90%).
 - Alternative Hypothesis ($ H_1 $): $ p \neq 0.9 $ (the proportion is not 90%).
 
-#### Test Statistic:
+*Test Statistic:*
 - The test statistic for a binomial test is the sample proportion $ \hat{p} $ and the z-score:
 ```{math}
 z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}
@@ -481,7 +563,7 @@ Where:
 - $ p_0 = 0.9 $ is the population proportion,
 - $ n = 100 $ is the sample size.
 
-#### Calculation:
+*Calculation:*
 ```{math}
 z = \frac{0.85 - 0.9}{\sqrt{\frac{0.9(1 - 0.9)}{100}}} = \frac{-0.05}{\sqrt{\frac{0.09}{100}}} = \frac{-0.05}{0.03} = -1.67
 ```
@@ -490,14 +572,14 @@ Now, check the critical value for a two-tailed test at $ \alpha = 0.05 $. The cr
 
 ### Poisson Distribution Example
 
-#### Scenario:
+*Scenario:*
 A call center receives an average of 10 calls per hour. You observe 15 calls in one hour and want to test if the rate of calls has increased.
 
-#### Hypotheses:
+* Hypotheses:*
 - Null Hypothesis ($ H_0 $): $ \lambda = 10 $ (the average rate of calls is 10 per hour).
 - Alternative Hypothesis ($ H_1 $): $ \lambda > 10 $ (the rate has increased).
 
-#### Test Statistic:
+*Test Statistic:*
 For the Poisson distribution, the test statistic is the observed number of events compared to the expected number of events. The test statistic follows a Poisson distribution, so we can use the Poisson probability mass function to calculate the p-value.
 
 For a one-tailed test with $ \lambda = 10 $, the probability of observing 15 or more calls is:
@@ -510,14 +592,14 @@ If the p-value is smaller than $ \alpha $, we reject the null hypothesis. Suppos
 
 ### Normal Distribution Example
 
-#### Scenario:
+*Scenario:*
 A manufacturer claims that the mean weight of its bags of flour is 5 kg. You take a sample of 30 bags and find the sample mean to be 4.8 kg with a sample standard deviation of 0.2 kg. Test whether the average weight is significantly different from 5 kg.
 
-#### Hypotheses:
+*Hypotheses:*
 - Null Hypothesis ($ H_0 $): $ \mu = 5 $ (the mean weight is 5 kg).
 - Alternative Hypothesis ($ H_1 $): $ \mu \neq 5 $ (the mean weight is not 5 kg).
 
-#### Test Statistic:
+*Test Statistic:*
 The test statistic for a sample mean is the z-score:
 ```{math}
 z = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}}
@@ -528,14 +610,14 @@ Where:
 - $ \sigma = 0.2 $ is the sample standard deviation,
 - $ n = 30 $ is the sample size.
 
-#### Calculation:
+*Calculation:*
 ```{math}
 z = \frac{4.8 - 5}{\frac{0.2}{\sqrt{30}}} = \frac{-0.2}{0.0365} \approx -5.48
 ```
 
 Now, check the critical z-values for a two-tailed test at $ \alpha = 0.05 $. The critical z-values are $ \pm 1.96 $. Since $ -5.48 $ is far less than $ -1.96 $, we reject the null hypothesis. The average weight is significantly different from 5 kg.
 
-## Power of a Test
+### Power of a Test
 
 The power of a hypothesis test is the probability of correctly rejecting the null hypothesis when it is false. It is defined as $ 1 - \beta $, where $ \beta $ is the probability of making a Type II error. A high power is desirable in hypothesis testing.
 

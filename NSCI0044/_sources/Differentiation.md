@@ -246,40 +246,6 @@ By applying some of these rules, we find a series of patterns in different funct
   \sin(ax+b) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = a \cos(ax+b)
   $$
 
-### Hyperbolic
-
-  $$
-  y = \cosh(f(x)) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = f'(x) \sinh(f(x))
-  $$
-
-  An example: 
-
-  $$
-  \cosh(ax^3+bx) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = (3ax^2 + b) \sinh(ax^3+bx)
-  $$
-
-### Inverse Trigonometric
-
-  $$
-  y = \arcsin(x)
-  $$
-
-  The easiest way to deal with these is to invert the function, then differentiate implicitly and finally simplify the resulting expression:
-
-  $$
-  \sin(y) = x \\
-  \cos(y) \frac{\textrm{d}y}{\textrm{d}x} = 1 \\
-  \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{1}{\cos(y)} = \frac{1}{\sqrt{1-\sin^2(y)}} = \frac{1}{\sqrt{1 - x^2}}
-  $$
-
-  The next level of complication comes for functions like $ y = \arctan(x) $:
-
-  $$
-  y = \arctan(x) \\
-  \tan(y) = x \\
-  \sec^2(x)\frac{\textrm{d}y}{\textrm{d}x} = 1 \\
-  \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{1}{\sec^2(y)} = \frac{1}{1 + \tan^2(y)} = \frac{1}{1 + x^2}
-  $$
 
 ### Exponential
 

@@ -107,10 +107,10 @@ For polynomials, the integral is straightforward using the power rule for integr
 
 For simple trigonometric functions, use the following standard integrals:
 
-- ```{math}
+```{math}
   \int \sin(x) \, \mathrm{d}x = -\cos(x) + C
   ```
-- ```{math}
+```{math}
   \int \cos(x) \, \mathrm{d}x = \sin(x) + C
   ```
 

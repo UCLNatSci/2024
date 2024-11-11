@@ -192,10 +192,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Integration.html">Areas and Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ODEs.html">Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Stats.html">Statistics and Probability</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Practice.html">Practice Problems</a></li>
 
 </ul>
@@ -411,8 +407,6 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation-tricks">Differentiation Tricks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric">Trigonometric</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic">Hyperbolic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric">Inverse Trigonometric</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential">Exponential</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic">Logarithmic</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powers">Powers</a></li>
@@ -628,40 +622,6 @@ f(x) = a = a\,x^0 \Rightarrow f'(x) = 0
   \sin(ax+b) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = a \cos(ax+b)
   \]</div>
 </section>
-<section id="hyperbolic">
-<h3>Hyperbolic<a class="headerlink" href="#hyperbolic" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[
-  y = \cosh(f(x)) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = f'(x) \sinh(f(x))
-  \]</div>
-<p>An example:</p>
-<div class="math notranslate nohighlight">
-\[
-  \cosh(ax^3+bx) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = (3ax^2 + b) \sinh(ax^3+bx)
-  \]</div>
-</section>
-<section id="inverse-trigonometric">
-<h3>Inverse Trigonometric<a class="headerlink" href="#inverse-trigonometric" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[
-  y = \arcsin(x)
-  \]</div>
-<p>The easiest way to deal with these is to invert the function, then differentiate implicitly and finally simplify the resulting expression:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-  \sin(y) = x \\
-  \cos(y) \frac{\textrm{d}y}{\textrm{d}x} = 1 \\
-  \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{1}{\cos(y)} = \frac{1}{\sqrt{1-\sin^2(y)}} = \frac{1}{\sqrt{1 - x^2}}
-  \end{split}\]</div>
-<p>The next level of complication comes for functions like <span class="math notranslate nohighlight">\( y = \arctan(x) \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-  y = \arctan(x) \\
-  \tan(y) = x \\
-  \sec^2(x)\frac{\textrm{d}y}{\textrm{d}x} = 1 \\
-  \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{1}{\sec^2(y)} = \frac{1}{1 + \tan^2(y)} = \frac{1}{1 + x^2}
-  \end{split}\]</div>
-</section>
 <section id="exponential">
 <h3>Exponential<a class="headerlink" href="#exponential" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
@@ -820,8 +780,6 @@ An example, find the coordinate(s) and nature of all the stationary point(s) for
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation-tricks">Differentiation Tricks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric">Trigonometric</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic">Hyperbolic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric">Inverse Trigonometric</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential">Exponential</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic">Logarithmic</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powers">Powers</a></li>
