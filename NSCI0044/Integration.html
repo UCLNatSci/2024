@@ -426,7 +426,6 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-signed-and-unsigned-area">Differences Between Signed and Unsigned Area</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#area-between-two-curves">Area Between Two Curves</a><ul class="nav section-nav flex-column">
@@ -573,7 +572,7 @@ document.write(`
 <h3>Integration by Parts (Product Rule Reversal)<a class="headerlink" href="#integration-by-parts-product-rule-reversal" title="Link to this heading">#</a></h3>
 <p>The product rule for differentiation states:</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{dx} \left( u(x) v(x) \right) = u'(x) v(x) + u(x) v'(x)\]</div>
+\[\frac{d}{\mathrm{d}x} \left( u(x) v(x) \right) = u'(x) v(x) + u(x) v'(x)\]</div>
 <p>When reversing this rule to solve integrals, we use integration by parts. The formula for integration by parts is:</p>
 <div class="math notranslate nohighlight">
 \[\int u(x) v'(x) \, \mathrm{d}x = u(x) v(x) - \int v(x) u'(x) \, \mathrm{d}x\]</div>
@@ -695,7 +694,7 @@ document.write(`
 <ul>
 <li><p><strong>Formula for Unsigned Area</strong>:</p>
 <div class="math notranslate nohighlight">
-\[\text{Unsigned Area} = \int_a^b \left| f(x) \right| \, dx\]</div>
+\[\text{Unsigned Area} = \int_a^b \left| f(x) \right| \, \mathrm{d}x\]</div>
 <p>where <span class="math notranslate nohighlight">\( f(x) \)</span> is the function describing the curve.</p>
 </li>
 </ul>
@@ -710,10 +709,10 @@ document.write(`
 </li>
 <li><p><strong>Step 2:</strong> Break the integral into two parts, where the curve is either above or below the x-axis.</p>
 <div class="math notranslate nohighlight">
-\[\text{Unsigned Area} = \int_{-3}^{-2} \left| x^2 - 4 \right| \, dx + \int_{-2}^{2} \left| x^2 - 4 \right| \, dx + \int_{2}^{3} \left| x^2 - 4 \right| \, dx\]</div>
+\[\text{Unsigned Area} = \int_{-3}^{-2} \left| x^2 - 4 \right| \, \mathrm{d}x + \int_{-2}^{2} \left| x^2 - 4 \right| \, \mathrm{d}x + \int_{2}^{3} \left| x^2 - 4 \right| \, \mathrm{d}x\]</div>
 <p>Since <span class="math notranslate nohighlight">\(x^2 - 4\)</span> is negative between <span class="math notranslate nohighlight">\([-3, -2]\)</span> and <span class="math notranslate nohighlight">\([2, 3]\)</span>, we use the absolute value to change the sign:</p>
 <div class="math notranslate nohighlight">
-\[\text{Unsigned Area} = \int_{-3}^{-2} -(x^2 - 4) \, dx + \int_{-2}^{2} (4 - x^2) \, dx + \int_{2}^{3} -(x^2 - 4) \, dx\]</div>
+\[\text{Unsigned Area} = \int_{-3}^{-2} -(x^2 - 4) \, \mathrm{d}x + \int_{-2}^{2} (4 - x^2) \, \mathrm{d}x + \int_{2}^{3} -(x^2 - 4) \, \mathrm{d}x\]</div>
 </li>
 <li><p><strong>Step 3:</strong> Evaluate each integral and sum the areas.</p></li>
 </ul>
@@ -725,7 +724,7 @@ document.write(`
 <ul>
 <li><p><strong>Formula for Signed Area</strong>:</p>
 <div class="math notranslate nohighlight">
-\[\text{Signed Area} = \int_a^b f(x) \, dx\]</div>
+\[\text{Signed Area} = \int_a^b f(x) \, \mathrm{d}x\]</div>
 <p>where:</p>
 <ul class="simple">
 <li><p>If <span class="math notranslate nohighlight">\( f(x) &gt; 0 \)</span>, the area is positive (above the x-axis),</p></li>
@@ -739,11 +738,11 @@ document.write(`
 <ul>
 <li><p><strong>Step 1:</strong> Set up the integral:</p>
 <div class="math notranslate nohighlight">
-\[\text{Signed Area} = \int_{-3}^3 (x^2 - 4) \, dx\]</div>
+\[\text{Signed Area} = \int_{-3}^3 (x^2 - 4) \, \mathrm{d}x\]</div>
 </li>
 <li><p><strong>Step 2:</strong> Evaluate the integral:</p>
 <div class="math notranslate nohighlight">
-\[\int_{-3}^3 (x^2 - 4) \, dx = \left[ \frac{x^3}{3} - 4x \right]_{-3}^{3}\]</div>
+\[\int_{-3}^3 (x^2 - 4) \, \mathrm{d}x = \left[ \frac{x^3}{3} - 4x \right]_{-3}^{3}\]</div>
 </li>
 <li><p><strong>Step 3:</strong> Compute the values at the limits:</p>
 <div class="math notranslate nohighlight">
@@ -771,8 +770,8 @@ document.write(`
 <td><p>Total geometric area, treating all as positive</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Formula</strong></p></td>
-<td><p><span class="math notranslate nohighlight">\( \int_a^b f(x) \, dx \)</span></p></td>
-<td><p>$ \int_a^b</p></td>
+<td><p><span class="math notranslate nohighlight">\( \int_a^b f(x) \, \mathrm{d}x \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\int_a^b |f(x)| \, \mathrm{d}x\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Use</strong></p></td>
 <td><p>Useful for net area (e.g., work, displacement)</p></td>
@@ -791,11 +790,6 @@ document.write(`
 <ul class="simple">
 <li><p><strong>Signed Area</strong>: Often used in physics (e.g., calculating work done by a force or displacement) and economics (e.g., calculating net profit or loss).</p></li>
 <li><p><strong>Unsigned Area</strong>: Commonly used in geometry, calculus, and probability when the total area is important, irrespective of direction.</p></li>
-</ul>
-</section>
-<section id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
-<ul class="simple">
 <li><p>The <strong>signed area</strong> considers the direction of the curve relative to the x-axis (positive for above the x-axis, negative for below).</p></li>
 <li><p>The <strong>unsigned area</strong> treats all areas as positive, regardless of the curve’s position relative to the x-axis.</p></li>
 <li><p>Both concepts are useful in different contexts, and integrals can be adapted based on whether we need the signed or unsigned area.</p></li>
@@ -809,7 +803,7 @@ document.write(`
 <p>The area between two curves <span class="math notranslate nohighlight">\(y = f(x)\)</span> and <span class="math notranslate nohighlight">\(y = g(x)\)</span> (where <span class="math notranslate nohighlight">\( f(x) \geq g(x) \)</span> for <span class="math notranslate nohighlight">\(x \in [a, b]\)</span>) is the integral of the difference between the two functions over the interval <span class="math notranslate nohighlight">\([a, b]\)</span>.</p>
 <p>The formula for the area <span class="math notranslate nohighlight">\( A \)</span> between the curves is:</p>
 <div class="math notranslate nohighlight">
-\[A = \int_a^b \left[ f(x) - g(x) \right] \, dx\]</div>
+\[A = \int_a^b \left[ f(x) - g(x) \right] \, \mathrm{d}x\]</div>
 <p>where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( f(x) \)</span> is the upper curve,</p></li>
@@ -832,7 +826,7 @@ document.write(`
 <li><p>Ensure that <span class="math notranslate nohighlight">\( f(x) \geq g(x) \)</span> over the interval <span class="math notranslate nohighlight">\([a, b]\)</span>.</p></li>
 <li><p>Set up the integral:</p>
 <div class="math notranslate nohighlight">
-\[A = \int_a^b \left[ f(x) - g(x) \right] \, dx\]</div>
+\[A = \int_a^b \left[ f(x) - g(x) \right] \, \mathrm{d}x\]</div>
 </li>
 </ul>
 </section>
@@ -855,11 +849,11 @@ document.write(`
 <ul>
 <li><p><strong>Step 1:</strong> Set up the integral. The upper curve is <span class="math notranslate nohighlight">\(y = x + 2\)</span> and the lower curve is <span class="math notranslate nohighlight">\(y = x^2\)</span> in the interval <span class="math notranslate nohighlight">\([0, 2]\)</span>, so the area is:</p>
 <div class="math notranslate nohighlight">
-\[A = \int_0^2 \left[ (x + 2) - x^2 \right] \, dx\]</div>
+\[A = \int_0^2 \left[ (x + 2) - x^2 \right] \, \mathrm{d}x\]</div>
 </li>
 <li><p><strong>Step 2:</strong> Solve the integral:</p>
 <div class="math notranslate nohighlight">
-\[A = \int_0^2 \left( x + 2 - x^2 \right) \, dx\]</div>
+\[A = \int_0^2 \left( x + 2 - x^2 \right) \, \mathrm{d}x\]</div>
 <div class="math notranslate nohighlight">
 \[A = \left[ \frac{x^2}{2} + 2x - \frac{x^3}{3} \right]_0^2\]</div>
 <div class="math notranslate nohighlight">
@@ -878,11 +872,11 @@ document.write(`
 <ul>
 <li><p><strong>Step 1:</strong> Set up the integral. The upper curve is <span class="math notranslate nohighlight">\(y = \sqrt{x}\)</span> and the lower curve is <span class="math notranslate nohighlight">\(y = 2x\)</span> in the interval <span class="math notranslate nohighlight">\([0, 1]\)</span>, so the area is:</p>
 <div class="math notranslate nohighlight">
-\[A = \int_0^1 \left[ \sqrt{x} - 2x \right] \, dx\]</div>
+\[A = \int_0^1 \left[ \sqrt{x} - 2x \right] \, \mathrm{d}x\]</div>
 </li>
 <li><p><strong>Step 2:</strong> Solve the integral:</p>
 <div class="math notranslate nohighlight">
-\[A = \int_0^1 \left( x^{1/2} - 2x \right) \, dx\]</div>
+\[A = \int_0^1 \left( x^{1/2} - 2x \right) \, \mathrm{d}x\]</div>
 <div class="math notranslate nohighlight">
 \[A = \left[ \frac{2}{3} x^{3/2} - x^2 \right]_0^1\]</div>
 <div class="math notranslate nohighlight">
@@ -923,14 +917,6 @@ document.write(`
 \[\int u \, \mathrm{d}v = uv - \int v \, \mathrm{d}u\]</div>
 </li>
 <li><p>LATE Method for Integration by Parts: A strategy for selecting <span class="math notranslate nohighlight">\( u(x) \)</span> and <span class="math notranslate nohighlight">\( v'(x) \)</span> based on the order: Logarithmic, Algebraic, Trigonometric, Exponential.</p></li>
-<li><p>Substitution (u-substitution): Reverses the chain rule for differentiation.</p>
-<div class="math notranslate nohighlight">
-\[\int f(g(x)) g'(x) \, \mathrm{d}x = \int f(u) \, \mathrm{d}u\]</div>
-</li>
-<li><p>Power Rule (for functions raised to a power): Reverses the chain rule with powers.</p>
-<div class="math notranslate nohighlight">
-\[\int (g(x))^n \, g'(x) \, \mathrm{d}x = \frac{(g(x))^{n+1}}{n+1} + C\]</div>
-</li>
 <li><p>Mean Value Theorem for Integrals: Averages the value of a function over an interval.</p>
 <div class="math notranslate nohighlight">
 \[f(c) = \frac{1}{b - a} \int_a^b f(x) \, \mathrm{d}x\]</div>
@@ -1041,7 +1027,6 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-signed-and-unsigned-area">Differences Between Signed and Unsigned Area</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#area-between-two-curves">Area Between Two Curves</a><ul class="nav section-nav flex-column">

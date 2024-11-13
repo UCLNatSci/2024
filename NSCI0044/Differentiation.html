@@ -405,13 +405,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-differentiation">Parametric Differentiation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation-tricks">Differentiation Tricks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric">Trigonometric</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential">Exponential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic">Logarithmic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powers">Powers</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-stationary-points">Finding Stationary Points</a></li>
 </ul>
             </nav>
@@ -476,43 +469,125 @@ f(x) = a = a\,x^0 \Rightarrow f'(x) = 0
 <p>We can use the limit definition to differentiate different types of functions:</p>
 <section id="trigonometric-functions">
 <h3>Trigonometric Functions<a class="headerlink" href="#trigonometric-functions" title="Link to this heading">#</a></h3>
+<p><em>Derivative of Sine</em>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}  \frac{\textrm{d}}{\textrm{d}x}\bigg(\sin(x)\bigg) &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\sin(x + \Delta x) - \sin(x)}{\Delta x} \right)\\
-  &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x) - \sin(x)}{\Delta x} \right)\\
-  &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\sin(x)(\cos(\Delta x)-1) + \cos(x)\sin(\Delta x)}{\Delta x} \right)\end{split}\]</div>
+\[\frac{\mathrm{d}}{\mathrm{d}x} \sin(x) = \cos(x)\]</div>
+<ul class="simple">
+<li><p>The derivative of <span class="math notranslate nohighlight">\(\sin(x)\)</span> is <span class="math notranslate nohighlight">\(\cos(x)\)</span>.</p></li>
+<li><p>This is because the slope of the sine curve at any point <span class="math notranslate nohighlight">\(x\)</span> is given by the value of <span class="math notranslate nohighlight">\(\cos(x)\)</span> at that point.</p></li>
+</ul>
+<p><em>Derivative of Cosine</em>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}  \frac{\textrm{d}}{\textrm{d}x}\bigg(\cos(x)\bigg) &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\cos(x + \Delta x) - \cos(x)}{\Delta x} \right) \\
-  &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\cos(x)\cos(\Delta x) - \sin(x)\sin(\Delta x) - \cos(x)}{\Delta x} \right)\\
-  &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\cos(x)(\cos(\Delta x)-1) -\sin(x)\sin(\Delta x)}{\Delta x} \right)\end{split}\]</div>
-<p>Next, we can show (from geometric considerations) in the limit of <span class="math notranslate nohighlight">\( |\Delta\theta| \ll 1 \)</span>:</p>
+\[\frac{\mathrm{d}}{\mathrm{d}x} \cos(x) = -\sin(x)\]</div>
+<ul class="simple">
+<li><p>The derivative of <span class="math notranslate nohighlight">\(\cos(x)\)</span> is <span class="math notranslate nohighlight">\(-\sin(x)\)</span>.</p></li>
+<li><p>The negative sign appears because the cosine curve decreases where sine increases, and vice versa.</p></li>
+</ul>
+<p><em>Higher Derivatives:</em></p>
+<p>Differentiating <span class="math notranslate nohighlight">\(\sin(x)\)</span> twice returns it as <span class="math notranslate nohighlight">\(-\sin(x)\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}  \frac{\sin(\Delta\theta)}{\Delta\theta} &amp;= 1 + \mathcal{O}\left(\Delta \theta^2\right) + \dots\\
-  \frac{\cos(\Delta \theta) - 1}{\Delta \theta}  &amp;= -\frac{1}{2}\Delta \theta + \mathcal{O}\left(\Delta \theta^3\right) + \dots\end{split}\]</div>
-<p>Which means the derivatives are:</p>
+\[\frac{\mathrm{d}^2}{\mathrm{d}x^2} \sin(x) = -\sin(x)\]</div>
+<p>Similarly, differentiating <span class="math notranslate nohighlight">\(\cos(x)\)</span> twice returns it as <span class="math notranslate nohighlight">\(-\cos(x)\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[  \frac{\textrm{d}}{\textrm{d}x}\bigg(\sin(x)\bigg) = \cos(x) \quad \quad \frac{\textrm{d}}{\textrm{d}x}\bigg(\cos(x)\bigg) = -\sin(x)\]</div>
+\[\frac{\mathrm{d}^2}{\mathrm{d}x^2} \cos(x) = -\cos(x)\]</div>
+<p>This cyclical pattern in higher derivatives of sine and cosine is often useful in applications like oscillations and wave equations.</p>
+<p>Below is a graph showing the sine function <span class="math notranslate nohighlight">\( y = \sin(x) \)</span> and its derivative <span class="math notranslate nohighlight">\( y' = \cos(x) \)</span>.</p>
+<p><img alt="Sine and Cosine Derivative Graph" src="_images/sine_cosine_derivative_graph.png" /></p>
+<p>Below is a graph showing the cosine function <span class="math notranslate nohighlight">\( y = \cos(x) \)</span> and its derivative <span class="math notranslate nohighlight">\( y' = -\sin(x) \)</span>.</p>
+<p><img alt="Cosine and Negative Sine Derivative Graph" src="_images/cosine_negative_sine_derivative_graph.png" /></p>
 </section>
 <section id="exponential-functions">
 <h3>Exponential Functions<a class="headerlink" href="#exponential-functions" title="Link to this heading">#</a></h3>
+<p><em>Derivative of the Natural Exponential Function</em>:</p>
 <div class="math notranslate nohighlight">
-\[  \frac{\textrm{d}}{\textrm{d}x}\bigg(e^x\bigg) = \lim_{\Delta x \rightarrow 0}\left(\frac{e^{x +\Delta x} - e^x}{\Delta x} \right) =  e^x\left(\lim_{\Delta x \rightarrow 0}\left(\frac{e^{\Delta x} - 1}{\Delta x} \right)\right)\]</div>
-<p>Using the definition of the exponential:</p>
+\[\frac{\mathrm{d}}{\mathrm{d}x} e^x = e^x\]</div>
+<ul class="simple">
+<li><p>The exponential function <span class="math notranslate nohighlight">\( e^x \)</span> is unique because it is its own derivative.</p></li>
+<li><p>This means that the rate of change of <span class="math notranslate nohighlight">\( e^x \)</span> at any point <span class="math notranslate nohighlight">\( x \)</span> is exactly the value of <span class="math notranslate nohighlight">\( e^x \)</span> at that point.</p></li>
+</ul>
+<p><em>Derivative of <span class="math notranslate nohighlight">\( a^x \)</span> (Exponential Function with Base <span class="math notranslate nohighlight">\( a \)</span>)</em>:</p>
+<p>To find the derivative of an exponential function with base <span class="math notranslate nohighlight">\( a \)</span>, such as <span class="math notranslate nohighlight">\( y = a^x \)</span>, we can use the definition of the exponential function in terms of <span class="math notranslate nohighlight">\( e \)</span> and apply the chain rule.</p>
+<p><em>Step 1: Express <span class="math notranslate nohighlight">\( a^x \)</span> in Terms of <span class="math notranslate nohighlight">\( e \)</span></em>
+Any exponential function <span class="math notranslate nohighlight">\( a^x \)</span> can be rewritten in terms of the natural exponential function <span class="math notranslate nohighlight">\( e^x \)</span> by noting that:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}  e^{\Delta x} &amp;= \lim_{n\rightarrow\infty}\left(1 + \frac{\Delta x}{n}\right)^n \\
-  \Rightarrow \frac{\textrm{d}}{\textrm{d}x}\bigg(e^x\bigg) &amp;= e^x\lim_{\Delta x \rightarrow 0}\lim_{n\rightarrow\infty}\left[\frac{1}{\Delta x}\left(\left(1 + \frac{\Delta x}{n}\right)^n - 1 \right)\right]\\
-  &amp;=  e^x \lim_{\Delta x \rightarrow 0}\lim_{n\rightarrow\infty}\left[\frac{1}{\Delta x}\left(\left(1 + n\frac{\Delta x}{n} + \frac{n(n-1)}{2!}\frac{(\Delta x)^2}{n^2} + \dots \right)- 1 \right)\right]\\
-  &amp;= e^x \lim_{\Delta x \rightarrow 0}\lim_{n\rightarrow\infty}\left(1 + \mathcal{O}\left(\frac{\Delta x}{n}\right) + \dots\right)\\
-  \Rightarrow \frac{\textrm{d}}{\textrm{d}x}\bigg(e^x\bigg) &amp;= e^x\end{split}\]</div>
+\[a^x = e^{x \ln(a)}\]</div>
+<p>This is because <span class="math notranslate nohighlight">\( e^{x \ln(a)} \)</span> represents “raising <span class="math notranslate nohighlight">\( e \)</span>“ to a power that is equivalent to <span class="math notranslate nohighlight">\( a^x \)</span>. Here, <span class="math notranslate nohighlight">\( \ln(a) \)</span> is the natural logarithm of <span class="math notranslate nohighlight">\( a \)</span>.</p>
+<p><em>Step 2: Differentiate Using the Chain Rule</em>
+Now, to differentiate <span class="math notranslate nohighlight">\( y = a^x = e^{x \ln(a)} \)</span> with respect to <span class="math notranslate nohighlight">\( x \)</span>, we can use the chain rule:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} a^x = \frac{\mathrm{d}}{\mathrm{d}x} e^{x \ln(a)}\]</div>
+<p>Using the chain rule, we differentiate the outer function <span class="math notranslate nohighlight">\( e^{x \ln(a)} \)</span>, treating <span class="math notranslate nohighlight">\( x \ln(a) \)</span> as the inner function:</p>
+<div class="math notranslate nohighlight">
+\[= e^{x \ln(a)} \cdot \frac{\mathrm{d}}{\mathrm{d}x} (x \ln(a))\]</div>
+<p>Now, differentiate the inner function <span class="math notranslate nohighlight">\( x \ln(a) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[= e^{x \ln(a)} \cdot \ln(a)\]</div>
+<p><em>Step 3: Substitute Back for <span class="math notranslate nohighlight">\( e^{x \ln(a)} \)</span></em>
+Since <span class="math notranslate nohighlight">\( e^{x \ln(a)} = a^x \)</span>, we can substitute back:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} a^x = a^x \ln(a)\]</div>
+<p>Thus, the derivative of <span class="math notranslate nohighlight">\( a^x \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} a^x = a^x \ln(a)\]</div>
+<p>The term <span class="math notranslate nohighlight">\( \ln(a) \)</span> acts as a scaling factor that depends on the base <span class="math notranslate nohighlight">\( a \)</span>, meaning that each base <span class="math notranslate nohighlight">\( a \)</span> scales the exponential growth rate differently.</p>
+<p><em>Example Calculation:</em>
+For example, if <span class="math notranslate nohighlight">\( y = 2^x \)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} 2^x = 2^x \ln(2)\]</div>
+<p>This tells us that <span class="math notranslate nohighlight">\( 2^x \)</span> grows faster than <span class="math notranslate nohighlight">\( e^x \)</span> by a factor of <span class="math notranslate nohighlight">\( \ln(2) \)</span>, which is approximately <span class="math notranslate nohighlight">\( 0.693 \)</span>.</p>
+<p><em>Higher Derivatives:</em></p>
+<p>The exponential function <span class="math notranslate nohighlight">\( e^x \)</span> has the special property that all higher derivatives are also <span class="math notranslate nohighlight">\( e^x \)</span>:</p>
+<ul>
+<li><p><strong>Second Derivative of <span class="math notranslate nohighlight">\( e^x \)</span></strong>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2}{\mathrm{d}x^2} e^x = e^x\]</div>
+</li>
+</ul>
+<p>For other exponential functions <span class="math notranslate nohighlight">\( a^x \)</span>:</p>
+<ul>
+<li><p><strong>Second Derivative of <span class="math notranslate nohighlight">\( a^x \)</span></strong>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2}{\mathrm{d}x^2} a^x = a^x (\ln(a))^2\]</div>
+<ul class="simple">
+<li><p>Each derivative introduces another factor of <span class="math notranslate nohighlight">\( \ln(a) \)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Below is a graph showing <span class="math notranslate nohighlight">\( y = e^x \)</span> and its derivative <span class="math notranslate nohighlight">\( y' = e^x \)</span> on the left and a graph showing <span class="math notranslate nohighlight">\( y = 2^x \)</span> and its derivative <span class="math notranslate nohighlight">\( y' = 2^x \ln(2) \)</span> to the right.</p>
+<p><img alt="Exponential Derivative Graph" src="_images/exponential_derivative_graph.png" /></p>
 </section>
 <section id="logarithmic-functions">
 <h3>Logarithmic Functions<a class="headerlink" href="#logarithmic-functions" title="Link to this heading">#</a></h3>
+<p><em>Derivative of <span class="math notranslate nohighlight">\( \ln(x) \)</span></em>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}  \frac{\textrm{d}}{\textrm{d}x}\bigg(\ln(x)\bigg) &amp;= \lim_{\Delta x \rightarrow 0}\left(\frac{\ln(x +\Delta x) - \ln(x)}{\Delta x} \right) =  \lim_{\Delta x \rightarrow 0}\left(\frac{1}{\Delta x} \ln\left( 1 + \frac{\Delta x}{x}\right)\right)\\
-  &amp;= \lim_{\Delta x \rightarrow 0}\left(\ln\left( 1 + \frac{\Delta x}{x}\right)^{1/\Delta x}\right)\end{split}\]</div>
-<p>Using the definition of the exponential, with <span class="math notranslate nohighlight">\( n = 1 / \Delta x \)</span>:</p>
+\[\frac{\mathrm{d}}{\mathrm{d}x} \ln(x) = \frac{1}{x}\]</div>
+<ul class="simple">
+<li><p>This derivative tells us that the rate of change of <span class="math notranslate nohighlight">\( \ln(x) \)</span> at any point <span class="math notranslate nohighlight">\( x \)</span> is inversely proportional to <span class="math notranslate nohighlight">\( x \)</span>.</p></li>
+<li><p>It is only defined for <span class="math notranslate nohighlight">\( x &gt; 0 \)</span> because the natural logarithm <span class="math notranslate nohighlight">\( \ln(x) \)</span> is only defined for positive <span class="math notranslate nohighlight">\( x \)</span> values.</p></li>
+</ul>
+<p><em>Derivative of Logarithms with Other Bases:</em>
+For logarithms with bases other than <span class="math notranslate nohighlight">\( e \)</span>, such as <span class="math notranslate nohighlight">\( \log_a(x) \)</span> where <span class="math notranslate nohighlight">\( a \)</span> is the base, we can use the change of base formula to rewrite it in terms of <span class="math notranslate nohighlight">\( \ln(x) \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}  e^{1/x} &amp;= \lim_{\Delta x \rightarrow 0}\left(1 + \frac{\Delta x}{x}\right)^{1/\Delta x}\\
-  \Rightarrow \frac{\textrm{d}}{\textrm{d}x}\bigg(\ln(x)\bigg) &amp;= \ln\bigg(e^{1/x}\bigg) = \frac{1}{x}\end{split}\]</div>
+\[\log_a(x) = \frac{\ln(x)}{\ln(a)}\]</div>
+<p>Using this, we can derive the derivative as follows:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} \log_a(x) = \frac{1}{x \ln(a)}\]</div>
+<ul class="simple">
+<li><p>The factor <span class="math notranslate nohighlight">\( \ln(a) \)</span> appears in the denominator and scales the rate of change according to the base <span class="math notranslate nohighlight">\( a \)</span>.</p></li>
+</ul>
+<p><em>Higher Derivatives:</em></p>
+<p>The higher derivatives of <span class="math notranslate nohighlight">\( \ln(x) \)</span> can be calculated by successive differentiation:</p>
+<ul>
+<li><p><strong>Second Derivative of <span class="math notranslate nohighlight">\( \ln(x) \)</span></strong>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2}{\mathrm{d}x^2} \ln(x) = -\frac{1}{x^2}\]</div>
+<ul class="simple">
+<li><p>This shows that the concavity of <span class="math notranslate nohighlight">\( \ln(x) \)</span> changes as <span class="math notranslate nohighlight">\( x \)</span> increases.</p></li>
+</ul>
+</li>
+</ul>
+<p>Below is a graph showing <span class="math notranslate nohighlight">\( y = \ln(x) \)</span> and its derivative <span class="math notranslate nohighlight">\( y' = \frac{1}{x} \)</span> on the left and a graph showing <span class="math notranslate nohighlight">\( y = \log_2(x) \)</span> and its derivative <span class="math notranslate nohighlight">\( y' = \frac{1}{x \ln(2)} \)</span> on the right.</p>
+<p><img alt="Natural Logarithm Derivative Graph" src="_images/ln_derivative_graph.png" /></p>
 </section>
 </section>
 <section id="differentiation-rules">
@@ -560,7 +635,57 @@ f(x) = a = a\,x^0 \Rightarrow f'(x) = 0
   \frac{\textrm{d}y}{\textrm{d}x} = \frac{\textrm{d}y}{\textrm{d}f}\frac{\textrm{d}f}{\textrm{d}x} = 2x \cos(f) \\
   = 2x \cos(x^2)
   \end{split}\]</div>
-<p>There are two further differentiation techniques you need to know:</p>
+<p><em>Chain Rule with Sine and Cosine:</em></p>
+<p>When differentiating compositions involving sine and cosine, use the chain rule:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} \sin(f(x)) = \cos(f(x)) \, f'(x)\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} \cos(f(x)) = -\sin(f(x)) \, f'(x)\]</div>
+<p><em>Examples:</em></p>
+<ol class="arabic">
+<li><p>For <span class="math notranslate nohighlight">\( y = \sin(3x) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y' = 3 \cos(3x)\]</div>
+</li>
+<li><p>For <span class="math notranslate nohighlight">\( y = \cos(5x^2) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y' = -10x \sin(5x^2)\]</div>
+</li>
+</ol>
+<p><em>Chain Rule with Exponential Functions:</em></p>
+<p>When differentiating compositions involving exponential functions, use the chain rule:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} e^{f(x)} = e^{f(x)} \cdot f'(x)\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} a^{f(x)} = a^{f(x)} \ln(a) \, f'(x)\]</div>
+<p><em>Examples:</em></p>
+<ol class="arabic">
+<li><p>For <span class="math notranslate nohighlight">\( y = e^{3x} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y' = 3 e^{3x}\]</div>
+</li>
+<li><p>For <span class="math notranslate nohighlight">\( y = 2^{5x^2} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y' = 10x \cdot 2^{5x^2} \ln(2)\]</div>
+</li>
+</ol>
+<p><em>Chain Rule with Logarithmic Functions:</em></p>
+<p>When differentiating compositions involving logarithmic functions, use the chain rule:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} \ln(f(x)) = \frac{1}{f(x)} \, f'(x)\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} \log_a(f(x)) = \frac{1}{f(x) \ln(a)} \, f'(x)\]</div>
+<p><em>Examples</em></p>
+<ol class="arabic">
+<li><p>For <span class="math notranslate nohighlight">\( y = \ln(3x) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y' = \frac{1}{3x} \cdot 3 = \frac{1}{x}\]</div>
+</li>
+<li><p>For <span class="math notranslate nohighlight">\( y = \log_2(x^2 + 1) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y' = \frac{1}{(x^2 + 1) \ln(2)} \cdot 2x = \frac{2x}{(x^2 + 1) \ln(2)}\]</div>
+</li>
+</ol>
 </section>
 <section id="implicit-differentiation">
 <h3>Implicit Differentiation<a class="headerlink" href="#implicit-differentiation" title="Link to this heading">#</a></h3>
@@ -605,73 +730,6 @@ f(x) = a = a\,x^0 \Rightarrow f'(x) = 0
   \Rightarrow 2x + 2y \frac{\textrm{d}y}{\textrm{d}x} = 0 \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = -\frac{x}{y}
   \end{split}\]</div>
 <p>although it is not always possible to do this explicitly!</p>
-</section>
-</section>
-<section id="differentiation-tricks">
-<h2>Differentiation Tricks<a class="headerlink" href="#differentiation-tricks" title="Link to this heading">#</a></h2>
-<p>By applying some of these rules, we find a series of patterns in different functions that can make differentiation easier and quicker to perform:</p>
-<section id="trigonometric">
-<h3>Trigonometric<a class="headerlink" href="#trigonometric" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[
-  y = \sin(f(x)) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = f'(x) \cos(f(x))
-  \]</div>
-<p>An example:</p>
-<div class="math notranslate nohighlight">
-\[
-  \sin(ax+b) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = a \cos(ax+b)
-  \]</div>
-</section>
-<section id="exponential">
-<h3>Exponential<a class="headerlink" href="#exponential" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[
-  y = e^{f(x)} \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = f'(x) e^{f(x)}
-  \]</div>
-<p>An example:</p>
-<div class="math notranslate nohighlight">
-\[
-  y = e^{ax^2+b} \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = 2ax e^{ax^2+b}
-  \]</div>
-</section>
-<section id="logarithmic">
-<h3>Logarithmic<a class="headerlink" href="#logarithmic" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[
-  y = \ln(f(x)) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{f'(x)}{f(x)}
-  \]</div>
-<p>An example:</p>
-<div class="math notranslate nohighlight">
-\[
-  y = \ln(x^2 + 3) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{2x}{x^2+3}
-  \]</div>
-</section>
-<section id="powers">
-<h3>Powers<a class="headerlink" href="#powers" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[
-  y = a^x
-  \]</div>
-<p>Although we have a simple derivative for <span class="math notranslate nohighlight">\( y = e^x \)</span>, the derivative of other numbers to the power of <span class="math notranslate nohighlight">\( x \)</span> is less simple, such as <span class="math notranslate nohighlight">\( y = 2^x \)</span>. However, a trick can be employed here, by applying logarithms:</p>
-<div class="math notranslate nohighlight">
-\[
-  y = 2^x \Rightarrow \ln y = \ln (2^x) = x \ln 2
-  \]</div>
-<p>Now exponentiate both sides:</p>
-<div class="math notranslate nohighlight">
-\[
-  y = e^{x \ln 2}
-  \]</div>
-<p>and so the derivative is just a slightly more complicated exponential type:</p>
-<div class="math notranslate nohighlight">
-\[
-  \frac{\textrm{d}y}{\textrm{d}x} = e^{x \ln 2} \ln 2 = 2^x \ln 2 
-  \]</div>
-<p>So the general expression is</p>
-<div class="math notranslate nohighlight">
-\[
-  y = a^x \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} =  a^x \ln a
-  \]</div>
 </section>
 </section>
 <section id="finding-stationary-points">
@@ -776,13 +834,6 @@ An example, find the coordinate(s) and nature of all the stationary point(s) for
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">Chain Rule</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-differentiation">Implicit Differentiation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-differentiation">Parametric Differentiation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation-tricks">Differentiation Tricks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric">Trigonometric</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential">Exponential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic">Logarithmic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powers">Powers</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-stationary-points">Finding Stationary Points</a></li>

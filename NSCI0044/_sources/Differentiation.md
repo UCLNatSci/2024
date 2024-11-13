@@ -77,62 +77,154 @@ which makes sense since if the function is constant, the gradient is zero, hence
 We can use the limit definition to differentiate different types of functions:
 
 ### Trigonometric Functions
-  
-```{math}
-  \frac{\textrm{d}}{\textrm{d}x}\bigg(\sin(x)\bigg) &= \lim_{\Delta x \rightarrow 0}\left(\frac{\sin(x + \Delta x) - \sin(x)}{\Delta x} \right)\\
-  &= \lim_{\Delta x \rightarrow 0}\left(\frac{\sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x) - \sin(x)}{\Delta x} \right)\\
-  &= \lim_{\Delta x \rightarrow 0}\left(\frac{\sin(x)(\cos(\Delta x)-1) + \cos(x)\sin(\Delta x)}{\Delta x} \right)
-```
 
-```{math}
-  \frac{\textrm{d}}{\textrm{d}x}\bigg(\cos(x)\bigg) &= \lim_{\Delta x \rightarrow 0}\left(\frac{\cos(x + \Delta x) - \cos(x)}{\Delta x} \right) \\
-  &= \lim_{\Delta x \rightarrow 0}\left(\frac{\cos(x)\cos(\Delta x) - \sin(x)\sin(\Delta x) - \cos(x)}{\Delta x} \right)\\
-  &= \lim_{\Delta x \rightarrow 0}\left(\frac{\cos(x)(\cos(\Delta x)-1) -\sin(x)\sin(\Delta x)}{\Delta x} \right)
-```
+*Derivative of Sine*:
+   ```{math}
+   \frac{\mathrm{d}}{\mathrm{d}x} \sin(x) = \cos(x)
+   ```
+   - The derivative of $\sin(x)$ is $\cos(x)$.
+   - This is because the slope of the sine curve at any point $x$ is given by the value of $\cos(x)$ at that point.
 
-  Next, we can show (from geometric considerations) in the limit of $ |\Delta\theta| \ll 1 $:
+*Derivative of Cosine*:
+   ```{math}
+   \frac{\mathrm{d}}{\mathrm{d}x} \cos(x) = -\sin(x)
+   ```
+   - The derivative of $\cos(x)$ is $-\sin(x)$.
+   - The negative sign appears because the cosine curve decreases where sine increases, and vice versa.
 
-```{math}
-  \frac{\sin(\Delta\theta)}{\Delta\theta} &= 1 + \mathcal{O}\left(\Delta \theta^2\right) + \dots\\
-  \frac{\cos(\Delta \theta) - 1}{\Delta \theta}  &= -\frac{1}{2}\Delta \theta + \mathcal{O}\left(\Delta \theta^3\right) + \dots
-```
+*Higher Derivatives:*
 
-  Which means the derivatives are:
+Differentiating $\sin(x)$ twice returns it as $-\sin(x)$:
+  ```{math}
+  \frac{\mathrm{d}^2}{\mathrm{d}x^2} \sin(x) = -\sin(x)
+  ```
 
-```{math}
-  \frac{\textrm{d}}{\textrm{d}x}\bigg(\sin(x)\bigg) = \cos(x) \quad \quad \frac{\textrm{d}}{\textrm{d}x}\bigg(\cos(x)\bigg) = -\sin(x)
-```
+Similarly, differentiating $\cos(x)$ twice returns it as $-\cos(x)$:
+  ```{math}
+  \frac{\mathrm{d}^2}{\mathrm{d}x^2} \cos(x) = -\cos(x)
+  ```
+
+This cyclical pattern in higher derivatives of sine and cosine is often useful in applications like oscillations and wave equations.
+
+Below is a graph showing the sine function $ y = \sin(x) $ and its derivative $ y' = \cos(x) $.
+
+![Sine and Cosine Derivative Graph](sine_cosine_derivative_graph.png)
+
+Below is a graph showing the cosine function $ y = \cos(x) $ and its derivative $ y' = -\sin(x) $.
+
+![Cosine and Negative Sine Derivative Graph](cosine_negative_sine_derivative_graph.png)
+
+
 
 ### Exponential Functions
 
+*Derivative of the Natural Exponential Function*:
+   ```{math}
+   \frac{\mathrm{d}}{\mathrm{d}x} e^x = e^x
+   ```
+   - The exponential function $ e^x $ is unique because it is its own derivative.
+   - This means that the rate of change of $ e^x $ at any point $ x $ is exactly the value of $ e^x $ at that point.
+
+*Derivative of $ a^x $ (Exponential Function with Base $ a $)*:
+
+To find the derivative of an exponential function with base $ a $, such as $ y = a^x $, we can use the definition of the exponential function in terms of $ e $ and apply the chain rule.
+
+*Step 1: Express $ a^x $ in Terms of $ e $*
+Any exponential function $ a^x $ can be rewritten in terms of the natural exponential function $ e^x $ by noting that:
 ```{math}
-  \frac{\textrm{d}}{\textrm{d}x}\bigg(e^x\bigg) = \lim_{\Delta x \rightarrow 0}\left(\frac{e^{x +\Delta x} - e^x}{\Delta x} \right) =  e^x\left(\lim_{\Delta x \rightarrow 0}\left(\frac{e^{\Delta x} - 1}{\Delta x} \right)\right)
+a^x = e^{x \ln(a)}
+```
+This is because $ e^{x \ln(a)} $ represents "raising $ e $" to a power that is equivalent to $ a^x $. Here, $ \ln(a) $ is the natural logarithm of $ a $.
+
+*Step 2: Differentiate Using the Chain Rule*
+Now, to differentiate $ y = a^x = e^{x \ln(a)} $ with respect to $ x $, we can use the chain rule:
+
+```{math}
+\frac{\mathrm{d}}{\mathrm{d}x} a^x = \frac{\mathrm{d}}{\mathrm{d}x} e^{x \ln(a)}
 ```
 
-Using the definition of the exponential:
- 
+Using the chain rule, we differentiate the outer function $ e^{x \ln(a)} $, treating $ x \ln(a) $ as the inner function:
 ```{math}
-  e^{\Delta x} &= \lim_{n\rightarrow\infty}\left(1 + \frac{\Delta x}{n}\right)^n \\
-  \Rightarrow \frac{\textrm{d}}{\textrm{d}x}\bigg(e^x\bigg) &= e^x\lim_{\Delta x \rightarrow 0}\lim_{n\rightarrow\infty}\left[\frac{1}{\Delta x}\left(\left(1 + \frac{\Delta x}{n}\right)^n - 1 \right)\right]\\
-  &=  e^x \lim_{\Delta x \rightarrow 0}\lim_{n\rightarrow\infty}\left[\frac{1}{\Delta x}\left(\left(1 + n\frac{\Delta x}{n} + \frac{n(n-1)}{2!}\frac{(\Delta x)^2}{n^2} + \dots \right)- 1 \right)\right]\\
-  &= e^x \lim_{\Delta x \rightarrow 0}\lim_{n\rightarrow\infty}\left(1 + \mathcal{O}\left(\frac{\Delta x}{n}\right) + \dots\right)\\
-  \Rightarrow \frac{\textrm{d}}{\textrm{d}x}\bigg(e^x\bigg) &= e^x
+= e^{x \ln(a)} \cdot \frac{\mathrm{d}}{\mathrm{d}x} (x \ln(a))
 ```
+
+Now, differentiate the inner function $ x \ln(a) $:
+```{math}
+= e^{x \ln(a)} \cdot \ln(a)
+```
+
+*Step 3: Substitute Back for $ e^{x \ln(a)} $*
+Since $ e^{x \ln(a)} = a^x $, we can substitute back:
+```{math}
+\frac{\mathrm{d}}{\mathrm{d}x} a^x = a^x \ln(a)
+```
+
+Thus, the derivative of $ a^x $ is:
+```{math}
+\frac{\mathrm{d}}{\mathrm{d}x} a^x = a^x \ln(a)
+```
+The term $ \ln(a) $ acts as a scaling factor that depends on the base $ a $, meaning that each base $ a $ scales the exponential growth rate differently.
+
+*Example Calculation:*
+For example, if $ y = 2^x $, then:
+```{math}
+\frac{\mathrm{d}}{\mathrm{d}x} 2^x = 2^x \ln(2)
+```
+This tells us that $ 2^x $ grows faster than $ e^x $ by a factor of $ \ln(2) $, which is approximately $ 0.693 $.
+
+*Higher Derivatives:*
+
+The exponential function $ e^x $ has the special property that all higher derivatives are also $ e^x $:
+- **Second Derivative of $ e^x $**:
+  ```{math}
+  \frac{\mathrm{d}^2}{\mathrm{d}x^2} e^x = e^x
+  ```
+
+For other exponential functions $ a^x $:
+- **Second Derivative of $ a^x $**:
+  ```{math}
+  \frac{\mathrm{d}^2}{\mathrm{d}x^2} a^x = a^x (\ln(a))^2
+  ```
+  - Each derivative introduces another factor of $ \ln(a) $.
+
+Below is a graph showing $ y = e^x $ and its derivative $ y' = e^x $ on the left and a graph showing $ y = 2^x $ and its derivative $ y' = 2^x \ln(2) $ to the right.
+
+![Exponential Derivative Graph](exponential_derivative_graph.png)
+
 
 ### Logarithmic Functions
 
+*Derivative of $ \ln(x) $*:
+   ```{math}
+   \frac{\mathrm{d}}{\mathrm{d}x} \ln(x) = \frac{1}{x}
+   ```
+   - This derivative tells us that the rate of change of $ \ln(x) $ at any point $ x $ is inversely proportional to $ x $.
+   - It is only defined for $ x > 0 $ because the natural logarithm $ \ln(x) $ is only defined for positive $ x $ values.
+
+*Derivative of Logarithms with Other Bases:*
+For logarithms with bases other than $ e $, such as $ \log_a(x) $ where $ a $ is the base, we can use the change of base formula to rewrite it in terms of $ \ln(x) $:
 ```{math}
-  \frac{\textrm{d}}{\textrm{d}x}\bigg(\ln(x)\bigg) &= \lim_{\Delta x \rightarrow 0}\left(\frac{\ln(x +\Delta x) - \ln(x)}{\Delta x} \right) =  \lim_{\Delta x \rightarrow 0}\left(\frac{1}{\Delta x} \ln\left( 1 + \frac{\Delta x}{x}\right)\right)\\
-  &= \lim_{\Delta x \rightarrow 0}\left(\ln\left( 1 + \frac{\Delta x}{x}\right)^{1/\Delta x}\right)
+\log_a(x) = \frac{\ln(x)}{\ln(a)}
 ```
 
-Using the definition of the exponential, with $ n = 1 / \Delta x $:
-
+Using this, we can derive the derivative as follows:
 ```{math}
-  e^{1/x} &= \lim_{\Delta x \rightarrow 0}\left(1 + \frac{\Delta x}{x}\right)^{1/\Delta x}\\
-  \Rightarrow \frac{\textrm{d}}{\textrm{d}x}\bigg(\ln(x)\bigg) &= \ln\bigg(e^{1/x}\bigg) = \frac{1}{x}
+\frac{\mathrm{d}}{\mathrm{d}x} \log_a(x) = \frac{1}{x \ln(a)}
 ```
+- The factor $ \ln(a) $ appears in the denominator and scales the rate of change according to the base $ a $.
 
+*Higher Derivatives:*
+
+The higher derivatives of $ \ln(x) $ can be calculated by successive differentiation:
+- **Second Derivative of $ \ln(x) $**:
+  ```{math}
+  \frac{\mathrm{d}^2}{\mathrm{d}x^2} \ln(x) = -\frac{1}{x^2}
+  ```
+  - This shows that the concavity of $ \ln(x) $ changes as $ x $ increases.
+
+Below is a graph showing $ y = \ln(x) $ and its derivative $ y' = \frac{1}{x} $ on the left and a graph showing $ y = \log_2(x) $ and its derivative $ y' = \frac{1}{x \ln(2)} $ on the right.
+
+![Natural Logarithm Derivative Graph](ln_derivative_graph.png)
 
 
 ## Differentiation Rules
@@ -181,7 +273,75 @@ There are three main differentiation rules:
   = 2x \cos(x^2)
   $$
 
-There are two further differentiation techniques you need to know:
+
+*Chain Rule with Sine and Cosine:*
+
+When differentiating compositions involving sine and cosine, use the chain rule:
+
+```{math}
+\frac{\mathrm{d}}{\mathrm{d}x} \sin(f(x)) = \cos(f(x)) \, f'(x)
+```
+```{math}
+\frac{\mathrm{d}}{\mathrm{d}x} \cos(f(x)) = -\sin(f(x)) \, f'(x)
+```
+
+*Examples:*
+1. For $ y = \sin(3x) $:
+   ```{math}
+   y' = 3 \cos(3x)
+   ```
+   
+2. For $ y = \cos(5x^2) $:
+   ```{math}
+   y' = -10x \sin(5x^2)
+   ```
+
+
+*Chain Rule with Exponential Functions:*
+
+When differentiating compositions involving exponential functions, use the chain rule:
+
+```{math}
+\frac{\mathrm{d}}{\mathrm{d}x} e^{f(x)} = e^{f(x)} \cdot f'(x)
+```
+```{math}
+\frac{\mathrm{d}}{\mathrm{d}x} a^{f(x)} = a^{f(x)} \ln(a) \, f'(x)
+```
+
+*Examples:*
+1. For $ y = e^{3x} $:
+   ```{math}
+   y' = 3 e^{3x}
+   ```
+   
+2. For $ y = 2^{5x^2} $:
+   ```{math}
+   y' = 10x \cdot 2^{5x^2} \ln(2)
+   ```
+
+
+*Chain Rule with Logarithmic Functions:*
+
+When differentiating compositions involving logarithmic functions, use the chain rule:
+
+```{math}
+\frac{\mathrm{d}}{\mathrm{d}x} \ln(f(x)) = \frac{1}{f(x)} \, f'(x)
+```
+```{math}
+\frac{\mathrm{d}}{\mathrm{d}x} \log_a(f(x)) = \frac{1}{f(x) \ln(a)} \, f'(x)
+```
+
+*Examples*
+1. For $ y = \ln(3x) $:
+   ```{math}
+   y' = \frac{1}{3x} \cdot 3 = \frac{1}{x}
+   ```
+
+2. For $ y = \log_2(x^2 + 1) $:
+   ```{math}
+   y' = \frac{1}{(x^2 + 1) \ln(2)} \cdot 2x = \frac{2x}{(x^2 + 1) \ln(2)}
+   ```
+
 
 ### Implicit Differentiation
 
@@ -231,75 +391,7 @@ There are two further differentiation techniques you need to know:
 
   although it is not always possible to do this explicitly!
 
-## Differentiation Tricks
-By applying some of these rules, we find a series of patterns in different functions that can make differentiation easier and quicker to perform:
 
-### Trigonometric
-
-  $$
-  y = \sin(f(x)) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = f'(x) \cos(f(x))
-  $$
-
-  An example: 
-
-  $$
-  \sin(ax+b) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = a \cos(ax+b)
-  $$
-
-
-### Exponential
-
-  $$
-  y = e^{f(x)} \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = f'(x) e^{f(x)}
-  $$
-
-  An example: 
-
-  $$
-  y = e^{ax^2+b} \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = 2ax e^{ax^2+b}
-  $$
-
-### Logarithmic
-
-  $$
-  y = \ln(f(x)) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{f'(x)}{f(x)}
-  $$
-
-  An example: 
-
-  $$
-  y = \ln(x^2 + 3) \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = \frac{2x}{x^2+3}
-  $$
-
-### Powers
-
-  $$
-  y = a^x
-  $$
-
-  Although we have a simple derivative for $ y = e^x $, the derivative of other numbers to the power of $ x $ is less simple, such as $ y = 2^x $. However, a trick can be employed here, by applying logarithms:
-
-  $$
-  y = 2^x \Rightarrow \ln y = \ln (2^x) = x \ln 2
-  $$
-
-  Now exponentiate both sides: 
-
-  $$
-  y = e^{x \ln 2}
-  $$
-
-  and so the derivative is just a slightly more complicated exponential type: 
-
-  $$
-  \frac{\textrm{d}y}{\textrm{d}x} = e^{x \ln 2} \ln 2 = 2^x \ln 2 
-  $$
-
-  So the general expression is 
-
-  $$
-  y = a^x \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} =  a^x \ln a
-  $$
 
 ## Finding Stationary Points
 An application of differentiation is to find a function $f(x)$'s **Stationary Points** (SP's), where we are searching for solutions to $f'(x) = 0$. There are three distinct types of SP:

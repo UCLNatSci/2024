@@ -160,7 +160,7 @@ In addition to the basic rules for calculating antiderivatives, there are specif
 The product rule for differentiation states:
 
 ```{math}
-\frac{d}{dx} \left( u(x) v(x) \right) = u'(x) v(x) + u(x) v'(x)
+\frac{d}{\mathrm{d}x} \left( u(x) v(x) \right) = u'(x) v(x) + u(x) v'(x)
 ```
 
 When reversing this rule to solve integrals, we use integration by parts. The formula for integration by parts is:
@@ -298,7 +298,7 @@ The unsigned area between a curve and the x-axis is calculated by taking the abs
 
 - **Formula for Unsigned Area**:
   ```{math}
-  \text{Unsigned Area} = \int_a^b \left| f(x) \right| \, dx
+  \text{Unsigned Area} = \int_a^b \left| f(x) \right| \, \mathrm{d}x
   ```
   where $ f(x) $ is the function describing the curve.
 
@@ -313,11 +313,11 @@ Find the unsigned area between the curve $y = x^2 - 4$ and the x-axis from $x = 
 
 - **Step 2:** Break the integral into two parts, where the curve is either above or below the x-axis.
   ```{math}
-  \text{Unsigned Area} = \int_{-3}^{-2} \left| x^2 - 4 \right| \, dx + \int_{-2}^{2} \left| x^2 - 4 \right| \, dx + \int_{2}^{3} \left| x^2 - 4 \right| \, dx
+  \text{Unsigned Area} = \int_{-3}^{-2} \left| x^2 - 4 \right| \, \mathrm{d}x + \int_{-2}^{2} \left| x^2 - 4 \right| \, \mathrm{d}x + \int_{2}^{3} \left| x^2 - 4 \right| \, \mathrm{d}x
   ```
   Since $x^2 - 4$ is negative between $[-3, -2]$ and $[2, 3]$, we use the absolute value to change the sign:
   ```{math}
-  \text{Unsigned Area} = \int_{-3}^{-2} -(x^2 - 4) \, dx + \int_{-2}^{2} (4 - x^2) \, dx + \int_{2}^{3} -(x^2 - 4) \, dx
+  \text{Unsigned Area} = \int_{-3}^{-2} -(x^2 - 4) \, \mathrm{d}x + \int_{-2}^{2} (4 - x^2) \, \mathrm{d}x + \int_{2}^{3} -(x^2 - 4) \, \mathrm{d}x
   ```
 
 - **Step 3:** Evaluate each integral and sum the areas.
@@ -327,7 +327,7 @@ The signed area between a curve and the x-axis is computed directly using the in
 
 - **Formula for Signed Area**:
   ```{math}
-  \text{Signed Area} = \int_a^b f(x) \, dx
+  \text{Signed Area} = \int_a^b f(x) \, \mathrm{d}x
   ```
   where:
   - If $ f(x) > 0 $, the area is positive (above the x-axis),
@@ -338,12 +338,12 @@ Find the signed area between the curve $y = x^2 - 4$ and the x-axis from $x = -3
 
 - **Step 1:** Set up the integral:
   ```{math}
-  \text{Signed Area} = \int_{-3}^3 (x^2 - 4) \, dx
+  \text{Signed Area} = \int_{-3}^3 (x^2 - 4) \, \mathrm{d}x
   ```
 
 - **Step 2:** Evaluate the integral:
   ```{math}
-  \int_{-3}^3 (x^2 - 4) \, dx = \left[ \frac{x^3}{3} - 4x \right]_{-3}^{3}
+  \int_{-3}^3 (x^2 - 4) \, \mathrm{d}x = \left[ \frac{x^3}{3} - 4x \right]_{-3}^{3}
   ```
 
 - **Step 3:** Compute the values at the limits:
@@ -360,7 +360,7 @@ Find the signed area between the curve $y = x^2 - 4$ and the x-axis from $x = -3
 | Concept        | Signed Area                                | Unsigned Area                             |
 |----------------|--------------------------------------------|-------------------------------------------|
 | **Definition** | Area considering the sign (positive above x-axis, negative below) | Total geometric area, treating all as positive |
-| **Formula**    | $ \int_a^b f(x) \, dx $                 | $ \int_a^b |f(x)| \, dx $              |
+| **Formula**    | $ \int_a^b f(x) \, \mathrm{d}x $                 | $\int_a^b \|f(x)\| \, \mathrm{d}x$     |
 | **Use**        | Useful for net area (e.g., work, displacement) | Useful when total area matters, regardless of direction |
 | **Example**    | Area between $ y = x^2 - 4 $ and the x-axis from $x = -3$ to $x = 3$ | Area between $ y = x^2 - 4 $ and the x-axis from $x = -3$ to $x = 3$ |
 
@@ -368,7 +368,7 @@ Find the signed area between the curve $y = x^2 - 4$ and the x-axis from $x = -3
 - **Signed Area**: Often used in physics (e.g., calculating work done by a force or displacement) and economics (e.g., calculating net profit or loss).
 - **Unsigned Area**: Commonly used in geometry, calculus, and probability when the total area is important, irrespective of direction.
 
-### Summary
+
 - The **signed area** considers the direction of the curve relative to the x-axis (positive for above the x-axis, negative for below).
 - The **unsigned area** treats all areas as positive, regardless of the curve's position relative to the x-axis.
 - Both concepts are useful in different contexts, and integrals can be adapted based on whether we need the signed or unsigned area.
@@ -381,7 +381,7 @@ The area between two curves $y = f(x)$ and $y = g(x)$ (where $ f(x) \geq g(x) $ 
 
 The formula for the area $ A $ between the curves is:
 ```{math}
-A = \int_a^b \left[ f(x) - g(x) \right] \, dx
+A = \int_a^b \left[ f(x) - g(x) \right] \, \mathrm{d}x
 ```
 where:
 - $ f(x) $ is the upper curve,
@@ -401,7 +401,7 @@ We can see this in the figure below:
 - Ensure that $ f(x) \geq g(x) $ over the interval $[a, b]$.
 - Set up the integral:
   ```{math}
-  A = \int_a^b \left[ f(x) - g(x) \right] \, dx
+  A = \int_a^b \left[ f(x) - g(x) \right] \, \mathrm{d}x
   ```
 
 #### Solve the Integral
@@ -416,12 +416,12 @@ Find the area between the curves $y = x^2$ and $y = x + 2$ from $x = 0$ to $x = 
 
 - **Step 1:** Set up the integral. The upper curve is $y = x + 2$ and the lower curve is $y = x^2$ in the interval $[0, 2]$, so the area is:
   ```{math}
-  A = \int_0^2 \left[ (x + 2) - x^2 \right] \, dx
+  A = \int_0^2 \left[ (x + 2) - x^2 \right] \, \mathrm{d}x
   ```
 
 - **Step 2:** Solve the integral:
   ```{math}
-  A = \int_0^2 \left( x + 2 - x^2 \right) \, dx
+  A = \int_0^2 \left( x + 2 - x^2 \right) \, \mathrm{d}x
   ```
   ```{math}
   A = \left[ \frac{x^2}{2} + 2x - \frac{x^3}{3} \right]_0^2
@@ -443,12 +443,12 @@ Find the area between the curves $y = \sqrt{x}$ and $y = 2x$ from $x = 0$ to $x 
 
 - **Step 1:** Set up the integral. The upper curve is $y = \sqrt{x}$ and the lower curve is $y = 2x$ in the interval $[0, 1]$, so the area is:
   ```{math}
-  A = \int_0^1 \left[ \sqrt{x} - 2x \right] \, dx
+  A = \int_0^1 \left[ \sqrt{x} - 2x \right] \, \mathrm{d}x
   ```
 
 - **Step 2:** Solve the integral:
   ```{math}
-  A = \int_0^1 \left( x^{1/2} - 2x \right) \, dx
+  A = \int_0^1 \left( x^{1/2} - 2x \right) \, \mathrm{d}x
   ```
   ```{math}
   A = \left[ \frac{2}{3} x^{3/2} - x^2 \right]_0^1
@@ -487,16 +487,6 @@ The concept of the area between curves is useful in various fields, such as:
   ```
 
 - LATE Method for Integration by Parts: A strategy for selecting $ u(x) $ and $ v'(x) $ based on the order: Logarithmic, Algebraic, Trigonometric, Exponential.
-
-- Substitution (u-substitution): Reverses the chain rule for differentiation.
-  ```{math}
-  \int f(g(x)) g'(x) \, \mathrm{d}x = \int f(u) \, \mathrm{d}u
-  ```
-
-- Power Rule (for functions raised to a power): Reverses the chain rule with powers.
-  ```{math}
-  \int (g(x))^n \, g'(x) \, \mathrm{d}x = \frac{(g(x))^{n+1}}{n+1} + C
-  ```
 
 - Mean Value Theorem for Integrals: Averages the value of a function over an interval.
   ```{math}
