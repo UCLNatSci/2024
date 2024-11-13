@@ -394,7 +394,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-adjoint-linear-differential-operators">Self-adjoint Linear Differential Operators</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrange-s-identity">Lagrange’s identity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoint-operator">Adjoint operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoint-operator-this-section-can-be-skipped">Adjoint operator (this section can be skipped)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-eigenfunctions-of-sturm-liouville-equations">Properties of Eigenfunctions of Sturm-Liouville Equations</a><ul class="nav section-nav flex-column">
@@ -444,7 +444,7 @@ document.write(`
 <h2>The Sturm-Liouville form<a class="headerlink" href="#the-sturm-liouville-form" title="Link to this heading">#</a></h2>
 <p>Sturm-Liouville (SL) differential equations take the form:</p>
 <div class="math notranslate nohighlight">
-\[p(x) \frac{d^2 y}{\mathrm{d}x^2} + r(x) \frac{dy}{\mathrm{d}x} + q(x) y + \lambda \rho(x) y = 0,\]</div>
+\[p(x) \frac{d^2 y}{\mathrm{d}x^2} + r(x) \frac{dy}{\mathrm{d}x} + q(x) y   = \lambda \rho(x) y,\]</div>
 <p>Additionally we will specify <span class="math notranslate nohighlight">\( x \)</span> belongs to the interval <span class="math notranslate nohighlight">\( a \leq x \leq b \)</span> and all the functions here are real.</p>
 <p>Functions <span class="math notranslate nohighlight">\( p(x) \)</span> and <span class="math notranslate nohighlight">\( \rho(x) \)</span> are positive, <span class="math notranslate nohighlight">\( r(x) = \frac{dp(x)}{\mathrm{d}x} \)</span> and we will require <span class="math notranslate nohighlight">\( r(x) \)</span> to be continuous - i.e. <span class="math notranslate nohighlight">\( p(x) \)</span> is smooth.</p>
 <p>Function <span class="math notranslate nohighlight">\( \rho(x) \)</span> is called the “weight” or “density” function. The value of <span class="math notranslate nohighlight">\( \lambda \)</span> is not specified by the differential equation  itself, but is defined via boundary conditions that <span class="math notranslate nohighlight">\( y(x) \)</span> must satisfy. For example:</p>
@@ -474,17 +474,18 @@ document.write(`
 <h2>Conversion to the SL form<a class="headerlink" href="#conversion-to-the-sl-form" title="Link to this heading">#</a></h2>
 <p>Any equation of the form:</p>
 <div class="math notranslate nohighlight">
-\[a_2(x) y'' + a_1(x) y' + a_0(x) y + \lambda f(x) y = 0,\]</div>
+\[a_2(x) y'' + a_1(x) y' + a_0(x) y = \lambda f(x) y,\]</div>
 <p>can be converted to the SL form:</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{\mathrm{d}x} \left( p(x) \frac{d}{\mathrm{d}x} \right) + q(x) + \lambda \rho(x).\]</div>
+\[\frac{d}{\mathrm{d}x} \left( p(x) \frac{d}{\mathrm{d}x} \right)y + q(x)y = \lambda \rho(x)y.\]</div>
 <p>Therefore, all results obtained for the SL form are valid for any equation of this type.</p>
 <p>To demonstrate this equivalence, set:</p>
 <div class="math notranslate nohighlight">
 \[p(x) = F(x) a_2(x), \quad q(x) = F(x) a_0(x), \quad \rho(x) = F(x) f(x),\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
-\[F(x) = \exp\left( \int_0^x \frac{a_1(u) - a_0'(u)}{a_2(u)} du \right).\]</div>
+\[\begin{split}F(x) &amp;= \frac{1}{a_2(x)}\exp\left( \int_0^x \frac{a_1(u)}{a_2(u)} du \right).\\
+     &amp;= \exp\left( \int_0^x \frac{a_1(u)-a_2’(u)}{a_2(u)} du \right).\end{split}\]</div>
 <p>Then, notice that:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}(py')' &amp;= (F a_2 y')' \\
@@ -493,7 +494,7 @@ document.write(`
 &amp;= F(a_2 y'' + a_1 y').\end{split}\]</div>
 <p>Thus,</p>
 <div class="math notranslate nohighlight">
-\[(py')' + q y + \lambda \rho y = F(a_2 y'' + a_1 y' + a_0 y + \lambda f y) = 0,\]</div>
+\[(py')' + q y - \lambda \rho y = F(a_2 y'' + a_1 y' + a_0 y - \lambda f y) = 0,\]</div>
 <p>i.e., the SL form is equivalent to the original SL equation.</p>
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
@@ -514,27 +515,29 @@ q(x) &amp;= 0 \\
 <h3>Lagrange’s identity<a class="headerlink" href="#lagrange-s-identity" title="Link to this heading">#</a></h3>
 <p>If we start by considering <span class="math notranslate nohighlight">\(\bar{L}[x]\)</span> in an integral:</p>
 <div class="math notranslate nohighlight">
-\[\int_a^b (\bar{L}[u]) v \, \mathrm{d}x = \int_a^b \left[ - (p u')' + q u \right] v \, \mathrm{d}x,\]</div>
-<p>for two functions <span class="math notranslate nohighlight">\( u(x) \)</span> and <span class="math notranslate nohighlight">\( v(x) \)</span>, which have continuous second derivatives for <span class="math notranslate nohighlight">\( a \leq x \leq b \)</span>. Integrating the right-hand side by parts gives:</p>
+\[\int_a^b (\bar{L}[u]) v \, \mathrm{d}x = \int_a^b \left[  (p u')' + q u \right] v \, \mathrm{d}x,\]</div>
+<p>for two functions <span class="math notranslate nohighlight">\( u(x) \)</span> and <span class="math notranslate nohighlight">\( v(x) \)</span>, which have continuous second derivatives for <span class="math notranslate nohighlight">\( a \leq x \leq b \)</span> and satisfy the boundary conditions of the SL form. Integrating the right-hand side by parts gives:</p>
 <div class="math notranslate nohighlight">
-\[\int_a^b (\bar{L}[u]) v \, \mathrm{d}x = - \int_a^b (p u')' v \, \mathrm{d}x + \int_a^b q u v \, \mathrm{d}x = - \left[ (p u') v \right]_a^b + \int_a^b u' (p v') \, \mathrm{d}x + \int_a^b q u v \, \mathrm{d}x,\]</div>
+\[\begin{split}\int_a^b (\bar{L}[u]) v \, \mathrm{d}x &amp;=  \int_a^b (p u')' v \, \mathrm{d}x + \int_a^b q u v \, \mathrm{d}x =  \left[ (p u') v \right]_a^b - \int_a^b u' (p v') \, \mathrm{d}x + \int_a^b q u v \, \mathrm{d}x \\
+&amp;= \left[ (p u') v \right]_a^b - \left[(p v’) u \right]_a^b +\int_a^b u (p v’)’ \, \mathrm{d}x + \int_a^b q u v \, \mathrm{d}x\end{split}\]</div>
 <p>i.e.,</p>
 <div class="math notranslate nohighlight">
-\[\int_a^b (\bar{L}[u]) v \, \mathrm{d}x = - p [u'v - uv'] \Big|_a^b + \int_a^b u \bar{L}[v] \, \mathrm{d}x.\]</div>
+\[\int_a^b (\bar{L}[u]) v \, \mathrm{d}x = p [u'v - uv'] \Big|_a^b + \int_a^b u \bar{L}[v] \, \mathrm{d}x.\]</div>
 <p>Thus,</p>
 <div class="math notranslate nohighlight">
 \[\int_a^b \left( \bar{L}[u] v - u \bar{L}[v] \right) \, \mathrm{d}x = \left[ p(x) W(u, v)(x) \right]_a^b,\]</div>
 <p>where <span class="math notranslate nohighlight">\( W(u, v)(x) = u'v - uv' \)</span> is the Wronskian of the two functions.  This is known as <strong>Lagrange’s identity</strong>.</p>
-<p>Using the boundary conditions given above in the SL form defintion, we find:</p>
+<p>Using the boundary conditions given above in the SL form definition, we find:</p>
 <div class="math notranslate nohighlight">
 \[\left[ p(x) W(u, v)(x) \right]_a^b = 0,\]</div>
 <p>so</p>
 <div class="math notranslate nohighlight">
 \[\int_a^b \left( \bar{L}[u] v - u \bar{L}[v] \right) \, \mathrm{d}x = 0.\]</div>
+<p>An operator <span class="math notranslate nohighlight">\(\bar{L}\)</span> satisfying the above equality is called a self adjoint or Hermitian operator.</p>
 </section>
 <hr class="docutils" />
-<section id="adjoint-operator">
-<h3>Adjoint operator<a class="headerlink" href="#adjoint-operator" title="Link to this heading">#</a></h3>
+<section id="adjoint-operator-this-section-can-be-skipped">
+<h3>Adjoint operator (this section can be skipped)<a class="headerlink" href="#adjoint-operator-this-section-can-be-skipped" title="Link to this heading">#</a></h3>
 <p>In general, for complex functions <span class="math notranslate nohighlight">\( u(x) \)</span> and <span class="math notranslate nohighlight">\( v(x) \)</span> and <span class="math notranslate nohighlight">\(L(x)\)</span> is some differential operator, we can write:</p>
 <div class="math notranslate nohighlight">
 \[\int_a^b v^*(x) \cdot [L u(x)] \, \mathrm{d}x = \int_a^b [L^\dagger v(x)]^* \cdot u(x) \, \mathrm{d}x + F(a, b).\]</div>
@@ -559,16 +562,10 @@ q(x) &amp;= 0 \\
 \[(u, v) = \int_a^b u(x) v(x) \, \mathrm{d}x.\]</div>
 <p>For complex functions <span class="math notranslate nohighlight">\( u(x) = u_1(x) + i u_2(x) \)</span> and <span class="math notranslate nohighlight">\( v(x) = v_1(x) + i v_2(x) \)</span>, where <span class="math notranslate nohighlight">\( u_1 \)</span>, <span class="math notranslate nohighlight">\( u_2 \)</span>, <span class="math notranslate nohighlight">\( v_1 \)</span>, and <span class="math notranslate nohighlight">\( v_2 \)</span> are real functions, the inner product is defined as:</p>
 <div class="math notranslate nohighlight">
-\[(u, v) = \int_a^b (u_1(x) + i u_2(x))(v_1(x) - i v_2(x)) \, \mathrm{d}x.\]</div>
+\[(u, v) = \int_a^b (u_1(x) - i u_2(x))(v_1(x) + i v_2(x)) \, \mathrm{d}x.\]</div>
 <p>Note that:</p>
 <div class="math notranslate nohighlight">
-\[(u, u) = \int_a^b u(x) u^*(x) \, \mathrm{d}x = \int_a^b \left( u_1(x)^2 + u_2(x)^2 \right) \, \mathrm{d}x.\]</div>
-<p>In these notations, Lagrange’s identity is:</p>
-<div class="math notranslate nohighlight">
-\[(\bar{L}[u], v) - (u, \bar{L}[v]) = 0.\]</div>
-<p>If <span class="math notranslate nohighlight">\( u(x) \)</span> is an eigenfunction of <span class="math notranslate nohighlight">\( L(x) \)</span>, then the inner product of <span class="math notranslate nohighlight">\( \bar{L}[u] \)</span> and <span class="math notranslate nohighlight">\( v \)</span> is:</p>
-<div class="math notranslate nohighlight">
-\[(\bar{L}[u], v) = \int_a^b \lambda \rho(x) u(x) v(x) \, \mathrm{d}x.\]</div>
+\[(u, u) = \int_a^b  u^*(x) u(x)\, \mathrm{d}x = \int_a^b \left( u_1(x)^2 + u_2(x)^2 \right) \, \mathrm{d}x.\]</div>
 </section>
 <hr class="docutils" />
 <section id="eigenvalues-of-the-sl-problem-are-real">
@@ -584,10 +581,10 @@ q(x) &amp;= 0 \\
 \[(\bar{L}[\phi], \phi) = (\phi, \bar{L}[\phi]).\]</div>
 <p>Since <span class="math notranslate nohighlight">\( \phi(x) \)</span> is an eigenfunction, this becomes:</p>
 <div class="math notranslate nohighlight">
-\[(\lambda \rho \phi, y) = (y, \lambda \rho y),\]</div>
+\[(\lambda \rho \phi, \phi) = (y, \lambda \rho \phi),\]</div>
 <p>which simplifies to:</p>
 <div class="math notranslate nohighlight">
-\[(\lambda - \lambda^*) \int_a^b \rho(x) \phi(x) y^*(x) \, \mathrm{d}x = 0.\]</div>
+\[(\lambda - \lambda^*) \int_a^b \rho(x) \phi^*(x) \phi(x) \, \mathrm{d}x = 0.\]</div>
 <p>Since <span class="math notranslate nohighlight">\( \rho(x) &gt; 0 \)</span> and <span class="math notranslate nohighlight">\( |\phi(x)|^2 &gt; 0 \)</span>, the only possibility is that:</p>
 <div class="math notranslate nohighlight">
 \[\lambda = \lambda^*.\]</div>
@@ -773,7 +770,7 @@ q(x) &amp;= 0 \\
 <h2>Construction of Green’s Functions and Representation of the <span class="math notranslate nohighlight">\(\delta\)</span>-Function<a class="headerlink" href="#construction-of-green-s-functions-and-representation-of-the-delta-function" title="Link to this heading">#</a></h2>
 <p>Suppose <span class="math notranslate nohighlight">\( \phi_n(x) \)</span> and <span class="math notranslate nohighlight">\( \lambda_n \)</span> are eigenfunctions and eigenvalues of a Hermitian operator:</p>
 <div class="math notranslate nohighlight">
-\[\bar{L}(x) = -\left[ \frac{d}{\mathrm{d}x} \left( p(x) \frac{d}{\mathrm{d}x} \right) + q(x) \right],\]</div>
+\[\bar{L}(x) = \left[ \frac{d}{\mathrm{d}x} \left( p(x) \frac{d}{\mathrm{d}x} \right) + q(x) \right],\]</div>
 <p>i.e.,</p>
 <div class="math notranslate nohighlight">
 \[\bar{L} \phi_n(x) = \lambda_n \rho(x) \phi_n(x), \quad x \in [a, b],\]</div>
@@ -1021,7 +1018,7 @@ P_3(x) &amp;= \frac{1}{2}(5x^3 - 3x)\end{split}\]</div>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-adjoint-linear-differential-operators">Self-adjoint Linear Differential Operators</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrange-s-identity">Lagrange’s identity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoint-operator">Adjoint operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoint-operator-this-section-can-be-skipped">Adjoint operator (this section can be skipped)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-eigenfunctions-of-sturm-liouville-equations">Properties of Eigenfunctions of Sturm-Liouville Equations</a><ul class="nav section-nav flex-column">

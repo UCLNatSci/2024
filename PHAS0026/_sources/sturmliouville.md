@@ -7,7 +7,7 @@ Lets consider a class of second order ordinary differential equation what exhibi
 
 Sturm-Liouville (SL) differential equations take the form:
 ```{math}
-p(x) \frac{d^2 y}{\mathrm{d}x^2} + r(x) \frac{dy}{\mathrm{d}x} + q(x) y + \lambda \rho(x) y = 0,
+p(x) \frac{d^2 y}{\mathrm{d}x^2} + r(x) \frac{dy}{\mathrm{d}x} + q(x) y   = \lambda \rho(x) y,
 ```
 
 Additionally we will specify $ x $ belongs to the interval $ a \leq x \leq b $ and all the functions here are real.  
@@ -59,13 +59,13 @@ i.e., $ \lambda $ and $ y(x) $ are the eigenvalue and eigenfunction of the SL di
 Any equation of the form:
 
 ```{math}
-a_2(x) y'' + a_1(x) y' + a_0(x) y + \lambda f(x) y = 0,
+a_2(x) y'' + a_1(x) y' + a_0(x) y = \lambda f(x) y,
 ```
 
 can be converted to the SL form:
 
 ```{math}
-\frac{d}{\mathrm{d}x} \left( p(x) \frac{d}{\mathrm{d}x} \right) + q(x) + \lambda \rho(x).
+\frac{d}{\mathrm{d}x} \left( p(x) \frac{d}{\mathrm{d}x} \right)y + q(x)y = \lambda \rho(x)y.
 ```
 
 Therefore, all results obtained for the SL form are valid for any equation of this type.
@@ -79,7 +79,8 @@ p(x) = F(x) a_2(x), \quad q(x) = F(x) a_0(x), \quad \rho(x) = F(x) f(x),
 and
 
 ```{math}
-F(x) = \exp\left( \int_0^x \frac{a_1(u) - a_0'(u)}{a_2(u)} du \right).
+F(x) &= \frac{1}{a_2(x)}\exp\left( \int_0^x \frac{a_1(u)}{a_2(u)} du \right).\\
+     &= \exp\left( \int_0^x \frac{a_1(u)-a_2’(u)}{a_2(u)} du \right).
 ```
 
 Then, notice that:
@@ -94,7 +95,7 @@ Then, notice that:
 Thus,
 
 ```{math}
-(py')' + q y + \lambda \rho y = F(a_2 y'' + a_1 y' + a_0 y + \lambda f y) = 0,
+(py')' + q y - \lambda \rho y = F(a_2 y'' + a_1 y' + a_0 y - \lambda f y) = 0,
 ```
 
 i.e., the SL form is equivalent to the original SL equation.
@@ -123,19 +124,20 @@ q(x) &= 0 \\
 If we start by considering $\bar{L}[x]$ in an integral:
 
 ```{math}
-\int_a^b (\bar{L}[u]) v \, \mathrm{d}x = \int_a^b \left[ - (p u')' + q u \right] v \, \mathrm{d}x,
+\int_a^b (\bar{L}[u]) v \, \mathrm{d}x = \int_a^b \left[  (p u')' + q u \right] v \, \mathrm{d}x,
 ```
 
-for two functions $ u(x) $ and $ v(x) $, which have continuous second derivatives for $ a \leq x \leq b $. Integrating the right-hand side by parts gives:
+for two functions $ u(x) $ and $ v(x) $, which have continuous second derivatives for $ a \leq x \leq b $ and satisfy the boundary conditions of the SL form. Integrating the right-hand side by parts gives:
 
 ```{math}
-\int_a^b (\bar{L}[u]) v \, \mathrm{d}x = - \int_a^b (p u')' v \, \mathrm{d}x + \int_a^b q u v \, \mathrm{d}x = - \left[ (p u') v \right]_a^b + \int_a^b u' (p v') \, \mathrm{d}x + \int_a^b q u v \, \mathrm{d}x,
+\int_a^b (\bar{L}[u]) v \, \mathrm{d}x &=  \int_a^b (p u')' v \, \mathrm{d}x + \int_a^b q u v \, \mathrm{d}x =  \left[ (p u') v \right]_a^b - \int_a^b u' (p v') \, \mathrm{d}x + \int_a^b q u v \, \mathrm{d}x \\
+&= \left[ (p u') v \right]_a^b - \left[(p v’) u \right]_a^b +\int_a^b u (p v’)’ \, \mathrm{d}x + \int_a^b q u v \, \mathrm{d}x
 ```
 
 i.e.,
 
 ```{math}
-\int_a^b (\bar{L}[u]) v \, \mathrm{d}x = - p [u'v - uv'] \Big|_a^b + \int_a^b u \bar{L}[v] \, \mathrm{d}x.
+\int_a^b (\bar{L}[u]) v \, \mathrm{d}x = p [u'v - uv'] \Big|_a^b + \int_a^b u \bar{L}[v] \, \mathrm{d}x.
 ```
 
 Thus,
@@ -146,7 +148,7 @@ Thus,
 
 where $ W(u, v)(x) = u'v - uv' $ is the Wronskian of the two functions.  This is known as **Lagrange’s identity**.
 
-Using the boundary conditions given above in the SL form defintion, we find:
+Using the boundary conditions given above in the SL form definition, we find:
 
 ```{math}
 \left[ p(x) W(u, v)(x) \right]_a^b = 0,
@@ -158,9 +160,12 @@ so
 \int_a^b \left( \bar{L}[u] v - u \bar{L}[v] \right) \, \mathrm{d}x = 0.
 ```
 
+An operator $\bar{L}$ satisfying the above equality is called a self adjoint or Hermitian operator.
+
+
 ---
 
-### Adjoint operator
+### Adjoint operator (this section can be skipped)
 
 In general, for complex functions $ u(x) $ and $ v(x) $ and $L(x)$ is some differential operator, we can write:
 
@@ -201,26 +206,15 @@ The inner product of real functions $ u(x) $ and $ v(x) $ (also known as overlap
 For complex functions $ u(x) = u_1(x) + i u_2(x) $ and $ v(x) = v_1(x) + i v_2(x) $, where $ u_1 $, $ u_2 $, $ v_1 $, and $ v_2 $ are real functions, the inner product is defined as:
 
 ```{math}
-(u, v) = \int_a^b (u_1(x) + i u_2(x))(v_1(x) - i v_2(x)) \, \mathrm{d}x.
+(u, v) = \int_a^b (u_1(x) - i u_2(x))(v_1(x) + i v_2(x)) \, \mathrm{d}x.
 ```
 
 Note that:
 
 ```{math}
-(u, u) = \int_a^b u(x) u^*(x) \, \mathrm{d}x = \int_a^b \left( u_1(x)^2 + u_2(x)^2 \right) \, \mathrm{d}x.
+(u, u) = \int_a^b  u^*(x) u(x)\, \mathrm{d}x = \int_a^b \left( u_1(x)^2 + u_2(x)^2 \right) \, \mathrm{d}x.
 ```
 
-In these notations, Lagrange’s identity is:
-
-```{math}
-(\bar{L}[u], v) - (u, \bar{L}[v]) = 0.
-```
-
-If $ u(x) $ is an eigenfunction of $ L(x) $, then the inner product of $ \bar{L}[u] $ and $ v $ is:
-
-```{math}
-(\bar{L}[u], v) = \int_a^b \lambda \rho(x) u(x) v(x) \, \mathrm{d}x.
-```
 
 ---
 
@@ -247,13 +241,13 @@ Clearly:
 Since $ \phi(x) $ is an eigenfunction, this becomes:
 
 ```{math}
-(\lambda \rho \phi, y) = (y, \lambda \rho y),
+(\lambda \rho \phi, \phi) = (y, \lambda \rho \phi),
 ```
 
 which simplifies to:
 
 ```{math}
-(\lambda - \lambda^*) \int_a^b \rho(x) \phi(x) y^*(x) \, \mathrm{d}x = 0.
+(\lambda - \lambda^*) \int_a^b \rho(x) \phi^*(x) \phi(x) \, \mathrm{d}x = 0.
 ```
 
 Since $ \rho(x) > 0 $ and $ |\phi(x)|^2 > 0 $, the only possibility is that:
@@ -266,7 +260,7 @@ Thus, eigenvalues $ \lambda $ of the SL problem are real.
 
 ---
 
-### Eigenfunctions of the SL problem are real
+### Eigenfunctions of the SL problem are real 
 
 Consider the equation:
 
@@ -541,7 +535,7 @@ Two widely used examples of complete basis sets include:
 Suppose $ \phi_n(x) $ and $ \lambda_n $ are eigenfunctions and eigenvalues of a Hermitian operator:
 
 ```{math}
-\bar{L}(x) = -\left[ \frac{d}{\mathrm{d}x} \left( p(x) \frac{d}{\mathrm{d}x} \right) + q(x) \right],
+\bar{L}(x) = \left[ \frac{d}{\mathrm{d}x} \left( p(x) \frac{d}{\mathrm{d}x} \right) + q(x) \right],
 ```
 
 i.e.,
