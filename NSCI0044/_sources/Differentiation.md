@@ -471,6 +471,8 @@ Once you have identified the stationary points, you can use the second derivativ
    - Find $ f'(x) $ and set it to zero to locate stationary points.
    - Use $ f''(x) $ at those points to determine if they are maxima or minima.
 
+![Stationary Points](StationaryPoints3.png)
+
 ### Points of Inflection (Using the Third Derivative)
 A **point of inflection** occurs where the behaviour of $ f(x) $ changes from concave up to concave down or vice versa
 
@@ -498,7 +500,7 @@ These steps provide a methodical approach to identifying and analysing key featu
 
 An application of differentiation is to find a function $f(x)$'s **Stationary Points** (SP's), where we are searching for solutions to $f'(x) = 0$. There are three distinct types of SP:
 
-![Stationary Points](StationaryPoints3.png)
+![Stationary Points](StationaryPoints2.png)
 
 
 We see that we need the first derivative to be zero, but the sign of the second derivative can indicate the type of stationary point.  
