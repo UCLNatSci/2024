@@ -345,61 +345,166 @@ When differentiating compositions involving logarithmic functions, use the chain
 
 ### Implicit Differentiation
 
-  $$
-  f(y) = g(x) \Rightarrow f'(y) \frac{\textrm{d}y}{\textrm{d}x} = g'(x)
-  $$
+Implicit differentiation is used when a function is given in an **implicit form** rather than an explicit form. In implicit functions, $ y $ is not isolated on one side of the equation, so we differentiate both $ x $ and $ y $ as we work through the equation.
 
-  An example: Find an expression for $ \frac{\textrm{d}y}{\textrm{d}x} $ given $ \sin(y) = x^2 $:
+*Steps for Implicit Differentiation:*
 
-  $$
-  \cos(y) \frac{\textrm{d}y}{\textrm{d}x} = 2x \\
-  \frac{\textrm{d}y}{\textrm{d}x} = \frac{2x}{\cos(y)} = \frac{2x}{\sqrt{1-\sin^2(y)}} \\
-  = \frac{2x}{\sqrt{1-x^4}}
-  $$
+1. Differentiate both sides of the equation with respect to $ x $.
+2. When differentiating terms involving $ y $, treat $ y $ as a function of $ x $ and apply the chain rule: 
+   ```{math}
+   \frac{\mathrm{d}}{\mathrm{d}x} \, y = y' = \frac{\mathrm{d}y}{\mathrm{d}x}
+   ```
+3. Solve for $ y' $ (or $ \frac{\mathrm{d}y}{\mathrm{d}x} $).
+
+*Examples:*
+
+1. For the equation $ x^2 + y^2 = 25 $, differentiate both sides with respect to $ x $:
+```{math}
+2x + 2y \cdot \frac{\mathrm{d}y}{\mathrm{d}x} = 0
+```
+Solving for $ \frac{\mathrm{d}y}{\mathrm{d}x} $ (i.e., $ y' $):
+```{math}
+\frac{\mathrm{d}y}{\mathrm{d}x} = -\frac{x}{y}
+```
+
+2. For the equation $ x^2y + y^2 = 4 $, differentiate both sides with respect to $ x $:
+
+Differentiate Each Term:
+   ```{math}
+   \frac{\mathrm{d}}{\mathrm{d}x} (x^2y) + \frac{\mathrm{d}}{\mathrm{d}x} (y^2) = \frac{\mathrm{d}}{\mathrm{d}x} (4)
+   ```
+Apply the Product Rule to $ x^2y $ and the Chain Rule to $ y^2 $:
+   ```{math}
+   (2x)y + x^2 \cdot \frac{\mathrm{d}y}{\mathrm{d}x} + 2y \cdot \frac{\mathrm{d}y}{\mathrm{d}x} = 0
+   ```
+Combine Terms and solve for $ \frac{\mathrm{d}y}{\mathrm{d}x} $:
+   ```{math}
+   x^2 \frac{\mathrm{d}y}{\mathrm{d}x} + 2y \frac{\mathrm{d}y}{\mathrm{d}x} = -2xy
+   ```
+   ```{math}
+   \frac{\mathrm{d}y}{\mathrm{d}x} (x^2 + 2y) = -2xy
+   ```
+   ```{math}
+   \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{-2xy}{x^2 + 2y}
+   ```
+
+3. For the equation $ \sin(xy) = x + y $, differentiate both sides with respect to $ x $:
+
+Differentiate Both Sides:
+   ```{math}
+   \frac{\mathrm{d}}{\mathrm{d}x} \sin(xy) = \frac{\mathrm{d}}{\mathrm{d}x} (x + y)
+   ```
+Apply the Chain Rule on the left side and differentiate $ x + y $ on the right side:
+   ```{math}
+   \cos(xy) \cdot \frac{\mathrm{d}}{\mathrm{d}x} (xy) = 1 + \frac{\mathrm{d}y}{\mathrm{d}x}
+   ```
+Use the Product Rule for $ \frac{\mathrm{d}}{\mathrm{d}x} (xy) $:
+   ```{math}
+   \cos(xy) \cdot \left( x \frac{\mathrm{d}y}{\mathrm{d}x} + y \right) = 1 + \frac{\mathrm{d}y}{\mathrm{d}x}
+   ```
+Expand and Collect Terms for $ \frac{\mathrm{d}y}{\mathrm{d}x} $:
+   ```{math}
+   x \cos(xy) \frac{\mathrm{d}y}{\mathrm{d}x} + y \cos(xy) = 1 + \frac{\mathrm{d}y}{\mathrm{d}x}
+   ```
+Move All Terms Involving $ \frac{\mathrm{d}y}{\mathrm{d}x} $ to One Side:
+   ```{math}
+   x \cos(xy) \frac{\mathrm{d}y}{\mathrm{d}x} - \frac{\mathrm{d}y}{\mathrm{d}x} = 1 - y \cos(xy)
+   ```
+Factor Out $ \frac{\mathrm{d}y}{\mathrm{d}x} $ and Solve:
+   ```{math}
+   \frac{\mathrm{d}y}{\mathrm{d}x} (x \cos(xy) - 1) = 1 - y \cos(xy)
+   ```
+   ```{math}
+   \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{1 - y \cos(xy)}{x \cos(xy) - 1}
+   ```
+
+These examples demonstrate how implicit differentiation can handle complex relationships between $ x $ and $ y $, applying both the chain rule and product rule as needed.
 
 ### Parametric Differentiation
+In parametric differentiation, functions are given in **parametric form** where both $ x $ and $ y $ are defined in terms of a third variable, usually $ t $, called the parameter.
 
-  $$
-  x=x(t),\quad y=y(t) \\
-  \frac{\textrm{d}y}{\textrm{d}x} = \frac{\textrm{d}y}{\textrm{d}t}\frac{\textrm{d}t}{\textrm{d}x} = \frac{\textrm{d}y}{\textrm{d}t} \left/\frac{\textrm{d}x}{\textrm{d}t}\right.
-  $$
+*Steps for Parametric Differentiation:*
 
-  An example, find $ \frac{\textrm{d}y}{\textrm{d}x} $ given:
+1. Differentiate $ x(t) $ and $ y(t) $ with respect to $ t $ to obtain $ \frac{\mathrm{d}x}{\mathrm{d}t} $ and $ \frac{\mathrm{d}y}{\mathrm{d}t} $.
+2. Use the formula for $ \frac{\mathrm{d}y}{\mathrm{d}x} $:
+   ```{math}
+   \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}
+   ```
+   This gives the derivative of $ y $ with respect to $ x $ in terms of $ t $.
 
-  $$
-  x = \sin(t),\, y = \cos(t)
-  $$
+*Examples:*
 
-  To proceed, we first differentiate $ x,\,y $ with respect to $ t $:
+For the parametric equations $ x = t^2 $ and $ y = t^3 - 3t $:
+1. Differentiate $ x $ and $ y $ with respect to $ t $:
+   ```{math}
+   \frac{\mathrm{d}x}{\mathrm{d}t} = 2t, \quad \frac{\mathrm{d}y}{\mathrm{d}t} = 3t^2 - 3
+   ```
+2. Use the formula for $ \frac{\mathrm{d}y}{\mathrm{d}x} $:
+   ```{math}
+   \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{3t^2 - 3}{2t}
+   ```
 
-  $$
-  x'(t) = \cos(t),\, y' = -\sin(t)
-  $$
 
-  and then to find the derivative of $ y $ with respect to $ x $:
-
-  $$
-  \frac{\textrm{d}y}{\textrm{d}x} = -\frac{\sin(t)}{\cos(t)} = -\frac{x}{y}
-  $$
-
-  To check, we can try to eliminate $ t $ and differentiate implicitly:
-
-  $$
-  x^2 + y^2 = \cos^2(t) + \sin^2(t) = 1 \\
-  \Rightarrow 2x + 2y \frac{\textrm{d}y}{\textrm{d}x} = 0 \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = -\frac{x}{y}
-  $$
-
-  although it is not always possible to do this explicitly!
+These methods allow us to differentiate functions that are not explicitly given as $ y = f(x) $, and they’re especially useful in fields like physics and engineering, where complex relationships between variables often occur.
 
 
 
 ## Finding Stationary Points
+
+A **stationary point** of a function $ f(x) $ occurs where the derivative $ f'(x) = 0 $. At a stationary point, the function’s slope is zero, which means the graph has a horizontal tangent line.
+
+To find stationary points:
+1. Calculate the derivative $ f'(x) $.
+2. Set $ f'(x) = 0 $ and solve for $ x $.
+3. Substitute these $ x $-values back into $ f(x) $ to find the corresponding $ y $-values.
+
+### Maxima and Minima (Using the Second Derivative Test)
+Once you have identified the stationary points, you can use the second derivative $ f''(x) $ to determine if these points are **local maxima** or **local minima**:
+
+- **Local Maximum**: If $ f''(x) < 0 $ at a stationary point, $ f(x) $ has a local maximum at that point. The curve is concave down.
+- **Local Minimum**: If $ f''(x) > 0 $ at a stationary point, $ f(x) $ has a local minimum at that point. The curve is concave up.
+- **Inconclusive**: If $ f''(x) = 0 $, the second derivative test is inconclusive. In this case, higher-order derivatives might provide more information.
+
+*Examples:*
+
+1. For $ f(x) = x^3 - 3x^2 + 4 $:
+   - Find $ f'(x) $ and set it to zero to locate stationary points.
+   - Use $ f''(x) $ at those points to determine if they are maxima or minima.
+
+### Points of Inflection (Using the Third Derivative)
+A **point of inflection** occurs where the behaviour of $ f(x) $ changes from concave up to concave down or vice versa
+
+To confirm a point of inflection:
+1. Calculate $ f''(x) $ and if $f''(x) = 0$ we have potential inflection points.
+2. Use the **third derivative test**:
+$ f'''(x) \neq 0 $, then $ x $ is a point of inflection.
+
+*Example:*
+
+For $ f(x) = x^4 - 4x^2 $:
+   - Find $ f''(x) $ and set it to zero to identify potential points of inflection.
+   - Use $ f'''(x) $ at these points to determine if they are true inflection points.
+
+### Summary Table
+
+| Feature            | Condition                               | Test                             |
+|--------------------|-----------------------------------------|----------------------------------|
+| Stationary Point   | $ f'(x) = 0 $                        | Solve $ f'(x) = 0 $            |
+| Local Maximum      | $ f'(x) = 0 $ and $ f''(x) < 0 $   | Second derivative test           |
+| Local Minimum      | $ f'(x) = 0 $ and $ f''(x) > 0 $   | Second derivative test           |
+| Point of Inflection| $ f''(x) = 0 $ and $ f'''(x) \neq 0 $ | Third derivative test          |
+
+These steps provide a methodical approach to identifying and analysing key features of a function’s graph, which is essential for understanding its behaviour.
+
 An application of differentiation is to find a function $f(x)$'s **Stationary Points** (SP's), where we are searching for solutions to $f'(x) = 0$. There are three distinct types of SP:
 
-![Stationary Points](StationaryPoints2.png)
+![Stationary Points](StationaryPoints3.png)
+
 
 We see that we need the first derivative to be zero, but the sign of the second derivative can indicate the type of stationary point.  
-An example, find the coordinate(s) and nature of all the stationary point(s) for:
+
+
+*Example:* find the coordinate(s) and nature of all the stationary point(s) for:
 ```{math}
 f(x) = x^3 - 27x
 ```

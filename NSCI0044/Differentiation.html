@@ -405,7 +405,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-differentiation">Parametric Differentiation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-stationary-points">Finding Stationary Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-stationary-points">Finding Stationary Points</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima-and-minima-using-the-second-derivative-test">Maxima and Minima (Using the Second Derivative Test)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#points-of-inflection-using-the-third-derivative">Points of Inflection (Using the Third Derivative)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-table">Summary Table</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -689,55 +694,170 @@ For logarithms with bases other than <span class="math notranslate nohighlight">
 </section>
 <section id="implicit-differentiation">
 <h3>Implicit Differentiation<a class="headerlink" href="#implicit-differentiation" title="Link to this heading">#</a></h3>
+<p>Implicit differentiation is used when a function is given in an <strong>implicit form</strong> rather than an explicit form. In implicit functions, <span class="math notranslate nohighlight">\( y \)</span> is not isolated on one side of the equation, so we differentiate both <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> as we work through the equation.</p>
+<p><em>Steps for Implicit Differentiation:</em></p>
+<ol class="arabic">
+<li><p>Differentiate both sides of the equation with respect to <span class="math notranslate nohighlight">\( x \)</span>.</p></li>
+<li><p>When differentiating terms involving <span class="math notranslate nohighlight">\( y \)</span>, treat <span class="math notranslate nohighlight">\( y \)</span> as a function of <span class="math notranslate nohighlight">\( x \)</span> and apply the chain rule:</p>
 <div class="math notranslate nohighlight">
-\[
-  f(y) = g(x) \Rightarrow f'(y) \frac{\textrm{d}y}{\textrm{d}x} = g'(x)
-  \]</div>
-<p>An example: Find an expression for <span class="math notranslate nohighlight">\( \frac{\textrm{d}y}{\textrm{d}x} \)</span> given <span class="math notranslate nohighlight">\( \sin(y) = x^2 \)</span>:</p>
+\[\frac{\mathrm{d}}{\mathrm{d}x} \, y = y' = \frac{\mathrm{d}y}{\mathrm{d}x}\]</div>
+</li>
+<li><p>Solve for <span class="math notranslate nohighlight">\( y' \)</span> (or <span class="math notranslate nohighlight">\( \frac{\mathrm{d}y}{\mathrm{d}x} \)</span>).</p></li>
+</ol>
+<p><em>Examples:</em></p>
+<ol class="arabic simple">
+<li><p>For the equation <span class="math notranslate nohighlight">\( x^2 + y^2 = 25 \)</span>, differentiate both sides with respect to <span class="math notranslate nohighlight">\( x \)</span>:</p></li>
+</ol>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-  \cos(y) \frac{\textrm{d}y}{\textrm{d}x} = 2x \\
-  \frac{\textrm{d}y}{\textrm{d}x} = \frac{2x}{\cos(y)} = \frac{2x}{\sqrt{1-\sin^2(y)}} \\
-  = \frac{2x}{\sqrt{1-x^4}}
-  \end{split}\]</div>
+\[2x + 2y \cdot \frac{\mathrm{d}y}{\mathrm{d}x} = 0\]</div>
+<p>Solving for <span class="math notranslate nohighlight">\( \frac{\mathrm{d}y}{\mathrm{d}x} \)</span> (i.e., <span class="math notranslate nohighlight">\( y' \)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}y}{\mathrm{d}x} = -\frac{x}{y}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>For the equation <span class="math notranslate nohighlight">\( x^2y + y^2 = 4 \)</span>, differentiate both sides with respect to <span class="math notranslate nohighlight">\( x \)</span>:</p></li>
+</ol>
+<p>Differentiate Each Term:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} (x^2y) + \frac{\mathrm{d}}{\mathrm{d}x} (y^2) = \frac{\mathrm{d}}{\mathrm{d}x} (4)\]</div>
+<p>Apply the Product Rule to <span class="math notranslate nohighlight">\( x^2y \)</span> and the Chain Rule to <span class="math notranslate nohighlight">\( y^2 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[(2x)y + x^2 \cdot \frac{\mathrm{d}y}{\mathrm{d}x} + 2y \cdot \frac{\mathrm{d}y}{\mathrm{d}x} = 0\]</div>
+<p>Combine Terms and solve for <span class="math notranslate nohighlight">\( \frac{\mathrm{d}y}{\mathrm{d}x} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[x^2 \frac{\mathrm{d}y}{\mathrm{d}x} + 2y \frac{\mathrm{d}y}{\mathrm{d}x} = -2xy\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}y}{\mathrm{d}x} (x^2 + 2y) = -2xy\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{-2xy}{x^2 + 2y}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>For the equation <span class="math notranslate nohighlight">\( \sin(xy) = x + y \)</span>, differentiate both sides with respect to <span class="math notranslate nohighlight">\( x \)</span>:</p></li>
+</ol>
+<p>Differentiate Both Sides:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}}{\mathrm{d}x} \sin(xy) = \frac{\mathrm{d}}{\mathrm{d}x} (x + y)\]</div>
+<p>Apply the Chain Rule on the left side and differentiate <span class="math notranslate nohighlight">\( x + y \)</span> on the right side:</p>
+<div class="math notranslate nohighlight">
+\[\cos(xy) \cdot \frac{\mathrm{d}}{\mathrm{d}x} (xy) = 1 + \frac{\mathrm{d}y}{\mathrm{d}x}\]</div>
+<p>Use the Product Rule for <span class="math notranslate nohighlight">\( \frac{\mathrm{d}}{\mathrm{d}x} (xy) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\cos(xy) \cdot \left( x \frac{\mathrm{d}y}{\mathrm{d}x} + y \right) = 1 + \frac{\mathrm{d}y}{\mathrm{d}x}\]</div>
+<p>Expand and Collect Terms for <span class="math notranslate nohighlight">\( \frac{\mathrm{d}y}{\mathrm{d}x} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[x \cos(xy) \frac{\mathrm{d}y}{\mathrm{d}x} + y \cos(xy) = 1 + \frac{\mathrm{d}y}{\mathrm{d}x}\]</div>
+<p>Move All Terms Involving <span class="math notranslate nohighlight">\( \frac{\mathrm{d}y}{\mathrm{d}x} \)</span> to One Side:</p>
+<div class="math notranslate nohighlight">
+\[x \cos(xy) \frac{\mathrm{d}y}{\mathrm{d}x} - \frac{\mathrm{d}y}{\mathrm{d}x} = 1 - y \cos(xy)\]</div>
+<p>Factor Out <span class="math notranslate nohighlight">\( \frac{\mathrm{d}y}{\mathrm{d}x} \)</span> and Solve:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}y}{\mathrm{d}x} (x \cos(xy) - 1) = 1 - y \cos(xy)\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{1 - y \cos(xy)}{x \cos(xy) - 1}\]</div>
+<p>These examples demonstrate how implicit differentiation can handle complex relationships between <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>, applying both the chain rule and product rule as needed.</p>
 </section>
 <section id="parametric-differentiation">
 <h3>Parametric Differentiation<a class="headerlink" href="#parametric-differentiation" title="Link to this heading">#</a></h3>
+<p>In parametric differentiation, functions are given in <strong>parametric form</strong> where both <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> are defined in terms of a third variable, usually <span class="math notranslate nohighlight">\( t \)</span>, called the parameter.</p>
+<p><em>Steps for Parametric Differentiation:</em></p>
+<ol class="arabic">
+<li><p>Differentiate <span class="math notranslate nohighlight">\( x(t) \)</span> and <span class="math notranslate nohighlight">\( y(t) \)</span> with respect to <span class="math notranslate nohighlight">\( t \)</span> to obtain <span class="math notranslate nohighlight">\( \frac{\mathrm{d}x}{\mathrm{d}t} \)</span> and <span class="math notranslate nohighlight">\( \frac{\mathrm{d}y}{\mathrm{d}t} \)</span>.</p></li>
+<li><p>Use the formula for <span class="math notranslate nohighlight">\( \frac{\mathrm{d}y}{\mathrm{d}x} \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-  x=x(t),\quad y=y(t) \\
-  \frac{\textrm{d}y}{\textrm{d}x} = \frac{\textrm{d}y}{\textrm{d}t}\frac{\textrm{d}t}{\textrm{d}x} = \frac{\textrm{d}y}{\textrm{d}t} \left/\frac{\textrm{d}x}{\textrm{d}t}\right.
-  \end{split}\]</div>
-<p>An example, find <span class="math notranslate nohighlight">\( \frac{\textrm{d}y}{\textrm{d}x} \)</span> given:</p>
+\[\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}\]</div>
+<p>This gives the derivative of <span class="math notranslate nohighlight">\( y \)</span> with respect to <span class="math notranslate nohighlight">\( x \)</span> in terms of <span class="math notranslate nohighlight">\( t \)</span>.</p>
+</li>
+</ol>
+<p><em>Examples:</em></p>
+<p>For the parametric equations <span class="math notranslate nohighlight">\( x = t^2 \)</span> and <span class="math notranslate nohighlight">\( y = t^3 - 3t \)</span>:</p>
+<ol class="arabic">
+<li><p>Differentiate <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> with respect to <span class="math notranslate nohighlight">\( t \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[
-  x = \sin(t),\, y = \cos(t)
-  \]</div>
-<p>To proceed, we first differentiate <span class="math notranslate nohighlight">\( x,\,y \)</span> with respect to <span class="math notranslate nohighlight">\( t \)</span>:</p>
+\[\frac{\mathrm{d}x}{\mathrm{d}t} = 2t, \quad \frac{\mathrm{d}y}{\mathrm{d}t} = 3t^2 - 3\]</div>
+</li>
+<li><p>Use the formula for <span class="math notranslate nohighlight">\( \frac{\mathrm{d}y}{\mathrm{d}x} \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[
-  x'(t) = \cos(t),\, y' = -\sin(t)
-  \]</div>
-<p>and then to find the derivative of <span class="math notranslate nohighlight">\( y \)</span> with respect to <span class="math notranslate nohighlight">\( x \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-  \frac{\textrm{d}y}{\textrm{d}x} = -\frac{\sin(t)}{\cos(t)} = -\frac{x}{y}
-  \]</div>
-<p>To check, we can try to eliminate <span class="math notranslate nohighlight">\( t \)</span> and differentiate implicitly:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-  x^2 + y^2 = \cos^2(t) + \sin^2(t) = 1 \\
-  \Rightarrow 2x + 2y \frac{\textrm{d}y}{\textrm{d}x} = 0 \Rightarrow \frac{\textrm{d}y}{\textrm{d}x} = -\frac{x}{y}
-  \end{split}\]</div>
-<p>although it is not always possible to do this explicitly!</p>
+\[\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{3t^2 - 3}{2t}\]</div>
+</li>
+</ol>
+<p>These methods allow us to differentiate functions that are not explicitly given as <span class="math notranslate nohighlight">\( y = f(x) \)</span>, and they’re especially useful in fields like physics and engineering, where complex relationships between variables often occur.</p>
 </section>
 </section>
 <section id="finding-stationary-points">
 <h2>Finding Stationary Points<a class="headerlink" href="#finding-stationary-points" title="Link to this heading">#</a></h2>
+<p>A <strong>stationary point</strong> of a function <span class="math notranslate nohighlight">\( f(x) \)</span> occurs where the derivative <span class="math notranslate nohighlight">\( f'(x) = 0 \)</span>. At a stationary point, the function’s slope is zero, which means the graph has a horizontal tangent line.</p>
+<p>To find stationary points:</p>
+<ol class="arabic simple">
+<li><p>Calculate the derivative <span class="math notranslate nohighlight">\( f'(x) \)</span>.</p></li>
+<li><p>Set <span class="math notranslate nohighlight">\( f'(x) = 0 \)</span> and solve for <span class="math notranslate nohighlight">\( x \)</span>.</p></li>
+<li><p>Substitute these <span class="math notranslate nohighlight">\( x \)</span>-values back into <span class="math notranslate nohighlight">\( f(x) \)</span> to find the corresponding <span class="math notranslate nohighlight">\( y \)</span>-values.</p></li>
+</ol>
+<section id="maxima-and-minima-using-the-second-derivative-test">
+<h3>Maxima and Minima (Using the Second Derivative Test)<a class="headerlink" href="#maxima-and-minima-using-the-second-derivative-test" title="Link to this heading">#</a></h3>
+<p>Once you have identified the stationary points, you can use the second derivative <span class="math notranslate nohighlight">\( f''(x) \)</span> to determine if these points are <strong>local maxima</strong> or <strong>local minima</strong>:</p>
+<ul class="simple">
+<li><p><strong>Local Maximum</strong>: If <span class="math notranslate nohighlight">\( f''(x) &lt; 0 \)</span> at a stationary point, <span class="math notranslate nohighlight">\( f(x) \)</span> has a local maximum at that point. The curve is concave down.</p></li>
+<li><p><strong>Local Minimum</strong>: If <span class="math notranslate nohighlight">\( f''(x) &gt; 0 \)</span> at a stationary point, <span class="math notranslate nohighlight">\( f(x) \)</span> has a local minimum at that point. The curve is concave up.</p></li>
+<li><p><strong>Inconclusive</strong>: If <span class="math notranslate nohighlight">\( f''(x) = 0 \)</span>, the second derivative test is inconclusive. In this case, higher-order derivatives might provide more information.</p></li>
+</ul>
+<p><em>Examples:</em></p>
+<ol class="arabic simple">
+<li><p>For <span class="math notranslate nohighlight">\( f(x) = x^3 - 3x^2 + 4 \)</span>:</p>
+<ul class="simple">
+<li><p>Find <span class="math notranslate nohighlight">\( f'(x) \)</span> and set it to zero to locate stationary points.</p></li>
+<li><p>Use <span class="math notranslate nohighlight">\( f''(x) \)</span> at those points to determine if they are maxima or minima.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="points-of-inflection-using-the-third-derivative">
+<h3>Points of Inflection (Using the Third Derivative)<a class="headerlink" href="#points-of-inflection-using-the-third-derivative" title="Link to this heading">#</a></h3>
+<p>A <strong>point of inflection</strong> occurs where the behaviour of <span class="math notranslate nohighlight">\( f(x) \)</span> changes from concave up to concave down or vice versa</p>
+<p>To confirm a point of inflection:</p>
+<ol class="arabic simple">
+<li><p>Calculate <span class="math notranslate nohighlight">\( f''(x) \)</span> and if <span class="math notranslate nohighlight">\(f''(x) = 0\)</span> we have potential inflection points.</p></li>
+<li><p>Use the <strong>third derivative test</strong>:
+<span class="math notranslate nohighlight">\( f'''(x) \neq 0 \)</span>, then <span class="math notranslate nohighlight">\( x \)</span> is a point of inflection.</p></li>
+</ol>
+<p><em>Example:</em></p>
+<p>For <span class="math notranslate nohighlight">\( f(x) = x^4 - 4x^2 \)</span>:</p>
+<ul class="simple">
+<li><p>Find <span class="math notranslate nohighlight">\( f''(x) \)</span> and set it to zero to identify potential points of inflection.</p></li>
+<li><p>Use <span class="math notranslate nohighlight">\( f'''(x) \)</span> at these points to determine if they are true inflection points.</p></li>
+</ul>
+</section>
+<section id="summary-table">
+<h3>Summary Table<a class="headerlink" href="#summary-table" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Condition</p></th>
+<th class="head"><p>Test</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stationary Point</p></td>
+<td><p><span class="math notranslate nohighlight">\( f'(x) = 0 \)</span></p></td>
+<td><p>Solve <span class="math notranslate nohighlight">\( f'(x) = 0 \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Local Maximum</p></td>
+<td><p><span class="math notranslate nohighlight">\( f'(x) = 0 \)</span> and <span class="math notranslate nohighlight">\( f''(x) &lt; 0 \)</span></p></td>
+<td><p>Second derivative test</p></td>
+</tr>
+<tr class="row-even"><td><p>Local Minimum</p></td>
+<td><p><span class="math notranslate nohighlight">\( f'(x) = 0 \)</span> and <span class="math notranslate nohighlight">\( f''(x) &gt; 0 \)</span></p></td>
+<td><p>Second derivative test</p></td>
+</tr>
+<tr class="row-odd"><td><p>Point of Inflection</p></td>
+<td><p><span class="math notranslate nohighlight">\( f''(x) = 0 \)</span> and <span class="math notranslate nohighlight">\( f'''(x) \neq 0 \)</span></p></td>
+<td><p>Third derivative test</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These steps provide a methodical approach to identifying and analysing key features of a function’s graph, which is essential for understanding its behaviour.</p>
 <p>An application of differentiation is to find a function <span class="math notranslate nohighlight">\(f(x)\)</span>’s <strong>Stationary Points</strong> (SP’s), where we are searching for solutions to <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>. There are three distinct types of SP:</p>
-<p><img alt="Stationary Points" src="_images/StationaryPoints2.png" /></p>
-<p>We see that we need the first derivative to be zero, but the sign of the second derivative can indicate the type of stationary point.<br />
-An example, find the coordinate(s) and nature of all the stationary point(s) for:</p>
+<p><img alt="Stationary Points" src="_images/StationaryPoints3.png" /></p>
+<p>We see that we need the first derivative to be zero, but the sign of the second derivative can indicate the type of stationary point.</p>
+<p><em>Example:</em> find the coordinate(s) and nature of all the stationary point(s) for:</p>
 <div class="math notranslate nohighlight">
 \[f(x) = x^3 - 27x\]</div>
 <p>Firstly, find expressions for all the relevant derivatives:</p>
@@ -753,6 +873,7 @@ An example, find the coordinate(s) and nature of all the stationary point(s) for
     f''(3) = 18 &gt; 0 &amp; &amp; f''(-3) = -18 &lt; 0
 \end{array}\end{split}\]</div>
 <p>Therefore <span class="math notranslate nohighlight">\(f(x)\)</span> has two SP’s, a minima at <span class="math notranslate nohighlight">\((3, -54)\)</span> and a maxima at <span class="math notranslate nohighlight">\((-3, 54)\)</span>.</p>
+</section>
 </section>
 </section>
 
@@ -836,7 +957,12 @@ An example, find the coordinate(s) and nature of all the stationary point(s) for
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-differentiation">Parametric Differentiation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-stationary-points">Finding Stationary Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-stationary-points">Finding Stationary Points</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima-and-minima-using-the-second-derivative-test">Maxima and Minima (Using the Second Derivative Test)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#points-of-inflection-using-the-third-derivative">Points of Inflection (Using the Third Derivative)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-table">Summary Table</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
