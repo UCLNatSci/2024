@@ -8,7 +8,7 @@ Niels Bohr and Werner Heisenberg, by contrast, passionately defended quantum mec
 
 In contemporary philosophy of physics, the debates continue to revolve around these foundational issues. David Bohm’s pilot-wave theory offered a deterministic alternative, introducing hidden variables to account for quantum phenomena without abandoning realism (Bohm, 1952). However, this approach was widely criticised as unnecessarily complex by advocates of the Copenhagen interpretation and other mainstream views (Bell, 1964). David Wallace, a leading proponent of the Many-Worlds Interpretation, argued that it avoids the need for wave function collapse and provides a coherent explanation of quantum phenomena by positing the existence of branching universes (Wallace, 2012). Yet, critics like Tim Maudlin dismissed this view as metaphysically extravagant and counterintuitive (Maudlin, 2010). Carlo Rovelli, with his relational interpretation, proposed that quantum states represent relations between systems rather than an observer-independent reality, challenging traditional notions of objectivity (Rovelli, 1996). These debates reveal the ongoing tension between those who embrace the probabilistic and relational aspects of quantum mechanics as intrinsic features of reality and those who seek a deeper, more deterministic explanation. Ultimately, quantum mechanics continues to inspire both awe and unease, standing as one of the most successful yet philosophically perplexing theories in science.
 
-### References
+*References*
 Bell, J. S. (1964). On the Einstein Podolsky Rosen paradox. *Physics Physique Физика*, 1(3), 195–200.
 
 Bohm, D. (1952). A suggested interpretation of the quantum theory in terms of “hidden” variables. I. *Physical Review*, 85(2), 166–179.

@@ -183,6 +183,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Maths.html">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FirstSecondQuant.html">First and Second Quantisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
@@ -400,6 +401,13 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-particle-in-a-potential">Example: Particle in a Potential</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-continuity-equation">The Continuity Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodinger-equation">Schrödinger Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-density-and-current">Probability Density and Current</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-continuity-equation">Derivation of the Continuity Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-in-pilot-wave-theory">Interpretation in Pilot Wave Theory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pilot-wave-guiding-wave">The Pilot Wave (Guiding Wave)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-guiding-equation">The Guiding Equation</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-velocity-from-the-guiding-equation">Example Calculation: Velocity from the Guiding Equation</a></li>
@@ -452,6 +460,88 @@ document.write(`
 <p>In Bohmian Mechanics, the particle has a position <span class="math notranslate nohighlight">\( x(t) \)</span> at all times, and its velocity is determined by the guiding equation (discussed below), based on the wavefunction <span class="math notranslate nohighlight">\( \psi(x, t) \)</span>.</p>
 </section>
 </section>
+</section>
+<section id="the-continuity-equation">
+<h2>The Continuity Equation<a class="headerlink" href="#the-continuity-equation" title="Link to this heading">#</a></h2>
+<p>In <strong>pilot wave theory</strong> (or de Broglie-Bohm theory), quantum mechanics is viewed as a deterministic theory. The wavefunction guides the motion of particles via the <strong>pilot wave</strong>, and the density of particles is related to the square of the wavefunction’s modulus, <span class="math notranslate nohighlight">\( |\psi|^2 \)</span>. To ensure consistency, the Schrödinger equation must imply a <strong>continuity equation</strong>, describing the conservation of probability density.</p>
+<hr class="docutils" />
+<section id="schrodinger-equation">
+<h3>Schrödinger Equation<a class="headerlink" href="#schrodinger-equation" title="Link to this heading">#</a></h3>
+<p>The time-dependent Schrödinger equation is:</p>
+<div class="math notranslate nohighlight">
+\[i\hbar \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m} \nabla^2 \psi + V\psi\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \psi(\mathbf{r}, t) \)</span> is the wavefunction,</p></li>
+<li><p><span class="math notranslate nohighlight">\( V \)</span> is the potential,</p></li>
+<li><p><span class="math notranslate nohighlight">\( \nabla^2 \)</span> is the Laplacian operator.</p></li>
+</ul>
+<p>The wavefunction is generally complex:</p>
+<div class="math notranslate nohighlight">
+\[\psi(\mathbf{r}, t) = R(\mathbf{r}, t) e^{iS(\mathbf{r}, t)/\hbar}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( R(\mathbf{r}, t) \)</span> is the amplitude,</p></li>
+<li><p><span class="math notranslate nohighlight">\( S(\mathbf{r}, t) \)</span> is the phase.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="probability-density-and-current">
+<h3>Probability Density and Current<a class="headerlink" href="#probability-density-and-current" title="Link to this heading">#</a></h3>
+<p>In quantum mechanics, the <strong>probability density</strong> is:</p>
+<div class="math notranslate nohighlight">
+\[\rho = |\psi|^2 = R^2\]</div>
+<p>The <strong>probability current density</strong> <span class="math notranslate nohighlight">\( \mathbf{j} \)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{j} = \frac{\hbar}{m} \text{Im} \left( \psi^* \nabla \psi \right)\]</div>
+<p>These quantities are used in the continuity equation.</p>
+</section>
+<hr class="docutils" />
+<section id="derivation-of-the-continuity-equation">
+<h3>Derivation of the Continuity Equation<a class="headerlink" href="#derivation-of-the-continuity-equation" title="Link to this heading">#</a></h3>
+<p>To derive the continuity equation, start from the Schrödinger equation. Multiply the Schrödinger equation by <span class="math notranslate nohighlight">\( \psi^* \)</span> and its complex conjugate by <span class="math notranslate nohighlight">\( \psi \)</span>:</p>
+<p><em>Schrödinger Equation</em></p>
+<div class="math notranslate nohighlight">
+\[i\hbar \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m} \nabla^2 \psi + V\psi\]</div>
+<p><em>Multiply by <span class="math notranslate nohighlight">\( \psi^* \)</span></em></p>
+<div class="math notranslate nohighlight">
+\[i\hbar \psi^* \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m} \psi^* \nabla^2 \psi + V|\psi|^2\]</div>
+<p><em>Complex Conjugate Schrödinger Equation</em></p>
+<div class="math notranslate nohighlight">
+\[-i\hbar \frac{\partial \psi^*}{\partial t} = -\frac{\hbar^2}{2m} \nabla^2 \psi^* + V\psi^*\]</div>
+<p><em>Multiply by <span class="math notranslate nohighlight">\( \psi \)</span></em></p>
+<div class="math notranslate nohighlight">
+\[-i\hbar \psi \frac{\partial \psi^*}{\partial t} = -\frac{\hbar^2}{2m} \psi \nabla^2 \psi^* + V|\psi|^2\]</div>
+<p><em>Subtract the Conjugate Equation</em></p>
+<div class="math notranslate nohighlight">
+\[i\hbar \left( \psi^* \frac{\partial \psi}{\partial t} - \psi \frac{\partial \psi^*}{\partial t} \right) = -\frac{\hbar^2}{2m} \left( \psi^* \nabla^2 \psi - \psi \nabla^2 \psi^* \right)\]</div>
+<p><em>Simplify Using the Continuity Relation</em>
+The left-hand side is related to <span class="math notranslate nohighlight">\( \frac{\partial \rho}{\partial t} \)</span>, where <span class="math notranslate nohighlight">\( \rho = |\psi|^2 = \psi^* \psi \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \rho}{\partial t} = \frac{\partial |\psi|^2}{\partial t}\]</div>
+<p>The right-hand side simplifies to the divergence of <span class="math notranslate nohighlight">\( \mathbf{j} \)</span>, the probability current density:</p>
+<div class="math notranslate nohighlight">
+\[\nabla \cdot \mathbf{j} = \frac{\hbar}{2mi} \left( \psi^* \nabla^2 \psi - \psi \nabla^2 \psi^* \right)\]</div>
+<p><em>Final Continuity Equation</em></p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \rho}{\partial t} + \nabla \cdot \mathbf{j} = 0\]</div>
+</section>
+<section id="interpretation-in-pilot-wave-theory">
+<h3>Interpretation in Pilot Wave Theory<a class="headerlink" href="#interpretation-in-pilot-wave-theory" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><span class="math notranslate nohighlight">\( \rho = |\psi|^2 \)</span>: In pilot wave theory, <span class="math notranslate nohighlight">\( \rho \)</span> represents the distribution of particles guided by the wavefunction.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathbf{j} \)</span>: The probability current density governs how the particle distribution evolves over time.</p></li>
+<li><p><strong>Particle Trajectories</strong>: In pilot wave theory, particles follow trajectories guided by the wavefunction’s phase <span class="math notranslate nohighlight">\( S(\mathbf{r}, t) \)</span>, defined by:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{v} = \frac{\nabla S}{m}\]</div>
+<p>where <span class="math notranslate nohighlight">\( \mathbf{v} \)</span> is the velocity field of the particles.</p>
+</li>
+<li><p>The continuity equation ensures that the particle density <span class="math notranslate nohighlight">\( \rho \)</span> evolves consistently with the quantum wavefunction <span class="math notranslate nohighlight">\( \psi \)</span>.</p></li>
+<li><p>Bohmian mechanics interprets the phase <span class="math notranslate nohighlight">\( S \)</span> as generating deterministic particle trajectories, with <span class="math notranslate nohighlight">\( R^2 = |\psi|^2 \)</span> describing the probability distribution.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<hr class="docutils" />
 <section id="the-pilot-wave-guiding-wave">
 <h3>The Pilot Wave (Guiding Wave)<a class="headerlink" href="#the-pilot-wave-guiding-wave" title="Link to this heading">#</a></h3>
 <p>The <strong>pilot wave</strong>, represented by the wavefunction <span class="math notranslate nohighlight">\( \psi \)</span>, determines the behavior of particles through a guiding equation. In this interpretation, the wavefunction is treated as a real field that “guides” the particles, rather than as a mere probability amplitude.</p>
@@ -638,6 +728,13 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-particle-in-a-potential">Example: Particle in a Potential</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-continuity-equation">The Continuity Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodinger-equation">Schrödinger Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-density-and-current">Probability Density and Current</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-continuity-equation">Derivation of the Continuity Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-in-pilot-wave-theory">Interpretation in Pilot Wave Theory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pilot-wave-guiding-wave">The Pilot Wave (Guiding Wave)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-guiding-equation">The Guiding Equation</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-velocity-from-the-guiding-equation">Example Calculation: Velocity from the Guiding Equation</a></li>

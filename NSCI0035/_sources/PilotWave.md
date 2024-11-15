@@ -21,6 +21,110 @@ i \hbar \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m} \nabla^2 \psi + V
 ```
 In Bohmian Mechanics, the particle has a position $ x(t) $ at all times, and its velocity is determined by the guiding equation (discussed below), based on the wavefunction $ \psi(x, t) $.
 
+## The Continuity Equation 
+
+In **pilot wave theory** (or de Broglie-Bohm theory), quantum mechanics is viewed as a deterministic theory. The wavefunction guides the motion of particles via the **pilot wave**, and the density of particles is related to the square of the wavefunction's modulus, $ |\psi|^2 $. To ensure consistency, the Schrödinger equation must imply a **continuity equation**, describing the conservation of probability density.
+
+---
+
+### Schrödinger Equation
+
+The time-dependent Schrödinger equation is:
+```{math}
+i\hbar \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m} \nabla^2 \psi + V\psi
+```
+where:
+- $ \psi(\mathbf{r}, t) $ is the wavefunction,
+- $ V $ is the potential,
+- $ \nabla^2 $ is the Laplacian operator.
+
+The wavefunction is generally complex:
+```{math}
+\psi(\mathbf{r}, t) = R(\mathbf{r}, t) e^{iS(\mathbf{r}, t)/\hbar}
+```
+where:
+- $ R(\mathbf{r}, t) $ is the amplitude,
+- $ S(\mathbf{r}, t) $ is the phase.
+
+---
+
+### Probability Density and Current
+
+In quantum mechanics, the **probability density** is:
+```{math}
+\rho = |\psi|^2 = R^2
+```
+The **probability current density** $ \mathbf{j} $ is defined as:
+```{math}
+\mathbf{j} = \frac{\hbar}{m} \text{Im} \left( \psi^* \nabla \psi \right)
+```
+
+These quantities are used in the continuity equation.
+
+---
+
+### Derivation of the Continuity Equation
+
+To derive the continuity equation, start from the Schrödinger equation. Multiply the Schrödinger equation by $ \psi^* $ and its complex conjugate by $ \psi $:
+
+*Schrödinger Equation*
+```{math}
+i\hbar \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m} \nabla^2 \psi + V\psi
+```
+
+*Multiply by $ \psi^* $*
+```{math}
+i\hbar \psi^* \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m} \psi^* \nabla^2 \psi + V|\psi|^2
+```
+
+*Complex Conjugate Schrödinger Equation*
+```{math}
+-i\hbar \frac{\partial \psi^*}{\partial t} = -\frac{\hbar^2}{2m} \nabla^2 \psi^* + V\psi^*
+```
+
+*Multiply by $ \psi $*
+```{math}
+-i\hbar \psi \frac{\partial \psi^*}{\partial t} = -\frac{\hbar^2}{2m} \psi \nabla^2 \psi^* + V|\psi|^2
+```
+
+*Subtract the Conjugate Equation*
+```{math}
+i\hbar \left( \psi^* \frac{\partial \psi}{\partial t} - \psi \frac{\partial \psi^*}{\partial t} \right) = -\frac{\hbar^2}{2m} \left( \psi^* \nabla^2 \psi - \psi \nabla^2 \psi^* \right)
+```
+
+*Simplify Using the Continuity Relation*
+The left-hand side is related to $ \frac{\partial \rho}{\partial t} $, where $ \rho = |\psi|^2 = \psi^* \psi $:
+  ```{math}
+  \frac{\partial \rho}{\partial t} = \frac{\partial |\psi|^2}{\partial t}
+  ```
+
+The right-hand side simplifies to the divergence of $ \mathbf{j} $, the probability current density:
+  ```{math}
+  \nabla \cdot \mathbf{j} = \frac{\hbar}{2mi} \left( \psi^* \nabla^2 \psi - \psi \nabla^2 \psi^* \right)
+  ```
+
+*Final Continuity Equation*
+```{math}
+\frac{\partial \rho}{\partial t} + \nabla \cdot \mathbf{j} = 0
+```
+
+### Interpretation in Pilot Wave Theory
+
+- $ \rho = |\psi|^2 $: In pilot wave theory, $ \rho $ represents the distribution of particles guided by the wavefunction.
+- $ \mathbf{j} $: The probability current density governs how the particle distribution evolves over time.
+- **Particle Trajectories**: In pilot wave theory, particles follow trajectories guided by the wavefunction’s phase $ S(\mathbf{r}, t) $, defined by:
+  ```{math}
+  \mathbf{v} = \frac{\nabla S}{m}
+  ```
+  where $ \mathbf{v} $ is the velocity field of the particles.
+
+- The continuity equation ensures that the particle density $ \rho $ evolves consistently with the quantum wavefunction $ \psi $.
+- Bohmian mechanics interprets the phase $ S $ as generating deterministic particle trajectories, with $ R^2 = |\psi|^2 $ describing the probability distribution.
+
+---
+---
+
+
 ### The Pilot Wave (Guiding Wave)
 
 The **pilot wave**, represented by the wavefunction $ \psi $, determines the behavior of particles through a guiding equation. In this interpretation, the wavefunction is treated as a real field that "guides" the particles, rather than as a mere probability amplitude.
