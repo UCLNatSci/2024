@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Determinism in Quantum Mechanics and Philosophical Issues &#8212; My sample book</title>
+    <title>Determinism &#8212; My sample book</title>
   
   
   
@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Determinism';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -181,14 +183,15 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Maths.html">Mathematical Background for Quantum Mechanics</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy of Physics and Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ClassicExperiments.html">Classic Experiments in Quantum Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Determinism in Quantum Mechanics and Philosophical Issues</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Determinism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UncertaintyPrinciple.html">The Uncertainty Principle in Quantum Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Copenhagen.html">The Copenhagen Interpretation of Quantum Mechanics</a></li>
@@ -382,7 +385,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Determinism in Quantum Mechanics and Philosophical Issues</h1>
+    <h1>Determinism</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -437,8 +440,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="determinism-in-quantum-mechanics-and-philosophical-issues">
-<h1>Determinism in Quantum Mechanics and Philosophical Issues<a class="headerlink" href="#determinism-in-quantum-mechanics-and-philosophical-issues" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="determinism">
+<h1>Determinism<a class="headerlink" href="#determinism" title="Link to this heading">#</a></h1>
 <p>Determinism is the idea that the future states of a system are fully determined by its initial conditions and the laws governing its evolution. In classical physics, determinism is a foundational principle, but quantum mechanics challenges this notion through its inherent probabilistic framework. This has led to profound philosophical debates about the nature of reality, causality, and the limits of scientific knowledge.</p>
 <hr class="docutils" />
 <section id="determinism-in-classical-and-quantum-contexts">
@@ -448,13 +451,12 @@ document.write(`
 <p>Classical mechanics, as developed by Newton, Lagrange, and others, is a fully deterministic framework. The future state of a classical system can be predicted with absolute certainty if the following conditions are met:</p>
 <ol class="arabic simple">
 <li><p><strong>Initial Conditions</strong>: The precise position and momentum (or generalized coordinates and velocities) of every particle in the system at a given time are known.</p></li>
-<li><p><strong>Laws of Motion</strong>: The equations governing the evolution of the system, such as Newton’s second law ( F = ma ) or Hamilton’s equations, are specified.</p></li>
+<li><p><strong>Laws of Motion</strong>: The equations governing the evolution of the system, such as Newton’s second law <span class="math notranslate nohighlight">\( F = ma \)</span> or Hamilton’s equations, are specified.</p></li>
 </ol>
-<p>For example, in Newtonian mechanics:
-[
-F = ma \implies \ddot{x} = \frac{F}{m}.
-]
-Given the initial position ( x_0 ) and velocity ( v_0 ), the future trajectory ( x(t) ) is fully determined.</p>
+<p>For example, in Newtonian mechanics:</p>
+<div class="math notranslate nohighlight">
+\[F = ma \implies \ddot{x} = \frac{F}{m}.\]</div>
+<p>Given the initial position <span class="math notranslate nohighlight">\( x_0 \)</span> and velocity <span class="math notranslate nohighlight">\( v_0 \)</span>, the future trajectory <span class="math notranslate nohighlight">\( x(t) \)</span> is fully determined.</p>
 </section>
 <section id="laplace-s-determinism">
 <h3>Laplace’s Determinism<a class="headerlink" href="#laplace-s-determinism" title="Link to this heading">#</a></h3>
@@ -471,15 +473,15 @@ Given the initial position ( x_0 ) and velocity ( v_0 ), the future trajectory (
 <section id="determinism-in-quantum-mechanics">
 <h3>Determinism in Quantum Mechanics<a class="headerlink" href="#determinism-in-quantum-mechanics" title="Link to this heading">#</a></h3>
 <p>Quantum mechanics fundamentally departs from classical determinism:</p>
-<ol class="arabic simple">
-<li><p><strong>Wavefunction Evolution</strong>: The wavefunction ( \psi(x, t) ) evolves deterministically according to the Schrödinger equation:
-[
-i\hbar \frac{\partial \psi(x, t)}{\partial t} = \hat{H} \psi(x, t).
-]</p></li>
-<li><p><strong>Measurement Outcomes</strong>: Measurement introduces inherent randomness, governed by the Born rule:
-[
-P(x) = |\psi(x)|^2.
-]</p></li>
+<ol class="arabic">
+<li><p><strong>Wavefunction Evolution</strong>: The wavefunction <span class="math notranslate nohighlight">\( \psi(x, t) \)</span> evolves deterministically according to the Schrödinger equation:</p>
+<div class="math notranslate nohighlight">
+\[i\hbar \frac{\partial \psi(x, t)}{\partial t} = \hat{H} \psi(x, t).\]</div>
+</li>
+<li><p><strong>Measurement Outcomes</strong>: Measurement introduces inherent randomness, governed by the Born rule:</p>
+<div class="math notranslate nohighlight">
+\[P(x) = |\psi(x)|^2.\]</div>
+</li>
 </ol>
 <p>This duality—deterministic evolution of the wavefunction versus probabilistic measurement outcomes—creates tension between classical and quantum views of determinism.</p>
 </section>
@@ -490,11 +492,11 @@ P(x) = |\psi(x)|^2.
 <p>Different interpretations of quantum mechanics attempt to address the tension between determinism and indeterminism in various ways.</p>
 <section id="copenhagen-interpretation">
 <h3>Copenhagen Interpretation<a class="headerlink" href="#copenhagen-interpretation" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Wavefunction Collapse</strong>: Measurement causes the wavefunction to collapse probabilistically to a definite state. For example, in a two-state system:
-[
-|\psi\rangle = c_1 |1\rangle + c_2 |2\rangle \quad \text{collapses to either} \quad |1\rangle , \text{or} , |2\rangle.
-]</p></li>
+<ul>
+<li><p><strong>Wavefunction Collapse</strong>: Measurement causes the wavefunction to collapse probabilistically to a definite state. For example, in a two-state system:</p>
+<div class="math notranslate nohighlight">
+\[|\psi\rangle = c_1 |1\rangle + c_2 |2\rangle \quad \text{collapses to either} \quad |1\rangle \, \text{or} \, |2\rangle.\]</div>
+</li>
 <li><p><strong>Indeterministic</strong>: The outcome of the collapse is inherently random, making this interpretation fundamentally indeterministic.</p></li>
 <li><p><strong>Philosophical Implications</strong>: The role of the observer introduces questions about whether reality is objective or observer-dependent.</p></li>
 </ul>
@@ -591,20 +593,20 @@ P(x) = |\psi(x)|^2.
 <hr class="docutils" />
 <section id="key-equations">
 <h2>Key Equations<a class="headerlink" href="#key-equations" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>Schrödinger Equation</strong> (deterministic wavefunction evolution):
-[
-i\hbar \frac{\partial \psi(x, t)}{\partial t} = \hat{H} \psi(x, t).
-]</p></li>
-<li><p><strong>Born Rule</strong> (probabilistic measurement outcomes):
-[
-P(x) = |\psi(x)|^2.
-]</p></li>
+<ol class="arabic">
+<li><p><strong>Schrödinger Equation</strong> (deterministic wavefunction evolution):</p>
+<div class="math notranslate nohighlight">
+\[i\hbar \frac{\partial \psi(x, t)}{\partial t} = \hat{H} \psi(x, t).\]</div>
+</li>
+<li><p><strong>Born Rule</strong> (probabilistic measurement outcomes):</p>
+<div class="math notranslate nohighlight">
+\[P(x) = |\psi(x)|^2.\]</div>
+</li>
 <li><p><strong>Decoherence</strong>:
-Off-diagonal elements of the density matrix decay over time:
-[
-\rho_{ij}(t) = \rho_{ij}(0) e^{-\Gamma t}.
-]</p></li>
+Off-diagonal elements of the density matrix decay over time:</p>
+<div class="math notranslate nohighlight">
+\[\rho_{ij}(t) = \rho_{ij}(0) e^{-\Gamma t}.\]</div>
+</li>
 </ol>
 </section>
 <hr class="docutils" />

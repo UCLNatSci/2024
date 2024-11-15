@@ -161,35 +161,6 @@ In macroscopic systems, uncertainties are negligible compared to the scales of c
 
 ---
 
-## Key Equations
-
-1. **Position-Momentum Uncertainty**:
-   ```{math}
-   \Delta x \Delta p \geq \frac{\hbar}{2}.
-   ```
-
-2. **Energy-Time Uncertainty**:
-   ```{math}
-   \Delta E \Delta t \geq \frac{\hbar}{2}.
-   ```
-
-3. **Angular Momentum-Angular Position**:
-   ```{math}
-   \Delta L_z \Delta \theta \geq \frac{\hbar}{2}.
-   ```
-
-4. **Entropic Uncertainty Relation**:
-   ```{math}
-   H(x) + H(p) \geq \log \left( \frac{2\pi e\hbar}{d_x d_p} \right).
-   ```
-
-5. **Robertson-Schrödinger Relation**:
-   ```{math}
-   \Delta A \Delta B \geq \frac{1}{2} |\langle [\hat{A}, \hat{B}] \rangle| + \frac{1}{2} |\langle \{ \delta\hat{A}, \delta\hat{B} \} \rangle|.
-   ```
-
----
-
 ## Summary
 
 The uncertainty principle encapsulates the intrinsic limits of precision in quantum mechanics, extending beyond position and momentum to energy-time, angular momentum, and other conjugate pairs. Its implications for measurement, reality, and the classical-quantum transition have shaped both the foundational understanding and practical applications of quantum mechanics. Despite critiques from Einstein and others, it remains central to quantum theory, underpinning phenomena from atomic spectra to quantum information systems.

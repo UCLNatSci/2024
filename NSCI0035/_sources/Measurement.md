@@ -81,13 +81,14 @@ To further explore the measurement problem, let's examine an isolated system bei
 
 Here’s a diagram illustrating this measurement process:
 
-Before Measurement:
-|ψ_S⟩ (System)  ----->  |M₀⟩ (Measuring Device Ready State)
+**Before Measurement:**  
+$|\psi_S\rangle$ (System) —–> $|M_0\rangle$ (Measuring Device Ready State)
 
-After Interaction (Entangled State):
-α|0⟩⊗|M₀⟩ + β|1⟩⊗|M₁⟩
+**After Interaction (Entangled State):**  
+$\alpha|0\rangle \otimes |M_0\rangle + \beta|1\rangle \otimes |M_1\rangle$
 
-Observed Outcome:
-Either |0⟩⊗|M₀⟩ or |1⟩⊗|M₁⟩
+**Observed Outcome:**  
+Either $|0\rangle \otimes |M_0\rangle$ or $|1\rangle \otimes |M_1\rangle$
+
 
 This scenario shows that, according to quantum mechanics, the entire system remains in a superposition after measurement. However, real observations indicate that the system collapses into one definite state.

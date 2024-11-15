@@ -1,4 +1,4 @@
-# Philosophy of Physics and Quantum Mechanics
+# Philosophy 
 
 The philosophy of physics examines foundational questions about the nature of reality, knowledge, and causality as revealed by physical theories. Quantum mechanics, with its counterintuitive features like wave-particle duality, superposition, and entanglement, has inspired deep philosophical debates about the nature of reality, the role of observation, and the limits of scientific knowledge. Key issues include realism versus anti-realism, determinism, locality, and the measurement problem.
 
@@ -10,15 +10,15 @@ This document explores broader philosophical themes in quantum mechanics, critiq
 
 Quantum mechanics raises profound questions about the nature of reality and the role of science in describing it:
 
-- Realism vs. Anti-Realism: A key debate centers on whether the wavefunction represents an objective reality (realism) or merely serves as a tool for predicting measurement outcomes (anti-realism). Max Born viewed the wavefunction as fundamentally probabilistic, reflecting an epistemic stance, while Schrödinger originally proposed it as a physical wave. Heisenberg’s uncertainty principle further challenged classical realism by showing that certain pairs of properties, like position and momentum, cannot be simultaneously well-defined. In contemporary philosophy, Bas van Fraassen’s constructive empiricism aligns with anti-realism, emphasizing predictive success over metaphysical commitments.
+- **Realism vs. Anti-Realism:** A key debate centers on whether the wavefunction represents an objective reality (realism) or merely serves as a tool for predicting measurement outcomes (anti-realism). Max Born viewed the wavefunction as fundamentally probabilistic, reflecting an epistemic stance, while Schrödinger originally proposed it as a physical wave. Heisenberg’s uncertainty principle further challenged classical realism by showing that certain pairs of properties, like position and momentum, cannot be simultaneously well-defined. In contemporary philosophy, Bas van Fraassen’s constructive empiricism aligns with anti-realism, emphasizing predictive success over metaphysical commitments.
 
-- Determinism vs. Indeterminism: Classical mechanics is deterministic, where the present state of a system uniquely determines its future. Quantum mechanics, however, introduces probabilistic outcomes, leading many to view it as fundamentally indeterministic. Einstein, a staunch realist, famously remarked, “God does not play dice,” criticizing the indeterminism of the Copenhagen interpretation. Deterministic alternatives like Bohmian Mechanics restore a classical determinism by introducing hidden variables.
+- **Determinism vs. Indeterminism:** Classical mechanics is deterministic, where the present state of a system uniquely determines its future. Quantum mechanics, however, introduces probabilistic outcomes, leading many to view it as fundamentally indeterministic. Einstein, a staunch realist, famously remarked, “God does not play dice,” criticizing the indeterminism of the Copenhagen interpretation. Deterministic alternatives like Bohmian Mechanics restore a classical determinism by introducing hidden variables.
 
-- Locality vs. Non-Locality: Non-local phenomena, such as entanglement, challenge classical ideas of causality and separability. Einstein, Podolsky, and Rosen’s 1935 paper argued that quantum mechanics must be incomplete due to its apparent violation of locality, a view opposed by Niels Bohr, who defended the completeness of quantum mechanics. Bell’s theorem later showed that quantum mechanics is inherently non-local, raising questions about the nature of causation and information transfer.
+- **Locality vs. Non-Locality:** Non-local phenomena, such as entanglement, challenge classical ideas of causality and separability. Einstein, Podolsky, and Rosen’s 1935 paper argued that quantum mechanics must be incomplete due to its apparent violation of locality, a view opposed by Niels Bohr, who defended the completeness of quantum mechanics. Bell’s theorem later showed that quantum mechanics is inherently non-local, raising questions about the nature of causation and information transfer.
 
-- The Measurement Problem: The question of how and why quantum superpositions collapse to definite outcomes remains unresolved. Heisenberg’s Copenhagen interpretation suggests that measurement itself causes the collapse, but this explanation introduces subjectivity, as it relies on the observer’s role. Contemporary approaches like Many-Worlds and objective collapse models attempt to resolve this problem through fundamentally different ontologies.
+- **The Measurement Problem:** The question of how and why quantum superpositions collapse to definite outcomes remains unresolved. Heisenberg’s Copenhagen interpretation suggests that measurement itself causes the collapse, but this explanation introduces subjectivity, as it relies on the observer’s role. Contemporary approaches like Many-Worlds and objective collapse models attempt to resolve this problem through fundamentally different ontologies.
 
-- The Role of the Observer: The Copenhagen interpretation posits that the observer plays a central role in collapsing the wavefunction, a claim that has been heavily critiqued. Schrödinger and Einstein rejected this observer-dependence, with Einstein asking, “Does the moon exist only when we look at it?” Philosophers like Michel Bitbol and proponents of QBism argue that quantum mechanics describes the observer’s knowledge or beliefs rather than an objective reality.
+- **The Role of the Observer:** The Copenhagen interpretation posits that the observer plays a central role in collapsing the wavefunction, a claim that has been heavily critiqued. Schrödinger and Einstein rejected this observer-dependence, with Einstein asking, “Does the moon exist only when we look at it?” Philosophers like Michel Bitbol and proponents of QBism argue that quantum mechanics describes the observer’s knowledge or beliefs rather than an objective reality.
 
 ---
 
@@ -42,7 +42,7 @@ Einstein’s phrase "spooky action at a distance" encapsulates his discomfort wi
 
 Niels Bohr’s **principle of complementarity** sought to address the apparent contradictions in quantum mechanics by asserting that quantum systems exhibit mutually exclusive properties depending on the experimental context. For instance, electrons behave like particles in some setups and like waves in others, but never both simultaneously.
 
-Bohr emphasized the contextuality of quantum measurements, arguing that quantum properties do not exist independently of the experimental setup. While this perspective aligns with instrumentalist interpretations, it has been criticized for undermining realism. Schrödinger, in particular, viewed Bohr’s approach as overly philosophical and insufficiently physical, as reflected in his famous cat paradox, which highlighted the absurdity of superpositions persisting at macroscopic scales.
+Bohr emphasised the contextuality of quantum measurements, arguing that quantum properties do not exist independently of the experimental setup. While this perspective aligns with instrumentalist interpretations, it has been criticised for undermining realism. Schrödinger, in particular, viewed Bohr’s approach as overly philosophical and insufficiently physical, as reflected in his famous cat paradox, which highlighted the absurdity of superpositions persisting at macroscopic scales.
 
 ---
 
@@ -70,7 +70,7 @@ Contemporary philosophers like Tim Maudlin have examined the implications of non
 
 The role of the observer in quantum mechanics has profound epistemological implications. The Copenhagen interpretation positions the observer as central to the collapse of the wavefunction, raising questions about the relationship between knowledge and reality. Michel Bitbol and proponents of QBism argue that quantum mechanics describes the observer’s knowledge or beliefs rather than an objective reality.
 
-This observer-dependence has been criticized as overly subjective, with philosophers like Einstein and Schrödinger advocating for interpretations that preserve objectivity. Contemporary debates continue to explore the epistemological consequences of quantum mechanics, particularly in relation to information-based interpretations like Quantum Darwinism.
+This observer-dependence has been criticised as overly subjective, with philosophers like Einstein and Schrödinger advocating for interpretations that preserve objectivity. Contemporary debates continue to explore the epistemological consequences of quantum mechanics, particularly in relation to information-based interpretations like Quantum Darwinism.
 
 ---
 

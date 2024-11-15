@@ -1,4 +1,4 @@
-# Determinism in Quantum Mechanics and Philosophical Issues
+# Determinism 
 
 Determinism is the idea that the future states of a system are fully determined by its initial conditions and the laws governing its evolution. In classical physics, determinism is a foundational principle, but quantum mechanics challenges this notion through its inherent probabilistic framework. This has led to profound philosophical debates about the nature of reality, causality, and the limits of scientific knowledge.
 
@@ -10,13 +10,13 @@ Determinism is the idea that the future states of a system are fully determined 
 
 Classical mechanics, as developed by Newton, Lagrange, and others, is a fully deterministic framework. The future state of a classical system can be predicted with absolute certainty if the following conditions are met:
 1. **Initial Conditions**: The precise position and momentum (or generalized coordinates and velocities) of every particle in the system at a given time are known.
-2. **Laws of Motion**: The equations governing the evolution of the system, such as Newton's second law \( F = ma \) or Hamilton's equations, are specified.
+2. **Laws of Motion**: The equations governing the evolution of the system, such as Newton's second law $ F = ma $ or Hamilton's equations, are specified.
 
 For example, in Newtonian mechanics:
-\[
+```{math}
 F = ma \implies \ddot{x} = \frac{F}{m}.
-\]
-Given the initial position \( x_0 \) and velocity \( v_0 \), the future trajectory \( x(t) \) is fully determined.
+```
+Given the initial position $ x_0 $ and velocity $ v_0 $, the future trajectory $ x(t) $ is fully determined.
 
 ### Laplace's Determinism
 
@@ -31,14 +31,14 @@ Classical determinism begins to falter in systems with:
 ### Determinism in Quantum Mechanics
 
 Quantum mechanics fundamentally departs from classical determinism:
-1. **Wavefunction Evolution**: The wavefunction \( \psi(x, t) \) evolves deterministically according to the Schrödinger equation:
-   \[
+1. **Wavefunction Evolution**: The wavefunction $ \psi(x, t) $ evolves deterministically according to the Schrödinger equation:
+   ```{math}
    i\hbar \frac{\partial \psi(x, t)}{\partial t} = \hat{H} \psi(x, t).
-   \]
+   ```
 2. **Measurement Outcomes**: Measurement introduces inherent randomness, governed by the Born rule:
-   \[
+   ```{math}
    P(x) = |\psi(x)|^2.
-   \]
+   ```
 
 This duality—deterministic evolution of the wavefunction versus probabilistic measurement outcomes—creates tension between classical and quantum views of determinism.
 
@@ -51,9 +51,9 @@ Different interpretations of quantum mechanics attempt to address the tension be
 ### Copenhagen Interpretation
 
 - **Wavefunction Collapse**: Measurement causes the wavefunction to collapse probabilistically to a definite state. For example, in a two-state system:
-  \[
+  ```{math}
   |\psi\rangle = c_1 |1\rangle + c_2 |2\rangle \quad \text{collapses to either} \quad |1\rangle \, \text{or} \, |2\rangle.
-  \]
+  ```
 - **Indeterministic**: The outcome of the collapse is inherently random, making this interpretation fundamentally indeterministic.
 - **Philosophical Implications**: The role of the observer introduces questions about whether reality is objective or observer-dependent.
 
@@ -120,20 +120,20 @@ Decoherence provides a framework for understanding how classical determinism eme
 ## Key Equations
 
 1. **Schrödinger Equation** (deterministic wavefunction evolution):
-   \[
+   ```{math}
    i\hbar \frac{\partial \psi(x, t)}{\partial t} = \hat{H} \psi(x, t).
-   \]
+   ```
 
 2. **Born Rule** (probabilistic measurement outcomes):
-   \[
+   ```{math}
    P(x) = |\psi(x)|^2.
-   \]
+   ```
 
 3. **Decoherence**:
    Off-diagonal elements of the density matrix decay over time:
-   \[
+   ```{math}
    \rho_{ij}(t) = \rho_{ij}(0) e^{-\Gamma t}.
-   \]
+   ```
 
 ---
 

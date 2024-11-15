@@ -183,14 +183,15 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Mathematical Background for Quantum Mechanics</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy of Physics and Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ClassicExperiments.html">Classic Experiments in Quantum Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism in Quantum Mechanics and Philosophical Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UncertaintyPrinciple.html">The Uncertainty Principle in Quantum Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Copenhagen.html">The Copenhagen Interpretation of Quantum Mechanics</a></li>
@@ -394,9 +395,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-mathematics-for-quantum-mechanics">Useful Mathematics for Quantum Mechanics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra-and-vector-spaces">Linear Algebra and Vector Spaces</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key Concepts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bra-ket-notation">Bra-Ket Notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-products-in-quantum-mechanics">Tensor Products in Quantum Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-quantum-states">Combining Quantum States</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-entanglement">Describing Entanglement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-on-composite-systems">Operators on Composite Systems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-and-quantum-gates">Measurement and Quantum Gates</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-in-composite-systems">Measurements in Composite Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-gates">Quantum Gates</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisability-and-smoothness-of-quantum-wavefunctions">Normalisability and Smoothness of Quantum Wavefunctions</a><ul class="nav section-nav flex-column">
@@ -427,6 +441,9 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-equations">Summary of Key Equations</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -440,6 +457,11 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="mathematical-background-for-quantum-mechanics">
 <h1>Mathematical Background for Quantum Mechanics<a class="headerlink" href="#mathematical-background-for-quantum-mechanics" title="Link to this heading">#</a></h1>
 <p>Quantum mechanics relies on a rigorous mathematical framework that blends linear algebra, calculus, and functional analysis. Understanding the core concepts requires familiarity with several key mathematical tools, including vector spaces, bra-ket notation, operators, commutators, and integral methods.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="useful-mathematics-for-quantum-mechanics">
+<h1>Useful Mathematics for Quantum Mechanics<a class="headerlink" href="#useful-mathematics-for-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p>Quantum mechanics relies heavily on the mathematical framework of linear algebra, vector spaces, and tensor products. These tools are essential for describing quantum states, operators, and measurements.</p>
 <hr class="docutils" />
 <section id="linear-algebra-and-vector-spaces">
 <h2>Linear Algebra and Vector Spaces<a class="headerlink" href="#linear-algebra-and-vector-spaces" title="Link to this heading">#</a></h2>
@@ -460,7 +482,7 @@ document.write(`
 </li>
 <li><p><strong>Basis States</strong>: A set of basis vectors <span class="math notranslate nohighlight">\( \{|i\rangle\} \)</span> spans the space, allowing any state <span class="math notranslate nohighlight">\( |\psi\rangle \)</span> to be written as:</p>
 <div class="math notranslate nohighlight">
-\[|\psi\rangle = \sum_i c_i |i\rangle \quad \text{or} \quad |\psi\rangle = \int c(x) |x\rangle \mathrm{d}x,\]</div>
+\[|\psi\rangle = \sum_i c_i |i\rangle \quad \text{or} \quad |\psi\rangle = \int c(x) |x\rangle \, \mathrm{d}x,\]</div>
 <p>where <span class="math notranslate nohighlight">\( c_i \)</span> or <span class="math notranslate nohighlight">\( c(x) \)</span> are expansion coefficients.</p>
 </li>
 </ul>
@@ -480,6 +502,79 @@ document.write(`
 </section>
 </section>
 <hr class="docutils" />
+<section id="tensor-products-in-quantum-mechanics">
+<h2>Tensor Products in Quantum Mechanics<a class="headerlink" href="#tensor-products-in-quantum-mechanics" title="Link to this heading">#</a></h2>
+<p>The tensor product (<span class="math notranslate nohighlight">\( \otimes \)</span>) is fundamental for describing composite systems, entangled states, and multi-qubit operations in quantum mechanics.</p>
+<section id="combining-quantum-states">
+<h3>Combining Quantum States<a class="headerlink" href="#combining-quantum-states" title="Link to this heading">#</a></h3>
+<p>The state of a composite quantum system is represented using the tensor product of the states of its subsystems:</p>
+<div class="math notranslate nohighlight">
+\[|\psi_{\text{composite}}\rangle = |\psi_1\rangle \otimes |\psi_2\rangle\]</div>
+<p>For example, if <span class="math notranslate nohighlight">\( |\psi_1\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \)</span> (state <span class="math notranslate nohighlight">\( |0\rangle \)</span>) and <span class="math notranslate nohighlight">\( |\psi_2\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \)</span> (state <span class="math notranslate nohighlight">\( |1\rangle \)</span>), their combined state is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}|\psi_{\text{composite}}\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}\end{split}\]</div>
+</section>
+<section id="describing-entanglement">
+<h3>Describing Entanglement<a class="headerlink" href="#describing-entanglement" title="Link to this heading">#</a></h3>
+<p>Entangled states cannot be written as a simple tensor product of individual states. For example:</p>
+<div class="math notranslate nohighlight">
+\[|\psi_{\text{entangled}}\rangle = \frac{1}{\sqrt{2}} (|0\rangle \otimes |1\rangle + |1\rangle \otimes |0\rangle)\]</div>
+<p>Using the basis vectors <span class="math notranslate nohighlight">\( |0\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \)</span> and <span class="math notranslate nohighlight">\( |1\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}|\psi_{\text{entangled}}\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix} + \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ 1 \\ 1 \\ 0 \end{pmatrix}\end{split}\]</div>
+</section>
+<section id="operators-on-composite-systems">
+<h3>Operators on Composite Systems<a class="headerlink" href="#operators-on-composite-systems" title="Link to this heading">#</a></h3>
+<p>Tensor products extend operators from individual subsystems to the entire system. For example, the Pauli-X operator acting on a single qubit is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\hat{\sigma}_x = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\end{split}\]</div>
+<p>For a two-qubit system, <span class="math notranslate nohighlight">\( \hat{\sigma}_x \otimes \hat{I} \)</span> represents <span class="math notranslate nohighlight">\( \hat{\sigma}_x \)</span> acting on the first qubit while leaving the second qubit unchanged:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\hat{\sigma}_x \otimes \hat{I} = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} \otimes \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} =
+\begin{pmatrix}
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0
+\end{pmatrix}\end{split}\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="measurement-and-quantum-gates">
+<h2>Measurement and Quantum Gates<a class="headerlink" href="#measurement-and-quantum-gates" title="Link to this heading">#</a></h2>
+<p>Measurements and quantum gates are described using the tensor product framework.</p>
+<section id="measurements-in-composite-systems">
+<h3>Measurements in Composite Systems<a class="headerlink" href="#measurements-in-composite-systems" title="Link to this heading">#</a></h3>
+<p>For an entangled state:</p>
+<div class="math notranslate nohighlight">
+\[|\psi\rangle = \frac{1}{\sqrt{2}} (|0\rangle \otimes |1\rangle + |1\rangle \otimes |0\rangle)\]</div>
+<p>If we measure the first qubit:</p>
+<ul class="simple">
+<li><p><strong>Outcome <span class="math notranslate nohighlight">\( |0\rangle \)</span></strong>: The state collapses to <span class="math notranslate nohighlight">\( |0\rangle \otimes |1\rangle \)</span>.</p></li>
+<li><p><strong>Outcome <span class="math notranslate nohighlight">\( |1\rangle \)</span></strong>: The state collapses to <span class="math notranslate nohighlight">\( |1\rangle \otimes |0\rangle \)</span>.</p></li>
+</ul>
+<p>The probabilities are:</p>
+<div class="math notranslate nohighlight">
+\[P(|0\rangle) = \frac{1}{2}, \quad P(|1\rangle) = \frac{1}{2}\]</div>
+</section>
+<section id="quantum-gates">
+<h3>Quantum Gates<a class="headerlink" href="#quantum-gates" title="Link to this heading">#</a></h3>
+<p>Quantum gates on composite systems are represented using tensor products. For example, the CNOT gate flips the second qubit if the first is <span class="math notranslate nohighlight">\( |1\rangle \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{CNOT} =
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{pmatrix}\end{split}\]</div>
+<p>Applying it to <span class="math notranslate nohighlight">\( |1\rangle \otimes |0\rangle \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{CNOT} \cdot \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}\end{split}\]</div>
+<p>The state remains unchanged because the second qubit is <span class="math notranslate nohighlight">\( |0\rangle \)</span>.</p>
+</section>
+</section>
+<hr class="docutils" />
 <section id="normalisability-and-smoothness-of-quantum-wavefunctions">
 <h2>Normalisability and Smoothness of Quantum Wavefunctions<a class="headerlink" href="#normalisability-and-smoothness-of-quantum-wavefunctions" title="Link to this heading">#</a></h2>
 <p>A quantum state must be <strong>normalisable</strong> and satisfy specific conditions of smoothness and continuity to ensure physical validity.</p>
@@ -487,7 +582,7 @@ document.write(`
 <h3>Normalisability<a class="headerlink" href="#normalisability" title="Link to this heading">#</a></h3>
 <p>For a wavefunction <span class="math notranslate nohighlight">\( \psi(x) \)</span>, normalisability ensures that the total probability of finding a particle is <span class="math notranslate nohighlight">\( 1 \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^\infty |\psi(x)|^2 \mathrm{d}x = 1.\]</div>
+\[\int_{-\infty}^\infty |\psi(x)|^2 \, \mathrm{d}x = 1.\]</div>
 <p>Non-normalisable states, such as plane waves, can be treated using the <strong>Dirac delta function</strong> to enforce orthogonality.</p>
 </section>
 <hr class="docutils" />
@@ -497,12 +592,12 @@ document.write(`
 <ol class="arabic">
 <li><p><strong>Sifting Property</strong>:</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^\infty \delta(x - x_0) f(x) \, \mathrm{d}x = f(x_0),\]</div>
+\[\int_{-\infty}^\infty \delta(x - x_0) f(x) \, \, \mathrm{d}x = f(x_0),\]</div>
 <p>where <span class="math notranslate nohighlight">\( f(x) \)</span> is a well-behaved function.</p>
 </li>
 <li><p><strong>Normalization</strong>:</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^\infty \delta(x) \, \mathrm{d}x = 1.\]</div>
+\[\int_{-\infty}^\infty \delta(x) \, \, \mathrm{d}x = 1.\]</div>
 </li>
 <li><p><strong>Peaked Behavior</strong>:
 The delta function is often represented heuristically as a sharply peaked function that becomes infinitely narrow and infinitely tall, such that its total integral remains 1.</p></li>
@@ -522,7 +617,7 @@ The momentum eigenstates <span class="math notranslate nohighlight">\( |p\rangle
 <li><p><strong>Completeness Relations</strong>:
 The delta function ensures that the position and momentum bases form a complete set:</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^\infty |x\rangle \langle x| \mathrm{d}x = \mathbb{I}, \quad \int_{-\infty}^\infty |p\rangle \langle p| \mathrm{d}p = \mathbb{I}.\]</div>
+\[\int_{-\infty}^\infty |x\rangle \langle x| \, \mathrm{d}x = \mathbb{I}, \quad \int_{-\infty}^\infty |p\rangle \langle p| \, \mathrm{d}p = \mathbb{I}.\]</div>
 </li>
 </ul>
 </section>
@@ -530,7 +625,7 @@ The delta function ensures that the position and momentum bases form a complete 
 <h3>Application in Plane Waves<a class="headerlink" href="#application-in-plane-waves" title="Link to this heading">#</a></h3>
 <p>Plane waves, represented by <span class="math notranslate nohighlight">\( \psi(x) = e^{ipx/\hbar} \)</span>, are not normalisable in the usual sense. Instead, their normalization involves the delta function:</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^\infty e^{i(px - p'x')/\hbar} \mathrm{d}x = 2\pi\hbar \delta(p - p').\]</div>
+\[\int_{-\infty}^\infty e^{i(px - p'x')/\hbar} \, \mathrm{d}x = 2\pi\hbar \delta(p - p').\]</div>
 <p>This formalism allows us to handle non-normalisable states consistently within the quantum framework.</p>
 </section>
 <section id="continuity-and-smoothness">
@@ -538,7 +633,7 @@ The delta function ensures that the position and momentum bases form a complete 
 <p>The wavefunction <span class="math notranslate nohighlight">\( \psi(x) \)</span> must satisfy:</p>
 <ol class="arabic simple">
 <li><p><strong>Continuity</strong>: <span class="math notranslate nohighlight">\( \psi(x) \)</span> must be continuous for all <span class="math notranslate nohighlight">\( x \)</span>. Discontinuities would lead to unphysical predictions.</p></li>
-<li><p><strong>Smoothness</strong>: The first derivative <span class="math notranslate nohighlight">\( \frac{d\psi(x)}{\mathrm{d}x} \)</span> must be continuous, except at points where the potential <span class="math notranslate nohighlight">\( V(x) \)</span> has an infinite discontinuity (e.g., in a delta potential). This ensures that the Schrödinger equation remains valid.</p></li>
+<li><p><strong>Smoothness</strong>: The first derivative <span class="math notranslate nohighlight">\( \frac{d\psi(x)}{\, \mathrm{d}x} \)</span> must be continuous, except at points where the potential <span class="math notranslate nohighlight">\( V(x) \)</span> has an infinite discontinuity (e.g., in a delta potential). This ensures that the Schrödinger equation remains valid.</p></li>
 </ol>
 </section>
 </section>
@@ -556,7 +651,7 @@ The delta function ensures that the position and momentum bases form a complete 
 </li>
 <li><p><strong>Momentum Operator</strong> <span class="math notranslate nohighlight">\( \hat{p} \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\hat{p} \psi(x) = -i\hbar \frac{d}{\mathrm{d}x} \psi(x),\]</div>
+\[\hat{p} \psi(x) = -i\hbar \frac{d}{\, \mathrm{d}x} \psi(x),\]</div>
 <p>where <span class="math notranslate nohighlight">\( \hbar \)</span> is the reduced Planck constant.</p>
 </li>
 </ul>
@@ -611,9 +706,9 @@ The delta function ensures that the position and momentum bases form a complete 
 <h3>Fourier Transform<a class="headerlink" href="#fourier-transform" title="Link to this heading">#</a></h3>
 <p>The wavefunctions in position and momentum space are related by the Fourier transform:</p>
 <div class="math notranslate nohighlight">
-\[\phi(p) = \frac{1}{\sqrt{2\pi\hbar}} \int_{-\infty}^\infty \psi(x) e^{-ipx/\hbar} \mathrm{d}x,\]</div>
+\[\phi(p) = \frac{1}{\sqrt{2\pi\hbar}} \int_{-\infty}^\infty \psi(x) e^{-ipx/\hbar} \, \mathrm{d}x,\]</div>
 <div class="math notranslate nohighlight">
-\[\psi(x) = \frac{1}{\sqrt{2\pi\hbar}} \int_{-\infty}^\infty \phi(p) e^{ipx/\hbar} \mathrm{d}p.\]</div>
+\[\psi(x) = \frac{1}{\sqrt{2\pi\hbar}} \int_{-\infty}^\infty \phi(p) e^{ipx/\hbar} \, \mathrm{d}p.\]</div>
 </section>
 </section>
 <hr class="docutils" />
@@ -631,11 +726,11 @@ The delta function ensures that the position and momentum bases form a complete 
 <ul>
 <li><p>Position expectation value:</p>
 <div class="math notranslate nohighlight">
-\[\langle \hat{x} \rangle = \int_{-\infty}^\infty x |\psi(x)|^2 \mathrm{d}x.\]</div>
+\[\langle \hat{x} \rangle = \int_{-\infty}^\infty x |\psi(x)|^2 \, \mathrm{d}x.\]</div>
 </li>
 <li><p>Momentum expectation value:</p>
 <div class="math notranslate nohighlight">
-\[\langle \hat{p} \rangle = \int_{-\infty}^\infty \phi^*(p) p \phi(p) \mathrm{d}p.\]</div>
+\[\langle \hat{p} \rangle = \int_{-\infty}^\infty \phi^*(p) p \phi(p) \, \mathrm{d}p.\]</div>
 </li>
 </ul>
 </section>
@@ -646,7 +741,7 @@ The delta function ensures that the position and momentum bases form a complete 
 <ol class="arabic">
 <li><p><strong>Normalisation</strong>:</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^\infty |\psi(x)|^2 \mathrm{d}x = 1.\]</div>
+\[\int_{-\infty}^\infty |\psi(x)|^2 \, \mathrm{d}x = 1.\]</div>
 </li>
 <li><p><strong>Dirac Delta Orthogonality</strong>:</p>
 <div class="math notranslate nohighlight">
@@ -654,7 +749,7 @@ The delta function ensures that the position and momentum bases form a complete 
 </li>
 <li><p><strong>Position and Momentum Operators</strong>:</p>
 <div class="math notranslate nohighlight">
-\[\hat{x} \psi(x) = x \psi(x), \quad \hat{p} \psi(x) = -i\hbar \frac{d}{\mathrm{d}x} \psi(x).\]</div>
+\[\hat{x} \psi(x) = x \psi(x), \quad \hat{p} \psi(x) = -i\hbar \frac{d}{\, \mathrm{d}x} \psi(x).\]</div>
 </li>
 <li><p><strong>Commutation Relation</strong>:</p>
 <div class="math notranslate nohighlight">
@@ -662,7 +757,7 @@ The delta function ensures that the position and momentum bases form a complete 
 </li>
 <li><p><strong>Fourier Transform</strong>:</p>
 <div class="math notranslate nohighlight">
-\[\phi(p) = \frac{1}{\sqrt{2\pi\hbar}} \int_{-\infty}^\infty \psi(x) e^{-ipx/\hbar} \mathrm{d}x.\]</div>
+\[\phi(p) = \frac{1}{\sqrt{2\pi\hbar}} \int_{-\infty}^\infty \psi(x) e^{-ipx/\hbar} \, \mathrm{d}x.\]</div>
 </li>
 <li><p><strong>Expectation Value</strong>:</p>
 <div class="math notranslate nohighlight">
@@ -741,9 +836,22 @@ The delta function ensures that the position and momentum bases form a complete 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-mathematics-for-quantum-mechanics">Useful Mathematics for Quantum Mechanics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra-and-vector-spaces">Linear Algebra and Vector Spaces</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key Concepts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bra-ket-notation">Bra-Ket Notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-products-in-quantum-mechanics">Tensor Products in Quantum Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-quantum-states">Combining Quantum States</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-entanglement">Describing Entanglement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-on-composite-systems">Operators on Composite Systems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-and-quantum-gates">Measurement and Quantum Gates</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-in-composite-systems">Measurements in Composite Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-gates">Quantum Gates</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisability-and-smoothness-of-quantum-wavefunctions">Normalisability and Smoothness of Quantum Wavefunctions</a><ul class="nav section-nav flex-column">
@@ -774,6 +882,9 @@ The delta function ensures that the position and momentum bases form a complete 
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-equations">Summary of Key Equations</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

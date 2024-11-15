@@ -6,7 +6,7 @@
 
 Bohmian Mechanics departs from traditional quantum mechanics by introducing the concept of particle trajectories and removing the need for wavefunction collapse. Here are the foundational principles of this interpretation:
 
-### 1. Particles with Definite Positions and Trajectories
+### Particles with Definite Positions and Trajectories
 
 In Bohmian Mechanics, particles are treated as real, physical entities with definite positions and well-defined trajectories at all times. Unlike the probabilistic interpretation of particles in the Copenhagen framework, Bohmian Mechanics assumes that particles have exact positions and follow specific paths determined by the pilot wave.
 
@@ -21,14 +21,14 @@ i \hbar \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m} \nabla^2 \psi + V
 ```
 In Bohmian Mechanics, the particle has a position $ x(t) $ at all times, and its velocity is determined by the guiding equation (discussed below), based on the wavefunction $ \psi(x, t) $.
 
-### 2. The Pilot Wave (Guiding Wave)
+### The Pilot Wave (Guiding Wave)
 
 The **pilot wave**, represented by the wavefunction $ \psi $, determines the behavior of particles through a guiding equation. In this interpretation, the wavefunction is treated as a real field that "guides" the particles, rather than as a mere probability amplitude.
 
 - **Wave-Particle Duality**: In Bohmian Mechanics, particles and waves coexist. The wavefunction acts as a guiding wave, influencing the motion of particles, while the particles themselves follow well-defined trajectories.
 - **No Collapse**: There is no wavefunction collapse in Bohmian Mechanics. The wavefunction evolves continuously according to the Schrödinger equation, and particles follow trajectories without any discontinuous changes.
 
-### 3. The Guiding Equation
+### The Guiding Equation
 
 The **guiding equation** in Bohmian Mechanics determines the velocity of each particle based on the gradient of the phase of the wavefunction. For a particle with position $ x $ and wavefunction $ \psi(x, t) $, the particle’s velocity $ v $ is given by:
 ```{math}
@@ -48,14 +48,14 @@ v(x, t) = \frac{1}{m} \frac{\partial S}{\partial x} = \frac{k}{m}
 ```
 This constant velocity $ v = k/m $ shows how the pilot wave guides the particle along a well-defined trajectory.
 
-### 4. Quantum Equilibrium and the Born Rule
+### Quantum Equilibrium and the Born Rule
 
 In Bohmian Mechanics, the **Born rule** is interpreted as a statistical distribution of particle positions rather than as an intrinsic property of the wavefunction itself. The distribution of particle positions in an ensemble of systems follows the probability density $ |\psi(x)|^2 $, which is called **quantum equilibrium**.
 
 - **Quantum Equilibrium Hypothesis**: If an ensemble of particles has an initial distribution matching $ |\psi(x)|^2 $, then this distribution will remain in equilibrium over time, consistently with the predictions of standard quantum mechanics.
 - **Emergence of Probabilities**: Unlike in the Copenhagen interpretation, where probabilities are fundamental, probabilities in Bohmian Mechanics arise from ignorance about the precise initial positions of particles in a large ensemble.
 
-### 5. Measurement Without Collapse
+### Measurement Without Collapse
 
 In Bohmian Mechanics, measurement does not collapse the wavefunction. Instead, the wavefunction and particles continue to evolve deterministically according to the Schrödinger and guiding equations. The appearance of wavefunction collapse is effectively the result of interaction between the particle and the measurement apparatus.
 
@@ -68,7 +68,7 @@ In the double-slit experiment, a particle passes through two slits and an interf
 
 - **Trajectory of Particles**: Each particle follows a unique trajectory influenced by the pilot wave. When many particles are sent through the slits, their trajectories collectively form an interference pattern on the screen, matching the predictions of quantum mechanics.
 
-### 6. Determinism and Realism
+### Determinism and Realism
 
 Bohmian Mechanics is a **deterministic** theory, meaning that if we know the initial position of a particle and the wavefunction, we can predict its future position and trajectory with certainty. Unlike the Copenhagen interpretation, Bohmian Mechanics assumes a **realist ontology**, meaning it attributes a definite reality to particles and their trajectories, as well as to the guiding wave.
 
@@ -79,21 +79,21 @@ Bohmian Mechanics is a **deterministic** theory, meaning that if we know the ini
 
 Bohmian Mechanics contrasts with several other interpretations in its treatment of particles, wavefunction collapse, and the nature of reality.
 
-### 1. Copenhagen Interpretation
+### Copenhagen Interpretation
 
 The **Copenhagen interpretation** views particles probabilistically and introduces wavefunction collapse upon measurement. In Bohmian Mechanics, particles have definite trajectories, and there is no wavefunction collapse.
 
 - **Collapse**: Bohmian Mechanics has no collapse; the Copenhagen interpretation requires collapse during measurement.
 - **Reality**: Bohmian Mechanics is realist, attributing real existence to particles and trajectories, while the Copenhagen interpretation is often instrumentalist.
 
-### 2. Many-Worlds Interpretation (MWI)
+### Many-Worlds Interpretation (MWI)
 
 In the **Many-Worlds Interpretation (MWI)**, all possible outcomes of a measurement exist in parallel, branching universes. Bohmian Mechanics, in contrast, assumes only one outcome, determined by the particle's trajectory and the guiding wave.
 
 - **Number of Worlds**: Bohmian Mechanics posits a single, deterministic world, while MWI posits a branching multiverse.
 - **Guiding Wave vs. Universal Wavefunction**: Bohmian Mechanics uses a pilot wave to guide particles in one world, whereas MWI interprets the wavefunction as a real entity encompassing all possible outcomes.
 
-### 3. Objective Collapse Theories
+### Objective Collapse Theories
 
 **Objective Collapse Theories** modify quantum mechanics to include spontaneous collapse of the wavefunction. In Bohmian Mechanics, the wavefunction does not collapse; it evolves continuously and deterministically, guiding particles along their trajectories.
 

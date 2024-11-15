@@ -6,7 +6,7 @@ The **Copenhagen interpretation** is one of the earliest and most widely taught 
 
 The Copenhagen interpretation is built on several foundational assumptions that define how we understand quantum systems, measurement, and the nature of reality in the quantum world.
 
-### 1. Wavefunction and Probability
+### Wavefunction and Probability
 
 The state of a quantum system is described by a **wavefunction** $ |\psi\rangle $, which contains all the information about the system. However, the wavefunction itself does not represent physical reality directly; instead, it encodes the probabilities of potential measurement outcomes.
 
@@ -24,7 +24,7 @@ P(0.4 \leq x \leq 0.6) = \int_{0.4}^{0.6} |\psi(x)|^2 \, dx = \int_{0.4}^{0.6} 2
 ```
 Evaluating this integral gives the probability that the particle will be found in this range.
 
-### 2. The Born Rule
+### The Born Rule
 
 The **Born rule** is central to the Copenhagen interpretation, providing a bridge between the wavefunction and measurable quantities. It states that the probability $ P $ of obtaining a specific measurement result $ a_i $ is given by:
 ```{math}
@@ -47,7 +47,7 @@ P(\downarrow_z) = |\langle \downarrow_z | \psi \rangle|^2 = \left|\frac{1}{\sqrt
 ```
 This calculation shows that there is a 50% probability of finding the electron in either spin-up or spin-down states along the $ z $-axis.
 
-### 3. Measurement and Wavefunction Collapse
+### Measurement and Wavefunction Collapse
 
 One of the most distinctive features of the Copenhagen interpretation is the concept of **wavefunction collapse**. Before measurement, a quantum system can exist in a superposition of states, with each possible outcome represented in the wavefunction. Upon measurement, however, the wavefunction "collapses" to a single eigenstate corresponding to the observed outcome.
 
@@ -65,7 +65,7 @@ If we measure the spin along the $ z $-axis and observe spin-up, the wavefunctio
 ```
 After this collapse, any subsequent measurement of spin along the $ z $-axis will yield the spin-up result with 100% probability, as the system is now entirely in the $ | \uparrow_z \rangle $ state.
 
-### 4. Complementarity and the Limits of Description
+### Complementarity and the Limits of Description
 
 Bohr’s principle of **complementarity** is another key aspect of the Copenhagen interpretation. It posits that certain properties of quantum systems, such as position and momentum, are mutually exclusive and cannot be precisely known simultaneously.
 
@@ -83,13 +83,13 @@ If a particle’s position is known to an uncertainty of $ \Delta x = 0.1 \, \te
 ```
 This calculation shows the fundamental limit on the precision with which we can simultaneously know position and momentum.
 
-### 5. The Role of Classical Concepts
+### The Role of Classical Concepts
 
 According to the Copenhagen interpretation, quantum mechanics describes microscopic systems, while the concepts of classical physics apply to the macroscopic world. The process of measurement bridges these two realms, as quantum systems are observed and described through classical apparatus and language.
 
 - **Classical-Quantum Divide**: Measurement apparatuses are considered classical objects, and measurement results are defined in classical terms. Quantum mechanics, therefore, applies at the microscopic level, while classical physics is the effective theory at the macroscopic level.
 
-### 6. Anti-Realism and Instrumentalism
+### Anti-Realism and Instrumentalism
 
 The Copenhagen interpretation is often seen as **anti-realist** or **instrumentalist**, meaning it avoids making statements about the objective reality of quantum systems independent of measurement. Instead, it treats quantum mechanics as a set of rules for predicting measurement outcomes.
 
@@ -100,21 +100,21 @@ The Copenhagen interpretation is often seen as **anti-realist** or **instrumenta
 
 The Copenhagen interpretation contrasts with several other interpretations of quantum mechanics in its treatment of measurement, reality, and the wavefunction.
 
-### 1. Many-Worlds Interpretation
+### Many-Worlds Interpretation
 
 In the **Many-Worlds Interpretation (MWI)**, there is no collapse of the wavefunction. Instead, all possible outcomes of a measurement exist simultaneously in parallel, branching universes. Unlike the Copenhagen interpretation, MWI treats the wavefunction as an ontologically real entity.
 
 - **Collapse**: Copenhagen requires wavefunction collapse; MWI does not.
 - **Reality of the Wavefunction**: Copenhagen treats the wavefunction as a tool for calculating probabilities, while MWI considers it a real object.
 
-### 2. Bohmian Mechanics
+### Bohmian Mechanics
 
 **Bohmian Mechanics** introduces hidden variables (particle positions) that determine measurement outcomes. In this interpretation, the wavefunction acts as a guiding field, and particles have well-defined trajectories. Unlike the Copenhagen interpretation, Bohmian Mechanics is deterministic and realist.
 
 - **Determinism**: Bohmian Mechanics is deterministic, whereas the Copenhagen interpretation is probabilistic.
 - **Ontic Reality**: Bohmian Mechanics assigns real existence to particles and their trajectories, while Copenhagen refrains from attributing objective reality to quantum states.
 
-### 3. Objective Collapse Theories
+### Objective Collapse Theories
 
 **Objective Collapse Theories** modify quantum mechanics to include spontaneous collapse mechanisms, whereby the wavefunction collapses without requiring an observer. These theories differ from the Copenhagen interpretation by suggesting that wavefunction collapse is an objective, physical process.
 

@@ -40,7 +40,7 @@ The distinction between ontic and epistemic interpretations is crucial for under
 
 Several interpretations of quantum mechanics offer different ontological perspectives on the nature of quantum reality, particularly regarding the wavefunction.
 
-### 1. Copenhagen Interpretation
+### Copenhagen Interpretation
 
 The **Copenhagen Interpretation** suggests that the wavefunction represents knowledge of a system rather than a physical entity. Upon measurement, the wavefunction "collapses" to reflect the outcome. This interpretation is typically **anti-realist**, treating quantum mechanics as a set of rules for predicting outcomes rather than a description of objective reality.
 
@@ -48,7 +48,7 @@ The **Copenhagen Interpretation** suggests that the wavefunction represents know
 - **Anti-Realist**: The wavefunction has no independent reality.
 - **Epistemic**: The wavefunction describes knowledge rather than a physical state.
 
-### 2. Many-Worlds Interpretation (MWI)
+### Many-Worlds Interpretation (MWI)
 
 The **Many-Worlds Interpretation** posits that all possible outcomes of quantum measurements occur in parallel, branching universes. According to MWI, the wavefunction is an objective entity representing a multiverse, with no collapse occurring.
 
@@ -56,7 +56,7 @@ The **Many-Worlds Interpretation** posits that all possible outcomes of quantum 
 - **Realist**: The wavefunction is a real, objective entity.
 - **Multiverse Ontology**: Reality consists of multiple parallel universes, each corresponding to different outcomes.
 
-### 3. Bohmian Mechanics
+### Bohmian Mechanics
 
 **Bohmian Mechanics** introduces "hidden variables" to explain the apparent randomness in quantum measurements. Here, particles have well-defined positions and trajectories guided by the wavefunction, providing a deterministic and ontologically clear picture of particles as real objects.
 
@@ -64,7 +64,7 @@ The **Many-Worlds Interpretation** posits that all possible outcomes of quantum 
 - **Realist**: Particles and the guiding wavefunction both have independent existence.
 - **Deterministic Ontology**: Restores a classical view of particles as real objects with deterministic behavior.
 
-### 4. Objective Collapse Theories
+### Objective Collapse Theories
 
 **Objective Collapse Theories** propose that the wavefunction spontaneously collapses according to some physical process, independently of observation. This collapse is objective and random, suggesting the wavefunction is a real, physical entity governed by specific natural laws.
 
@@ -72,7 +72,7 @@ The **Many-Worlds Interpretation** posits that all possible outcomes of quantum 
 - **Realist**: The wavefunction is a real physical entity.
 - **Spontaneous Collapse Ontology**: Randomness is fundamental and occurs in a physically objective way.
 
-### 5. QBism (Quantum Bayesianism)
+### QBism (Quantum Bayesianism)
 
 **QBism** treats quantum mechanics as a tool for individual agents to make predictions about measurement outcomes, with the wavefunction representing subjective beliefs rather than an objective reality.
 
@@ -112,12 +112,12 @@ Since only the absolute square of the wavefunction affects measurement outcomes,
 
 ## Summary of Ontological Issues in Quantum Mechanics
 
-### 1. Ontic vs. Epistemic Wavefunctions
+### Ontic vs. Epistemic Wavefunctions
 
 - **Ontic**: The wavefunction represents a real physical state (e.g., Many-Worlds Interpretation, Bohmian Mechanics).
 - **Epistemic**: The wavefunction encodes knowledge or belief rather than a physical state (e.g., Copenhagen, QBism).
 
-### 2. Gauge Invariance and Reality
+### Gauge Invariance and Reality
 
 Gauge invariance raises questions about what elements of quantum theory correspond to physical reality. The Aharonov-Bohm effect implies that gauge potentials can have real effects, complicating a purely epistemic view of gauge fields.
 
