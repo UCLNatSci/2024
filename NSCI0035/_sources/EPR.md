@@ -1,4 +1,4 @@
-# EPR Paradox: Einstein, Podolsky, and Rosen (1935)
+# EPR Paradox: Einstein, Podolsky, and Rosen
 
 The **EPR paradox** was introduced by Albert Einstein, Boris Podolsky, and Nathan Rosen in their seminal 1935 paper titled *"Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?"*. This paper sought to highlight what the authors perceived as an incompleteness in the quantum mechanical description of physical systems. Specifically, they challenged the Copenhagen interpretation of quantum mechanics, arguing that it either violates locality or fails to provide a complete description of physical reality.
 

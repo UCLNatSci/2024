@@ -183,13 +183,12 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Mathematical Background for Quantum Mechanics</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ClassicExperiments.html">Classic Experiments in Quantum Theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
@@ -395,8 +394,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Mathematical Background for Quantum Mechanics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-mathematics-for-quantum-mechanics">Useful Mathematics for Quantum Mechanics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra-and-vector-spaces">Linear Algebra and Vector Spaces</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key Concepts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bra-ket-notation">Bra-Ket Notation</a></li>
@@ -439,11 +436,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value">Expectation Value</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-equations">Summary of Key Equations</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -457,11 +450,6 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="mathematical-background-for-quantum-mechanics">
 <h1>Mathematical Background for Quantum Mechanics<a class="headerlink" href="#mathematical-background-for-quantum-mechanics" title="Link to this heading">#</a></h1>
 <p>Quantum mechanics relies on a rigorous mathematical framework that blends linear algebra, calculus, and functional analysis. Understanding the core concepts requires familiarity with several key mathematical tools, including vector spaces, bra-ket notation, operators, commutators, and integral methods.</p>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="useful-mathematics-for-quantum-mechanics">
-<h1>Useful Mathematics for Quantum Mechanics<a class="headerlink" href="#useful-mathematics-for-quantum-mechanics" title="Link to this heading">#</a></h1>
-<p>Quantum mechanics relies heavily on the mathematical framework of linear algebra, vector spaces, and tensor products. These tools are essential for describing quantum states, operators, and measurements.</p>
 <hr class="docutils" />
 <section id="linear-algebra-and-vector-spaces">
 <h2>Linear Algebra and Vector Spaces<a class="headerlink" href="#linear-algebra-and-vector-spaces" title="Link to this heading">#</a></h2>
@@ -733,42 +721,8 @@ The delta function ensures that the position and momentum bases form a complete 
 \[\langle \hat{p} \rangle = \int_{-\infty}^\infty \phi^*(p) p \phi(p) \, \mathrm{d}p.\]</div>
 </li>
 </ul>
-</section>
-</section>
 <hr class="docutils" />
-<section id="summary-of-key-equations">
-<h2>Summary of Key Equations<a class="headerlink" href="#summary-of-key-equations" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p><strong>Normalisation</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\int_{-\infty}^\infty |\psi(x)|^2 \, \mathrm{d}x = 1.\]</div>
-</li>
-<li><p><strong>Dirac Delta Orthogonality</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\langle x | x' \rangle = \delta(x - x'), \quad \langle p | p' \rangle = \delta(p - p').\]</div>
-</li>
-<li><p><strong>Position and Momentum Operators</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\hat{x} \psi(x) = x \psi(x), \quad \hat{p} \psi(x) = -i\hbar \frac{d}{\, \mathrm{d}x} \psi(x).\]</div>
-</li>
-<li><p><strong>Commutation Relation</strong>:</p>
-<div class="math notranslate nohighlight">
-\[[\hat{x}, \hat{p}] = i\hbar.\]</div>
-</li>
-<li><p><strong>Fourier Transform</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\phi(p) = \frac{1}{\sqrt{2\pi\hbar}} \int_{-\infty}^\infty \psi(x) e^{-ipx/\hbar} \, \mathrm{d}x.\]</div>
-</li>
-<li><p><strong>Expectation Value</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\langle \hat{O} \rangle = \langle \psi | \hat{O} | \psi \rangle.\]</div>
-</li>
-<li><p><strong>Uncertainty Principle</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\Delta x \Delta p \geq \frac{\hbar}{2}.\]</div>
-</li>
-</ol>
-<p>Understanding these mathematical tools is essential for exploring quantum mechanics, from solving the Schrödinger equation to analyzing quantum operators and interpreting physical measurements.</p>
+</section>
 </section>
 </section>
 
@@ -836,8 +790,6 @@ The delta function ensures that the position and momentum bases form a complete 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Mathematical Background for Quantum Mechanics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-mathematics-for-quantum-mechanics">Useful Mathematics for Quantum Mechanics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra-and-vector-spaces">Linear Algebra and Vector Spaces</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key Concepts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bra-ket-notation">Bra-Ket Notation</a></li>
@@ -880,11 +832,7 @@ The delta function ensures that the position and momentum bases form a complete 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value">Expectation Value</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-equations">Summary of Key Equations</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

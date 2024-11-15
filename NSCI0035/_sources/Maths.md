@@ -3,11 +3,6 @@
 Quantum mechanics relies on a rigorous mathematical framework that blends linear algebra, calculus, and functional analysis. Understanding the core concepts requires familiarity with several key mathematical tools, including vector spaces, bra-ket notation, operators, commutators, and integral methods.
 
 ---
-# Useful Mathematics for Quantum Mechanics
-
-Quantum mechanics relies heavily on the mathematical framework of linear algebra, vector spaces, and tensor products. These tools are essential for describing quantum states, operators, and measurements.
-
----
 
 ## Linear Algebra and Vector Spaces
 
@@ -315,42 +310,3 @@ For position and momentum:
   ```
 
 ---
-
-## Summary of Key Equations
-
-1. **Normalisation**:
-   ```{math}
-   \int_{-\infty}^\infty |\psi(x)|^2 \, \mathrm{d}x = 1.
-   ```
-
-2. **Dirac Delta Orthogonality**:
-   ```{math}
-   \langle x | x' \rangle = \delta(x - x'), \quad \langle p | p' \rangle = \delta(p - p').
-   ```
-
-3. **Position and Momentum Operators**:
-   ```{math}
-   \hat{x} \psi(x) = x \psi(x), \quad \hat{p} \psi(x) = -i\hbar \frac{d}{\, \mathrm{d}x} \psi(x).
-   ```
-
-4. **Commutation Relation**:
-   ```{math}
-   [\hat{x}, \hat{p}] = i\hbar.
-   ```
-
-5. **Fourier Transform**:
-   ```{math}
-   \phi(p) = \frac{1}{\sqrt{2\pi\hbar}} \int_{-\infty}^\infty \psi(x) e^{-ipx/\hbar} \, \mathrm{d}x.
-   ```
-
-6. **Expectation Value**:
-   ```{math}
-   \langle \hat{O} \rangle = \langle \psi | \hat{O} | \psi \rangle.
-   ```
-
-7. **Uncertainty Principle**:
-   ```{math}
-   \Delta x \Delta p \geq \frac{\hbar}{2}.
-   ```
-
-Understanding these mathematical tools is essential for exploring quantum mechanics, from solving the Schrödinger equation to analyzing quantum operators and interpreting physical measurements.
