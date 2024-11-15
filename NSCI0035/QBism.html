@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>QBism (Quantum Bayesianism) in Quantum Mechanics &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'QBism';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Montevideo Interpretation of Quantum Mechanics" href="Montevideo.html" />
+    <link rel="prev" title="Many-Worlds Interpretation (MWI) of Quantum Mechanics" href="ManyWorlds.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Foundations of Quantum Mechanics NSCI0035
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Maths.html">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy of Physics and Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClassicExperiments.html">Classic Experiments in Quantum Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism in Quantum Mechanics and Philosophical Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UncertaintyPrinciple.html">The Uncertainty Principle in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Copenhagen.html">The Copenhagen Interpretation of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PilotWave.html">Bohmian Mechanics (Pilot Wave Theory)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Collapse.html">Objective Collapse Models in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManyWorlds.html">Many-Worlds Interpretation (MWI) of Quantum Mechanics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">QBism (Quantum Bayesianism) in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Montevideo.html">Montevideo Interpretation of Quantum Mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FQBism.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/QBism.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>QBism (Quantum Bayesianism) in Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-assumptions-and-concepts">Key Assumptions and Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-states-as-subjective-beliefs">Quantum States as Subjective Beliefs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-superposition-in-qbism">Example: Superposition in QBism</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-as-personal-experience">Measurement as Personal Experience</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-spin-measurement-in-qbism">Example: Spin Measurement in QBism</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-born-rule-as-a-guide-to-consistent-belief-updating">The Born Rule as a Guide to Consistent Belief Updating</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-using-the-born-rule-in-qbism">Example Calculation: Using the Born Rule in QBism</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-observer-as-a-central-agent">The Observer as a Central Agent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-mechanics-as-a-tool-for-decision-making">Quantum Mechanics as a Tool for Decision-Making</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avoidance-of-the-measurement-problem">Avoidance of the Measurement Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-qbism-and-other-interpretations">Differences Between QBism and Other Interpretations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copenhagen-interpretation">Copenhagen Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#many-worlds-interpretation-mwi">Many-Worlds Interpretation (MWI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bohmian-mechanics">Bohmian Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-features">Summary of Key Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-qbism">Summary: QBism</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="qbism-quantum-bayesianism-in-quantum-mechanics">
+<h1>QBism (Quantum Bayesianism) in Quantum Mechanics<a class="headerlink" href="#qbism-quantum-bayesianism-in-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p><strong>QBism</strong> (Quantum Bayesianism) is an interpretation of quantum mechanics that applies Bayesian probability theory to the quantum framework. Developed by physicists such as Christopher Fuchs and Rüdiger Schack, QBism takes a subjective approach to quantum states, treating the wavefunction as a personal expression of an observer’s beliefs rather than as an objective representation of reality. In QBism, quantum mechanics is viewed as a tool for individuals to make personal predictions about their future experiences.</p>
+<p>QBism differs from other interpretations by emphasizing the subjective role of the observer and avoiding any notion of objective wavefunction collapse or multiple realities. It instead focuses on the observer’s beliefs about measurement outcomes and how those beliefs are updated based on experience.</p>
+<section id="key-assumptions-and-concepts">
+<h2>Key Assumptions and Concepts<a class="headerlink" href="#key-assumptions-and-concepts" title="Link to this heading">#</a></h2>
+<p>QBism builds on several foundational ideas, many of which are drawn from Bayesian probability theory, which treats probabilities as measures of personal belief rather than objective frequencies.</p>
+<section id="quantum-states-as-subjective-beliefs">
+<h3>Quantum States as Subjective Beliefs<a class="headerlink" href="#quantum-states-as-subjective-beliefs" title="Link to this heading">#</a></h3>
+<p>In QBism, the <strong>quantum state</strong> (or wavefunction) does not represent an objective, external reality but rather an observer’s personal beliefs about the potential outcomes of a measurement. This interpretation treats quantum states as subjective, meaning they reflect the expectations of an individual agent rather than a real, physical property of a system.</p>
+<ul class="simple">
+<li><p><strong>Subjective Interpretation of the Wavefunction</strong>: The wavefunction <span class="math notranslate nohighlight">\( |\psi\rangle \)</span> is considered a mathematical expression of the observer’s personal beliefs about possible outcomes, based on the information they have.</p></li>
+<li><p><strong>No Objective Reality of Quantum States</strong>: There is no ontological status to the wavefunction outside of the observer’s mind. Quantum states do not exist as physical entities.</p></li>
+</ul>
+<section id="example-superposition-in-qbism">
+<h4>Example: Superposition in QBism<a class="headerlink" href="#example-superposition-in-qbism" title="Link to this heading">#</a></h4>
+<p>Consider an electron in a superposition of spin-up and spin-down states along the <span class="math notranslate nohighlight">\( z \)</span>-axis:</p>
+<div class="math notranslate nohighlight">
+\[|\psi\rangle = \frac{1}{\sqrt{2}} \left( | \uparrow_z \rangle + | \downarrow_z \rangle \right)\]</div>
+<p>In QBism, this superposition is not a real, physical state of the electron. Instead, it represents the observer’s personal belief that the electron has a 50% chance of being measured as spin-up and a 50% chance of being spin-down. The superposition does not exist independently of the observer’s knowledge.</p>
+</section>
+</section>
+<section id="measurement-as-personal-experience">
+<h3>Measurement as Personal Experience<a class="headerlink" href="#measurement-as-personal-experience" title="Link to this heading">#</a></h3>
+<p>In QBism, <strong>measurement</strong> is not an objective process that reveals a pre-existing property of a system. Instead, it is an interaction between the observer and the system, resulting in an outcome that the observer experiences personally. Measurement outcomes do not reveal an objective reality; rather, they are updates to the observer’s beliefs.</p>
+<ul class="simple">
+<li><p><strong>Observer-Centric</strong>: Measurement is a personal experience unique to each observer. It does not uncover an objective fact about the system, but rather provides information that the observer uses to update their beliefs.</p></li>
+<li><p><strong>Belief Updating</strong>: Upon measurement, the observer updates their prior beliefs based on the outcome, following the rules of Bayesian probability.</p></li>
+</ul>
+<section id="example-spin-measurement-in-qbism">
+<h4>Example: Spin Measurement in QBism<a class="headerlink" href="#example-spin-measurement-in-qbism" title="Link to this heading">#</a></h4>
+<p>Suppose an observer has assigned a quantum state <span class="math notranslate nohighlight">\( |\psi\rangle = \frac{1}{\sqrt{2}} \left( | \uparrow \rangle + | \downarrow \rangle \right) \)</span> to an electron’s spin along the <span class="math notranslate nohighlight">\( z \)</span>-axis. If the observer measures spin and finds it to be up, they update their beliefs accordingly. However, this outcome does not imply an objective collapse of the wavefunction. It merely updates the observer’s subjective beliefs about future measurements on similar systems.</p>
+</section>
+</section>
+<section id="the-born-rule-as-a-guide-to-consistent-belief-updating">
+<h3>The Born Rule as a Guide to Consistent Belief Updating<a class="headerlink" href="#the-born-rule-as-a-guide-to-consistent-belief-updating" title="Link to this heading">#</a></h3>
+<p>In QBism, the <strong>Born rule</strong> is interpreted as a tool that guides the observer on how to update their beliefs in a consistent manner. Instead of treating the Born rule as an objective law of nature, QBism sees it as a “norm” or rule of thumb that helps observers assign probabilities to measurement outcomes.</p>
+<ul class="simple">
+<li><p><strong>Born Rule as a Norm</strong>: The Born rule provides a guideline for how an observer should assign probabilities to potential measurement outcomes. It ensures that observers’ beliefs remain internally consistent.</p></li>
+<li><p><strong>Probability as Personal Expectation</strong>: The probabilities derived from the Born rule are not objective frequencies but personal expectations based on the observer’s information and beliefs.</p></li>
+</ul>
+<section id="example-calculation-using-the-born-rule-in-qbism">
+<h4>Example Calculation: Using the Born Rule in QBism<a class="headerlink" href="#example-calculation-using-the-born-rule-in-qbism" title="Link to this heading">#</a></h4>
+<p>An observer assigns a quantum state <span class="math notranslate nohighlight">\( |\psi\rangle = \sqrt{0.7} | \uparrow \rangle + \sqrt{0.3} | \downarrow \rangle \)</span> to an electron’s spin along the <span class="math notranslate nohighlight">\( z \)</span>-axis. According to the Born rule, the observer calculates the probability of measuring spin-up as:</p>
+<div class="math notranslate nohighlight">
+\[P(\uparrow) = |\langle \uparrow | \psi \rangle|^2 = 0.7\]</div>
+<p>and the probability of measuring spin-down as:</p>
+<div class="math notranslate nohighlight">
+\[P(\downarrow) = |\langle \downarrow | \psi \rangle|^2 = 0.3\]</div>
+<p>In QBism, these probabilities represent the observer’s personal expectations about the measurement outcome, not objective properties of the electron.</p>
+</section>
+</section>
+<section id="the-observer-as-a-central-agent">
+<h3>The Observer as a Central Agent<a class="headerlink" href="#the-observer-as-a-central-agent" title="Link to this heading">#</a></h3>
+<p>QBism places the <strong>observer</strong> at the center of the quantum formalism. Each observer has their own wavefunction for a system, and the wavefunction only has meaning relative to the beliefs and knowledge of that observer. Observers are not interchangeable; each has a unique perspective and set of beliefs.</p>
+<ul class="simple">
+<li><p><strong>Individual Perspective</strong>: Each observer’s quantum state is personal, reflecting their own beliefs. If two observers have different information, they may assign different quantum states to the same system.</p></li>
+<li><p><strong>No Objective Quantum State</strong>: There is no universal, objective quantum state. Each observer’s wavefunction is subjective and applies only to their personal experience.</p></li>
+</ul>
+</section>
+<section id="quantum-mechanics-as-a-tool-for-decision-making">
+<h3>Quantum Mechanics as a Tool for Decision-Making<a class="headerlink" href="#quantum-mechanics-as-a-tool-for-decision-making" title="Link to this heading">#</a></h3>
+<p>In QBism, quantum mechanics is understood as a practical tool that observers use to make decisions and manage expectations. The theory does not attempt to describe an objective external reality; rather, it provides a framework for agents to make rational choices about future experiences.</p>
+<ul class="simple">
+<li><p><strong>Instrumentalist Interpretation</strong>: Quantum mechanics is an instrument for predicting outcomes, not a description of an objective world.</p></li>
+<li><p><strong>Decision Theory</strong>: Observers use quantum mechanics as a decision-making framework, applying the Born rule and Bayesian reasoning to make consistent predictions.</p></li>
+</ul>
+</section>
+<section id="avoidance-of-the-measurement-problem">
+<h3>Avoidance of the Measurement Problem<a class="headerlink" href="#avoidance-of-the-measurement-problem" title="Link to this heading">#</a></h3>
+<p>Because QBism treats quantum states as subjective and does not assume they reflect an objective reality, it avoids the traditional <strong>measurement problem</strong> in quantum mechanics. There is no need to explain wavefunction collapse or the “reality” of superpositions since these are purely subjective elements in the QBist framework.</p>
+<ul class="simple">
+<li><p><strong>No Wavefunction Collapse</strong>: Measurement does not collapse the wavefunction; it only updates the observer’s beliefs. The concept of collapse is unnecessary.</p></li>
+<li><p><strong>No Ontological Superpositions</strong>: Superpositions are not real, physical states but rather subjective descriptions of belief, so no “collapse” is needed to select a single outcome.</p></li>
+</ul>
+</section>
+</section>
+<section id="differences-between-qbism-and-other-interpretations">
+<h2>Differences Between QBism and Other Interpretations<a class="headerlink" href="#differences-between-qbism-and-other-interpretations" title="Link to this heading">#</a></h2>
+<p>QBism differs from other interpretations in its treatment of quantum states, measurement, and the nature of reality.</p>
+<section id="copenhagen-interpretation">
+<h3>Copenhagen Interpretation<a class="headerlink" href="#copenhagen-interpretation" title="Link to this heading">#</a></h3>
+<p>The <strong>Copenhagen interpretation</strong> views the wavefunction as a tool for calculating probabilities, but it also suggests that measurement collapses the wavefunction to a single outcome. In QBism, there is no collapse, and the wavefunction is purely subjective, representing personal beliefs.</p>
+<ul class="simple">
+<li><p><strong>Wavefunction</strong>: In Copenhagen, the wavefunction is tied to measurement collapse, whereas in QBism, it is purely subjective.</p></li>
+<li><p><strong>Collapse</strong>: The Copenhagen interpretation requires collapse, while QBism does not.</p></li>
+</ul>
+</section>
+<section id="many-worlds-interpretation-mwi">
+<h3>Many-Worlds Interpretation (MWI)<a class="headerlink" href="#many-worlds-interpretation-mwi" title="Link to this heading">#</a></h3>
+<p>The <strong>Many-Worlds Interpretation</strong> posits that all possible outcomes of a measurement occur in separate branches of the universe. In QBism, there are no branching universes or objective multiple outcomes. Instead, each measurement updates the observer’s personal beliefs.</p>
+<ul class="simple">
+<li><p><strong>Objective Reality</strong>: MWI assumes all possible outcomes are real in parallel universes, while QBism denies any objective existence to the wavefunction.</p></li>
+<li><p><strong>No Branching</strong>: QBism involves no branching universes, only subjective belief updates.</p></li>
+</ul>
+</section>
+<section id="bohmian-mechanics">
+<h3>Bohmian Mechanics<a class="headerlink" href="#bohmian-mechanics" title="Link to this heading">#</a></h3>
+<p><strong>Bohmian Mechanics</strong> is a deterministic theory in which particles have well-defined positions and are guided by a pilot wave. In QBism, particles do not have objective properties, and the wavefunction is not a real guiding field but a subjective belief of the observer.</p>
+<ul class="simple">
+<li><p><strong>Determinism vs. Subjectivism</strong>: Bohmian Mechanics is deterministic, whereas QBism is fundamentally subjective and probabilistic.</p></li>
+<li><p><strong>Wavefunction as Real vs. Belief</strong>: In Bohmian Mechanics, the wavefunction is real, while in QBism, it is an expression of belief.</p></li>
+</ul>
+</section>
+</section>
+<section id="summary-of-key-features">
+<h2>Summary of Key Features<a class="headerlink" href="#summary-of-key-features" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>QBism</p></th>
+<th class="head"><p>Other Interpretations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Wavefunction</strong></p></td>
+<td><p>Subjective belief, not an objective reality</p></td>
+<td><p>Real in MWI, objective collapse in Copenhagen</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Measurement</strong></p></td>
+<td><p>Updates personal beliefs, no collapse</p></td>
+<td><p>Causes collapse in Copenhagen, branching in MWI</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Probability</strong></p></td>
+<td><p>Bayesian, based on personal expectation</p></td>
+<td><p>Frequentist or objective in Copenhagen, realist in Bohmian Mechanics</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Reality</strong></p></td>
+<td><p>Anti-realist: quantum mechanics describes beliefs</p></td>
+<td><p>Realist in MWI and Bohmian Mechanics, instrumentalist in Copenhagen</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Observer Role</strong></p></td>
+<td><p>Central, each observer has their own wavefunction</p></td>
+<td><p>Minimal in Bohmian Mechanics, no special role in MWI</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="summary-qbism">
+<h2>Summary: QBism<a class="headerlink" href="#summary-qbism" title="Link to this heading">#</a></h2>
+<p>QBism is a unique interpretation of quantum</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ManyWorlds.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Many-Worlds Interpretation (MWI) of Quantum Mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Montevideo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Montevideo Interpretation of Quantum Mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-assumptions-and-concepts">Key Assumptions and Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-states-as-subjective-beliefs">Quantum States as Subjective Beliefs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-superposition-in-qbism">Example: Superposition in QBism</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-as-personal-experience">Measurement as Personal Experience</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-spin-measurement-in-qbism">Example: Spin Measurement in QBism</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-born-rule-as-a-guide-to-consistent-belief-updating">The Born Rule as a Guide to Consistent Belief Updating</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-using-the-born-rule-in-qbism">Example Calculation: Using the Born Rule in QBism</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-observer-as-a-central-agent">The Observer as a Central Agent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-mechanics-as-a-tool-for-decision-making">Quantum Mechanics as a Tool for Decision-Making</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avoidance-of-the-measurement-problem">Avoidance of the Measurement Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-qbism-and-other-interpretations">Differences Between QBism and Other Interpretations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copenhagen-interpretation">Copenhagen Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#many-worlds-interpretation-mwi">Many-Worlds Interpretation (MWI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bohmian-mechanics">Bohmian Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-features">Summary of Key Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-qbism">Summary: QBism</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

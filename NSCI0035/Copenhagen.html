@@ -1,0 +1,703 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Copenhagen Interpretation of Quantum Mechanics &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Copenhagen';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bohmian Mechanics (Pilot Wave Theory)" href="PilotWave.html" />
+    <link rel="prev" title="The Uncertainty Principle in Quantum Mechanics" href="UncertaintyPrinciple.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Foundations of Quantum Mechanics NSCI0035
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Maths.html">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy of Physics and Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClassicExperiments.html">Classic Experiments in Quantum Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism in Quantum Mechanics and Philosophical Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UncertaintyPrinciple.html">The Uncertainty Principle in Quantum Mechanics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Copenhagen Interpretation of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PilotWave.html">Bohmian Mechanics (Pilot Wave Theory)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Collapse.html">Objective Collapse Models in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManyWorlds.html">Many-Worlds Interpretation (MWI) of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QBism.html">QBism (Quantum Bayesianism) in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Montevideo.html">Montevideo Interpretation of Quantum Mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCopenhagen.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Copenhagen.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Copenhagen Interpretation of Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-assumptions-and-concepts">Key Assumptions and Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wavefunction-and-probability">1. Wavefunction and Probability</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-probability-density-for-position">Example Calculation: Probability Density for Position</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-born-rule">2. The Born Rule</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-probability-of-spin-measurement">Example Calculation: Probability of Spin Measurement</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-and-wavefunction-collapse">3. Measurement and Wavefunction Collapse</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-wavefunction-collapse-in-spin-measurement">Example Calculation: Wavefunction Collapse in Spin Measurement</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complementarity-and-the-limits-of-description">4. Complementarity and the Limits of Description</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-uncertainty-principle">Example Calculation: Uncertainty Principle</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-role-of-classical-concepts">5. The Role of Classical Concepts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anti-realism-and-instrumentalism">6. Anti-Realism and Instrumentalism</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-the-copenhagen-interpretation-and-other-interpretations">Differences Between the Copenhagen Interpretation and Other Interpretations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#many-worlds-interpretation">1. Many-Worlds Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bohmian-mechanics">2. Bohmian Mechanics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-collapse-theories">3. Objective Collapse Theories</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-copenhagen-interpretation-of-quantum-mechanics">
+<h1>The Copenhagen Interpretation of Quantum Mechanics<a class="headerlink" href="#the-copenhagen-interpretation-of-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p>The <strong>Copenhagen interpretation</strong> is one of the earliest and most widely taught interpretations of quantum mechanics, developed in the 1920s by Niels Bohr and Werner Heisenberg. It provides a practical framework for understanding quantum mechanics, focusing on the role of measurement and the limits of our ability to describe reality at the quantum level.</p>
+<section id="key-assumptions-and-concepts">
+<h2>Key Assumptions and Concepts<a class="headerlink" href="#key-assumptions-and-concepts" title="Link to this heading">#</a></h2>
+<p>The Copenhagen interpretation is built on several foundational assumptions that define how we understand quantum systems, measurement, and the nature of reality in the quantum world.</p>
+<section id="wavefunction-and-probability">
+<h3>1. Wavefunction and Probability<a class="headerlink" href="#wavefunction-and-probability" title="Link to this heading">#</a></h3>
+<p>The state of a quantum system is described by a <strong>wavefunction</strong> <span class="math notranslate nohighlight">\( |\psi\rangle \)</span>, which contains all the information about the system. However, the wavefunction itself does not represent physical reality directly; instead, it encodes the probabilities of potential measurement outcomes.</p>
+<ul class="simple">
+<li><p><strong>Probabilistic Nature</strong>: The square of the wavefunction’s amplitude at a given point (or state) gives the probability density of finding the system in that state. For example, for a position measurement, the probability of finding a particle in a small region around <span class="math notranslate nohighlight">\( x \)</span> is given by <span class="math notranslate nohighlight">\( |\psi(x)|^2 \)</span>.</p></li>
+</ul>
+<section id="example-calculation-probability-density-for-position">
+<h4>Example Calculation: Probability Density for Position<a class="headerlink" href="#example-calculation-probability-density-for-position" title="Link to this heading">#</a></h4>
+<p>Consider a particle in the quantum state given by the wavefunction</p>
+<div class="math notranslate nohighlight">
+\[\psi(x) = \sqrt{2} \sin(\pi x)\]</div>
+<p>in the interval <span class="math notranslate nohighlight">\( 0 \leq x \leq 1 \)</span>. To find the probability of the particle being located between <span class="math notranslate nohighlight">\( x = 0.4 \)</span> and <span class="math notranslate nohighlight">\( x = 0.6 \)</span>, calculate the integral of <span class="math notranslate nohighlight">\( |\psi(x)|^2 \)</span> over this region:</p>
+<div class="math notranslate nohighlight">
+\[P(0.4 \leq x \leq 0.6) = \int_{0.4}^{0.6} |\psi(x)|^2 \, dx = \int_{0.4}^{0.6} 2 \sin^2(\pi x) \, dx\]</div>
+<p>Evaluating this integral gives the probability that the particle will be found in this range.</p>
+</section>
+</section>
+<section id="the-born-rule">
+<h3>2. The Born Rule<a class="headerlink" href="#the-born-rule" title="Link to this heading">#</a></h3>
+<p>The <strong>Born rule</strong> is central to the Copenhagen interpretation, providing a bridge between the wavefunction and measurable quantities. It states that the probability <span class="math notranslate nohighlight">\( P \)</span> of obtaining a specific measurement result <span class="math notranslate nohighlight">\( a_i \)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[P(a_i) = |\langle a_i | \psi \rangle|^2\]</div>
+<p>where <span class="math notranslate nohighlight">\( |a_i\rangle \)</span> is the eigenstate associated with the measurement result <span class="math notranslate nohighlight">\( a_i \)</span>. This rule applies to all types of measurements, such as position, momentum, and spin.</p>
+<section id="example-calculation-probability-of-spin-measurement">
+<h4>Example Calculation: Probability of Spin Measurement<a class="headerlink" href="#example-calculation-probability-of-spin-measurement" title="Link to this heading">#</a></h4>
+<p>Suppose an electron is in the quantum state</p>
+<div class="math notranslate nohighlight">
+\[|\psi\rangle = \frac{1}{\sqrt{2}} \left( | \uparrow_z \rangle + | \downarrow_z \rangle \right)\]</div>
+<p>where <span class="math notranslate nohighlight">\( | \uparrow_z \rangle \)</span> and <span class="math notranslate nohighlight">\( | \downarrow_z \rangle \)</span> are the spin-up and spin-down states along the <span class="math notranslate nohighlight">\( z \)</span>-axis. If we measure the spin along the <span class="math notranslate nohighlight">\( z \)</span>-axis, the probabilities for each outcome are:</p>
+<div class="math notranslate nohighlight">
+\[P(\uparrow_z) = |\langle \uparrow_z | \psi \rangle|^2 = \left|\frac{1}{\sqrt{2}}\right|^2 = \frac{1}{2}\]</div>
+<div class="math notranslate nohighlight">
+\[P(\downarrow_z) = |\langle \downarrow_z | \psi \rangle|^2 = \left|\frac{1}{\sqrt{2}}\right|^2 = \frac{1}{2}\]</div>
+<p>This calculation shows that there is a 50% probability of finding the electron in either spin-up or spin-down states along the <span class="math notranslate nohighlight">\( z \)</span>-axis.</p>
+</section>
+</section>
+<section id="measurement-and-wavefunction-collapse">
+<h3>3. Measurement and Wavefunction Collapse<a class="headerlink" href="#measurement-and-wavefunction-collapse" title="Link to this heading">#</a></h3>
+<p>One of the most distinctive features of the Copenhagen interpretation is the concept of <strong>wavefunction collapse</strong>. Before measurement, a quantum system can exist in a superposition of states, with each possible outcome represented in the wavefunction. Upon measurement, however, the wavefunction “collapses” to a single eigenstate corresponding to the observed outcome.</p>
+<ul class="simple">
+<li><p><strong>Collapse Postulate</strong>: When a measurement is performed, the wavefunction instantaneously collapses to an eigenstate of the observable being measured. After collapse, the system has a definite value for the measured property, and the probabilities of other outcomes become zero.</p></li>
+</ul>
+<section id="example-calculation-wavefunction-collapse-in-spin-measurement">
+<h4>Example Calculation: Wavefunction Collapse in Spin Measurement<a class="headerlink" href="#example-calculation-wavefunction-collapse-in-spin-measurement" title="Link to this heading">#</a></h4>
+<p>Consider the electron state before measurement:</p>
+<div class="math notranslate nohighlight">
+\[|\psi\rangle = \frac{1}{\sqrt{2}} \left( | \uparrow_z \rangle + | \downarrow_z \rangle \right)\]</div>
+<p>If we measure the spin along the <span class="math notranslate nohighlight">\( z \)</span>-axis and observe spin-up, the wavefunction collapses to:</p>
+<div class="math notranslate nohighlight">
+\[|\psi\rangle = | \uparrow_z \rangle\]</div>
+<p>After this collapse, any subsequent measurement of spin along the <span class="math notranslate nohighlight">\( z \)</span>-axis will yield the spin-up result with 100% probability, as the system is now entirely in the <span class="math notranslate nohighlight">\( | \uparrow_z \rangle \)</span> state.</p>
+</section>
+</section>
+<section id="complementarity-and-the-limits-of-description">
+<h3>4. Complementarity and the Limits of Description<a class="headerlink" href="#complementarity-and-the-limits-of-description" title="Link to this heading">#</a></h3>
+<p>Bohr’s principle of <strong>complementarity</strong> is another key aspect of the Copenhagen interpretation. It posits that certain properties of quantum systems, such as position and momentum, are mutually exclusive and cannot be precisely known simultaneously.</p>
+<ul>
+<li><p><strong>Wave-Particle Duality</strong>: Quantum systems can exhibit both wave-like and particle-like behaviors, depending on the experimental setup. For example, an electron can show interference patterns (wave behavior) in a double-slit experiment or behave like a particle when detected at a specific point on a screen.</p></li>
+<li><p><strong>Complementary Measurements</strong>: Complementary observables, like position and momentum, cannot both be precisely measured at the same time. The more precisely one is known, the less precisely the other can be known, as expressed by Heisenberg’s uncertainty principle:</p>
+<div class="math notranslate nohighlight">
+\[\Delta x \, \Delta p \geq \frac{\hbar}{2}\]</div>
+</li>
+</ul>
+<section id="example-calculation-uncertainty-principle">
+<h4>Example Calculation: Uncertainty Principle<a class="headerlink" href="#example-calculation-uncertainty-principle" title="Link to this heading">#</a></h4>
+<p>If a particle’s position is known to an uncertainty of <span class="math notranslate nohighlight">\( \Delta x = 0.1 \, \text{nm} \)</span>, then the uncertainty in momentum <span class="math notranslate nohighlight">\( \Delta p \)</span> must satisfy:</p>
+<div class="math notranslate nohighlight">
+\[\Delta p \geq \frac{\hbar}{2 \Delta x} = \frac{1.054 \times 10^{-34} \, \text{Js}}{2 \times 0.1 \times 10^{-9} \, \text{m}} = 5.27 \times 10^{-25} \, \text{kg m/s}\]</div>
+<p>This calculation shows the fundamental limit on the precision with which we can simultaneously know position and momentum.</p>
+</section>
+</section>
+<section id="the-role-of-classical-concepts">
+<h3>5. The Role of Classical Concepts<a class="headerlink" href="#the-role-of-classical-concepts" title="Link to this heading">#</a></h3>
+<p>According to the Copenhagen interpretation, quantum mechanics describes microscopic systems, while the concepts of classical physics apply to the macroscopic world. The process of measurement bridges these two realms, as quantum systems are observed and described through classical apparatus and language.</p>
+<ul class="simple">
+<li><p><strong>Classical-Quantum Divide</strong>: Measurement apparatuses are considered classical objects, and measurement results are defined in classical terms. Quantum mechanics, therefore, applies at the microscopic level, while classical physics is the effective theory at the macroscopic level.</p></li>
+</ul>
+</section>
+<section id="anti-realism-and-instrumentalism">
+<h3>6. Anti-Realism and Instrumentalism<a class="headerlink" href="#anti-realism-and-instrumentalism" title="Link to this heading">#</a></h3>
+<p>The Copenhagen interpretation is often seen as <strong>anti-realist</strong> or <strong>instrumentalist</strong>, meaning it avoids making statements about the objective reality of quantum systems independent of measurement. Instead, it treats quantum mechanics as a set of rules for predicting measurement outcomes.</p>
+<ul class="simple">
+<li><p><strong>Instrumentalism</strong>: Quantum mechanics does not describe a reality independent of observation; it provides predictions for what observers can measure.</p></li>
+<li><p><strong>No Objective Reality for the Wavefunction</strong>: The wavefunction is a mathematical tool for calculating probabilities, not a physical entity representing an underlying reality.</p></li>
+</ul>
+</section>
+</section>
+<section id="differences-between-the-copenhagen-interpretation-and-other-interpretations">
+<h2>Differences Between the Copenhagen Interpretation and Other Interpretations<a class="headerlink" href="#differences-between-the-copenhagen-interpretation-and-other-interpretations" title="Link to this heading">#</a></h2>
+<p>The Copenhagen interpretation contrasts with several other interpretations of quantum mechanics in its treatment of measurement, reality, and the wavefunction.</p>
+<section id="many-worlds-interpretation">
+<h3>1. Many-Worlds Interpretation<a class="headerlink" href="#many-worlds-interpretation" title="Link to this heading">#</a></h3>
+<p>In the <strong>Many-Worlds Interpretation (MWI)</strong>, there is no collapse of the wavefunction. Instead, all possible outcomes of a measurement exist simultaneously in parallel, branching universes. Unlike the Copenhagen interpretation, MWI treats the wavefunction as an ontologically real entity.</p>
+<ul class="simple">
+<li><p><strong>Collapse</strong>: Copenhagen requires wavefunction collapse; MWI does not.</p></li>
+<li><p><strong>Reality of the Wavefunction</strong>: Copenhagen treats the wavefunction as a tool for calculating probabilities, while MWI considers it a real object.</p></li>
+</ul>
+</section>
+<section id="bohmian-mechanics">
+<h3>2. Bohmian Mechanics<a class="headerlink" href="#bohmian-mechanics" title="Link to this heading">#</a></h3>
+<p><strong>Bohmian Mechanics</strong> introduces hidden variables (particle positions) that determine measurement outcomes. In this interpretation, the wavefunction acts as a guiding field, and particles have well-defined trajectories. Unlike the Copenhagen interpretation, Bohmian Mechanics is deterministic and realist.</p>
+<ul class="simple">
+<li><p><strong>Determinism</strong>: Bohmian Mechanics is deterministic, whereas the Copenhagen interpretation is probabilistic.</p></li>
+<li><p><strong>Ontic Reality</strong>: Bohmian Mechanics assigns real existence to particles and their trajectories, while Copenhagen refrains from attributing objective reality to quantum states.</p></li>
+</ul>
+</section>
+<section id="objective-collapse-theories">
+<h3>3. Objective Collapse Theories<a class="headerlink" href="#objective-collapse-theories" title="Link to this heading">#</a></h3>
+<p><strong>Objective Collapse Theories</strong> modify quantum mechanics to include spontaneous collapse mechanisms, whereby the wavefunction collapses without requiring an observer. These theories differ from the Copenhagen interpretation by suggesting that wavefunction collapse is an objective, physical process.</p>
+<ul class="simple">
+<li><p><strong>Objective Collapse</strong>: In objective collapse theories, wavefunction collapse happens spontaneously, without measurement. In Copenhagen, collapse is directly linked to measurement.</p></li>
+<li><p><strong>Realism</strong>: Objective collapse theories tend to be more realist than the Copenhagen interpretation,</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="UncertaintyPrinciple.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Uncertainty Principle in Quantum Mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="PilotWave.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bohmian Mechanics (Pilot Wave Theory)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-assumptions-and-concepts">Key Assumptions and Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wavefunction-and-probability">1. Wavefunction and Probability</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-probability-density-for-position">Example Calculation: Probability Density for Position</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-born-rule">2. The Born Rule</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-probability-of-spin-measurement">Example Calculation: Probability of Spin Measurement</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-and-wavefunction-collapse">3. Measurement and Wavefunction Collapse</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-wavefunction-collapse-in-spin-measurement">Example Calculation: Wavefunction Collapse in Spin Measurement</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complementarity-and-the-limits-of-description">4. Complementarity and the Limits of Description</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-uncertainty-principle">Example Calculation: Uncertainty Principle</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-role-of-classical-concepts">5. The Role of Classical Concepts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anti-realism-and-instrumentalism">6. Anti-Realism and Instrumentalism</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-the-copenhagen-interpretation-and-other-interpretations">Differences Between the Copenhagen Interpretation and Other Interpretations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#many-worlds-interpretation">1. Many-Worlds Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bohmian-mechanics">2. Bohmian Mechanics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-collapse-theories">3. Objective Collapse Theories</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Objective Collapse Models in Quantum Mechanics &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Collapse';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Many-Worlds Interpretation (MWI) of Quantum Mechanics" href="ManyWorlds.html" />
+    <link rel="prev" title="Bohmian Mechanics (Pilot Wave Theory)" href="PilotWave.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Foundations of Quantum Mechanics NSCI0035
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Maths.html">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy of Physics and Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClassicExperiments.html">Classic Experiments in Quantum Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism in Quantum Mechanics and Philosophical Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UncertaintyPrinciple.html">The Uncertainty Principle in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Copenhagen.html">The Copenhagen Interpretation of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PilotWave.html">Bohmian Mechanics (Pilot Wave Theory)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Objective Collapse Models in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManyWorlds.html">Many-Worlds Interpretation (MWI) of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QBism.html">QBism (Quantum Bayesianism) in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Montevideo.html">Montevideo Interpretation of Quantum Mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCollapse.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Collapse.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Objective Collapse Models in Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-assumptions-and-concepts">Key Assumptions and Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wavefunction-as-a-physical-entity">Wavefunction as a Physical Entity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spontaneous-collapse-mechanism">Spontaneous Collapse Mechanism</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-grw-model-of-spontaneous-localization">Example: GRW Model of Spontaneous Localization</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-without-observer-dependence">Measurement Without Observer Dependence</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-schrodingers-cat-in-objective-collapse-models">Example: Schrödinger’s Cat in Objective Collapse Models</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-schrodinger-equation">Modified Schrödinger Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-equation-grw-collapse-term">Example Equation: GRW Collapse Term</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-the-measurement-problem">Resolving the Measurement Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notable-objective-collapse-models">Notable Objective Collapse Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grw-ghirardi-rimini-weber-model">GRW (Ghirardi-Rimini-Weber) Model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-spontaneous-localization-csl-model">Continuous Spontaneous Localization (CSL) Model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#penrose-s-gravity-induced-collapse-model">Penrose’s Gravity-Induced Collapse Model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-objective-collapse-models-and-other-interpretations">Differences Between Objective Collapse Models and Other Interpretations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copenhagen-interpretation">Copenhagen Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#many-worlds-interpretation-mwi">Many-Worlds Interpretation (MWI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bohmian-mechanics">Bohmian Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-features">Summary of Key Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-objective-collapse-models">Summary: Objective Collapse Models</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="objective-collapse-models-in-quantum-mechanics">
+<h1>Objective Collapse Models in Quantum Mechanics<a class="headerlink" href="#objective-collapse-models-in-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p><strong>Objective Collapse Models</strong> (or <strong>Spontaneous Collapse Theories</strong>) are an interpretation of quantum mechanics that modify the standard formalism to include a physical mechanism for wavefunction collapse. Unlike the Copenhagen interpretation, which posits collapse as an effect of measurement, objective collapse models treat collapse as an actual, spontaneous physical process that occurs independently of observers or measurement.</p>
+<p>Objective collapse models aim to resolve the measurement problem in quantum mechanics by adding a dynamical collapse mechanism to the theory. Notable examples include the <strong>GRW (Ghirardi-Rimini-Weber) model</strong> and <strong>Penrose’s gravity-induced collapse model</strong>. These models provide a realist, single-world view of quantum mechanics where collapse is built into the theory as an objective process.</p>
+<section id="key-assumptions-and-concepts">
+<h2>Key Assumptions and Concepts<a class="headerlink" href="#key-assumptions-and-concepts" title="Link to this heading">#</a></h2>
+<p>Objective collapse models introduce several new ideas about the nature of the wavefunction, measurement, and the role of collapse as a physical process.</p>
+<section id="wavefunction-as-a-physical-entity">
+<h3>Wavefunction as a Physical Entity<a class="headerlink" href="#wavefunction-as-a-physical-entity" title="Link to this heading">#</a></h3>
+<p>In objective collapse models, the <strong>wavefunction</strong> is not just a tool for calculating probabilities, but a real, physical field. This contrasts with the Copenhagen interpretation, where the wavefunction is often seen as a representation of knowledge or information.</p>
+<ul class="simple">
+<li><p><strong>Realist Ontology</strong>: Objective collapse models assume that the wavefunction has an objective, physical existence and evolves according to both the Schrödinger equation and an additional collapse mechanism.</p></li>
+<li><p><strong>No Measurement Dependence</strong>: Collapse occurs as a spontaneous process, not as a result of measurement or observation. The wavefunction evolves deterministically most of the time, but collapses at random intervals or under specific conditions.</p></li>
+</ul>
+</section>
+<section id="spontaneous-collapse-mechanism">
+<h3>Spontaneous Collapse Mechanism<a class="headerlink" href="#spontaneous-collapse-mechanism" title="Link to this heading">#</a></h3>
+<p>Objective collapse models introduce a <strong>spontaneous collapse mechanism</strong> that modifies the standard Schrödinger equation to include occasional, random collapses. This mechanism ensures that superpositions of macroscopically distinct states (such as a cat being alive and dead) collapse into one definite outcome, aligning the predictions of quantum mechanics with our classical observations.</p>
+<ul class="simple">
+<li><p><strong>Frequency of Collapse</strong>: In models like GRW, collapse events happen rarely at the microscopic level but occur more frequently for systems with a large number of particles (like macroscopic objects).</p></li>
+<li><p><strong>Localization</strong>: During a collapse event, the wavefunction “localizes” to a specific position or state, leading to a definite outcome.</p></li>
+</ul>
+<section id="example-grw-model-of-spontaneous-localization">
+<h4>Example: GRW Model of Spontaneous Localization<a class="headerlink" href="#example-grw-model-of-spontaneous-localization" title="Link to this heading">#</a></h4>
+<p>The <strong>GRW model</strong> proposes that each particle in a system has a very small probability of collapsing per unit time. For a system with many particles, these small probabilities accumulate, leading to frequent collapses for macroscopic objects.</p>
+<ul class="simple">
+<li><p><strong>Collapse Rate</strong>: Each particle has a collapse rate of approximately <span class="math notranslate nohighlight">\( 10^{-16} \)</span> seconds<span class="math notranslate nohighlight">\(^{-1} \)</span>. For a single particle, this means collapses are rare, but for a macroscopic object with <span class="math notranslate nohighlight">\( 10^{23} \)</span> particles, collapses occur very frequently, ensuring the object has a definite position.</p></li>
+<li><p><strong>Collapse Process</strong>: When a collapse occurs, the particle’s wavefunction is “localized” to a narrow region in space, effectively choosing a specific position.</p></li>
+</ul>
+</section>
+</section>
+<section id="measurement-without-observer-dependence">
+<h3>Measurement Without Observer Dependence<a class="headerlink" href="#measurement-without-observer-dependence" title="Link to this heading">#</a></h3>
+<p>In objective collapse models, measurement outcomes are determined by the spontaneous collapse mechanism, independent of any observer. The collapse process itself selects a definite outcome from the possible superpositions.</p>
+<ul class="simple">
+<li><p><strong>No Observer Role</strong>: Unlike the Copenhagen interpretation, which requires an observer to induce collapse, objective collapse models treat collapse as an intrinsic process. Measurement does not trigger collapse; instead, collapse happens naturally according to the model’s rules.</p></li>
+<li><p><strong>Consistency with Classical Reality</strong>: Since collapses occur more frequently in systems with many particles, objective collapse models ensure that macroscopic systems (e.g., measurement devices) have definite, observable states, aligning quantum mechanics with classical reality.</p></li>
+</ul>
+<section id="example-schrodingers-cat-in-objective-collapse-models">
+<h4>Example: Schrödinger’s Cat in Objective Collapse Models<a class="headerlink" href="#example-schrodingers-cat-in-objective-collapse-models" title="Link to this heading">#</a></h4>
+<p>In objective collapse models, the infamous <strong>Schrödinger’s cat</strong> thought experiment is resolved by the spontaneous collapse of the wavefunction. If the cat is in a superposition of alive and dead, the collapse mechanism will eventually force the wavefunction into a definite state (either alive or dead) without requiring an observer to open the box. This collapse ensures that macroscopic superpositions do not persist, preserving consistency with our everyday experience of definite outcomes.</p>
+</section>
+</section>
+<section id="modified-schrodinger-equation">
+<h3>Modified Schrödinger Equation<a class="headerlink" href="#modified-schrodinger-equation" title="Link to this heading">#</a></h3>
+<p>Objective collapse models modify the Schrödinger equation to include a term that represents the spontaneous collapse process. This modification prevents the indefinite evolution of superpositions and provides a mathematical description of how collapse occurs.</p>
+<ul class="simple">
+<li><p><strong>Nonlinear Modification</strong>: The collapse process introduces a non-linear term to the Schrödinger equation, causing wavefunctions to spontaneously collapse to one of the possible outcomes.</p></li>
+<li><p><strong>Continuous or Discrete Collapses</strong>: Depending on the model, collapses can be either discrete events (as in GRW) or a continuous process (as in continuous spontaneous localization, or CSL).</p></li>
+</ul>
+<section id="example-equation-grw-collapse-term">
+<h4>Example Equation: GRW Collapse Term<a class="headerlink" href="#example-equation-grw-collapse-term" title="Link to this heading">#</a></h4>
+<p>In the GRW model, each particle’s wavefunction occasionally experiences a “hit” or collapse, which localizes it in space. The probability of a collapse depends on the size of the system, with more complex systems collapsing more frequently. Mathematically, this modifies the wavefunction as:</p>
+<div class="math notranslate nohighlight">
+\[\psi(x) \rightarrow \frac{\psi(x) e^{-(x - x_0)^2 / 2\sigma^2}}{\left( \int |\psi(x')|^2 e^{-(x' - x_0)^2 / 2\sigma^2} \, dx' \right)^{1/2}}\]</div>
+<p>where <span class="math notranslate nohighlight">\( x_0 \)</span> is the collapse center and <span class="math notranslate nohighlight">\( \sigma \)</span> is the localization width.</p>
+</section>
+</section>
+<section id="resolving-the-measurement-problem">
+<h3>Resolving the Measurement Problem<a class="headerlink" href="#resolving-the-measurement-problem" title="Link to this heading">#</a></h3>
+<p>Objective collapse models offer a solution to the <strong>measurement problem</strong> by removing the need for a special measurement process. In these models, collapse happens naturally and independently of any measurement or observer, so measurements simply reveal the result of an already-determined collapse.</p>
+<ul class="simple">
+<li><p><strong>No Special Role for Measurement</strong>: Measurements are not unique; they are just interactions that happen to reveal the outcome of a spontaneous collapse.</p></li>
+<li><p><strong>No Superpositions of Macroscopic States</strong>: Objective collapse models prevent macroscopic superpositions from persisting, ensuring that only one outcome becomes real for any large-scale system.</p></li>
+</ul>
+</section>
+<section id="notable-objective-collapse-models">
+<h3>Notable Objective Collapse Models<a class="headerlink" href="#notable-objective-collapse-models" title="Link to this heading">#</a></h3>
+<p>Several objective collapse models have been proposed, each with different mechanisms and parameters for spontaneous collapse.</p>
+<section id="grw-ghirardi-rimini-weber-model">
+<h4>GRW (Ghirardi-Rimini-Weber) Model<a class="headerlink" href="#grw-ghirardi-rimini-weber-model" title="Link to this heading">#</a></h4>
+<p>The <strong>GRW model</strong> was the first objective collapse model, proposing that particles undergo random collapses at a low rate. In this model, the collapse mechanism ensures that superpositions of macroscopic states collapse quickly, while microscopic particles can remain in superposition for longer periods.</p>
+<ul class="simple">
+<li><p><strong>Random Collapses</strong>: Each particle has a small probability of spontaneously collapsing per unit time, leading to frequent collapses in macroscopic systems.</p></li>
+<li><p><strong>Collapse Localization</strong>: Collapses localize the particle’s position, ensuring it takes on a definite state.</p></li>
+</ul>
+</section>
+<section id="continuous-spontaneous-localization-csl-model">
+<h4>Continuous Spontaneous Localization (CSL) Model<a class="headerlink" href="#continuous-spontaneous-localization-csl-model" title="Link to this heading">#</a></h4>
+<p>The <strong>CSL model</strong> builds on the GRW model, but treats collapse as a continuous process rather than discrete events. The wavefunction gradually localizes over time, with the rate of localization increasing for larger, macroscopic systems.</p>
+<ul class="simple">
+<li><p><strong>Continuous Process</strong>: Collapse occurs continuously, with a localization term added to the Schrödinger equation.</p></li>
+<li><p><strong>Macroscopic Realism</strong>: CSL ensures that macroscopic objects do not remain in superpositions, aligning quantum mechanics with classical observations.</p></li>
+</ul>
+</section>
+<section id="penrose-s-gravity-induced-collapse-model">
+<h4>Penrose’s Gravity-Induced Collapse Model<a class="headerlink" href="#penrose-s-gravity-induced-collapse-model" title="Link to this heading">#</a></h4>
+<p>Physicist <strong>Roger Penrose</strong> proposed a gravity-based objective collapse model, suggesting that the gravitational field itself induces collapse. In this model, superpositions of large masses are inherently unstable and collapse under their own gravitational influence.</p>
+<ul class="simple">
+<li><p><strong>Gravity as a Trigger</strong>: Penrose’s model suggests that gravitational effects cause the collapse of macroscopic superpositions.</p></li>
+<li><p><strong>Connection to General Relativity</strong>: This approach connects quantum mechanics with gravity, proposing a role for gravity in determining when collapse occurs.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="differences-between-objective-collapse-models-and-other-interpretations">
+<h2>Differences Between Objective Collapse Models and Other Interpretations<a class="headerlink" href="#differences-between-objective-collapse-models-and-other-interpretations" title="Link to this heading">#</a></h2>
+<p>Objective collapse models differ from other interpretations in their treatment of wavefunction collapse, measurement, and the nature of reality.</p>
+<section id="copenhagen-interpretation">
+<h3>Copenhagen Interpretation<a class="headerlink" href="#copenhagen-interpretation" title="Link to this heading">#</a></h3>
+<p>In the <strong>Copenhagen interpretation</strong>, wavefunction collapse occurs as a result of measurement. In objective collapse models, collapse is a spontaneous, physical process that does not depend on measurement.</p>
+<ul class="simple">
+<li><p><strong>Role of Observer</strong>: The Copenhagen interpretation requires an observer to induce collapse, while objective collapse models have collapse occur independently.</p></li>
+<li><p><strong>Collapse Mechanism</strong>: Objective collapse models specify a physical mechanism for collapse, unlike the Copenhagen interpretation, which leaves collapse unexplained.</p></li>
+</ul>
+</section>
+<section id="many-worlds-interpretation-mwi">
+<h3>Many-Worlds Interpretation (MWI)<a class="headerlink" href="#many-worlds-interpretation-mwi" title="Link to this heading">#</a></h3>
+<p>The <strong>Many-Worlds Interpretation</strong> posits that all possible outcomes of a measurement occur in parallel universes, with no collapse. In objective collapse models, only one outcome becomes real, as collapse eliminates superpositions.</p>
+<ul class="simple">
+<li><p><strong>Single Outcome vs. Many</strong>: Objective collapse models allow only one outcome to become real, whereas MWI implies that all outcomes exist in separate branches.</p></li>
+<li><p><strong>Collapse vs. Branching</strong>: Objective collapse models rely on spontaneous collapse, while MWI assumes continuous evolution without collapse.</p></li>
+</ul>
+</section>
+<section id="bohmian-mechanics">
+<h3>Bohmian Mechanics<a class="headerlink" href="#bohmian-mechanics" title="Link to this heading">#</a></h3>
+<p><strong>Bohmian Mechanics</strong> introduces hidden variables and deterministic particle trajectories, with no need for collapse. Objective collapse models retain the indeterminacy of standard quantum mechanics but introduce collapse as an objective process.</p>
+<ul class="simple">
+<li><p><strong>Determinism vs. Indeterminism</strong>: Bohmian Mechanics is deterministic, while objective collapse models are indeterministic.</p></li>
+<li><p><strong>Collapse Mechanism</strong>: Bohmian Mechanics does not require collapse, while objective collapse models include a physical collapse mechanism.</p></li>
+</ul>
+</section>
+</section>
+<section id="summary-of-key-features">
+<h2>Summary of Key Features<a class="headerlink" href="#summary-of-key-features" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Objective Collapse Models</p></th>
+<th class="head"><p>Other Interpretations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Wavefunction</strong></p></td>
+<td><p>Real, collapses spontaneously</p></td>
+<td><p>Real and branching in MWI, probabilistic in Copenhagen</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Measurement</strong></p></td>
+<td><p>Reveals pre-existing collapse</p></td>
+<td><p>Triggers collapse (Copenhagen), no collapse in MWI</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Determinism</strong></p></td>
+<td><p>Indeterministic due to spontaneous collapse events</p></td>
+<td><p>Deterministic in Bohmian Mechanics, deterministic multiverse in MWI</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Reality</strong></p></td>
+<td><p>Realist: wavefunction and collapse are physical</p></td>
+<td><p>Realist in Bohmian Mechanics and MWI, instrumentalist in Copenhagen</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Role of Observer</strong></p></td>
+<td><p>None: collapse is intrinsic</p></td>
+<td><p>Essential for collapse in Copenhagen, unnecessary in MWI</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="summary-objective-collapse-models">
+<h2>Summary: Objective Collapse Models<a class="headerlink" href="#summary-objective-collapse-models" title="Link to this heading">#</a></h2>
+<p>Objective collapse models modify quantum mechanics by introducing a spontaneous, objective collapse mechanism, which eliminates macroscopic superpositions and resolves the measurement problem. By treating collapse as a physical process, these models align quantum mechanics with classical observations of definite outcomes. Objective collapse models contrast with other interpretations like Copenhagen, Many-Worlds, and Bohmian Mechanics, providing a unique perspective on the nature of reality and measurement in quantum mechanics.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="PilotWave.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bohmian Mechanics (Pilot Wave Theory)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ManyWorlds.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Many-Worlds Interpretation (MWI) of Quantum Mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-assumptions-and-concepts">Key Assumptions and Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wavefunction-as-a-physical-entity">Wavefunction as a Physical Entity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spontaneous-collapse-mechanism">Spontaneous Collapse Mechanism</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-grw-model-of-spontaneous-localization">Example: GRW Model of Spontaneous Localization</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-without-observer-dependence">Measurement Without Observer Dependence</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-schrodingers-cat-in-objective-collapse-models">Example: Schrödinger’s Cat in Objective Collapse Models</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-schrodinger-equation">Modified Schrödinger Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-equation-grw-collapse-term">Example Equation: GRW Collapse Term</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-the-measurement-problem">Resolving the Measurement Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notable-objective-collapse-models">Notable Objective Collapse Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grw-ghirardi-rimini-weber-model">GRW (Ghirardi-Rimini-Weber) Model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-spontaneous-localization-csl-model">Continuous Spontaneous Localization (CSL) Model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#penrose-s-gravity-induced-collapse-model">Penrose’s Gravity-Induced Collapse Model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-objective-collapse-models-and-other-interpretations">Differences Between Objective Collapse Models and Other Interpretations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copenhagen-interpretation">Copenhagen Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#many-worlds-interpretation-mwi">Many-Worlds Interpretation (MWI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bohmian-mechanics">Bohmian Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-features">Summary of Key Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-objective-collapse-models">Summary: Objective Collapse Models</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

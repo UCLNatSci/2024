@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Uncertainty Principle in Quantum Mechanics &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'UncertaintyPrinciple';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The Copenhagen Interpretation of Quantum Mechanics" href="Copenhagen.html" />
+    <link rel="prev" title="Decoherence and the Classical/Quantum Divide" href="Decoherence.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Foundations of Quantum Mechanics NSCI0035
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Maths.html">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy of Physics and Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClassicExperiments.html">Classic Experiments in Quantum Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism in Quantum Mechanics and Philosophical Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Uncertainty Principle in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Copenhagen.html">The Copenhagen Interpretation of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PilotWave.html">Bohmian Mechanics (Pilot Wave Theory)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Collapse.html">Objective Collapse Models in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManyWorlds.html">Many-Worlds Interpretation (MWI) of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QBism.html">QBism (Quantum Bayesianism) in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Montevideo.html">Montevideo Interpretation of Quantum Mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUncertaintyPrinciple.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/UncertaintyPrinciple.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Uncertainty Principle in Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statement-of-the-uncertainty-principle">Statement of the Uncertainty Principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-relations-beyond-position-and-momentum">Uncertainty Relations Beyond Position and Momentum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-momentum-uncertainty-principle">Position-Momentum Uncertainty Principle</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation">Derivation:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-interpretation">Physical Interpretation:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatives-and-generalisations">Alternatives and Generalisations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#entropic-uncertainty-relations">2.2.1 Entropic Uncertainty Relations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robertson-schrodinger-relation">Robertson-Schrödinger Relation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-uncertainty-relations-for-arbitrary-operators">Generalized Uncertainty Relations for Arbitrary Operators</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-time-uncertainty-principle">Energy-Time Uncertainty Principle</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-application">Example Application:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-and-angular-position">Angular Momentum and Angular Position</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretation:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broader-implications-of-the-uncertainty-principle">Broader Implications of the Uncertainty Principle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-systems-in-transition">Quantum Systems in Transition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-systems-and-angular-momentum">Spin Systems and Angular Momentum</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#philosophical-and-interpretational-questions">Philosophical and Interpretational Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinism-and-completeness">Determinism and Completeness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observer-and-reality">Observer and Reality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-vs-classical-boundaries">Quantum vs. Classical Boundaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-equations">Key Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-uncertainty-principle-in-quantum-mechanics">
+<h1>The Uncertainty Principle in Quantum Mechanics<a class="headerlink" href="#the-uncertainty-principle-in-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p>The <strong>Heisenberg Uncertainty Principle</strong> is one of the foundational concepts of quantum mechanics, highlighting the inherent limitations in simultaneously measuring certain pairs of observables. Originally formulated for position and momentum, the principle has broader applications, encompassing other conjugate pairs like energy and time, and angular momentum and its components.</p>
+<hr class="docutils" />
+<section id="statement-of-the-uncertainty-principle">
+<h2>Statement of the Uncertainty Principle<a class="headerlink" href="#statement-of-the-uncertainty-principle" title="Link to this heading">#</a></h2>
+<p>The uncertainty principle states that for any pair of conjugate observables, the product of their uncertainties is bounded below by a constant:</p>
+<div class="math notranslate nohighlight">
+\[\Delta A \Delta B \geq \frac{1}{2} |\langle [\hat{A}, \hat{B}] \rangle|,\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \Delta A \)</span>: Standard deviation of observable <span class="math notranslate nohighlight">\( \hat{A} \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \Delta B \)</span>: Standard deviation of observable <span class="math notranslate nohighlight">\( \hat{B} \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( [\hat{A}, \hat{B}] \)</span>: The commutator of the operators <span class="math notranslate nohighlight">\( \hat{A} \)</span> and <span class="math notranslate nohighlight">\( \hat{B} \)</span>.</p></li>
+</ul>
+<p>This principle reflects a fundamental feature of quantum systems, not a limitation of measurement devices.</p>
+</section>
+<hr class="docutils" />
+<section id="uncertainty-relations-beyond-position-and-momentum">
+<h2>Uncertainty Relations Beyond Position and Momentum<a class="headerlink" href="#uncertainty-relations-beyond-position-and-momentum" title="Link to this heading">#</a></h2>
+<section id="position-momentum-uncertainty-principle">
+<h3>Position-Momentum Uncertainty Principle<a class="headerlink" href="#position-momentum-uncertainty-principle" title="Link to this heading">#</a></h3>
+<p>The original and most widely known form of the uncertainty principle relates the standard deviations of position <span class="math notranslate nohighlight">\( \hat{x} \)</span> and momentum <span class="math notranslate nohighlight">\( \hat{p} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\Delta x \Delta p \geq \frac{\hbar}{2}.\]</div>
+<section id="derivation">
+<h4>Derivation:<a class="headerlink" href="#derivation" title="Link to this heading">#</a></h4>
+<p>The position and momentum operators satisfy the commutation relation:</p>
+<div class="math notranslate nohighlight">
+\[[\hat{x}, \hat{p}] = i\hbar.\]</div>
+<p>Using the general uncertainty relation:</p>
+<div class="math notranslate nohighlight">
+\[\Delta A \Delta B \geq \frac{1}{2} |\langle [\hat{A}, \hat{B}] \rangle|,\]</div>
+<p>substituting <span class="math notranslate nohighlight">\( \hat{A} = \hat{x} \)</span> and <span class="math notranslate nohighlight">\( \hat{B} = \hat{p} \)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[\Delta x \Delta p \geq \frac{1}{2} |\langle i\hbar \rangle| = \frac{\hbar}{2}.\]</div>
+</section>
+<section id="physical-interpretation">
+<h4>Physical Interpretation:<a class="headerlink" href="#physical-interpretation" title="Link to this heading">#</a></h4>
+<p>This relation implies that the more precisely a particle’s position <span class="math notranslate nohighlight">\( x \)</span> is known, the less precisely its momentum <span class="math notranslate nohighlight">\( p \)</span> can be known, and vice versa. It reflects the fundamental wave-particle duality of quantum systems.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="alternatives-and-generalisations">
+<h3>Alternatives and Generalisations<a class="headerlink" href="#alternatives-and-generalisations" title="Link to this heading">#</a></h3>
+<p>Several alternative uncertainty relations have been proposed to address specific cases or reinterpret the original principle.</p>
+<section id="entropic-uncertainty-relations">
+<h4>2.2.1 Entropic Uncertainty Relations<a class="headerlink" href="#entropic-uncertainty-relations" title="Link to this heading">#</a></h4>
+<p>Rather than using standard deviations, entropic uncertainty relations quantify uncertainty in terms of the Shannon entropy of measurement outcomes. For position and momentum:</p>
+<div class="math notranslate nohighlight">
+\[H(x) + H(p) \geq \log \left( \frac{2\pi e\hbar}{d_x d_p} \right),\]</div>
+<p>where <span class="math notranslate nohighlight">\( H(x) \)</span> and <span class="math notranslate nohighlight">\( H(p) \)</span> are the entropies of position and momentum distributions, and <span class="math notranslate nohighlight">\( d_x, d_p \)</span> are measurement resolutions.</p>
+<p>Entropic relations emphasize the information-theoretic limits of measurement rather than variances, making them particularly relevant in quantum information theory.</p>
+</section>
+<hr class="docutils" />
+<section id="robertson-schrodinger-relation">
+<h4>Robertson-Schrödinger Relation<a class="headerlink" href="#robertson-schrodinger-relation" title="Link to this heading">#</a></h4>
+<p>The Robertson-Schrödinger uncertainty relation is a refinement of the Heisenberg uncertainty principle, incorporating correlations between observables:</p>
+<div class="math notranslate nohighlight">
+\[\Delta A \Delta B \geq \frac{1}{2} |\langle [\hat{A}, \hat{B}] \rangle| + \frac{1}{2} |\langle \{ \delta\hat{A}, \delta\hat{B} \} \rangle|,\]</div>
+<p>where <span class="math notranslate nohighlight">\( \{ \delta\hat{A}, \delta\hat{B} \} \)</span> is the anticommutator of the deviations <span class="math notranslate nohighlight">\( \delta\hat{A} = \hat{A} - \langle \hat{A} \rangle \)</span> and <span class="math notranslate nohighlight">\( \delta\hat{B} = \hat{B} - \langle \hat{B} \rangle \)</span>.</p>
+<p>This relation reduces to the standard uncertainty principle when the anticommutator term vanishes but provides a tighter bound otherwise.</p>
+</section>
+<hr class="docutils" />
+<section id="generalized-uncertainty-relations-for-arbitrary-operators">
+<h4>Generalized Uncertainty Relations for Arbitrary Operators<a class="headerlink" href="#generalized-uncertainty-relations-for-arbitrary-operators" title="Link to this heading">#</a></h4>
+<p>For any pair of operators <span class="math notranslate nohighlight">\( \hat{A} \)</span> and <span class="math notranslate nohighlight">\( \hat{B} \)</span>, the uncertainty relation is generalized to:</p>
+<div class="math notranslate nohighlight">
+\[\Delta A \Delta B \geq \frac{1}{2} |\langle [\hat{A}, \hat{B}] \rangle|,\]</div>
+<p>allowing the principle to apply to other conjugate variables, such as energy-time or angular momentum-angular position.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="energy-time-uncertainty-principle">
+<h3>Energy-Time Uncertainty Principle<a class="headerlink" href="#energy-time-uncertainty-principle" title="Link to this heading">#</a></h3>
+<p>The <strong>energy-time uncertainty principle</strong> relates the uncertainty in energy <span class="math notranslate nohighlight">\( \Delta E \)</span> to the uncertainty in time <span class="math notranslate nohighlight">\( \Delta t \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\Delta E \Delta t \geq \frac{\hbar}{2}.\]</div>
+<section id="interpretation">
+<h4>Interpretation:<a class="headerlink" href="#interpretation" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \Delta E \)</span>: Uncertainty in energy, often related to the width of an energy distribution.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \Delta t \)</span>: Uncertainty in the time duration over which the energy is defined.</p></li>
+</ul>
+<p>This relation governs processes like atomic transitions and decays, where shorter-lived states (<span class="math notranslate nohighlight">\( \Delta t \)</span>) correspond to broader energy spectra (<span class="math notranslate nohighlight">\( \Delta E \)</span>).</p>
+</section>
+<section id="example-application">
+<h4>Example Application:<a class="headerlink" href="#example-application" title="Link to this heading">#</a></h4>
+<p>An excited atomic state with a lifetime <span class="math notranslate nohighlight">\( \Delta t = 10^{-9} \, \text{s} \)</span> has an energy uncertainty:</p>
+<div class="math notranslate nohighlight">
+\[\Delta E \geq \frac{\hbar}{2\Delta t} = \frac{1.054 \times 10^{-34}}{2 \times 10^{-9}} \approx 5.27 \times 10^{-26} \, \text{J}.\]</div>
+<p>In electron volts:</p>
+<div class="math notranslate nohighlight">
+\[\Delta E \approx 3.3 \times 10^{-7} \, \text{eV}.\]</div>
+<p>This broadening explains the linewidth of atomic spectra.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="angular-momentum-and-angular-position">
+<h3>Angular Momentum and Angular Position<a class="headerlink" href="#angular-momentum-and-angular-position" title="Link to this heading">#</a></h3>
+<p>The <strong>angular momentum-angular position uncertainty principle</strong> applies to a system’s angular momentum <span class="math notranslate nohighlight">\( L \)</span> and its angular position <span class="math notranslate nohighlight">\( \theta \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\Delta L_z \Delta \theta \geq \frac{\hbar}{2}.\]</div>
+<section id="id1">
+<h4>Interpretation:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( L_z \)</span>: Component of angular momentum along a specified axis.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \theta \)</span>: Angular position around the axis.</p></li>
+</ul>
+<p>This relation governs systems with quantized angular momentum, such as atoms or rotating molecules, implying that precise knowledge of angular momentum limits angular position resolution.</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="broader-implications-of-the-uncertainty-principle">
+<h2>Broader Implications of the Uncertainty Principle<a class="headerlink" href="#broader-implications-of-the-uncertainty-principle" title="Link to this heading">#</a></h2>
+<section id="quantum-systems-in-transition">
+<h3>Quantum Systems in Transition<a class="headerlink" href="#quantum-systems-in-transition" title="Link to this heading">#</a></h3>
+<p>The uncertainty principle underpins phenomena like:</p>
+<ul class="simple">
+<li><p><strong>Natural Line Broadening</strong>: Short-lived quantum states exhibit broader energy spectra.</p></li>
+<li><p><strong>Virtual Particles</strong>: The energy-time uncertainty relation allows temporary violations of energy conservation, enabling virtual particle creation.</p></li>
+</ul>
+</section>
+<section id="spin-systems-and-angular-momentum">
+<h3>Spin Systems and Angular Momentum<a class="headerlink" href="#spin-systems-and-angular-momentum" title="Link to this heading">#</a></h3>
+<p>For intrinsic angular momentum (spin), the uncertainty principle explains why spin components along different axes cannot be simultaneously well-defined:</p>
+<div class="math notranslate nohighlight">
+\[[\hat{L}_x, \hat{L}_y] = i\hbar \hat{L}_z.\]</div>
+<p>This limits the precision of angular momentum measurements and affects systems like magnetic resonance imaging (MRI).</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="philosophical-and-interpretational-questions">
+<h2>Philosophical and Interpretational Questions<a class="headerlink" href="#philosophical-and-interpretational-questions" title="Link to this heading">#</a></h2>
+<section id="determinism-and-completeness">
+<h3>Determinism and Completeness<a class="headerlink" href="#determinism-and-completeness" title="Link to this heading">#</a></h3>
+<p>The uncertainty principle raises the question: Is the indeterminacy a feature of nature itself, or does it reflect the incompleteness of quantum mechanics? Einstein favored the latter, advocating for hidden variable theories to restore determinism.</p>
+</section>
+<section id="observer-and-reality">
+<h3>Observer and Reality<a class="headerlink" href="#observer-and-reality" title="Link to this heading">#</a></h3>
+<p>The uncertainty principle reinforces the idea that measurement affects the system, blurring the line between observer and observed. Philosophers debate whether this suggests an observer-dependent reality.</p>
+</section>
+<section id="quantum-vs-classical-boundaries">
+<h3>Quantum vs. Classical Boundaries<a class="headerlink" href="#quantum-vs-classical-boundaries" title="Link to this heading">#</a></h3>
+<p>In macroscopic systems, uncertainties are negligible compared to the scales of classical physics, allowing classical determinism to emerge. This transition remains an area of active exploration.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="key-equations">
+<h2>Key Equations<a class="headerlink" href="#key-equations" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Position-Momentum Uncertainty</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\Delta x \Delta p \geq \frac{\hbar}{2}.\]</div>
+</li>
+<li><p><strong>Energy-Time Uncertainty</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\Delta E \Delta t \geq \frac{\hbar}{2}.\]</div>
+</li>
+<li><p><strong>Angular Momentum-Angular Position</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\Delta L_z \Delta \theta \geq \frac{\hbar}{2}.\]</div>
+</li>
+<li><p><strong>Entropic Uncertainty Relation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[H(x) + H(p) \geq \log \left( \frac{2\pi e\hbar}{d_x d_p} \right).\]</div>
+</li>
+<li><p><strong>Robertson-Schrödinger Relation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\Delta A \Delta B \geq \frac{1}{2} |\langle [\hat{A}, \hat{B}] \rangle| + \frac{1}{2} |\langle \{ \delta\hat{A}, \delta\hat{B} \} \rangle|.\]</div>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>The uncertainty principle encapsulates the intrinsic limits of precision in quantum mechanics, extending beyond position and momentum to energy-time, angular momentum, and other conjugate pairs. Its implications for measurement, reality, and the classical-quantum transition have shaped both the foundational understanding and practical applications of quantum mechanics. Despite critiques from Einstein and others, it remains central to quantum theory, underpinning phenomena from atomic spectra to quantum information systems.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Decoherence.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Decoherence and the Classical/Quantum Divide</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Copenhagen.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Copenhagen Interpretation of Quantum Mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statement-of-the-uncertainty-principle">Statement of the Uncertainty Principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-relations-beyond-position-and-momentum">Uncertainty Relations Beyond Position and Momentum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-momentum-uncertainty-principle">Position-Momentum Uncertainty Principle</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation">Derivation:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-interpretation">Physical Interpretation:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatives-and-generalisations">Alternatives and Generalisations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#entropic-uncertainty-relations">2.2.1 Entropic Uncertainty Relations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#robertson-schrodinger-relation">Robertson-Schrödinger Relation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-uncertainty-relations-for-arbitrary-operators">Generalized Uncertainty Relations for Arbitrary Operators</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-time-uncertainty-principle">Energy-Time Uncertainty Principle</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-application">Example Application:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-and-angular-position">Angular Momentum and Angular Position</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretation:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broader-implications-of-the-uncertainty-principle">Broader Implications of the Uncertainty Principle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-systems-in-transition">Quantum Systems in Transition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-systems-and-angular-momentum">Spin Systems and Angular Momentum</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#philosophical-and-interpretational-questions">Philosophical and Interpretational Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinism-and-completeness">Determinism and Completeness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observer-and-reality">Observer and Reality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-vs-classical-boundaries">Quantum vs. Classical Boundaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-equations">Key Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

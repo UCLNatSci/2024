@@ -1,0 +1,770 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ontology in Quantum Mechanics &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ontology';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Philosophy of Physics and Quantum Mechanics" href="PhilosophyOfPhysics.html" />
+    <link rel="prev" title="Locality in Quantum Mechanics" href="Locality.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Foundations of Quantum Mechanics NSCI0035
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Maths.html">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ontology in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy of Physics and Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClassicExperiments.html">Classic Experiments in Quantum Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism in Quantum Mechanics and Philosophical Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UncertaintyPrinciple.html">The Uncertainty Principle in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Copenhagen.html">The Copenhagen Interpretation of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PilotWave.html">Bohmian Mechanics (Pilot Wave Theory)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Collapse.html">Objective Collapse Models in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManyWorlds.html">Many-Worlds Interpretation (MWI) of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QBism.html">QBism (Quantum Bayesianism) in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Montevideo.html">Montevideo Interpretation of Quantum Mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FOntology.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Ontology.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ontology in Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-philosophy-of-physics">Background: Philosophy of Physics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ontic-vs-epistemic-views-of-the-wavefunction">Ontic vs. Epistemic Views of the Wavefunction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ontic-interpretation-of-the-wavefunction">Ontic Interpretation of the Wavefunction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#epistemic-interpretation-of-the-wavefunction">Epistemic Interpretation of the Wavefunction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ontological-interpretations-of-quantum-mechanics">Ontological Interpretations of Quantum Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copenhagen-interpretation">1. Copenhagen Interpretation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ontological-status">Ontological Status:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#many-worlds-interpretation-mwi">2. Many-Worlds Interpretation (MWI)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ontological Status:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bohmian-mechanics">3. Bohmian Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ontological Status:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-collapse-theories">4. Objective Collapse Theories</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ontological Status:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qbism-quantum-bayesianism">5. QBism (Quantum Bayesianism)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Ontological Status:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauge-theories-and-quantum-ontology">Gauge Theories and Quantum Ontology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauge-invariance-and-physical-reality">Gauge Invariance and Physical Reality</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-physicality-of-complex-solutions-in-quantum-theory">The Physicality of Complex Solutions in Quantum Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-complex-amplitudes-real">Are Complex Amplitudes Real?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-probability-amplitudes-and-measurement">Example: Probability Amplitudes and Measurement</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-ontological-issues-in-quantum-mechanics">Summary of Ontological Issues in Quantum Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ontic-vs-epistemic-wavefunctions">1. Ontic vs. Epistemic Wavefunctions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauge-invariance-and-reality">2. Gauge Invariance and Reality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physicality-of-complex-numbers">3. Physicality of Complex Numbers</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ontology-in-quantum-mechanics">
+<h1>Ontology in Quantum Mechanics<a class="headerlink" href="#ontology-in-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p>Ontology in quantum mechanics addresses fundamental questions about the nature of reality at the quantum level. It explores whether the mathematical structures in quantum theory correspond to real, physical entities, or if they merely represent knowledge or predictions about measurement outcomes. This involves not only examining the wavefunction but also considering gauge theories, the role of complex solutions, and the broader implications for concepts like realism, determinism, and locality.</p>
+<section id="background-philosophy-of-physics">
+<h2>Background: Philosophy of Physics<a class="headerlink" href="#background-philosophy-of-physics" title="Link to this heading">#</a></h2>
+<p>The philosophy of physics seeks to clarify and interpret foundational concepts in physical theories. In quantum mechanics, this involves grappling with issues such as:</p>
+<ul class="simple">
+<li><p><strong>Determinism vs. Indeterminism</strong>: Does quantum mechanics introduce genuine randomness, or is there a deterministic underlying reality?</p></li>
+<li><p><strong>Locality and Non-Locality</strong>: How does quantum entanglement, which implies correlations across space, challenge classical ideas about information transfer?</p></li>
+<li><p><strong>Realism</strong>: Are the entities described by quantum mechanics, such as wavefunctions, particles, and fields, real and independent of observation?</p></li>
+</ul>
+<p>In particular, <strong>realism</strong> and <strong>ontology</strong> are central in quantum mechanics, as the theory challenges intuitive notions of an objective reality existing independently of observation.</p>
+</section>
+<section id="ontic-vs-epistemic-views-of-the-wavefunction">
+<h2>Ontic vs. Epistemic Views of the Wavefunction<a class="headerlink" href="#ontic-vs-epistemic-views-of-the-wavefunction" title="Link to this heading">#</a></h2>
+<p>One of the fundamental questions in quantum mechanics is whether the wavefunction <span class="math notranslate nohighlight">\( |\psi\rangle \)</span> represents a real, physical state of the system (ontic) or merely represents information about the system (epistemic).</p>
+<section id="ontic-interpretation-of-the-wavefunction">
+<h3>Ontic Interpretation of the Wavefunction<a class="headerlink" href="#ontic-interpretation-of-the-wavefunction" title="Link to this heading">#</a></h3>
+<p>In an <strong>ontic</strong> interpretation, the wavefunction is an objective, physical entity that exists independently of observation or measurement. Here, the wavefunction directly represents the underlying state of the system.</p>
+<ul class="simple">
+<li><p><strong>Realist Perspective</strong>: Ontic interpretations align with a realist perspective, where quantum states have objective, independent existence.</p></li>
+<li><p><strong>Examples</strong>:</p>
+<ul>
+<li><p><strong>Many-Worlds Interpretation (MWI)</strong>: The wavefunction is treated as a real, objective entity that represents a multiverse of branching outcomes.</p></li>
+<li><p><strong>Bohmian Mechanics</strong>: The wavefunction is a real field that guides particles deterministically, providing an ontological picture where particles are real, tangible objects with well-defined trajectories.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="epistemic-interpretation-of-the-wavefunction">
+<h3>Epistemic Interpretation of the Wavefunction<a class="headerlink" href="#epistemic-interpretation-of-the-wavefunction" title="Link to this heading">#</a></h3>
+<p>In an <strong>epistemic</strong> interpretation, the wavefunction represents information, belief, or knowledge about the system rather than a physical entity. This view suggests the wavefunction encodes probabilities about measurement outcomes but does not correspond to an underlying physical state.</p>
+<ul class="simple">
+<li><p><strong>Anti-Realist Perspective</strong>: Epistemic interpretations align with an anti-realist view, where the wavefunction is a predictive tool rather than a description of physical reality.</p></li>
+<li><p><strong>Examples</strong>:</p>
+<ul>
+<li><p><strong>Copenhagen Interpretation</strong>: The wavefunction is seen as a mathematical tool encoding knowledge about potential outcomes, rather than a real physical entity.</p></li>
+<li><p><strong>QBism (Quantum Bayesianism)</strong>: The wavefunction represents an agent’s subjective beliefs about outcomes, not an objective reality, emphasizing the role of the observer’s knowledge.</p></li>
+</ul>
+</li>
+</ul>
+<p>The distinction between ontic and epistemic interpretations is crucial for understanding quantum mechanics: if the wavefunction is ontic, then quantum theory describes an objective reality; if epistemic, it may merely be a theory about observers’ knowledge.</p>
+</section>
+</section>
+<section id="ontological-interpretations-of-quantum-mechanics">
+<h2>Ontological Interpretations of Quantum Mechanics<a class="headerlink" href="#ontological-interpretations-of-quantum-mechanics" title="Link to this heading">#</a></h2>
+<p>Several interpretations of quantum mechanics offer different ontological perspectives on the nature of quantum reality, particularly regarding the wavefunction.</p>
+<section id="copenhagen-interpretation">
+<h3>1. Copenhagen Interpretation<a class="headerlink" href="#copenhagen-interpretation" title="Link to this heading">#</a></h3>
+<p>The <strong>Copenhagen Interpretation</strong> suggests that the wavefunction represents knowledge of a system rather than a physical entity. Upon measurement, the wavefunction “collapses” to reflect the outcome. This interpretation is typically <strong>anti-realist</strong>, treating quantum mechanics as a set of rules for predicting outcomes rather than a description of objective reality.</p>
+<section id="ontological-status">
+<h4>Ontological Status:<a class="headerlink" href="#ontological-status" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Anti-Realist</strong>: The wavefunction has no independent reality.</p></li>
+<li><p><strong>Epistemic</strong>: The wavefunction describes knowledge rather than a physical state.</p></li>
+</ul>
+</section>
+</section>
+<section id="many-worlds-interpretation-mwi">
+<h3>2. Many-Worlds Interpretation (MWI)<a class="headerlink" href="#many-worlds-interpretation-mwi" title="Link to this heading">#</a></h3>
+<p>The <strong>Many-Worlds Interpretation</strong> posits that all possible outcomes of quantum measurements occur in parallel, branching universes. According to MWI, the wavefunction is an objective entity representing a multiverse, with no collapse occurring.</p>
+<section id="id1">
+<h4>Ontological Status:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Realist</strong>: The wavefunction is a real, objective entity.</p></li>
+<li><p><strong>Multiverse Ontology</strong>: Reality consists of multiple parallel universes, each corresponding to different outcomes.</p></li>
+</ul>
+</section>
+</section>
+<section id="bohmian-mechanics">
+<h3>3. Bohmian Mechanics<a class="headerlink" href="#bohmian-mechanics" title="Link to this heading">#</a></h3>
+<p><strong>Bohmian Mechanics</strong> introduces “hidden variables” to explain the apparent randomness in quantum measurements. Here, particles have well-defined positions and trajectories guided by the wavefunction, providing a deterministic and ontologically clear picture of particles as real objects.</p>
+<section id="id2">
+<h4>Ontological Status:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Realist</strong>: Particles and the guiding wavefunction both have independent existence.</p></li>
+<li><p><strong>Deterministic Ontology</strong>: Restores a classical view of particles as real objects with deterministic behavior.</p></li>
+</ul>
+</section>
+</section>
+<section id="objective-collapse-theories">
+<h3>4. Objective Collapse Theories<a class="headerlink" href="#objective-collapse-theories" title="Link to this heading">#</a></h3>
+<p><strong>Objective Collapse Theories</strong> propose that the wavefunction spontaneously collapses according to some physical process, independently of observation. This collapse is objective and random, suggesting the wavefunction is a real, physical entity governed by specific natural laws.</p>
+<section id="id3">
+<h4>Ontological Status:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Realist</strong>: The wavefunction is a real physical entity.</p></li>
+<li><p><strong>Spontaneous Collapse Ontology</strong>: Randomness is fundamental and occurs in a physically objective way.</p></li>
+</ul>
+</section>
+</section>
+<section id="qbism-quantum-bayesianism">
+<h3>5. QBism (Quantum Bayesianism)<a class="headerlink" href="#qbism-quantum-bayesianism" title="Link to this heading">#</a></h3>
+<p><strong>QBism</strong> treats quantum mechanics as a tool for individual agents to make predictions about measurement outcomes, with the wavefunction representing subjective beliefs rather than an objective reality.</p>
+<section id="id4">
+<h4>Ontological Status:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Anti-Realist</strong>: The wavefunction is a subjective representation of knowledge.</p></li>
+<li><p><strong>Epistemic Ontology</strong>: Quantum mechanics describes individual expectations, not objective reality.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="gauge-theories-and-quantum-ontology">
+<h2>Gauge Theories and Quantum Ontology<a class="headerlink" href="#gauge-theories-and-quantum-ontology" title="Link to this heading">#</a></h2>
+<p><strong>Gauge theories</strong> play a foundational role in modern physics, describing interactions through symmetries. In quantum mechanics, gauge symmetries help define what aspects of the theory correspond to physical reality.</p>
+<section id="gauge-invariance-and-physical-reality">
+<h3>Gauge Invariance and Physical Reality<a class="headerlink" href="#gauge-invariance-and-physical-reality" title="Link to this heading">#</a></h3>
+<p>Gauge invariance implies that certain transformations (e.g., adding a phase to the wavefunction) leave the theory’s predictions unchanged. This raises questions about which elements of quantum theory are physically real.</p>
+<ul class="simple">
+<li><p><strong>Local Gauge Invariance</strong>: In quantum electrodynamics (QED), local gauge invariance underlies the interaction between charged particles and the electromagnetic field, suggesting that certain quantities, like the absolute phase of the wavefunction, are not directly measurable.</p></li>
+<li><p><strong>Example - The Aharonov-Bohm Effect</strong>: This effect shows that gauge potentials, which were traditionally considered unobservable, can have measurable consequences. When charged particles pass around a region with magnetic flux, the vector potential <span class="math notranslate nohighlight">\( A \)</span> causes an observable phase shift, challenging a purely epistemic view of gauge fields and suggesting that gauge potentials may have a form of physical reality.</p></li>
+</ul>
+</section>
+</section>
+<section id="the-physicality-of-complex-solutions-in-quantum-theory">
+<h2>The Physicality of Complex Solutions in Quantum Theory<a class="headerlink" href="#the-physicality-of-complex-solutions-in-quantum-theory" title="Link to this heading">#</a></h2>
+<p>Quantum wavefunctions are typically complex-valued, raising questions about the physical significance of complex numbers in quantum theory.</p>
+<section id="are-complex-amplitudes-real">
+<h3>Are Complex Amplitudes Real?<a class="headerlink" href="#are-complex-amplitudes-real" title="Link to this heading">#</a></h3>
+<p>Complex numbers in quantum mechanics enable interference effects and oscillatory behavior. However, they prompt questions about whether the imaginary part of the wavefunction has physical significance.</p>
+<ul class="simple">
+<li><p><strong>Ontic View</strong>: If the wavefunction is real, then both the real and imaginary components of the complex wavefunction must correspond to some physical aspect of the system.</p></li>
+<li><p><strong>Epistemic View</strong>: If the wavefunction is epistemic, complex numbers may be viewed as part of a mathematical formalism rather than a literal representation of reality.</p></li>
+</ul>
+</section>
+<section id="example-probability-amplitudes-and-measurement">
+<h3>Example: Probability Amplitudes and Measurement<a class="headerlink" href="#example-probability-amplitudes-and-measurement" title="Link to this heading">#</a></h3>
+<p>The probability of observing a particular outcome is given by the squared modulus of the wavefunction:</p>
+<div class="math notranslate nohighlight">
+\[P(a_i) = |\langle a_i | \psi \rangle|^2\]</div>
+<p>Since only the absolute square of the wavefunction affects measurement outcomes, one might argue that only the probability densities are ontically real. In this view, the complex phase of the wavefunction could be seen as epistemic, merely facilitating calculations.</p>
+</section>
+</section>
+<section id="summary-of-ontological-issues-in-quantum-mechanics">
+<h2>Summary of Ontological Issues in Quantum Mechanics<a class="headerlink" href="#summary-of-ontological-issues-in-quantum-mechanics" title="Link to this heading">#</a></h2>
+<section id="ontic-vs-epistemic-wavefunctions">
+<h3>1. Ontic vs. Epistemic Wavefunctions<a class="headerlink" href="#ontic-vs-epistemic-wavefunctions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Ontic</strong>: The wavefunction represents a real physical state (e.g., Many-Worlds Interpretation, Bohmian Mechanics).</p></li>
+<li><p><strong>Epistemic</strong>: The wavefunction encodes knowledge or belief rather than a physical state (e.g., Copenhagen, QBism).</p></li>
+</ul>
+</section>
+<section id="gauge-invariance-and-reality">
+<h3>2. Gauge Invariance and Reality<a class="headerlink" href="#gauge-invariance-and-reality" title="Link to this heading">#</a></h3>
+<p>Gauge invariance raises questions about what elements of quantum theory correspond to physical reality. The Aharonov-Bohm effect implies that gauge potentials can have real effects, complicating a purely epistemic view of gauge fields.</p>
+</section>
+<section id="physicality-of-complex-numbers">
+<h3>3. Physicality of Complex Numbers<a class="headerlink" href="#physicality-of-complex-numbers" title="Link to this heading">#</a></h3>
+<p>The complex nature of the wavefunction raises questions about whether the imaginary components correspond to real aspects of quantum states or are merely calculational tools.</p>
+<hr class="docutils" />
+<p>Ontology in quantum mechanics challenges us to understand the nature of reality in a fundamentally probabilistic and abstract theory. Each interpretation makes distinct commitments about the status of quantum entities, gauge fields, and complex solutions, reflecting different views on what quantum mechanics ultimately tells us about reality. These issues remain open and are at the heart of ongoing philosophical and scientific debates.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Locality.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Locality in Quantum Mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="PhilosophyOfPhysics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Philosophy of Physics and Quantum Mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-philosophy-of-physics">Background: Philosophy of Physics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ontic-vs-epistemic-views-of-the-wavefunction">Ontic vs. Epistemic Views of the Wavefunction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ontic-interpretation-of-the-wavefunction">Ontic Interpretation of the Wavefunction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#epistemic-interpretation-of-the-wavefunction">Epistemic Interpretation of the Wavefunction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ontological-interpretations-of-quantum-mechanics">Ontological Interpretations of Quantum Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copenhagen-interpretation">1. Copenhagen Interpretation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ontological-status">Ontological Status:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#many-worlds-interpretation-mwi">2. Many-Worlds Interpretation (MWI)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ontological Status:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bohmian-mechanics">3. Bohmian Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ontological Status:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-collapse-theories">4. Objective Collapse Theories</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ontological Status:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qbism-quantum-bayesianism">5. QBism (Quantum Bayesianism)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Ontological Status:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauge-theories-and-quantum-ontology">Gauge Theories and Quantum Ontology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauge-invariance-and-physical-reality">Gauge Invariance and Physical Reality</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-physicality-of-complex-solutions-in-quantum-theory">The Physicality of Complex Solutions in Quantum Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-complex-amplitudes-real">Are Complex Amplitudes Real?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-probability-amplitudes-and-measurement">Example: Probability Amplitudes and Measurement</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-ontological-issues-in-quantum-mechanics">Summary of Ontological Issues in Quantum Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ontic-vs-epistemic-wavefunctions">1. Ontic vs. Epistemic Wavefunctions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauge-invariance-and-reality">2. Gauge Invariance and Reality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physicality-of-complex-numbers">3. Physicality of Complex Numbers</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,830 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Mathematical Background for Quantum Mechanics &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Maths';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Measurement in Quantum Mechanics" href="Measurement.html" />
+    <link rel="prev" title="Welcome to Foundations of Quantum Mechanics NSCI0035" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Foundations of Quantum Mechanics NSCI0035
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy of Physics and Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClassicExperiments.html">Classic Experiments in Quantum Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism in Quantum Mechanics and Philosophical Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UncertaintyPrinciple.html">The Uncertainty Principle in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Copenhagen.html">The Copenhagen Interpretation of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PilotWave.html">Bohmian Mechanics (Pilot Wave Theory)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Collapse.html">Objective Collapse Models in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManyWorlds.html">Many-Worlds Interpretation (MWI) of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QBism.html">QBism (Quantum Bayesianism) in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Montevideo.html">Montevideo Interpretation of Quantum Mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FMaths.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Maths.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Mathematical Background for Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra-and-vector-spaces">Linear Algebra and Vector Spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key Concepts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bra-ket-notation">Bra-Ket Notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisability-and-smoothness-of-quantum-wavefunctions">Normalisability and Smoothness of Quantum Wavefunctions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisability">Normalisability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-delta-function">Dirac Delta Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-in-plane-waves">Application in Plane Waves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-and-smoothness">Continuity and Smoothness</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-in-quantum-mechanics">Operators in Quantum Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-and-momentum-operators">Position and Momentum Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-commutation-relations">Operator Commutation Relations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-commutators">Calculating Commutators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-position-and-momentum">Example: Position and Momentum</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wavefunctions-in-position-and-momentum-space">Wavefunctions in Position and Momentum Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-space">Position Space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-space">Momentum Space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-transform">Fourier Transform</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observables-and-eigenstates">Observables and Eigenstates</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value">Expectation Value</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-equations">Summary of Key Equations</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mathematical-background-for-quantum-mechanics">
+<h1>Mathematical Background for Quantum Mechanics<a class="headerlink" href="#mathematical-background-for-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p>Quantum mechanics relies on a rigorous mathematical framework that blends linear algebra, calculus, and functional analysis. Understanding the core concepts requires familiarity with several key mathematical tools, including vector spaces, bra-ket notation, operators, commutators, and integral methods.</p>
+<hr class="docutils" />
+<section id="linear-algebra-and-vector-spaces">
+<h2>Linear Algebra and Vector Spaces<a class="headerlink" href="#linear-algebra-and-vector-spaces" title="Link to this heading">#</a></h2>
+<p>Quantum states are represented as vectors in a <strong>Hilbert space</strong>, a complete, infinite-dimensional vector space equipped with an inner product.</p>
+<section id="key-concepts">
+<h3>Key Concepts<a class="headerlink" href="#key-concepts" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>Hilbert Space</strong>: Denoted as <span class="math notranslate nohighlight">\( \mathcal{H} \)</span>, a Hilbert space is a vector space with the following properties:</p>
+<ul class="simple">
+<li><p>It is complete with respect to the norm induced by the inner product.</p></li>
+<li><p>It includes functions or vectors that satisfy normalisability conditions.</p></li>
+</ul>
+</li>
+<li><p><strong>Inner Product</strong>: For two vectors <span class="math notranslate nohighlight">\( |\psi\rangle, |\phi\rangle \in \mathcal{H} \)</span>, the inner product <span class="math notranslate nohighlight">\( \langle\phi | \psi \rangle \)</span> satisfies:</p>
+<div class="math notranslate nohighlight">
+\[\langle\phi | \psi \rangle = \int \phi^*(x) \psi(x) \, \mathrm{d}x,\]</div>
+<p>where <span class="math notranslate nohighlight">\( \phi^*(x) \)</span> is the complex conjugate of <span class="math notranslate nohighlight">\( \phi(x) \)</span>.</p>
+</li>
+<li><p><strong>Basis States</strong>: A set of basis vectors <span class="math notranslate nohighlight">\( \{|i\rangle\} \)</span> spans the space, allowing any state <span class="math notranslate nohighlight">\( |\psi\rangle \)</span> to be written as:</p>
+<div class="math notranslate nohighlight">
+\[|\psi\rangle = \sum_i c_i |i\rangle \quad \text{or} \quad |\psi\rangle = \int c(x) |x\rangle \mathrm{d}x,\]</div>
+<p>where <span class="math notranslate nohighlight">\( c_i \)</span> or <span class="math notranslate nohighlight">\( c(x) \)</span> are expansion coefficients.</p>
+</li>
+</ul>
+</section>
+<section id="bra-ket-notation">
+<h3>Bra-Ket Notation<a class="headerlink" href="#bra-ket-notation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Introduced by Paul Dirac, <strong>bra-ket notation</strong> provides a compact way to express quantum states and their operations:</p>
+<ul>
+<li><p><strong>Ket</strong>: A vector <span class="math notranslate nohighlight">\( |\psi\rangle \)</span> represents a quantum state.</p></li>
+<li><p><strong>Bra</strong>: The dual vector <span class="math notranslate nohighlight">\( \langle\psi| \)</span> represents the conjugate transpose of <span class="math notranslate nohighlight">\( |\psi\rangle \)</span>.</p></li>
+<li><p><strong>Inner Product</strong>: <span class="math notranslate nohighlight">\( \langle\phi | \psi \rangle \)</span> is the overlap between states.</p></li>
+<li><p><strong>Outer Product</strong>: <span class="math notranslate nohighlight">\( |\psi\rangle \langle\phi| \)</span> is an operator that acts on vectors.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="normalisability-and-smoothness-of-quantum-wavefunctions">
+<h2>Normalisability and Smoothness of Quantum Wavefunctions<a class="headerlink" href="#normalisability-and-smoothness-of-quantum-wavefunctions" title="Link to this heading">#</a></h2>
+<p>A quantum state must be <strong>normalisable</strong> and satisfy specific conditions of smoothness and continuity to ensure physical validity.</p>
+<section id="normalisability">
+<h3>Normalisability<a class="headerlink" href="#normalisability" title="Link to this heading">#</a></h3>
+<p>For a wavefunction <span class="math notranslate nohighlight">\( \psi(x) \)</span>, normalisability ensures that the total probability of finding a particle is <span class="math notranslate nohighlight">\( 1 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^\infty |\psi(x)|^2 \mathrm{d}x = 1.\]</div>
+<p>Non-normalisable states, such as plane waves, can be treated using the <strong>Dirac delta function</strong> to enforce orthogonality.</p>
+</section>
+<hr class="docutils" />
+<section id="dirac-delta-function">
+<h3>Dirac Delta Function<a class="headerlink" href="#dirac-delta-function" title="Link to this heading">#</a></h3>
+<p>The <strong>Dirac delta function</strong> <span class="math notranslate nohighlight">\( \delta(x) \)</span> is a mathematical tool used to represent point-like distributions. It is not a function in the traditional sense but rather a “generalized function” or distribution. The Dirac delta function satisfies:</p>
+<ol class="arabic">
+<li><p><strong>Sifting Property</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^\infty \delta(x - x_0) f(x) \, \mathrm{d}x = f(x_0),\]</div>
+<p>where <span class="math notranslate nohighlight">\( f(x) \)</span> is a well-behaved function.</p>
+</li>
+<li><p><strong>Normalization</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^\infty \delta(x) \, \mathrm{d}x = 1.\]</div>
+</li>
+<li><p><strong>Peaked Behavior</strong>:
+The delta function is often represented heuristically as a sharply peaked function that becomes infinitely narrow and infinitely tall, such that its total integral remains 1.</p></li>
+</ol>
+<p>In quantum mechanics, the Dirac delta function is used to describe the orthogonality and completeness of basis states:</p>
+<ul>
+<li><p><strong>Position Eigenstates</strong>:
+The position eigenstates <span class="math notranslate nohighlight">\( |x\rangle \)</span> satisfy:</p>
+<div class="math notranslate nohighlight">
+\[\langle x | x' \rangle = \delta(x - x').\]</div>
+</li>
+<li><p><strong>Momentum Eigenstates</strong>:
+The momentum eigenstates <span class="math notranslate nohighlight">\( |p\rangle \)</span> satisfy:</p>
+<div class="math notranslate nohighlight">
+\[\langle p | p' \rangle = \delta(p - p').\]</div>
+</li>
+<li><p><strong>Completeness Relations</strong>:
+The delta function ensures that the position and momentum bases form a complete set:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^\infty |x\rangle \langle x| \mathrm{d}x = \mathbb{I}, \quad \int_{-\infty}^\infty |p\rangle \langle p| \mathrm{d}p = \mathbb{I}.\]</div>
+</li>
+</ul>
+</section>
+<section id="application-in-plane-waves">
+<h3>Application in Plane Waves<a class="headerlink" href="#application-in-plane-waves" title="Link to this heading">#</a></h3>
+<p>Plane waves, represented by <span class="math notranslate nohighlight">\( \psi(x) = e^{ipx/\hbar} \)</span>, are not normalisable in the usual sense. Instead, their normalization involves the delta function:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^\infty e^{i(px - p'x')/\hbar} \mathrm{d}x = 2\pi\hbar \delta(p - p').\]</div>
+<p>This formalism allows us to handle non-normalisable states consistently within the quantum framework.</p>
+</section>
+<section id="continuity-and-smoothness">
+<h3>Continuity and Smoothness<a class="headerlink" href="#continuity-and-smoothness" title="Link to this heading">#</a></h3>
+<p>The wavefunction <span class="math notranslate nohighlight">\( \psi(x) \)</span> must satisfy:</p>
+<ol class="arabic simple">
+<li><p><strong>Continuity</strong>: <span class="math notranslate nohighlight">\( \psi(x) \)</span> must be continuous for all <span class="math notranslate nohighlight">\( x \)</span>. Discontinuities would lead to unphysical predictions.</p></li>
+<li><p><strong>Smoothness</strong>: The first derivative <span class="math notranslate nohighlight">\( \frac{d\psi(x)}{\mathrm{d}x} \)</span> must be continuous, except at points where the potential <span class="math notranslate nohighlight">\( V(x) \)</span> has an infinite discontinuity (e.g., in a delta potential). This ensures that the Schrödinger equation remains valid.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="operators-in-quantum-mechanics">
+<h2>Operators in Quantum Mechanics<a class="headerlink" href="#operators-in-quantum-mechanics" title="Link to this heading">#</a></h2>
+<p>Operators act on quantum states and correspond to physical observables, such as position and momentum.</p>
+<section id="position-and-momentum-operators">
+<h3>Position and Momentum Operators<a class="headerlink" href="#position-and-momentum-operators" title="Link to this heading">#</a></h3>
+<p>In the <strong>position representation</strong>, quantum states are wavefunctions <span class="math notranslate nohighlight">\( \psi(x) \)</span>, and operators act as follows:</p>
+<ul>
+<li><p><strong>Position Operator</strong> <span class="math notranslate nohighlight">\( \hat{x} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{x} \psi(x) = x \psi(x).\]</div>
+</li>
+<li><p><strong>Momentum Operator</strong> <span class="math notranslate nohighlight">\( \hat{p} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{p} \psi(x) = -i\hbar \frac{d}{\mathrm{d}x} \psi(x),\]</div>
+<p>where <span class="math notranslate nohighlight">\( \hbar \)</span> is the reduced Planck constant.</p>
+</li>
+</ul>
+</section>
+<section id="operator-commutation-relations">
+<h3>Operator Commutation Relations<a class="headerlink" href="#operator-commutation-relations" title="Link to this heading">#</a></h3>
+<p>Position and momentum operators satisfy the canonical commutation relation:</p>
+<div class="math notranslate nohighlight">
+\[[\hat{x}, \hat{p}] = \hat{x}\hat{p} - \hat{p}\hat{x} = i\hbar.\]</div>
+<p>This commutator is fundamental to quantum mechanics and underpins the <strong>Heisenberg uncertainty principle</strong>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="calculating-commutators">
+<h2>Calculating Commutators<a class="headerlink" href="#calculating-commutators" title="Link to this heading">#</a></h2>
+<p>A <strong>commutator</strong> <span class="math notranslate nohighlight">\( [\hat{A}, \hat{B}] \)</span> measures the extent to which two operators fail to commute:</p>
+<div class="math notranslate nohighlight">
+\[[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}.\]</div>
+<section id="example-position-and-momentum">
+<h3>Example: Position and Momentum<a class="headerlink" href="#example-position-and-momentum" title="Link to this heading">#</a></h3>
+<p>For <span class="math notranslate nohighlight">\( \hat{x} \)</span> and <span class="math notranslate nohighlight">\( \hat{p} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[[\hat{x}, \hat{p}] = i\hbar.\]</div>
+<p>Using this commutator, the <strong>Heisenberg uncertainty principle</strong> is derived:</p>
+<div class="math notranslate nohighlight">
+\[\Delta x \Delta p \geq \frac{\hbar}{2}.\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="wavefunctions-in-position-and-momentum-space">
+<h2>Wavefunctions in Position and Momentum Space<a class="headerlink" href="#wavefunctions-in-position-and-momentum-space" title="Link to this heading">#</a></h2>
+<p>Quantum states can be represented in <strong>position space</strong> or <strong>momentum space</strong>, connected via the Fourier transform.</p>
+<section id="position-space">
+<h3>Position Space<a class="headerlink" href="#position-space" title="Link to this heading">#</a></h3>
+<p>In position space, a state <span class="math notranslate nohighlight">\( |\psi\rangle \)</span> is represented by the wavefunction <span class="math notranslate nohighlight">\( \psi(x) \)</span>, where:</p>
+<div class="math notranslate nohighlight">
+\[\psi(x) = \langle x | \psi \rangle.\]</div>
+<p>The probability of finding the particle at position <span class="math notranslate nohighlight">\( x \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[P(x) = |\psi(x)|^2.\]</div>
+</section>
+<section id="momentum-space">
+<h3>Momentum Space<a class="headerlink" href="#momentum-space" title="Link to this heading">#</a></h3>
+<p>In momentum space, a state is represented by <span class="math notranslate nohighlight">\( \phi(p) \)</span>, where:</p>
+<div class="math notranslate nohighlight">
+\[\phi(p) = \langle p | \psi \rangle.\]</div>
+<p>The probability of finding the particle with momentum <span class="math notranslate nohighlight">\( p \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[P(p) = |\phi(p)|^2.\]</div>
+</section>
+<section id="fourier-transform">
+<h3>Fourier Transform<a class="headerlink" href="#fourier-transform" title="Link to this heading">#</a></h3>
+<p>The wavefunctions in position and momentum space are related by the Fourier transform:</p>
+<div class="math notranslate nohighlight">
+\[\phi(p) = \frac{1}{\sqrt{2\pi\hbar}} \int_{-\infty}^\infty \psi(x) e^{-ipx/\hbar} \mathrm{d}x,\]</div>
+<div class="math notranslate nohighlight">
+\[\psi(x) = \frac{1}{\sqrt{2\pi\hbar}} \int_{-\infty}^\infty \phi(p) e^{ipx/\hbar} \mathrm{d}p.\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="observables-and-eigenstates">
+<h2>Observables and Eigenstates<a class="headerlink" href="#observables-and-eigenstates" title="Link to this heading">#</a></h2>
+<p>Observables correspond to <strong>Hermitian operators</strong> <span class="math notranslate nohighlight">\( \hat{O} \)</span>, which have real eigenvalues. Measuring an observable <span class="math notranslate nohighlight">\( \hat{O} \)</span> yields one of its eigenvalues <span class="math notranslate nohighlight">\( o \)</span>, and the quantum state collapses to the corresponding eigenstate <span class="math notranslate nohighlight">\( |o\rangle \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{O} |o\rangle = o |o\rangle.\]</div>
+<section id="expectation-value">
+<h3>Expectation Value<a class="headerlink" href="#expectation-value" title="Link to this heading">#</a></h3>
+<p>The expectation value of an observable <span class="math notranslate nohighlight">\( \hat{O} \)</span> in a state <span class="math notranslate nohighlight">\( |\psi\rangle \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\langle \hat{O} \rangle = \langle \psi | \hat{O} | \psi \rangle.\]</div>
+<p>For position and momentum:</p>
+<ul>
+<li><p>Position expectation value:</p>
+<div class="math notranslate nohighlight">
+\[\langle \hat{x} \rangle = \int_{-\infty}^\infty x |\psi(x)|^2 \mathrm{d}x.\]</div>
+</li>
+<li><p>Momentum expectation value:</p>
+<div class="math notranslate nohighlight">
+\[\langle \hat{p} \rangle = \int_{-\infty}^\infty \phi^*(p) p \phi(p) \mathrm{d}p.\]</div>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="summary-of-key-equations">
+<h2>Summary of Key Equations<a class="headerlink" href="#summary-of-key-equations" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Normalisation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^\infty |\psi(x)|^2 \mathrm{d}x = 1.\]</div>
+</li>
+<li><p><strong>Dirac Delta Orthogonality</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\langle x | x' \rangle = \delta(x - x'), \quad \langle p | p' \rangle = \delta(p - p').\]</div>
+</li>
+<li><p><strong>Position and Momentum Operators</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{x} \psi(x) = x \psi(x), \quad \hat{p} \psi(x) = -i\hbar \frac{d}{\mathrm{d}x} \psi(x).\]</div>
+</li>
+<li><p><strong>Commutation Relation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[[\hat{x}, \hat{p}] = i\hbar.\]</div>
+</li>
+<li><p><strong>Fourier Transform</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\phi(p) = \frac{1}{\sqrt{2\pi\hbar}} \int_{-\infty}^\infty \psi(x) e^{-ipx/\hbar} \mathrm{d}x.\]</div>
+</li>
+<li><p><strong>Expectation Value</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\langle \hat{O} \rangle = \langle \psi | \hat{O} | \psi \rangle.\]</div>
+</li>
+<li><p><strong>Uncertainty Principle</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\Delta x \Delta p \geq \frac{\hbar}{2}.\]</div>
+</li>
+</ol>
+<p>Understanding these mathematical tools is essential for exploring quantum mechanics, from solving the Schrödinger equation to analyzing quantum operators and interpreting physical measurements.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to Foundations of Quantum Mechanics NSCI0035</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Measurement.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Measurement in Quantum Mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra-and-vector-spaces">Linear Algebra and Vector Spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key Concepts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bra-ket-notation">Bra-Ket Notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisability-and-smoothness-of-quantum-wavefunctions">Normalisability and Smoothness of Quantum Wavefunctions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisability">Normalisability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-delta-function">Dirac Delta Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-in-plane-waves">Application in Plane Waves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-and-smoothness">Continuity and Smoothness</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-in-quantum-mechanics">Operators in Quantum Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-and-momentum-operators">Position and Momentum Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-commutation-relations">Operator Commutation Relations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-commutators">Calculating Commutators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-position-and-momentum">Example: Position and Momentum</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wavefunctions-in-position-and-momentum-space">Wavefunctions in Position and Momentum Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-space">Position Space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-space">Momentum Space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-transform">Fourier Transform</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observables-and-eigenstates">Observables and Eigenstates</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value">Expectation Value</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-equations">Summary of Key Equations</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

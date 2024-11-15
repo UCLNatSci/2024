@@ -1,0 +1,706 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>EPR Paradox: Einstein, Podolsky, and Rosen (1935) &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'EPR';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bell’s Theorem and Bell Inequalities" href="BellsTheorem.html" />
+    <link rel="prev" title="Classic Experiments in Quantum Theory" href="ClassicExperiments.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Foundations of Quantum Mechanics NSCI0035
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Maths.html">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy of Physics and Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClassicExperiments.html">Classic Experiments in Quantum Theory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism in Quantum Mechanics and Philosophical Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UncertaintyPrinciple.html">The Uncertainty Principle in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Copenhagen.html">The Copenhagen Interpretation of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PilotWave.html">Bohmian Mechanics (Pilot Wave Theory)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Collapse.html">Objective Collapse Models in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManyWorlds.html">Many-Worlds Interpretation (MWI) of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QBism.html">QBism (Quantum Bayesianism) in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Montevideo.html">Montevideo Interpretation of Quantum Mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEPR.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/EPR.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>EPR Paradox: Einstein, Podolsky, and Rosen (1935)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-argument-of-the-epr-paper">Core Argument of the EPR Paper</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#criterion-of-reality">Criterion of Reality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-mechanics-and-completeness">Quantum Mechanics and Completeness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entanglement-and-non-locality">Entanglement and Non-Locality</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematics-of-the-epr-argument">Mathematics of the EPR Argument</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wavefunction-of-the-two-particle-system">Wavefunction of the Two-Particle System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-and-momentum-operators">Position and Momentum Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlations-in-measurement">Correlations in Measurement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heisenbergs-uncertainty-principle">Heisenberg’s Uncertainty Principle</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implications-of-the-epr-paper">Implications of the EPR Paper</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#locality-and-realism">Locality and Realism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-to-completeness">Challenges to Completeness</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legacy-and-later-developments">Legacy and Later Developments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-epr-argument">Summary of the EPR Argument</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="epr-paradox-einstein-podolsky-and-rosen-1935">
+<h1>EPR Paradox: Einstein, Podolsky, and Rosen (1935)<a class="headerlink" href="#epr-paradox-einstein-podolsky-and-rosen-1935" title="Link to this heading">#</a></h1>
+<p>The <strong>EPR paradox</strong> was introduced by Albert Einstein, Boris Podolsky, and Nathan Rosen in their seminal 1935 paper titled <em>“Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?”</em>. This paper sought to highlight what the authors perceived as an incompleteness in the quantum mechanical description of physical systems. Specifically, they challenged the Copenhagen interpretation of quantum mechanics, arguing that it either violates locality or fails to provide a complete description of physical reality.</p>
+<p>The EPR paper is foundational to the philosophy of quantum mechanics and directly inspired later work on quantum entanglement, non-locality, and Bell’s theorem.</p>
+<hr class="docutils" />
+<section id="core-argument-of-the-epr-paper">
+<h2>Core Argument of the EPR Paper<a class="headerlink" href="#core-argument-of-the-epr-paper" title="Link to this heading">#</a></h2>
+<p>The EPR paper presents the following key arguments:</p>
+<section id="criterion-of-reality">
+<h3>Criterion of Reality<a class="headerlink" href="#criterion-of-reality" title="Link to this heading">#</a></h3>
+<p>EPR introduce a criterion for what constitutes “physical reality”:</p>
+<blockquote>
+<div><p>“If, without in any way disturbing a system, we can predict with certainty (i.e., with probability equal to unity) the value of a physical quantity, then there exists an element of physical reality corresponding to this physical quantity.”</p>
+</div></blockquote>
+<p>This criterion asserts that if a property of a system can be determined without directly measuring it, that property must correspond to a real, physical element of the system.</p>
+</section>
+<hr class="docutils" />
+<section id="quantum-mechanics-and-completeness">
+<h3>Quantum Mechanics and Completeness<a class="headerlink" href="#quantum-mechanics-and-completeness" title="Link to this heading">#</a></h3>
+<p>Quantum mechanics, according to the Copenhagen interpretation, does not ascribe definite values to all observables prior to measurement. Instead, it describes systems probabilistically through the wavefunction. EPR argue that if two observables can be simultaneously predicted with certainty for a system, there must be a complete physical description that quantum mechanics fails to provide.</p>
+</section>
+<hr class="docutils" />
+<section id="entanglement-and-non-locality">
+<h3>Entanglement and Non-Locality<a class="headerlink" href="#entanglement-and-non-locality" title="Link to this heading">#</a></h3>
+<p>EPR construct a thought experiment using <strong>entangled particles</strong> to demonstrate their argument. In their example:</p>
+<ol class="arabic">
+<li><p><strong>Setup</strong>: Two particles are prepared in a single quantum state (entangled) such that their properties are correlated. For instance, the position <span class="math notranslate nohighlight">\(x_1, x_2\)</span> and momentum <span class="math notranslate nohighlight">\(p_1, p_2\)</span> of the particles are related:</p>
+<div class="math notranslate nohighlight">
+\[x_1 + x_2 = \text{constant}, \quad p_1 - p_2 = \text{constant}.\]</div>
+</li>
+<li><p><strong>Measurement</strong>: If the position of particle 1 (<span class="math notranslate nohighlight">\(x_1\)</span>) is measured, the position of particle 2 (<span class="math notranslate nohighlight">\(x_2\)</span>) can be predicted with certainty without directly measuring particle 2. Similarly, if the momentum of particle 1 (<span class="math notranslate nohighlight">\(p_1\)</span>) is measured, the momentum of particle 2 (<span class="math notranslate nohighlight">\(p_2\)</span>) can also be predicted with certainty.</p></li>
+<li><p><strong>Locality Assumption</strong>: The act of measuring particle 1 should not affect the state of particle 2 if the particles are sufficiently separated (a condition ensuring locality).</p></li>
+<li><p><strong>Conclusion</strong>: Since both <span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(p_2\)</span> can be predicted without disturbing particle 2, they must correspond to elements of reality for particle 2. However, quantum mechanics does not assign definite values to these properties simultaneously, suggesting it is incomplete.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="mathematics-of-the-epr-argument">
+<h2>Mathematics of the EPR Argument<a class="headerlink" href="#mathematics-of-the-epr-argument" title="Link to this heading">#</a></h2>
+<p>The mathematical structure of the EPR argument involves the <strong>wavefunction of the entangled pair</strong> and the relationships between position and momentum observables.</p>
+<section id="wavefunction-of-the-two-particle-system">
+<h3>Wavefunction of the Two-Particle System<a class="headerlink" href="#wavefunction-of-the-two-particle-system" title="Link to this heading">#</a></h3>
+<p>The two entangled particles are described by a joint wavefunction, often written as:</p>
+<div class="math notranslate nohighlight">
+\[\Psi(x_1, x_2) = \delta(x_1 + x_2 - X) \cdot e^{iP(x_1 - x_2)/\hbar},\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X\)</span> is the total position of the system.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span> is the total momentum of the system.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta(x_1 + x_2 - X)\)</span> ensures the particles’ positions are correlated.</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{iP(x_1 - x_2)/\hbar}\)</span> ensures the particles’ momenta are correlated.</p></li>
+</ul>
+<p>This wavefunction encodes the perfect correlations in both position and momentum:</p>
+<div class="math notranslate nohighlight">
+\[x_1 + x_2 = X, \quad p_1 - p_2 = P.\]</div>
+</section>
+<section id="position-and-momentum-operators">
+<h3>Position and Momentum Operators<a class="headerlink" href="#position-and-momentum-operators" title="Link to this heading">#</a></h3>
+<p>The position and momentum operators for the two particles are:</p>
+<div class="math notranslate nohighlight">
+\[\hat{x}_1, \hat{x}_2 \quad \text{(position operators)},\]</div>
+<div class="math notranslate nohighlight">
+\[\hat{p}_1 = -i\hbar \frac{\partial}{\partial x_1}, \quad \hat{p}_2 = -i\hbar \frac{\partial}{\partial x_2} \quad \text{(momentum operators)}.\]</div>
+<p>The commutation relations for these operators are:</p>
+<div class="math notranslate nohighlight">
+\[[\hat{x}_i, \hat{p}_j] = i\hbar \delta_{ij}, \quad [\hat{x}_i, \hat{x}_j] = 0, \quad [\hat{p}_i, \hat{p}_j] = 0.\]</div>
+</section>
+<section id="correlations-in-measurement">
+<h3>Correlations in Measurement<a class="headerlink" href="#correlations-in-measurement" title="Link to this heading">#</a></h3>
+<p>Using the wavefunction, one can compute the correlations between the positions and momenta of the two particles:</p>
+<ol class="arabic">
+<li><p><strong>Position Correlation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\langle \Psi | (\hat{x}_1 + \hat{x}_2) | \Psi \rangle = X.\]</div>
+<p>Measuring <span class="math notranslate nohighlight">\(x_1\)</span> immediately determines <span class="math notranslate nohighlight">\(x_2\)</span>.</p>
+</li>
+<li><p><strong>Momentum Correlation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\langle \Psi | (\hat{p}_1 - \hat{p}_2) | \Psi \rangle = P.\]</div>
+<p>Measuring <span class="math notranslate nohighlight">\(p_1\)</span> immediately determines <span class="math notranslate nohighlight">\(p_2\)</span>.</p>
+</li>
+</ol>
+</section>
+<section id="heisenbergs-uncertainty-principle">
+<h3>Heisenberg’s Uncertainty Principle<a class="headerlink" href="#heisenbergs-uncertainty-principle" title="Link to this heading">#</a></h3>
+<p>The EPR argument exploits the fact that the Heisenberg uncertainty principle applies to individual particles:</p>
+<div class="math notranslate nohighlight">
+\[\Delta x \Delta p \geq \frac{\hbar}{2}.\]</div>
+<p>However, in the entangled system, the correlations ensure that the joint uncertainties for the sums and differences can vanish:</p>
+<div class="math notranslate nohighlight">
+\[\Delta(x_1 + x_2) = 0, \quad \Delta(p_1 - p_2) = 0.\]</div>
+<p>This enables precise predictions of one particle’s properties based on measurements of the other, challenging the completeness of quantum mechanics.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="implications-of-the-epr-paper">
+<h2>Implications of the EPR Paper<a class="headerlink" href="#implications-of-the-epr-paper" title="Link to this heading">#</a></h2>
+<section id="locality-and-realism">
+<h3>Locality and Realism<a class="headerlink" href="#locality-and-realism" title="Link to this heading">#</a></h3>
+<p>EPR rely on two key assumptions:</p>
+<ol class="arabic simple">
+<li><p><strong>Locality</strong>: The measurement of one particle does not affect the other, provided they are space-like separated.</p></li>
+<li><p><strong>Realism</strong>: If a property of a particle can be predicted with certainty, it corresponds to a real physical property (an “element of reality”).</p></li>
+</ol>
+<p>Quantum mechanics, as interpreted by Bohr and others, appears to violate at least one of these principles. Experiments inspired by EPR, such as those testing Bell’s inequalities, have shown that quantum mechanics is inherently non-local, challenging classical notions of causality.</p>
+</section>
+<hr class="docutils" />
+<section id="challenges-to-completeness">
+<h3>Challenges to Completeness<a class="headerlink" href="#challenges-to-completeness" title="Link to this heading">#</a></h3>
+<p>The EPR paper concludes that if quantum mechanics is complete, it must either:</p>
+<ul class="simple">
+<li><p>Violate locality, or</p></li>
+<li><p>Abandon realism.</p></li>
+</ul>
+<p>Einstein preferred to believe that quantum mechanics is incomplete, suggesting the need for a hidden variable theory to restore locality and realism.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="legacy-and-later-developments">
+<h2>Legacy and Later Developments<a class="headerlink" href="#legacy-and-later-developments" title="Link to this heading">#</a></h2>
+<p>The EPR paper laid the groundwork for modern discussions of quantum entanglement and the philosophical implications of quantum mechanics. Key developments include:</p>
+<ul class="simple">
+<li><p><strong>Bell’s Theorem</strong>: In 1964, John Bell formalized the incompatibility of quantum mechanics with local hidden variable theories. Bell’s inequalities provided a way to experimentally test the EPR paradox.</p></li>
+<li><p><strong>Experimental Tests</strong>: Experiments by Alain Aspect in the 1980s and others since then have confirmed the predictions of quantum mechanics, ruling out local hidden variable theories.</p></li>
+<li><p><strong>Philosophical Implications</strong>: The EPR paradox continues to be a cornerstone in discussions of non-locality, realism, and the nature of quantum reality.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="summary-of-the-epr-argument">
+<h2>Summary of the EPR Argument<a class="headerlink" href="#summary-of-the-epr-argument" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>If quantum mechanics is complete, then all physical properties must be represented in the wavefunction.</p></li>
+<li><p>Measurements on entangled particles suggest that properties like position and momentum can be predicted with certainty for one particle without disturbing the other.</p></li>
+<li><p>This implies that these properties must correspond to elements of reality.</p></li>
+<li><p>However, quantum mechanics does not assign definite values to these properties simultaneously, suggesting it is incomplete or non-local.</p></li>
+</ol>
+<p>The EPR paradox remains one of the most important conceptual challenges in quantum mechanics, forcing physicists and philosophers to reconsider the nature of reality, locality, and the completeness of physical theories.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ClassicExperiments.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Classic Experiments in Quantum Theory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="BellsTheorem.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bell’s Theorem and Bell Inequalities</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-argument-of-the-epr-paper">Core Argument of the EPR Paper</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#criterion-of-reality">Criterion of Reality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-mechanics-and-completeness">Quantum Mechanics and Completeness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entanglement-and-non-locality">Entanglement and Non-Locality</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematics-of-the-epr-argument">Mathematics of the EPR Argument</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wavefunction-of-the-two-particle-system">Wavefunction of the Two-Particle System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-and-momentum-operators">Position and Momentum Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlations-in-measurement">Correlations in Measurement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heisenbergs-uncertainty-principle">Heisenberg’s Uncertainty Principle</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implications-of-the-epr-paper">Implications of the EPR Paper</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#locality-and-realism">Locality and Realism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-to-completeness">Challenges to Completeness</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legacy-and-later-developments">Legacy and Later Developments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-epr-argument">Summary of the EPR Argument</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

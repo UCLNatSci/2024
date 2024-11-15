@@ -1,0 +1,679 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Classic Experiments in Quantum Theory &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ClassicExperiments';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="EPR Paradox: Einstein, Podolsky, and Rosen (1935)" href="EPR.html" />
+    <link rel="prev" title="Philosophy of Physics and Quantum Mechanics" href="PhilosophyOfPhysics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Foundations of Quantum Mechanics NSCI0035
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Maths.html">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy of Physics and Quantum Mechanics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classic Experiments in Quantum Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism in Quantum Mechanics and Philosophical Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UncertaintyPrinciple.html">The Uncertainty Principle in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Copenhagen.html">The Copenhagen Interpretation of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PilotWave.html">Bohmian Mechanics (Pilot Wave Theory)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Collapse.html">Objective Collapse Models in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManyWorlds.html">Many-Worlds Interpretation (MWI) of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QBism.html">QBism (Quantum Bayesianism) in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Montevideo.html">Montevideo Interpretation of Quantum Mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FClassicExperiments.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ClassicExperiments.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Classic Experiments in Quantum Theory</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-slit-experiment-with-particles">Double-Slit Experiment with Particles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implications">Implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stern-gerlach-experiment">Stern-Gerlach Experiment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photoelectric-effect">Photoelectric Effect</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bell-test-experiments">Bell Test Experiments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-eraser-experiment">Quantum Eraser Experiment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aspects-experiments-on-entanglement">Aspect’s Experiments on Entanglement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delayed-choice-experiment">Delayed Choice Experiment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Implications</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="classic-experiments-in-quantum-theory">
+<h1>Classic Experiments in Quantum Theory<a class="headerlink" href="#classic-experiments-in-quantum-theory" title="Link to this heading">#</a></h1>
+<p>Quantum mechanics is filled with classic experiments that reveal the unique, often counterintuitive nature of the quantum world. These experiments illustrate fundamental quantum phenomena, such as wave-particle duality, superposition, entanglement, and measurement effects. Here are some of the most important experiments in the history of quantum mechanics.</p>
+<hr class="docutils" />
+<section id="double-slit-experiment-with-particles">
+<h2>Double-Slit Experiment with Particles<a class="headerlink" href="#double-slit-experiment-with-particles" title="Link to this heading">#</a></h2>
+<p>The double-slit experiment is one of the most famous experiments in quantum mechanics and is often used to illustrate wave-particle duality. When individual particles (such as electrons or photons) are fired through two slits onto a screen, they display an interference pattern characteristic of waves, even though they are detected as individual particles.</p>
+<ul class="simple">
+<li><p><strong>Setup</strong>: A source emits particles, such as electrons or photons, toward a barrier with two slits. Behind the barrier, a screen records where each particle hits.</p></li>
+<li><p><strong>Outcome Without Observation</strong>: When both slits are open and particles are not observed as they pass through the slits, an interference pattern appears on the screen. This pattern is typical of waves interfering, suggesting that each particle somehow passes through both slits and interferes with itself.</p></li>
+<li><p><strong>Outcome With Observation</strong>: If detectors are placed at the slits to determine which slit each particle passes through, the interference pattern disappears. Instead, the particles behave like classical particles, creating two bands on the screen corresponding to the two slits.</p></li>
+</ul>
+<section id="implications">
+<h3>Implications<a class="headerlink" href="#implications" title="Link to this heading">#</a></h3>
+<p>The double-slit experiment demonstrates the fundamental principle of wave-particle duality: particles exhibit wave-like interference when not observed but behave like particles when measured. This experiment also highlights the role of observation in quantum mechanics, as measurement appears to “collapse” the wave-like behavior into a definite particle-like outcome.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="stern-gerlach-experiment">
+<h2>Stern-Gerlach Experiment<a class="headerlink" href="#stern-gerlach-experiment" title="Link to this heading">#</a></h2>
+<p>The Stern-Gerlach experiment was one of the first experiments to demonstrate quantum superposition and quantization of angular momentum (specifically spin). This experiment shows that particles such as electrons have intrinsic angular momentum (spin) that takes on quantized values.</p>
+<ul class="simple">
+<li><p><strong>Setup</strong>: A beam of silver atoms (each with a single unpaired electron) is directed through a non-uniform magnetic field. The magnetic field causes particles with magnetic moments to be deflected up or down based on their spin orientation.</p></li>
+<li><p><strong>Outcome</strong>: Instead of a continuous spread of deflections, the particles split into two distinct groups, corresponding to spin-up and spin-down orientations. This binary splitting reveals the quantized nature of angular momentum.</p></li>
+</ul>
+<section id="id1">
+<h3>Implications<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>The Stern-Gerlach experiment demonstrates that spin is an intrinsic property of particles and that it is quantized, with discrete possible values. It also illustrates the idea that certain properties (like spin in a given direction) do not have definite values until measured, embodying quantum indeterminacy.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="photoelectric-effect">
+<h2>Photoelectric Effect<a class="headerlink" href="#photoelectric-effect" title="Link to this heading">#</a></h2>
+<p>The photoelectric effect is an experiment that helped establish the concept of quantization of energy and led to the development of quantum mechanics. It also provided evidence for the particle-like behavior of light.</p>
+<ul class="simple">
+<li><p><strong>Setup</strong>: Light is shone onto the surface of a metal, causing electrons to be ejected from the metal.</p></li>
+<li><p><strong>Outcome</strong>: Electrons are only emitted if the light’s frequency is above a certain threshold, regardless of the light’s intensity. The kinetic energy of the emitted electrons depends on the light frequency, not its intensity, contrary to classical expectations.</p></li>
+</ul>
+<section id="id2">
+<h3>Implications<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>The photoelectric effect shows that light energy is quantized and comes in discrete packets called photons. This experiment was explained by Albert Einstein in 1905, providing critical evidence for the particle nature of light and earning him the Nobel Prize. It also demonstrated that energy is transferred in quantized amounts, a foundational idea in quantum mechanics.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bell-test-experiments">
+<h2>Bell Test Experiments<a class="headerlink" href="#bell-test-experiments" title="Link to this heading">#</a></h2>
+<p>Bell test experiments are crucial for studying quantum entanglement and testing the nature of reality in quantum mechanics. These experiments were inspired by John Bell’s theorem, which showed that no local hidden variable theory could reproduce the correlations predicted by quantum mechanics for entangled particles.</p>
+<ul class="simple">
+<li><p><strong>Setup</strong>: Pairs of entangled particles (such as photons) are created and sent to two distant detectors. Each detector measures a property of the particle (such as polarization) along randomly chosen axes.</p></li>
+<li><p><strong>Outcome</strong>: The measurement outcomes show correlations that violate Bell’s inequality, which is impossible in any local hidden variable theory. These results align with quantum predictions, demonstrating that entangled particles exhibit correlations that cannot be explained by local interactions alone.</p></li>
+</ul>
+<section id="id3">
+<h3>Implications<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Bell test experiments show that quantum mechanics is inherently non-local: measurements on one particle can instantaneously affect the state of its entangled partner, regardless of distance. This has profound implications for the nature of reality, suggesting that either locality or realism (or both) must be abandoned, challenging classical intuitions about the separability of distant objects.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="quantum-eraser-experiment">
+<h2>Quantum Eraser Experiment<a class="headerlink" href="#quantum-eraser-experiment" title="Link to this heading">#</a></h2>
+<p>The quantum eraser experiment builds on the double-slit experiment and explores how information about a particle’s path affects its behavior. It shows that interference can be restored if “which-path” information is erased, even after particles have been detected.</p>
+<ul class="simple">
+<li><p><strong>Setup</strong>: A double-slit experiment is conducted with additional detectors that can determine the path each particle takes. A secondary device (quantum eraser) is used to “erase” this path information after the particle has been detected.</p></li>
+<li><p><strong>Outcome</strong>: When path information is erased, an interference pattern reappears, suggesting that the particle behaves as a wave again. If path information is available, even if not directly observed, the interference pattern disappears.</p></li>
+</ul>
+<section id="id4">
+<h3>Implications<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>The quantum eraser experiment suggests that quantum behavior is influenced not just by measurement but also by the availability of information. This challenges classical notions of causality and reinforces the idea that the quantum state depends on the entire measurement setup, including whether information about certain properties could, in principle, be known.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="aspects-experiments-on-entanglement">
+<h2>Aspect’s Experiments on Entanglement<a class="headerlink" href="#aspects-experiments-on-entanglement" title="Link to this heading">#</a></h2>
+<p>In the 1980s, physicist Alain Aspect conducted a series of entanglement experiments that provided strong evidence for quantum mechanics’ non-local predictions. Aspect’s experiments helped confirm the results predicted by Bell’s theorem.</p>
+<ul class="simple">
+<li><p><strong>Setup</strong>: Pairs of entangled photons are created and sent to two distant detectors with settings that change rapidly to prevent communication between the detectors. The polarization of each photon is measured along random axes.</p></li>
+<li><p><strong>Outcome</strong>: The results violate Bell’s inequality, consistent with quantum mechanical predictions, and confirm the presence of correlations that cannot be explained by any local theory.</p></li>
+</ul>
+<section id="id5">
+<h3>Implications<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Aspect’s experiments provided some of the most compelling experimental evidence for entanglement and non-locality. They ruled out a wide class of local hidden variable theories and supported the view that quantum mechanics allows instantaneous correlations across arbitrary distances.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="delayed-choice-experiment">
+<h2>Delayed Choice Experiment<a class="headerlink" href="#delayed-choice-experiment" title="Link to this heading">#</a></h2>
+<p>The delayed choice experiment, proposed by physicist John Wheeler, explores how measurements can influence past events in quantum mechanics. It suggests that the choice of measurement can affect whether a particle behaves as a wave or particle, even after it has “passed” through a slit or interferometer.</p>
+<ul class="simple">
+<li><p><strong>Setup</strong>: A photon is directed toward a double-slit or interferometer setup, with the option to measure either interference (wave behavior) or particle-like properties. The decision to measure is made after the photon has entered the apparatus.</p></li>
+<li><p><strong>Outcome</strong>: Whether the photon behaves like a wave or particle seems to depend on the measurement choice made after it passes the slits, as if the photon’s behavior retroactively “decides” how to act based on the future measurement.</p></li>
+</ul>
+<section id="id6">
+<h3>Implications<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>The delayed choice experiment suggests that quantum events do not have fixed outcomes until measured and that the measurement can influence events retroactively. This experiment challenges classical ideas of causality and highlights the contextual nature of quantum events.</p>
+<hr class="docutils" />
+<p>These classic experiments provide fundamental insights into the counterintuitive aspects of quantum mechanics. Each experiment reveals a unique aspect of quantum phenomena, helping us understand wave-particle duality, superposition, entanglement, non-locality, and the importance of measurement and information in shaping the quantum world.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="PhilosophyOfPhysics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Philosophy of Physics and Quantum Mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="EPR.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-slit-experiment-with-particles">Double-Slit Experiment with Particles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implications">Implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stern-gerlach-experiment">Stern-Gerlach Experiment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photoelectric-effect">Photoelectric Effect</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bell-test-experiments">Bell Test Experiments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-eraser-experiment">Quantum Eraser Experiment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aspects-experiments-on-entanglement">Aspect’s Experiments on Entanglement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Implications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delayed-choice-experiment">Delayed Choice Experiment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Implications</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

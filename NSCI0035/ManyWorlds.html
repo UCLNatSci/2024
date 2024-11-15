@@ -1,0 +1,722 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Many-Worlds Interpretation (MWI) of Quantum Mechanics &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ManyWorlds';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="QBism (Quantum Bayesianism) in Quantum Mechanics" href="QBism.html" />
+    <link rel="prev" title="Objective Collapse Models in Quantum Mechanics" href="Collapse.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Foundations of Quantum Mechanics NSCI0035
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Maths.html">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy of Physics and Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClassicExperiments.html">Classic Experiments in Quantum Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism in Quantum Mechanics and Philosophical Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UncertaintyPrinciple.html">The Uncertainty Principle in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Copenhagen.html">The Copenhagen Interpretation of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PilotWave.html">Bohmian Mechanics (Pilot Wave Theory)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Collapse.html">Objective Collapse Models in Quantum Mechanics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Many-Worlds Interpretation (MWI) of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QBism.html">QBism (Quantum Bayesianism) in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Montevideo.html">Montevideo Interpretation of Quantum Mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FManyWorlds.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ManyWorlds.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Many-Worlds Interpretation (MWI) of Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-assumptions-and-concepts">Key Assumptions and Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-universal-wavefunction">The Universal Wavefunction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branching-and-the-multiverse">Branching and the Multiverse</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-schrodingers-cat">Example: Schrödinger’s Cat</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-as-branching-not-collapse">Measurement as Branching, Not Collapse</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-spin-measurement-in-mwi">Example Calculation: Spin Measurement in MWI</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinism-and-reality-of-all-outcomes">Determinism and Reality of All Outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-and-the-born-rule">Probability and the Born Rule</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-born-rule-and-probability-in-mwi">Example Calculation: Born Rule and Probability in MWI</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoherence-and-branch-independence">Decoherence and Branch Independence</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-decoherence-in-the-double-slit-experiment">Example: Decoherence in the Double-Slit Experiment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-mwi-and-other-interpretations">Differences Between MWI and Other Interpretations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copenhagen-interpretation">Copenhagen Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bohmian-mechanics">Bohmian Mechanics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-collapse-theories">Objective Collapse Theories</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-features">Summary of Key Features</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="many-worlds-interpretation-mwi-of-quantum-mechanics">
+<h1>Many-Worlds Interpretation (MWI) of Quantum Mechanics<a class="headerlink" href="#many-worlds-interpretation-mwi-of-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p>The <strong>Many-Worlds Interpretation (MWI)</strong> of quantum mechanics was proposed by Hugh Everett III in the 1950s. MWI is an alternative to the Copenhagen interpretation, positing that all possible outcomes of quantum measurements actually occur, each in its own separate, branching universe. According to MWI, there is no wavefunction collapse; instead, the universe “splits” or “branches” into multiple versions of itself, with each version representing a different possible outcome of a measurement.</p>
+<section id="key-assumptions-and-concepts">
+<h2>Key Assumptions and Concepts<a class="headerlink" href="#key-assumptions-and-concepts" title="Link to this heading">#</a></h2>
+<p>MWI introduces several unique ideas about the nature of reality, quantum states, and measurement, distinguishing it from other interpretations.</p>
+<section id="the-universal-wavefunction">
+<h3>The Universal Wavefunction<a class="headerlink" href="#the-universal-wavefunction" title="Link to this heading">#</a></h3>
+<p>In MWI, the wavefunction <span class="math notranslate nohighlight">\( |\Psi\rangle \)</span> of the entire universe is considered a real, physical entity. This <strong>universal wavefunction</strong> evolves deterministically according to the Schrödinger equation, encompassing all possible states of all particles and systems within it.</p>
+<ul class="simple">
+<li><p><strong>Deterministic Evolution</strong>: The universal wavefunction evolves without collapse, governed by the Schrödinger equation. All possible outcomes of every quantum event are contained within it.</p></li>
+<li><p><strong>No Collapse</strong>: Unlike the Copenhagen interpretation, which requires the wavefunction to collapse to a single outcome upon measurement, MWI holds that the wavefunction never collapses. Instead, it constantly branches to include all possible measurement outcomes.</p></li>
+</ul>
+</section>
+<section id="branching-and-the-multiverse">
+<h3>Branching and the Multiverse<a class="headerlink" href="#branching-and-the-multiverse" title="Link to this heading">#</a></h3>
+<p>The Many-Worlds Interpretation posits that every time a quantum measurement occurs, the universe <strong>branches</strong> into multiple, parallel versions, each representing a different possible measurement outcome.</p>
+<ul class="simple">
+<li><p><strong>Branching Universes</strong>: When a quantum system is measured, the universe splits into separate branches, each containing a copy of the system, the observer, and the environment, with each branch representing a different outcome.</p></li>
+<li><p><strong>The Multiverse</strong>: These branches are often collectively referred to as the “multiverse,” a collection of parallel universes where every possible outcome of every quantum event is realized.</p></li>
+</ul>
+<section id="example-schrodingers-cat">
+<h4>Example: Schrödinger’s Cat<a class="headerlink" href="#example-schrodingers-cat" title="Link to this heading">#</a></h4>
+<p>In the classic <strong>Schrödinger’s cat</strong> thought experiment, a cat in a closed box is placed in a superposition of being both alive and dead until observed. In MWI, the act of opening the box causes the universe to branch into two versions: one in which the cat is alive, and another in which the cat is dead. Both outcomes occur, but in separate, non-interacting branches of the universe.</p>
+</section>
+</section>
+<section id="measurement-as-branching-not-collapse">
+<h3>Measurement as Branching, Not Collapse<a class="headerlink" href="#measurement-as-branching-not-collapse" title="Link to this heading">#</a></h3>
+<p>In MWI, measurement is understood as a branching process rather than a collapse of the wavefunction. When a measurement is made, the wavefunction of the universe splits into branches that correspond to each possible outcome of the measurement.</p>
+<ul class="simple">
+<li><p><strong>No Observer-Triggered Collapse</strong>: Unlike the Copenhagen interpretation, MWI does not require an observer to collapse the wavefunction. Instead, measurement merely reveals the branching that naturally occurs as part of the wavefunction’s deterministic evolution.</p></li>
+<li><p><strong>Observer’s Perspective</strong>: Each observer experiences only one outcome of a measurement in their branch, but in reality, all outcomes exist across different branches.</p></li>
+</ul>
+<section id="example-calculation-spin-measurement-in-mwi">
+<h4>Example Calculation: Spin Measurement in MWI<a class="headerlink" href="#example-calculation-spin-measurement-in-mwi" title="Link to this heading">#</a></h4>
+<p>Suppose an electron is in a superposition of spin-up and spin-down states along the <span class="math notranslate nohighlight">\( z \)</span>-axis:</p>
+<div class="math notranslate nohighlight">
+\[|\psi\rangle = \frac{1}{\sqrt{2}} \left( | \uparrow_z \rangle + | \downarrow_z \rangle \right)\]</div>
+<p>If an observer measures the spin, the universal wavefunction branches into two components:</p>
+<div class="math notranslate nohighlight">
+\[|\Psi\rangle = \frac{1}{\sqrt{2}} \left( | \uparrow_z \rangle \otimes |\text{Observer sees } \uparrow_z \rangle + | \downarrow_z \rangle \otimes |\text{Observer sees } \downarrow_z \rangle \right)\]</div>
+<p>After the measurement, there are two non-interacting branches of the universe—one where the observer sees spin-up and another where the observer sees spin-down. Each outcome exists independently, with the observer in each branch perceiving only one result.</p>
+</section>
+</section>
+<section id="determinism-and-reality-of-all-outcomes">
+<h3>Determinism and Reality of All Outcomes<a class="headerlink" href="#determinism-and-reality-of-all-outcomes" title="Link to this heading">#</a></h3>
+<p>MWI is a deterministic theory, meaning that the evolution of the universal wavefunction is entirely governed by the Schrödinger equation, without any randomness or collapse. Every possible outcome of a quantum event is realized in some branch of the multiverse.</p>
+<ul class="simple">
+<li><p><strong>Determinism</strong>: The universal wavefunction evolves predictably, with no collapse or randomness at the fundamental level.</p></li>
+<li><p><strong>Realism of Branches</strong>: All branches are considered equally real, meaning every possible outcome has an objective existence in its own universe.</p></li>
+</ul>
+</section>
+<section id="probability-and-the-born-rule">
+<h3>Probability and the Born Rule<a class="headerlink" href="#probability-and-the-born-rule" title="Link to this heading">#</a></h3>
+<p>A key challenge for MWI is to explain the <strong>Born rule</strong>—the rule that gives the probability of observing each outcome as the squared amplitude of the wavefunction. Since all outcomes occur in MWI, probability in the usual sense does not seem to apply, as there is no “chance” of one outcome over another.</p>
+<ul class="simple">
+<li><p><strong>Self-Locating Uncertainty</strong>: In MWI, probability is often reinterpreted as a form of “self-locating uncertainty” where an observer is uncertain about which branch they will find themselves in after measurement.</p></li>
+<li><p><strong>Derivation Attempts</strong>: Some proponents of MWI argue that the Born rule can be derived by considering the relative “measure” or “weight” of branches. The squared amplitude of each outcome is thought to correspond to the proportion of observers who will experience that outcome in the multiverse.</p></li>
+</ul>
+<section id="example-calculation-born-rule-and-probability-in-mwi">
+<h4>Example Calculation: Born Rule and Probability in MWI<a class="headerlink" href="#example-calculation-born-rule-and-probability-in-mwi" title="Link to this heading">#</a></h4>
+<p>Consider an electron in the superposition:</p>
+<div class="math notranslate nohighlight">
+\[|\psi\rangle = \sqrt{0.7} | \uparrow \rangle + \sqrt{0.3} | \downarrow \rangle\]</div>
+<p>When a measurement is made, the universe splits into two branches. According to the Born rule, we expect a 70% chance of observing spin-up and a 30% chance of spin-down. In MWI, this means that 70% of the observers in the multiverse experience the spin-up result, and 30% experience the spin-down result, with the “measure” of each branch corresponding to the squared amplitude <span class="math notranslate nohighlight">\( 0.7 \)</span> and <span class="math notranslate nohighlight">\( 0.3 \)</span>, respectively.</p>
+</section>
+</section>
+<section id="decoherence-and-branch-independence">
+<h3>Decoherence and Branch Independence<a class="headerlink" href="#decoherence-and-branch-independence" title="Link to this heading">#</a></h3>
+<p>In MWI, <strong>decoherence</strong> plays a critical role in ensuring that branches of the multiverse do not interfere with each other after a measurement. Decoherence is the process by which quantum superpositions become effectively classical due to interactions with the environment, causing each branch to evolve independently.</p>
+<ul class="simple">
+<li><p><strong>Environment-Induced Decoherence</strong>: When a measurement is made, interactions with the environment lead to decoherence, which suppresses interference between branches.</p></li>
+<li><p><strong>Independence of Branches</strong>: Once decoherence has occurred, branches evolve as separate, non-interacting worlds, ensuring that observers in different branches cannot detect or influence each other.</p></li>
+</ul>
+<section id="example-decoherence-in-the-double-slit-experiment">
+<h4>Example: Decoherence in the Double-Slit Experiment<a class="headerlink" href="#example-decoherence-in-the-double-slit-experiment" title="Link to this heading">#</a></h4>
+<p>In the double-slit experiment, an electron passes through both slits and forms an interference pattern on a screen. In MWI, each possible path of the electron corresponds to a different branch of the universe. If a detector is placed at the slits to observe which slit the electron goes through, decoherence occurs, resulting in separate branches where the electron went through each slit, destroying the interference pattern.</p>
+</section>
+</section>
+</section>
+<section id="differences-between-mwi-and-other-interpretations">
+<h2>Differences Between MWI and Other Interpretations<a class="headerlink" href="#differences-between-mwi-and-other-interpretations" title="Link to this heading">#</a></h2>
+<p>MWI contrasts with other interpretations of quantum mechanics in its treatment of wavefunction collapse, measurement, and the nature of reality.</p>
+<section id="copenhagen-interpretation">
+<h3>Copenhagen Interpretation<a class="headerlink" href="#copenhagen-interpretation" title="Link to this heading">#</a></h3>
+<p>In the <strong>Copenhagen interpretation</strong>, measurement causes the wavefunction to collapse to a single outcome. In MWI, all possible outcomes occur, with the wavefunction never collapsing.</p>
+<ul class="simple">
+<li><p><strong>Collapse</strong>: MWI has no collapse, while Copenhagen requires collapse upon measurement.</p></li>
+<li><p><strong>Reality of All Outcomes</strong>: MWI asserts that all outcomes exist in separate branches, whereas the Copenhagen interpretation suggests only one outcome is real.</p></li>
+</ul>
+</section>
+<section id="bohmian-mechanics">
+<h3>Bohmian Mechanics<a class="headerlink" href="#bohmian-mechanics" title="Link to this heading">#</a></h3>
+<p><strong>Bohmian Mechanics</strong> (or Pilot Wave Theory) assumes that particles have definite trajectories, guided by a pilot wave. Unlike MWI, Bohmian Mechanics is a deterministic theory that does not require multiple universes.</p>
+<ul class="simple">
+<li><p><strong>Branching</strong>: MWI posits multiple universes, while Bohmian Mechanics involves a single deterministic universe.</p></li>
+<li><p><strong>Wavefunction’s Role</strong>: In MWI, the wavefunction represents a real multiverse, whereas in Bohmian Mechanics, it acts as a guiding field for particles.</p></li>
+</ul>
+</section>
+<section id="objective-collapse-theories">
+<h3>Objective Collapse Theories<a class="headerlink" href="#objective-collapse-theories" title="Link to this heading">#</a></h3>
+<p><strong>Objective Collapse Theories</strong> propose mechanisms by which the wavefunction collapses to a single outcome. MWI avoids collapse altogether by allowing all outcomes to exist in separate branches.</p>
+<ul class="simple">
+<li><p><strong>Collapse Mechanism</strong>: Objective collapse theories posit physical mechanisms for wavefunction collapse, while MWI has no collapse.</p></li>
+<li><p><strong>Realism of All Outcomes</strong>: MWI allows all possible outcomes to coexist in separate branches, whereas objective collapse theories assert that only one outcome becomes real.</p></li>
+</ul>
+</section>
+</section>
+<section id="summary-of-key-features">
+<h2>Summary of Key Features<a class="headerlink" href="#summary-of-key-features" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Many-Worlds Interpretation</p></th>
+<th class="head"><p>Other Interpretations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Wavefunction</strong></p></td>
+<td><p>Real, represents a branching multiverse</p></td>
+<td><p>Collapse in Copenhagen, guiding field in Bohmian Mechanics</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Measurement</strong></p></td>
+<td><p>Causes branching into parallel universes</p></td>
+<td><p>Causes collapse (Copenhagen), reveals pre-existing position (Bohmian)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Determinism</strong></p></td>
+<td><p>Deterministic evolution of the universal wavefunction</p></td>
+<td><p>Probabilistic (Copenhagen), deterministic (Bohmian)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Reality</strong></p></td>
+<td><p>Realist: all branches are equally real</p></td>
+<td><p>Single</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Collapse.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Objective Collapse Models in Quantum Mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="QBism.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">QBism (Quantum Bayesianism) in Quantum Mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-assumptions-and-concepts">Key Assumptions and Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-universal-wavefunction">The Universal Wavefunction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branching-and-the-multiverse">Branching and the Multiverse</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-schrodingers-cat">Example: Schrödinger’s Cat</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-as-branching-not-collapse">Measurement as Branching, Not Collapse</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-spin-measurement-in-mwi">Example Calculation: Spin Measurement in MWI</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinism-and-reality-of-all-outcomes">Determinism and Reality of All Outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-and-the-born-rule">Probability and the Born Rule</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-born-rule-and-probability-in-mwi">Example Calculation: Born Rule and Probability in MWI</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoherence-and-branch-independence">Decoherence and Branch Independence</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-decoherence-in-the-double-slit-experiment">Example: Decoherence in the Double-Slit Experiment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-mwi-and-other-interpretations">Differences Between MWI and Other Interpretations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copenhagen-interpretation">Copenhagen Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bohmian-mechanics">Bohmian Mechanics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-collapse-theories">Objective Collapse Theories</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-features">Summary of Key Features</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

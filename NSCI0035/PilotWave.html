@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Bohmian Mechanics (Pilot Wave Theory) &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PilotWave';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Objective Collapse Models in Quantum Mechanics" href="Collapse.html" />
+    <link rel="prev" title="The Copenhagen Interpretation of Quantum Mechanics" href="Copenhagen.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Foundations of Quantum Mechanics NSCI0035
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Maths.html">Mathematical Background for Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Measurement.html">Measurement in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Locality.html">Locality in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ontology.html">Ontology in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PhilosophyOfPhysics.html">Philosophy of Physics and Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClassicExperiments.html">Classic Experiments in Quantum Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EPR.html">EPR Paradox: Einstein, Podolsky, and Rosen (1935)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BellsTheorem.html">Bell’s Theorem and Bell Inequalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Determinism.html">Determinism in Quantum Mechanics and Philosophical Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Decoherence.html">Decoherence and the Classical/Quantum Divide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UncertaintyPrinciple.html">The Uncertainty Principle in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Copenhagen.html">The Copenhagen Interpretation of Quantum Mechanics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bohmian Mechanics (Pilot Wave Theory)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Collapse.html">Objective Collapse Models in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManyWorlds.html">Many-Worlds Interpretation (MWI) of Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QBism.html">QBism (Quantum Bayesianism) in Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Montevideo.html">Montevideo Interpretation of Quantum Mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPilotWave.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/PilotWave.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bohmian Mechanics (Pilot Wave Theory)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-assumptions-and-concepts">Key Assumptions and Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particles-with-definite-positions-and-trajectories">1. Particles with Definite Positions and Trajectories</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-particle-in-a-potential">Example: Particle in a Potential</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pilot-wave-guiding-wave">2. The Pilot Wave (Guiding Wave)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-guiding-equation">3. The Guiding Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-velocity-from-the-guiding-equation">Example Calculation: Velocity from the Guiding Equation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-equilibrium-and-the-born-rule">4. Quantum Equilibrium and the Born Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-without-collapse">5. Measurement Without Collapse</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-double-slit-experiment-in-bohmian-mechanics">Example: Double-Slit Experiment in Bohmian Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinism-and-realism">6. Determinism and Realism</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-bohmian-mechanics-and-other-interpretations">Differences Between Bohmian Mechanics and Other Interpretations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copenhagen-interpretation">1. Copenhagen Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#many-worlds-interpretation-mwi">2. Many-Worlds Interpretation (MWI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-collapse-theories">3. Objective Collapse Theories</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-features">Summary of Key Features</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="bohmian-mechanics-pilot-wave-theory">
+<h1>Bohmian Mechanics (Pilot Wave Theory)<a class="headerlink" href="#bohmian-mechanics-pilot-wave-theory" title="Link to this heading">#</a></h1>
+<p><strong>Bohmian Mechanics</strong>, also known as <strong>Pilot Wave Theory</strong>, is an interpretation of quantum mechanics developed by physicist David Bohm in the 1950s. It offers an alternative to the standard Copenhagen interpretation by providing a deterministic, realist account of quantum phenomena. In Bohmian Mechanics, particles have well-defined positions and velocities at all times, guided by a “pilot wave” that dictates their trajectories.</p>
+<section id="key-assumptions-and-concepts">
+<h2>Key Assumptions and Concepts<a class="headerlink" href="#key-assumptions-and-concepts" title="Link to this heading">#</a></h2>
+<p>Bohmian Mechanics departs from traditional quantum mechanics by introducing the concept of particle trajectories and removing the need for wavefunction collapse. Here are the foundational principles of this interpretation:</p>
+<section id="particles-with-definite-positions-and-trajectories">
+<h3>1. Particles with Definite Positions and Trajectories<a class="headerlink" href="#particles-with-definite-positions-and-trajectories" title="Link to this heading">#</a></h3>
+<p>In Bohmian Mechanics, particles are treated as real, physical entities with definite positions and well-defined trajectories at all times. Unlike the probabilistic interpretation of particles in the Copenhagen framework, Bohmian Mechanics assumes that particles have exact positions and follow specific paths determined by the pilot wave.</p>
+<ul class="simple">
+<li><p><strong>Deterministic Nature</strong>: Given the initial positions of particles and the form of the guiding wavefunction, their future positions and trajectories are completely determined.</p></li>
+<li><p><strong>Ontological Commitment</strong>: Bohmian Mechanics is realist, assigning a clear physical existence to particles and their properties, independent of measurement.</p></li>
+</ul>
+<section id="example-particle-in-a-potential">
+<h4>Example: Particle in a Potential<a class="headerlink" href="#example-particle-in-a-potential" title="Link to this heading">#</a></h4>
+<p>Consider a particle moving under a potential <span class="math notranslate nohighlight">\( V(x) \)</span> with a wavefunction <span class="math notranslate nohighlight">\( \psi(x, t) \)</span> satisfying the Schrödinger equation:</p>
+<div class="math notranslate nohighlight">
+\[i \hbar \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m} \nabla^2 \psi + V(x) \psi\]</div>
+<p>In Bohmian Mechanics, the particle has a position <span class="math notranslate nohighlight">\( x(t) \)</span> at all times, and its velocity is determined by the guiding equation (discussed below), based on the wavefunction <span class="math notranslate nohighlight">\( \psi(x, t) \)</span>.</p>
+</section>
+</section>
+<section id="the-pilot-wave-guiding-wave">
+<h3>2. The Pilot Wave (Guiding Wave)<a class="headerlink" href="#the-pilot-wave-guiding-wave" title="Link to this heading">#</a></h3>
+<p>The <strong>pilot wave</strong>, represented by the wavefunction <span class="math notranslate nohighlight">\( \psi \)</span>, determines the behavior of particles through a guiding equation. In this interpretation, the wavefunction is treated as a real field that “guides” the particles, rather than as a mere probability amplitude.</p>
+<ul class="simple">
+<li><p><strong>Wave-Particle Duality</strong>: In Bohmian Mechanics, particles and waves coexist. The wavefunction acts as a guiding wave, influencing the motion of particles, while the particles themselves follow well-defined trajectories.</p></li>
+<li><p><strong>No Collapse</strong>: There is no wavefunction collapse in Bohmian Mechanics. The wavefunction evolves continuously according to the Schrödinger equation, and particles follow trajectories without any discontinuous changes.</p></li>
+</ul>
+</section>
+<section id="the-guiding-equation">
+<h3>3. The Guiding Equation<a class="headerlink" href="#the-guiding-equation" title="Link to this heading">#</a></h3>
+<p>The <strong>guiding equation</strong> in Bohmian Mechanics determines the velocity of each particle based on the gradient of the phase of the wavefunction. For a particle with position <span class="math notranslate nohighlight">\( x \)</span> and wavefunction <span class="math notranslate nohighlight">\( \psi(x, t) \)</span>, the particle’s velocity <span class="math notranslate nohighlight">\( v \)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{v}(x, t) = \frac{\hbar}{m} \operatorname{Im} \left( \frac{\nabla \psi(x, t)}{\psi(x, t)} \right)\]</div>
+<p>or, equivalently, if we write the wavefunction in polar form <span class="math notranslate nohighlight">\( \psi(x, t) = R(x, t) e^{i S(x, t)/\hbar} \)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{v}(x, t) = \frac{\nabla S(x, t)}{m}\]</div>
+<p>where <span class="math notranslate nohighlight">\( S(x, t) \)</span> is the phase of the wavefunction. This equation means that the pilot wave dictates the direction and speed of each particle, based on the configuration of the wavefunction at each point.</p>
+<section id="example-calculation-velocity-from-the-guiding-equation">
+<h4>Example Calculation: Velocity from the Guiding Equation<a class="headerlink" href="#example-calculation-velocity-from-the-guiding-equation" title="Link to this heading">#</a></h4>
+<p>Suppose we have a particle in a one-dimensional wavefunction <span class="math notranslate nohighlight">\( \psi(x, t) = R(x, t) e^{i S(x, t)/\hbar} \)</span>, with <span class="math notranslate nohighlight">\( S(x, t) = kx - \omega t \)</span>. The velocity of the particle is:</p>
+<div class="math notranslate nohighlight">
+\[v(x, t) = \frac{1}{m} \frac{\partial S}{\partial x} = \frac{k}{m}\]</div>
+<p>This constant velocity <span class="math notranslate nohighlight">\( v = k/m \)</span> shows how the pilot wave guides the particle along a well-defined trajectory.</p>
+</section>
+</section>
+<section id="quantum-equilibrium-and-the-born-rule">
+<h3>4. Quantum Equilibrium and the Born Rule<a class="headerlink" href="#quantum-equilibrium-and-the-born-rule" title="Link to this heading">#</a></h3>
+<p>In Bohmian Mechanics, the <strong>Born rule</strong> is interpreted as a statistical distribution of particle positions rather than as an intrinsic property of the wavefunction itself. The distribution of particle positions in an ensemble of systems follows the probability density <span class="math notranslate nohighlight">\( |\psi(x)|^2 \)</span>, which is called <strong>quantum equilibrium</strong>.</p>
+<ul class="simple">
+<li><p><strong>Quantum Equilibrium Hypothesis</strong>: If an ensemble of particles has an initial distribution matching <span class="math notranslate nohighlight">\( |\psi(x)|^2 \)</span>, then this distribution will remain in equilibrium over time, consistently with the predictions of standard quantum mechanics.</p></li>
+<li><p><strong>Emergence of Probabilities</strong>: Unlike in the Copenhagen interpretation, where probabilities are fundamental, probabilities in Bohmian Mechanics arise from ignorance about the precise initial positions of particles in a large ensemble.</p></li>
+</ul>
+</section>
+<section id="measurement-without-collapse">
+<h3>5. Measurement Without Collapse<a class="headerlink" href="#measurement-without-collapse" title="Link to this heading">#</a></h3>
+<p>In Bohmian Mechanics, measurement does not collapse the wavefunction. Instead, the wavefunction and particles continue to evolve deterministically according to the Schrödinger and guiding equations. The appearance of wavefunction collapse is effectively the result of interaction between the particle and the measurement apparatus.</p>
+<ul class="simple">
+<li><p><strong>Effective Collapse</strong>: During a measurement, the wavefunction of the system-apparatus combination becomes highly correlated with the particle’s position. This correlation gives the appearance of a collapse, but in Bohmian Mechanics, it is simply a result of the deterministic evolution of the wavefunction.</p></li>
+<li><p><strong>Measurement as Interaction</strong>: Measurement is understood as an interaction that reveals the pre-existing position of the particle, rather than an event that creates a specific outcome from a superposition.</p></li>
+</ul>
+<section id="example-double-slit-experiment-in-bohmian-mechanics">
+<h4>Example: Double-Slit Experiment in Bohmian Mechanics<a class="headerlink" href="#example-double-slit-experiment-in-bohmian-mechanics" title="Link to this heading">#</a></h4>
+<p>In the double-slit experiment, a particle passes through two slits and an interference pattern forms on a screen. In Bohmian Mechanics, the particle itself only goes through one slit, but the wavefunction passes through both, creating an interference pattern that guides the particle to regions of constructive interference.</p>
+<ul class="simple">
+<li><p><strong>Trajectory of Particles</strong>: Each particle follows a unique trajectory influenced by the pilot wave. When many particles are sent through the slits, their trajectories collectively form an interference pattern on the screen, matching the predictions of quantum mechanics.</p></li>
+</ul>
+</section>
+</section>
+<section id="determinism-and-realism">
+<h3>6. Determinism and Realism<a class="headerlink" href="#determinism-and-realism" title="Link to this heading">#</a></h3>
+<p>Bohmian Mechanics is a <strong>deterministic</strong> theory, meaning that if we know the initial position of a particle and the wavefunction, we can predict its future position and trajectory with certainty. Unlike the Copenhagen interpretation, Bohmian Mechanics assumes a <strong>realist ontology</strong>, meaning it attributes a definite reality to particles and their trajectories, as well as to the guiding wave.</p>
+<ul class="simple">
+<li><p><strong>Deterministic Evolution</strong>: The wavefunction and particle trajectories evolve according to deterministic laws, without randomness. The probabilistic nature of quantum measurements emerges only from uncertainty about initial conditions.</p></li>
+<li><p><strong>Realist Framework</strong>: Bohmian Mechanics assigns real, physical existence to both the particles and the pilot wave, contrasting with the Copenhagen interpretation’s instrumentalist view.</p></li>
+</ul>
+</section>
+</section>
+<section id="differences-between-bohmian-mechanics-and-other-interpretations">
+<h2>Differences Between Bohmian Mechanics and Other Interpretations<a class="headerlink" href="#differences-between-bohmian-mechanics-and-other-interpretations" title="Link to this heading">#</a></h2>
+<p>Bohmian Mechanics contrasts with several other interpretations in its treatment of particles, wavefunction collapse, and the nature of reality.</p>
+<section id="copenhagen-interpretation">
+<h3>1. Copenhagen Interpretation<a class="headerlink" href="#copenhagen-interpretation" title="Link to this heading">#</a></h3>
+<p>The <strong>Copenhagen interpretation</strong> views particles probabilistically and introduces wavefunction collapse upon measurement. In Bohmian Mechanics, particles have definite trajectories, and there is no wavefunction collapse.</p>
+<ul class="simple">
+<li><p><strong>Collapse</strong>: Bohmian Mechanics has no collapse; the Copenhagen interpretation requires collapse during measurement.</p></li>
+<li><p><strong>Reality</strong>: Bohmian Mechanics is realist, attributing real existence to particles and trajectories, while the Copenhagen interpretation is often instrumentalist.</p></li>
+</ul>
+</section>
+<section id="many-worlds-interpretation-mwi">
+<h3>2. Many-Worlds Interpretation (MWI)<a class="headerlink" href="#many-worlds-interpretation-mwi" title="Link to this heading">#</a></h3>
+<p>In the <strong>Many-Worlds Interpretation (MWI)</strong>, all possible outcomes of a measurement exist in parallel, branching universes. Bohmian Mechanics, in contrast, assumes only one outcome, determined by the particle’s trajectory and the guiding wave.</p>
+<ul class="simple">
+<li><p><strong>Number of Worlds</strong>: Bohmian Mechanics posits a single, deterministic world, while MWI posits a branching multiverse.</p></li>
+<li><p><strong>Guiding Wave vs. Universal Wavefunction</strong>: Bohmian Mechanics uses a pilot wave to guide particles in one world, whereas MWI interprets the wavefunction as a real entity encompassing all possible outcomes.</p></li>
+</ul>
+</section>
+<section id="objective-collapse-theories">
+<h3>3. Objective Collapse Theories<a class="headerlink" href="#objective-collapse-theories" title="Link to this heading">#</a></h3>
+<p><strong>Objective Collapse Theories</strong> modify quantum mechanics to include spontaneous collapse of the wavefunction. In Bohmian Mechanics, the wavefunction does not collapse; it evolves continuously and deterministically, guiding particles along their trajectories.</p>
+<ul class="simple">
+<li><p><strong>Collapse Mechanism</strong>: Objective collapse theories propose physical processes for collapse, while Bohmian Mechanics requires no collapse.</p></li>
+<li><p><strong>Realism</strong>: Both objective collapse theories and Bohmian Mechanics are realist, but they differ in their treatment of the wavefunction.</p></li>
+</ul>
+</section>
+</section>
+<section id="summary-of-key-features">
+<h2>Summary of Key Features<a class="headerlink" href="#summary-of-key-features" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Bohmian Mechanics</p></th>
+<th class="head"><p>Other Interpretations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Wavefunction</strong></p></td>
+<td><p>Real guiding field, continuously evolving</p></td>
+<td><p>Probabilistic tool (Copenhagen), real but branching (MWI)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Measurement</strong></p></td>
+<td><p>Reveals pre-existing particle position, no collapse</p></td>
+<td><p>Causes collapse in Copenhagen, branching in MWI</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Determinism</strong></p></td>
+<td><p>Deterministic particle trajectories</p></td>
+<td><p>Probabilistic (Copenhagen), deterministic in MWI</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Reality</strong></p></td>
+<td><p>Realist: particles and wave are real</p></td>
+<td><p>Instrumentalist (Copenhagen</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Copenhagen.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Copenhagen Interpretation of Quantum Mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Collapse.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Objective Collapse Models in Quantum Mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-assumptions-and-concepts">Key Assumptions and Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particles-with-definite-positions-and-trajectories">1. Particles with Definite Positions and Trajectories</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-particle-in-a-potential">Example: Particle in a Potential</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pilot-wave-guiding-wave">2. The Pilot Wave (Guiding Wave)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-guiding-equation">3. The Guiding Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation-velocity-from-the-guiding-equation">Example Calculation: Velocity from the Guiding Equation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-equilibrium-and-the-born-rule">4. Quantum Equilibrium and the Born Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-without-collapse">5. Measurement Without Collapse</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-double-slit-experiment-in-bohmian-mechanics">Example: Double-Slit Experiment in Bohmian Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinism-and-realism">6. Determinism and Realism</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-bohmian-mechanics-and-other-interpretations">Differences Between Bohmian Mechanics and Other Interpretations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copenhagen-interpretation">1. Copenhagen Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#many-worlds-interpretation-mwi">2. Many-Worlds Interpretation (MWI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-collapse-theories">3. Objective Collapse Theories</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-features">Summary of Key Features</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
