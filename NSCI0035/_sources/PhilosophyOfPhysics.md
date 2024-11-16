@@ -1,4 +1,4 @@
-# Philosophy 
+# Philosophy of Physics
 
 The philosophy of physics examines foundational questions about the nature of reality, knowledge, and causality as revealed by physical theories. Quantum mechanics, with its counterintuitive features like wave-particle duality, superposition, and entanglement, has inspired deep philosophical debates about the nature of reality, the role of observation, and the limits of scientific knowledge. Key issues include realism versus anti-realism, determinism, locality, and the measurement problem.
 
