@@ -405,8 +405,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations-for-different-reaction-orders">Differential Equations for Different Reaction Orders</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-reactions">First-Order Reactions</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-reactions">Second-Order Reactions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-two-reactants-e-g-a-b-rightarrow-c">Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \rightarrow C \)</span>)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-single-reactant-e-g-2a-rightarrow-b">Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \rightarrow B \)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-two-reactants-e-g-a-b-longrightarrow-c">Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \longrightarrow C \)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-single-reactant-e-g-2a-longrightarrow-b">Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \longrightarrow B \)</span>)</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-complex-reactions">Handling Complex Reactions</a><ul class="nav section-nav flex-column">
@@ -532,7 +532,7 @@ document.write(`
 <h3>Writing a Rate Law<a class="headerlink" href="#writing-a-rate-law" title="Link to this heading">#</a></h3>
 <p>The rate law for a reaction is an expression that quantifies the reaction rate in terms of the reactant concentrations. For a general reaction where reactant <span class="math notranslate nohighlight">\( A \)</span> transforms into product <span class="math notranslate nohighlight">\( B \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[A \rightarrow B\]</div>
+\[A \longrightarrow B\]</div>
 <p>If this reaction is first-order with respect to <span class="math notranslate nohighlight">\( A \)</span>, the rate law is written as:</p>
 <div class="math notranslate nohighlight">
 \[\text{Rate} = k[A]\]</div>
@@ -552,7 +552,7 @@ document.write(`
 <h4>First-Order Reactions<a class="headerlink" href="#first-order-reactions" title="Link to this heading">#</a></h4>
 <p>For a first-order reaction, the rate of reaction is directly proportional to the concentration of a single reactant. A classic example is:</p>
 <div class="math notranslate nohighlight">
-\[A \rightarrow B\]</div>
+\[A \longrightarrow B\]</div>
 <p>The rate law for this reaction is:</p>
 <div class="math notranslate nohighlight">
 \[\text{Rate} = k[A]\]</div>
@@ -570,16 +570,18 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[[A](t) = [A]_0 e^{-kt}\]</div>
 <p>where <span class="math notranslate nohighlight">\([A]_0\)</span> is the initial concentration of <span class="math notranslate nohighlight">\( A \)</span> at <span class="math notranslate nohighlight">\( t = 0 \)</span>. This exponential decay function describes how the concentration of <span class="math notranslate nohighlight">\( A \)</span> decreases over time in a first-order reaction.</p>
+<p><img alt="Exponential Decay for Different Decay Rates" src="_images/decaymultik.png" /></p>
+<p><em>This figure illustrates the solutions to the differential equation <span class="math notranslate nohighlight">\( A' = -kA \)</span> for various decay rates (<span class="math notranslate nohighlight">\( k = 0.1, 0.25, 0.5, 1, 2 \)</span>). The amplitude <span class="math notranslate nohighlight">\( A(t) = A_0 e^{-kt} \)</span> decreases exponentially over time. Different line styles represent the impact of the decay constant, smaller <span class="math notranslate nohighlight">\( k \)</span> values result in slower decay, whilst larger <span class="math notranslate nohighlight">\( k \)</span> values cause faster decay.</em></p>
 </section>
 <section id="second-order-reactions">
 <h4>Second-Order Reactions<a class="headerlink" href="#second-order-reactions" title="Link to this heading">#</a></h4>
 <p>Second-order reactions involve rate laws that are proportional to the <strong>square</strong> of a reactant’s concentration or to the <strong>product</strong> of two different reactant concentrations. Second-order reactions can be classified into different types:</p>
 </section>
-<section id="second-order-two-reactants-e-g-a-b-rightarrow-c">
-<h4>Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \rightarrow C \)</span>)<a class="headerlink" href="#second-order-two-reactants-e-g-a-b-rightarrow-c" title="Link to this heading">#</a></h4>
+<section id="second-order-two-reactants-e-g-a-b-longrightarrow-c">
+<h4>Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \longrightarrow C \)</span>)<a class="headerlink" href="#second-order-two-reactants-e-g-a-b-longrightarrow-c" title="Link to this heading">#</a></h4>
 <p>For a reaction where two different reactants, <span class="math notranslate nohighlight">\( A \)</span> and <span class="math notranslate nohighlight">\( B \)</span>, combine to form a product <span class="math notranslate nohighlight">\( C \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[A + B \rightarrow C\]</div>
+\[A + B \longrightarrow C\]</div>
 <p>the rate law is:</p>
 <div class="math notranslate nohighlight">
 \[\text{Rate} = k[A][B]\]</div>
@@ -594,11 +596,11 @@ document.write(`
 <p>and we solve it as in the first type of second-order reaction.</p>
 <p>However, if <span class="math notranslate nohighlight">\([A]_0 \neq [B]_0\)</span>, we need to solve the differential equation with both <span class="math notranslate nohighlight">\([A]\)</span> and <span class="math notranslate nohighlight">\([B]\)</span> changing over time, which can be more complex and typically requires integration using initial concentrations and stoichiometric relationships.</p>
 </section>
-<section id="second-order-single-reactant-e-g-2a-rightarrow-b">
-<h4>Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \rightarrow B \)</span>)<a class="headerlink" href="#second-order-single-reactant-e-g-2a-rightarrow-b" title="Link to this heading">#</a></h4>
+<section id="second-order-single-reactant-e-g-2a-longrightarrow-b">
+<h4>Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \longrightarrow B \)</span>)<a class="headerlink" href="#second-order-single-reactant-e-g-2a-longrightarrow-b" title="Link to this heading">#</a></h4>
 <p>For a reaction where two molecules of <span class="math notranslate nohighlight">\( A \)</span> react to form <span class="math notranslate nohighlight">\( B \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[2A \rightarrow B\]</div>
+\[2A \longrightarrow B\]</div>
 <p>the rate law is:</p>
 <div class="math notranslate nohighlight">
 \[\text{Rate} = k[A]^2\]</div>
@@ -623,7 +625,7 @@ document.write(`
 <p>Some reactions may exhibit rate laws that do not fit neatly into first or second order; for example, reactions that are <strong>pseudo-first-order</strong> or involve autocatalysis.</p>
 <section id="pseudo-first-order-reactions">
 <h4>Pseudo-First-Order Reactions<a class="headerlink" href="#pseudo-first-order-reactions" title="Link to this heading">#</a></h4>
-<p>A reaction might be second-order in principle, but if one reactant’s concentration is held constant (e.g., because it is in large excess), the reaction can appear to be first-order with respect to the other reactant. For example, if <span class="math notranslate nohighlight">\( A + B \rightarrow C \)</span> occurs with <span class="math notranslate nohighlight">\([B]\)</span> in large excess, we treat <span class="math notranslate nohighlight">\([B]\)</span> as approximately constant, giving a rate law:</p>
+<p>A reaction might be second-order in principle, but if one reactant’s concentration is held constant (e.g., because it is in large excess), the reaction can appear to be first-order with respect to the other reactant. For example, if <span class="math notranslate nohighlight">\( A + B \longrightarrow C \)</span> occurs with <span class="math notranslate nohighlight">\([B]\)</span> in large excess, we treat <span class="math notranslate nohighlight">\([B]\)</span> as approximately constant, giving a rate law:</p>
 <div class="math notranslate nohighlight">
 \[\text{Rate} = k'[A]\]</div>
 <p>where <span class="math notranslate nohighlight">\( k' = k[B] \)</span> is an effective rate constant. The reaction then follows pseudo-first-order kinetics:</p>
@@ -635,7 +637,7 @@ document.write(`
 <h4>Autocatalytic Reactions<a class="headerlink" href="#autocatalytic-reactions" title="Link to this heading">#</a></h4>
 <p>In autocatalysis, one of the products acts as a catalyst for the reaction, meaning the reaction rate depends on both the concentration of the reactant and the concentration of a product. For example, if:</p>
 <div class="math notranslate nohighlight">
-\[A + B \rightarrow 2A\]</div>
+\[A + B \longrightarrow 2A\]</div>
 <p>with <span class="math notranslate nohighlight">\( A \)</span> also acting as a catalyst, the rate law might be:</p>
 <div class="math notranslate nohighlight">
 \[\text{Rate} = k[A][B]\]</div>
@@ -725,8 +727,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations-for-different-reaction-orders">Differential Equations for Different Reaction Orders</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-reactions">First-Order Reactions</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-reactions">Second-Order Reactions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-two-reactants-e-g-a-b-rightarrow-c">Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \rightarrow C \)</span>)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-single-reactant-e-g-2a-rightarrow-b">Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \rightarrow B \)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-two-reactants-e-g-a-b-longrightarrow-c">Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \longrightarrow C \)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-single-reactant-e-g-2a-longrightarrow-b">Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \longrightarrow B \)</span>)</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-complex-reactions">Handling Complex Reactions</a><ul class="nav section-nav flex-column">

@@ -126,7 +126,7 @@ In a chemical reaction, the rate at which reactants are converted into products 
 The rate law for a reaction is an expression that quantifies the reaction rate in terms of the reactant concentrations. For a general reaction where reactant $ A $ transforms into product $ B $:
 
 ```{math}
-A \rightarrow B
+A \longrightarrow B
 ```
 
 If this reaction is first-order with respect to $ A $, the rate law is written as:
@@ -147,6 +147,7 @@ To convert the rate law into a differential equation, we recognize that the rate
 
 This negative sign indicates that the concentration of $ A $ decreases over time as it converts into $ B $. This differential equation can then be solved to find $[A](t)$ as a function of time.
 
+
 ### Differential Equations for Different Reaction Orders
 
 The rate of a reaction tells us how fast the concentration of a reactant or product changes with time. This rate depends on the reaction order, which determines how the concentration of reactants affects the reaction rate. Let's examine differential equations for first-order, second-order, and some mixed-order reactions in detail.
@@ -156,7 +157,7 @@ The rate of a reaction tells us how fast the concentration of a reactant or prod
 For a first-order reaction, the rate of reaction is directly proportional to the concentration of a single reactant. A classic example is:
 
 ```{math}
-A \rightarrow B
+A \longrightarrow B
 ```
 
 The rate law for this reaction is:
@@ -193,17 +194,21 @@ Exponentiating both sides:
 
 where $[A]_0$ is the initial concentration of $ A $ at $ t = 0 $. This exponential decay function describes how the concentration of $ A $ decreases over time in a first-order reaction.
 
+![Exponential Decay for Different Decay Rates](decaymultik.png)
+
+*This figure illustrates the solutions to the differential equation $ A' = -kA $ for various decay rates ($ k = 0.1, 0.25, 0.5, 1, 2 $). The amplitude $ A(t) = A_0 e^{-kt} $ decreases exponentially over time. Different line styles represent the impact of the decay constant, smaller $ k $ values result in slower decay, whilst larger $ k $ values cause faster decay.*
+
 #### Second-Order Reactions
 
 Second-order reactions involve rate laws that are proportional to the **square** of a reactant's concentration or to the **product** of two different reactant concentrations. Second-order reactions can be classified into different types:
 
 
-#### Second-Order, Two Reactants (e.g., $ A + B \rightarrow C $)
+#### Second-Order, Two Reactants (e.g., $ A + B \longrightarrow C $)
 
 For a reaction where two different reactants, $ A $ and $ B $, combine to form a product $ C $:
 
 ```{math}
-A + B \rightarrow C
+A + B \longrightarrow C
 ```
 
 the rate law is:
@@ -233,12 +238,12 @@ and we solve it as in the first type of second-order reaction.
 However, if $[A]_0 \neq [B]_0$, we need to solve the differential equation with both $[A]$ and $[B]$ changing over time, which can be more complex and typically requires integration using initial concentrations and stoichiometric relationships.
 
 
-#### Second-Order, Single Reactant (e.g., $ 2A \rightarrow B $)
+#### Second-Order, Single Reactant (e.g., $ 2A \longrightarrow B $)
 
 For a reaction where two molecules of $ A $ react to form $ B $:
 
 ```{math}
-2A \rightarrow B
+2A \longrightarrow B
 ```
 
 the rate law is:
@@ -281,7 +286,7 @@ Some reactions may exhibit rate laws that do not fit neatly into first or second
 
 #### Pseudo-First-Order Reactions
 
-A reaction might be second-order in principle, but if one reactant's concentration is held constant (e.g., because it is in large excess), the reaction can appear to be first-order with respect to the other reactant. For example, if $ A + B \rightarrow C $ occurs with $[B]$ in large excess, we treat $[B]$ as approximately constant, giving a rate law:
+A reaction might be second-order in principle, but if one reactant's concentration is held constant (e.g., because it is in large excess), the reaction can appear to be first-order with respect to the other reactant. For example, if $ A + B \longrightarrow C $ occurs with $[B]$ in large excess, we treat $[B]$ as approximately constant, giving a rate law:
 
 ```{math}
 \text{Rate} = k'[A]
@@ -300,7 +305,7 @@ which we solve as a first-order reaction.
 In autocatalysis, one of the products acts as a catalyst for the reaction, meaning the reaction rate depends on both the concentration of the reactant and the concentration of a product. For example, if:
 
 ```{math}
-A + B \rightarrow 2A
+A + B \longrightarrow 2A
 ```
 
 with $ A $ also acting as a catalyst, the rate law might be:
@@ -310,3 +315,6 @@ with $ A $ also acting as a catalyst, the rate law might be:
 ```
 
 This leads to a differential equation similar to those for second-order reactions but requires special treatment due to the product's role in catalyzing the reaction.
+
+
+
