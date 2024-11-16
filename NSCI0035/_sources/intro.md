@@ -7,7 +7,9 @@ This module aims to cover questions about:
 - locality
 - ontology
 - determinism
+
 in quantum mechanics as well as cover a variety of interpretations:
+
 - Copenhagen 
 - Pilot Wave / de Borglie Bohm
 - Objective Collapse Models
