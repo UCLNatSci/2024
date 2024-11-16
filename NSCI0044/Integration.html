@@ -403,19 +403,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-functions">Logarithmic Functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversing-differentiation-rules-into-integration">Reversing Differentiation Rules into Integration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts-product-rule-reversal">Integration by Parts (Product Rule Reversal)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#late-method-for-integration-by-parts">LATE Method for Integration by Parts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-polynomial-and-exponential">Example 1: Polynomial and Exponential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-trigonometric-and-exponential">Example 2: Trigonometric and Exponential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts-product-rule-reversal">Integration by Parts (Product Rule Reversal)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#late-method-for-integration-by-parts"><strong>LATE</strong> Method for Integration by Parts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-polynomial-and-exponential">Example: Polynomial and Exponential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-trigonometric-and-exponential">Example: Trigonometric and Exponential</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-value-theorem-for-integrals">Mean Value Theorem for Integrals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signed-and-unsigned-areas">Signed and Unsigned Areas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation">Geometric Interpretation</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsigned-area">Unsigned Area</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-unsigned-area">Example of Unsigned Area</a></li>
 </ul>
@@ -449,7 +445,6 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-techniques">Summary of Key Techniques</a></li>
 </ul>
             </nav>
         </div>
@@ -565,91 +560,87 @@ document.write(`
 </section>
 </section>
 <hr class="docutils" />
-<section id="reversing-differentiation-rules-into-integration">
-<h2>Reversing Differentiation Rules into Integration<a class="headerlink" href="#reversing-differentiation-rules-into-integration" title="Link to this heading">#</a></h2>
-<p>In addition to the basic rules for calculating antiderivatives, there are specific techniques that arise when you reverse common differentiation rules, such as the product rule and the chain rule. These techniques help solve integrals that might otherwise be difficult.</p>
 <section id="integration-by-parts-product-rule-reversal">
-<h3>Integration by Parts (Product Rule Reversal)<a class="headerlink" href="#integration-by-parts-product-rule-reversal" title="Link to this heading">#</a></h3>
+<h2>Integration by Parts (Product Rule Reversal)<a class="headerlink" href="#integration-by-parts-product-rule-reversal" title="Link to this heading">#</a></h2>
 <p>The product rule for differentiation states:</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{\mathrm{d}x} \left( u(x) v(x) \right) = u'(x) v(x) + u(x) v'(x)\]</div>
+\[\frac{\mathrm{d}}{\mathrm{d}x} \left( f(x) g(x) \right) = f'(x) g(x) + f(x) g'(x)\]</div>
 <p>When reversing this rule to solve integrals, we use integration by parts. The formula for integration by parts is:</p>
 <div class="math notranslate nohighlight">
-\[\int u(x) v'(x) \, \mathrm{d}x = u(x) v(x) - \int v(x) u'(x) \, \mathrm{d}x\]</div>
+\[\int f(x) \frac{\mathrm{d}g}{\mathrm{d}x} \, \mathrm{d}x = f(x) g(x) - \int g(x) \frac{\mathrm{d}f}{\mathrm{d}x} \, \mathrm{d}x\]</div>
 <p>In this formula:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( u(x) \)</span> is a function you choose to differentiate (its derivative is <span class="math notranslate nohighlight">\( u'(x) \)</span>),</p></li>
-<li><p><span class="math notranslate nohighlight">\( v'(x) \)</span> is the function you choose to integrate (its integral is <span class="math notranslate nohighlight">\( v(x) \)</span>).</p></li>
+<li><p><span class="math notranslate nohighlight">\( f(x) \)</span> is a function you choose to differentiate (its derivative is <span class="math notranslate nohighlight">\( \frac{\mathrm{d}f}{\mathrm{d}x} \)</span>),</p></li>
+<li><p><span class="math notranslate nohighlight">\( \frac{\mathrm{d}g}{\mathrm{d}x} \)</span> is the function you choose to integrate (its integral is <span class="math notranslate nohighlight">\( g(x) \)</span>).</p></li>
 </ul>
 <p>Steps for using integration by parts:</p>
 <ol class="arabic simple">
-<li><p>Identify parts of the integrand to assign to <span class="math notranslate nohighlight">\(u(x)\)</span> and <span class="math notranslate nohighlight">\(v'(x)\)</span>.</p></li>
-<li><p>Differentiate <span class="math notranslate nohighlight">\(u(x)\)</span> to get <span class="math notranslate nohighlight">\(u'(x)\)</span>.</p></li>
-<li><p>Integrate <span class="math notranslate nohighlight">\(v'(x)\)</span> to get <span class="math notranslate nohighlight">\(v(x)\)</span>.</p></li>
+<li><p>Identify parts of the integrand to assign to <span class="math notranslate nohighlight">\( f(x) \)</span> and <span class="math notranslate nohighlight">\( \frac{\mathrm{d}g}{\mathrm{d}x} \)</span>.</p></li>
+<li><p>Differentiate <span class="math notranslate nohighlight">\( f(x) \)</span> to get <span class="math notranslate nohighlight">\( \frac{\mathrm{d}f}{\mathrm{d}x} \)</span>.</p></li>
+<li><p>Integrate <span class="math notranslate nohighlight">\( \frac{\mathrm{d}g}{\mathrm{d}x} \)</span> to get <span class="math notranslate nohighlight">\( g(x) \)</span>.</p></li>
 <li><p>Substitute into the formula and simplify the resulting integral.</p></li>
 </ol>
-</section>
 <hr class="docutils" />
 <section id="late-method-for-integration-by-parts">
-<h3>LATE Method for Integration by Parts<a class="headerlink" href="#late-method-for-integration-by-parts" title="Link to this heading">#</a></h3>
-<p>The LATE method is a mnemonic that can help choose the best parts of the integrand to assign to <span class="math notranslate nohighlight">\( u(x) \)</span> and <span class="math notranslate nohighlight">\( v'(x) \)</span> when using integration by parts. The letters stand for:</p>
+<h3><strong>LATE</strong> Method for Integration by Parts<a class="headerlink" href="#late-method-for-integration-by-parts" title="Link to this heading">#</a></h3>
+<p>The <strong>LATE</strong> method is a mnemonic that can help choose the best parts of the integrand to assign to <span class="math notranslate nohighlight">\( f(x) \)</span> and <span class="math notranslate nohighlight">\( \frac{\mathrm{d}g}{\mathrm{d}x} \)</span> when using integration by parts. The letters stand for:</p>
 <ul class="simple">
-<li><p>L: Logarithmic functions (if present)</p></li>
-<li><p>A: Algebraic functions (polynomials)</p></li>
-<li><p>T: Trigonometric functions</p></li>
-<li><p>E: Exponential functions</p></li>
+<li><p><strong>L:</strong> <em>Logarithmic functions</em></p></li>
+<li><p><strong>A:</strong> <em>Algebraic functions (polynomials)</em></p></li>
+<li><p><strong>T:</strong> <em>Trigonometric functions</em></p></li>
+<li><p><strong>E:</strong> <em>Exponential functions</em></p></li>
 </ul>
 <p>Steps for using LATE:</p>
 <ol class="arabic simple">
-<li><p>First, choose <span class="math notranslate nohighlight">\( u(x) \)</span> from the category that appears first in LATE.</p></li>
-<li><p>Choose <span class="math notranslate nohighlight">\( v'(x) \)</span> from the remaining part of the integrand.</p></li>
+<li><p>First, choose <span class="math notranslate nohighlight">\( f(x) \)</span> from the category that appears first in LATE.</p></li>
+<li><p>Choose <span class="math notranslate nohighlight">\( \frac{\mathrm{d}g}{\mathrm{d}x} \)</span> from the remaining part of the integrand.</p></li>
 <li><p>Apply integration by parts as usual.</p></li>
 </ol>
 </section>
-<section id="example-1-polynomial-and-exponential">
-<h3>Example 1: Polynomial and Exponential<a class="headerlink" href="#example-1-polynomial-and-exponential" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<section id="example-polynomial-and-exponential">
+<h3>Example: Polynomial and Exponential<a class="headerlink" href="#example-polynomial-and-exponential" title="Link to this heading">#</a></h3>
 <p>Consider the integral:</p>
 <div class="math notranslate nohighlight">
 \[\int x e^x \, \mathrm{d}x\]</div>
-<p>Using the LATE method:</p>
+<p>Using the <strong>LATE</strong> method:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( u(x) = x \)</span> (Algebraic function)</p></li>
-<li><p><span class="math notranslate nohighlight">\( v'(x) = e^x \)</span> (Exponential function)</p></li>
+<li><p><span class="math notranslate nohighlight">\( f(x) = x \)</span> (<strong>A</strong>lgebraic function)</p></li>
+<li><p><span class="math notranslate nohighlight">\( \frac{\mathrm{d}g}{\mathrm{d}x} = e^x \)</span> (<strong>E</strong>xponential function)</p></li>
 </ul>
-<p>Now, differentiate <span class="math notranslate nohighlight">\( u(x) \)</span> and integrate <span class="math notranslate nohighlight">\( v'(x) \)</span>:</p>
+<p>Now, differentiate <span class="math notranslate nohighlight">\( f(x) \)</span> and integrate <span class="math notranslate nohighlight">\( \frac{\mathrm{d}g}{\mathrm{d}x} \)</span>:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( u'(x) = 1 \)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( v(x) = e^x \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \frac{\mathrm{d}f}{\mathrm{d}x} = 1 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( g(x) = e^x \)</span></p></li>
 </ul>
 <p>Now apply the formula for integration by parts:</p>
 <div class="math notranslate nohighlight">
-\[\int x e^x \, \mathrm{d}x = x e^x - \int e^x \, \mathrm{d}x\]</div>
-<div class="math notranslate nohighlight">
-\[= x e^x - e^x + C\]</div>
+\[\begin{split}\int x e^x \, \mathrm{d}x &amp;= x e^x - \int e^x \, \mathrm{d}x\\
+&amp;= x e^x - e^x + C\end{split}\]</div>
 </section>
 <hr class="docutils" />
-<section id="example-2-trigonometric-and-exponential">
-<h3>Example 2: Trigonometric and Exponential<a class="headerlink" href="#example-2-trigonometric-and-exponential" title="Link to this heading">#</a></h3>
+<section id="example-trigonometric-and-exponential">
+<h3>Example: Trigonometric and Exponential<a class="headerlink" href="#example-trigonometric-and-exponential" title="Link to this heading">#</a></h3>
 <p>Consider the integral:</p>
 <div class="math notranslate nohighlight">
 \[\int e^x \sin(x) \, \mathrm{d}x\]</div>
-<p>Using the LATE method:</p>
+<p>Using the <strong>LATE</strong> method:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( u(x) = \sin(x) \)</span> (Trigonometric function)</p></li>
-<li><p><span class="math notranslate nohighlight">\( v'(x) = e^x \)</span> (Exponential function)</p></li>
+<li><p><span class="math notranslate nohighlight">\( f(x) = \sin(x) \)</span> (<strong>T</strong>rigonometric function)</p></li>
+<li><p><span class="math notranslate nohighlight">\( \frac{\mathrm{d}g}{\mathrm{d}x} = e^x \)</span> (<strong>E</strong>xponential function)</p></li>
 </ul>
-<p>Now, differentiate <span class="math notranslate nohighlight">\( u(x) \)</span> and integrate <span class="math notranslate nohighlight">\( v'(x) \)</span>:</p>
+<p>Now, differentiate <span class="math notranslate nohighlight">\( f(x) \)</span> and integrate <span class="math notranslate nohighlight">\( \frac{\mathrm{d}g}{\mathrm{d}x} \)</span>:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( u'(x) = \cos(x) \)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( v(x) = e^x \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \frac{\mathrm{d}f}{\mathrm{d}x} = \cos(x) \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( g(x) = e^x \)</span></p></li>
 </ul>
 <p>Now apply the formula for integration by parts:</p>
 <div class="math notranslate nohighlight">
 \[\int e^x \sin(x) \, \mathrm{d}x = e^x \sin(x) - \int e^x \cos(x) \, \mathrm{d}x\]</div>
-<p>Now, we need to apply integration by parts again to the new integral <span class="math notranslate nohighlight">\( \int e^x \cos(x) \, \mathrm{d}x \)</span>. Using LATE again:</p>
+<p>Now, we need to apply integration by parts again to the new integral <span class="math notranslate nohighlight">\( \int e^x \cos(x) \, \mathrm{d}x \)</span>. Using <strong>LATE</strong> again:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( u(x) = \cos(x) \)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( v'(x) = e^x \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( f(x) = \cos(x) \)</span> (<strong>T</strong>rigonometric function)</p></li>
+<li><p><span class="math notranslate nohighlight">\( \frac{\mathrm{d}g}{\mathrm{d}x} = e^x \)</span> (<strong>E</strong>xponential function)</p></li>
 </ul>
 <p>Following the same steps:</p>
 <div class="math notranslate nohighlight">
@@ -675,18 +666,11 @@ document.write(`
 <h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h3>
 <p>The concept of <strong>signed</strong> and <strong>unsigned</strong> areas is important when dealing with integrals, particularly in the context of areas between curves or under curves in the plane.</p>
 <ul class="simple">
-<li><p><strong>Unsigned Area</strong> refers to the total geometric area between a curve and the x-axis, treating all areas as positive, regardless of whether the curve is above or below the axis.</p></li>
-<li><p><strong>Signed Area</strong> considers the direction of the curve relative to the x-axis. Areas above the x-axis are positive, and areas below the x-axis are negative.</p></li>
-</ul>
-<section id="geometric-interpretation">
-<h4>Geometric Interpretation<a class="headerlink" href="#geometric-interpretation" title="Link to this heading">#</a></h4>
-<ul class="simple">
 <li><p><strong>Unsigned Area</strong>: The total area between the curve and the x-axis is computed without considering whether the curve is above or below the x-axis. All areas are treated as positive.</p></li>
 <li><p><strong>Signed Area</strong>: This accounts for whether the curve is above or below the x-axis. The area above the x-axis is positive, and the area below the x-axis is negative. The signed area is useful for determining net area, like in physical applications where direction matters (e.g., work or displacement).</p></li>
 </ul>
 <p>We can see this in the figure below:
 <img alt="Signed Area" src="_images/SignedArea.png" /></p>
-</section>
 </section>
 <section id="unsigned-area">
 <h3>Unsigned Area<a class="headerlink" href="#unsigned-area" title="Link to this heading">#</a></h3>
@@ -908,22 +892,6 @@ document.write(`
 </section>
 </section>
 </section>
-<hr class="docutils" />
-<section id="summary-of-key-techniques">
-<h2>Summary of Key Techniques<a class="headerlink" href="#summary-of-key-techniques" title="Link to this heading">#</a></h2>
-<ul>
-<li><p>Integration by Parts: Reverses the product rule for differentiation.</p>
-<div class="math notranslate nohighlight">
-\[\int u \, \mathrm{d}v = uv - \int v \, \mathrm{d}u\]</div>
-</li>
-<li><p>LATE Method for Integration by Parts: A strategy for selecting <span class="math notranslate nohighlight">\( u(x) \)</span> and <span class="math notranslate nohighlight">\( v'(x) \)</span> based on the order: Logarithmic, Algebraic, Trigonometric, Exponential.</p></li>
-<li><p>Mean Value Theorem for Integrals: Averages the value of a function over an interval.</p>
-<div class="math notranslate nohighlight">
-\[f(c) = \frac{1}{b - a} \int_a^b f(x) \, \mathrm{d}x\]</div>
-</li>
-</ul>
-<p>By understanding how differentiation rules are reversed, you can solve more complex integrals involving products, compositions, and powers of functions.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1004,19 +972,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-functions">Logarithmic Functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversing-differentiation-rules-into-integration">Reversing Differentiation Rules into Integration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts-product-rule-reversal">Integration by Parts (Product Rule Reversal)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#late-method-for-integration-by-parts">LATE Method for Integration by Parts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-polynomial-and-exponential">Example 1: Polynomial and Exponential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-trigonometric-and-exponential">Example 2: Trigonometric and Exponential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts-product-rule-reversal">Integration by Parts (Product Rule Reversal)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#late-method-for-integration-by-parts"><strong>LATE</strong> Method for Integration by Parts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-polynomial-and-exponential">Example: Polynomial and Exponential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-trigonometric-and-exponential">Example: Trigonometric and Exponential</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-value-theorem-for-integrals">Mean Value Theorem for Integrals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signed-and-unsigned-areas">Signed and Unsigned Areas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation">Geometric Interpretation</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsigned-area">Unsigned Area</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-unsigned-area">Example of Unsigned Area</a></li>
 </ul>
@@ -1050,7 +1014,6 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-techniques">Summary of Key Techniques</a></li>
 </ul>
   </nav></div>
 

@@ -389,6 +389,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measures-used-in-statistics">Measures used in Statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-arithmetic-average">1. Mean (Arithmetic Average)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median">2. Median</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode">3. Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-expected-value">Expectation (Expected Value)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-property">Linear Property</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-and-standard-deviation">Variance and Standard Deviation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variance">Variance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-deviation">Standard Deviation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">Uniform Distribution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-uniform-distribution">Discrete Uniform Distribution</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-rolling-a-fair-six-sided-die">Example: Rolling a Fair Six-Sided Die</a></li>
@@ -404,14 +421,12 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution">Binomial Distribution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution-basics">Binomial Distribution Basics</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-flipping-a-fair-coin">Example 1: Flipping a Fair Coin</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-flipping-an-unfair-coin">Example 2: Flipping an Unfair Coin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution-basics">Binomial Distribution Basics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-flipping-a-fair-coin">Example: Flipping a Fair Coin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-rolling-a-fair-die">Example: Rolling a Fair Die</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-flipping-an-unfair-coin">Example: Flipping an Unfair Coin</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties-of-the-binomial-distribution">Key Properties of the Binomial Distribution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-the-binomial-distribution">Applications of the Binomial Distribution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-approximation-to-the-binomial-distribution">Normal Approximation to the Binomial Distribution</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-distribution">Poisson Distribution</a><ul class="nav section-nav flex-column">
@@ -420,8 +435,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-number-of-customer-arrivals-at-a-store">Example: Number of Customer Arrivals at a Store</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-exactly-3-customers-arriving-in-one-hour">Probability of Exactly 3 Customers Arriving in One Hour:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-the-poisson-distribution">Applications of the Poisson Distribution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-the-exponential-distribution">Relation to the Exponential Distribution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-approximation-to-the-poisson-distribution">Normal Approximation to the Poisson Distribution</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-distribution">Normal Distribution</a><ul class="nav section-nav flex-column">
@@ -431,7 +444,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-heights-of-people">Example: Heights of People</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-normal-distribution">Properties of the Normal Distribution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-the-normal-distribution">Applications of the Normal Distribution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Normal Approximation to the Binomial Distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-approximation-to-the-binomial-distribution">Normal Approximation to the Binomial Distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-rules-for-normal-distributions">Empirical Rules For Normal Distributions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-limit-theorem-clt">Central Limit Theorem (CLT)</a><ul class="nav section-nav flex-column">
@@ -441,9 +455,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-considerations">Practical Considerations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clt-with-binomial-and-poisson-distributions">CLT with Binomial and Poisson Distributions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution-example">Binomial Distribution Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Normal Approximation to the Binomial Distribution</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-the-clt-to-a-binomial-distribution">Applying the CLT to a Binomial Distribution</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-distribution-example">Poisson Distribution Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-approximation-to-the-poisson-distribution">Normal Approximation to the Poisson Distribution</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-the-clt-to-a-poisson-distribution">Applying the CLT to a Poisson Distribution</a></li>
 </ul>
 </li>
@@ -454,10 +468,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-in-hypothesis-testing">Steps in Hypothesis Testing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-i-and-type-ii-errors">Type I and Type II Errors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-hypothesis-testing">Examples of Hypothesis Testing</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Binomial Distribution Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution-example">Binomial Distribution Example</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Poisson Distribution Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-distribution-example">Poisson Distribution Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-distribution-example">Normal Distribution Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-test">Power of a Test</a></li>
 </ul>
@@ -475,14 +489,109 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="statistics-and-probability">
 <h1>Statistics and Probability<a class="headerlink" href="#statistics-and-probability" title="Link to this heading">#</a></h1>
+<section id="measures-used-in-statistics">
+<h2>Measures used in Statistics<a class="headerlink" href="#measures-used-in-statistics" title="Link to this heading">#</a></h2>
+<section id="mean-arithmetic-average">
+<h3>1. Mean (Arithmetic Average)<a class="headerlink" href="#mean-arithmetic-average" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\text{Mean} = \frac{\sum_{i=1}^n x_i}{n}\]</div>
+<ul class="simple">
+<li><p>Represents the average of all data points.</p></li>
+<li><p>Sensitive to outliers.</p></li>
+</ul>
+</section>
+<section id="median">
+<h3>2. Median<a class="headerlink" href="#median" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The middle value of the dataset when sorted in ascending order.</p></li>
+<li><p>If the number of data points is even, the median is the average of the two middle values.</p></li>
+<li><p>Robust to outliers.</p></li>
+</ul>
+</section>
+<section id="mode">
+<h3>3. Mode<a class="headerlink" href="#mode" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The most frequently occurring value in the dataset.</p></li>
+<li><p>A dataset can have one mode (unimodal), more than one mode (multimodal), or no mode.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="expectation-expected-value">
+<h3>Expectation (Expected Value)<a class="headerlink" href="#expectation-expected-value" title="Link to this heading">#</a></h3>
+<section id="definition">
+<h4>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h4>
+<ul>
+<li><p>For a discrete random variable <span class="math notranslate nohighlight">\( X \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[E[X] = \sum_{x} x \cdot P(X = x)\]</div>
+</li>
+<li><p>For a continuous random variable:</p>
+<div class="math notranslate nohighlight">
+\[E[X] = \int_{-\infty}^\infty x \cdot f(x) \, \mathrm{d}x\]</div>
+</li>
+<li><p>Represents the long-run average value of <span class="math notranslate nohighlight">\( X \)</span> over many trials.</p></li>
+</ul>
+</section>
+<section id="linear-property">
+<h4>Linear Property<a class="headerlink" href="#linear-property" title="Link to this heading">#</a></h4>
+<p>If <span class="math notranslate nohighlight">\( a, b \)</span> are constants and <span class="math notranslate nohighlight">\( X, Y \)</span> are random variables:</p>
+<div class="math notranslate nohighlight">
+\[E[aX + bY] = aE[X] + bE[Y]\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="variance-and-standard-deviation">
+<h3>Variance and Standard Deviation<a class="headerlink" href="#variance-and-standard-deviation" title="Link to this heading">#</a></h3>
+<section id="variance">
+<h4>Variance<a class="headerlink" href="#variance" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Measures the spread of the data around the mean.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{Var}(X) = E\left[(X - \mu)^2\right] = E[X^2] - (E[X])^2\]</div>
+<ul>
+<li><p>For a dataset:</p>
+<div class="math notranslate nohighlight">
+\[\text{Var}(X) = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n} \quad \text{(population variance)}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{Var}(X) = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n-1} \quad \text{(sample variance)}\]</div>
+</li>
+</ul>
+</section>
+<section id="standard-deviation">
+<h4>Standard Deviation<a class="headerlink" href="#standard-deviation" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The square root of the variance.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\sigma = \sqrt{\text{Var}(X)}\]</div>
+<ul class="simple">
+<li><p>Provides a measure of the typical deviation of data points from the mean in the same units as the data.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="applications">
+<h3>Applications<a class="headerlink" href="#applications" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Mean</strong>: Used in averaging test scores, economic indicators, etc.</p></li>
+<li><p><strong>Median</strong>: Useful when data is skewed, e.g., income distribution.</p></li>
+<li><p><strong>Mode</strong>: Helps identify common trends, e.g., most popular product size.</p></li>
+<li><p><strong>Variance and Standard Deviation</strong>: Key in finance (risk analysis), quality control, and research to measure variability.</p></li>
+</ul>
+</section>
+</section>
 <section id="uniform-distribution">
 <h2>Uniform Distribution<a class="headerlink" href="#uniform-distribution" title="Link to this heading">#</a></h2>
 <section id="discrete-uniform-distribution">
 <h3>Discrete Uniform Distribution<a class="headerlink" href="#discrete-uniform-distribution" title="Link to this heading">#</a></h3>
 <p>A discrete uniform distribution is a type of probability distribution where a finite set of outcomes are equally likely. For example, when rolling a fair die, each of the six outcomes is equally probable.</p>
+<hr class="docutils" />
 <section id="example-rolling-a-fair-six-sided-die">
 <h4>Example: Rolling a Fair Six-Sided Die<a class="headerlink" href="#example-rolling-a-fair-six-sided-die" title="Link to this heading">#</a></h4>
 <p>Let <span class="math notranslate nohighlight">\( X \)</span> be the random variable representing the outcome of rolling a fair six-sided die. The outcomes are <span class="math notranslate nohighlight">\( x = 1, 2, 3, 4, 5, 6 \)</span>, and each outcome is equally likely.</p>
+<p><img alt="Discrete Uniform Distribution (Fair Dice)" src="_images/discreteuniform.png" /></p>
+<p><em>A discrete uniform distribution represents equally likely outcomes. For a fair six-sided die, each face has an equal probability of <span class="math notranslate nohighlight">\( \frac{1}{6} \)</span>. This is a basic example of a discrete uniform probability distribution.</em></p>
 <ul>
 <li><p>Probability Mass Function (PMF):</p>
 <div class="math notranslate nohighlight">
@@ -518,6 +627,9 @@ The variance of a discrete uniform distribution on integers <span class="math no
 <section id="example-a-random-variable-between-0-and-1">
 <h4>Example: A Random Variable Between 0 and 1<a class="headerlink" href="#example-a-random-variable-between-0-and-1" title="Link to this heading">#</a></h4>
 <p>Let <span class="math notranslate nohighlight">\( X \)</span> be a random variable uniformly distributed between 0 and 1. The probability density function (PDF) for this distribution is defined over the interval <span class="math notranslate nohighlight">\( [0, 1] \)</span>.</p>
+<p><img alt="Continuous Uniform Distribution" src="_images/continuousuniform.png" /></p>
+<p><em>A continuous uniform distribution models a scenario where any value within a range is equally likely. The probability density function is constant over the interval <span class="math notranslate nohighlight">\([0, L]\)</span>, and zero elsewhere. In this plot, <span class="math notranslate nohighlight">\( L = 10 \)</span>.</em></p>
+<hr class="docutils" />
 <ul>
 <li><p>Probability Density Function (PDF):
 The PDF for a continuous uniform distribution on <span class="math notranslate nohighlight">\( [a, b] \)</span> is:</p>
@@ -604,6 +716,7 @@ The variance of a continuous uniform distribution on <span class="math notransla
 <section id="binomial-distribution">
 <h2>Binomial Distribution<a class="headerlink" href="#binomial-distribution" title="Link to this heading">#</a></h2>
 <p>The binomial distribution describes the number of successes in a fixed number of independent trials of a binary (yes/no, success/failure) experiment. It is often used to model situations where there are two possible outcomes for each trial, such as flipping a coin.</p>
+<hr class="docutils" />
 <section id="binomial-distribution-basics">
 <h3>Binomial Distribution Basics<a class="headerlink" href="#binomial-distribution-basics" title="Link to this heading">#</a></h3>
 <p>The binomial distribution is characterized by:</p>
@@ -622,11 +735,13 @@ The variance of a continuous uniform distribution on <span class="math notransla
 <li><p><span class="math notranslate nohighlight">\( n \)</span> is the number of trials</p></li>
 <li><p><span class="math notranslate nohighlight">\( k \)</span> is the number of successes</p></li>
 </ul>
-<section id="example-1-flipping-a-fair-coin">
-<h4>Example 1: Flipping a Fair Coin<a class="headerlink" href="#example-1-flipping-a-fair-coin" title="Link to this heading">#</a></h4>
+</section>
+<hr class="docutils" />
+<section id="example-flipping-a-fair-coin">
+<h3>Example: Flipping a Fair Coin<a class="headerlink" href="#example-flipping-a-fair-coin" title="Link to this heading">#</a></h3>
 <p>Consider flipping a fair coin <span class="math notranslate nohighlight">\( n = 10 \)</span> times, and we want to calculate the probability of getting exactly <span class="math notranslate nohighlight">\( k \)</span> heads (successes) in those 10 flips. In this case, the probability of getting heads (success) on any single flip is <span class="math notranslate nohighlight">\( p = 0.5 \)</span>.</p>
-<p><em>Probability of Getting Exactly 5 Heads:</em>
-We can calculate the probability of getting exactly 5 heads out of 10 flips using the binomial formula:</p>
+<ul>
+<li><p><strong>Probability of Getting Exactly 5 Heads</strong>:</p>
 <div class="math notranslate nohighlight">
 \[P(X = 5) = \binom{10}{5} (0.5)^5 (0.5)^{10-5} = \binom{10}{5} (0.5)^{10}\]</div>
 <p>First, calculate the binomial coefficient:</p>
@@ -635,75 +750,80 @@ We can calculate the probability of getting exactly 5 heads out of 10 flips usin
 <p>Then, calculate the probability:</p>
 <div class="math notranslate nohighlight">
 \[P(X = 5) = 252 \times (0.5)^{10} = 252 \times \frac{1}{1024} \approx 0.2461\]</div>
-<p>So, the probability of getting exactly 5 heads in 10 flips of a fair coin is approximately 0.2461.</p>
-<p><em>Expected Value and Variance:</em>
-For a binomial distribution, the expected value <span class="math notranslate nohighlight">\( E[X] \)</span> and variance <span class="math notranslate nohighlight">\( \text{Var}(X) \)</span> are given by:</p>
-<div class="math notranslate nohighlight">
-\[E[X] = n \cdot p\]</div>
-<div class="math notranslate nohighlight">
-\[\text{Var}(X) = n \cdot p \cdot (1 - p)\]</div>
-<p>For a fair coin (<span class="math notranslate nohighlight">\( p = 0.5 \)</span>) and <span class="math notranslate nohighlight">\( n = 10 \)</span> flips:</p>
-<div class="math notranslate nohighlight">
-\[E[X] = 10 \cdot 0.5 = 5\]</div>
-<div class="math notranslate nohighlight">
-\[\text{Var}(X) = 10 \cdot 0.5 \cdot 0.5 = 2.5\]</div>
-<p>The expected number of heads is 5, and the variance is 2.5.</p>
+<p>The probability of getting exactly 5 heads is approximately 0.2461.</p>
+</li>
+</ul>
 </section>
+<hr class="docutils" />
+<section id="example-rolling-a-fair-die">
+<h3>Example: Rolling a Fair Die<a class="headerlink" href="#example-rolling-a-fair-die" title="Link to this heading">#</a></h3>
+<p>Consider rolling a fair die <span class="math notranslate nohighlight">\( n = 10 \)</span> times. We want to calculate the probability of rolling a 6 exactly <span class="math notranslate nohighlight">\( k = 2 \)</span> times. In this case, the probability of rolling a 6 (success) on any single roll is <span class="math notranslate nohighlight">\( p = \frac{1}{6} \)</span>.</p>
+<p><img alt="Binomial Distribution" src="_images/binomial.png" /></p>
+<p><em>The binomial distribution models the probability of a specific number of successes in <span class="math notranslate nohighlight">\( n \)</span> independent trials, each with success probability <span class="math notranslate nohighlight">\( p \)</span>. This example shows <span class="math notranslate nohighlight">\( n = 10 \)</span> trials with <span class="math notranslate nohighlight">\( p = 0.5 \)</span>.</em></p>
+<ul>
+<li><p><strong>Probability of Rolling a 6 Exactly Twice</strong>:</p>
+<div class="math notranslate nohighlight">
+\[P(X = 2) = \binom{10}{2} \left(\frac{1}{6}\right)^2 \left(\frac{5}{6}\right)^{8}\]</div>
+<p>First, calculate the binomial coefficient:</p>
+<div class="math notranslate nohighlight">
+\[\binom{10}{2} = \frac{10!}{2!(10-2)!} = 45\]</div>
+<p>Then, calculate the probability:</p>
+<div class="math notranslate nohighlight">
+\[P(X = 2) = 45 \times \left(\frac{1}{6}\right)^2 \times \left(\frac{5}{6}\right)^8 \approx 0.2907\]</div>
+<p>The probability of rolling a 6 exactly 2 times is approximately 0.2907.</p>
+</li>
+</ul>
 </section>
-<section id="example-2-flipping-an-unfair-coin">
-<h3>Example 2: Flipping an Unfair Coin<a class="headerlink" href="#example-2-flipping-an-unfair-coin" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<section id="example-flipping-an-unfair-coin">
+<h3>Example: Flipping an Unfair Coin<a class="headerlink" href="#example-flipping-an-unfair-coin" title="Link to this heading">#</a></h3>
 <p>Now, consider flipping an unfair coin <span class="math notranslate nohighlight">\( n = 10 \)</span> times, where the probability of getting heads (success) is <span class="math notranslate nohighlight">\( p = 0.7 \)</span> and the probability of getting tails (failure) is <span class="math notranslate nohighlight">\( 1 - p = 0.3 \)</span>.</p>
-<p><em>Probability of Getting Exactly 7 Heads:</em>
-We can calculate the probability of getting exactly 7 heads out of 10 flips using the binomial formula:</p>
+<ul>
+<li><p><strong>Probability of Getting Exactly 7 Heads</strong>:</p>
 <div class="math notranslate nohighlight">
-\[P(X = 7) = \binom{10}{7} (0.7)^7 (0.3)^{10-7}\]</div>
+\[P(X = 7) = \binom{10}{7} (0.7)^7 (0.3)^3\]</div>
 <p>First, calculate the binomial coefficient:</p>
 <div class="math notranslate nohighlight">
 \[\binom{10}{7} = \frac{10!}{7!(10-7)!} = 120\]</div>
 <p>Then, calculate the probability:</p>
 <div class="math notranslate nohighlight">
-\[P(X = 7) = 120 \times (0.7)^7 \times (0.3)^3 \approx 120 \times 0.0823543 \times 0.027 = 0.267\]</div>
-<p>So, the probability of getting exactly 7 heads in 10 flips of an unfair coin is approximately 0.267.</p>
-<p><em>Expected Value and Variance:</em>
-For an unfair coin with <span class="math notranslate nohighlight">\( p = 0.7 \)</span> and <span class="math notranslate nohighlight">\( n = 10 \)</span> flips:</p>
-<div class="math notranslate nohighlight">
-\[E[X] = 10 \cdot 0.7 = 7\]</div>
-<div class="math notranslate nohighlight">
-\[\text{Var}(X) = 10 \cdot 0.7 \cdot 0.3 = 2.1\]</div>
-<p>The expected number of heads is 7, and the variance is 2.1.</p>
+\[P(X = 7) = 120 \times (0.7)^7 \times (0.3)^3 \approx 0.267\]</div>
+<p>The probability of getting exactly 7 heads is approximately 0.267.</p>
+</li>
+</ul>
+<hr class="docutils" />
+<p><img alt="Binomial Distributions: Fair vs Unfair Dice" src="_images/fairunfaircoin.png" /></p>
+<p><em>This plot compares the binomial distributions for a fair die (<span class="math notranslate nohighlight">\( p = \frac{1}{6} \)</span>) and an unfair die (<span class="math notranslate nohighlight">\( p = \frac{1}{3} \)</span>) over <span class="math notranslate nohighlight">\( n = 10 \)</span> trials. The x-axis represents the number of times a 6 is rolled (successes), and the y-axis shows the corresponding probabilities. The fair die produces a flatter distribution due to the lower probability of rolling a 6, while the unfair die results in a more concentrated distribution around higher values of successes.</em></p>
 </section>
+<hr class="docutils" />
 <section id="key-properties-of-the-binomial-distribution">
 <h3>Key Properties of the Binomial Distribution<a class="headerlink" href="#key-properties-of-the-binomial-distribution" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Independence: The trials are independent, meaning the outcome of one flip does not affect the others.</p></li>
-<li><p>Fixed Number of Trials: The number of trials <span class="math notranslate nohighlight">\( n \)</span> is fixed in advance.</p></li>
-<li><p>Binary Outcomes: Each trial has two possible outcomes: success (e.g., heads) or failure (e.g., tails).</p></li>
-<li><p>Constant Probability: The probability of success <span class="math notranslate nohighlight">\( p \)</span> remains constant across all trials.</p></li>
+<li><p><strong>Independence</strong>: The trials are independent, meaning the outcome of one trial does not affect the others.</p></li>
+<li><p><strong>Fixed Number of Trials</strong>: The number of trials <span class="math notranslate nohighlight">\( n \)</span> is fixed in advance.</p></li>
+<li><p><strong>Binary Outcomes</strong>: Each trial has two possible outcomes: success (e.g., heads) or failure (e.g., tails).</p></li>
+<li><p><strong>Constant Probability</strong>: The probability of success <span class="math notranslate nohighlight">\( p \)</span> remains constant across all trials.</p></li>
 </ul>
 </section>
+<hr class="docutils" />
 <section id="applications-of-the-binomial-distribution">
 <h3>Applications of the Binomial Distribution<a class="headerlink" href="#applications-of-the-binomial-distribution" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Coin Flips: As shown in the examples, the binomial distribution is commonly used for modeling the number of heads in a series of coin flips.</p></li>
-<li><p>Quality Control: It can be used in quality control for determining the number of defective items in a batch.</p></li>
-<li><p>Survey Sampling: The binomial distribution is useful when analyzing the number of people who respond in a certain way in a survey, given a fixed number of respondents.</p></li>
+<li><p><strong>Coin Flips</strong>: Modeling the number of heads in a series of coin flips.</p></li>
+<li><p><strong>Rolling Dice</strong>: Calculating probabilities of specific outcomes in repeated rolls.</p></li>
+<li><p><strong>Quality Control</strong>: Determining the number of defective items in a batch.</p></li>
+<li><p><strong>Survey Sampling</strong>: Analyzing the number of respondents who respond in a certain way in a survey.</p></li>
 </ul>
 </section>
-<section id="normal-approximation-to-the-binomial-distribution">
-<h3>Normal Approximation to the Binomial Distribution<a class="headerlink" href="#normal-approximation-to-the-binomial-distribution" title="Link to this heading">#</a></h3>
-<p>For large values of <span class="math notranslate nohighlight">\( n \)</span>, the binomial distribution can be approximated by a normal distribution with the same mean and variance:</p>
-<div class="math notranslate nohighlight">
-\[N(\mu, \sigma^2) \quad \text{where} \quad \mu = n \cdot p \quad \text{and} \quad \sigma^2 = n \cdot p \cdot (1 - p)\]</div>
-<p>This approximation becomes more accurate as <span class="math notranslate nohighlight">\( n \)</span> increases, especially when both <span class="math notranslate nohighlight">\( n \cdot p \)</span> and <span class="math notranslate nohighlight">\( n \cdot (1 - p) \)</span> are greater than 5.</p>
 </section>
-</section>
+<hr class="docutils" />
 <section id="poisson-distribution">
 <h2>Poisson Distribution<a class="headerlink" href="#poisson-distribution" title="Link to this heading">#</a></h2>
 <p>The Poisson distribution is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space. These events must occur with a known constant mean rate and independently of the time since the last event.</p>
-<p>It is often used to model the number of events that happen in a fixed interval (e.g., number of phone calls at a call center in an hour, number of accidents at an intersection in a day, etc.).</p>
+<p>It is often used to model the number of events that happen in a fixed interval (e.g., number of phone calls at a call centre in an hour, number of accidents at an intersection in a day, etc.).</p>
 <section id="poisson-distribution-basics">
 <h3>Poisson Distribution Basics<a class="headerlink" href="#poisson-distribution-basics" title="Link to this heading">#</a></h3>
-<p>The Poisson distribution is characterized by a single parameter <span class="math notranslate nohighlight">\( \lambda \)</span>, which represents the average number of events in the given interval. The probability mass function (PMF) for the Poisson distribution is:</p>
+<p>The Poisson distribution is characterised by a single parameter <span class="math notranslate nohighlight">\( \lambda \)</span>, which represents the average number of events in the given interval. The probability mass function (PMF) for the Poisson distribution is:</p>
 <div class="math notranslate nohighlight">
 \[P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}, \quad k = 0, 1, 2, \dots\]</div>
 <p>Where:</p>
@@ -731,7 +851,9 @@ For an unfair coin with <span class="math notranslate nohighlight">\( p = 0.7 \)
 </section>
 <section id="example-number-of-customer-arrivals-at-a-store">
 <h3>Example: Number of Customer Arrivals at a Store<a class="headerlink" href="#example-number-of-customer-arrivals-at-a-store" title="Link to this heading">#</a></h3>
-<p>Let’s say the average number of customers arriving at a store per hour is 5. This can be modeled as a Poisson distribution with <span class="math notranslate nohighlight">\( \lambda = 5 \)</span> for a one-hour period.</p>
+<p>Let’s say the average number of customers arriving at a store per hour is 5. This can be modelled as a Poisson distribution with <span class="math notranslate nohighlight">\( \lambda = 5 \)</span> for a one-hour period.</p>
+<p><img alt="Poisson Distribution" src="_images/poisson.png" /></p>
+<p><em>The Poisson distribution is used to model the number of events occurring in a fixed interval of time or space, given a constant average rate <span class="math notranslate nohighlight">\( \lambda \)</span>. This plot demonstrates the probabilities for <span class="math notranslate nohighlight">\( \lambda = 5 \)</span>.</em></p>
 </section>
 <section id="probability-of-exactly-3-customers-arriving-in-one-hour">
 <h3>Probability of Exactly 3 Customers Arriving in One Hour:<a class="headerlink" href="#probability-of-exactly-3-customers-arriving-in-one-hour" title="Link to this heading">#</a></h3>
@@ -754,34 +876,19 @@ For an unfair coin with <span class="math notranslate nohighlight">\( p = 0.7 \)
 </section>
 <section id="applications-of-the-poisson-distribution">
 <h3>Applications of the Poisson Distribution<a class="headerlink" href="#applications-of-the-poisson-distribution" title="Link to this heading">#</a></h3>
-<p>The Poisson distribution is widely used in various fields for modeling count-based data, such as:</p>
+<p>The Poisson distribution is widely used in various fields for modelling count-based data, such as:</p>
 <ul class="simple">
-<li><p>Customer service: Modeling the number of customer calls, complaints, or arrivals.</p></li>
-<li><p>Healthcare: Modeling the number of emergency room visits, patient arrivals, or disease occurrences in a population over a certain period.</p></li>
-<li><p>Traffic flow: Modeling the number of cars passing through a toll booth or traffic light within a fixed time period.</p></li>
-<li><p>Queuing theory: Modeling the number of customers arriving at a service point in a given time period.</p></li>
+<li><p>Customer service: Modelling the number of customer calls, complaints, or arrivals.</p></li>
+<li><p>Healthcare: Modelling the number of emergency room visits, patient arrivals, or disease occurrences in a population over a certain period.</p></li>
+<li><p>Traffic flow: Modelling the number of cars passing through a toll booth or traffic light within a fixed time period.</p></li>
+<li><p>Queuing theory: Modelling the number of customers arriving at a service point in a given time period.</p></li>
 </ul>
 </section>
-<section id="relation-to-the-exponential-distribution">
-<h3>Relation to the Exponential Distribution<a class="headerlink" href="#relation-to-the-exponential-distribution" title="Link to this heading">#</a></h3>
-<p>The Poisson distribution is related to the exponential distribution. The time between events in a Poisson process follows an exponential distribution with rate parameter <span class="math notranslate nohighlight">\( \lambda \)</span>. The exponential distribution is used to model the time between successive events in a Poisson process.</p>
-<p>The cumulative distribution function (CDF) of the exponential distribution is:</p>
-<div class="math notranslate nohighlight">
-\[F(t) = 1 - e^{-\lambda t}\]</div>
-<p>Where <span class="math notranslate nohighlight">\( t \)</span> is the time between events and <span class="math notranslate nohighlight">\( \lambda \)</span> is the rate of events.</p>
 </section>
-<section id="normal-approximation-to-the-poisson-distribution">
-<h3>Normal Approximation to the Poisson Distribution<a class="headerlink" href="#normal-approximation-to-the-poisson-distribution" title="Link to this heading">#</a></h3>
-<p>For large values of <span class="math notranslate nohighlight">\( \lambda \)</span>, the Poisson distribution can be approximated by a normal distribution with mean <span class="math notranslate nohighlight">\( \lambda \)</span> and variance <span class="math notranslate nohighlight">\( \lambda \)</span>. This approximation is most accurate when <span class="math notranslate nohighlight">\( \lambda \)</span> is large (typically when <span class="math notranslate nohighlight">\( \lambda &gt; 10 \)</span>).</p>
-<p>The approximate normal distribution is:</p>
-<div class="math notranslate nohighlight">
-\[N(\mu = \lambda, \sigma^2 = \lambda)\]</div>
-<p>This allows the use of normal distribution tools (e.g., z-scores) to approximate Poisson probabilities when <span class="math notranslate nohighlight">\( \lambda \)</span> is large.</p>
-</section>
-</section>
+<hr class="docutils" />
 <section id="normal-distribution">
 <h2>Normal Distribution<a class="headerlink" href="#normal-distribution" title="Link to this heading">#</a></h2>
-<p>The normal distribution, also known as the Gaussian distribution, is one of the most widely used probability distributions in statistics. It is used to model a wide range of natural phenomena, such as heights, test scores, and measurement errors. The normal distribution is characterized by its bell-shaped curve, which is symmetric about the mean.</p>
+<p>The normal distribution, also known as the Gaussian distribution, is one of the most widely used probability distributions in statistics. It is used to model a wide range of natural phenomena, such as heights, test scores, and measurement errors. The normal distribution is characterised by its bell-shaped curve, which is symmetric about the mean.</p>
 <section id="normal-distribution-basics">
 <h3>Normal Distribution Basics<a class="headerlink" href="#normal-distribution-basics" title="Link to this heading">#</a></h3>
 <p>The probability density function (PDF) of the normal distribution is given by the formula:</p>
@@ -790,13 +897,13 @@ For an unfair coin with <span class="math notranslate nohighlight">\( p = 0.7 \)
 <p>Where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( x \)</span> is the variable,</p></li>
-<li><p><span class="math notranslate nohighlight">\( \mu \)</span> is the mean (center of the distribution),</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mu \)</span> is the mean (centre of the distribution),</p></li>
 <li><p><span class="math notranslate nohighlight">\( \sigma^2 \)</span> is the variance,</p></li>
 <li><p><span class="math notranslate nohighlight">\( \sigma \)</span> is the standard deviation,</p></li>
 <li><p><span class="math notranslate nohighlight">\( e \)</span> is Euler’s number (approximately 2.71828),</p></li>
 <li><p><span class="math notranslate nohighlight">\( \pi \)</span> is approximately 3.14159.</p></li>
 </ul>
-<p>The normal distribution is fully characterized by its mean <span class="math notranslate nohighlight">\( \mu \)</span> and standard deviation <span class="math notranslate nohighlight">\( \sigma \)</span>. The shape of the distribution is symmetric around the mean, with most values clustering near the mean and fewer values farther away.</p>
+<p>The normal distribution is fully characterised by its mean <span class="math notranslate nohighlight">\( \mu \)</span> and standard deviation <span class="math notranslate nohighlight">\( \sigma \)</span>. The shape of the distribution is symmetric around the mean, with most values clustering near the mean and fewer values farther away.</p>
 </section>
 <section id="key-properties">
 <h3>Key Properties:<a class="headerlink" href="#key-properties" title="Link to this heading">#</a></h3>
@@ -831,6 +938,8 @@ For an unfair coin with <span class="math notranslate nohighlight">\( p = 0.7 \)
 <li><p><span class="math notranslate nohighlight">\( \sigma \)</span> is the standard deviation.</p></li>
 </ul>
 <p>By converting any normal distribution to the standard normal distribution using the z-score, we can use z-tables (or standard normal distribution tables) to find probabilities associated with a given value.</p>
+<p><img alt="Standardised Normal Distribution" src="_images/standardnormal.png" /></p>
+<p><em>The standard normal distribution is a bell-shaped curve symmetric about the mean (<span class="math notranslate nohighlight">\( \mu = 0 \)</span>) with a standard deviation (<span class="math notranslate nohighlight">\( \sigma = 1 \)</span>). It is a fundamental model in statistics, representing data that is normally distributed.</em></p>
 </section>
 <section id="example-heights-of-people">
 <h3>Example: Heights of People<a class="headerlink" href="#example-heights-of-people" title="Link to this heading">#</a></h3>
@@ -846,7 +955,7 @@ For an unfair coin with <span class="math notranslate nohighlight">\( p = 0.7 \)
 <section id="properties-of-the-normal-distribution">
 <h3>Properties of the Normal Distribution<a class="headerlink" href="#properties-of-the-normal-distribution" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Mean, Median, and Mode: In a normal distribution, the mean, median, and mode all coincide at the center of the distribution.</p></li>
+<li><p>Mean, Median, and Mode: In a normal distribution, the mean, median, and mode all coincide at the centre of the distribution.</p></li>
 <li><p>68-95-99.7 Rule: This rule, also known as the empirical rule, states the percentage of data that lies within 1, 2, and 3 standard deviations of the mean, respectively.</p></li>
 <li><p>Skewness and Kurtosis: The normal distribution has skewness = 0 (it is symmetric), and kurtosis = 3 (it has a moderate peak).</p></li>
 </ul>
@@ -860,15 +969,24 @@ For an unfair coin with <span class="math notranslate nohighlight">\( p = 0.7 \)
 <li><p>Finance: Stock returns are often assumed to follow a normal distribution for risk assessment and pricing options.</p></li>
 </ul>
 </section>
-<section id="id1">
-<h3>Normal Approximation to the Binomial Distribution<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="normal-approximation-to-the-binomial-distribution">
+<h3>Normal Approximation to the Binomial Distribution<a class="headerlink" href="#normal-approximation-to-the-binomial-distribution" title="Link to this heading">#</a></h3>
 <p>When the number of trials <span class="math notranslate nohighlight">\( n \)</span> is large and the probability of success <span class="math notranslate nohighlight">\( p \)</span> is not too close to 0 or 1, the binomial distribution can be approximated by a normal distribution. The normal approximation is valid when both <span class="math notranslate nohighlight">\( np \)</span> and <span class="math notranslate nohighlight">\( n(1 - p) \)</span> are greater than 5.</p>
 <p>The mean and variance of the approximating normal distribution are:</p>
 <div class="math notranslate nohighlight">
 \[\mu = np, \quad \sigma^2 = np(1 - p)\]</div>
 <p>For large <span class="math notranslate nohighlight">\( n \)</span>, this approximation makes it easier to compute binomial probabilities using the normal distribution.</p>
 </section>
+<section id="empirical-rules-for-normal-distributions">
+<h3>Empirical Rules For Normal Distributions<a class="headerlink" href="#empirical-rules-for-normal-distributions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( 68\% \)</span> of data falls within 1 standard deviation (<span class="math notranslate nohighlight">\( \mu \pm \sigma \)</span>).</p></li>
+<li><p><span class="math notranslate nohighlight">\( 95\% \)</span> of data falls within 2 standard deviations (<span class="math notranslate nohighlight">\( \mu \pm 2\sigma \)</span>).</p></li>
+<li><p><span class="math notranslate nohighlight">\( 99.7\% \)</span> of data falls within 3 standard deviations (<span class="math notranslate nohighlight">\( \mu \pm 3\sigma \)</span>).</p></li>
+</ul>
 </section>
+</section>
+<hr class="docutils" />
 <section id="central-limit-theorem-clt">
 <h2>Central Limit Theorem (CLT)<a class="headerlink" href="#central-limit-theorem-clt" title="Link to this heading">#</a></h2>
 <section id="overview">
@@ -928,8 +1046,8 @@ For an unfair coin with <span class="math notranslate nohighlight">\( p = 0.7 \)
 <hr class="docutils" />
 <section id="clt-with-binomial-and-poisson-distributions">
 <h3>CLT with Binomial and Poisson Distributions<a class="headerlink" href="#clt-with-binomial-and-poisson-distributions" title="Link to this heading">#</a></h3>
-<section id="binomial-distribution-example">
-<h4>Binomial Distribution Example<a class="headerlink" href="#binomial-distribution-example" title="Link to this heading">#</a></h4>
+<section id="id1">
+<h4>Normal Approximation to the Binomial Distribution<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <p>Suppose we have a binomial distribution <span class="math notranslate nohighlight">\( X \sim \text{Binomial}(n, p) \)</span>, where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( n \)</span> is the number of trials,</p></li>
@@ -940,6 +1058,12 @@ For an unfair coin with <span class="math notranslate nohighlight">\( p = 0.7 \)
 <li><p><strong>Mean</strong> <span class="math notranslate nohighlight">\( \mu = np \)</span>,</p></li>
 <li><p><strong>Variance</strong> <span class="math notranslate nohighlight">\( \sigma^2 = np(1 - p) \)</span>.</p></li>
 </ul>
+<p>For large values of <span class="math notranslate nohighlight">\( n \)</span>, the binomial distribution can be approximated by a normal distribution with the same mean and variance:</p>
+<div class="math notranslate nohighlight">
+\[N(\mu, \sigma^2) \quad \text{where} \quad \mu = n \cdot p \quad \text{and} \quad \sigma^2 = n \cdot p \cdot (1 - p)\]</div>
+<p>This approximation becomes more accurate as <span class="math notranslate nohighlight">\( n \)</span> increases, especially when both <span class="math notranslate nohighlight">\( n \cdot p \)</span> and <span class="math notranslate nohighlight">\( n \cdot (1 - p) \)</span> are greater than 5.</p>
+<p><img alt="Binomial Distribution Approximating Normal Distribution" src="_images/binomialCLT.png" /></p>
+<p><em>This figure demonstrates how the binomial distribution (<span class="math notranslate nohighlight">\( n = 10, 30, 50, 100 \)</span>, <span class="math notranslate nohighlight">\( p = 0.5 \)</span>) converges to a normal distribution as <span class="math notranslate nohighlight">\( n \)</span> increases. Each subplot shows the binomial probabilities as points, overlaid with the corresponding fitted normal distribution. The captions in the top-right corner provide the mean (<span class="math notranslate nohighlight">\( \mu = np \)</span>) and standard deviation (<span class="math notranslate nohighlight">\( \sigma = \sqrt{np(1-p)} \)</span>) of the fitted normal distribution.</em></p>
 </section>
 <section id="applying-the-clt-to-a-binomial-distribution">
 <h4>Applying the CLT to a Binomial Distribution<a class="headerlink" href="#applying-the-clt-to-a-binomial-distribution" title="Link to this heading">#</a></h4>
@@ -953,8 +1077,8 @@ If we toss a coin 100 times (<span class="math notranslate nohighlight">\( n = 1
 \[X \sim \mathcal{N}(50, 25)\]</div>
 <p>Thus, we can say <span class="math notranslate nohighlight">\( X \approx \mathcal{N}(50, 25) \)</span> or <span class="math notranslate nohighlight">\( X \approx \mathcal{N}(50, 5^2) \)</span>, where the standard deviation is <span class="math notranslate nohighlight">\( 5 \)</span>.</p>
 </section>
-<section id="poisson-distribution-example">
-<h4>Poisson Distribution Example<a class="headerlink" href="#poisson-distribution-example" title="Link to this heading">#</a></h4>
+<section id="normal-approximation-to-the-poisson-distribution">
+<h4>Normal Approximation to the Poisson Distribution<a class="headerlink" href="#normal-approximation-to-the-poisson-distribution" title="Link to this heading">#</a></h4>
 <p>Suppose we have a Poisson distribution <span class="math notranslate nohighlight">\( X \sim \text{Poisson}(\lambda) \)</span>, where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( \lambda \)</span> is the average rate of occurrences over a fixed interval.</p></li>
@@ -964,6 +1088,14 @@ If we toss a coin 100 times (<span class="math notranslate nohighlight">\( n = 1
 <li><p><strong>Mean</strong> <span class="math notranslate nohighlight">\( \mu = \lambda \)</span>,</p></li>
 <li><p><strong>Variance</strong> <span class="math notranslate nohighlight">\( \sigma^2 = \lambda \)</span>.</p></li>
 </ul>
+<p>For large values of <span class="math notranslate nohighlight">\( \lambda \)</span>, the Poisson distribution can be approximated by a normal distribution with mean <span class="math notranslate nohighlight">\( \lambda \)</span> and variance <span class="math notranslate nohighlight">\( \lambda \)</span>. This approximation is most accurate when <span class="math notranslate nohighlight">\( \lambda \)</span> is large (typically when <span class="math notranslate nohighlight">\( \lambda &gt; 10 \)</span>).</p>
+<p>The approximate normal distribution is:</p>
+<div class="math notranslate nohighlight">
+\[N(\mu = \lambda, \sigma^2 = \lambda)\]</div>
+<p>This allows the use of normal distribution tools (e.g., z-scores) to approximate Poisson probabilities when <span class="math notranslate nohighlight">\( \lambda \)</span> is large.</p>
+<hr class="docutils" />
+<p><img alt="Poisson Distribution Approximating Normal Distribution" src="_images/poissonCLT.png" /></p>
+<p><em>This figure illustrates how the Poisson distribution (<span class="math notranslate nohighlight">\( \lambda = 5, 10, 20, 50 \)</span>) approaches a normal distribution as <span class="math notranslate nohighlight">\( \lambda \)</span> increases. Each subplot shows the Poisson probabilities as points, overlaid with the corresponding fitted normal distribution. The captions in the top-right corner indicate the mean (<span class="math notranslate nohighlight">\( \mu = \lambda \)</span>) and standard deviation (<span class="math notranslate nohighlight">\( \sigma = \sqrt{\lambda} \)</span>) of the fitted normal distribution.</em></p>
 </section>
 <section id="applying-the-clt-to-a-poisson-distribution">
 <h4>Applying the CLT to a Poisson Distribution<a class="headerlink" href="#applying-the-clt-to-a-poisson-distribution" title="Link to this heading">#</a></h4>
@@ -1039,11 +1171,15 @@ Suppose a factory machine has a malfunction rate of 10 malfunctions per hour (<s
 </li>
 </ul>
 <p>The relationship between Type I and Type II errors is that reducing the probability of one type of error increases the probability of the other. The power of a test, <span class="math notranslate nohighlight">\( 1 - \beta \)</span>, is the probability of correctly rejecting a false null hypothesis.</p>
+<hr class="docutils" />
+<p><img alt="Hypothesis Testing Outcomes" src="_images/hypothesistest.png" /></p>
+<p><em>This table illustrates the possible outcomes in hypothesis testing. This framework helps clarify the trade-offs in hypothesis testing, especially when interpreting statistical results.</em></p>
 </section>
+<hr class="docutils" />
 <section id="examples-of-hypothesis-testing">
 <h3>Examples of Hypothesis Testing<a class="headerlink" href="#examples-of-hypothesis-testing" title="Link to this heading">#</a></h3>
-<section id="id2">
-<h4>Binomial Distribution Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<section id="binomial-distribution-example">
+<h4>Binomial Distribution Example<a class="headerlink" href="#binomial-distribution-example" title="Link to this heading">#</a></h4>
 <p><em>Scenario:</em>
 Suppose a factory claims that 90% of its light bulbs pass the quality control test. You take a random sample of 100 bulbs and find that 85 of them pass. You want to test if the true proportion of passing bulbs is different from 90%.</p>
 <p><em>Hypotheses:</em></p>
@@ -1069,8 +1205,8 @@ Suppose a factory claims that 90% of its light bulbs pass the quality control te
 <p>Now, check the critical value for a two-tailed test at <span class="math notranslate nohighlight">\( \alpha = 0.05 \)</span>. The critical z-values are <span class="math notranslate nohighlight">\( \pm 1.96 \)</span>. Since <span class="math notranslate nohighlight">\( -1.67 \)</span> is between <span class="math notranslate nohighlight">\( -1.96 \)</span> and <span class="math notranslate nohighlight">\( 1.96 \)</span>, we fail to reject the null hypothesis. The proportion of passing bulbs is not significantly different from 90%.</p>
 </section>
 </section>
-<section id="id3">
-<h3>Poisson Distribution Example<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="poisson-distribution-example">
+<h3>Poisson Distribution Example<a class="headerlink" href="#poisson-distribution-example" title="Link to this heading">#</a></h3>
 <p><em>Scenario:</em>
 A call center receives an average of 10 calls per hour. You observe 15 calls in one hour and want to test if the rate of calls has increased.</p>
 <ul class="simple">
@@ -1116,6 +1252,10 @@ The test statistic for a sample mean is the z-score:</p>
 <section id="power-of-a-test">
 <h3>Power of a Test<a class="headerlink" href="#power-of-a-test" title="Link to this heading">#</a></h3>
 <p>The power of a hypothesis test is the probability of correctly rejecting the null hypothesis when it is false. It is defined as <span class="math notranslate nohighlight">\( 1 - \beta \)</span>, where <span class="math notranslate nohighlight">\( \beta \)</span> is the probability of making a Type II error. A high power is desirable in hypothesis testing.</p>
+<hr class="docutils" />
+<p><img alt="Hypothesis Testing Outcomes" src="_images/type12.png" /></p>
+<p><em>This figure illustrates the concepts of Type I and Type II errors in hypothesis testing.  The null hypothesis distribution is shown in blue, representing the distribution under ( H_0 ). An alternative hypothesis distribution is shown in green, representing the distribution under ( H_a ).  The type I error (( \alpha )) is the red-shaded area under the ( H_0 ) curve, representing the probability of rejecting ( H_0 ) when it is true.  The type II error (( \beta )) is the orange-shaded area under the ( H_a ) curve, representing the probability of failing to reject ( H_0 ) when ( H_a ) is true. The critical value is marked with a dashed vertical line, separating the rejection region under ( H_0 ).  This visualization highlights the trade-offs between Type I and Type II errors and the role of the critical value in hypothesis testing.</em></p>
+<hr class="docutils" />
 <p>Factors that influence the power of a test include:</p>
 <ul class="simple">
 <li><p>Sample size: Larger samples generally lead to more powerful tests.</p></li>
@@ -1190,6 +1330,23 @@ The test statistic for a sample mean is the z-score:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measures-used-in-statistics">Measures used in Statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-arithmetic-average">1. Mean (Arithmetic Average)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median">2. Median</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode">3. Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-expected-value">Expectation (Expected Value)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-property">Linear Property</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-and-standard-deviation">Variance and Standard Deviation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variance">Variance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-deviation">Standard Deviation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">Uniform Distribution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-uniform-distribution">Discrete Uniform Distribution</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-rolling-a-fair-six-sided-die">Example: Rolling a Fair Six-Sided Die</a></li>
@@ -1205,14 +1362,12 @@ The test statistic for a sample mean is the z-score:</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution">Binomial Distribution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution-basics">Binomial Distribution Basics</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-flipping-a-fair-coin">Example 1: Flipping a Fair Coin</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-flipping-an-unfair-coin">Example 2: Flipping an Unfair Coin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution-basics">Binomial Distribution Basics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-flipping-a-fair-coin">Example: Flipping a Fair Coin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-rolling-a-fair-die">Example: Rolling a Fair Die</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-flipping-an-unfair-coin">Example: Flipping an Unfair Coin</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties-of-the-binomial-distribution">Key Properties of the Binomial Distribution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-the-binomial-distribution">Applications of the Binomial Distribution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-approximation-to-the-binomial-distribution">Normal Approximation to the Binomial Distribution</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-distribution">Poisson Distribution</a><ul class="nav section-nav flex-column">
@@ -1221,8 +1376,6 @@ The test statistic for a sample mean is the z-score:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-number-of-customer-arrivals-at-a-store">Example: Number of Customer Arrivals at a Store</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-exactly-3-customers-arriving-in-one-hour">Probability of Exactly 3 Customers Arriving in One Hour:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-the-poisson-distribution">Applications of the Poisson Distribution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-the-exponential-distribution">Relation to the Exponential Distribution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-approximation-to-the-poisson-distribution">Normal Approximation to the Poisson Distribution</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-distribution">Normal Distribution</a><ul class="nav section-nav flex-column">
@@ -1232,7 +1385,8 @@ The test statistic for a sample mean is the z-score:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-heights-of-people">Example: Heights of People</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-normal-distribution">Properties of the Normal Distribution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-the-normal-distribution">Applications of the Normal Distribution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Normal Approximation to the Binomial Distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-approximation-to-the-binomial-distribution">Normal Approximation to the Binomial Distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-rules-for-normal-distributions">Empirical Rules For Normal Distributions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-limit-theorem-clt">Central Limit Theorem (CLT)</a><ul class="nav section-nav flex-column">
@@ -1242,9 +1396,9 @@ The test statistic for a sample mean is the z-score:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-considerations">Practical Considerations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clt-with-binomial-and-poisson-distributions">CLT with Binomial and Poisson Distributions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution-example">Binomial Distribution Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Normal Approximation to the Binomial Distribution</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-the-clt-to-a-binomial-distribution">Applying the CLT to a Binomial Distribution</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-distribution-example">Poisson Distribution Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-approximation-to-the-poisson-distribution">Normal Approximation to the Poisson Distribution</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-the-clt-to-a-poisson-distribution">Applying the CLT to a Poisson Distribution</a></li>
 </ul>
 </li>
@@ -1255,10 +1409,10 @@ The test statistic for a sample mean is the z-score:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-in-hypothesis-testing">Steps in Hypothesis Testing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-i-and-type-ii-errors">Type I and Type II Errors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-hypothesis-testing">Examples of Hypothesis Testing</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Binomial Distribution Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-distribution-example">Binomial Distribution Example</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Poisson Distribution Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-distribution-example">Poisson Distribution Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-distribution-example">Normal Distribution Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-test">Power of a Test</a></li>
 </ul>

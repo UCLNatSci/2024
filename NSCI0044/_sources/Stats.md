@@ -1,13 +1,95 @@
 # Statistics and Probability
 
+## Measures used in Statistics
+
+### 1. Mean (Arithmetic Average)
+```{math}
+\text{Mean} = \frac{\sum_{i=1}^n x_i}{n}
+```
+- Represents the average of all data points.
+- Sensitive to outliers.
+
+### 2. Median
+- The middle value of the dataset when sorted in ascending order.
+- If the number of data points is even, the median is the average of the two middle values.
+- Robust to outliers.
+
+### 3. Mode
+- The most frequently occurring value in the dataset.
+- A dataset can have one mode (unimodal), more than one mode (multimodal), or no mode.
+
+---
+
+### Expectation (Expected Value)
+
+#### Definition
+- For a discrete random variable $ X $:
+  ```{math}
+  E[X] = \sum_{x} x \cdot P(X = x)
+  ```
+- For a continuous random variable:
+  ```{math}
+  E[X] = \int_{-\infty}^\infty x \cdot f(x) \, \mathrm{d}x
+  ```
+- Represents the long-run average value of $ X $ over many trials.
+
+#### Linear Property
+If $ a, b $ are constants and $ X, Y $ are random variables:
+```{math}
+E[aX + bY] = aE[X] + bE[Y]
+```
+
+---
+
+### Variance and Standard Deviation
+
+#### Variance
+- Measures the spread of the data around the mean.
+```{math}
+\text{Var}(X) = E\left[(X - \mu)^2\right] = E[X^2] - (E[X])^2
+```
+- For a dataset:
+  ```{math}
+  \text{Var}(X) = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n} \quad \text{(population variance)}
+  ```
+  ```{math}
+  \text{Var}(X) = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n-1} \quad \text{(sample variance)}
+  ```
+
+#### Standard Deviation
+- The square root of the variance.
+```{math}
+\sigma = \sqrt{\text{Var}(X)}
+```
+- Provides a measure of the typical deviation of data points from the mean in the same units as the data.
+
+---
+
+
+### Applications
+
+- **Mean**: Used in averaging test scores, economic indicators, etc.
+- **Median**: Useful when data is skewed, e.g., income distribution.
+- **Mode**: Helps identify common trends, e.g., most popular product size.
+- **Variance and Standard Deviation**: Key in finance (risk analysis), quality control, and research to measure variability.
+
+
+
 ## Uniform Distribution
 
 ### Discrete Uniform Distribution
 
 A discrete uniform distribution is a type of probability distribution where a finite set of outcomes are equally likely. For example, when rolling a fair die, each of the six outcomes is equally probable.
 
+---
+
+
 #### Example: Rolling a Fair Six-Sided Die
 Let $ X $ be the random variable representing the outcome of rolling a fair six-sided die. The outcomes are $ x = 1, 2, 3, 4, 5, 6 $, and each outcome is equally likely.
+
+![Discrete Uniform Distribution (Fair Dice)](discreteuniform.png)
+
+*A discrete uniform distribution represents equally likely outcomes. For a fair six-sided die, each face has an equal probability of $ \frac{1}{6} $. This is a basic example of a discrete uniform probability distribution.*
 
 - Probability Mass Function (PMF):
   ```{math}
@@ -46,6 +128,14 @@ A continuous uniform distribution is a probability distribution where all values
 
 #### Example: A Random Variable Between 0 and 1
 Let $ X $ be a random variable uniformly distributed between 0 and 1. The probability density function (PDF) for this distribution is defined over the interval $ [0, 1] $.
+
+
+![Continuous Uniform Distribution](continuousuniform.png)
+
+*A continuous uniform distribution models a scenario where any value within a range is equally likely. The probability density function is constant over the interval $[0, L]$, and zero elsewhere. In this plot, $ L = 10 $.*
+
+---
+
 
 - Probability Density Function (PDF):
   The PDF for a continuous uniform distribution on $ [a, b] $ is:
@@ -115,10 +205,11 @@ Let $ X $ be a random variable uniformly distributed between 0 and 1. The probab
   
 - Continuous Uniform: Used in modeling situations where every outcome in a continuous interval is equally likely, such as the selection of a random time between 0 and 1 hour or generating random numbers in a specified range for simulations.
 
-
 ## Binomial Distribution
 
 The binomial distribution describes the number of successes in a fixed number of independent trials of a binary (yes/no, success/failure) experiment. It is often used to model situations where there are two possible outcomes for each trial, such as flipping a coin.
+
+---
 
 ### Binomial Distribution Basics
 
@@ -137,99 +228,108 @@ where:
 - $ n $ is the number of trials
 - $ k $ is the number of successes
 
-#### Example 1: Flipping a Fair Coin
+---
+
+### Example: Flipping a Fair Coin
 
 Consider flipping a fair coin $ n = 10 $ times, and we want to calculate the probability of getting exactly $ k $ heads (successes) in those 10 flips. In this case, the probability of getting heads (success) on any single flip is $ p = 0.5 $.
 
-*Probability of Getting Exactly 5 Heads:*
-We can calculate the probability of getting exactly 5 heads out of 10 flips using the binomial formula:
-```{math}
-P(X = 5) = \binom{10}{5} (0.5)^5 (0.5)^{10-5} = \binom{10}{5} (0.5)^{10}
-```
-First, calculate the binomial coefficient:
-```{math}
-\binom{10}{5} = \frac{10!}{5!(10-5)!} = 252
-```
-Then, calculate the probability:
-```{math}
-P(X = 5) = 252 \times (0.5)^{10} = 252 \times \frac{1}{1024} \approx 0.2461
-```
-So, the probability of getting exactly 5 heads in 10 flips of a fair coin is approximately 0.2461.
+- **Probability of Getting Exactly 5 Heads**:
+  ```{math}
+  P(X = 5) = \binom{10}{5} (0.5)^5 (0.5)^{10-5} = \binom{10}{5} (0.5)^{10}
+  ```
+  First, calculate the binomial coefficient:
+  ```{math}
+  \binom{10}{5} = \frac{10!}{5!(10-5)!} = 252
+  ```
+  Then, calculate the probability:
+  ```{math}
+  P(X = 5) = 252 \times (0.5)^{10} = 252 \times \frac{1}{1024} \approx 0.2461
+  ```
+  The probability of getting exactly 5 heads is approximately 0.2461.
 
-*Expected Value and Variance:*
-For a binomial distribution, the expected value $ E[X] $ and variance $ \text{Var}(X) $ are given by:
-```{math}
-E[X] = n \cdot p
-```
-```{math}
-\text{Var}(X) = n \cdot p \cdot (1 - p)
-```
-For a fair coin ($ p = 0.5 $) and $ n = 10 $ flips:
-```{math}
-E[X] = 10 \cdot 0.5 = 5
-```
-```{math}
-\text{Var}(X) = 10 \cdot 0.5 \cdot 0.5 = 2.5
-```
-The expected number of heads is 5, and the variance is 2.5.
+---
 
-### Example 2: Flipping an Unfair Coin
+### Example: Rolling a Fair Die
+
+Consider rolling a fair die $ n = 10 $ times. We want to calculate the probability of rolling a 6 exactly $ k = 2 $ times. In this case, the probability of rolling a 6 (success) on any single roll is $ p = \frac{1}{6} $.
+
+![Binomial Distribution](binomial.png)
+
+*The binomial distribution models the probability of a specific number of successes in $ n $ independent trials, each with success probability $ p $. This example shows $ n = 10 $ trials with $ p = 0.5 $.*
+
+
+- **Probability of Rolling a 6 Exactly Twice**:
+  ```{math}
+  P(X = 2) = \binom{10}{2} \left(\frac{1}{6}\right)^2 \left(\frac{5}{6}\right)^{8}
+  ```
+  First, calculate the binomial coefficient:
+  ```{math}
+  \binom{10}{2} = \frac{10!}{2!(10-2)!} = 45
+  ```
+  Then, calculate the probability:
+  ```{math}
+  P(X = 2) = 45 \times \left(\frac{1}{6}\right)^2 \times \left(\frac{5}{6}\right)^8 \approx 0.2907
+  ```
+  The probability of rolling a 6 exactly 2 times is approximately 0.2907.
+
+---
+
+### Example: Flipping an Unfair Coin
 
 Now, consider flipping an unfair coin $ n = 10 $ times, where the probability of getting heads (success) is $ p = 0.7 $ and the probability of getting tails (failure) is $ 1 - p = 0.3 $.
 
-*Probability of Getting Exactly 7 Heads:*
-We can calculate the probability of getting exactly 7 heads out of 10 flips using the binomial formula:
-```{math}
-P(X = 7) = \binom{10}{7} (0.7)^7 (0.3)^{10-7}
-```
-First, calculate the binomial coefficient:
-```{math}
-\binom{10}{7} = \frac{10!}{7!(10-7)!} = 120
-```
-Then, calculate the probability:
-```{math}
-P(X = 7) = 120 \times (0.7)^7 \times (0.3)^3 \approx 120 \times 0.0823543 \times 0.027 = 0.267
-```
-So, the probability of getting exactly 7 heads in 10 flips of an unfair coin is approximately 0.267.
+- **Probability of Getting Exactly 7 Heads**:
+  ```{math}
+  P(X = 7) = \binom{10}{7} (0.7)^7 (0.3)^3
+  ```
+  First, calculate the binomial coefficient:
+  ```{math}
+  \binom{10}{7} = \frac{10!}{7!(10-7)!} = 120
+  ```
+  Then, calculate the probability:
+  ```{math}
+  P(X = 7) = 120 \times (0.7)^7 \times (0.3)^3 \approx 0.267
+  ```
+  The probability of getting exactly 7 heads is approximately 0.267.
 
-*Expected Value and Variance:*
-For an unfair coin with $ p = 0.7 $ and $ n = 10 $ flips:
-```{math}
-E[X] = 10 \cdot 0.7 = 7
-```
-```{math}
-\text{Var}(X) = 10 \cdot 0.7 \cdot 0.3 = 2.1
-```
-The expected number of heads is 7, and the variance is 2.1.
+---
+
+
+![Binomial Distributions: Fair vs Unfair Dice](fairunfaircoin.png)
+
+*This plot compares the binomial distributions for a fair die ($ p = \frac{1}{6} $) and an unfair die ($ p = \frac{1}{3} $) over $ n = 10 $ trials. The x-axis represents the number of times a 6 is rolled (successes), and the y-axis shows the corresponding probabilities. The fair die produces a flatter distribution due to the lower probability of rolling a 6, while the unfair die results in a more concentrated distribution around higher values of successes.*
+
+---
+
 
 ### Key Properties of the Binomial Distribution
-- Independence: The trials are independent, meaning the outcome of one flip does not affect the others.
-- Fixed Number of Trials: The number of trials $ n $ is fixed in advance.
-- Binary Outcomes: Each trial has two possible outcomes: success (e.g., heads) or failure (e.g., tails).
-- Constant Probability: The probability of success $ p $ remains constant across all trials.
+
+- **Independence**: The trials are independent, meaning the outcome of one trial does not affect the others.
+- **Fixed Number of Trials**: The number of trials $ n $ is fixed in advance.
+- **Binary Outcomes**: Each trial has two possible outcomes: success (e.g., heads) or failure (e.g., tails).
+- **Constant Probability**: The probability of success $ p $ remains constant across all trials.
+
+---
 
 ### Applications of the Binomial Distribution
-- Coin Flips: As shown in the examples, the binomial distribution is commonly used for modeling the number of heads in a series of coin flips.
-- Quality Control: It can be used in quality control for determining the number of defective items in a batch.
-- Survey Sampling: The binomial distribution is useful when analyzing the number of people who respond in a certain way in a survey, given a fixed number of respondents.
 
-### Normal Approximation to the Binomial Distribution
-For large values of $ n $, the binomial distribution can be approximated by a normal distribution with the same mean and variance:
-```{math}
-N(\mu, \sigma^2) \quad \text{where} \quad \mu = n \cdot p \quad \text{and} \quad \sigma^2 = n \cdot p \cdot (1 - p)
-```
-This approximation becomes more accurate as $ n $ increases, especially when both $ n \cdot p $ and $ n \cdot (1 - p) $ are greater than 5.
+- **Coin Flips**: Modeling the number of heads in a series of coin flips.
+- **Rolling Dice**: Calculating probabilities of specific outcomes in repeated rolls.
+- **Quality Control**: Determining the number of defective items in a batch.
+- **Survey Sampling**: Analyzing the number of respondents who respond in a certain way in a survey.
 
+---
 
 ## Poisson Distribution
 
 The Poisson distribution is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space. These events must occur with a known constant mean rate and independently of the time since the last event.
 
-It is often used to model the number of events that happen in a fixed interval (e.g., number of phone calls at a call center in an hour, number of accidents at an intersection in a day, etc.).
+It is often used to model the number of events that happen in a fixed interval (e.g., number of phone calls at a call centre in an hour, number of accidents at an intersection in a day, etc.).
 
 ### Poisson Distribution Basics
 
-The Poisson distribution is characterized by a single parameter $ \lambda $, which represents the average number of events in the given interval. The probability mass function (PMF) for the Poisson distribution is:
+The Poisson distribution is characterised by a single parameter $ \lambda $, which represents the average number of events in the given interval. The probability mass function (PMF) for the Poisson distribution is:
 
 ```{math}
 P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}, \quad k = 0, 1, 2, \dots
@@ -259,7 +359,12 @@ Where:
 
 ### Example: Number of Customer Arrivals at a Store
 
-Let’s say the average number of customers arriving at a store per hour is 5. This can be modeled as a Poisson distribution with $ \lambda = 5 $ for a one-hour period.
+Let’s say the average number of customers arriving at a store per hour is 5. This can be modelled as a Poisson distribution with $ \lambda = 5 $ for a one-hour period.
+
+![Poisson Distribution](poisson.png)
+
+*The Poisson distribution is used to model the number of events occurring in a fixed interval of time or space, given a constant average rate $ \lambda $. This plot demonstrates the probabilities for $ \lambda = 5 $.*
+
 
 ### Probability of Exactly 3 Customers Arriving in One Hour:
 
@@ -296,38 +401,18 @@ So, the probability that no customers arrive in one hour is approximately 0.0067
 
 ### Applications of the Poisson Distribution
 
-The Poisson distribution is widely used in various fields for modeling count-based data, such as:
-- Customer service: Modeling the number of customer calls, complaints, or arrivals.
-- Healthcare: Modeling the number of emergency room visits, patient arrivals, or disease occurrences in a population over a certain period.
-- Traffic flow: Modeling the number of cars passing through a toll booth or traffic light within a fixed time period.
-- Queuing theory: Modeling the number of customers arriving at a service point in a given time period.
+The Poisson distribution is widely used in various fields for modelling count-based data, such as:
+- Customer service: Modelling the number of customer calls, complaints, or arrivals.
+- Healthcare: Modelling the number of emergency room visits, patient arrivals, or disease occurrences in a population over a certain period.
+- Traffic flow: Modelling the number of cars passing through a toll booth or traffic light within a fixed time period.
+- Queuing theory: Modelling the number of customers arriving at a service point in a given time period.
 
-### Relation to the Exponential Distribution
+---
 
-The Poisson distribution is related to the exponential distribution. The time between events in a Poisson process follows an exponential distribution with rate parameter $ \lambda $. The exponential distribution is used to model the time between successive events in a Poisson process.
-
-The cumulative distribution function (CDF) of the exponential distribution is:
-
-```{math}
-F(t) = 1 - e^{-\lambda t}
-```
-
-Where $ t $ is the time between events and $ \lambda $ is the rate of events.
-
-### Normal Approximation to the Poisson Distribution
-
-For large values of $ \lambda $, the Poisson distribution can be approximated by a normal distribution with mean $ \lambda $ and variance $ \lambda $. This approximation is most accurate when $ \lambda $ is large (typically when $ \lambda > 10 $).
-
-The approximate normal distribution is:
-```{math}
-N(\mu = \lambda, \sigma^2 = \lambda)
-```
-
-This allows the use of normal distribution tools (e.g., z-scores) to approximate Poisson probabilities when $ \lambda $ is large.
 
 ## Normal Distribution
 
-The normal distribution, also known as the Gaussian distribution, is one of the most widely used probability distributions in statistics. It is used to model a wide range of natural phenomena, such as heights, test scores, and measurement errors. The normal distribution is characterized by its bell-shaped curve, which is symmetric about the mean.
+The normal distribution, also known as the Gaussian distribution, is one of the most widely used probability distributions in statistics. It is used to model a wide range of natural phenomena, such as heights, test scores, and measurement errors. The normal distribution is characterised by its bell-shaped curve, which is symmetric about the mean.
 
 ### Normal Distribution Basics
 
@@ -339,13 +424,13 @@ f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x - \mu)^2}{2 \sigma^2}}
 
 Where:
 - $ x $ is the variable,
-- $ \mu $ is the mean (center of the distribution),
+- $ \mu $ is the mean (centre of the distribution),
 - $ \sigma^2 $ is the variance,
 - $ \sigma $ is the standard deviation,
 - $ e $ is Euler's number (approximately 2.71828),
 - $ \pi $ is approximately 3.14159.
 
-The normal distribution is fully characterized by its mean $ \mu $ and standard deviation $ \sigma $. The shape of the distribution is symmetric around the mean, with most values clustering near the mean and fewer values farther away.
+The normal distribution is fully characterised by its mean $ \mu $ and standard deviation $ \sigma $. The shape of the distribution is symmetric around the mean, with most values clustering near the mean and fewer values farther away.
 
 ### Key Properties:
 - Symmetry: The normal distribution is symmetric around the mean, meaning the left half of the distribution is a mirror image of the right half.
@@ -377,6 +462,10 @@ Where:
 
 By converting any normal distribution to the standard normal distribution using the z-score, we can use z-tables (or standard normal distribution tables) to find probabilities associated with a given value.
 
+![Standardised Normal Distribution](standardnormal.png)
+
+*The standard normal distribution is a bell-shaped curve symmetric about the mean ($ \mu = 0 $) with a standard deviation ($ \sigma = 1 $). It is a fundamental model in statistics, representing data that is normally distributed.*
+
 ###  Example: Heights of People
 
 Suppose the heights of adult women in the United States are normally distributed with a mean height of $ \mu = 64 $ inches and a standard deviation of $ \sigma = 3 $ inches. Let’s calculate the probability that a randomly selected woman is taller than 68 inches.
@@ -396,7 +485,7 @@ Thus, the probability that a randomly selected woman is taller than 68 inches is
 
 ###  Properties of the Normal Distribution
 
-- Mean, Median, and Mode: In a normal distribution, the mean, median, and mode all coincide at the center of the distribution.
+- Mean, Median, and Mode: In a normal distribution, the mean, median, and mode all coincide at the centre of the distribution.
 - 68-95-99.7 Rule: This rule, also known as the empirical rule, states the percentage of data that lies within 1, 2, and 3 standard deviations of the mean, respectively.
 - Skewness and Kurtosis: The normal distribution has skewness = 0 (it is symmetric), and kurtosis = 3 (it has a moderate peak).
 
@@ -417,6 +506,14 @@ The mean and variance of the approximating normal distribution are:
 ```
 
 For large $ n $, this approximation makes it easier to compute binomial probabilities using the normal distribution.
+
+
+### Empirical Rules For Normal Distributions
+- $ 68\% $ of data falls within 1 standard deviation ($ \mu \pm \sigma $).
+- $ 95\% $ of data falls within 2 standard deviations ($ \mu \pm 2\sigma $).
+- $ 99.7\% $ of data falls within 3 standard deviations ($ \mu \pm 3\sigma $).
+
+---
 
 ## Central Limit Theorem (CLT)
 
@@ -454,7 +551,7 @@ The CLT is fundamental in probability and statistics as it bridges the gap betwe
 
 ### CLT with Binomial and Poisson Distributions
 
-#### Binomial Distribution Example
+#### Normal Approximation to the Binomial Distribution
 
 Suppose we have a binomial distribution $ X \sim \text{Binomial}(n, p) $, where:
 - $ n $ is the number of trials,
@@ -463,6 +560,17 @@ Suppose we have a binomial distribution $ X \sim \text{Binomial}(n, p) $, where:
 The binomial distribution has:
 - **Mean** $ \mu = np $,
 - **Variance** $ \sigma^2 = np(1 - p) $.
+
+For large values of $ n $, the binomial distribution can be approximated by a normal distribution with the same mean and variance:
+```{math}
+N(\mu, \sigma^2) \quad \text{where} \quad \mu = n \cdot p \quad \text{and} \quad \sigma^2 = n \cdot p \cdot (1 - p)
+```
+This approximation becomes more accurate as $ n $ increases, especially when both $ n \cdot p $ and $ n \cdot (1 - p) $ are greater than 5.
+
+![Binomial Distribution Approximating Normal Distribution](binomialCLT.png)
+
+*This figure demonstrates how the binomial distribution ($ n = 10, 30, 50, 100 $, $ p = 0.5 $) converges to a normal distribution as $ n $ increases. Each subplot shows the binomial probabilities as points, overlaid with the corresponding fitted normal distribution. The captions in the top-right corner provide the mean ($ \mu = np $) and standard deviation ($ \sigma = \sqrt{np(1-p)} $) of the fitted normal distribution.*
+
 
 #### Applying the CLT to a Binomial Distribution
 As the number of trials $ n $ becomes large, the distribution of the binomial random variable $ X $ approaches a normal distribution. For large $ n $, we can approximate $ X $ as:
@@ -478,7 +586,9 @@ X \sim \mathcal{N}(50, 25)
 ```
 Thus, we can say $ X \approx \mathcal{N}(50, 25) $ or $ X \approx \mathcal{N}(50, 5^2) $, where the standard deviation is $ 5 $.
 
-#### Poisson Distribution Example
+
+
+#### Normal Approximation to the Poisson Distribution
 
 Suppose we have a Poisson distribution $ X \sim \text{Poisson}(\lambda) $, where:
 - $ \lambda $ is the average rate of occurrences over a fixed interval.
@@ -486,6 +596,23 @@ Suppose we have a Poisson distribution $ X \sim \text{Poisson}(\lambda) $, where
 The Poisson distribution has:
 - **Mean** $ \mu = \lambda $,
 - **Variance** $ \sigma^2 = \lambda $.
+
+
+For large values of $ \lambda $, the Poisson distribution can be approximated by a normal distribution with mean $ \lambda $ and variance $ \lambda $. This approximation is most accurate when $ \lambda $ is large (typically when $ \lambda > 10 $).
+
+The approximate normal distribution is:
+```{math}
+N(\mu = \lambda, \sigma^2 = \lambda)
+```
+
+This allows the use of normal distribution tools (e.g., z-scores) to approximate Poisson probabilities when $ \lambda $ is large.
+
+---
+
+![Poisson Distribution Approximating Normal Distribution](poissonCLT.png)
+
+*This figure illustrates how the Poisson distribution ($ \lambda = 5, 10, 20, 50 $) approaches a normal distribution as $ \lambda $ increases. Each subplot shows the Poisson probabilities as points, overlaid with the corresponding fitted normal distribution. The captions in the top-right corner indicate the mean ($ \mu = \lambda $) and standard deviation ($ \sigma = \sqrt{\lambda} $) of the fitted normal distribution.*
+
 
 #### Applying the CLT to a Poisson Distribution
 As $ \lambda $ becomes large, the Poisson distribution approaches a normal distribution. For large $ \lambda $, we can approximate $ X $ as:
@@ -541,6 +668,15 @@ Hypothesis testing is a statistical method used to make inferences or decisions 
   - Example: Failing to detect a biased coin when it is actually biased.
 
 The relationship between Type I and Type II errors is that reducing the probability of one type of error increases the probability of the other. The power of a test, $ 1 - \beta $, is the probability of correctly rejecting a false null hypothesis.
+
+---
+
+![Hypothesis Testing Outcomes](hypothesistest.png)
+
+*This table illustrates the possible outcomes in hypothesis testing. This framework helps clarify the trade-offs in hypothesis testing, especially when interpreting statistical results.*
+
+---
+
 
 ### Examples of Hypothesis Testing
 
@@ -620,6 +756,15 @@ Now, check the critical z-values for a two-tailed test at $ \alpha = 0.05 $. The
 ### Power of a Test
 
 The power of a hypothesis test is the probability of correctly rejecting the null hypothesis when it is false. It is defined as $ 1 - \beta $, where $ \beta $ is the probability of making a Type II error. A high power is desirable in hypothesis testing.
+
+---
+
+![Hypothesis Testing Outcomes](type12.png)
+
+*This figure illustrates the concepts of Type I and Type II errors in hypothesis testing.  The null hypothesis distribution is shown in blue, representing the distribution under \( H_0 \). An alternative hypothesis distribution is shown in green, representing the distribution under \( H_a \).  The type I error (\( \alpha \)) is the red-shaded area under the \( H_0 \) curve, representing the probability of rejecting \( H_0 \) when it is true.  The type II error (\( \beta \)) is the orange-shaded area under the \( H_a \) curve, representing the probability of failing to reject \( H_0 \) when \( H_a \) is true. The critical value is marked with a dashed vertical line, separating the rejection region under \( H_0 \).  This visualization highlights the trade-offs between Type I and Type II errors and the role of the critical value in hypothesis testing.*
+
+---
+
 
 Factors that influence the power of a test include:
 - Sample size: Larger samples generally lead to more powerful tests.

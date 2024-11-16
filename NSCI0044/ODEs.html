@@ -399,18 +399,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-requiring-an-integrating-factor">Equations Requiring an Integrating Factor</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Examples</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-rate-of-a-chemical-reaction">Understanding the Rate of a Chemical Reaction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-rate-law">Writing a Rate Law</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-differential-equation">Setting Up the Differential Equation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations-for-different-reaction-orders">Differential Equations for Different Reaction Orders</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-reactions">First-Order Reactions</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-reactions">Second-Order Reactions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-single-reactant-e-g-2a-rightarrow-b">Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \rightarrow B \)</span>)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-two-reactants-e-g-a-b-rightarrow-c">Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \rightarrow C \)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-single-reactant-e-g-2a-rightarrow-b">Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \rightarrow B \)</span>)</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-complex-reactions">Handling Complex Reactions</a><ul class="nav section-nav flex-column">
@@ -529,69 +525,6 @@ document.write(`
 </section>
 </section>
 <hr class="docutils" />
-<section id="equations-requiring-an-integrating-factor">
-<h2>Equations Requiring an Integrating Factor<a class="headerlink" href="#equations-requiring-an-integrating-factor" title="Link to this heading">#</a></h2>
-<p>For linear first-order equations of the form:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}y}{\mathrm{d}x} + p(x) y = q(x)\]</div>
-<p>we use an <strong>integrating factor</strong> <span class="math notranslate nohighlight">\( \mu(x) = e^{\int p(x) \, \mathrm{d}x} \)</span> to simplify the equation.</p>
-<section id="id1">
-<h3>Examples<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Solve the equation:</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}y}{\mathrm{d}x} - \frac{y}{x} = x^2\]</div>
-<p>Identify <span class="math notranslate nohighlight">\( p(x) = -\frac{1}{x} \)</span>, so the integrating factor <span class="math notranslate nohighlight">\( \mu(x) \)</span> is:</p>
-<div class="math notranslate nohighlight">
-\[\mu(x) = e^{\int -\frac{1}{x} \, \mathrm{d}x} = e^{-\ln |x|} = \frac{1}{x}\]</div>
-<p>Multiply through by <span class="math notranslate nohighlight">\( \mu(x) = \frac{1}{x} \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\frac{1}{x} \frac{\mathrm{d}y}{\mathrm{d}x} - \frac{y}{x^2} = x\]</div>
-<p>which simplifies to:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}}{\mathrm{d}x} \left( \frac{y}{x} \right) = x\]</div>
-<p>Integrate both sides with respect to <span class="math notranslate nohighlight">\( x \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\frac{y}{x} = \int x \, \mathrm{d}x = \frac{x^2}{2} + C\]</div>
-<p>Multiply by <span class="math notranslate nohighlight">\( x \)</span> to solve for <span class="math notranslate nohighlight">\( y \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[y = \frac{x^3}{2} + C x\]</div>
-<ol class="arabic simple" start="2">
-<li><p>Consider the equation:</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}y}{\mathrm{d}x} + \frac{2}{x} y = x\]</div>
-<ol class="arabic">
-<li><p>Identify <span class="math notranslate nohighlight">\( p(x) = \frac{2}{x} \)</span>, so the integrating factor <span class="math notranslate nohighlight">\( \mu(x) \)</span> is:</p>
-<div class="math notranslate nohighlight">
-\[\mu(x) = e^{\int \frac{2}{x} \, \mathrm{d}x} = e^{2 \ln |x|} = x^2\]</div>
-</li>
-<li><p>Multiply the entire equation by <span class="math notranslate nohighlight">\( \mu(x) = x^2 \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[x^2 \frac{\mathrm{d}y}{\mathrm{d}x} + 2x y = x^3\]</div>
-<p>The left side is now the derivative of <span class="math notranslate nohighlight">\( x^2 y \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}}{\mathrm{d}x} (x^2 y) = x^3\]</div>
-</li>
-<li><p>Integrate both sides with respect to <span class="math notranslate nohighlight">\( x \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[x^2 y = \int x^3 \, \mathrm{d}x\]</div>
-</li>
-<li><p>Integrate the right side:</p>
-<div class="math notranslate nohighlight">
-\[x^2 y = \frac{x^4}{4} + C\]</div>
-</li>
-<li><p>Finally, solve for <span class="math notranslate nohighlight">\( y \)</span> by dividing by <span class="math notranslate nohighlight">\( x^2 \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[y = \frac{x^2}{4} + \frac{C}{x^2}\]</div>
-</li>
-</ol>
-<p>This solution, <span class="math notranslate nohighlight">\( y = \frac{x^2}{4} + \frac{C}{x^2} \)</span>, combines a particular solution and a constant term that depends on the initial conditions. By using the integrating factor, we converted the left side into an exact derivative, allowing us to integrate both sides directly.</p>
-<hr class="docutils" />
-<p>These examples provide an overview of how each method is applied to solve first-order ODEs. Separable equations work well when terms can be split by variables, while linear equations benefit from integrating factors to make the differential form exact.</p>
-</section>
-</section>
 <section id="understanding-the-rate-of-a-chemical-reaction">
 <h2>Understanding the Rate of a Chemical Reaction<a class="headerlink" href="#understanding-the-rate-of-a-chemical-reaction" title="Link to this heading">#</a></h2>
 <p>In a chemical reaction, the rate at which reactants are converted into products depends on the concentration of the reactants. This relationship between reaction rate and concentration is often governed by <strong>rate laws</strong>, which describe how the rate changes as a function of the concentrations of the reactants.</p>
@@ -642,6 +575,25 @@ document.write(`
 <h4>Second-Order Reactions<a class="headerlink" href="#second-order-reactions" title="Link to this heading">#</a></h4>
 <p>Second-order reactions involve rate laws that are proportional to the <strong>square</strong> of a reactant’s concentration or to the <strong>product</strong> of two different reactant concentrations. Second-order reactions can be classified into different types:</p>
 </section>
+<section id="second-order-two-reactants-e-g-a-b-rightarrow-c">
+<h4>Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \rightarrow C \)</span>)<a class="headerlink" href="#second-order-two-reactants-e-g-a-b-rightarrow-c" title="Link to this heading">#</a></h4>
+<p>For a reaction where two different reactants, <span class="math notranslate nohighlight">\( A \)</span> and <span class="math notranslate nohighlight">\( B \)</span>, combine to form a product <span class="math notranslate nohighlight">\( C \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[A + B \rightarrow C\]</div>
+<p>the rate law is:</p>
+<div class="math notranslate nohighlight">
+\[\text{Rate} = k[A][B]\]</div>
+<p>This leads to the system of differential equations:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A][B]\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}[B]}{\mathrm{d}t} = -k[A][B]\]</div>
+<p>If the initial concentrations of <span class="math notranslate nohighlight">\( A \)</span> and <span class="math notranslate nohighlight">\( B \)</span> are equal, say <span class="math notranslate nohighlight">\([A]_0 = [B]_0\)</span>, then we can assume <span class="math notranslate nohighlight">\([A] = [B]\)</span> throughout the reaction. This simplifies the rate law to:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A]^2\]</div>
+<p>and we solve it as in the first type of second-order reaction.</p>
+<p>However, if <span class="math notranslate nohighlight">\([A]_0 \neq [B]_0\)</span>, we need to solve the differential equation with both <span class="math notranslate nohighlight">\([A]\)</span> and <span class="math notranslate nohighlight">\([B]\)</span> changing over time, which can be more complex and typically requires integration using initial concentrations and stoichiometric relationships.</p>
+</section>
 <section id="second-order-single-reactant-e-g-2a-rightarrow-b">
 <h4>Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \rightarrow B \)</span>)<a class="headerlink" href="#second-order-single-reactant-e-g-2a-rightarrow-b" title="Link to this heading">#</a></h4>
 <p>For a reaction where two molecules of <span class="math notranslate nohighlight">\( A \)</span> react to form <span class="math notranslate nohighlight">\( B \)</span>:</p>
@@ -664,25 +616,6 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[[A](t) = \frac{1}{kt + \frac{1}{[A]_0}}\]</div>
 <p>where <span class="math notranslate nohighlight">\([A]_0\)</span> is the initial concentration of <span class="math notranslate nohighlight">\( A \)</span>. In this form, we see that the concentration <span class="math notranslate nohighlight">\([A]\)</span> decreases over time in a manner inversely proportional to time, unlike the exponential decay in first-order reactions.</p>
-</section>
-<section id="second-order-two-reactants-e-g-a-b-rightarrow-c">
-<h4>Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \rightarrow C \)</span>)<a class="headerlink" href="#second-order-two-reactants-e-g-a-b-rightarrow-c" title="Link to this heading">#</a></h4>
-<p>For a reaction where two different reactants, <span class="math notranslate nohighlight">\( A \)</span> and <span class="math notranslate nohighlight">\( B \)</span>, combine to form a product <span class="math notranslate nohighlight">\( C \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[A + B \rightarrow C\]</div>
-<p>the rate law is:</p>
-<div class="math notranslate nohighlight">
-\[\text{Rate} = k[A][B]\]</div>
-<p>This leads to the system of differential equations:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A][B]\]</div>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}[B]}{\mathrm{d}t} = -k[A][B]\]</div>
-<p>If the initial concentrations of <span class="math notranslate nohighlight">\( A \)</span> and <span class="math notranslate nohighlight">\( B \)</span> are equal, say <span class="math notranslate nohighlight">\([A]_0 = [B]_0\)</span>, then we can assume <span class="math notranslate nohighlight">\([A] = [B]\)</span> throughout the reaction. This simplifies the rate law to:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A]^2\]</div>
-<p>and we solve it as in the first type of second-order reaction.</p>
-<p>However, if <span class="math notranslate nohighlight">\([A]_0 \neq [B]_0\)</span>, we need to solve the differential equation with both <span class="math notranslate nohighlight">\([A]\)</span> and <span class="math notranslate nohighlight">\([B]\)</span> changing over time, which can be more complex and typically requires integration using initial concentrations and stoichiometric relationships.</p>
 </section>
 </section>
 <section id="handling-complex-reactions">
@@ -786,18 +719,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-requiring-an-integrating-factor">Equations Requiring an Integrating Factor</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Examples</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-rate-of-a-chemical-reaction">Understanding the Rate of a Chemical Reaction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-rate-law">Writing a Rate Law</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-differential-equation">Setting Up the Differential Equation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations-for-different-reaction-orders">Differential Equations for Different Reaction Orders</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-reactions">First-Order Reactions</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-reactions">Second-Order Reactions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-single-reactant-e-g-2a-rightarrow-b">Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \rightarrow B \)</span>)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-two-reactants-e-g-a-b-rightarrow-c">Second-Order, Two Reactants (e.g., <span class="math notranslate nohighlight">\( A + B \rightarrow C \)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-single-reactant-e-g-2a-rightarrow-b">Second-Order, Single Reactant (e.g., <span class="math notranslate nohighlight">\( 2A \rightarrow B \)</span>)</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-complex-reactions">Handling Complex Reactions</a><ul class="nav section-nav flex-column">

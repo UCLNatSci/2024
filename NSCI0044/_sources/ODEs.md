@@ -117,94 +117,6 @@ In this example, we separated the variables, integrated both sides, and then sim
 
 ---
 
-## Equations Requiring an Integrating Factor
-
-For linear first-order equations of the form:
-```{math}
-\frac{\mathrm{d}y}{\mathrm{d}x} + p(x) y = q(x)
-```
-we use an **integrating factor** $ \mu(x) = e^{\int p(x) \, \mathrm{d}x} $ to simplify the equation.
-
-### Examples
-
-1. Solve the equation:
-
-```{math}
-\frac{\mathrm{d}y}{\mathrm{d}x} - \frac{y}{x} = x^2
-```
-
-Identify $ p(x) = -\frac{1}{x} $, so the integrating factor $ \mu(x) $ is:
-
-```{math}
-\mu(x) = e^{\int -\frac{1}{x} \, \mathrm{d}x} = e^{-\ln |x|} = \frac{1}{x}
-```
-
-Multiply through by $ \mu(x) = \frac{1}{x} $:
-
-```{math}
-\frac{1}{x} \frac{\mathrm{d}y}{\mathrm{d}x} - \frac{y}{x^2} = x
-```
-
-which simplifies to:
-
-```{math}
-\frac{\mathrm{d}}{\mathrm{d}x} \left( \frac{y}{x} \right) = x
-```
-
-Integrate both sides with respect to $ x $:
-
-```{math}
-\frac{y}{x} = \int x \, \mathrm{d}x = \frac{x^2}{2} + C
-```
-
-Multiply by $ x $ to solve for $ y $:
-
-```{math}
-y = \frac{x^3}{2} + C x
-```
-
-2. Consider the equation:
-```{math}
-\frac{\mathrm{d}y}{\mathrm{d}x} + \frac{2}{x} y = x
-```
-
-1. Identify $ p(x) = \frac{2}{x} $, so the integrating factor $ \mu(x) $ is:
-   ```{math}
-   \mu(x) = e^{\int \frac{2}{x} \, \mathrm{d}x} = e^{2 \ln |x|} = x^2
-   ```
-
-2. Multiply the entire equation by $ \mu(x) = x^2 $:
-   ```{math}
-   x^2 \frac{\mathrm{d}y}{\mathrm{d}x} + 2x y = x^3
-   ```
-
-   The left side is now the derivative of $ x^2 y $:
-   ```{math}
-   \frac{\mathrm{d}}{\mathrm{d}x} (x^2 y) = x^3
-   ```
-
-3. Integrate both sides with respect to $ x $:
-   ```{math}
-   x^2 y = \int x^3 \, \mathrm{d}x
-   ```
-
-4. Integrate the right side:
-   ```{math}
-   x^2 y = \frac{x^4}{4} + C
-   ```
-
-5. Finally, solve for $ y $ by dividing by $ x^2 $:
-   ```{math}
-   y = \frac{x^2}{4} + \frac{C}{x^2}
-   ```
-
-This solution, $ y = \frac{x^2}{4} + \frac{C}{x^2} $, combines a particular solution and a constant term that depends on the initial conditions. By using the integrating factor, we converted the left side into an exact derivative, allowing us to integrate both sides directly.
-
----
-
-These examples provide an overview of how each method is applied to solve first-order ODEs. Separable equations work well when terms can be split by variables, while linear equations benefit from integrating factors to make the differential form exact.
-
-
 ## Understanding the Rate of a Chemical Reaction
 
 In a chemical reaction, the rate at which reactants are converted into products depends on the concentration of the reactants. This relationship between reaction rate and concentration is often governed by **rate laws**, which describe how the rate changes as a function of the concentrations of the reactants.
@@ -285,6 +197,42 @@ where $[A]_0$ is the initial concentration of $ A $ at $ t = 0 $. This exponenti
 
 Second-order reactions involve rate laws that are proportional to the **square** of a reactant's concentration or to the **product** of two different reactant concentrations. Second-order reactions can be classified into different types:
 
+
+#### Second-Order, Two Reactants (e.g., $ A + B \rightarrow C $)
+
+For a reaction where two different reactants, $ A $ and $ B $, combine to form a product $ C $:
+
+```{math}
+A + B \rightarrow C
+```
+
+the rate law is:
+
+```{math}
+\text{Rate} = k[A][B]
+```
+
+This leads to the system of differential equations:
+
+```{math}
+\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A][B]
+```
+
+```{math}
+\frac{\mathrm{d}[B]}{\mathrm{d}t} = -k[A][B]
+```
+
+If the initial concentrations of $ A $ and $ B $ are equal, say $[A]_0 = [B]_0$, then we can assume $[A] = [B]$ throughout the reaction. This simplifies the rate law to:
+
+```{math}
+\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A]^2
+```
+
+and we solve it as in the first type of second-order reaction.
+
+However, if $[A]_0 \neq [B]_0$, we need to solve the differential equation with both $[A]$ and $[B]$ changing over time, which can be more complex and typically requires integration using initial concentrations and stoichiometric relationships.
+
+
 #### Second-Order, Single Reactant (e.g., $ 2A \rightarrow B $)
 
 For a reaction where two molecules of $ A $ react to form $ B $:
@@ -326,40 +274,6 @@ Solving for $[A]$, we get:
 ```
 
 where $[A]_0$ is the initial concentration of $ A $. In this form, we see that the concentration $[A]$ decreases over time in a manner inversely proportional to time, unlike the exponential decay in first-order reactions.
-
-#### Second-Order, Two Reactants (e.g., $ A + B \rightarrow C $)
-
-For a reaction where two different reactants, $ A $ and $ B $, combine to form a product $ C $:
-
-```{math}
-A + B \rightarrow C
-```
-
-the rate law is:
-
-```{math}
-\text{Rate} = k[A][B]
-```
-
-This leads to the system of differential equations:
-
-```{math}
-\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A][B]
-```
-
-```{math}
-\frac{\mathrm{d}[B]}{\mathrm{d}t} = -k[A][B]
-```
-
-If the initial concentrations of $ A $ and $ B $ are equal, say $[A]_0 = [B]_0$, then we can assume $[A] = [B]$ throughout the reaction. This simplifies the rate law to:
-
-```{math}
-\frac{\mathrm{d}[A]}{\mathrm{d}t} = -k[A]^2
-```
-
-and we solve it as in the first type of second-order reaction.
-
-However, if $[A]_0 \neq [B]_0$, we need to solve the differential equation with both $[A]$ and $[B]$ changing over time, which can be more complex and typically requires integration using initial concentrations and stoichiometric relationships.
 
 ### Handling Complex Reactions
 

@@ -150,52 +150,49 @@ For logarithmic functions, the integral of the reciprocal function is:
 ```
 
 ---
-
-## Reversing Differentiation Rules into Integration
-
-In addition to the basic rules for calculating antiderivatives, there are specific techniques that arise when you reverse common differentiation rules, such as the product rule and the chain rule. These techniques help solve integrals that might otherwise be difficult.
-
-### Integration by Parts (Product Rule Reversal)
+## Integration by Parts (Product Rule Reversal)
 
 The product rule for differentiation states:
 
 ```{math}
-\frac{d}{\mathrm{d}x} \left( u(x) v(x) \right) = u'(x) v(x) + u(x) v'(x)
+\frac{\mathrm{d}}{\mathrm{d}x} \left( f(x) g(x) \right) = f'(x) g(x) + f(x) g'(x)
 ```
 
 When reversing this rule to solve integrals, we use integration by parts. The formula for integration by parts is:
 
 ```{math}
-\int u(x) v'(x) \, \mathrm{d}x = u(x) v(x) - \int v(x) u'(x) \, \mathrm{d}x
+\int f(x) \frac{\mathrm{d}g}{\mathrm{d}x} \, \mathrm{d}x = f(x) g(x) - \int g(x) \frac{\mathrm{d}f}{\mathrm{d}x} \, \mathrm{d}x
 ```
 
 In this formula:
-- $ u(x) $ is a function you choose to differentiate (its derivative is $ u'(x) $),
-- $ v'(x) $ is the function you choose to integrate (its integral is $ v(x) $).
+- $ f(x) $ is a function you choose to differentiate (its derivative is $ \frac{\mathrm{d}f}{\mathrm{d}x} $),
+- $ \frac{\mathrm{d}g}{\mathrm{d}x} $ is the function you choose to integrate (its integral is $ g(x) $).
 
 Steps for using integration by parts:
-1. Identify parts of the integrand to assign to $u(x)$ and $v'(x)$.
-2. Differentiate $u(x)$ to get $u'(x)$.
-3. Integrate $v'(x)$ to get $v(x)$.
+1. Identify parts of the integrand to assign to $ f(x) $ and $ \frac{\mathrm{d}g}{\mathrm{d}x} $.
+2. Differentiate $ f(x) $ to get $ \frac{\mathrm{d}f}{\mathrm{d}x} $.
+3. Integrate $ \frac{\mathrm{d}g}{\mathrm{d}x} $ to get $ g(x) $.
 4. Substitute into the formula and simplify the resulting integral.
 
 ---
 
-### LATE Method for Integration by Parts
+### **LATE** Method for Integration by Parts
 
-The LATE method is a mnemonic that can help choose the best parts of the integrand to assign to $ u(x) $ and $ v'(x) $ when using integration by parts. The letters stand for:
+The **LATE** method is a mnemonic that can help choose the best parts of the integrand to assign to $ f(x) $ and $ \frac{\mathrm{d}g}{\mathrm{d}x} $ when using integration by parts. The letters stand for:
 
-- L: Logarithmic functions (if present)
-- A: Algebraic functions (polynomials)
-- T: Trigonometric functions
-- E: Exponential functions
+- **L:** *Logarithmic functions*
+- **A:** *Algebraic functions (polynomials)*
+- **T:** *Trigonometric functions*
+- **E:** *Exponential functions*
 
 Steps for using LATE:
-1. First, choose $ u(x) $ from the category that appears first in LATE.
-2. Choose $ v'(x) $ from the remaining part of the integrand.
+1. First, choose $ f(x) $ from the category that appears first in LATE.
+2. Choose $ \frac{\mathrm{d}g}{\mathrm{d}x} $ from the remaining part of the integrand.
 3. Apply integration by parts as usual.
 
-### Example 1: Polynomial and Exponential
+---
+
+### Example: Polynomial and Exponential
 
 Consider the integral:
 
@@ -203,27 +200,24 @@ Consider the integral:
 \int x e^x \, \mathrm{d}x
 ```
 
-Using the LATE method:
-- $ u(x) = x $ (Algebraic function)
-- $ v'(x) = e^x $ (Exponential function)
+Using the **LATE** method:
+- $ f(x) = x $ (**A**lgebraic function)
+- $ \frac{\mathrm{d}g}{\mathrm{d}x} = e^x $ (**E**xponential function)
 
-Now, differentiate $ u(x) $ and integrate $ v'(x) $:
-- $ u'(x) = 1 $
-- $ v(x) = e^x $
+Now, differentiate $ f(x) $ and integrate $ \frac{\mathrm{d}g}{\mathrm{d}x} $:
+- $ \frac{\mathrm{d}f}{\mathrm{d}x} = 1 $
+- $ g(x) = e^x $
 
 Now apply the formula for integration by parts:
 
 ```{math}
-\int x e^x \, \mathrm{d}x = x e^x - \int e^x \, \mathrm{d}x
-```
-
-```{math}
-= x e^x - e^x + C
+\int x e^x \, \mathrm{d}x &= x e^x - \int e^x \, \mathrm{d}x\\
+&= x e^x - e^x + C
 ```
 
 ---
 
-### Example 2: Trigonometric and Exponential
+### Example: Trigonometric and Exponential
 
 Consider the integral:
 
@@ -231,13 +225,13 @@ Consider the integral:
 \int e^x \sin(x) \, \mathrm{d}x
 ```
 
-Using the LATE method:
-- $ u(x) = \sin(x) $ (Trigonometric function)
-- $ v'(x) = e^x $ (Exponential function)
+Using the **LATE** method:
+- $ f(x) = \sin(x) $ (**T**rigonometric function)
+- $ \frac{\mathrm{d}g}{\mathrm{d}x} = e^x $ (**E**xponential function)
 
-Now, differentiate $ u(x) $ and integrate $ v'(x) $:
-- $ u'(x) = \cos(x) $
-- $ v(x) = e^x $
+Now, differentiate $ f(x) $ and integrate $ \frac{\mathrm{d}g}{\mathrm{d}x} $:
+- $ \frac{\mathrm{d}f}{\mathrm{d}x} = \cos(x) $
+- $ g(x) = e^x $
 
 Now apply the formula for integration by parts:
 
@@ -245,10 +239,10 @@ Now apply the formula for integration by parts:
 \int e^x \sin(x) \, \mathrm{d}x = e^x \sin(x) - \int e^x \cos(x) \, \mathrm{d}x
 ```
 
-Now, we need to apply integration by parts again to the new integral $ \int e^x \cos(x) \, \mathrm{d}x $. Using LATE again:
+Now, we need to apply integration by parts again to the new integral $ \int e^x \cos(x) \, \mathrm{d}x $. Using **LATE** again:
 
-- $ u(x) = \cos(x) $
-- $ v'(x) = e^x $
+- $ f(x) = \cos(x) $ (**T**rigonometric function)
+- $ \frac{\mathrm{d}g}{\mathrm{d}x} = e^x $ (**E**xponential function)
 
 Following the same steps:
 
@@ -282,10 +276,6 @@ We can see this graphically:
 ### Introduction
 The concept of **signed** and **unsigned** areas is important when dealing with integrals, particularly in the context of areas between curves or under curves in the plane.
 
-- **Unsigned Area** refers to the total geometric area between a curve and the x-axis, treating all areas as positive, regardless of whether the curve is above or below the axis.
-- **Signed Area** considers the direction of the curve relative to the x-axis. Areas above the x-axis are positive, and areas below the x-axis are negative.
-
-#### Geometric Interpretation
 - **Unsigned Area**: The total area between the curve and the x-axis is computed without considering whether the curve is above or below the x-axis. All areas are treated as positive.
 - **Signed Area**: This accounts for whether the curve is above or below the x-axis. The area above the x-axis is positive, and the area below the x-axis is negative. The signed area is useful for determining net area, like in physical applications where direction matters (e.g., work or displacement).
 
@@ -476,21 +466,3 @@ The concept of the area between curves is useful in various fields, such as:
 - Calculating the center of mass or moments of inertia for physical systems.
 
 
-
----
-
-## Summary of Key Techniques
-
-- Integration by Parts: Reverses the product rule for differentiation.
-  ```{math}
-  \int u \, \mathrm{d}v = uv - \int v \, \mathrm{d}u
-  ```
-
-- LATE Method for Integration by Parts: A strategy for selecting $ u(x) $ and $ v'(x) $ based on the order: Logarithmic, Algebraic, Trigonometric, Exponential.
-
-- Mean Value Theorem for Integrals: Averages the value of a function over an interval.
-  ```{math}
-  f(c) = \frac{1}{b - a} \int_a^b f(x) \, \mathrm{d}x
-  ```
-
-By understanding how differentiation rules are reversed, you can solve more complex integrals involving products, compositions, and powers of functions.
