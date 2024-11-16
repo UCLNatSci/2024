@@ -1,4 +1,4 @@
-# The Uncertainty Principle in Quantum Mechanics
+# The Uncertainty Principle
 
 The **Heisenberg Uncertainty Principle** is one of the foundational concepts of quantum mechanics, highlighting the inherent limitations in simultaneously measuring certain pairs of observables. Originally formulated for position and momentum, the principle has broader applications, encompassing other conjugate pairs like energy and time, and angular momentum and its components.
 

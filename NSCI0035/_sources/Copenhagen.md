@@ -1,4 +1,4 @@
-# The Copenhagen Interpretation of Quantum Mechanics
+# The Copenhagen Interpretation
 
 The **Copenhagen interpretation** is one of the earliest and most widely taught interpretations of quantum mechanics, developed in the 1920s by Niels Bohr and Werner Heisenberg. It provides a practical framework for understanding quantum mechanics, focusing on the role of measurement and the limits of our ability to describe reality at the quantum level.
 
