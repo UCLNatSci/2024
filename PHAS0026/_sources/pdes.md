@@ -280,7 +280,7 @@ which has a particular solution $ h(y) = e^y $.
 Hence, the corresponding two sets of general solutions are:
 
 ```{math}
-u_1(x, y) = x^2 f\left( -x \exp\left(-\frac{y}{2}\right) \right), \quad u_2(x, y) = e^y g\left( -x \exp\left(-\frac{y}{2}\right) \right),
+u_1(x, y) = x^2 f\left(x e^{-y/2} \right), \quad u_2(x, y) = e^y g\left(x e^{-y/2} \right),
 ```
 
 where $ f $ and $ g $ are arbitrary functions of $ x \exp\left(-\frac{y}{2}\right) $. The superposition:
