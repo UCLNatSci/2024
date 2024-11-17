@@ -416,6 +416,15 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-applications">Other Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radioactive-decay-exponential-decay">Radioactive Decay (Exponential Decay)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-s-law-of-cooling">Newton’s Law of Cooling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#population-growth-logistic-growth-with-no-carrying-capacity">Population Growth (Logistic Growth with No Carrying Capacity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-under-gravity-free-fall-with-air-resistance">Motion Under Gravity (Free-Fall with Air Resistance)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-problems">Mixing Problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-electric-circuits-rc-circuits">Simple Electric Circuits (RC Circuits)</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -641,8 +650,89 @@ document.write(`
 <p>with <span class="math notranslate nohighlight">\( A \)</span> also acting as a catalyst, the rate law might be:</p>
 <div class="math notranslate nohighlight">
 \[\text{Rate} = k[A][B]\]</div>
-<p>This leads to a differential equation similar to those for second-order reactions but requires special treatment due to the product’s role in catalyzing the reaction.</p>
+<p>This leads to a differential equation similar to those for second-order reactions but requires special treatment due to the product’s role in catalysing the reaction.</p>
 </section>
+</section>
+</section>
+<section id="other-applications">
+<h2>Other Applications<a class="headerlink" href="#other-applications" title="Link to this heading">#</a></h2>
+<p>First-order separable differential equations frequently arise in various scientific contexts. Here are some notable examples:</p>
+<section id="radioactive-decay-exponential-decay">
+<h3>Radioactive Decay (Exponential Decay)<a class="headerlink" href="#radioactive-decay-exponential-decay" title="Link to this heading">#</a></h3>
+<p><strong>Equation:</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}N}{\mathrm{d}t} = -kN\]</div>
+<p>where <span class="math notranslate nohighlight">\( N(t) \)</span> is the quantity of a radioactive substance at time <span class="math notranslate nohighlight">\( t \)</span>, and <span class="math notranslate nohighlight">\( k \)</span> is the decay constant.</p>
+<p><strong>Separable Form:</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}N}{N} = -k \, \mathrm{d}t\]</div>
+<p><strong>Application:</strong><br />
+Predicting the remaining quantity of a radioactive isotope over time.</p>
+</section>
+<hr class="docutils" />
+<section id="newton-s-law-of-cooling">
+<h3>Newton’s Law of Cooling<a class="headerlink" href="#newton-s-law-of-cooling" title="Link to this heading">#</a></h3>
+<p><strong>Equation:</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}T}{\mathrm{d}t} = -k (T - T_\text{ambient})\]</div>
+<p>where <span class="math notranslate nohighlight">\( T(t) \)</span> is the temperature of an object, <span class="math notranslate nohighlight">\( T_\text{ambient} \)</span> is the surrounding temperature, and <span class="math notranslate nohighlight">\( k \)</span> is the cooling constant.</p>
+<p><strong>Separable Form:</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}T}{T - T_\text{ambient}} = -k \, \mathrm{d}t\]</div>
+<p><strong>Application:</strong><br />
+Modelling the cooling or heating of an object relative to its environment.</p>
+</section>
+<hr class="docutils" />
+<section id="population-growth-logistic-growth-with-no-carrying-capacity">
+<h3>Population Growth (Logistic Growth with No Carrying Capacity)<a class="headerlink" href="#population-growth-logistic-growth-with-no-carrying-capacity" title="Link to this heading">#</a></h3>
+<p><strong>Equation:</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}P}{\mathrm{d}t} = rP\]</div>
+<p>where <span class="math notranslate nohighlight">\( P(t) \)</span> is the population size, and <span class="math notranslate nohighlight">\( r \)</span> is the growth rate.</p>
+<p><strong>Separable Form:</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}P}{P} = r \, \mathrm{d}t\]</div>
+<p><strong>Application:</strong><br />
+Modelling exponential population growth in ideal conditions.</p>
+</section>
+<hr class="docutils" />
+<section id="motion-under-gravity-free-fall-with-air-resistance">
+<h3>Motion Under Gravity (Free-Fall with Air Resistance)<a class="headerlink" href="#motion-under-gravity-free-fall-with-air-resistance" title="Link to this heading">#</a></h3>
+<p><strong>Equation:</strong></p>
+<div class="math notranslate nohighlight">
+\[m \frac{\mathrm{d}v}{\mathrm{d}t} = -mg - kv\]</div>
+<p>where <span class="math notranslate nohighlight">\( v(t) \)</span> is the velocity of the object, <span class="math notranslate nohighlight">\( g \)</span> is the gravitational acceleration, <span class="math notranslate nohighlight">\( k \)</span> is the drag coefficient, and <span class="math notranslate nohighlight">\( m \)</span> is the object’s mass.</p>
+<p><strong>Separable Form (Simplified):</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}v}{mg + kv} = -\frac{\mathrm{d}t}{m}\]</div>
+<p><strong>Application:</strong><br />
+Modelling the motion of falling objects with air resistance.</p>
+</section>
+<hr class="docutils" />
+<section id="mixing-problems">
+<h3>Mixing Problems<a class="headerlink" href="#mixing-problems" title="Link to this heading">#</a></h3>
+<p><strong>Equation:</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}A}{\mathrm{d}t} = r_\text{in}C_\text{in} - r_\text{out}\frac{A}{V}\]</div>
+<p>where <span class="math notranslate nohighlight">\( A(t) \)</span> is the amount of solute in a tank, <span class="math notranslate nohighlight">\( r_\text{in} \)</span> and <span class="math notranslate nohighlight">\( r_\text{out} \)</span> are the inflow and outflow rates, <span class="math notranslate nohighlight">\( C_\text{in} \)</span> is the concentration of the inflow, and <span class="math notranslate nohighlight">\( V \)</span> is the tank volume.</p>
+<p><strong>Separable Form (Assuming <span class="math notranslate nohighlight">\( V \)</span> is constant):</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}A}{r_\text{in}C_\text{in} - r_\text{out}\frac{A}{V}} = \mathrm{d}t\]</div>
+<p><strong>Application:</strong><br />
+Modelling solute concentration changes in a mixing tank.</p>
+</section>
+<hr class="docutils" />
+<section id="simple-electric-circuits-rc-circuits">
+<h3>Simple Electric Circuits (RC Circuits)<a class="headerlink" href="#simple-electric-circuits-rc-circuits" title="Link to this heading">#</a></h3>
+<p><strong>Equation:</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}Q}{\mathrm{d}t} + \frac{1}{RC}Q = 0\]</div>
+<p>where <span class="math notranslate nohighlight">\( Q(t) \)</span> is the charge on a capacitor, <span class="math notranslate nohighlight">\( R \)</span> is resistance, and <span class="math notranslate nohighlight">\( C \)</span> is capacitance.</p>
+<p><strong>Separable Form:</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}Q}{Q} = -\frac{\mathrm{d}t}{RC}\]</div>
+<p><strong>Application:</strong><br />
+Analysing the discharge of a capacitor in an RC circuit.</p>
 </section>
 </section>
 </section>
@@ -736,6 +826,15 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#autocatalytic-reactions">Autocatalytic Reactions</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-applications">Other Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radioactive-decay-exponential-decay">Radioactive Decay (Exponential Decay)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-s-law-of-cooling">Newton’s Law of Cooling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#population-growth-logistic-growth-with-no-carrying-capacity">Population Growth (Logistic Growth with No Carrying Capacity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-under-gravity-free-fall-with-air-resistance">Motion Under Gravity (Free-Fall with Air Resistance)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-problems">Mixing Problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-electric-circuits-rc-circuits">Simple Electric Circuits (RC Circuits)</a></li>
 </ul>
 </li>
 </ul>

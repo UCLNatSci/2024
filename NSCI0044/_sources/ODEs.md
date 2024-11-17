@@ -115,6 +115,7 @@ y = C e^{x^2 / 2}
 
 In this example, we separated the variables, integrated both sides, and then simplified to find the solution. The result, $ y = C' x^{3/2} $, shows how $ y $ changes as a power function of $ x $.
 
+
 ---
 
 ## Understanding the Rate of a Chemical Reaction
@@ -314,7 +315,116 @@ with $ A $ also acting as a catalyst, the rate law might be:
 \text{Rate} = k[A][B]
 ```
 
-This leads to a differential equation similar to those for second-order reactions but requires special treatment due to the product's role in catalyzing the reaction.
+This leads to a differential equation similar to those for second-order reactions but requires special treatment due to the product's role in catalysing the reaction.
 
 
+## Other Applications
+
+First-order separable differential equations frequently arise in various scientific contexts. Here are some notable examples:
+
+### Radioactive Decay (Exponential Decay)
+
+**Equation:**
+```{math}
+\frac{\mathrm{d}N}{\mathrm{d}t} = -kN
+```
+where $ N(t) $ is the quantity of a radioactive substance at time $ t $, and $ k $ is the decay constant.
+
+**Separable Form:**
+```{math}
+\frac{\mathrm{d}N}{N} = -k \, \mathrm{d}t
+```
+
+**Application:**  
+Predicting the remaining quantity of a radioactive isotope over time.
+
+---
+
+### Newton's Law of Cooling
+
+**Equation:**
+```{math}
+\frac{\mathrm{d}T}{\mathrm{d}t} = -k (T - T_\text{ambient})
+```
+where $ T(t) $ is the temperature of an object, $ T_\text{ambient} $ is the surrounding temperature, and $ k $ is the cooling constant.
+
+**Separable Form:**
+```{math}
+\frac{\mathrm{d}T}{T - T_\text{ambient}} = -k \, \mathrm{d}t
+```
+
+**Application:**  
+Modelling the cooling or heating of an object relative to its environment.
+
+---
+
+### Population Growth (Logistic Growth with No Carrying Capacity)
+
+**Equation:**
+```{math}
+\frac{\mathrm{d}P}{\mathrm{d}t} = rP
+```
+where $ P(t) $ is the population size, and $ r $ is the growth rate.
+
+**Separable Form:**
+```{math}
+\frac{\mathrm{d}P}{P} = r \, \mathrm{d}t
+```
+
+**Application:**  
+Modelling exponential population growth in ideal conditions.
+
+---
+
+### Motion Under Gravity (Free-Fall with Air Resistance)
+
+**Equation:**
+```{math}
+m \frac{\mathrm{d}v}{\mathrm{d}t} = -mg - kv
+```
+where $ v(t) $ is the velocity of the object, $ g $ is the gravitational acceleration, $ k $ is the drag coefficient, and $ m $ is the object's mass.
+
+**Separable Form (Simplified):**
+```{math}
+\frac{\mathrm{d}v}{mg + kv} = -\frac{\mathrm{d}t}{m}
+```
+
+**Application:**  
+Modelling the motion of falling objects with air resistance.
+
+---
+
+### Mixing Problems
+
+**Equation:**
+```{math}
+\frac{\mathrm{d}A}{\mathrm{d}t} = r_\text{in}C_\text{in} - r_\text{out}\frac{A}{V}
+```
+where $ A(t) $ is the amount of solute in a tank, $ r_\text{in} $ and $ r_\text{out} $ are the inflow and outflow rates, $ C_\text{in} $ is the concentration of the inflow, and $ V $ is the tank volume.
+
+**Separable Form (Assuming $ V $ is constant):**
+```{math}
+\frac{\mathrm{d}A}{r_\text{in}C_\text{in} - r_\text{out}\frac{A}{V}} = \mathrm{d}t
+```
+
+**Application:**  
+Modelling solute concentration changes in a mixing tank.
+
+---
+
+### Simple Electric Circuits (RC Circuits)
+
+**Equation:**
+```{math}
+\frac{\mathrm{d}Q}{\mathrm{d}t} + \frac{1}{RC}Q = 0
+```
+where $ Q(t) $ is the charge on a capacitor, $ R $ is resistance, and $ C $ is capacitance.
+
+**Separable Form:**
+```{math}
+\frac{\mathrm{d}Q}{Q} = -\frac{\mathrm{d}t}{RC}
+```
+
+**Application:**  
+Analysing the discharge of a capacitor in an RC circuit.
 
