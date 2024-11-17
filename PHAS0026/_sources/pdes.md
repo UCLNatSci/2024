@@ -108,7 +108,7 @@ Using the multivariable chain rule we can obtain $ \frac{\partial u}{\partial x}
 Substituting these into our linear PDE equation and we obtain:
 
 ```{math}
-A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - \frac{df(p)}{\mathrm{d}p} = 0
+\left[A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y}\right] \frac{df(p)}{\mathrm{d}p} = 0
 ```
 
 This equation is satisfied if:
@@ -206,13 +206,13 @@ A(x, y) \left( \frac{\partial h}{\partial x} f(p) + h \frac{df(p)}{\mathrm{d}p} 
 After rearranging the terms:
 
 ```{math}
-A(x, y) \frac{\partial h}{\partial x} + B(x, y) \frac{\partial h}{\partial y} + C(x, y) h f(p) + A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - h \frac{df(p)}{\mathrm{d}p} = 0
+\left[A(x, y) \frac{\partial h}{\partial x} + B(x, y) \frac{\partial h}{\partial y} + C(x, y)\,h\right]  f(p) + \left[A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - \right]h \frac{df(p)}{\mathrm{d}p} = 0
 ```
 
 The first term turns to zero if function $ h(x, y) $ is any solution of our PDE here. Let us assume that we have found such a function $ h(x, y) $. Then, only the second term remains:
 
 ```{math}
-A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y} - h \frac{df(p)}{\mathrm{d}p} = 0
+\left[A(x, y) \frac{\partial p}{\partial x} + B(x, y) \frac{\partial p}{\partial y}\right] h \frac{df(p)}{\mathrm{d}p} = 0
 ```
 
 Non-trivial solutions of this equation can be found by solving:
@@ -527,16 +527,16 @@ where $ g $ is an arbitrary function. The equation for $ h(x, y) $ can be obtain
 Calculate the first derivatives of $ u(x, y) $:
 
 ```{math}
-\frac{\partial u}{\partial x} &= \frac{\partial h}{\partial x} g(p) + h \frac{\mathrm{d}g(p)}{\mathrm{d}p} \frac{\partial p}{\partial x} = \frac{\partial h}{\partial x} g(p) + h \frac{\mathrm{d}g(p)}{\mathrm{d}p} B \\
-\frac{\partial u}{\partial y} &= \frac{\partial h}{\partial y} g(p) + h \frac{\mathrm{d}g(p)}{\mathrm{d}p} \frac{\partial p}{\partial y} = \frac{\partial h}{\partial y} g(p) - h \frac{\mathrm{d}g(p)}{\mathrm{d}p} B
+\frac{\partial u}{\partial x} &= \frac{\partial h}{\partial x} g(p) + h \frac{\mathrm{d}g(p)}{\mathrm{d}p} \frac{\partial p}{\partial x} = \frac{\partial h}{\partial x} g(p) + h \frac{\mathrm{d}g(p)}{\mathrm{d}p} \\
+\frac{\partial u}{\partial y} &= \frac{\partial h}{\partial y} g(p) + h \frac{\mathrm{d}g(p)}{\mathrm{d}p} \frac{\partial p}{\partial y} = \frac{\partial h}{\partial y} g(p) - h \frac{\mathrm{d}g(p)}{\mathrm{d}p} \frac{B}{2C}
 ```
 
 and the second derivatives of $ u(x, y)$:
 
 ```{math}
 \frac{\partial^2 u}{\partial x^2} &= \frac{\partial^2 h}{\partial x^2} g(p) + 2 \frac{\partial h}{\partial x} \frac{\mathrm{d}g(p)}{\mathrm{d}p} + h \frac{d^2 g(p)}{\mathrm{d}p^2}\\
-\frac{\partial^2 u}{\partial x \partial y} &= \frac{\partial^2 h}{\partial x \partial y} g(p) + \frac{\partial h}{\partial x} \frac{\mathrm{d}g(p)}{\mathrm{d}p} - \frac{\partial h}{\partial y} \frac{\mathrm{d}g(p)}{\mathrm{d}p} B - h \frac{d^2 g(p)}{\mathrm{d}p^2} B\\
-\frac{\partial^2 u}{\partial y^2} &= \frac{\partial^2 h}{\partial y^2} g(p) - 2 \frac{\partial h}{\partial y} \frac{\mathrm{d}g(p)}{\mathrm{d}p} B + h \frac{d^2 g(p)}{\mathrm{d}p^2} B^2
+\frac{\partial^2 u}{\partial x \partial y} &= \frac{\partial^2 h}{\partial x \partial y} g(p) + \frac{\partial h}{\partial x} \frac{\mathrm{d}g(p)}{\mathrm{d}p} - \frac{\partial h}{\partial y} \frac{\mathrm{d}g(p)}{\mathrm{d}p} \frac{B}{2C} - h \frac{d^2 g(p)}{\mathrm{d}p^2} \frac{B}{2C}\\
+\frac{\partial^2 u}{\partial y^2} &= \frac{\partial^2 h}{\partial y^2} g(p) - 2 \frac{\partial h}{\partial y} \frac{\mathrm{d}g(p)}{\mathrm{d}p} \frac{B}{2C} + h \frac{d^2 g(p)}{\mathrm{d}p^2} \frac{B^2}{4C^2}
 ```
 
 Substituting these into second order PDE and simplifying, we obtain an equation for $ h(x, y) $.
@@ -544,8 +544,8 @@ Substituting these into second order PDE and simplifying, we obtain an equation 
 The contributions proportional to $\frac{\mathrm{d}g(p)}{\mathrm{d}p} $ and $\frac{d^2g(p)}{\mathrm{d}p^2} $ turn to zero exactly because $B^2 = 4AC$:
 
 ```{math}
-\left( 2A \frac{\partial h}{\partial x} - B \frac{\partial h}{\partial y} \right) \frac{\partial h}{\partial x} \cdot \frac{\mathrm{d}g}{\mathrm{d}p} + \left( B \frac{\partial h}{\partial x} - 2C \frac{\partial h}{\partial y} \right) \frac{\partial h}{\partial y} \cdot \frac{\mathrm{d}g}{\mathrm{d}p} &= 0 \\
-\left( \frac{B^2}{A} - 2C + C \frac{4C^2}{B^2} \right) h \frac{d^2g(p)}{\mathrm{d}p^2} &= 0
+\left( 2A \frac{\partial h}{\partial x} - B \frac{\partial h}{\partial x}\frac{B}{2C} \right) \frac{\partial h}{\partial x} \cdot \frac{\mathrm{d}g}{\mathrm{d}p} + \left( B \frac{\partial h}{\partial x} - 2C \frac{\partial h}{\partial y}\frac{B}{2C} \right) \frac{\partial h}{\partial y} \cdot \frac{\mathrm{d}g}{\mathrm{d}p} &= 0 \\
+\left( A - \frac{B^2}{2C} + C\frac{B^2}{4C^2} \right) h \frac{d^2g(p)}{\mathrm{d}p^2} &= 0
 ```
 
 Therefore, the equation with respect to $ h(x, y) $ is:
