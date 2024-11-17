@@ -89,7 +89,7 @@ The **Many-Worlds Interpretation** posits that all possible outcomes of quantum 
 Gauge invariance implies that certain transformations (e.g., adding a phase to the wavefunction) leave the theory’s predictions unchanged. This raises questions about which elements of quantum theory are physically real.
 
 - **Local Gauge Invariance**: In quantum electrodynamics (QED), local gauge invariance underlies the interaction between charged particles and the electromagnetic field, suggesting that certain quantities, like the absolute phase of the wavefunction, are not directly measurable.
-- **Example - The Aharonov-Bohm Effect**: This effect shows that gauge potentials, which were traditionally considered unobservable, can have measurable consequences. When charged particles pass around a region with magnetic flux, the vector potential $ A $ causes an observable phase shift, challenging a purely epistemic view of gauge fields and suggesting that gauge potentials may have a form of physical reality.
+- **[The Aharonov-Bohm Effect](https://uclnatsci.github.io/2024/NSCI0035/ABohm.html)**: This effect shows that gauge potentials, which were traditionally considered unobservable, can have measurable consequences. When charged particles pass around a region with magnetic flux, the vector potential $\bf A $ causes an observable phase shift, challenging a purely epistemic view of gauge fields and suggesting that gauge potentials may have a form of physical reality.
 
 ## The Physicality of Complex Solutions in Quantum Theory
 
@@ -110,21 +110,6 @@ P(a_i) = |\langle a_i | \psi \rangle|^2
 ```
 Since only the absolute square of the wavefunction affects measurement outcomes, one might argue that only the probability densities are ontically real. In this view, the complex phase of the wavefunction could be seen as epistemic, merely facilitating calculations.
 
-## Summary of Ontological Issues in Quantum Mechanics
-
-### Ontic vs. Epistemic Wavefunctions
-
-- **Ontic**: The wavefunction represents a real physical state (e.g., Many-Worlds Interpretation, Bohmian Mechanics).
-- **Epistemic**: The wavefunction encodes knowledge or belief rather than a physical state (e.g., Copenhagen, QBism).
-
-### Gauge Invariance and Reality
-
-Gauge invariance raises questions about what elements of quantum theory correspond to physical reality. The Aharonov-Bohm effect implies that gauge potentials can have real effects, complicating a purely epistemic view of gauge fields.
-
-### 3. Physicality of Complex Numbers
-
-The complex nature of the wavefunction raises questions about whether the imaginary components correspond to real aspects of quantum states or are merely calculational tools.
-
----
+## Summary
 
 Ontology in quantum mechanics challenges us to understand the nature of reality in a fundamentally probabilistic and abstract theory. Each interpretation makes distinct commitments about the status of quantum entities, gauge fields, and complex solutions, reflecting different views on what quantum mechanics ultimately tells us about reality. These issues remain open and are at the heart of ongoing philosophical and scientific debates.
