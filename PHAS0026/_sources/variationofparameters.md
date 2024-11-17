@@ -1,86 +1,88 @@
-
 # Variation of Parameters
 
+## Definition
 
-
-````{admonition} Definition
-The variation of parameters method can be used to solve $n^{th}$ degree linear  ODEs of the form:
+The **Variation of Parameters** method provides a way to solve $ n $-th order linear ODEs of the form:
 ```{math}
-y^{(n)}(x) + \sum^{n-1}_{i=0} a_i(x)\,y^{(i)}(x) = f(x)
+y^{(n)}(x) + \sum_{i=0}^{n-1} a_i(x) y^{(i)}(x) = f(x),
 ```
-which can be shown to have the solution:
+where the solution is constructed using the linearly independent solutions $ u_1(x), u_2(x), \dots, u_n(x) $ of the homogeneous equation:
 ```{math}
-\sum_{i=1}^{n} u_i(x)\, \int \frac{W_i(x)}{W(x)}\,\mathrm{d}x
-```
-where $u_i(x),\, i \in \{1,\, 2,\, \dots,\, n\}$ are the the homogeneous solutions of the ODE, $W(x)$ is the Wronskian of these homogeneous solutions:
-```{math}
-W \Big(u_{1}, \ldots ,u_{n}\Big)=
-\begin{vmatrix}
-u_{1}(x) & u_{2}(x) & \cdots & u_{n}(x)\\
-u_{1}'(x) & u_{2}'(x) & \cdots & u_{n}'(x)\\
-\vdots &\vdots &\ddots &\vdots \\
-u_{1}^{(n-1)}(x) & u_{2}^{(n-1)}(x) & \cdots & u_{n}^{(n-1)}(x)
-\end{vmatrix}
-```
-and $W_i(x)$ is the reduced Wronskian:
-```{math}
-W_i(x) = \begin{vmatrix}
-u_{1}(x) & u_{2}(x) & \cdots & 0 & \cdots & u_{n}(x)\\
-u_{1}'(x) & u_{2}'(x) & \cdots & 0& \cdots & u_{n}'(x)\\
-\vdots &\vdots &\ddots &\vdots &\vdots &\vdots \\
-u_{1}^{(n-1)}(x) & u_{2}^{(n-1)}(x) & \cdots & f(x)& \cdots & u_{n}^{(n-1)}(x)
-\end{vmatrix}
-```
-where the $i^{th}$ column of the Wronskian $W(x)$ has been replaced with:
-```{math} 
-\begin{pmatrix}
-0 \\ 0 \\ \vdots \\ f(x)
-\end{pmatrix}
+y^{(n)}(x) + \sum_{i=0}^{n-1} a_i(x) y^{(i)}(x) = 0.
 ```
 
-````
+---
 
+## The 2x2 Case: Detailed Steps
 
-Let’s begin again with the form of the inhomogeneous second order equation:
+For a second-order ODE:
 ```{math}
-L\,y(x) = y^{\prime\prime}(x)+p(x)\,y^{\prime}(x)+q(x)\,y(x) = r(x)
+y''(x) + p(x)y'(x) + q(x)y(x) = r(x),
 ```
-firstly we aim to solve the homogeneous equation:
+assume the homogeneous solutions $ u_1(x) $ and $ u_2(x) $ are known. The general solution is:
 ```{math}
-L\,y(x) = y^{\prime\prime}(x)+p(x)\,y^{\prime}(x)+q(x)\,y(x) = 0
+y(x) = A(x) u_1(x) + B(x) u_2(x),
 ```
-which will admit solutions $u_1(x),\, u_2(x)$. Hence we will construct a solution to the general equation of the form:
+where $ A(x) $ and $ B(x) $ are functions to be determined.
+
+### Step 1: Differentiating the General Solution
+
+1. **First derivative:**
+   ```{math}
+   y'(x) = A'(x) u_1(x) + A(x) u_1'(x) + B'(x) u_2(x) + B(x) u_2'(x).
+   ```
+
+2. **Simplifying condition:**
+   To simplify the system, impose the condition:
+   ```{math}
+   A'(x) u_1(x) + B'(x) u_2(x) = 0.
+   ```
+   This removes the terms involving $ A'(x) $ and $ B'(x) $ in the first derivative. Substituting this condition:
+   ```{math}
+   y'(x) = A(x) u_1'(x) + B(x) u_2'(x).
+   ```
+
+3. **Second derivative:**
+   Compute the second derivative:
+   ```{math}
+   y''(x) = A'(x) u_1'(x) + A(x) u_1''(x) + B'(x) u_2'(x) + B(x) u_2''(x).
+   ```
+
+---
+
+### Step 2: Substituting into the ODE
+
+Substitute $ y(x) $, $ y'(x) $, and $ y''(x) $ into the original ODE:
 ```{math}
-y(x) = A(x)\,u_1(x) + B(x)\,u_2(x)
-``` 
-We note that if $A(x),\, B(x)$ here were just constants, then this would be a linear superposition of the homogeneous solutions - therefore in general these should contain some additive constant with each function.  In order to have two equations with two unknowns, we need to enforce a separate condition on $A(x),\, B(x)$, as we will see the most helpful condition to simplify later algebra turns out to be:
-```{math}
-A'(x)\,u_1(x) + B'(x)\,u_2(x) = 0
+y''(x) + p(x) y'(x) + q(x) y(x) = r(x).
 ```
-If we try to constuct the form of the second order equation using this first condition, we will find:
-```{math}
-y'(x) &= \Big(A(x)\,u_1(x) + B(x)\,u_2(x)\Big)' \\
-&= A'(x)\,u_1(x) + B'(x)\,u_2(x) + A(x)\,u_1'(x) + B(x)\,u_2'(x)\\
-&= A(x)\,u_1'(x) + B(x)\,u_2'(x)
-```
-where we have used our second condition to reach the final line.  Likewise for second derivatives:
-```{math}
-y''(x) = A(x)\,u_1''(x) + B(x)\,u_2''(x) + A'(x)\,u_1'(x) + B'(x)\,u_2'(x)
-```
-and so using the linear derivative operator:
-```{math}
-L\, y(x) &= A(x)\,u_1''(x) + B(x)\,u_2''(x) + A'(x)\,u_1'(x) + B'(x)\,u_2'(x) \\ &+ p(x)\,(A(x)\,u_1'(x) + B(x)\,u_2'(x)) \\ &+ q(x)\,(A(x)\,u_1(x) + B(x)\,u_2(x)) = f(x)\\
-&= A(x)(u''(x) + p(x\,)u'(x) + q(x)\,u(x)) + B(x)(u''(x) + p(x)\,u'(x) + q(x)\,u(x)) \\
-&+ A'(x)\,u_1'(x) + B'(x)\,u_2'(x)\\
-&= A'(x)\,u_1'(x) + B'(x)\,u_2'(x) + A(x)\,L\,u_1(x) + B(x)\,L\,u_2(x)\\
-&= A'(x)\,u_1'(x) + B'(x)\,u_2'(x)
-```
-where we have used the fact that the terms with $A(x),\, B(x)$ coefficients are actually just the homogeneous equations, hence they equal zero.  So this leaves a coupled ODE system:
-```{math}
-A'(x)\,u_1(x) + B'(x)\,u_2(x) &= 0\\
-A'(x)\,u_1'(x) + B'(x)\,u_2'(x) &= r(x)
-```
-which if we write as a matrix system $W(x)\,a = b$:
+
+1. Using the homogeneous equation, the terms involving $ A(x) u_1''(x) + B(x) u_2''(x) $ vanish:
+   ```{math}
+   u_1''(x) + p(x) u_1'(x) + q(x) u_1(x) = 0, \quad
+   u_2''(x) + p(x) u_2'(x) + q(x) u_2(x) = 0.
+   ```
+
+2. The remaining terms are:
+   ```{math}
+   A'(x) u_1'(x) + B'(x) u_2'(x) = r(x).
+   ```
+
+This gives two equations:
+1. From the simplifying condition:
+   ```{math}
+   A'(x) u_1(x) + B'(x) u_2(x) = 0,
+   ```
+2. From the substituted ODE:
+   ```{math}
+   A'(x) u_1'(x) + B'(x) u_2'(x) = r(x).
+   ```
+
+---
+
+### Step 3: Writing as a Matrix System
+
+The two equations can be written in matrix form:
 ```{math}
 \begin{pmatrix}
 u_1(x) & u_2(x) \\
@@ -89,171 +91,552 @@ u_1'(x) & u_2'(x)
 \begin{pmatrix}
 A'(x) \\
 B'(x)
-\end{pmatrix} = 
+\end{pmatrix}
+=
 \begin{pmatrix}
 0 \\
 r(x)
-\end{pmatrix}
-```
-where $W(x)$ is the Wronskian of the system. 
-
-So to find the solutions $a = W^{-1}\,b$ we can invert this matrix as:
-```{math}
-\begin{pmatrix}
-A'(x) \\
-B'(x)
-\end{pmatrix} = \frac{1}{W}\begin{pmatrix}
-u_2'(x) & -u_2(x) \\
--u_1'(x) & u_1(x)
-\end{pmatrix}
-\begin{pmatrix}
-0 \\
-f(x)
-\end{pmatrix} = \frac{1}{W}\begin{pmatrix}
--u_2(x)\,r(x) \\
-u_1(x)\,r(x)
-\end{pmatrix}
-```
-which means the final solutions can be found from:
-```{math}
-A(x) &= -\int \frac{1}{W}\,u_2(x)\,r(x) \,\mathrm{d}x \\
-B(x) &= \int \frac{1}{W}\,u_1(x)\,r(x) \,\mathrm{d}x \\
+\end{pmatrix}.
 ```
 
-````{admonition} Worked example
-:class: seealso
-Lets try and solve the ODE:
+Here, the determinant of the coefficient matrix is the **Wronskian**:
 ```{math}
-y'' + 4y' + 3y = \cosh(2x)
+W(x) = 
+\begin{vmatrix}
+u_1(x) & u_2(x) \\
+u_1'(x) & u_2'(x)
+\end{vmatrix}
+= u_1(x) u_2'(x) - u_2(x) u_1'(x).
 ```
-subject to the conditions $y(0) = -\frac{7}{15}, \,y'(0)=\frac{1}{15}$.  We note that this could be solved with method of undetermined coefficients, but this 
-means we can double check our results later!
 
-The solutions to the homoegenous ODE can be found from the ansatz $y = e^{\lambda\,x}$:
+---
 
+### Step 4: Solving for $ A'(x) $ and $ B'(x) $
+
+1. **Invert the coefficient matrix:**
+   The inverse of the 2x2 matrix is:
+   ```{math}
+   \frac{1}{W(x)}
+   \begin{pmatrix}
+   u_2'(x) & -u_2(x) \\
+   -u_1'(x) & u_1(x)
+   \end{pmatrix}.
+   ```
+
+2. **Multiply by the right-hand side vector:**
+   ```{math}
+   \begin{pmatrix}
+   A'(x) \\
+   B'(x)
+   \end{pmatrix}
+   =
+   \frac{1}{W(x)}
+   \begin{pmatrix}
+   u_2'(x) & -u_2(x) \\
+   -u_1'(x) & u_1(x)
+   \end{pmatrix}
+   \begin{pmatrix}
+   0 \\
+   r(x)
+   \end{pmatrix}.
+   ```
+
+3. **Perform the multiplication:**
+   ```{math}
+   A'(x) = \frac{-u_2(x) r(x)}{W(x)}, \quad B'(x) = \frac{u_1(x) r(x)}{W(x)}.
+   ```
+
+---
+
+### Step 5: Integrating to Find $ A(x) $ and $ B(x) $
+
+Finally, integrate to find $ A(x) $ and $ B(x) $:
 ```{math}
-\lambda^2 + 4\lambda + 3 = 0 &\Rightarrow \lambda = -1,\, -3 \\
-u_1(x) &= e^{-x} \\
-u_2(x) &= e^{-3x}
+A(x) = \int A'(x) \, \mathrm{d}x = -\int \frac{u_2(x) r(x)}{W(x)} \, \mathrm{d}x,
 ```
-which means that in order to construct the full solution:
 ```{math}
-y(x) = A(x)\,u_1(x) + B(x)\,u_2(x)
+B(x) = \int B'(x) \, \mathrm{d}x = \int \frac{u_1(x) r(x)}{W(x)} \, \mathrm{d}x.
 ```
-We need the Wronskian $W(x)$ of the system, here given by:
+
+Thus, the particular solution is:
 ```{math}
-W = \begin{vmatrix} 
+y_p(x) = A(x) u_1(x) + B(x) u_2(x).
+```
+
+---
+
+### Example
+
+Solve the ODE:
+```{math}
+y'' + 4y' + 3y = \cosh(2x),
+```
+with homogeneous solutions:
+```{math}
+u_1(x) = e^{-x}, \quad u_2(x) = e^{-3x}.
+```
+
+The Wronskian is:
+```{math}
+W(x) = 
+\begin{vmatrix} 
 e^{-x} & e^{-3x} \\
 -e^{-x} & -3e^{-3x}
-\end{vmatrix} = -3e^{-4x} - (-e^{-4x}) = -2e^{-4x}
+\end{vmatrix}
+= -2e^{-4x}.
 ```
-and so using {eq}`varparsolns`:
+
+Using the formulae for $ A'(x) $ and $ B'(x) $, integrate:
 ```{math}
-A(x) &= \frac{1}{2}\int e^{4x}\,e^{-3x}\,\cosh(2x) \,\mathrm{d}x  = \frac{1}{4}\int \Big(e^{3x}+e^{-x}\Big) \,\mathrm{d}x = \frac{1}{4}\Big(\frac{1}{3}e^{3x} - e^{-x}\Big) + C_1 \\
-B(x) &= -\frac{1}{2}\int e^{4x}\,e^{-x}\,\cosh(2x) \,\mathrm{d}x = -\frac{1}{4}\int \Big(e^{5x} + e^{x}\Big) \,\mathrm{d}x = -\frac{1}{4}\Big(\frac{1}{5}e^{5x} + e^{x}\Big) + C_2
+A(x) = -\frac{1}{2} \int e^{4x} e^{-3x} \cosh(2x) \mathrm{d}x, \quad 
+B(x) = \frac{1}{2} \int e^{4x} e^{-x} \cosh(2x) \mathrm{d}x.
 ```
-wher $C_1,\, C_2$ are constants.  This means the final solution is given by:
+
+Solve these integrals to find the full solution.
+
+---
+
+
+## General Case: $ n $-th Order ODEs*
+
+* This is section not examinable!
+
+For an $ n $-th order ODE:
 ```{math}
-y &= \Big(\frac{1}{12}e^{3x} - \frac{1}{4}e^{-x}\Big)e^{-x} - \Big(\frac{1}{20}e^{5x} - \frac{1}{4}e^{x}\Big)e^{-3x} + \Big(C_1\,e^{-x} + C_2\,e^{-3x}\Big) \\
-&= \frac{1}{12}e^{2x} - \frac{1}{4}e^{-2x} - \frac{1}{20}e^{2x} - \frac{1}{4}e^{-2x} + \Big(C_1\,e^{-x} + C_2\,e^{-3x}\Big)\\
-&= \frac{1}{60}\Big(2e^{2x} - 30e^{-2x} \Big) + \Big(C_1\,e^{-x} + C_2\,e^{-3x}\Big)
+a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_1(x) y' + a_0(x) y = f(x),
 ```
-Given the initial conditions, we find that:
+assume the $ n $ linearly independent solutions $ u_1(x), u_2(x), \dots, u_n(x) $ of the corresponding homogeneous equation are known:
 ```{math}
-y(0) &= \frac{-28}{60} + \Big(C_1 + C_2\Big) = -\frac{7}{15} \Rightarrow C_1 + C_2 = 0\\
-y'(x) &= \frac{1}{60}\Big(4e^{2x} + 60e^{-2x} \Big) + \Big(-C_1\,e^{-x} -3 C_2\,e^{-3x}\Big)\\
-y'(0) &= \frac{64}{60} + \Big(-C_1 - 3C_2\Big) = \frac{1}{15} \Rightarrow -C_1 - 3C_2 = -1
+a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_1(x) y' + a_0(x) y = 0.
 ```
-which we can solve as $C_1 = 1/2,\, C_2 = -1/2$, which gives final solutions as:
+
+The general solution is:
 ```{math}
-y(x) = \frac{1}{30}\Big(e^{2x} - 15e^{-2x} +15e^{-x} - 15 \,e^{-3x}\Big)
+y(x) = \sum_{i=1}^n k_i(x) u_i(x),
 ```
-which we can check gives the right answer as:
+where $ k_i(x) $ are functions to be determined.
+
+### Step 1: Imposing Conditions to Simplify the System
+
+To determine $ k_i(x) $, impose $ n $ independent conditions. The simplest and most effective choice is:
 ```{math}
-y(x) &= \frac{1}{30}\Big(e^{2x} - 15e^{-2x} +15e^{-x} - 15 \,e^{-3x}\Big)\\
-y'(x) &= \frac{1}{30}\Big(2e^{2x} + 30e^{-2x} - 15e^{-x} + 45 \,e^{-3x}\Big)\\
-y''(x) &= \frac{1}{30}\Big(4e^{2x} - 60e^{-2x} + 15e^{-x} - 135 \,e^{-3x}\Big) \\
-\Rightarrow y'' + 4y' + 3y &= \frac{1}{30}\Big[(4+8+3)e^{2x} + (-60 + 120 -45) e^{-2x} \\
-&+ (15-60+45)e^{-x} + (-135+180-45)\,e^{-3x}\Big] \\
-&= \frac{1}{30}\Big(15e^{2x} + 15 e^{-2x}\Big) = \cosh(2x)
+\sum_{i=1}^n k_i'(x) u_i^{(j)}(x) = 
+\begin{cases}
+0 & \text{for } j = 0, 1, \dots, n-2, \\
+f(x) & \text{for } j = n-1.
+\end{cases}
 ```
-and so the solutions are correct!
-````
-## The General Case
 
-Let us solve the ODE:
-
+This forms a system of $ n $ linear equations for $ k_i'(x) $. Explicitly, the equations can be written in matrix form as:
 ```{math}
-a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_1(x) y' + a_0(x) y = f(x)
+\begin{pmatrix}
+u_1(x) & u_2(x) & \cdots & u_n(x) \\
+u_1'(x) & u_2'(x) & \cdots & u_n'(x) \\
+\vdots & \vdots & \ddots & \vdots \\
+u_1^{(n-1)}(x) & u_2^{(n-1)}(x) & \cdots & u_n^{(n-1)}(x)
+\end{pmatrix}
+\begin{pmatrix}
+k_1'(x) \\
+k_2'(x) \\
+\vdots \\
+k_n'(x)
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\
+0 \\
+\vdots \\
+f(x)
+\end{pmatrix}.
 ```
 
-where the coefficients $ a_i(x) $ may or may not be functions of $ x $. First, assume that the complementary solution of the homogeneous equation:
-
+The coefficient matrix is the **Wronskian**, denoted by $ W(x) $:
 ```{math}
-a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \dots + a_1(x) y' + a_0(x) y = 0
+W(x) = 
+\begin{vmatrix}
+u_1(x) & u_2(x) & \cdots & u_n(x) \\
+u_1'(x) & u_2'(x) & \cdots & u_n'(x) \\
+\vdots & \vdots & \ddots & \vdots \\
+u_1^{(n-1)}(x) & u_2^{(n-1)}(x) & \cdots & u_n^{(n-1)}(x)
+\end{vmatrix}.
 ```
 
-is known and is represented as:
+---
 
+### Step 2: Using Cramer’s Rule to Solve for $ k_i'(x) $
+
+Cramer’s Rule provides an elegant way to solve this system. It states that for a system of linear equations $ W(x) \mathbf{k}' = \mathbf{b} $, the solution for $ k_i'(x) $ is:
 ```{math}
-y_c(x) = c_1 y_1(x) + c_2 y_2(x) + \dots + c_n y_n(x)
+k_i'(x) = \frac{\det(W_i(x))}{\det(W(x))},
 ```
-
-where $ c_i $ are constants and $ y_i(x) $ are known linearly independent functions.
-
-We now consider a particular solution of the inhomogeneous equation in the form:
-
+where:
+- $ \det(W(x)) $ is the determinant of the Wronskian matrix.
+- $ \det(W_i(x)) $ is the determinant of the matrix obtained by replacing the $ i $-th column of $ W(x) $ with the right-hand side vector $ \mathbf{b} $:
 ```{math}
-y_p(x) = k_1(x) y_1(x) + k_2(x) y_2(x) + \dots + k_n(x) y_n(x)
+\mathbf{b} =
+\begin{pmatrix}
+0 \\
+0 \\
+\vdots \\
+f(x)
+\end{pmatrix}.
 ```
 
-where the coefficients $ k_i(x) $ are, in general, functions of $ x $. These functions can be determined by imposing $ n $ non-equivalent conditions. The ODE itself gives one of these conditions. How to choose the others?
-
-
-
-
-#### Example: $ n = 2 $
-
-Consider the equation:
-
+Thus, for each $ i $, the modified Wronskian matrix $ W_i(x) $ is:
 ```{math}
-a_2(x) y'' + a_1(x) y' + a_0(x) y = f(x)
+W_i(x) =
+\begin{pmatrix}
+u_1(x) & \cdots & 0 & \cdots & u_n(x) \\
+u_1'(x) & \cdots & 0 & \cdots & u_n'(x) \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+u_1^{(n-1)}(x) & \cdots & f(x) & \cdots & u_n^{(n-1)}(x)
+\end{pmatrix}.
 ```
 
-Assume that the solutions of the corresponding homogeneous equation $ y_1(x) $ and $ y_2(x) $ are known. Then:
+Each $ 0 $ replaces the $ i $-th column, and the last row contains $ f(x) $.
 
+---
+
+### Step 3: Computing $ k_i(x) $
+
+Once $ k_i'(x) $ is determined, integrate to find $ k_i(x) $:
 ```{math}
-y_c(x) = c_1 y_1(x) + c_2 y_2(x)
+k_i(x) = \int k_i'(x) \, \mathrm{d}x.
 ```
 
-is the complementary function. We now seek a particular solution in the form:
-
+The particular solution is then:
 ```{math}
-y_p(x) = k_1(x) y_1(x) + k_2(x) y_2(x)
+y_p(x) = \sum_{i=1}^n k_i(x) u_i(x).
 ```
 
-Substitute $ y_p(x) $ into the original equation:
+---
 
+### Example: Third-Order ODE
+
+Consider a third-order ODE:
 ```{math}
-f(x) = a_0 (k_1 y_1 + k_2 y_2) + a_1 (k_1' y_1 + k_2' y_2 + k_1 y_1' + k_2 y_2') + a_2 (k_1'' y_1 + k_2'' y_2 + k_1' y_1' + k_2' y_2')
+y'''(x) + p(x)y''(x) + q(x)y'(x) + r(x)y(x) = f(x),
 ```
-
-If we impose the condition:
-
+with homogeneous solutions $ u_1(x), u_2(x), u_3(x) $. The system of equations for $ k_1'(x), k_2'(x), k_3'(x) $ is:
 ```{math}
-k_1' y_1 + k_2' y_2 = 0
+\begin{pmatrix}
+u_1(x) & u_2(x) & u_3(x) \\
+u_1'(x) & u_2'(x) & u_3'(x) \\
+u_1''(x) & u_2''(x) & u_3''(x)
+\end{pmatrix}
+\begin{pmatrix}
+k_1'(x) \\
+k_2'(x) \\
+k_3'(x)
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\
+0 \\
+f(x)
+\end{pmatrix}.
 ```
 
-then the remaining terms must satisfy:
+The Wronskian is:
 ```{math}
-f(x) = a_2 (k_1' y_1' + k_2' y_2')
+W(x) =
+\begin{vmatrix}
+u_1(x) & u_2(x) & u_3(x) \\
+u_1'(x) & u_2'(x) & u_3'(x) \\
+u_1''(x) & u_2''(x) & u_3''(x)
+\end{vmatrix}.
 ```
 
-This means that we have two simultaneous equations and tow unknowns $k_1(x)\,k_2(x)$ and we find that:
-
+Using Cramer’s Rule:
 ```{math}
-k_1'(x) = -k_2'(x) \frac{y_2(x)}{y_1(x)}
+k_1'(x) = \frac{\det(W_1(x))}{W(x)}, \quad
+k_2'(x) = \frac{\det(W_2(x))}{W(x)}, \quad
+k_3'(x) = \frac{\det(W_3(x))}{W(x)}.
 ```
 
-This process continues until we obtain the functions $ k_1(x) $ and $ k_2(x) $.
+Here:
+- $ W_1(x) $ replaces the first column with $ \begin{pmatrix} 0 \\ 0 \\ f(x) \end{pmatrix} $,
+- $ W_2(x) $ replaces the second column with $ \begin{pmatrix} 0 \\ 0 \\ f(x) \end{pmatrix} $,
+- $ W_3(x) $ replaces the third column with $ \begin{pmatrix} 0 \\ 0 \\ f(x) \end{pmatrix} $.
 
+Integrate $ k_1'(x), k_2'(x), k_3'(x) $ to find $ k_1(x), k_2(x), k_3(x) $, and construct the particular solution:
+```{math}
+y_p(x) = k_1(x) u_1(x) + k_2(x) u_2(x) + k_3(x) u_3(x).
+```
+
+### Example: Solving $ y''' - y' = e^x $
+
+We solve the third-order ODE:
+```{math}
+y'''(x) - y'(x) = e^x
+```
+using the variation of parameters method.
+
+---
+
+#### Step 1: Solve the Homogeneous Equation
+
+The corresponding homogeneous equation is:
+```{math}
+y'''(x) - y'(x) = 0.
+```
+
+Assume a solution of the form $ y = e^{\lambda x} $. Substituting this into the equation gives:
+```{math}
+\lambda^3 e^{\lambda x} - \lambda e^{\lambda x} = 0.
+```
+Factoring out $ e^{\lambda x} $, we find:
+```{math}
+\lambda^3 - \lambda = 0 \quad \implies \quad \lambda (\lambda^2 - 1) = 0.
+```
+
+The roots are:
+```{math}
+\lambda = 0, \quad \lambda = 1, \quad \lambda = -1.
+```
+
+Thus, the solutions to the homogeneous equation are:
+```{math}
+u_1(x) = 1, \quad u_2(x) = e^x, \quad u_3(x) = e^{-x}.
+```
+
+---
+
+#### Step 2: Write the General Solution
+
+The general solution is of the form:
+```{math}
+y(x) = k_1(x) u_1(x) + k_2(x) u_2(x) + k_3(x) u_3(x).
+```
+
+---
+
+#### Step 3: Set Up the System of Equations
+
+Using the variation of parameters method, impose the conditions:
+```{math}
+k_1'(x) u_1(x) + k_2'(x) u_2(x) + k_3'(x) u_3(x) = 0,
+```
+```{math}
+k_1'(x) u_1'(x) + k_2'(x) u_2'(x) + k_3'(x) u_3'(x) = 0,
+```
+```{math}
+k_1'(x) u_1''(x) + k_2'(x) u_2''(x) + k_3'(x) u_3''(x) = e^x.
+```
+
+Substitute the known solutions $ u_1(x) = 1 $, $ u_2(x) = e^x $, $ u_3(x) = e^{-x} $:
+```{math}
+\begin{aligned}
+&k_1'(x) (1) + k_2'(x) (e^x) + k_3'(x) (e^{-x}) = 0, \\
+&k_1'(x) (0) + k_2'(x) (e^x) - k_3'(x) (e^{-x}) = 0, \\
+&k_1'(x) (0) + k_2'(x) (e^x) + k_3'(x) (-e^{-x}) = e^x.
+\end{aligned}
+```
+
+---
+
+#### Step 4: Write in Matrix Form
+
+In matrix form:
+```{math}
+\begin{pmatrix}
+1 & e^x & e^{-x} \\
+0 & e^x & -e^{-x} \\
+0 & e^x & -e^{-x}
+\end{pmatrix}
+\begin{pmatrix}
+k_1'(x) \\
+k_2'(x) \\
+k_3'(x)
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\
+0 \\
+e^x
+\end{pmatrix}.
+```
+
+The coefficient matrix is the Wronskian $ W(x) $, which is:
+```{math}
+W(x) =
+\begin{vmatrix}
+1 & e^x & e^{-x} \\
+0 & e^x & -e^{-x} \\
+0 & e^x & e^{-x}
+\end{vmatrix}.
+```
+
+---
+
+#### Step 5: Compute the Wronskian
+
+Expand the determinant along the first row:
+```{math}
+W(x) = 1 \cdot
+\begin{vmatrix}
+e^x & -e^{-x} \\
+e^x & e^{-x}
+\end{vmatrix}
+- 0 + 0.
+```
+
+The 2x2 determinant is:
+```{math}
+\begin{vmatrix}
+e^x & -e^{-x} \\
+e^x & e^{-x}
+\end{vmatrix}
+= (e^x)(e^{-x}) - (e^x)(-e^{-x}) = 1 + 1 = 2.
+```
+
+Thus:
+```{math}
+W(x) = 2.
+```
+
+---
+
+#### Step 6: Solve for $ k_1'(x), k_2'(x), k_3'(x) $ Using Cramer’s Rule
+
+With $ W(x) = 2 $, compute the determinants $ W_1(x), W_2(x), W_3(x) $ to find $ k_1'(x), k_2'(x), k_3'(x) $.
+
+#### Compute $ W_1(x) $:
+Replace the first column with $ \begin{pmatrix} 0 \\ 0 \\ e^x \end{pmatrix} $:
+```{math}
+W_1(x) =
+\begin{vmatrix}
+0 & e^x & e^{-x} \\
+0 & e^x & -e^{-x} \\
+e^x & e^x & e^{-x}
+\end{vmatrix}.
+```
+
+Expanding along the first column:
+```{math}
+W_1(x) = e^x \cdot
+\begin{vmatrix}
+e^x & -e^{-x} \\
+e^x & e^{-x}
+\end{vmatrix}.
+```
+
+The 2x2 determinant is $ 2 $, so:
+```{math}
+W_1(x) = e^x \cdot 2 = 2e^x.
+```
+
+#### Compute $ W_2(x) $:
+Replace the second column with $ \begin{pmatrix} 0 \\ 0 \\ e^x \end{pmatrix} $:
+```{math}
+W_2(x) =
+\begin{vmatrix}
+1 & 0 & e^{-x} \\
+0 & 0 & -e^{-x} \\
+0 & e^x & e^{-x}
+\end{vmatrix}.
+```
+
+Expanding along the second column:
+```{math}
+W_2(x) = -e^x \cdot
+\begin{vmatrix}
+1 & e^{-x} \\
+0 & -e^{-x}
+\end{vmatrix}.
+```
+
+The 2x2 determinant is $ -e^{-x} $, so:
+```{math}
+W_2(x) = -e^x \cdot (-e^{-x}) = 1.
+```
+
+#### Compute $ W_3(x) $:
+Replace the third column with $ \begin{pmatrix} 0 \\ 0 \\ e^x \end{pmatrix} $:
+```{math}
+W_3(x) =
+\begin{vmatrix}
+1 & e^x & 0 \\
+0 & e^x & 0 \\
+0 & e^x & e^x
+\end{vmatrix}.
+```
+
+Expanding along the third column:
+```{math}
+W_3(x) = e^x \cdot
+\begin{vmatrix}
+1 & e^x \\
+0 & e^x
+\end{vmatrix}.
+```
+
+The 2x2 determinant is $ e^x $, so:
+```{math}
+W_3(x) = e^x \cdot e^x = e^{2x}.
+```
+
+#### Using Cramer’s Rule:
+```{math}
+k_1'(x) = \frac{W_1(x)}{W(x)} = \frac{2e^x}{2} = e^x, \quad
+k_2'(x) = \frac{W_2(x)}{W(x)} = \frac{1}{2}, \quad
+k_3'(x) = \frac{W_3(x)}{W(x)} = \frac{e^{2x}}{2}.
+```
+
+---
+
+#### Step 7: Integrate to Find $ k_1(x), k_2(x), k_3(x) $
+
+1. $ k_1'(x) = e^x $, so:
+   ```{math}
+   k_1(x) = \int e^x \, \mathrm{d}x = e^x + C_1.
+   ```
+
+2. $ k_2'(x) = \frac{1}{2} $, so:
+   ```{math}
+   k_2(x) = \int \frac{1}{2} \, \mathrm{d}x = \frac{1}{2}x + C_2.
+   ```
+
+3. $ k_3'(x) = \frac{e^{2x}}{2} $, so:
+   ```{math}
+   k_3(x) = \int \frac{e^{2x}}{2} \, \mathrm{d}x = \frac{1}{4}e^{2x} + C_3.
+   ```
+
+---
+
+#### Step 8: Write the General Solution
+
+The general solution is:
+```{math}
+y(x) = k_1(x) u_1(x) + k_2(x) u_2(x) + k_3(x) u_3(x).
+```
+
+Substitute:
+```{math}
+y(x) = (e^x + C_1) \cdot 1 + \left(\frac{1}{2}x + C_2\right) \cdot e^x + \left(\frac{1}{4}e^{2x} + C_3\right) \cdot e^{-x}.
+```
+
+Simplify:
+```{math}
+y(x) = \left(1 + C_2 + \frac{1}{4} + \frac{1}{2}x\right)e^x + C_1 + C_3 e^{-x}.
+```
+
+Let $ C_4 = 1 + C_2 + \frac{1}{4} $, the final solution is:
+```{math}
+y(x) = C_1 e^x + C_2 + C_3 e^{-x} + \frac{1}{2}x\,e^x 
+```
+
+---
+
+
+### Summary
+
+- Use the homogeneous solutions to construct the Wronskian $ W(x) $.
+- Use Cramer’s Rule to compute $ k_i'(x) $ by solving the linear system.
+- Integrate $ k_i'(x) $ to find $ k_i(x) $.
+- Combine the $ k_i(x) $ with $ u_i(x) $ to construct the particular solution.
+
+This approach extends naturally to any $ n $-th order ODE.
+
+
+---
