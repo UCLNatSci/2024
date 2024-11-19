@@ -98,7 +98,7 @@ If we choose to use these unit vectors for calculating velocity and acceleration
 We have to differentiate the full vector function $ \mathbf{r}(t) $ to get the velocity. $ b $ is constant with time, but the radial unit vector is not -- it changes direction, according to:
 
 ```{math}
-\mathbf{\hat{r}}'(t) = \frac{d}{dt}\left( \cos(\omega\,t)\,\mathbf{\hat{x}} + \sin(\omega\,t)\,\mathbf{\hat{y}} \right) = \omega\,\left( -\sin(\omega\,t)\,\mathbf{\hat{x}} + \cos(\omega\,t)\,\mathbf{\hat{y}} \right) = \omega\,\boldsymbol{\hat{\phi}}.
+\mathbf{\hat{r}}'(t) = \frac{\mathrm{d}}{\mathrm{d}t}\left( \cos(\omega\,t)\,\mathbf{\hat{x}} + \sin(\omega\,t)\,\mathbf{\hat{y}} \right) = \omega\,\left( -\sin(\omega\,t)\,\mathbf{\hat{x}} + \cos(\omega\,t)\,\mathbf{\hat{y}} \right) = \omega\,\boldsymbol{\hat{\phi}}.
 ```
 
 We introduce the unit vector $ \mathbf{\hat{\phi}} $ in the final step, as we identify it with the unit vector in the previous line, which is always orthogonal to $ \mathbf{\hat{r}} $ and which always points along the direction of motion of the particle. Thus we have:
@@ -110,7 +110,7 @@ We introduce the unit vector $ \mathbf{\hat{\phi}} $ in the final step, as we id
 Furthermore, for the acceleration, we see that we need to differentiate $ \mathbf{\hat{\phi}}(t) $ with respect to time, as follows:
 
 ```{math}
-\boldsymbol{\hat{\phi}}'(t) = \frac{d}{dt}\left( -\sin(\omega\,t)\,\mathbf{\hat{x}} + \cos(\omega\,t)\,\mathbf{\hat{y}} \right) = \omega\,\left( -\cos(\omega\,t)\,\mathbf{\hat{x}} - \sin(\omega\,t)\,\mathbf{\hat{y}} \right) = -\omega\,\mathbf{\hat{r}}.
+\boldsymbol{\hat{\phi}}'(t) = \frac{\mathrm{d}}{\mathrm{d}t}\left( -\sin(\omega\,t)\,\mathbf{\hat{x}} + \cos(\omega\,t)\,\mathbf{\hat{y}} \right) = \omega\,\left( -\cos(\omega\,t)\,\mathbf{\hat{x}} - \sin(\omega\,t)\,\mathbf{\hat{y}} \right) = -\omega\,\mathbf{\hat{r}}.
 ```
 
 And so, our expression for acceleration becomes:
@@ -196,27 +196,27 @@ The unit vector $ \mathbf{e_R} $ will change direction as the particle moves, si
 We can thus use similar calculations as were done in the previous section to prove that:
 
 ```{math}
-\frac{d\mathbf{e_R}}{dt} = \dot{\phi}\,\mathbf{e_{\phi}},
+\frac{\mathrm{d}\mathbf{e_R}}{\mathrm{d}t} = \dot{\phi}\,\mathbf{e_{\phi}},
 ```
 
-where we have used the 'overdot' notation to denote time derivative, $ \dot{\phi} = \frac{d\phi}{dt} $.
+where we have used the 'overdot' notation to denote time derivative, $ \dot{\phi} = \frac{\mathrm{d}\phi}{\mathrm{d}t} $.
 
 Using this same notation now to calculate the velocity in cylindrical coordinates:
 
 ```{math}
-\dot{\mathbf{r}} = \dot{R}\,\mathbf{e_R} + R\,\frac{d\mathbf{e_R}}{dt} + \dot{z}\,\mathbf{e_z}
+\dot{\mathbf{r}} = \dot{R}\,\mathbf{e_R} + R\,\frac{\mathrm{d}\mathbf{e_R}}{\mathrm{d}t} + \dot{z}\,\mathbf{e_z}
             = \dot{R}\,\mathbf{e_R} + R\,\dot{\phi}\,\mathbf{e_{\phi}} + \dot{z}\,\mathbf{e_z}.
 ```
 
 The cylindrical components of the above equation represent the cylindrical radial velocity, the azimuthal velocity (equivalent to a local rotational component of motion about the $ z $-axis), and the axial velocity.
 
-Differentiating the azimuthal unit vector $ \mathbf{e_{\phi}} $ with respect to time, using similar reasoning as for equation $ \frac{d\mathbf{e_{\phi}}}{dt} $, gives us:
+Differentiating the azimuthal unit vector $ \mathbf{e_{\phi}} $ with respect to time, using similar reasoning as for equation $ \frac{\mathrm{d}\mathbf{e_{\phi}}}{\mathrm{d}t} $, gives us:
 
 ```{math}
 \mathbf{e_{\phi}}'(t) = -\dot{\phi}\,\mathbf{e_R}.
 ```
 
-If we now use this result and the equation for $ \frac{d\mathbf{e_R}}{dt} $ when we differentiate velocity (equation $ \dot{\mathbf{r}} $) to get acceleration, we arrive at (proof is left for the reader as an exercise):
+If we now use this result and the equation for $ \frac{\mathrm{d}\mathbf{e_R}}{\mathrm{d}t} $ when we differentiate velocity (equation $ \dot{\mathbf{r}} $) to get acceleration, we arrive at (proof is left for the reader as an exercise):
 
 ```{math}
 \ddot{\mathbf{r}} = (\ddot{R}-R\,\dot{\phi}^2)\,\mathbf{e_R} + (R\,\ddot{\phi} + 2\dot{R}\dot{\phi})\,\mathbf{e_{\phi}} + \ddot{z}\,\mathbf{e_z}.
@@ -251,7 +251,7 @@ Taking the general time derivative of the radial unit vector (assuming that both
 
 ```{math}
 :label: eq:duvecrdt
-\frac{d\mathbf{e_r}}{dt} &= \frac{\partial \mathbf{e_r}}{\partial \theta}\,\dot{\theta} + \frac{\partial \mathbf{e_r}}{\partial \phi}\,\dot{\phi} \\
+\frac{\mathrm{d}\mathbf{e_r}}{\mathrm{d}t} &= \frac{\partial \mathbf{e_r}}{\partial \theta}\,\dot{\theta} + \frac{\partial \mathbf{e_r}}{\partial \phi}\,\dot{\phi} \\
 &= \cos\theta \cos\phi\,\dot{\theta}\,\mathbf{e_x} + \cos\theta \sin\phi\,\dot{\theta}\,\mathbf{e_y} - \sin\theta\,\dot{\theta}\,\mathbf{e_z}
 \\
 &- \sin\theta \sin\phi\,\dot{\phi}\,\mathbf{e_x} + \sin\theta \cos\phi\,\dot{\phi}\,\mathbf{e_y}
@@ -265,7 +265,7 @@ We now have enough information to evaluate all the terms (scalar and vector deri
 
 ```{math}
 :label: eq:dvecrdt
-\dfrac{d(r\mathbf{e_r})}{dt} &= \dot{r}\,\mathbf{e_r} + r\,\dfrac{d\mathbf{e_r}}{dt}
+\dfrac{\mathrm{d}(r\mathbf{e_r})}{\mathrm{d}t} &= \dot{r}\,\mathbf{e_r} + r\,\dfrac{\mathrm{d}\mathbf{e_r}}{\mathrm{d}t}
 \\
 &= \dot{r}\,\mathbf{e_r} + r\,\dot{\theta}\,\mathbf{e_{\theta}} + r\,\sin\theta\,\dot{\phi}\,\mathbf{e_{\phi}}.
 ```
@@ -274,11 +274,11 @@ Similar calculations to those which led to equation {eq}`eq:duvecrdt`, for the o
 
 ```{math}
 :label: eq:duvecthetadt
-\frac{d\mathbf{e_{\theta}}}{dt} = -\dot{\theta}\,\mathbf{e_{r}} + \cos\theta\,\dot{\phi}\,\mathbf{e_{\phi}},
+\frac{\mathrm{d}\mathbf{e_{\theta}}}{\mathrm{d}t} = -\dot{\theta}\,\mathbf{e_{r}} + \cos\theta\,\dot{\phi}\,\mathbf{e_{\phi}},
 ```
 ```{math}
 :label: eq:duvecphidtsp
-\frac{d\mathbf{e_{\phi}}}{dt} = -\sin\theta\,\dot{\phi}\,\mathbf{e_{r}} - \cos\theta\,\dot{\phi}\,\mathbf{e_{\theta}}.
+\frac{\mathrm{d}\mathbf{e_{\phi}}}{\mathrm{d}t} = -\sin\theta\,\dot{\phi}\,\mathbf{e_{r}} - \cos\theta\,\dot{\phi}\,\mathbf{e_{\theta}}.
 ```
 
 Finally, we can obtain the spherical polar components of acceleration by differentiating
@@ -287,14 +287,14 @@ equation {eq}`eq:dvecrdt`, and using the unit vector results from equations
 
 ```{math}
 :label: eq:accelsph
-\mathbf{a} = \dfrac{d^2(r\mathbf{e_r})}{dt^2} &= \ddot{r}\,\mathbf{e_r} + \dot{r}\,\dot{\theta}\mathbf{e_{\theta}} + 
+\mathbf{a} = \dfrac{\mathrm{d}^2(r\mathbf{e_r})}{\mathrm{d}t^2} &= \ddot{r}\,\mathbf{e_r} + \dot{r}\,\dot{\theta}\mathbf{e_{\theta}} + 
 + r\,\ddot{\theta}\,\mathbf{e_{\theta}}  \\
 &+ \dot{r}\,\sin\theta\,\dot{\phi}\,\mathbf{e_{\phi}} 
  + r\,\cos\theta\,\dot{\theta}\,\dot{\phi}\,\mathbf{e_{\phi}} 
  + r\,\sin\theta\,\ddot{\phi}\,\mathbf{e_{\phi}}  \\
- & + \dot{r}\dfrac{d\mathbf{e_r}}{dt}
- + r\,\dot{\theta}\dfrac{d\mathbf{e_{\theta}}}{dt}
- + r\,\sin\theta\,\dot{\phi}\dfrac{d\mathbf{e_{\phi}}}{dt} \notag \\
+ & + \dot{r}\dfrac{\mathrm{d}\mathbf{e_r}}{\mathrm{d}t}
+ + r\,\dot{\theta}\dfrac{\mathrm{d}\mathbf{e_{\theta}}}{\mathrm{d}t}
+ + r\,\sin\theta\,\dot{\phi}\dfrac{\mathrm{d}\mathbf{e_{\phi}}}{\mathrm{d}t} \notag \\
  &= \ddot{r}\,\mathbf{e_r} + \dot{r}\,\dot{\theta}\mathbf{e_{\theta}} + 
 + r\,\ddot{\theta}\,\mathbf{e_{\theta}}  \\
 &+ \dot{r}\,\sin\theta\,\dot{\phi}\,\mathbf{e_{\phi}} 
@@ -354,7 +354,7 @@ To find the speed $v$ (velocity magnitude) of the ball, we simply differentiate 
 Hence $v(t) = |\mathbf{r}'(t)| = b\omega\,\sqrt{\sin^2(\omega t) + 4\cos^2(\omega t)} = b\omega\,\sqrt{1 + 3\cos^2(\omega t)}$.
 
 Now, if we wish to calculate the distance of the ball from the origin as a function of time, this is simply the magnitude $r(t)$ of the given vector function $\mathbf{r}(t)$, which is $r(t) = b\,\sqrt{1+3\sin^2(\omega t)}$.
-We note that $\frac{dr}{dt} \propto \sin{\omega t}\,\cos{\omega t}$, which means that $\frac{dr}{dt} = 0$ at times $t=0$ and $t=\pi/(2\omega)$. These times therefore represent two instants when the ball is at its minimum and maximum distance from the origin, respectively.
+We note that $\frac{\mathrm{d}r}{\mathrm{d}t} \propto \sin{\omega t}\,\cos{\omega t}$, which means that $\frac{\mathrm{d}r}{\mathrm{d}t} = 0$ at times $t=0$ and $t=\pi/(2\omega)$. These times therefore represent two instants when the ball is at its minimum and maximum distance from the origin, respectively.
 
 We note that, for $t=0$ (minimum distance from origin, $r_{min}=b$), 
 $v = 2\omega b$. And for $t=\pi/(2\omega)$ (maximum distance from
