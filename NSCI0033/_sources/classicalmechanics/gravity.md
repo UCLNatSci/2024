@@ -2,7 +2,7 @@
 
 <img src="Figs/gravimag.jpeg" width="700">
 
-</mark>Image Credit: NASA / CC BY</mark>
+*Image Credit: NASA / CC BY*
 
 ## Newton's Law of Universal Gravitation
 Every particle in the universe attracts every other particle with a force whose magnitude is proportional to the product of the masses of the two particles and inversely proportional to the square of the distance between them. The direction of the force lies along the straight line connecting the two particles.
@@ -142,7 +142,7 @@ We can decompose this vector equation into its radial ($ r $) and meridional ($ 
 
 ```{math}
 :label: eq:eomcompr
-m (\ddot{r} - r \dot{\theta}^2) = f(r), \
+m (\ddot{r} - r \dot{\theta}^2) = f(r),
 ```
 ```{math}
 :label: eq:eomcomp
