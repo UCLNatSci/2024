@@ -1,17 +1,15 @@
 # Newton's Laws of Motion
 
-<img src="Figs/newtonlawillus.jpeg" wi\mathrm{\mathrm{\mathrm{d}}}th="400">
+<img src="Figs/newtonlawillus.jpeg" width="400">
 
 *Image Credit: Encyclopedia Britannica*
-
-## Introduction 
 
 Classical mechanics uses these Laws of Motion as a starting point:
 
 1. A body remains at rest </mark>or in a state of uniform motion</mark> (non-accelerating) </mark>unless acted on by an external force</mark>.
 2. A force $ \mathbf{F} $ can be quantitatively defined as the rate of change of momentum $ \mathbf{p} $ it causes on the object upon which it is acting:
    ```{math}
-   \mathbf{F} = \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{p}}{\mathrm{\mathrm{\mathrm{d}}}t}.
+   \mathbf{F} = \frac{\mathrm{d}\mathbf{p}}{\mathrm{d}t}.
    ```
 3. To every force (action) there is an </mark>equal but opposite reaction</mark>.
 
@@ -36,7 +34,7 @@ When we sit inside a room in everyday life, we are clearly *not* accelerating (w
 
 ```{figure} Figs/fig-newton2.png
 ---
-name: fig:newton2.png
+name: fig:newton2
 ---
 Diagram of two bodies, with masses $ m_1 $ and $ m_2 $, accelerating to the right. The bodies remain in contact during the motion - thus they exert equal and opposite contact forces upon each other. An external force $ \mathbf{F} $ is applied to the leftmost body, which initiates the motion (see text).
 ```
@@ -49,7 +47,7 @@ We shall see that, in general, Newton's Second Law above leads us to description
 Recalling that momentum is the product of mass $ m $ and velocity $ \mathbf{v} $, we can write Newton's Second Law for this case as:
 
 ```{math}
-\mathbf{F} = m \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{v}}{\mathrm{\mathrm{\mathrm{d}}}t} = m \mathbf{a},   
+\mathbf{F} = m \frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t} = m \mathbf{a},   
 ```
 where $ \mathbf{a} $ denotes the constant vector acceleration of the moving body.
 
@@ -82,11 +80,11 @@ m \ddot{x} = m g \sin \theta.
 ```
 Using this equation and assuming that the block is released from rest at time zero, integration once with respect to time reveals the behavior of the velocity:
 ```{math}
-\dot{x}(t_f) - 0 = \int_{t=0}^{t_f} \ddot{x}\,\mathrm{\mathrm{\mathrm{d}}}t =  g \sin \theta\,t_f. 
+\dot{x}(t_f) - 0 = \int_{t=0}^{t_f} \ddot{x}\,\mathrm{d}t =  g \sin \theta\,t_f. 
 ```
 Integration again gives the behavior of the position coordinate $ x $, during the time interval that the block is moving down the plane, starting at initial position $ x = x_0 $:
 ```{math}
-x(t_f) - x_0 = \int_{t=0}^{t_f} \dot{x}(t)\,\mathrm{\mathrm{\mathrm{d}}}t =  \frac{1}{2}\,g\,\sin\theta\,t_f^2. 
+x(t_f) - x_0 = \int_{t=0}^{t_f} \dot{x}(t)\,\mathrm{d}t =  \frac{1}{2}\,g\,\sin\theta\,t_f^2. 
 ```
 
 Now, in the time taken for the block to move from initial position $ x(0) = x_0 $ to final position $ x(t_{end}) = x_0 + \frac{h}{\sin \theta} $ (where $ h $ is the vertical displacement of the block during this motion), its velocity will have increased from zero (rest) to a final value $ v = \dot{x}(t_{end}) $ (just before it strikes the horizontal plane). We can calculate this final velocity by noting that:
@@ -113,17 +111,17 @@ m \ddot{\mathbf{r}} = \mathbf{F}(\mathbf{r}).
 
 Suppose our particle moves under this force from a position $ \mathbf{r_i} $ at time $ t_i $ to a position $ \mathbf{r_f} $ at time $ t_f $. If we take the line integral along this path of the left-hand side of Equation (1), we obtain:
 ```{math}
-\int_{\mathbf{r_i}}^{\mathbf{r_f}} m \ddot{\mathbf{r}} \cdot \mathrm{\mathrm{\mathrm{d}}}\mathbf{r} = \int_{t_i}^{t_f} m \ddot{\mathbf{r}} \cdot \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{r}}{\mathrm{\mathrm{\mathrm{d}}}t} \, \mathrm{\mathrm{\mathrm{d}}}t = \int_{t_i}^{t_f} m \frac{\mathrm{\mathrm{d}}}{\mathrm{\mathrm{\mathrm{d}}}t}\left(\frac{1}{2} \dot{\mathbf{r}} \cdot \dot{\mathbf{r}}\right) \, \mathrm{\mathrm{\mathrm{d}}}t.
+\int_{\mathbf{r_i}}^{\mathbf{r_f}} m \ddot{\mathbf{r}} \cdot \mathrm{d}\mathbf{r} = \int_{t_i}^{t_f} m \ddot{\mathbf{r}} \cdot \frac{\mathrm{d}\mathbf{r}}{\mathrm{d}t} \, \mathrm{d}t = \int_{t_i}^{t_f} m \frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{1}{2} \dot{\mathbf{r}} \cdot \dot{\mathbf{r}}\right) \, \mathrm{d}t.
 ```
 If we define the <mark>kinetic energy</mark> of our particle as $ T = \frac{1}{2} m \dot{\mathbf{r}} \cdot \dot{\mathbf{r}} $, this integral represents the change in kinetic energy $ T_f - T_i $ between the endpoints.
 
 Now, let's line-integrate the right-hand side of {eq}`eq:maeqf`. We obtain:
 ```{math}
-T_f - T_i = \int_{\mathbf{r_i}}^{\mathbf{r_f}} \mathbf{F}(\mathbf{r}) \cdot \mathrm{\mathrm{\mathrm{d}}}\mathbf{r}.
+T_f - T_i = \int_{\mathbf{r_i}}^{\mathbf{r_f}} \mathbf{F}(\mathbf{r}) \cdot \mathrm{d}\mathbf{r}.
 ```
 The right-hand side represents the <mark>work done by the force</mark> during the particle's motion along its path. If this work is positive, it shows up as an <mark>increase in kinetic energy</mark>. Conversely, if the work integral is negative, the kinetic energy of the body decreases. We can rearrange the equation as:
 ```{math}
-(T_f - T_i) - \int_{\mathbf{r_i}}^{\mathbf{r_f}} \mathbf{F}(\mathbf{r}) \cdot \mathrm{\mathrm{\mathrm{d}}}\mathbf{r} = 0.
+(T_f - T_i) - \int_{\mathbf{r_i}}^{\mathbf{r_f}} \mathbf{F}(\mathbf{r}) \cdot \mathrm{d}\mathbf{r} = 0.
 ```
 If we can define a function $ V $, known as <mark>potential energy</mark>, such that $ \mathbf{F} = -\nabla V $, this becomes:
 ```{math}
@@ -141,11 +139,11 @@ m \ddot{x} = -\frac{G M_E m}{(R_E + x)^2}.
 ```
 Let's integrate the left-hand side by setting:
 ```{math}
-\ddot{x} = \frac{\mathrm{\mathrm{d}}}{\mathrm{\mathrm{\mathrm{d}}}t} \left( \frac{\mathrm{\mathrm{\mathrm{d}}}x}{\mathrm{\mathrm{\mathrm{d}}}t} \right) = \frac{\mathrm{\mathrm{\mathrm{d}}}x}{\mathrm{\mathrm{\mathrm{d}}}t} \frac{\mathrm{\mathrm{d}}}{\mathrm{\mathrm{\mathrm{d}}}x} \left( \frac{\mathrm{\mathrm{\mathrm{d}}}x}{\mathrm{\mathrm{\mathrm{d}}}t} \right) = v \frac{\mathrm{d}v}{\mathrm{\mathrm{\mathrm{d}}}x} = \frac{\mathrm{\mathrm{d}}}{\mathrm{\mathrm{\mathrm{d}}}x} \left( \frac{1}{2} v^2 \right).
+\ddot{x} = \frac{\mathrm{d}}{\mathrm{d}t} \left( \frac{\mathrm{d}x}{\mathrm{d}t} \right) = \frac{\mathrm{d}x}{\mathrm{d}t} \frac{\mathrm{d}}{\mathrm{d}x} \left( \frac{\mathrm{d}x}{\mathrm{d}t} \right) = v \frac{\mathrm{d}v}{\mathrm{d}x} = \frac{\mathrm{d}}{\mathrm{d}x} \left( \frac{1}{2} v^2 \right).
 ```
 Dropping $ m $ from both sides, we get:
 ```{math}
-\int_{x=x_0}^{x_f} \frac{\mathrm{\mathrm{d}}}{\mathrm{\mathrm{\mathrm{d}}}x} \left( \frac{1}{2} v^2 \right) \, \mathrm{\mathrm{\mathrm{d}}}x = \int_{x=x_0}^{x_f} -\frac{G M_E}{(R_E + x)^2} \, \mathrm{\mathrm{\mathrm{d}}}x,
+\int_{x=x_0}^{x_f} \frac{\mathrm{d}}{\mathrm{d}x} \left( \frac{1}{2} v^2 \right) \, \mathrm{d}x = \int_{x=x_0}^{x_f} -\frac{G M_E}{(R_E + x)^2} \, \mathrm{d}x,
 ```
 ```{math}
 \Rightarrow \frac{1}{2} (v_f^2 - v_0^2) = \left[ \frac{G M_E}{R_E + x} \right]_{x_0}^{x_f},
@@ -185,11 +183,11 @@ From the exact expression {eq}`eq:xmax`, we see that for $ x_{max} \to \infty $,
 
 For a body falling through a fluid that resists its motion (such as through viscous drag), we can examine an equation of motion as follows:
 ```{math}
-m \frac{\mathrm{d}v}{\mathrm{\mathrm{\mathrm{d}}}t} = -mg - cv,    
+m \frac{\mathrm{d}v}{\mathrm{d}t} = -mg - cv,    
 ```
 where $ c > 0 $ is a constant, and $ g $ is the local gravitational acceleration, assumed constant here. This setup includes a "resisting" term proportional to the velocity $ v $. Rearranging and integrating from time zero to a final time $ t_f $:
 ```{math}
-\int_{v_0}^{v(t_f)} \frac{-1}{g + \frac{cv}{m}} \, \mathrm{d}v &= \int_0^{t_f} \mathrm{\mathrm{\mathrm{d}}}t,\\
+\int_{v_0}^{v(t_f)} \frac{-1}{g + \frac{cv}{m}} \, \mathrm{d}v &= \int_0^{t_f} \mathrm{d}t,\\
 \Rightarrow \left(-\frac{m}{c}\right) \ln\left(\frac{g + \frac{cv(t_f)}{m}}{g + \frac{cv_0}{m}}\right) &= t_f,\\
 \Rightarrow v(t_f) &= -\frac{gm}{c} + \exp\left(-\frac{ct_f}{m}\right)\left(\frac{mg}{c} + v_0\right).
 ```
@@ -220,17 +218,17 @@ At any time, the coordinates of a point in space can be described by either $ (x
 
 To examine the velocity in both frames, we differentiate with respect to time. The unit vectors in $ S' $ rotate over time, while those in $ S $ remain fixed:
 ```{math}
-\mathbf{i} \frac{\mathrm{\mathrm{\mathrm{d}}}x}{\mathrm{\mathrm{\mathrm{d}}}t} + \mathbf{j} \frac{\mathrm{d}y}{\mathrm{\mathrm{\mathrm{d}}}t} + \mathbf{k} \frac{\mathrm{d}z}{\mathrm{\mathrm{\mathrm{d}}}t} = \mathbf{i'} \frac{\mathrm{\mathrm{\mathrm{d}}}x'}{\mathrm{\mathrm{\mathrm{d}}}t} + \mathbf{j'} \frac{\mathrm{d}y'}{\mathrm{\mathrm{\mathrm{d}}}t} + \mathbf{k'} \frac{\mathrm{d}z'}{\mathrm{\mathrm{\mathrm{d}}}t} + x' \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{i'}}{\mathrm{\mathrm{\mathrm{d}}}t} + y' \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{j'}}{\mathrm{\mathrm{\mathrm{d}}}t} + z' \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{k'}}{\mathrm{\mathrm{\mathrm{d}}}t}.
+\mathbf{i} \frac{\mathrm{d}x}{\mathrm{d}t} + \mathbf{j} \frac{\mathrm{d}y}{\mathrm{d}t} + \mathbf{k} \frac{\mathrm{d}z}{\mathrm{d}t} = \mathbf{i'} \frac{\mathrm{d}x'}{\mathrm{d}t} + \mathbf{j'} \frac{\mathrm{d}y'}{\mathrm{d}t} + \mathbf{k'} \frac{\mathrm{d}z'}{\mathrm{d}t} + x' \frac{\mathrm{d}\mathbf{i'}}{\mathrm{d}t} + y' \frac{\mathrm{d}\mathbf{j'}}{\mathrm{d}t} + z' \frac{\mathrm{d}\mathbf{k'}}{\mathrm{d}t}.
 ```
 
-A corotating observer in $ S' $ sees a velocity with components $ \left( \frac{\mathrm{\mathrm{\mathrm{d}}}x'}{\mathrm{\mathrm{\mathrm{d}}}t}, \frac{\mathrm{d}y'}{\mathrm{\mathrm{\mathrm{d}}}t}, \frac{\mathrm{d}z'}{\mathrm{\mathrm{\mathrm{d}}}t} \right) $. Defining this velocity vector as $ \mathbf{v'} $, the velocity relation between frames is:
+A corotating observer in $ S' $ sees a velocity with components $ \left( \frac{\mathrm{d}x'}{\mathrm{d}t}, \frac{\mathrm{d}y'}{\mathrm{d}t}, \frac{\mathrm{d}z'}{\mathrm{d}t} \right) $. Defining this velocity vector as $ \mathbf{v'} $, the velocity relation between frames is:
 ```{math}
-\mathbf{v} = \mathbf{v'} + x' \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{i'}}{\mathrm{\mathrm{\mathrm{d}}}t} + y' \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{j'}}{\mathrm{\mathrm{\mathrm{d}}}t} + z' \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{k'}}{\mathrm{\mathrm{\mathrm{d}}}t}.
+\mathbf{v} = \mathbf{v'} + x' \frac{\mathrm{d}\mathbf{i'}}{\mathrm{d}t} + y' \frac{\mathrm{d}\mathbf{j'}}{\mathrm{d}t} + z' \frac{\mathrm{d}\mathbf{k'}}{\mathrm{d}t}.
 ```
 
 For any vector $ \mathbf{p'} $ of fixed magnitude rotating about a fixed axis with angular velocity $ \mathbf{\omega} $, the rate of change is:
 ```{math}
-\frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{p'}}{\mathrm{\mathrm{\mathrm{d}}}t} = \mathbf{\omega} \times \mathbf{p'}.
+\frac{\mathrm{d}\mathbf{p'}}{\mathrm{d}t} = \mathbf{\omega} \times \mathbf{p'}.
 ```
 To understand this, we note that, in a small time increment $\delta t$, the change in the vector will point along the local direction of its rotation, which is the direction of the corresponding cross product $\mathbf{\omega} \times \mathbf{p'}\,\delta t$. Thus for our general velocity relation, we can write:
 ```{math}
@@ -241,17 +239,17 @@ To understand this, we note that, in a small time increment $\delta t$, the chan
 ### Acceleration Relation
 To find a relation between acceleration vectors, we use the definition of $ \mathbf{v'} $:
 ```{math}
-\frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{v'}}{\mathrm{\mathrm{\mathrm{d}}}t} = \ddot{x'} \mathbf{i'} + \ddot{y'} \mathbf{j'} + \ddot{z'} \mathbf{k'} + \dot{x'} \mathbf{\omega} \times \mathbf{i'} + \dot{y'} \mathbf{\omega} \times \mathbf{j'} + \dot{z'} \mathbf{\omega} \times \mathbf{k'} = \mathbf{a'} + \mathbf{\omega} \times \mathbf{v'}.
+\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t} = \ddot{x'} \mathbf{i'} + \ddot{y'} \mathbf{j'} + \ddot{z'} \mathbf{k'} + \dot{x'} \mathbf{\omega} \times \mathbf{i'} + \dot{y'} \mathbf{\omega} \times \mathbf{j'} + \dot{z'} \mathbf{\omega} \times \mathbf{k'} = \mathbf{a'} + \mathbf{\omega} \times \mathbf{v'}.
 ```
 Here, the components of the vector $\mathbf{a'}$ are the same acceleration components that would be perceived by the co-rotating observer. In a similar manner to how we derived
-$\frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{v'}}{\mathrm{\mathrm{\mathrm{d}}}t}$ above, we could also show that:
+$\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t}$ above, we could also show that:
 
 ```{math}
-\frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t} = \mathbf{v'} + \mathbf{\omega} \times \mathbf{r'}.
+\frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t} = \mathbf{v'} + \mathbf{\omega} \times \mathbf{r'}.
 ```
-Returning now to {eq}`eq:vdefn`, we can differentiate both sides, making use of the above expressions for both $\frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{v'}}{\mathrm{\mathrm{\mathrm{d}}}t}$ and $\frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t}$:
+Returning now to {eq}`eq:vdefn`, we can differentiate both sides, making use of the above expressions for both $\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t}$ and $\frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t}$:
 ```{math}
-\mathbf{a} = \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{v}}{\mathrm{\mathrm{\mathrm{d}}}t} = \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{v'}}{\mathrm{\mathrm{\mathrm{d}}}t} + \dot{\mathbf{\omega}} \times \mathbf{r'} + \mathbf{\omega} \times \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t},
+\mathbf{a} = \frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t} = \frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t} + \dot{\mathbf{\omega}} \times \mathbf{r'} + \mathbf{\omega} \times \frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t},
 ```
 ```{math}
 = \mathbf{a'} + \mathbf{\omega} \times \mathbf{v'} + \dot{\mathbf{\omega}} \times \mathbf{r'} + \mathbf{\omega} \times (\mathbf{v'} + \mathbf{\omega} \times \mathbf{r'}).
@@ -328,7 +326,7 @@ The angle $ \epsilon $, as expected, vanishes at the equator and the poles, and 
 We will now make use of the results and symbols from the last section to write a more general equation of motion for a projectile moving near the Earth's surface, whose motion is described in a similar, corotating frame illustrated in {numref}`fig:projaxes`. The origin lies at a fixed latitude and longitude. The axes are oriented such that the $ z' $ axis is along the upward vertical direction (as defined by the direction of the string from which a static weight hangs), $ y' $ points locally northward and $ x' $ points locally eastward. Our equation of motion in this frame of reference is thus:
 
 ```{math}
-m \frac{\mathrm{\mathrm{d}}^2 \mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t^2} = \mathbf{F} + m \mathbf{g} - 2m \mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t} - m \mathbf{\omega} \times (\mathbf{\omega} \times \mathbf{r'}),
+m \frac{\mathrm{d}^2 \mathbf{r'}}{\mathrm{d}t^2} = \mathbf{F} + m \mathbf{g} - 2m \mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{d}t} - m \mathbf{\omega} \times (\mathbf{\omega} \times \mathbf{r'}),
 ```
 
 where $ \mathbf{F} $ is any actual applied force, other than gravity, $ \mathbf{g} = \mathbf{g_0} - \mathbf{A_0} $, and we have added the Coriolis and centrifugal terms since our projectile is moving.
@@ -343,13 +341,13 @@ Axes for analysing projectile motion (Fowles and Cassiday).
 Let us simplify the problem by ignoring forces such as air resistance and setting $ \mathbf{F} = 0 $. We will also ignore the centrifugal force, since it is usually very small compared with the other terms, in practice. Thus:
 
 ```{math}
-m \frac{\mathrm{\mathrm{d}}^2 \mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t^2} = m \mathbf{g} - 2m \mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t}.
+m \frac{\mathrm{d}^2 \mathbf{r'}}{\mathrm{d}t^2} = m \mathbf{g} - 2m \mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{d}t}.
 ```
 
 With the axes we have chosen, we can define unit vectors $ \mathbf{i'}, \mathbf{j'}, \mathbf{k'} $ along the respective $ x', y', z' $ directions. Hence we can write $ \mathbf{g} = -g \mathbf{k'} $ and $ \mathbf{\omega} = \omega \cos \lambda \mathbf{j'} + \omega \sin \lambda \mathbf{k'} $. With some vector algebra, we can show that:
 
 ```{math}
-\mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t} = \mathbf{i'} (\omega \dot{z'} \cos \lambda - \omega \dot{y'} \sin \lambda) + \mathbf{j'} (\omega \dot{x'} \sin \lambda) + \mathbf{k'} (-\omega \dot{x'} \cos \lambda).
+\mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{d}t} = \mathbf{i'} (\omega \dot{z'} \cos \lambda - \omega \dot{y'} \sin \lambda) + \mathbf{j'} (\omega \dot{x'} \sin \lambda) + \mathbf{k'} (-\omega \dot{x'} \cos \lambda).
 ```
 
 Using this result, the components of the equation of motion now read as:

@@ -8,6 +8,8 @@ In this unit, we will study systems whose motion displays characteristics which 
 
 ## Simple Harmonic Motion
 
+<div id="sec:shmo"></div>
+
 ### Harmonic Oscillator
 We start by considering the simple system of a mass $m$ which is attached to one end of a horizontal spring, whose other end is fixed to a wall - see {numref}`fig:shmplot`. The equilibrium position of the mass is that position where the force on it is zero, which also corresponds to the position of minimum potential energy of the system, as we shall see.
 
@@ -91,6 +93,8 @@ m\,\dfrac{\mathrm{d}}{\mathrm{d}t^2}(X-X_e') = -k\,(X-X_e) + mg \rightarrow m\,\
 
 This is an important result. Any constant external force does not change harmonic motion, <mark>provided we measure displacement from the shifted equilibrium position</mark> which is introduced by that force.
 
+<div id="sec:pendulum"></div>
+
 #### Simple Pendulum
 The simple pendulum consists of a plumb bob of mass $m$ attached to the end of a light string of fixed length $l$, whose other end is mounted at a fixed point (see {numref}`fig:pendulum`). The position can be described by the angle $\theta$ or equivalently the arc length $s = l\,\theta$. The component of the gravitational force on the bob along its direction of motion is $F = -m\,g\,\sin\theta$ (with $g>0$). Even though the bob moves in a curved path, its equation of motion is one-dimensional:
 
@@ -114,7 +118,7 @@ The simple pendulum (from the book by Fowles and Cassiday).
 ```
 
 #### Simple Harmonic Motion: Energy
-If we recall the form of restoring force for the simple harmonic oscillator from section \ref{sec:shmo}, $F=-k\,x$, where $x$ is the displacement from equilibrium of the oscillating mass, we observe that this same force can be expressed as $F=-\dfrac{\mathrm{d}V}{\mathrm{d}x}$, where the function <mark>$V=\frac{1}{2}kx^2$</mark> can be identified as the <mark>potential energy</mark> of the system. If, for example, we apply an external force $F_{ext}$ to the mass, equal and opposite to the force exerted by the spring, we could move it from equilibrium $x=0$ to some final displacement $x=x_f$. The work we need to do in order to achieve this is
+If we recall the form of restoring force for the simple harmonic oscillator from the section on [SHM](#sec:shmo), $F=-k\,x$, where $x$ is the displacement from equilibrium of the oscillating mass, we observe that this same force can be expressed as $F=-\dfrac{\mathrm{d}V}{\mathrm{d}x}$, where the function <mark>$V=\frac{1}{2}kx^2$</mark> can be identified as the <mark>potential energy</mark> of the system. If, for example, we apply an external force $F_{ext}$ to the mass, equal and opposite to the force exerted by the spring, we could move it from equilibrium $x=0$ to some final displacement $x=x_f$. The work we need to do in order to achieve this is
 ```{math}
 W = \int_{x=0}^{x_f} kx\,\mathrm{d}x = \frac{1}{2} k x_f^2.
 ```
@@ -137,16 +141,16 @@ Here, $C$ is a constant of integration and $A = \sqrt{2E/k}$.
 
 We also note from equation \ref{eq:shmE} that, at times when $\dot{x}=0$ and the mass is changing direction, it must be at the extreme points of its displacement. We see from this equation that $x=\pm\sqrt{2E/k}$ when $\dot{x}=0$, and thus $A$ can be identified as the <mark>amplitude</mark> of the motion.
 
-Equation \ref{eq:shmE} also shows us that the maximum speed of the mass occurs when $x=0$ and is given by $|\dot{x}|_{max} = \sqrt{2E/m} =\sqrt{k/m}\,A$. The total energy is conserved during the motion, but is continually converted between kinetic and potential energy. All of the energy is kinetic when $x=0,\dot{x} = \pm\sqrt{k/m}\,A$ and all potential when $x=\pm A, \dot{x}=0$.
+{eq}`eq:shmE` also shows us that the maximum speed of the mass occurs when $x=0$ and is given by $|\dot{x}|_{max} = \sqrt{2E/m} =\sqrt{k/m}\,A$. The total energy is conserved during the motion, but is continually converted between kinetic and potential energy. All of the energy is kinetic when $x=0,\dot{x} = \pm\sqrt{k/m}\,A$ and all potential when $x=\pm A, \dot{x}=0$.
 
-We can apply these same energy-related concepts to the case of the simple pendulum from section \ref{sec:pendulum}. In this case, the potential energy of the pendulum bob can be written as $V = mgh$, where $h$ is its vertical displacement with respect to some reference level of zero potential, which we can conveniently choose to be the equilibrium point corresponding to $s = \theta = 0$.
+We can apply these same energy-related concepts to the case of the simple pendulum from the section [before](#sec:pendulum). In this case, the potential energy of the pendulum bob can be written as $V = mgh$, where $h$ is its vertical displacement with respect to some reference level of zero potential, which we can conveniently choose to be the equilibrium point corresponding to $s = \theta = 0$.
 
-We see from the geometry of Figure \ref{fig:pendulum} that $h=l - l\,\cos\theta$. For small $\theta$, a second-order accurate form for the function $\cos\theta$ is $1-\frac{1}{2}\,\theta^2$. The corresponding approximate potential energy is $V(\theta) = \frac{1}{2}\,mgl\,\theta^2$, or $V(s) = \frac{1}{2}\,mg\,s^2/l$. Total energy can thus be written as:
+We see from the geometry of {numref}`fig:pendulum` that $h=l - l\,\cos\theta$. For small $\theta$, a second-order accurate form for the function $\cos\theta$ is $1-\frac{1}{2}\,\theta^2$. The corresponding approximate potential energy is $V(\theta) = \frac{1}{2}\,mgl\,\theta^2$, or $V(s) = \frac{1}{2}\,mg\,s^2/l$. Total energy can thus be written as:
 ```{math}
 E = \dfrac{1}{2}\,m \dot{s}^2 +\dfrac{1}{2}\,\dfrac{mg}{l}\,s^2.
 ```
 
-### Damped Harmonic Motion
+## Damped Harmonic Motion
 In this section, we explore solutions for the motion of a mass moving on the end of a spring, with the inclusion of a viscous retarding force, which is a linear function of velocity. We can write this as $ F_v = -c \dot{x} $, where $ c $ is a positive constant, and $ x $ again denotes displacement from the equilibrium position. The modified equation of motion is:
 ```{math}
     \ddot{x} + \frac{c}{m} \dot{x} + \frac{k}{m} x = 0.
@@ -202,7 +206,7 @@ u = A \exp(-\gamma t) = \dot{x} + \gamma x
 ```{math}
 x\,\exp(\gamma t) = At + B \rightarrow x = At \exp(-\gamma t) + B \exp(-\gamma t).
 ```
-Here, $ B $ is another constant of integration. The two distinct terms are a decaying exponential modulated by a function linear in time and a decaying exponential. Again, the motion is non-oscillatory and returns to equilibrium asymptotically (see Figure \ref{fig:ovcritdamp}).
+Here, $ B $ is another constant of integration. The two distinct terms are a decaying exponential modulated by a function linear in time and a decaying exponential. Again, the motion is non-oscillatory and returns to equilibrium asymptotically (see {numref}`fig:ovcritdamp`).
 
 #### Underdamping
 Physically, the retarding force in this case is weak enough that it does not suppress oscillatory behavior entirely. Let us quantify this behavior by exploring the nature of the solution for $ x $ when $ q $ is 
@@ -237,7 +241,7 @@ x(t) = \exp(-\gamma t) A \cos(\omega_d t + \theta_0).
 ```
 We note that the presence of the real factor $ \exp(-\gamma t) $ produces an exponential decay of the oscillation amplitude with time. The underdamped oscillator has a frequency smaller than the undamped one.
 
-### Phase Space Representations
+## Phase Space Representations
 
 A different representation of a single particle undergoing motion is to plot its trajectory as a series of points in a phase space, where both the particle's position and its velocity act as coordinates.
 
@@ -356,7 +360,7 @@ With some algebra, we then find:
 Note that the first of these equations contains an exponential term which decays quite rapidly compared to that of the second equation. Thus we would expect that the behavior $\dot{x} \rightarrow -(\gamma - q)\,x$ emerges earlier, and that the phase space plot would start its approach towards the origin by approaching a line of slope $-(\gamma - q)$ relatively quickly. This is indeed the usual case for the overdamped oscillator.
 
 
-### Forced Harmonic Motion and Resonance
+## Forced Harmonic Motion and Resonance
 
 In this section, we extend our study of harmonic motion to investigate the interesting dynamical effects of adding an external force to the oscillator problem. We will consider a periodic external force of a frequency which is generally different from the “natural” frequency of the oscillator (which we have studied in the preceding sections). We will determine how the nature of the motion is affected by how similar or different the frequencies of the driving force and the natural oscillation in the absence of this driving are.
 

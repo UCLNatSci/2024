@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystyle.css?v=3e5b5be6" />
@@ -55,7 +55,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -404,20 +404,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-under-constant-acceleration">3.2. Motion Under Constant Acceleration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-of-kinetic-and-potential-energy">3.3. Concepts of Kinetic and Potential Energy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-variation-of-gravity-with-height">3.3.1. Example: Variation of Gravity with Height</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-under-constant-acceleration">3.1. Motion Under Constant Acceleration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-of-kinetic-and-potential-energy">3.2. Concepts of Kinetic and Potential Energy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-variation-of-gravity-with-height">3.2.1. Example: Variation of Gravity with Height</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-resistance-terminal-velocity">3.4. Fluid Resistance: Terminal Velocity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centrifugal-force-and-rotating-frames-of-reference">3.5. Centrifugal Force and Rotating Frames of Reference</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceleration-relation">3.5.1. Acceleration Relation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-resistance-terminal-velocity">3.3. Fluid Resistance: Terminal Velocity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centrifugal-force-and-rotating-frames-of-reference">3.4. Centrifugal Force and Rotating Frames of Reference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceleration-relation">3.4.1. Acceleration Relation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-motion-in-the-earths-corotating-frame">3.6. Example: Motion in the Earth’s Corotating Frame</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-local-vertical">3.6.1. The Local Vertical</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile-motion">3.6.2. Projectile Motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-motion-in-the-earths-corotating-frame">3.5. Example: Motion in the Earth’s Corotating Frame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-local-vertical">3.5.1. The Local Vertical</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile-motion">3.5.2. Projectile Motion</a></li>
 </ul>
 </li>
 </ul>
@@ -433,21 +432,19 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="newtons-laws-of-motion">
 <h1><span class="section-number">3. </span>Newton’s Laws of Motion<a class="headerlink" href="#newtons-laws-of-motion" title="Link to this heading">#</a></h1>
-<p>&lt;img src=“Figs/newtonlawillus.jpeg” wi\mathrm{\mathrm{\mathrm{d}}}th=“400”&gt;</p>
+<a class="reference internal image-reference" href="../_images/newtonlawillus.jpeg"><img alt="../_images/newtonlawillus.jpeg" src="../_images/newtonlawillus.jpeg" style="width: 400px;" /></a>
 <p><em>Image Credit: Encyclopedia Britannica</em></p>
-<section id="introduction">
-<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Classical mechanics uses these Laws of Motion as a starting point:</p>
 <ol class="arabic">
 <li><p>A body remains at rest </mark>or in a state of uniform motion</mark> (non-accelerating) </mark>unless acted on by an external force</mark>.</p></li>
 <li><p>A force <span class="math notranslate nohighlight">\( \mathbf{F} \)</span> can be quantitatively defined as the rate of change of momentum <span class="math notranslate nohighlight">\( \mathbf{p} \)</span> it causes on the object upon which it is acting:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{F} = \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{p}}{\mathrm{\mathrm{\mathrm{d}}}t}.\]</div>
+\[\mathbf{F} = \frac{\mathrm{d}\mathbf{p}}{\mathrm{d}t}.\]</div>
 </li>
 <li><p>To every force (action) there is an </mark>equal but opposite reaction</mark>.</p></li>
 </ol>
 <p>These laws are only valid for an observer who is using a reference frame that is </mark>inertial</mark> (i.e., not undergoing acceleration, which excludes frames with rotating coordinate axes).</p>
-<p>Consider the simple example of two bodies, with masses <span class="math notranslate nohighlight">\( m_1 \)</span> and <span class="math notranslate nohighlight">\( m_2 \)</span>, which move while in contact with each other under the influence of an external force <span class="math notranslate nohighlight">\( \mathbf{F} \)</span>. The total force on the combined system (see <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:newton2</span></code>) is <span class="math notranslate nohighlight">\( \mathbf{F} + \mathbf{F}_{12} + \mathbf{F}_{21} \)</span>, where the notation <span class="math notranslate nohighlight">\( \mathbf{F}_{ij} \)</span> denotes the force, due to contact, of body <span class="math notranslate nohighlight">\( j \)</span> on body <span class="math notranslate nohighlight">\( i \)</span>.</p>
+<p>Consider the simple example of two bodies, with masses <span class="math notranslate nohighlight">\( m_1 \)</span> and <span class="math notranslate nohighlight">\( m_2 \)</span>, which move while in contact with each other under the influence of an external force <span class="math notranslate nohighlight">\( \mathbf{F} \)</span>. The total force on the combined system (see <a class="reference internal" href="#fig-newton2"><span class="std std-numref">Fig. 3.1</span></a>) is <span class="math notranslate nohighlight">\( \mathbf{F} + \mathbf{F}_{12} + \mathbf{F}_{21} \)</span>, where the notation <span class="math notranslate nohighlight">\( \mathbf{F}_{ij} \)</span> denotes the force, due to contact, of body <span class="math notranslate nohighlight">\( j \)</span> on body <span class="math notranslate nohighlight">\( i \)</span>.</p>
 <p>Newton’s Second Law tells us that the external force on the system is the total mass multiplied by the acceleration of the co-moving bodies:</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{F} = (m_1 + m_2) \mathbf{a}.\]</div>
@@ -457,19 +454,18 @@ document.write(`
 \mathbf{F}_{21} = m_2 \mathbf{a}.\end{split}\]</div>
 <p>We can see, by comparing the above equations, that we require <span class="math notranslate nohighlight">\( \mathbf{F} = \mathbf{F} + \mathbf{F}_{12} + \mathbf{F}_{21} \)</span>, or more simply <span class="math notranslate nohighlight">\( \mathbf{F}_{12} = -\mathbf{F}_{21} \)</span>. The contact force on the first body due to the second is equal in magnitude but opposite in direction to that of the second body on the first.</p>
 <p>When we sit inside a room in everyday life, we are clearly <em>not</em> accelerating (we ignore the Earth’s rotation for this example). Hence, the total vector force on us must be zero. It follows that the action or force </mark>downwards</mark> on us due to the Earth’s gravitation must be exactly balanced by the force </mark>upwards</mark> on us due to contact with the object we are sitting on. (If we </mark>did</mark> include the effects of the Earth’s rotation, the total force on us would have to be equal to our mass multiplied by the centripetal acceleration we undergo in order to “co-rotate” with the Earth).</p>
-<figure class="align-default" id="fig-newton2-png">
+<figure class="align-default" id="fig-newton2">
 <img alt="../_images/fig-newton2.png" src="../_images/fig-newton2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Diagram of two bodies, with masses <span class="math notranslate nohighlight">\( m_1 \)</span> and <span class="math notranslate nohighlight">\( m_2 \)</span>, accelerating to the right. The bodies remain in contact during the motion - thus they exert equal and opposite contact forces upon each other. An external force <span class="math notranslate nohighlight">\( \mathbf{F} \)</span> is applied to the leftmost body, which initiates the motion (see text).</span><a class="headerlink" href="#fig-newton2-png" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Diagram of two bodies, with masses <span class="math notranslate nohighlight">\( m_1 \)</span> and <span class="math notranslate nohighlight">\( m_2 \)</span>, accelerating to the right. The bodies remain in contact during the motion - thus they exert equal and opposite contact forces upon each other. An external force <span class="math notranslate nohighlight">\( \mathbf{F} \)</span> is applied to the leftmost body, which initiates the motion (see text).</span><a class="headerlink" href="#fig-newton2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We shall see that, in general, Newton’s Second Law above leads us to descriptions of motion which involve having to solve second-order differential equations for the position of the moving body, or bodies, which comprise the system we are studying. We can start with the simple example of motion under the influence of a constant acceleration.</p>
-</section>
 <section id="motion-under-constant-acceleration">
-<h2><span class="section-number">3.2. </span>Motion Under Constant Acceleration<a class="headerlink" href="#motion-under-constant-acceleration" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>Motion Under Constant Acceleration<a class="headerlink" href="#motion-under-constant-acceleration" title="Link to this heading">#</a></h2>
 <p>Recalling that momentum is the product of mass <span class="math notranslate nohighlight">\( m \)</span> and velocity <span class="math notranslate nohighlight">\( \mathbf{v} \)</span>, we can write Newton’s Second Law for this case as:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{F} = m \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{v}}{\mathrm{\mathrm{\mathrm{d}}}t} = m \mathbf{a},   \]</div>
+\[\mathbf{F} = m \frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t} = m \mathbf{a},   \]</div>
 <p>where <span class="math notranslate nohighlight">\( \mathbf{a} \)</span> denotes the constant vector acceleration of the moving body.</p>
 <p>This differential equation can be integrated, between some initial time <span class="math notranslate nohighlight">\( 0 \)</span> and some final time <span class="math notranslate nohighlight">\( t \)</span>, to give velocity as:</p>
 <div class="math notranslate nohighlight">
@@ -492,10 +488,10 @@ However, since the block is only free to move in the <span class="math notransla
 \[m \ddot{x} = m g \sin \theta.\]</div>
 <p>Using this equation and assuming that the block is released from rest at time zero, integration once with respect to time reveals the behavior of the velocity:</p>
 <div class="math notranslate nohighlight">
-\[\dot{x}(t_f) - 0 = \int_{t=0}^{t_f} \ddot{x}\,\mathrm{\mathrm{\mathrm{d}}}t =  g \sin \theta\,t_f. \]</div>
+\[\dot{x}(t_f) - 0 = \int_{t=0}^{t_f} \ddot{x}\,\mathrm{d}t =  g \sin \theta\,t_f. \]</div>
 <p>Integration again gives the behavior of the position coordinate <span class="math notranslate nohighlight">\( x \)</span>, during the time interval that the block is moving down the plane, starting at initial position <span class="math notranslate nohighlight">\( x = x_0 \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[x(t_f) - x_0 = \int_{t=0}^{t_f} \dot{x}(t)\,\mathrm{\mathrm{\mathrm{d}}}t =  \frac{1}{2}\,g\,\sin\theta\,t_f^2. \]</div>
+\[x(t_f) - x_0 = \int_{t=0}^{t_f} \dot{x}(t)\,\mathrm{d}t =  \frac{1}{2}\,g\,\sin\theta\,t_f^2. \]</div>
 <p>Now, in the time taken for the block to move from initial position <span class="math notranslate nohighlight">\( x(0) = x_0 \)</span> to final position <span class="math notranslate nohighlight">\( x(t_{end}) = x_0 + \frac{h}{\sin \theta} \)</span> (where <span class="math notranslate nohighlight">\( h \)</span> is the vertical displacement of the block during this motion), its velocity will have increased from zero (rest) to a final value <span class="math notranslate nohighlight">\( v = \dot{x}(t_{end}) \)</span> (just before it strikes the horizontal plane). We can calculate this final velocity by noting that:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}x(t_{end}) - x_0 = \frac{1}{2}\,g\,\sin\theta\,t_{end}^2 = \frac{v^2}{2g\,\sin\theta} \\
@@ -506,36 +502,36 @@ However, since the block is only free to move in the <span class="math notransla
 <p>Interestingly, we can see that if the angle of tilt satisfies </mark><span class="math notranslate nohighlight">\( \tan \theta = \mu_k \)</span></mark>, the total acceleration will be zero and a block initially at rest will remain at rest, or, if pushed into motion, will continue to move down the plane at a constant speed.</p>
 </section>
 <section id="concepts-of-kinetic-and-potential-energy">
-<h2><span class="section-number">3.3. </span>Concepts of Kinetic and Potential Energy<a class="headerlink" href="#concepts-of-kinetic-and-potential-energy" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>Concepts of Kinetic and Potential Energy<a class="headerlink" href="#concepts-of-kinetic-and-potential-energy" title="Link to this heading">#</a></h2>
 <p>For some situations, the force experienced by a moving body depends explicitly only on spatial position. For example, a body moving under the influence of Earth’s gravity feels a force based on its position relative to the Earth. Similarly, a body moving under an electrostatic field produced by a stationary charge or collection of charges experiences a position-dependent force. For these cases, where force <span class="math notranslate nohighlight">\( \mathbf{F} \)</span> may be expressed as a function of particle position <span class="math notranslate nohighlight">\( \mathbf{r} \)</span>, we can write a general equation of motion for a particle of mass <span class="math notranslate nohighlight">\( m \)</span> as:</p>
 <div class="math notranslate nohighlight" id="equation-eq-maeqf">
 <span class="eqno">(3.1)<a class="headerlink" href="#equation-eq-maeqf" title="Link to this equation">#</a></span>\[m \ddot{\mathbf{r}} = \mathbf{F}(\mathbf{r}).  \]</div>
 <p>Suppose our particle moves under this force from a position <span class="math notranslate nohighlight">\( \mathbf{r_i} \)</span> at time <span class="math notranslate nohighlight">\( t_i \)</span> to a position <span class="math notranslate nohighlight">\( \mathbf{r_f} \)</span> at time <span class="math notranslate nohighlight">\( t_f \)</span>. If we take the line integral along this path of the left-hand side of Equation (1), we obtain:</p>
 <div class="math notranslate nohighlight">
-\[\int_{\mathbf{r_i}}^{\mathbf{r_f}} m \ddot{\mathbf{r}} \cdot \mathrm{\mathrm{\mathrm{d}}}\mathbf{r} = \int_{t_i}^{t_f} m \ddot{\mathbf{r}} \cdot \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{r}}{\mathrm{\mathrm{\mathrm{d}}}t} \, \mathrm{\mathrm{\mathrm{d}}}t = \int_{t_i}^{t_f} m \frac{\mathrm{\mathrm{d}}}{\mathrm{\mathrm{\mathrm{d}}}t}\left(\frac{1}{2} \dot{\mathbf{r}} \cdot \dot{\mathbf{r}}\right) \, \mathrm{\mathrm{\mathrm{d}}}t.\]</div>
+\[\int_{\mathbf{r_i}}^{\mathbf{r_f}} m \ddot{\mathbf{r}} \cdot \mathrm{d}\mathbf{r} = \int_{t_i}^{t_f} m \ddot{\mathbf{r}} \cdot \frac{\mathrm{d}\mathbf{r}}{\mathrm{d}t} \, \mathrm{d}t = \int_{t_i}^{t_f} m \frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{1}{2} \dot{\mathbf{r}} \cdot \dot{\mathbf{r}}\right) \, \mathrm{d}t.\]</div>
 <p>If we define the <mark>kinetic energy</mark> of our particle as <span class="math notranslate nohighlight">\( T = \frac{1}{2} m \dot{\mathbf{r}} \cdot \dot{\mathbf{r}} \)</span>, this integral represents the change in kinetic energy <span class="math notranslate nohighlight">\( T_f - T_i \)</span> between the endpoints.</p>
 <p>Now, let’s line-integrate the right-hand side of <a class="reference internal" href="#equation-eq-maeqf">(3.1)</a>. We obtain:</p>
 <div class="math notranslate nohighlight">
-\[T_f - T_i = \int_{\mathbf{r_i}}^{\mathbf{r_f}} \mathbf{F}(\mathbf{r}) \cdot \mathrm{\mathrm{\mathrm{d}}}\mathbf{r}.\]</div>
+\[T_f - T_i = \int_{\mathbf{r_i}}^{\mathbf{r_f}} \mathbf{F}(\mathbf{r}) \cdot \mathrm{d}\mathbf{r}.\]</div>
 <p>The right-hand side represents the <mark>work done by the force</mark> during the particle’s motion along its path. If this work is positive, it shows up as an <mark>increase in kinetic energy</mark>. Conversely, if the work integral is negative, the kinetic energy of the body decreases. We can rearrange the equation as:</p>
 <div class="math notranslate nohighlight">
-\[(T_f - T_i) - \int_{\mathbf{r_i}}^{\mathbf{r_f}} \mathbf{F}(\mathbf{r}) \cdot \mathrm{\mathrm{\mathrm{d}}}\mathbf{r} = 0.\]</div>
+\[(T_f - T_i) - \int_{\mathbf{r_i}}^{\mathbf{r_f}} \mathbf{F}(\mathbf{r}) \cdot \mathrm{d}\mathbf{r} = 0.\]</div>
 <p>If we can define a function <span class="math notranslate nohighlight">\( V \)</span>, known as <mark>potential energy</mark>, such that <span class="math notranslate nohighlight">\( \mathbf{F} = -\nabla V \)</span>, this becomes:</p>
 <div class="math notranslate nohighlight">
 \[(T_f - T_i) + (V_f - V_i) = 0,\]</div>
 <p>or, in other words, the <mark>total (kinetic plus potential) energy <span class="math notranslate nohighlight">\( T + V \)</span> is conserved during motion</mark>. If the particle moves from any initial point around a closed path back to that point, no net work will have been done on it by the force field. Forces that can be expressed as gradients of scalar functions are known as <mark>conservative forces</mark> (the scalar function is usually known as <mark>potential energy</mark>, or <mark>potential</mark> if referring to energy per unit mass).</p>
 <section id="example-variation-of-gravity-with-height">
-<h3><span class="section-number">3.3.1. </span>Example: Variation of Gravity with Height<a class="headerlink" href="#example-variation-of-gravity-with-height" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.2.1. </span>Example: Variation of Gravity with Height<a class="headerlink" href="#example-variation-of-gravity-with-height" title="Link to this heading">#</a></h3>
 <p>Consider a small body of mass <span class="math notranslate nohighlight">\( m \)</span> falling vertically towards Earth. A single coordinate <span class="math notranslate nohighlight">\( x \)</span> can describe its position above Earth’s surface, where <span class="math notranslate nohighlight">\( R_E + x \)</span> (with <span class="math notranslate nohighlight">\( R_E \)</span> as Earth’s radius) is the distance between the body and Earth’s center.</p>
 <p>The force on the body due to Earth’s gravitational field has magnitude <span class="math notranslate nohighlight">\( \frac{G M_E m}{(R_E + x)^2} \)</span>, where <span class="math notranslate nohighlight">\( M_E \)</span> is Earth’s mass, directed radially inwards. The equation of motion for purely radial motion becomes:</p>
 <div class="math notranslate nohighlight">
 \[m \ddot{x} = -\frac{G M_E m}{(R_E + x)^2}.\]</div>
 <p>Let’s integrate the left-hand side by setting:</p>
 <div class="math notranslate nohighlight">
-\[\ddot{x} = \frac{\mathrm{\mathrm{d}}}{\mathrm{\mathrm{\mathrm{d}}}t} \left( \frac{\mathrm{\mathrm{\mathrm{d}}}x}{\mathrm{\mathrm{\mathrm{d}}}t} \right) = \frac{\mathrm{\mathrm{\mathrm{d}}}x}{\mathrm{\mathrm{\mathrm{d}}}t} \frac{\mathrm{\mathrm{d}}}{\mathrm{\mathrm{\mathrm{d}}}x} \left( \frac{\mathrm{\mathrm{\mathrm{d}}}x}{\mathrm{\mathrm{\mathrm{d}}}t} \right) = v \frac{\mathrm{d}v}{\mathrm{\mathrm{\mathrm{d}}}x} = \frac{\mathrm{\mathrm{d}}}{\mathrm{\mathrm{\mathrm{d}}}x} \left( \frac{1}{2} v^2 \right).\]</div>
+\[\ddot{x} = \frac{\mathrm{d}}{\mathrm{d}t} \left( \frac{\mathrm{d}x}{\mathrm{d}t} \right) = \frac{\mathrm{d}x}{\mathrm{d}t} \frac{\mathrm{d}}{\mathrm{d}x} \left( \frac{\mathrm{d}x}{\mathrm{d}t} \right) = v \frac{\mathrm{d}v}{\mathrm{d}x} = \frac{\mathrm{d}}{\mathrm{d}x} \left( \frac{1}{2} v^2 \right).\]</div>
 <p>Dropping <span class="math notranslate nohighlight">\( m \)</span> from both sides, we get:</p>
 <div class="math notranslate nohighlight">
-\[\int_{x=x_0}^{x_f} \frac{\mathrm{\mathrm{d}}}{\mathrm{\mathrm{\mathrm{d}}}x} \left( \frac{1}{2} v^2 \right) \, \mathrm{\mathrm{\mathrm{d}}}x = \int_{x=x_0}^{x_f} -\frac{G M_E}{(R_E + x)^2} \, \mathrm{\mathrm{\mathrm{d}}}x,\]</div>
+\[\int_{x=x_0}^{x_f} \frac{\mathrm{d}}{\mathrm{d}x} \left( \frac{1}{2} v^2 \right) \, \mathrm{d}x = \int_{x=x_0}^{x_f} -\frac{G M_E}{(R_E + x)^2} \, \mathrm{d}x,\]</div>
 <div class="math notranslate nohighlight">
 \[\Rightarrow \frac{1}{2} (v_f^2 - v_0^2) = \left[ \frac{G M_E}{R_E + x} \right]_{x_0}^{x_f},\]</div>
 <div class="math notranslate nohighlight">
@@ -559,13 +555,13 @@ However, since the block is only free to move in the <span class="math notransla
 </section>
 </section>
 <section id="fluid-resistance-terminal-velocity">
-<h2><span class="section-number">3.4. </span>Fluid Resistance: Terminal Velocity<a class="headerlink" href="#fluid-resistance-terminal-velocity" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>Fluid Resistance: Terminal Velocity<a class="headerlink" href="#fluid-resistance-terminal-velocity" title="Link to this heading">#</a></h2>
 <p>For a body falling through a fluid that resists its motion (such as through viscous drag), we can examine an equation of motion as follows:</p>
 <div class="math notranslate nohighlight">
-\[m \frac{\mathrm{d}v}{\mathrm{\mathrm{\mathrm{d}}}t} = -mg - cv,    \]</div>
+\[m \frac{\mathrm{d}v}{\mathrm{d}t} = -mg - cv,    \]</div>
 <p>where <span class="math notranslate nohighlight">\( c &gt; 0 \)</span> is a constant, and <span class="math notranslate nohighlight">\( g \)</span> is the local gravitational acceleration, assumed constant here. This setup includes a “resisting” term proportional to the velocity <span class="math notranslate nohighlight">\( v \)</span>. Rearranging and integrating from time zero to a final time <span class="math notranslate nohighlight">\( t_f \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\int_{v_0}^{v(t_f)} \frac{-1}{g + \frac{cv}{m}} \, \mathrm{d}v &amp;= \int_0^{t_f} \mathrm{\mathrm{\mathrm{d}}}t,\\
+\[\begin{split}\int_{v_0}^{v(t_f)} \frac{-1}{g + \frac{cv}{m}} \, \mathrm{d}v &amp;= \int_0^{t_f} \mathrm{d}t,\\
 \Rightarrow \left(-\frac{m}{c}\right) \ln\left(\frac{g + \frac{cv(t_f)}{m}}{g + \frac{cv_0}{m}}\right) &amp;= t_f,\\
 \Rightarrow v(t_f) &amp;= -\frac{gm}{c} + \exp\left(-\frac{ct_f}{m}\right)\left(\frac{mg}{c} + v_0\right).\end{split}\]</div>
 <p>As <span class="math notranslate nohighlight">\( t_f \gg \frac{m}{c} \)</span>, the magnitude of <span class="math notranslate nohighlight">\( v \)</span> approaches the </mark>terminal speed</mark> <span class="math notranslate nohighlight">\( v_t = \frac{gm}{c} \)</span>. Setting the characteristic time scale <span class="math notranslate nohighlight">\( \tau = \frac{m}{c} \)</span>, we can rewrite <span class="math notranslate nohighlight">\( v(t_f) \)</span> as:</p>
@@ -574,7 +570,7 @@ However, since the block is only free to move in the <span class="math notransla
 <p>This form clarifies that terminal velocity is approached </mark>exponentially</mark> over time, while the initial motion <span class="math notranslate nohighlight">\( v_0 \)</span> </mark>fades exponentially</mark>. The time scale for both processes, <span class="math notranslate nohighlight">\( \tau \)</span>, is shorter for larger values of <span class="math notranslate nohighlight">\( c \)</span>, corresponding to a more viscous fluid.</p>
 </section>
 <section id="centrifugal-force-and-rotating-frames-of-reference">
-<h2><span class="section-number">3.5. </span>Centrifugal Force and Rotating Frames of Reference<a class="headerlink" href="#centrifugal-force-and-rotating-frames-of-reference" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span>Centrifugal Force and Rotating Frames of Reference<a class="headerlink" href="#centrifugal-force-and-rotating-frames-of-reference" title="Link to this heading">#</a></h2>
 <p>In investigating equations of motion, it’s important to note how the chosen coordinate frame affects their form. Here, we compare a fixed coordinate system <span class="math notranslate nohighlight">\( S \)</span> with axes <span class="math notranslate nohighlight">\( (x, y, z) \)</span> to a rotating system <span class="math notranslate nohighlight">\( S^{\prime} \)</span> with axes <span class="math notranslate nohighlight">\( (x^{\prime}, y^{\prime}, z^{\prime}) \)</span> that share the same origin as <span class="math notranslate nohighlight">\( S \)</span> and rotate about a direction given by unit vector <span class="math notranslate nohighlight">\( \mathbf{n} \)</span> (see <a class="reference internal" href="#fig-rotnaxes"><span class="std std-numref">Fig. 3.3</span></a>). The angular velocity vector of the primed axes, as seen in frame <span class="math notranslate nohighlight">\( P \)</span>, is <span class="math notranslate nohighlight">\( \mathbf{\omega} = \omega \mathbf{n} \)</span>. The direction of <span class="math notranslate nohighlight">\( \mathbf{n} \)</span> follows a right-handed sense with respect to the rotation.</p>
 <figure class="align-default" id="fig-rotnaxes">
 <img alt="../_images/rotnaxes.png" src="../_images/rotnaxes.png" />
@@ -587,28 +583,28 @@ However, since the block is only free to move in the <span class="math notransla
 \[\mathbf{r} = \mathbf{i} x + \mathbf{j} y + \mathbf{k} z = \mathbf{i'} x' + \mathbf{j'} y' + \mathbf{k'} z'.\]</div>
 <p>To examine the velocity in both frames, we differentiate with respect to time. The unit vectors in <span class="math notranslate nohighlight">\( S' \)</span> rotate over time, while those in <span class="math notranslate nohighlight">\( S \)</span> remain fixed:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{i} \frac{\mathrm{\mathrm{\mathrm{d}}}x}{\mathrm{\mathrm{\mathrm{d}}}t} + \mathbf{j} \frac{\mathrm{d}y}{\mathrm{\mathrm{\mathrm{d}}}t} + \mathbf{k} \frac{\mathrm{d}z}{\mathrm{\mathrm{\mathrm{d}}}t} = \mathbf{i'} \frac{\mathrm{\mathrm{\mathrm{d}}}x'}{\mathrm{\mathrm{\mathrm{d}}}t} + \mathbf{j'} \frac{\mathrm{d}y'}{\mathrm{\mathrm{\mathrm{d}}}t} + \mathbf{k'} \frac{\mathrm{d}z'}{\mathrm{\mathrm{\mathrm{d}}}t} + x' \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{i'}}{\mathrm{\mathrm{\mathrm{d}}}t} + y' \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{j'}}{\mathrm{\mathrm{\mathrm{d}}}t} + z' \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{k'}}{\mathrm{\mathrm{\mathrm{d}}}t}.\]</div>
-<p>A corotating observer in <span class="math notranslate nohighlight">\( S' \)</span> sees a velocity with components <span class="math notranslate nohighlight">\( \left( \frac{\mathrm{\mathrm{\mathrm{d}}}x'}{\mathrm{\mathrm{\mathrm{d}}}t}, \frac{\mathrm{d}y'}{\mathrm{\mathrm{\mathrm{d}}}t}, \frac{\mathrm{d}z'}{\mathrm{\mathrm{\mathrm{d}}}t} \right) \)</span>. Defining this velocity vector as <span class="math notranslate nohighlight">\( \mathbf{v'} \)</span>, the velocity relation between frames is:</p>
+\[\mathbf{i} \frac{\mathrm{d}x}{\mathrm{d}t} + \mathbf{j} \frac{\mathrm{d}y}{\mathrm{d}t} + \mathbf{k} \frac{\mathrm{d}z}{\mathrm{d}t} = \mathbf{i'} \frac{\mathrm{d}x'}{\mathrm{d}t} + \mathbf{j'} \frac{\mathrm{d}y'}{\mathrm{d}t} + \mathbf{k'} \frac{\mathrm{d}z'}{\mathrm{d}t} + x' \frac{\mathrm{d}\mathbf{i'}}{\mathrm{d}t} + y' \frac{\mathrm{d}\mathbf{j'}}{\mathrm{d}t} + z' \frac{\mathrm{d}\mathbf{k'}}{\mathrm{d}t}.\]</div>
+<p>A corotating observer in <span class="math notranslate nohighlight">\( S' \)</span> sees a velocity with components <span class="math notranslate nohighlight">\( \left( \frac{\mathrm{d}x'}{\mathrm{d}t}, \frac{\mathrm{d}y'}{\mathrm{d}t}, \frac{\mathrm{d}z'}{\mathrm{d}t} \right) \)</span>. Defining this velocity vector as <span class="math notranslate nohighlight">\( \mathbf{v'} \)</span>, the velocity relation between frames is:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{v} = \mathbf{v'} + x' \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{i'}}{\mathrm{\mathrm{\mathrm{d}}}t} + y' \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{j'}}{\mathrm{\mathrm{\mathrm{d}}}t} + z' \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{k'}}{\mathrm{\mathrm{\mathrm{d}}}t}.\]</div>
+\[\mathbf{v} = \mathbf{v'} + x' \frac{\mathrm{d}\mathbf{i'}}{\mathrm{d}t} + y' \frac{\mathrm{d}\mathbf{j'}}{\mathrm{d}t} + z' \frac{\mathrm{d}\mathbf{k'}}{\mathrm{d}t}.\]</div>
 <p>For any vector <span class="math notranslate nohighlight">\( \mathbf{p'} \)</span> of fixed magnitude rotating about a fixed axis with angular velocity <span class="math notranslate nohighlight">\( \mathbf{\omega} \)</span>, the rate of change is:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{p'}}{\mathrm{\mathrm{\mathrm{d}}}t} = \mathbf{\omega} \times \mathbf{p'}.\]</div>
+\[\frac{\mathrm{d}\mathbf{p'}}{\mathrm{d}t} = \mathbf{\omega} \times \mathbf{p'}.\]</div>
 <p>To understand this, we note that, in a small time increment <span class="math notranslate nohighlight">\(\delta t\)</span>, the change in the vector will point along the local direction of its rotation, which is the direction of the corresponding cross product <span class="math notranslate nohighlight">\(\mathbf{\omega} \times \mathbf{p'}\,\delta t\)</span>. Thus for our general velocity relation, we can write:</p>
 <div class="math notranslate nohighlight" id="equation-eq-vdefn">
 <span class="eqno">(3.4)<a class="headerlink" href="#equation-eq-vdefn" title="Link to this equation">#</a></span>\[\mathbf{v} = \mathbf{v'} + x' (\mathbf{\omega} \times \mathbf{i'}) + y' (\mathbf{\omega} \times \mathbf{j'}) + z' (\mathbf{\omega} \times \mathbf{k'}) = \mathbf{v'} + \mathbf{\omega} \times \mathbf{r'}.\]</div>
 <section id="acceleration-relation">
-<h3><span class="section-number">3.5.1. </span>Acceleration Relation<a class="headerlink" href="#acceleration-relation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.4.1. </span>Acceleration Relation<a class="headerlink" href="#acceleration-relation" title="Link to this heading">#</a></h3>
 <p>To find a relation between acceleration vectors, we use the definition of <span class="math notranslate nohighlight">\( \mathbf{v'} \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{v'}}{\mathrm{\mathrm{\mathrm{d}}}t} = \ddot{x'} \mathbf{i'} + \ddot{y'} \mathbf{j'} + \ddot{z'} \mathbf{k'} + \dot{x'} \mathbf{\omega} \times \mathbf{i'} + \dot{y'} \mathbf{\omega} \times \mathbf{j'} + \dot{z'} \mathbf{\omega} \times \mathbf{k'} = \mathbf{a'} + \mathbf{\omega} \times \mathbf{v'}.\]</div>
+\[\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t} = \ddot{x'} \mathbf{i'} + \ddot{y'} \mathbf{j'} + \ddot{z'} \mathbf{k'} + \dot{x'} \mathbf{\omega} \times \mathbf{i'} + \dot{y'} \mathbf{\omega} \times \mathbf{j'} + \dot{z'} \mathbf{\omega} \times \mathbf{k'} = \mathbf{a'} + \mathbf{\omega} \times \mathbf{v'}.\]</div>
 <p>Here, the components of the vector <span class="math notranslate nohighlight">\(\mathbf{a'}\)</span> are the same acceleration components that would be perceived by the co-rotating observer. In a similar manner to how we derived
-<span class="math notranslate nohighlight">\(\frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{v'}}{\mathrm{\mathrm{\mathrm{d}}}t}\)</span> above, we could also show that:</p>
+<span class="math notranslate nohighlight">\(\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t}\)</span> above, we could also show that:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t} = \mathbf{v'} + \mathbf{\omega} \times \mathbf{r'}.\]</div>
-<p>Returning now to <a class="reference internal" href="#equation-eq-vdefn">(3.4)</a>, we can differentiate both sides, making use of the above expressions for both <span class="math notranslate nohighlight">\(\frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{v'}}{\mathrm{\mathrm{\mathrm{d}}}t}\)</span> and <span class="math notranslate nohighlight">\(\frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t}\)</span>:</p>
+\[\frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t} = \mathbf{v'} + \mathbf{\omega} \times \mathbf{r'}.\]</div>
+<p>Returning now to <a class="reference internal" href="#equation-eq-vdefn">(3.4)</a>, we can differentiate both sides, making use of the above expressions for both <span class="math notranslate nohighlight">\(\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t}\)</span> and <span class="math notranslate nohighlight">\(\frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t}\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{a} = \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{v}}{\mathrm{\mathrm{\mathrm{d}}}t} = \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{v'}}{\mathrm{\mathrm{\mathrm{d}}}t} + \dot{\mathbf{\omega}} \times \mathbf{r'} + \mathbf{\omega} \times \frac{\mathrm{\mathrm{\mathrm{d}}}\mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t},\]</div>
+\[\mathbf{a} = \frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t} = \frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t} + \dot{\mathbf{\omega}} \times \mathbf{r'} + \mathbf{\omega} \times \frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t},\]</div>
 <div class="math notranslate nohighlight">
 \[= \mathbf{a'} + \mathbf{\omega} \times \mathbf{v'} + \dot{\mathbf{\omega}} \times \mathbf{r'} + \mathbf{\omega} \times (\mathbf{v'} + \mathbf{\omega} \times \mathbf{r'}).\]</div>
 <p>Simplifying gives:</p>
@@ -628,9 +624,9 @@ However, since the block is only free to move in the <span class="math notransla
 </section>
 </section>
 <section id="example-motion-in-the-earths-corotating-frame">
-<h2><span class="section-number">3.6. </span>Example: Motion in the Earth’s Corotating Frame<a class="headerlink" href="#example-motion-in-the-earths-corotating-frame" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>Example: Motion in the Earth’s Corotating Frame<a class="headerlink" href="#example-motion-in-the-earths-corotating-frame" title="Link to this heading">#</a></h2>
 <section id="the-local-vertical">
-<h3><span class="section-number">3.6.1. </span>The Local Vertical<a class="headerlink" href="#the-local-vertical" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.5.1. </span>The Local Vertical<a class="headerlink" href="#the-local-vertical" title="Link to this heading">#</a></h3>
 <p>Let’s start by considering what we are really measuring when we use a hanging weight (often known as a plumb bob) to define the local vertical direction at its location on the surface of the rotating Earth. Because the Earth is rotating, the plumb direction (the direction of the string from which the weight hangs) generally does not point exactly towards the Earth’s centre (in fact, the surface of the Earth is not perfectly spherical). The exception is if it is situated along the Earth’s equator or at either rotational pole.</p>
 <p>To understand why, let’s consider a frame of reference where the weight, or plumb bob, is at the origin (see <a class="reference internal" href="#fig-plumbbobaxes"><span class="std std-numref">Fig. 3.4</span></a>). As the Earth rotates, it carries this local reference frame around. Thus, the axes rotate, and they also undergo a translational motion—illustrated by the origin tracing a circle of radius <span class="math notranslate nohighlight">\( R_E \cos \lambda \)</span> once per planetary rotation, where <span class="math notranslate nohighlight">\( R_E \)</span> is the radius of the Earth and <span class="math notranslate nohighlight">\( \lambda \)</span> is the geocentric latitude of the weight.</p>
 <figure class="align-default" id="fig-plumbbobaxes">
@@ -658,10 +654,10 @@ However, since the block is only free to move in the <span class="math notransla
 <p>The angle <span class="math notranslate nohighlight">\( \epsilon \)</span>, as expected, vanishes at the equator and the poles, and takes on its maximum value at <span class="math notranslate nohighlight">\( \lambda = 45^{\circ} \)</span>, which is only <span class="math notranslate nohighlight">\( 0.1^{\circ} \)</span>. It is important to note that, in this analysis, we have implicitly assumed that the actual gravitational acceleration <span class="math notranslate nohighlight">\( \mathbf{g_0} \)</span> is constant and directed towards the Earth’s centre. This is not strictly valid — the Earth’s ellipsoid shape plus local topography make the exact calculation difficult; however, corrections due to such effects will generally be small.</p>
 </section>
 <section id="projectile-motion">
-<h3><span class="section-number">3.6.2. </span>Projectile Motion<a class="headerlink" href="#projectile-motion" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.5.2. </span>Projectile Motion<a class="headerlink" href="#projectile-motion" title="Link to this heading">#</a></h3>
 <p>We will now make use of the results and symbols from the last section to write a more general equation of motion for a projectile moving near the Earth’s surface, whose motion is described in a similar, corotating frame illustrated in <a class="reference internal" href="#fig-projaxes"><span class="std std-numref">Fig. 3.6</span></a>. The origin lies at a fixed latitude and longitude. The axes are oriented such that the <span class="math notranslate nohighlight">\( z' \)</span> axis is along the upward vertical direction (as defined by the direction of the string from which a static weight hangs), <span class="math notranslate nohighlight">\( y' \)</span> points locally northward and <span class="math notranslate nohighlight">\( x' \)</span> points locally eastward. Our equation of motion in this frame of reference is thus:</p>
 <div class="math notranslate nohighlight">
-\[m \frac{\mathrm{\mathrm{d}}^2 \mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t^2} = \mathbf{F} + m \mathbf{g} - 2m \mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t} - m \mathbf{\omega} \times (\mathbf{\omega} \times \mathbf{r'}),\]</div>
+\[m \frac{\mathrm{d}^2 \mathbf{r'}}{\mathrm{d}t^2} = \mathbf{F} + m \mathbf{g} - 2m \mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{d}t} - m \mathbf{\omega} \times (\mathbf{\omega} \times \mathbf{r'}),\]</div>
 <p>where <span class="math notranslate nohighlight">\( \mathbf{F} \)</span> is any actual applied force, other than gravity, <span class="math notranslate nohighlight">\( \mathbf{g} = \mathbf{g_0} - \mathbf{A_0} \)</span>, and we have added the Coriolis and centrifugal terms since our projectile is moving.</p>
 <figure class="align-default" id="fig-projaxes">
 <img alt="../_images/projaxes.png" src="../_images/projaxes.png" />
@@ -671,10 +667,10 @@ However, since the block is only free to move in the <span class="math notransla
 </figure>
 <p>Let us simplify the problem by ignoring forces such as air resistance and setting <span class="math notranslate nohighlight">\( \mathbf{F} = 0 \)</span>. We will also ignore the centrifugal force, since it is usually very small compared with the other terms, in practice. Thus:</p>
 <div class="math notranslate nohighlight">
-\[m \frac{\mathrm{\mathrm{d}}^2 \mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t^2} = m \mathbf{g} - 2m \mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t}.\]</div>
+\[m \frac{\mathrm{d}^2 \mathbf{r'}}{\mathrm{d}t^2} = m \mathbf{g} - 2m \mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{d}t}.\]</div>
 <p>With the axes we have chosen, we can define unit vectors <span class="math notranslate nohighlight">\( \mathbf{i'}, \mathbf{j'}, \mathbf{k'} \)</span> along the respective <span class="math notranslate nohighlight">\( x', y', z' \)</span> directions. Hence we can write <span class="math notranslate nohighlight">\( \mathbf{g} = -g \mathbf{k'} \)</span> and <span class="math notranslate nohighlight">\( \mathbf{\omega} = \omega \cos \lambda \mathbf{j'} + \omega \sin \lambda \mathbf{k'} \)</span>. With some vector algebra, we can show that:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{\mathrm{\mathrm{d}}}t} = \mathbf{i'} (\omega \dot{z'} \cos \lambda - \omega \dot{y'} \sin \lambda) + \mathbf{j'} (\omega \dot{x'} \sin \lambda) + \mathbf{k'} (-\omega \dot{x'} \cos \lambda).\]</div>
+\[\mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{d}t} = \mathbf{i'} (\omega \dot{z'} \cos \lambda - \omega \dot{y'} \sin \lambda) + \mathbf{j'} (\omega \dot{x'} \sin \lambda) + \mathbf{k'} (-\omega \dot{x'} \cos \lambda).\]</div>
 <p>Using this result, the components of the equation of motion now read as:</p>
 <div class="math notranslate nohighlight" id="equation-eq-accelwcoriol">
 <span class="eqno">(3.6)<a class="headerlink" href="#equation-eq-accelwcoriol" title="Link to this equation">#</a></span>\[\ddot{x'} = -2 \omega (\dot{z'} \cos \lambda - \dot{y'} \sin \lambda), \quad \ddot{y'} = -2 \omega (\dot{x'} \sin \lambda), \quad \ddot{z'} = -g + 2 \omega \dot{x'} \cos \lambda.\]</div>
@@ -775,20 +771,19 @@ comes from a uniform downwards gravitational term, <span class="math notranslate
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-under-constant-acceleration">3.2. Motion Under Constant Acceleration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-of-kinetic-and-potential-energy">3.3. Concepts of Kinetic and Potential Energy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-variation-of-gravity-with-height">3.3.1. Example: Variation of Gravity with Height</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-under-constant-acceleration">3.1. Motion Under Constant Acceleration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-of-kinetic-and-potential-energy">3.2. Concepts of Kinetic and Potential Energy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-variation-of-gravity-with-height">3.2.1. Example: Variation of Gravity with Height</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-resistance-terminal-velocity">3.4. Fluid Resistance: Terminal Velocity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centrifugal-force-and-rotating-frames-of-reference">3.5. Centrifugal Force and Rotating Frames of Reference</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceleration-relation">3.5.1. Acceleration Relation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-resistance-terminal-velocity">3.3. Fluid Resistance: Terminal Velocity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centrifugal-force-and-rotating-frames-of-reference">3.4. Centrifugal Force and Rotating Frames of Reference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceleration-relation">3.4.1. Acceleration Relation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-motion-in-the-earths-corotating-frame">3.6. Example: Motion in the Earth’s Corotating Frame</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-local-vertical">3.6.1. The Local Vertical</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile-motion">3.6.2. Projectile Motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-motion-in-the-earths-corotating-frame">3.5. Example: Motion in the Earth’s Corotating Frame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-local-vertical">3.5.1. The Local Vertical</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile-motion">3.5.2. Projectile Motion</a></li>
 </ul>
 </li>
 </ul>

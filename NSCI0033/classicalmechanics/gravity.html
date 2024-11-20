@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystyle.css?v=3e5b5be6" />
@@ -55,7 +55,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -410,11 +410,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-and-keplers-second-law">5.3.1. Angular Momentum and Kepler’s Second Law</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keplers-first-law-and-orbital-geometry">5.3.2. Kepler’s First Law and Orbital Geometry</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodic-orbital-motion-and-keplers-third-law">5.3.3. Periodic Orbital Motion and Kepler’s Third Law</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitational-potential">5.3.4. Gravitational Potential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-of-orbits-in-a-central-field">5.3.5. Energy of Orbits in a Central Field</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-limits-of-radial-motion">5.3.6. The Limits of Radial Motion</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitational-potential">5.4. Gravitational Potential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-of-orbits-in-a-central-field">5.5. Energy of Orbits in a Central Field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-limits-of-radial-motion">5.6. The Limits of Radial Motion</a></li>
 </ul>
             </nav>
         </div>
@@ -428,14 +428,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="gravitation-and-central-forces">
 <h1><span class="section-number">5. </span>Gravitation and Central Forces<a class="headerlink" href="#gravitation-and-central-forces" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="../_images/gravimag.jpeg"><img alt="../_images/gravimag.jpeg" src="../_images/gravimag.jpeg" style="width: 700px;" /></a>
+<p></mark>Image Credit: NASA / CC BY</mark></p>
 <section id="newtons-law-of-universal-gravitation">
 <h2><span class="section-number">5.1. </span>Newton’s Law of Universal Gravitation<a class="headerlink" href="#newtons-law-of-universal-gravitation" title="Link to this heading">#</a></h2>
 <p>Every particle in the universe attracts every other particle with a force whose magnitude is proportional to the product of the masses of the two particles and inversely proportional to the square of the distance between them. The direction of the force lies along the straight line connecting the two particles.</p>
 <p>We can represent this statement mathematically by using vectors, as follows:</p>
-<div class="math notranslate nohighlight">
-\[\vec{F}_{ij} = \dfrac{G m_i m_j}{r_{ij}^2} \dfrac{\vec{r}_{ij}}{r_{ij}}.\]</div>
-<p>In equation (1), <span class="math notranslate nohighlight">\(\vec{F}_{ij}\)</span> is the attractive force on a point mass <span class="math notranslate nohighlight">\(m_i\)</span> due to another mass <span class="math notranslate nohighlight">\(m_j\)</span>, which is situated at a distance <span class="math notranslate nohighlight">\(r_{ij}\)</span> from <span class="math notranslate nohighlight">\(m_i\)</span>. The vector <span class="math notranslate nohighlight">\(\vec{r}_{ij}\)</span> is a vector running from the position of <span class="math notranslate nohighlight">\(m_i\)</span> to that of <span class="math notranslate nohighlight">\(m_j\)</span> (we can write <span class="math notranslate nohighlight">\(\vec{r}_{ij} = \vec{r}_j - \vec{r}_i\)</span>). In accordance with Newton’s law of action and reaction, we can see that <span class="math notranslate nohighlight">\(\vec{F}_{ij} = -\vec{F}_{ji}\)</span>.</p>
-<p>The value of <span class="math notranslate nohighlight">\(G\)</span>, the <strong>universal constant of gravitation</strong>, is <span class="math notranslate nohighlight">\((6.67259 \pm 0.00085) \times 10^{-11} \, \mathrm{N \cdot m^2 \cdot kg^2}\)</span>. Gravitational force is an example of a <strong>central force</strong>—these are forces whose lines of action emerge from, or terminate on, a single point or center. It is also an <strong>isotropic force</strong>, since its magnitude does not depend on the direction along which it acts. If we approximate the Earth as a body with perfect spherical symmetry, the gravitational force due to the Earth acting upon any mass <span class="math notranslate nohighlight">\(m\)</span> on its surface would be:</p>
+<div class="math notranslate nohighlight" id="equation-eq-gravlaw">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-eq-gravlaw" title="Link to this equation">#</a></span>\[\mathbf{F}_{ij} = \dfrac{G m_i m_j}{r_{ij}^2} \dfrac{\mathbf{r}_{ij}}{r_{ij}}.\]</div>
+<p>In <a class="reference internal" href="#equation-eq-gravlaw">(5.1)</a>, <span class="math notranslate nohighlight">\(\mathbf{F}_{ij}\)</span> is the attractive force on a point mass <span class="math notranslate nohighlight">\(m_i\)</span> due to another mass <span class="math notranslate nohighlight">\(m_j\)</span>, which is situated at a distance <span class="math notranslate nohighlight">\(r_{ij}\)</span> from <span class="math notranslate nohighlight">\(m_i\)</span>. The vector <span class="math notranslate nohighlight">\(\mathbf{r}_{ij}\)</span> is a vector running from the position of <span class="math notranslate nohighlight">\(m_i\)</span> to that of <span class="math notranslate nohighlight">\(m_j\)</span> (we can write <span class="math notranslate nohighlight">\(\mathbf{r}_{ij} = \mathbf{r}_j - \mathbf{r}_i\)</span>). In accordance with Newton’s law of action and reaction, we can see that <span class="math notranslate nohighlight">\(\mathbf{F}_{ij} = -\mathbf{F}_{ji}\)</span>.</p>
+<p>The value of <span class="math notranslate nohighlight">\(G\)</span>, the <mark>universal constant of gravitation</mark>, is <span class="math notranslate nohighlight">\((6.67259 \pm 0.00085) \times 10^{-11} \, \mathrm{N \cdot m^2 \cdot kg^2}\)</span>. Gravitational force is an example of a <mark>central force</mark>—these are forces whose lines of action emerge from, or terminate on, a single point or center. It is also an <mark>isotropic force</mark>, since its magnitude does not depend on the direction along which it acts. If we approximate the Earth as a body with perfect spherical symmetry, the gravitational force due to the Earth acting upon any mass <span class="math notranslate nohighlight">\(m\)</span> on its surface would be:</p>
 <div class="math notranslate nohighlight">
 \[\frac{G M_E m}{R_E^2},\]</div>
 <p>with <span class="math notranslate nohighlight">\(M_E\)</span> and <span class="math notranslate nohighlight">\(R_E\)</span> denoting the Earth’s mass and radius. According to Newton’s second law, this force must also be equal to <span class="math notranslate nohighlight">\(m g\)</span>, where <span class="math notranslate nohighlight">\(g\)</span> is the acceleration upon the mass <span class="math notranslate nohighlight">\(m\)</span> due to gravity. Hence, <span class="math notranslate nohighlight">\(g = \frac{G M_E}{R_E^2}\)</span> is the acceleration due to the Earth’s gravitational force at its surface, and is independent of the mass of the body upon which it acts.</p>
@@ -443,12 +445,16 @@ document.write(`
 <section id="gravitational-force-between-a-uniform-sphere-and-a-particle">
 <h2><span class="section-number">5.2. </span>Gravitational Force between a Uniform Sphere and a Particle<a class="headerlink" href="#gravitational-force-between-a-uniform-sphere-and-a-particle" title="Link to this heading">#</a></h2>
 <p>Consider a thin spherical shell of radius <span class="math notranslate nohighlight">\(R\)</span>, as shown in Figure 1, which carries a uniform mass per unit area of <span class="math notranslate nohighlight">\(\sigma\)</span> (often known as surface mass density). Now let’s calculate the gravitational field due to the shell at some particle <span class="math notranslate nohighlight">\(P\)</span>, of mass <span class="math notranslate nohighlight">\(m\)</span>, which is situated outside the shell, at a distance <span class="math notranslate nohighlight">\(r\)</span> from its center. In a convenient set of coordinates, the <span class="math notranslate nohighlight">\(z\)</span>-axis can be chosen so that it contains both the center of the shell (which we choose to be the origin <span class="math notranslate nohighlight">\(O\)</span>) and the point <span class="math notranslate nohighlight">\(P\)</span>.</p>
-<p><img alt="Diagram for calculating the gravitational field at a point outside a thin spherical shell of uniform surface density." src="../_images/gshell.png" />
-<em>Diagram for calculating the gravitational field at a point <span class="math notranslate nohighlight">\(P\)</span> outside a thin spherical shell of uniform surface density.</em></p>
+<figure class="align-default" id="fig-gshell">
+<img alt="../_images/gshell.png" src="../_images/gshell.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Diagram for calculating the gravitational field at a point <span class="math notranslate nohighlight">\(P\)</span> outside a thin spherical shell of uniform surface density.</span><a class="headerlink" href="#fig-gshell" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>To do the calculation, we divide the shell up into many rings, or circular strips, which are symmetrical about the <span class="math notranslate nohighlight">\(z\)</span>-axis and of infinitesimal thickness <span class="math notranslate nohighlight">\(R \, \Delta \theta\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between the direction <span class="math notranslate nohighlight">\(OP\)</span> and the position of any element on a ring with respect to the origin. The radius of the rings is <span class="math notranslate nohighlight">\(R \sin \theta\)</span>. Hence, any ring will have a surface area <span class="math notranslate nohighlight">\(\Delta S = 2\pi R \sin \theta \, \Delta \theta\)</span>, and thus have a mass <span class="math notranslate nohighlight">\(\Delta M = \sigma \, \Delta S\)</span>.</p>
-<p>The Figure shows that any element <span class="math notranslate nohighlight">\(Q\)</span> of the ring will exert a force on <span class="math notranslate nohighlight">\(P\)</span> given by <span class="math notranslate nohighlight">\(\vec{\Delta F}_Q\)</span>, which points from <span class="math notranslate nohighlight">\(P\)</span> to <span class="math notranslate nohighlight">\(Q\)</span>. We can resolve this force into components parallel and perpendicular to the <span class="math notranslate nohighlight">\(z\)</span>-axis (i.e., the direction <span class="math notranslate nohighlight">\(OP\)</span>). From the symmetry of the problem, we see that as we travel around the ring, the sum of all the perpendicular components will add to zero, and only the parallel component is important. This component for any of the rings has a magnitude given by:</p>
-<div class="math notranslate nohighlight">
-\[\Delta F_{\text{ring}} = G \dfrac{m \, \Delta M}{s^2} \cos \phi
+<p>The Figure shows that any element <span class="math notranslate nohighlight">\(Q\)</span> of the ring will exert a force on <span class="math notranslate nohighlight">\(P\)</span> given by <span class="math notranslate nohighlight">\(\mathbf{\Delta F}_Q\)</span>, which points from <span class="math notranslate nohighlight">\(P\)</span> to <span class="math notranslate nohighlight">\(Q\)</span>. We can resolve this force into components parallel and perpendicular to the <span class="math notranslate nohighlight">\(z\)</span>-axis (i.e., the direction <span class="math notranslate nohighlight">\(OP\)</span>). From the symmetry of the problem, we see that as we travel around the ring, the sum of all the perpendicular components will add to zero, and only the parallel component is important. This component for any of the rings has a magnitude given by:</p>
+<div class="math notranslate nohighlight" id="equation-eq-dfring">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-eq-dfring" title="Link to this equation">#</a></span>\[\Delta F_{\text{ring}} = G \dfrac{m \, \Delta M}{s^2} \cos \phi
 = G \dfrac{m 2 \pi \sigma R^2 \sin \theta \cos \phi}{s^2} \Delta \theta.\]</div>
 <p>To add together the force due to all of the rings which make up the shell, it seems we have to integrate with respect to the variable angle <span class="math notranslate nohighlight">\(\theta\)</span>, whose value varies between 0 and <span class="math notranslate nohighlight">\(\pi\)</span>. We can make the calculation a little easier by firstly noting, from the geometry of the triangle in the figure, that <span class="math notranslate nohighlight">\(s^2 = r^2 + R^2 - 2 r R \cos \theta\)</span> (cosine rule for triangles). Noting that <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(R\)</span> are fixed values, but that <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> are variable, the differential of this expression gives:</p>
 <div class="math notranslate nohighlight">
@@ -456,85 +462,93 @@ document.write(`
 <p>Similarly, the angle <span class="math notranslate nohighlight">\(\phi\)</span> is related to the triangle’s side lengths according to:</p>
 <div class="math notranslate nohighlight">
 \[R^2 = s^2 + r^2 - 2 r s \cos \phi \quad \rightarrow \quad \cos \phi = \frac{s^2 + r^2 - R^2}{2 r s}.\]</div>
-<p>We can now eliminate factors involving <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> from our expression for <span class="math notranslate nohighlight">\(\Delta F_{\text{ring}}\)</span> in equation (5):</p>
-<div class="math notranslate nohighlight">
-\[\Delta F_{\text{ring}} = G \dfrac{m 2 \pi \sigma R^2}{s^2} \dfrac{s}{rR} \dfrac{s^2 + r^2 - R^2}{2 r s} \Delta s
-= \dfrac{G m \pi \sigma R}{r^2} \left(1 + \dfrac{r^2 - R^2}{s^2}\right) \Delta s.\]</div>
+<p>We can now eliminate factors involving <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> from our expression for <span class="math notranslate nohighlight">\(\Delta F_{\text{ring}}\)</span> in <a class="reference internal" href="#equation-eq-dfring">(5.2)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-dfringupd">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-eq-dfringupd" title="Link to this equation">#</a></span>\[\begin{split}\Delta F_{\text{ring}} &amp;= G \dfrac{m 2 \pi \sigma R^2}{s^2} \dfrac{s}{rR} \dfrac{s^2 + r^2 - R^2}{2 r s} \Delta s \\
+&amp;= \dfrac{G m \pi \sigma R}{r^2} \left(1 + \dfrac{r^2 - R^2}{s^2}\right) \Delta s.\end{split}\]</div>
 <p>We can now integrate this expression with respect to <span class="math notranslate nohighlight">\(s\)</span>, whose value ranges between <span class="math notranslate nohighlight">\(r - R\)</span> and <span class="math notranslate nohighlight">\(r + R\)</span> in order to cover the sphere. We obtain:</p>
 <div class="math notranslate nohighlight">
-\[F = \dfrac{G m \pi \sigma R}{r^2} \int_{s = r - R}^{r + R} \left(1 + \dfrac{r^2 - R^2}{s^2}\right) ds
-= \dfrac{G m \pi \sigma R}{r^2} \left(2R - (r^2 - R^2)\left[\dfrac{1}{s}\right]_{r - R}^{r + R}\right)\]</div>
-<div class="math notranslate nohighlight">
-\[= \dfrac{G m \pi \sigma R}{r^2} \left(2R - (r^2 - R^2) \dfrac{(r - R) - (r + R)}{(r + R)(r - R)}\right)
-= \dfrac{G m 4 \pi \sigma R^2}{r^2} = \dfrac{G M_s m}{r^2}.\]</div>
+\[\begin{split}    F &amp;= \dfrac{G m\pi\sigma R} {r^2} \, 
+        \int_{s=r-R}^{r+R}\left(1 + \dfrac{r^2 - R^2}{s^2}\right)\, ds \\
+        &amp;= \dfrac{G m\pi\sigma R} {r^2} \, 
+        \left(2R -(r^2 - R^2)\left[\dfrac{1}{s}\right]_{r-R}^{r+R}\right)
+        \\
+        &amp;= \dfrac{G m\pi\sigma R} {r^2} \, 
+        \left(2R -(r^2 - R^2)\dfrac{((r-R)-(r+R))}{(r+R)(r-R)}\right)
+        \\
+        &amp; = \dfrac{G m 4\pi \sigma R^2}{r^2} = G M_s m / r^2. \end{split}\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(M_s\)</span> is the mass of the sphere.</p>
-<p>This is a very important result—it shows that the gravitational field due to the spherical shell, at any point outside that shell, is equivalent to the field produced by a point mass at the center of the sphere, containing all of the mass of the sphere. It is easy to see that this idea can be extended to <strong>any spherically symmetric body</strong>, whose density is a function of radial distance only. Such a body is essentially a superposition of many spherical shells, and so the same result holds true. Interestingly, the <strong>total force at any point inside the shell is zero</strong>, which can be proven with an analysis similar to that shown above.</p>
+<p>This is a very important result—it shows that the gravitational field due to the spherical shell, at any point outside that shell, is equivalent to the field produced by a point mass at the center of the sphere, containing all of the mass of the sphere. It is easy to see that this idea can be extended to <mark>any spherically symmetric body</mark>, whose density is a function of radial distance only. Such a body is essentially a superposition of many spherical shells, and so the same result holds true. Interestingly, the <mark>total force at any point inside the shell is zero</mark>, which can be proven with an analysis similar to that shown above.</p>
 </section>
 <section id="keplers-laws-of-planetary-motion">
 <h2><span class="section-number">5.3. </span>Kepler’s Laws of Planetary Motion<a class="headerlink" href="#keplers-laws-of-planetary-motion" title="Link to this heading">#</a></h2>
 <p>From a detailed analysis of planetary motions in our Solar System, Johannes Kepler (1571-1630) was able to deduce three important aspects of this motion. His laws also played an important role in Newton’s development of the law of gravitation. In this section, we’ll investigate how Kepler’s laws are a consequence of the planets being subject to a central force – namely, the gravitational force.</p>
+<div id="sec:angmomkep"></div>
 <section id="angular-momentum-and-keplers-second-law">
 <h3><span class="section-number">5.3.1. </span>Angular Momentum and Kepler’s Second Law<a class="headerlink" href="#angular-momentum-and-keplers-second-law" title="Link to this heading">#</a></h3>
-<p><strong>Kepler’s second law</strong> may be stated: <em>A line drawn between the Sun and the planet sweeps out equal areas in equal times as the planet orbits the Sun.</em> What underpins this behaviour is a constant of the motion known as the planet’s <strong>angular momentum</strong>. The mathematical definition of angular momentum is:</p>
+<p><mark>Kepler’s second law</mark> may be stated: </mark>A line drawn between the Sun and the planet sweeps out equal areas in equal times as the planet orbits the Sun.</mark> What underpins this behaviour is a constant of the motion known as the planet’s <mark>angular momentum</mark>. The mathematical definition of angular momentum is:</p>
 <div class="math notranslate nohighlight">
-\[\vec{L} = \vec{r} \times \vec{p},\]</div>
-<p>where <span class="math notranslate nohighlight">\( \vec{r} \)</span> is the position vector of the centre of the planet with respect to the centre of the Sun, and <span class="math notranslate nohighlight">\( \vec{p} \)</span> is the planet’s momentum (the usual product, <span class="math notranslate nohighlight">\( m \vec{v} \)</span>, of its mass and velocity). To prove that the angular momentum <span class="math notranslate nohighlight">\( \vec{L} \)</span> stays constant during the motion of the planet under the gravitational influence of the Sun, we may investigate the derivative with respect to time:</p>
+\[\mathbf{L} = \mathbf{r} \times \mathbf{p},\]</div>
+<p>where <span class="math notranslate nohighlight">\( \mathbf{r} \)</span> is the position vector of the centre of the planet with respect to the centre of the Sun, and <span class="math notranslate nohighlight">\( \mathbf{p} \)</span> is the planet’s momentum (the usual product, <span class="math notranslate nohighlight">\( m \mathbf{v} \)</span>, of its mass and velocity). To prove that the angular momentum <span class="math notranslate nohighlight">\( \mathbf{L} \)</span> stays constant during the motion of the planet under the gravitational influence of the Sun, we may investigate the derivative with respect to time:</p>
 <div class="math notranslate nohighlight">
-\[\dfrac{d\vec{L}}{dt} = \dot{\vec{r}} \times \vec{p} + \vec{r} \times \dot{\vec{p}} 
-= \vec{v} \times (m \vec{v}) + m \vec{r} \times \dot{\vec{v}}.\]</div>
-<p>Now the first term on the right-hand side is zero, since it involves the cross product of a vector with itself. The second term involves the cross product of <span class="math notranslate nohighlight">\( \vec{r} \)</span> and the acceleration <span class="math notranslate nohighlight">\( \dot{\vec{v}} \)</span>. But according to Newton’s second law, the acceleration is proportional to the force acting on the body. The gravitational force of the Sun on the planet acts in the direction from the planet to the Sun, i.e. along the direction <span class="math notranslate nohighlight">\( -\vec{r} \)</span>. Hence the second term in the equation above is also zero and <span class="math notranslate nohighlight">\( \vec{L} \)</span> is a constant of the motion as the planet orbits the Sun. Since <span class="math notranslate nohighlight">\( \vec{L} \)</span> is always perpendicular to the plane defined by the vectors <span class="math notranslate nohighlight">\( \vec{r} \)</span> and <span class="math notranslate nohighlight">\( \vec{p} \)</span>, it follows that this plane remains fixed in its orientation and thus the problem of orbital motion, in our example, is essentially a two-dimensional problem.</p>
-<p>Taking this idea further, let’s specify the position of the planet with two coordinates: its radial distance <span class="math notranslate nohighlight">\( r \)</span> from the Sun and the angle <span class="math notranslate nohighlight">\( \theta \)</span> made between its position vector and some convenient reference direction lying in the plane of its orbit about the Sun. This reference direction passes through the origin, which is chosen to be the Sun’s location (see Figure below).
-We can thus define the planet’s velocity as <strong><span class="math notranslate nohighlight">\( \vec{v} = \dot{r} \vec{e}_{r} + r \dot{\theta} \vec{e}_{\theta} \)</span></strong>, where the vectors <span class="math notranslate nohighlight">\( \vec{e}_j \)</span> are appropriate unit vectors in the radial and meridional directions.</p>
-<p><img alt="Motion of a particle in a single plane" src="../_images/sweepda.png" />
-<em>Figure: Motion of a particle in a single plane. (a) Components of velocity; (b) Area swept out during an infinitesimal time increment. (from the book by Fowles and Cassiday)</em></p>
+\[\dfrac{\mathrm{d}\mathbf{L}}{\mathrm{d}t} = \dot{\mathbf{r}} \times \mathbf{p} + \mathbf{r} \times \dot{\mathbf{p}} 
+= \mathbf{v} \times (m \mathbf{v}) + m \mathbf{r} \times \dot{\mathbf{v}}.\]</div>
+<p>Now the first term on the right-hand side is zero, since it involves the cross product of a vector with itself. The second term involves the cross product of <span class="math notranslate nohighlight">\( \mathbf{r} \)</span> and the acceleration <span class="math notranslate nohighlight">\( \dot{\mathbf{v}} \)</span>. But according to Newton’s second law, the acceleration is proportional to the force acting on the body. The gravitational force of the Sun on the planet acts in the direction from the planet to the Sun, i.e. along the direction <span class="math notranslate nohighlight">\( -\mathbf{r} \)</span>. Hence the second term in the equation above is also zero and <span class="math notranslate nohighlight">\( \mathbf{L} \)</span> is a constant of the motion as the planet orbits the Sun. Since <span class="math notranslate nohighlight">\( \mathbf{L} \)</span> is always perpendicular to the plane defined by the vectors <span class="math notranslate nohighlight">\( \mathbf{r} \)</span> and <span class="math notranslate nohighlight">\( \mathbf{p} \)</span>, it follows that this plane remains fixed in its orientation and thus the problem of orbital motion, in our example, is essentially a two-dimensional problem.</p>
+<p>Taking this idea further, let’s specify the position of the planet with two coordinates: its radial distance <span class="math notranslate nohighlight">\( r \)</span> from the Sun and the angle <span class="math notranslate nohighlight">\( \theta \)</span> made between its position vector and some convenient reference direction lying in the plane of its orbit about the Sun. This reference direction passes through the origin, which is chosen to be the Sun’s location (see <a class="reference internal" href="#fig-sweepda"><span class="std std-numref">Fig. 5.2</span></a>).
+We can thus define the planet’s velocity as <mark><span class="math notranslate nohighlight">\( \mathbf{v} = \dot{r} \mathbf{e}_{r} + r \dot{\theta} \mathbf{e}_{\theta} \)</span></mark>, where the vectors <span class="math notranslate nohighlight">\( \mathbf{e}_j \)</span> are appropriate unit vectors in the radial and meridional directions.</p>
+<figure class="align-default" id="fig-sweepda">
+<img alt="../_images/sweepda.png" src="../_images/sweepda.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.2 </span><span class="caption-text">Motion of a particle in a single plane. (a) Components of velocity; n(b) Area swept out during an infinitesimal time increment. (from the book by Fowles and Cassiday)</span><a class="headerlink" href="#fig-sweepda" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Using this definition, the angular momentum magnitude becomes</p>
 <div class="math notranslate nohighlight">
-\[L = |m \vec{r}\times \vec{v}| = |m r^2 \dot{\theta} \, \vec{e}_r \times \vec{e}_{\theta}|.\]</div>
-<p>Since <span class="math notranslate nohighlight">\( |\vec{e}_r \times \vec{e}_{\theta}| = 1 \)</span> (these unit vectors are always orthogonal),</p>
+\[L = |m \mathbf{r}\times \mathbf{v}| = |m r^2 \dot{\theta} \, \mathbf{e}_r \times \mathbf{e}_{\theta}|.\]</div>
+<p>Since <span class="math notranslate nohighlight">\( |\mathbf{e}_r \times \mathbf{e}_{\theta}| = 1 \)</span> (these unit vectors are always orthogonal),</p>
 <div class="math notranslate nohighlight">
 \[L = m r^2 \dot{\theta}.\]</div>
 <p>Hence the conservation of angular momentum implies that <span class="math notranslate nohighlight">\( \dot{\theta} \propto 1/r^2 \)</span>.</p>
-<p>The angular momentum is also related to the rate of change of the area swept out by the position vector of the planet as it orbits. Figure below shows that in an infinitesimal time <span class="math notranslate nohighlight">\( dt \)</span>, the area swept out is that of a triangle, and given by</p>
+<p>The angular momentum is also related to the rate of change of the area swept out by the position vector of the planet as it orbits. Figure below shows that in an infinitesimal time <span class="math notranslate nohighlight">\( \mathrm{d}t \)</span>, the area swept out is that of a triangle, and given by</p>
 <div class="math notranslate nohighlight">
-\[dA = \frac{1}{2} |\vec{r}\times\vec{dr}| = \frac{1}{2} |\vec{r}\times\vec{v} dt|.\]</div>
+\[\mathrm{d}A= \frac{1}{2} |\mathbf{r}\times\mathbf{\mathrm{d}r}| = \frac{1}{2} |\mathbf{r}\times\mathbf{v} \mathrm{d}t|.\]</div>
 <p>Thus:</p>
-<div class="math notranslate nohighlight">
-\[\dfrac{dA}{dt} = \frac{1}{2} |\vec{r}\times\vec{v}| = \dfrac{L}{2m}.\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-dareadt">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-eq-dareadt" title="Link to this equation">#</a></span>\[\dfrac{\mathrm{d}A}{\mathrm{d}t} = \frac{1}{2} |\mathbf{r}\times\mathbf{v}| = \dfrac{L}{2m}.\]</div>
 <p>Since we know <span class="math notranslate nohighlight">\( L \)</span> is a constant of the motion, we conclude that so too (as Kepler’s observations showed) is the rate at which a planet’s position vector (with respect to the Sun) sweeps out area as it moves.</p>
 </section>
 <section id="keplers-first-law-and-orbital-geometry">
 <h3><span class="section-number">5.3.2. </span>Kepler’s First Law and Orbital Geometry<a class="headerlink" href="#keplers-first-law-and-orbital-geometry" title="Link to this heading">#</a></h3>
 <p>Kepler’s first law is a relationship between the size of a planet’s orbit and its orbital period. To derive this relationship, we will set up the equation of motion of an orbiting planet, of mass <span class="math notranslate nohighlight">\( m \)</span>, and solve it. The equation itself may be written in the form:</p>
 <div class="math notranslate nohighlight">
-\[m\,\ddot{\vec{r}} = f(r)\,\vec{e}_r.\]</div>
-<p>This equation emphasises that the gravitational force experienced by the planet, due to the Sun, is collinear with the unit vector <span class="math notranslate nohighlight">\( \vec{e}_r \)</span>, which points along the Sun-planet direction.</p>
-<p>We can decompose this vector equation into its radial (<span class="math notranslate nohighlight">\( r \)</span>) and meridional (<span class="math notranslate nohighlight">\( \theta \)</span>) components by using the expressions from the <em>Particle Dynamics</em> unit for the corresponding components of the acceleration:</p>
-<div class="math notranslate nohighlight">
-\[m (\ddot{r} - r \dot{\theta}^2) = f(r), \tag{eq:eomcompr}\]</div>
-<div class="math notranslate nohighlight">
-\[m (2 \dot{r} \dot{\theta} + r \ddot{\theta}) = 0. \tag{eq:eomcomp}\]</div>
+\[m\,\ddot{\mathbf{r}} = f(r)\,\mathbf{e}_r.\]</div>
+<p>This equation emphasises that the gravitational force experienced by the planet, due to the Sun, is collinear with the unit vector <span class="math notranslate nohighlight">\( \mathbf{e}_r \)</span>, which points along the Sun-planet direction.</p>
+<p>We can decompose this vector equation into its radial (<span class="math notranslate nohighlight">\( r \)</span>) and meridional (<span class="math notranslate nohighlight">\( \theta \)</span>) components by using the expressions from the </mark>Particle Dynamics</mark> unit for the corresponding components of the acceleration:</p>
+<div class="math notranslate nohighlight" id="equation-eq-eomcompr">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-eq-eomcompr" title="Link to this equation">#</a></span>\[m (\ddot{r} - r \dot{\theta}^2) = f(r), \\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-eomcomp">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-eq-eomcomp" title="Link to this equation">#</a></span>\[m (2 \dot{r} \dot{\theta} + r \ddot{\theta}) = 0. \]</div>
 <p>It is straightforward to show that the second equation implies</p>
 <div class="math notranslate nohighlight">
-\[\dfrac{d}{dt} (r^2 \dot{\theta}) = 0.\]</div>
-<p>This condition is equivalent to the statement that the angular momentum is conserved. The quantity <span class="math notranslate nohighlight">\( l = r^2 \dot{\theta} \)</span> is equal to (see section \ref{sec:angmomkep}) the angular momentum per unit mass of the planet. This is often referred to as the <strong>specific angular momentum</strong>.</p>
+\[\dfrac{\mathrm{d}}{\mathrm{d}t} (r^2 \dot{\theta}) = 0.\]</div>
+<p>This condition is equivalent to the statement that the angular momentum is conserved. The quantity <span class="math notranslate nohighlight">\( l = r^2 \dot{\theta} \)</span> is equal to (see section on <a class="reference internal" href="#sec:angmomkep"><span class="xref myst">angular momentum</span></a>) the angular momentum per unit mass of the planet. This is often referred to as the <mark>specific angular momentum</mark>.</p>
 <p>In order to investigate the shape of an orbital trajectory for a planet (or indeed any particle moving under the influence of a central force) it is convenient to work with the variable <span class="math notranslate nohighlight">\( u = 1/r \)</span>. The variation in <span class="math notranslate nohighlight">\( u \)</span> as a function of <span class="math notranslate nohighlight">\( \theta \)</span> is what we are seeking to understand.</p>
 <p>We note that we can transform <span class="math notranslate nohighlight">\( \dot{r} \)</span> in terms of <span class="math notranslate nohighlight">\( u \)</span> as follows:</p>
 <div class="math notranslate nohighlight">
-\[\dot{r} = \dfrac{d}{dt}(1/u) = (-1/u^2)\,\dot{u} = \dfrac{-1}{u^2}\,\dot{\theta}\,\dfrac{du}{d\theta} = -l \, \dfrac{du}{d\theta}.\]</div>
+\[\dot{r} = \dfrac{\mathrm{d}}{\mathrm{d}t}(1/u) = (-1/u^2)\,\dot{u} = \dfrac{-1}{u^2}\,\dot{\theta}\,\dfrac{\mathrm{d}u}{\mathrm{d}\theta} = -l \, \dfrac{\mathrm{d}u}{\mathrm{d}\theta}.\]</div>
 <p>The final step above makes use of the definition <span class="math notranslate nohighlight">\( l = r^2 \dot{\theta} \)</span>.</p>
 <p>Differentiating a second time to obtain an expression for <span class="math notranslate nohighlight">\( \ddot{r} \)</span>, we get:</p>
 <div class="math notranslate nohighlight">
-\[\ddot{r} = -l \, \dfrac{d}{dt} \left(\dfrac{du}{d\theta}\right) = -l \dot{\theta} \dfrac{d^2u}{d\theta^2}.\]</div>
-<p>If we now substitute our expressions for <span class="math notranslate nohighlight">\( \dot{r} \)</span>, <span class="math notranslate nohighlight">\( \dot{\theta} \)</span>, and <span class="math notranslate nohighlight">\( \ddot{r} \)</span> into equation (eq:eomcompr), we obtain the following differential equation for <span class="math notranslate nohighlight">\( u \)</span> as a function of <span class="math notranslate nohighlight">\( \theta \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[l \left( \frac{l}{r^2} \right) \dfrac{d^2u}{d\theta^2} + r \left( \frac{l^2}{r^4} \right) = -\frac{f(r)}{m}, \notag\]</div>
-<div class="math notranslate nohighlight">
-\[\rightarrow \dfrac{d^2u}{d\theta^2} + u = \dfrac{-f\left({1}/{u}\right)}{ml^2 \, u^2} \tag{eq:uorbit}\]</div>
+\[\ddot{r} = -l \, \dfrac{\mathrm{d}}{\mathrm{d}t} \left(\dfrac{\mathrm{d}u}{\mathrm{d}\theta}\right) = -l \dot{\theta} \dfrac{\mathrm{d}^2u}{\mathrm{d}\theta^2}.\]</div>
+<p>If we now substitute our expressions for <span class="math notranslate nohighlight">\( \dot{r} \)</span>, <span class="math notranslate nohighlight">\( \dot{\theta} \)</span>, and <span class="math notranslate nohighlight">\( \ddot{r} \)</span> into <a class="reference internal" href="#equation-eq-eomcompr">(5.5)</a>, we obtain the following differential equation for <span class="math notranslate nohighlight">\( u \)</span> as a function of <span class="math notranslate nohighlight">\( \theta \)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-uorbit">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-eq-uorbit" title="Link to this equation">#</a></span>\[\begin{split}l \left( \frac{l}{r^2} \right) \dfrac{\mathrm{d}^2u}{\mathrm{d}\theta^2} + r \left( \frac{l^2}{r^4} \right) &amp;= -\frac{f(r)}{m}, \\
+\rightarrow \dfrac{\mathrm{d}^2u}{\mathrm{d}\theta^2} + u &amp;= \dfrac{-f\left({1}/{u}\right)}{ml^2 \, u^2} \end{split}\]</div>
 <p>This equation allows us to determine the shape of an orbit (<span class="math notranslate nohighlight">\( u(\theta) \)</span>), given the nature of the force function <span class="math notranslate nohighlight">\( f(r) \)</span> (a function of radial distance only). Conversely, given the function <span class="math notranslate nohighlight">\( u(\theta) \)</span>, one can, in principle, determine the force function <span class="math notranslate nohighlight">\( f(r) \)</span>, which then gives insight as to the nature of the central force producing the given orbital trajectory.</p>
-<p>Let’s now look for solutions of equation (eq:uorbit) corresponding to the orbit of a planet of mass <span class="math notranslate nohighlight">\( m \)</span> around the Sun of mass <span class="math notranslate nohighlight">\( M \)</span>. We will assume that <span class="math notranslate nohighlight">\( m \ll M \)</span> so that the Sun stays fixed at the origin of our coordinate system (i.e.\ its position is unperturbed by the presence of any planet). For this case, the function <span class="math notranslate nohighlight">\( f(r)= -k/r^2 \)</span>, where the constant
+<p>Let’s now look for solutions of <a class="reference internal" href="#equation-eq-uorbit">(5.7)</a> corresponding to the orbit of a planet of mass <span class="math notranslate nohighlight">\( m \)</span> around the Sun of mass <span class="math notranslate nohighlight">\( M \)</span>. We will assume that <span class="math notranslate nohighlight">\( m \ll M \)</span> so that the Sun stays fixed at the origin of our coordinate system (i.e.\ its position is unperturbed by the presence of any planet). For this case, the function <span class="math notranslate nohighlight">\( f(r)= -k/r^2 \)</span>, where the constant
 <span class="math notranslate nohighlight">\( k = GMm \)</span>. Our equation for the orbit then becomes:</p>
 <div class="math notranslate nohighlight">
-\[\dfrac{d^2u}{d\theta^2} + u = \dfrac{ku^2}{ml^2} = \dfrac{GM}{l^2}.\]</div>
+\[\dfrac{\mathrm{d}^2u}{\mathrm{d}\theta^2} + u = \dfrac{ku^2}{ml^2} = \dfrac{GM}{l^2}.\]</div>
 <p>Fortunately, we have encountered this type of differential equation already, in the unit on ‘Oscillations’. The general solution can be written:</p>
 <div class="math notranslate nohighlight">
 \[u(\theta) = A \cos(\theta - \theta_0) + \dfrac{GM}{l^2},\]</div>
@@ -542,28 +556,32 @@ We can thus define the planet’s velocity as <strong><span class="math notransl
 <div class="math notranslate nohighlight">
 \[r(\theta) = \dfrac{1}{u} = \dfrac{1}{A \cos(\theta - \theta_0) + \dfrac{GM}{l^2}}.\]</div>
 <p>Without loss of generality, we can adopt a convention where we set <span class="math notranslate nohighlight">\( \theta_0 = 0 \)</span> and thus define the direction <span class="math notranslate nohighlight">\( \theta = 0 \)</span> to correspond to the minimum value of <span class="math notranslate nohighlight">\( r \)</span>. Hence:</p>
-<div class="math notranslate nohighlight">
-\[r(\theta) = \dfrac{1}{A \cos\theta + \dfrac{GM}{l^2}} = \dfrac{l^2/GM}{1 + \left(\dfrac{Al^2}{GM}\right)\cos\theta}. \tag{eq:rvsthetaorb}\]</div>
-<p>Now, this solution <span class="math notranslate nohighlight">\( r(\theta) \)</span> for the orbital shape looks very much like the well-known formula that corresponds to the shapes known as <strong>conic sections</strong>. This formula can be written:</p>
-<div class="math notranslate nohighlight">
-\[r(\theta) = \dfrac{a(1 - \epsilon^2)}{1 + \epsilon \cos\theta}, \tag{eq:conicsecn}\]</div>
-<p>where <span class="math notranslate nohighlight">\( \epsilon \)</span> is a parameter known as the <strong>eccentricity</strong>, and the point of closest approach to the origin (minimum <span class="math notranslate nohighlight">\( r \)</span>) occurs at a distance <span class="math notranslate nohighlight">\( a(1 - \epsilon) \)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-rvsthetaorb">
+<span class="eqno">(5.8)<a class="headerlink" href="#equation-eq-rvsthetaorb" title="Link to this equation">#</a></span>\[r(\theta) = \dfrac{1}{A \cos\theta + \dfrac{GM}{l^2}} = \dfrac{l^2/GM}{1 + \left(\dfrac{Al^2}{GM}\right)\cos\theta}. \]</div>
+<p>Now, this solution <span class="math notranslate nohighlight">\( r(\theta) \)</span> for the orbital shape looks very much like the well-known formula that corresponds to the shapes known as <mark>conic sections</mark>. This formula can be written:</p>
+<div class="math notranslate nohighlight" id="equation-eq-conicsecn">
+<span class="eqno">(5.9)<a class="headerlink" href="#equation-eq-conicsecn" title="Link to this equation">#</a></span>\[r(\theta) = \dfrac{a(1 - \epsilon^2)}{1 + \epsilon \cos\theta}, \]</div>
+<p>where <span class="math notranslate nohighlight">\( \epsilon \)</span> is a parameter known as the <mark>eccentricity</mark>, and the point of closest approach to the origin (minimum <span class="math notranslate nohighlight">\( r \)</span>) occurs at a distance <span class="math notranslate nohighlight">\( a(1 - \epsilon) \)</span>.</p>
 <p>The three broad classes of conic section / orbit shape can be classified according to the value of <span class="math notranslate nohighlight">\( \epsilon \)</span> as follows:</p>
 <ol class="arabic simple">
-<li><p><strong>Ellipse</strong> (<span class="math notranslate nohighlight">\( 0 \leq \epsilon &lt; 1 \)</span>): An elliptical shape can be formed by considering the general intersection of a plane and a cone (see Figure below). When the angle of tilt <span class="math notranslate nohighlight">\( \xi \)</span> between the plane and the cone axis lies in the interval <span class="math notranslate nohighlight">\( (\beta, \pi/2) \)</span>, where <span class="math notranslate nohighlight">\( \beta \)</span> is the cone’s generating angle (angle between its axis and its slant height). For the special case where <span class="math notranslate nohighlight">\( \epsilon = 0 \)</span> (<span class="math notranslate nohighlight">\( \xi = \pi/2 \)</span>), the shape becomes a circle defined by <span class="math notranslate nohighlight">\( r = a \)</span>, a figure of constant radial distance from the origin.</p></li>
-<li><p><strong>Parabola</strong> (<span class="math notranslate nohighlight">\( \epsilon = 1 \)</span>): In this case, to keep the product <span class="math notranslate nohighlight">\( a(1 - \epsilon^2) \)</span> finite as <span class="math notranslate nohighlight">\( \epsilon \rightarrow 1 \)</span>, we require <span class="math notranslate nohighlight">\( a \rightarrow \infty \)</span>. The angle between the intersecting plane and cone (Figure below) becomes equal to <span class="math notranslate nohighlight">\( \beta \)</span>.</p></li>
-<li><p><strong>Hyperbola</strong> (<span class="math notranslate nohighlight">\( \epsilon &gt; 1 \)</span>): Here, the angle of tilt between the intersecting plane and cone lies in the interval <span class="math notranslate nohighlight">\( [0, \beta) \)</span>. Like the parabola, the hyperbola represents an open conic section with unbounded values of <span class="math notranslate nohighlight">\( r \)</span>. The ellipse is a closed conic section.</p></li>
+<li><p><mark>Ellipse</mark> (<span class="math notranslate nohighlight">\( 0 \leq \epsilon &lt; 1 \)</span>): An elliptical shape can be formed by considering the general intersection of a plane and a cone (see <a class="reference internal" href="#fig-conicsecn"><span class="std std-numref">Fig. 5.3</span></a>). When the angle of tilt <span class="math notranslate nohighlight">\( \xi \)</span> between the plane and the cone axis lies in the interval <span class="math notranslate nohighlight">\( (\beta, \pi/2) \)</span>, where <span class="math notranslate nohighlight">\( \beta \)</span> is the cone’s generating angle (angle between its axis and its slant height). For the special case where <span class="math notranslate nohighlight">\( \epsilon = 0 \)</span> (<span class="math notranslate nohighlight">\( \xi = \pi/2 \)</span>), the shape becomes a circle defined by <span class="math notranslate nohighlight">\( r = a \)</span>, a figure of constant radial distance from the origin.</p></li>
+<li><p><mark>Parabola</mark> (<span class="math notranslate nohighlight">\( \epsilon = 1 \)</span>): In this case, to keep the product <span class="math notranslate nohighlight">\( a(1 - \epsilon^2) \)</span> finite as <span class="math notranslate nohighlight">\( \epsilon \rightarrow 1 \)</span>, we require <span class="math notranslate nohighlight">\( a \rightarrow \infty \)</span>. The angle between the intersecting plane and cone (see <a class="reference internal" href="#fig-conicsecn"><span class="std std-numref">Fig. 5.3</span></a>) becomes equal to <span class="math notranslate nohighlight">\( \beta \)</span>.</p></li>
+<li><p><mark>Hyperbola</mark> (<span class="math notranslate nohighlight">\( \epsilon &gt; 1 \)</span>): Here, the angle of tilt between the intersecting plane and cone lies in the interval <span class="math notranslate nohighlight">\( [0, \beta) \)</span>. Like the parabola, the hyperbola represents an open conic section with unbounded values of <span class="math notranslate nohighlight">\( r \)</span>. The ellipse is a closed conic section.</p></li>
 </ol>
-<p><img alt="Conic Sections" src="../_images/conicsecn.png" />
-<em>Figure: (a) Circle, <span class="math notranslate nohighlight">\( \epsilon = 0 \)</span>; (b) Ellipse, <span class="math notranslate nohighlight">\( 0 &lt; \epsilon &lt; 1 \)</span>; (c) Parabola, <span class="math notranslate nohighlight">\( \epsilon = 1 \)</span>; (d) Hyperbola, <span class="math notranslate nohighlight">\( \epsilon &gt; 1 \)</span>; (e) Family of conic sections which describe orbits. (from the book by Fowles and Cassiday)</em></p>
-<p>Equation (eq:conicsecn) shows that the points of closest approach and farthest distance on the elliptical orbit of a planet around the Sun, referred to as its <strong>perihelion</strong> and <strong>apohelion</strong>, occur when <span class="math notranslate nohighlight">\( \theta = 0, \pi \)</span> and thus <span class="math notranslate nohighlight">\( r_{min} = a(1 - \epsilon) \)</span>, <span class="math notranslate nohighlight">\( r_{max} = a(1 + \epsilon) \)</span>. The Earth’s moon, since it orbits the Earth, has a <strong>perigee</strong> and <strong>apogee</strong> during its orbital motion.</p>
+<figure class="align-default" id="fig-conicsecn">
+<img alt="../_images/conicsecn.png" src="../_images/conicsecn.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.3 </span><span class="caption-text">(a) Circle, <span class="math notranslate nohighlight">\( \epsilon = 0 \)</span>; (b) Ellipse, <span class="math notranslate nohighlight">\( 0 &lt; \epsilon &lt; 1 \)</span>; (c) Parabola, <span class="math notranslate nohighlight">\( \epsilon = 1 \)</span>; (d) Hyperbola, <span class="math notranslate nohighlight">\( \epsilon &gt; 1 \)</span>; (e) Family of conic sections which describe orbits. (from the book by Fowles and Cassiday)</span><a class="headerlink" href="#fig-conicsecn" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#equation-eq-conicsecn">(5.9)</a> shows that the points of closest approach and farthest distance on the elliptical orbit of a planet around the Sun, referred to as its <mark>perihelion</mark> and <mark>apohelion</mark>, occur when <span class="math notranslate nohighlight">\( \theta = 0, \pi \)</span> and thus <span class="math notranslate nohighlight">\( r_{min} = a(1 - \epsilon) \)</span>, <span class="math notranslate nohighlight">\( r_{max} = a(1 + \epsilon) \)</span>. The Earth’s moon, since it orbits the Earth, has a <mark>perigee</mark> and <mark>apogee</mark> during its orbital motion.</p>
 <p>Generally speaking, the planets of the Solar System have small orbital eccentricities. The highest value is that of Mercury, for which <span class="math notranslate nohighlight">\( \epsilon \approx 0.206 \)</span>. The Earth’s orbit is much closer to circular, having <span class="math notranslate nohighlight">\( \epsilon \approx 0.017 \)</span>. For the Earth, <span class="math notranslate nohighlight">\( r_{min} \approx 146 \, \text{million km} \)</span> and <span class="math notranslate nohighlight">\( r_{max} \approx 153 \, \text{million km} \)</span>. By contrast, Halley’s comet has a highly eccentric orbit, <span class="math notranslate nohighlight">\( \epsilon \approx 0.967 \)</span> with a perihelion of only <span class="math notranslate nohighlight">\( r_{min} \approx 89 \, \text{million km} \)</span> and an apohelion beyond the orbit of Neptune. Non-recurring comets are on parabolic or hyperbolic orbits.</p>
 </section>
 <section id="periodic-orbital-motion-and-keplers-third-law">
 <h3><span class="section-number">5.3.3. </span>Periodic Orbital Motion and Kepler’s Third Law<a class="headerlink" href="#periodic-orbital-motion-and-keplers-third-law" title="Link to this heading">#</a></h3>
-<p>Kepler’s third law relates the orbital period of a planet to its distance from the Sun. In this section, we will demonstrate how it can be derived using Newton’s laws of motion. We start with Kepler’s second law, as summarised by equation (1); the rate at which the position vector of the orbiting planet sweeps out area is proportional to its constant angular momentum:</p>
+<p>Kepler’s third law relates the orbital period of a planet to its distance from the Sun. In this section, we will demonstrate how it can be derived using Newton’s laws of motion. We start with Kepler’s second law, as summarised by <a class="reference internal" href="#equation-eq-dareadt">(5.4)</a>; the rate at which the position vector of the orbiting planet sweeps out area is proportional to its constant angular momentum:</p>
 <div class="math notranslate nohighlight">
-\[\dfrac{dA}{dt} = \dfrac{L}{2m}.\]</div>
+\[\dfrac{\mathrm{d}A}{\mathrm{d}t} = \dfrac{L}{2m}.\]</div>
 <p>Now if we integrate both sides of this equation over one full orbital period <span class="math notranslate nohighlight">\( \tau \)</span>, the left-hand side will become the area enclosed by the planet’s elliptical orbit. This is equal to <span class="math notranslate nohighlight">\( \pi a b \)</span>, where <span class="math notranslate nohighlight">\( a \)</span> and <span class="math notranslate nohighlight">\( b \)</span> are the lengths of the semi-major and semi-minor axes of the ellipse. The right-hand side will simply integrate, since it is a constant with time:</p>
 <div class="math notranslate nohighlight">
 \[    \pi a b = \dfrac{L}{2m} \tau.\]</div>
@@ -572,64 +590,65 @@ We can thus define the planet’s velocity as <strong><span class="math notransl
 \[    \pi a^2 \, \sqrt{1-\epsilon^2}\,\dfrac{2m}{L} = \dfrac{L}{2m} \tau.\]</div>
 <p>Squaring both sides:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}    4\pi^2 a^4 \, (1-\epsilon^2)\,\dfrac{m^2}{L^2} &amp;= \tau^2 \notag \\
+\[\begin{split}    4\pi^2 a^4 \, (1-\epsilon^2)\,\dfrac{m^2}{L^2} &amp;= \tau^2 \\
     \rightarrow 4\pi^2 a^4 \, (1-\epsilon^2)\,\dfrac{1}{l^2} &amp;= \tau^2,\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\( l \)</span> is the angular momentum per unit mass, or <em>specific angular momentum</em>.<br />
-Now, by comparing equations (eq:rvsthetaorb) and (eq:conicsecn), we can make the identification <span class="math notranslate nohighlight">\( a\,(1-\epsilon^2) = l^2/(GM) \)</span>. Thus we can replace a factor <span class="math notranslate nohighlight">\( a\,(1-\epsilon^2) \)</span> in the equation above with the constant <span class="math notranslate nohighlight">\( l^2/(GM) \)</span>:</p>
+<p>where <span class="math notranslate nohighlight">\( l \)</span> is the angular momentum per unit mass, or </mark>specific angular momentum</mark>.<br />
+Now, by comparing <a class="reference internal" href="#equation-eq-rvsthetaorb">(5.8)</a> and <a class="reference internal" href="#equation-eq-conicsecn">(5.9)</a>, we can make the identification <span class="math notranslate nohighlight">\( a\,(1-\epsilon^2) = l^2/(GM) \)</span>. Thus we can replace a factor <span class="math notranslate nohighlight">\( a\,(1-\epsilon^2) \)</span> in the equation above with the constant <span class="math notranslate nohighlight">\( l^2/(GM) \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}    4\pi^2 a^3 \, \dfrac{l^2}{GM}\,\dfrac{1}{l^2} &amp;= \tau^2, \notag \\
+\[\begin{split}    4\pi^2 a^3 \, \dfrac{l^2}{GM}\,\dfrac{1}{l^2} &amp;= \tau^2, \\
     \rightarrow \dfrac{4\pi^2}{GM_{\odot}}\, a^3  &amp;= \tau^2.\end{split}\]</div>
-<p>Thus the square of the orbital period for any planet or body orbiting the Sun (of mass <span class="math notranslate nohighlight">\( M_{\odot} \)</span>) is proportional to the cube of the semimajor axis length of its elliptical orbit. The equation above tells us that if we measure <span class="math notranslate nohighlight">\( a \)</span> in units of the <em>astronomical unit or AU</em>, where <span class="math notranslate nohighlight">\( 1 \, \text{AU} \approx 1.5 \times 10^8 \, \text{km} \)</span> is the Earth’s orbital semimajor axis, and we measure <span class="math notranslate nohighlight">\( \tau \)</span> in units of years (where one year is the Earth’s orbital period), the relation simplifies to</p>
+<p>Thus the square of the orbital period for any planet or body orbiting the Sun (of mass <span class="math notranslate nohighlight">\( M_{\odot} \)</span>) is proportional to the cube of the semimajor axis length of its elliptical orbit. The equation above tells us that if we measure <span class="math notranslate nohighlight">\( a \)</span> in units of the </mark>astronomical unit or AU</mark>, where <span class="math notranslate nohighlight">\( 1 \, \text{AU} \approx 1.5 \times 10^8 \, \text{km} \)</span> is the Earth’s orbital semimajor axis, and we measure <span class="math notranslate nohighlight">\( \tau \)</span> in units of years (where one year is the Earth’s orbital period), the relation simplifies to</p>
 <div class="math notranslate nohighlight">
 \[a^3 = \tau^2.\]</div>
 </section>
+</section>
 <section id="gravitational-potential">
-<h3><span class="section-number">5.3.4. </span>Gravitational Potential<a class="headerlink" href="#gravitational-potential" title="Link to this heading">#</a></h3>
-<p>Consider a static body of mass <span class="math notranslate nohighlight">\( M \)</span> at the origin of a convenient coordinate system. This body exerts a gravitational force <span class="math notranslate nohighlight">\( \vec{F} \)</span>, as we have studied, on another, moving particle of mass <span class="math notranslate nohighlight">\( m \)</span>. We remind ourselves that:</p>
+<h2><span class="section-number">5.4. </span>Gravitational Potential<a class="headerlink" href="#gravitational-potential" title="Link to this heading">#</a></h2>
+<p>Consider a static body of mass <span class="math notranslate nohighlight">\( M \)</span> at the origin of a convenient coordinate system. This body exerts a gravitational force <span class="math notranslate nohighlight">\( \mathbf{F} \)</span>, as we have studied, on another, moving particle of mass <span class="math notranslate nohighlight">\( m \)</span>. We remind ourselves that:</p>
 <div class="math notranslate nohighlight">
-\[    \vec{F} = \dfrac{-GMm}{r^2}\,\vec{e}_r,\]</div>
-<p>where symbols have their usual meaning and the radial unit vector <span class="math notranslate nohighlight">\( \vec{e}_r \)</span> points from the origin towards the position of the mass <span class="math notranslate nohighlight">\( m \)</span>.</p>
-<p>Let’s now consider the work we need to do <em>against</em> the gravitational force in order to displace the mass <span class="math notranslate nohighlight">\( m \)</span> by a small vector displacement <span class="math notranslate nohighlight">\( \vec{dr} \)</span>. If we don’t wish to accelerate the particle, we can apply a force <span class="math notranslate nohighlight">\( -\vec{F} \)</span> which is equal and opposite to the gravitational force. The corresponding increment of work done is thus:</p>
+\[    \mathbf{F} = \dfrac{-GMm}{r^2}\,\mathbf{e}_r,\]</div>
+<p>where symbols have their usual meaning and the radial unit vector <span class="math notranslate nohighlight">\( \mathbf{e}_r \)</span> points from the origin towards the position of the mass <span class="math notranslate nohighlight">\( m \)</span>.</p>
+<p>Let’s now consider the work we need to do <mark>against</mark> the gravitational force in order to displace the mass <span class="math notranslate nohighlight">\( m \)</span> by a small vector displacement <span class="math notranslate nohighlight">\( \mathbf{\mathrm{d}r} \)</span>. If we don’t wish to accelerate the particle, we can apply a force <span class="math notranslate nohighlight">\( -\mathbf{F} \)</span> which is equal and opposite to the gravitational force. The corresponding increment of work done is thus:</p>
 <div class="math notranslate nohighlight">
-\[    dW = -\vec{F}\cdot\vec{dr} = \dfrac{GMm}{r^2}\,\vec{e}_r\cdot\vec{dr}.\]</div>
-<p>Note that <span class="math notranslate nohighlight">\( \vec{e}_r\cdot\vec{dr} = dr \)</span>, the amount by which the radial distance of the particle changes. Thus it is only the radial component of a larger, finite displacement which contributes to the work done. To verify this, let’s integrate both sides of the differential equation above between some initial and final vector positions:</p>
+\[    dW = -\mathbf{F}\cdot\mathbf{\mathrm{d}r} = \dfrac{GMm}{r^2}\,\mathbf{e}_r\cdot\mathbf{\mathrm{d}r}.\]</div>
+<p>Note that <span class="math notranslate nohighlight">\( \mathbf{e}_r\cdot\mathbf{\mathrm{d}r} = dr \)</span>, the amount by which the radial distance of the particle changes. Thus it is only the radial component of a larger, finite displacement which contributes to the work done. To verify this, let’s integrate both sides of the differential equation above between some initial and final vector positions:</p>
 <div class="math notranslate nohighlight">
-\[    W = \int_{r_i}^{r_f} \dfrac{GMm}{r^2}\,dr = \dfrac{-GMm}{r_f}-\dfrac{-GMm}{r_i}.\]</div>
-<p>This is an important result - it tells us that the work done is <em>independent of the path taken</em> between the initial and final positions of the particle. Stated another way, a central force which obeys the inverse square law is said to be a <em>conservative force</em>.</p>
+\[    W = \int_{r_i}^{r_f} \frac{GMm}{r^2}\,dr = \frac{-GMm}{r_f}-\frac{-GMm}{r_i}.\]</div>
+<p>This is an important result - it tells us that the work done is <mark>independent of the path taken</mark> between the initial and final positions of the particle. Stated another way, a central force which obeys the inverse square law is said to be a <mark>conservative force</mark>.</p>
 <p>Let’s develop this further by introducing a physical definition of the gravitational potential energy of a test particle of mass <span class="math notranslate nohighlight">\( m \)</span> due to a stationary body of mass <span class="math notranslate nohighlight">\( M \)</span>. We define this potential energy to be the work done in moving the particle from an infinite distance, where we take its potential energy to be zero, to a point with radial distance <span class="math notranslate nohighlight">\( r \)</span> from the origin (location of spherically symmetric mass <span class="math notranslate nohighlight">\( M \)</span>). Using the above relation, we obtain the following expression for potential energy <span class="math notranslate nohighlight">\( V \)</span> at the particle’s location at radial distance <span class="math notranslate nohighlight">\( r \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[    V(r) = \dfrac{-GMm}{r}-\lim_{r_i\rightarrow\infty} \dfrac{-GMm}{r_i} = \dfrac{-GMm}{r}.\]</div>
+\[    V(r) = \frac{-GMm}{r}-\lim_{r_i\rightarrow\infty} \frac{-GMm}{r_i} = \frac{-GMm}{r}.\]</div>
 <p>Note that for finite separation <span class="math notranslate nohighlight">\( r \)</span>, the gravitational potential energy of our system of two masses is algebraically negative.</p>
-<p>We can go on to generally define the <em>gravitational potential <span class="math notranslate nohighlight">\( \Phi \)</span></em> as the <em>potential energy per unit mass</em> of a small test particle of mass <span class="math notranslate nohighlight">\( m \)</span> (in the presence of other masses) in the limit as <span class="math notranslate nohighlight">\( m \)</span> becomes vanishingly small. We define potential in this way to ensure that the presence of the mass <span class="math notranslate nohighlight">\( m \)</span> does not significantly change the total potential energy of the whole system. Hence:</p>
+<p>We can go on to generally define the <mark>gravitational potential <span class="math notranslate nohighlight">\( \Phi \)</span></mark> as the <mark>potential energy per unit mass</mark> of a small test particle of mass <span class="math notranslate nohighlight">\( m \)</span> (in the presence of other masses) in the limit as <span class="math notranslate nohighlight">\( m \)</span> becomes vanishingly small. We define potential in this way to ensure that the presence of the mass <span class="math notranslate nohighlight">\( m \)</span> does not significantly change the total potential energy of the whole system. Hence:</p>
 <div class="math notranslate nohighlight">
-\[\Phi(\vec{r}) = \lim_{m\rightarrow 0} V(\vec{r})/m.\]</div>
+\[\Phi(\mathbf{r}) = \lim_{m\rightarrow 0} V(\mathbf{r})/m.\]</div>
 <p>and the potential due to a point mass <span class="math notranslate nohighlight">\( M \)</span>, at a distance <span class="math notranslate nohighlight">\( r \)</span>, is simply <span class="math notranslate nohighlight">\( \Phi(r) = -GM/r \)</span>.</p>
-<p>Now consider a collection of source point masses <span class="math notranslate nohighlight">\( M_j \)</span> placed at corresponding positions <span class="math notranslate nohighlight">\( \vec{r}_j \)</span>. Since the gravitational force at any point in space is just the vector sum of the force due to the individual masses, it follows that the total potential is just given by the sum:</p>
+<p>Now consider a collection of source point masses <span class="math notranslate nohighlight">\( M_j \)</span> placed at corresponding positions <span class="math notranslate nohighlight">\( \mathbf{r}_j \)</span>. Since the gravitational force at any point in space is just the vector sum of the force due to the individual masses, it follows that the total potential is just given by the sum:</p>
 <div class="math notranslate nohighlight">
-\[    \Phi(\vec{r}) = \sum_j -GM_j/|\vec{r}-\vec{r}_j|.\]</div>
-<p>The force on a small test particle, of mass <span class="math notranslate nohighlight">\( m \)</span>, at a given point in such a system is related to the gradient in the potential energy, according to <em><span class="math notranslate nohighlight">\( {\vec{F}} = -\nabla V \)</span></em>. Similarly <em><span class="math notranslate nohighlight">\( {\vec{g}} = -\nabla \Phi \)</span></em>, where <span class="math notranslate nohighlight">\( \vec{F} = m\vec{g} \)</span> – that is, <span class="math notranslate nohighlight">\( \vec{g} \)</span> has dimensions of acceleration.</p>
+\[    \Phi(\mathbf{r}) = \sum_j -GM_j/|\mathbf{r}-\mathbf{r}_j|.\]</div>
+<p>The force on a small test particle, of mass <span class="math notranslate nohighlight">\( m \)</span>, at a given point in such a system is related to the gradient in the potential energy, according to <mark><span class="math notranslate nohighlight">\( {\mathbf{F}} = -\nabla V \)</span></mark>. Similarly <mark><span class="math notranslate nohighlight">\( {\mathbf{g}} = -\nabla \Phi \)</span></mark>, where <span class="math notranslate nohighlight">\( \mathbf{F} = m\mathbf{g} \)</span> – that is, <span class="math notranslate nohighlight">\( \mathbf{g} \)</span> has dimensions of acceleration.</p>
 <p>Note that the action of the gradient operator on a scalar function takes a simple form in Cartesian coordinates:</p>
 <div class="math notranslate nohighlight">
-\[    \nabla f(x,y,z) = \dfrac{\partial f}{\partial x}\,\vec{e}_x + \dfrac{\partial f}{\partial y}\,\vec{e}_y + \dfrac{\partial f}{\partial z}\,\vec{e}_z.\]</div>
-<p>We will encounter the formula for the same vector, <span class="math notranslate nohighlight">\( \nabla f \)</span>, in different coordinate systems during the problem solving classes. By definition, the small increment in value of some function <span class="math notranslate nohighlight">\( f(x,y,z) \)</span> when moving from some initial position <span class="math notranslate nohighlight">\( \vec{r} \)</span> to some nearby position <span class="math notranslate nohighlight">\( \vec{r} + \vec{dr} \)</span> is given to a good approximation by <span class="math notranslate nohighlight">\( df \approx (\nabla f)\cdot\vec{dr} \)</span>.</p>
-<p>Note that if some field of force <span class="math notranslate nohighlight">\( \vec{F}(\vec{r}) \)</span> is conservative, it means that zero work is done in moving a test particle around a closed path in space. In other words:</p>
+\[    \nabla f(x,y,z) = \dfrac{\partial f}{\partial x}\,\mathbf{e}_x + \dfrac{\partial f}{\partial y}\,\mathbf{e}_y + \dfrac{\partial f}{\partial z}\,\mathbf{e}_z.\]</div>
+<p>We will encounter the formula for the same vector, <span class="math notranslate nohighlight">\( \nabla f \)</span>, in different coordinate systems during the problem solving classes. By definition, the small increment in value of some function <span class="math notranslate nohighlight">\( f(x,y,z) \)</span> when moving from some initial position <span class="math notranslate nohighlight">\( \mathbf{r} \)</span> to some nearby position <span class="math notranslate nohighlight">\( \mathbf{r} + \mathbf{\mathrm{d}r} \)</span> is given to a good approximation by <span class="math notranslate nohighlight">\( df \approx (\nabla f)\cdot\mathbf{\mathrm{d}r} \)</span>.</p>
+<p>Note that if some field of force <span class="math notranslate nohighlight">\( \mathbf{F}(\mathbf{r}) \)</span> is conservative, it means that zero work is done in moving a test particle around a closed path in space. In other words:</p>
 <div class="math notranslate nohighlight">
-\[    \oint \vec{F}\cdot\vec{dr} = 0.\]</div>
-<p>From the previous unit on electromagnetic theory, we know that the integral on the left-hand side, through Stokes’ Theorem, is related to the surface integral of the curl of <span class="math notranslate nohighlight">\( \vec{F} \)</span> (usually written as <span class="math notranslate nohighlight">\( \nabla \times \vec{F} \)</span>). Thus it follows that if the spatial dependence of a field of force satisfies $ \nabla \times \vec{F}</p>
+\[    \oint \mathbf{F}\cdot\mathbf{\mathrm{d}r} = 0.\]</div>
+<p>From our previous work on vector calculus, we know that the integral on the left-hand side, through Stokes’ Theorem, is related to the surface integral of the curl of <span class="math notranslate nohighlight">\( \mathbf{F} \)</span> (usually written as <span class="math notranslate nohighlight">\( \nabla \times \mathbf{F} \)</span>). Thus it follows that if the spatial dependence of a field of force satisfies $ \nabla \times \mathbf{F}</p>
 </section>
 <section id="energy-of-orbits-in-a-central-field">
-<h3><span class="section-number">5.3.5. </span>Energy of Orbits in a Central Field<a class="headerlink" href="#energy-of-orbits-in-a-central-field" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">5.5. </span>Energy of Orbits in a Central Field<a class="headerlink" href="#energy-of-orbits-in-a-central-field" title="Link to this heading">#</a></h2>
 <p>Because a central force is conservative, the total potential-plus-kinetic energy <span class="math notranslate nohighlight">\(T+V\)</span> of a test particle will be conserved, according to:</p>
-<div class="math notranslate nohighlight">
-\[E = \frac{1}{2} m (\dot{r}^2 + r^2 \dot{\theta}^2) + V(r) = \text{constant},\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-energygen">
+<span class="eqno">(5.10)<a class="headerlink" href="#equation-eq-energygen" title="Link to this equation">#</a></span>\[E = \frac{1}{2} m (\dot{r}^2 + r^2 \dot{\theta}^2) + V(r) = \text{constant},\]</div>
 <p>where we once again use polar coordinates <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> to describe motion in a single plane containing the origin.</p>
 <p>For a general central force, this equation can be written, using the auxiliary variable <span class="math notranslate nohighlight">\(u = 1/r\)</span>, as:</p>
 <div class="math notranslate nohighlight">
-\[E = \frac{1}{2} m l^2 \left[ \left(\frac{d u}{d \theta}\right)^2 + u^2\right] + V(1/u),\]</div>
+\[E = \frac{1}{2} m l^2 \left[ \left(\frac{\mathrm{d} u}{\mathrm{d} \theta}\right)^2 + u^2\right] + V(1/u),\]</div>
 <p>where <span class="math notranslate nohighlight">\(l\)</span> again represents specific angular momentum.</p>
 <p>For the specific case of a field of force which has an inverse-square dependence on distance, the potential energy is <span class="math notranslate nohighlight">\(V(r) = -k/r = -ku\)</span>, with <span class="math notranslate nohighlight">\(k\)</span> an appropriate constant. Hence the energy equation becomes:</p>
 <div class="math notranslate nohighlight">
-\[E = \frac{1}{2} m l^2 \left[ \left(\frac{d u}{d \theta}\right)^2 + u^2\right] - ku.\]</div>
+\[E = \frac{1}{2} m l^2 \left[ \left(\frac{\mathrm{d} u}{\mathrm{d} \theta}\right)^2 + u^2\right] - ku.\]</div>
 <p>To see how orbital parameters relate to this energy <span class="math notranslate nohighlight">\(E\)</span>, we can rearrange the above equality in order to relate increments along the orbit in <span class="math notranslate nohighlight">\(\theta\)</span> and in <span class="math notranslate nohighlight">\(u\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[d\theta = du \left( \frac{2E}{ml^2} + \frac{2ku}{ml^2} - u^2 \right)^{-1/2}.\]</div>
@@ -640,12 +659,12 @@ Now, by comparing equations (eq:rvsthetaorb) and (eq:conicsecn), we can make the
 <div class="math notranslate nohighlight">
 \[u = \frac{\sqrt{b^2 - 4ac}}{-2a} \cos(-a(\theta - \theta_0)) + \frac{b}{-2a}.\]</div>
 <p>Finally, replacing <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(1/r\)</span> and re-inserting the constant definitions gives:</p>
-<div class="math notranslate nohighlight">
-\[r = \frac{ml^2/k}{1 + \sqrt{1 + 2Eml^2/k^2} \cos(\theta - \theta_0)}.\]</div>
-<p>Now compare this to the equivalent orbital trajectory given by equations <span class="math notranslate nohighlight">\(\ref{eq:conicsecn}\)</span> and <span class="math notranslate nohighlight">\(\ref{eq:uorbit}\)</span> (as before we can set <span class="math notranslate nohighlight">\(\theta_0 = 0\)</span> to be the angle corresponding to the periapsis of the orbit). We observe that the eccentricity is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eq-rvsthetaenergy">
+<span class="eqno">(5.11)<a class="headerlink" href="#equation-eq-rvsthetaenergy" title="Link to this equation">#</a></span>\[r = \frac{ml^2/k}{1 + \sqrt{1 + 2Eml^2/k^2} \cos(\theta - \theta_0)}.\]</div>
+<p>Now compare this to the equivalent orbital trajectory given by equations <a class="reference internal" href="#equation-eq-conicsecn">(5.9)</a> and <a class="reference internal" href="#equation-eq-uorbit">(5.7)</a> (as before we can set <span class="math notranslate nohighlight">\(\theta_0 = 0\)</span> to be the angle corresponding to the periapsis of the orbit). We observe that the eccentricity is given by:</p>
 <div class="math notranslate nohighlight">
 \[\epsilon = \sqrt{1 + \frac{2Eml^2}{k^2}}.\]</div>
-<p>We also note, from the numerator of equation <span class="math notranslate nohighlight">\(\ref{eq:rvsthetaenergy}\)</span>, that we can identify:</p>
+<p>We also note, from the numerator of <a class="reference internal" href="#equation-eq-rvsthetaenergy">(5.11)</a>, that we can identify:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}a(1 - \epsilon^2) = \frac{ml^2}{k}, \\
 \rightarrow a \left( \frac{-2E m l^2}{k^2} \right) = \frac{ml^2}{k}, \\
@@ -663,12 +682,12 @@ Now, by comparing equations (eq:rvsthetaorb) and (eq:conicsecn), we can make the
 <p>Hence for bound orbits about the Sun, <span class="math notranslate nohighlight">\(v^2\)</span> cannot equal or exceed the value <span class="math notranslate nohighlight">\(2 G M_{\odot} / r\)</span>.</p>
 </section>
 <section id="the-limits-of-radial-motion">
-<h3><span class="section-number">5.3.6. </span>The Limits of Radial Motion<a class="headerlink" href="#the-limits-of-radial-motion" title="Link to this heading">#</a></h3>
-<p>Since the angular momentum of a particle moving under the influence of a central field of force is a constant of the motion, we can rewrite equation <span class="math notranslate nohighlight">\(\ref{eq:energygen}\)</span> as follows (using <span class="math notranslate nohighlight">\(\dot{\theta} = l/r^2\)</span>):</p>
-<div class="math notranslate nohighlight">
-\[E = \frac{1}{2} m \dot{r}^2 + \left( V(r) + \frac{ml^2}{2r^2} \right) = \text{constant},\]</div>
-<p>The grouping of the terms introduces the <strong>effective potential</strong>,<br />
-<span class="math notranslate nohighlight">\(U(r) = V(r) + \frac{ml^2}{2r^2}\)</span>, which, in particular, contains the term <span class="math notranslate nohighlight">\(\frac{ml^2}{2r^2}\)</span>, known as the <strong>centrifugal potential</strong>. Written in this way, the energy equation tells us that the radial motion of our particle can be described by a one-dimensional equation (i.e. depending only on the radial coordinate and its time derivative, which is the radial velocity).</p>
+<h2><span class="section-number">5.6. </span>The Limits of Radial Motion<a class="headerlink" href="#the-limits-of-radial-motion" title="Link to this heading">#</a></h2>
+<p>Since the angular momentum of a particle moving under the influence of a central field of force is a constant of the motion, we can rewrite <a class="reference internal" href="#equation-eq-energygen">(5.10)</a> as follows (using <span class="math notranslate nohighlight">\(\dot{\theta} = l/r^2\)</span>):</p>
+<div class="math notranslate nohighlight" id="equation-eq-energygen2">
+<span class="eqno">(5.12)<a class="headerlink" href="#equation-eq-energygen2" title="Link to this equation">#</a></span>\[E = \frac{1}{2} m \dot{r}^2 + \left( V(r) + \frac{ml^2}{2r^2} \right) = \text{constant},\]</div>
+<p>The grouping of the terms introduces the <mark>effective potential</mark>,<br />
+<span class="math notranslate nohighlight">\(U(r) = V(r) + \frac{ml^2}{2r^2}\)</span>, which, in particular, contains the term <span class="math notranslate nohighlight">\(\frac{ml^2}{2r^2}\)</span>, known as the <mark>centrifugal potential</mark>. Written in this way, the energy equation tells us that the radial motion of our particle can be described by a one-dimensional equation (i.e. depending only on the radial coordinate and its time derivative, which is the radial velocity).</p>
 <p>As for the case of simple harmonic motion, we can explore the limiting values of radial distance by setting <span class="math notranslate nohighlight">\(\dot{r} = 0\)</span> in the energy equation, thus seeking solutions of:</p>
 <div class="math notranslate nohighlight">
 \[V(r) + \frac{m l^2}{2 r^2} = E.\]</div>
@@ -679,12 +698,15 @@ Now, by comparing equations (eq:rvsthetaorb) and (eq:conicsecn), we can make the
 <p>The solutions of this quadratic equation in <span class="math notranslate nohighlight">\(r\)</span> are:</p>
 <div class="math notranslate nohighlight">
 \[r_{\text{min}, \text{max}} = \frac{k \pm \sqrt{k^2 + 2 E m l^2}}{-2E}.\]</div>
-<p>For a bound orbit, <span class="math notranslate nohighlight">\(E &lt; 0\)</span> and the two roots are both positive, representing the points of closest and furthest approach of the orbit (also known as <strong>periapsis and apoapsis</strong>, or <strong>pericentre and apocentre</strong>). In fact, the roots of the equation <span class="math notranslate nohighlight">\(U(r) = E\)</span> can be geometrically interpreted as the points of intersection between two lines in the coordinate plane defined by radial distance and energy (see Figure <span class="math notranslate nohighlight">\(\ref{fig:effpotplots}\)</span>).</p>
-<p><img alt="Effective Potential Plot" src="../_images/effpotplots.jpeg" />
-<em>Figure: A plot of the radial distance dependence of the effective potential <span class="math notranslate nohighlight">\(U\)</span>, along with some examples of total orbital energies. Axes are dimensionless, and scaled as indicated (see text).</em></p>
+<p>For a bound orbit, <span class="math notranslate nohighlight">\(E &lt; 0\)</span> and the two roots are both positive, representing the points of closest and furthest approach of the orbit (also known as <mark>periapsis and apoapsis</mark>, or <mark>pericentre and apocentre</mark>). In fact, the roots of the equation <span class="math notranslate nohighlight">\(U(r) = E\)</span> can be geometrically interpreted as the points of intersection between two lines in the coordinate plane defined by radial distance and energy (see <a class="reference internal" href="#fig-effpotplots"><span class="std std-numref">Fig. 5.4</span></a>).</p>
+<figure class="align-default" id="fig-effpotplots">
+<img alt="../_images/effpotplots.jpeg" src="../_images/effpotplots.jpeg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text">A plot of the radial distance dependence of the effective potential <span class="math notranslate nohighlight">\(U\)</span>, along with some examples of total orbital energies. Axes are dimensionless, and scaled as indicated (see text).</span><a class="headerlink" href="#fig-effpotplots" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>As the figure shows, when <span class="math notranslate nohighlight">\(E\)</span> (a constant of the motion) takes on its minimum possible value, <span class="math notranslate nohighlight">\(E_{\text{min}} = \frac{-k^2}{2 m l^2}\)</span>, there is just one point of intersection and just one solution to <span class="math notranslate nohighlight">\(U(r) = E\)</span>, representing a circular orbit, for which radial distance remains at a single value. For the case <span class="math notranslate nohighlight">\(E_{\text{min}} &lt; E &lt; 0\)</span>, there will be two points of intersection. This corresponds to a bound, elliptical orbit for which radial distance varies between a lower (periapsis) and upper (apoapsis) limit. Finally, for the case <span class="math notranslate nohighlight">\(E \geq 0\)</span>, the orbit is open (parabolic or hyperbolic) and only one point of intersection is obtained (the single periapsis, with no accompanying apoapsis).</p>
 <p>An important point we can note from our study of planetary orbits is that orbital parameters such as semimajor axis and eccentricity are independent of the mass of the orbiting planet (recall that we are assuming a stationary Sun, with the planet mass negligible by comparison).</p>
-</section>
 </section>
 </section>
 
@@ -758,11 +780,11 @@ Now, by comparing equations (eq:rvsthetaorb) and (eq:conicsecn), we can make the
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum-and-keplers-second-law">5.3.1. Angular Momentum and Kepler’s Second Law</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keplers-first-law-and-orbital-geometry">5.3.2. Kepler’s First Law and Orbital Geometry</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodic-orbital-motion-and-keplers-third-law">5.3.3. Periodic Orbital Motion and Kepler’s Third Law</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitational-potential">5.3.4. Gravitational Potential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-of-orbits-in-a-central-field">5.3.5. Energy of Orbits in a Central Field</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-limits-of-radial-motion">5.3.6. The Limits of Radial Motion</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitational-potential">5.4. Gravitational Potential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-of-orbits-in-a-central-field">5.5. Energy of Orbits in a Central Field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-limits-of-radial-motion">5.6. The Limits of Radial Motion</a></li>
 </ul>
   </nav></div>
 
