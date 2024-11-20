@@ -25,7 +25,7 @@ The value of $G$, the <mark>universal constant of gravitation</mark>, is $(6.672
 with $M_E$ and $R_E$ denoting the Earth's mass and radius. According to Newton's second law, this force must also be equal to $m g$, where $g$ is the acceleration upon the mass $m$ due to gravity. Hence, $g = \frac{G M_E}{R_E^2}$ is the acceleration due to the Earth's gravitational force at its surface, and is independent of the mass of the body upon which it acts.
 
 ## Gravitational Force between a Uniform Sphere and a Particle
-Consider a thin spherical shell of radius $R$, as shown in Figure 1, which carries a uniform mass per unit area of $\sigma$ (often known as surface mass density). Now let's calculate the gravitational field due to the shell at some particle $P$, of mass $m$, which is situated outside the shell, at a distance $r$ from its center. In a convenient set of coordinates, the $z$-axis can be chosen so that it contains both the center of the shell (which we choose to be the origin $O$) and the point $P$.
+Consider a thin spherical shell of radius $R$, as shown in {numref}`fig:gshell`, which carries a uniform mass per unit area of $\sigma$ (often known as surface mass density). Now let's calculate the gravitational field due to the shell at some particle $P$, of mass $m$, which is situated outside the shell, at a distance $r$ from its center. In a convenient set of coordinates, the $z$-axis can be chosen so that it contains both the center of the shell (which we choose to be the origin $O$) and the point $P$.
 
 ```{figure} Figs/gshell.png
 ---
