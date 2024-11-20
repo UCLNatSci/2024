@@ -583,7 +583,7 @@ document.write(`
 <figure class="align-default" id="cygnus-x-1">
 <img alt="../_images/Cygnus_X-1.png" src="../_images/Cygnus_X-1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Artist’s impression of Cygnus X-1] (Credit: ESA/HST)</span><a class="headerlink" href="#cygnus-x-1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Artist’s impression of Cygnus X-1 (Credit: ESA/HST)</span><a class="headerlink" href="#cygnus-x-1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -652,11 +652,14 @@ document.write(`
 </section>
 <section id="centre-of-mass-coordinates">
 <h3><span class="section-number">6.4.4. </span>Centre Of Mass Coordinates<a class="headerlink" href="#centre-of-mass-coordinates" title="Link to this heading">#</a></h3>
-<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:cofmcoord</span></code> shows the same collision between two particles in two different coordinate frames. In the so-called laboratory frame, we observe an incident particle of mass <span class="math notranslate nohighlight">\( m_1 \)</span> and velocity <span class="math notranslate nohighlight">\( \mathbf{v}_1 \)</span> striking a stationary target particle of mass <span class="math notranslate nohighlight">\( m_2 \)</span>. After the collision, both particles are in motion and their velocities make angles <span class="math notranslate nohighlight">\( \phi_1 \)</span> and <span class="math notranslate nohighlight">\( \phi_2 \)</span> with the direction of the incident velocity.</p>
-<p>Now, if we consider the same collision in the centre-of-mass coordinates, in which the centre of mass is stationary, the picture changes. We recall that for a system such as this, with two particles and no external forces, the centre of mass does not accelerate and remains situated on the line connecting the two particles. In the frame of reference where the centre of mass is stationary, the total momentum before collision and after collision must be zero. Thus, in the centre-of-mass frame, the particles move in opposite directions before the collision, both approaching the stationary centre of mass. And after the collision, their velocities make the same angle <span class="math notranslate nohighlight">\( \theta \)</span> with their initial directions of motion.</p>
-<figure class="align-default">
+<p><a class="reference internal" href="#fig-cofmcoord"><span class="std std-numref">Fig. 6.3</span></a> shows the same collision between two particles in two different coordinate frames. In the so-called laboratory frame, we observe an incident particle of mass <span class="math notranslate nohighlight">\( m_1 \)</span> and velocity <span class="math notranslate nohighlight">\( \mathbf{v}_1 \)</span> striking a stationary target particle of mass <span class="math notranslate nohighlight">\( m_2 \)</span>. After the collision, both particles are in motion and their velocities make angles <span class="math notranslate nohighlight">\( \phi_1 \)</span> and <span class="math notranslate nohighlight">\( \phi_2 \)</span> with the direction of the incident velocity.</p>
+<figure class="align-default" id="fig-cofmcoord">
 <img alt="../_images/cofmcoord.png" src="../_images/cofmcoord.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">The same collision viewed in laboratory (left) and centre-of-mass (right) coordinates.</span><a class="headerlink" href="#fig-cofmcoord" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
+<p>Now, if we consider the same collision in the centre-of-mass coordinates, in which the centre of mass is stationary, the picture changes. We recall that for a system such as this, with two particles and no external forces, the centre of mass does not accelerate and remains situated on the line connecting the two particles. In the frame of reference where the centre of mass is stationary, the total momentum before collision and after collision must be zero. Thus, in the centre-of-mass frame, the particles move in opposite directions before the collision, both approaching the stationary centre of mass. And after the collision, their velocities make the same angle <span class="math notranslate nohighlight">\( \theta \)</span> with their initial directions of motion.</p>
 <p>The momentum conservation and energy balance in the centre-of-mass coordinates can be written:</p>
 <div class="math notranslate nohighlight">
 \[\overline{\mathbf{p}}_1 + \overline{\mathbf{p}}_2 = 0 = \overline{\mathbf{p}}_1' + \overline{\mathbf{p}}_2',\]</div>
@@ -675,9 +678,13 @@ document.write(`
 \dfrac{\overline{{{p}}'_1}^2}{2 \mu} + 
 Q,\]</div>
 <p>where we use the usual definition of reduced mass <span class="math notranslate nohighlight">\( \mu \)</span>, introduced in section on <a class="reference internal" href="#sec:2bodyp"><span class="xref myst">two-body</span></a> methods.</p>
-<p><img alt="labcmvels" src="../_images/labcmvels.png" /><br />
-<em>The relation between velocity in the laboratory and centre-of-mass frames.</em></p>
-<p>Let us now consider the relationship between the velocity in the laboratory and the centre-of-mass frames of reference. Figure <img alt="labcmvels" src="../_images/labcmvels.png" /> illustrates the definition of the post-collision velocity in these two frames:</p>
+<figure class="align-default" id="fig-labcmvels">
+<img alt="../_images/labcmvels.png" src="../_images/labcmvels.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">The relation between velocity in the laboratory and centre-of-mass frames.</span><a class="headerlink" href="#fig-labcmvels" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Let us now consider the relationship between the velocity in the laboratory and the centre-of-mass frames of reference.  <a class="reference internal" href="#fig-labcmvels"><span class="std std-numref">Fig. 6.4</span></a> illustrates the definition of the post-collision velocity in these two frames:</p>
 <div class="math notranslate nohighlight">
 \[\overline{\mathbf{v}}'_1 = \mathbf{v}'_1 - \mathbf{v}_{cm} = \mathbf{v}'_1 - \dfrac{m_1 \mathbf{v}_1}{m_1 + m_2}\]</div>
 <p>The diagram shows, using the orientation angles indicated, that:</p>
@@ -698,7 +705,6 @@ v'_1 \, \cos{\phi_1} = \overline{v'}_1\, \cos\theta + v_{cm}\]</div>
 <div class="math notranslate nohighlight">
 \[\tan\phi_1 = \tan\left(\dfrac{\theta}{2}\right),\]</div>
 <p>i.e., the scattering angle in the centre-of-mass frame is twice the value it has in the lab frame. Similar reasoning applied to the target particle shows that it has a scattering angle of <span class="math notranslate nohighlight">\( (\pi-\theta)/2 \)</span> in the laboratory system. Therefore, when an incident particle strikes a target of equal mass in the lab frame, the post-collision velocities are perpendicular to each other.</p>
-<p><em>{PUT ROCKET PROBLEM IN PROBLEM SET}</em></p>
 </section>
 </section>
 <section id="rotation-of-rigid-bodies">
@@ -727,10 +733,10 @@ For the case of a body which takes the form of a thin wire, we could replace the
 <figure class="align-default" id="fig-hemisphere">
 <img alt="../_images/hemisphere.png" src="../_images/hemisphere.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">Coordinates for calculating the centre of mass of a solid hemisphere.</span><a class="headerlink" href="#fig-hemisphere" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.5 </span><span class="caption-text">Coordinates for calculating the centre of mass of a solid hemisphere.</span><a class="headerlink" href="#fig-hemisphere" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Now we can divide the hemisphere into a series of thin circular discs (see <a class="reference internal" href="#fig-hemisphere"><span class="std std-numref">Fig. 6.3</span></a>) of infinitesimal thickness <span class="math notranslate nohighlight">\( dz \)</span> and variable radius <span class="math notranslate nohighlight">\( r = \sqrt{a^2 - z^2} \)</span>, where <span class="math notranslate nohighlight">\( a \)</span> is the radius of the hemisphere and <span class="math notranslate nohighlight">\( z \)</span> is the axial coordinate of the disc. The mass of a disc will thus be:</p>
+<p>Now we can divide the hemisphere into a series of thin circular discs (see <a class="reference internal" href="#fig-hemisphere"><span class="std std-numref">Fig. 6.5</span></a>) of infinitesimal thickness <span class="math notranslate nohighlight">\( dz \)</span> and variable radius <span class="math notranslate nohighlight">\( r = \sqrt{a^2 - z^2} \)</span>, where <span class="math notranslate nohighlight">\( a \)</span> is the radius of the hemisphere and <span class="math notranslate nohighlight">\( z \)</span> is the axial coordinate of the disc. The mass of a disc will thus be:</p>
 <div class="math notranslate nohighlight">
 \[dM = \pi \rho \, r^2 \,dz.\]</div>
 <p>Integrating to obtain the specific axial location of the centre of mass gives:</p>
@@ -742,7 +748,7 @@ For the case of a body which takes the form of a thin wire, we could replace the
 </section>
 <section id="thin-hemispherical-shell">
 <h4><span class="section-number">6.5.1.2. </span>Thin Hemispherical Shell<a class="headerlink" href="#thin-hemispherical-shell" title="Link to this heading">#</a></h4>
-<p>For the case of a thin hemispherical shell, we use the angular coordinate <span class="math notranslate nohighlight">\( \theta \)</span> (see <a class="reference internal" href="#fig-hemisphere"><span class="std std-numref">Fig. 6.3</span></a>) to divide the shell’s surface into circular strips of mass <span class="math notranslate nohighlight">\( \rho_S \, dS = 2\pi \rho_S a\, \cos\theta\, a\, d\theta \)</span>.</p>
+<p>For the case of a thin hemispherical shell, we use the angular coordinate <span class="math notranslate nohighlight">\( \theta \)</span> (see <a class="reference internal" href="#fig-hemisphere"><span class="std std-numref">Fig. 6.5</span></a>) to divide the shell’s surface into circular strips of mass <span class="math notranslate nohighlight">\( \rho_S \, dS = 2\pi \rho_S a\, \cos\theta\, a\, d\theta \)</span>.</p>
 <p>Note that <span class="math notranslate nohighlight">\( \cos\theta\,d\theta = d(\sin\theta) \)</span>. Since
 <span class="math notranslate nohighlight">\(\sin\theta = z/a\)</span>, then <span class="math notranslate nohighlight">\( d(\sin\theta) = dz/a \)</span>. Therefore:</p>
 <div class="math notranslate nohighlight">
@@ -827,10 +833,10 @@ For the case of a body which takes the form of a thin wire, we could replace the
 <figure class="align-default" id="fig-rodmoi">
 <img alt="../_images/rodmoi.png" src="../_images/rodmoi.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">oordinates for calculating the moment of inertia of a rod: (a) about one end and (b) about the centre of the rod.</span><a class="headerlink" href="#fig-rodmoi" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.6 </span><span class="caption-text">oordinates for calculating the moment of inertia of a rod: (a) about one end and (b) about the centre of the rod.</span><a class="headerlink" href="#fig-rodmoi" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p><a class="reference internal" href="#fig-rodmoi"><span class="std std-numref">Fig. 6.4</span></a> shows appropriate coordinates for calculating the moment of inertia of a thin rod of total mass <span class="math notranslate nohighlight">\(m\)</span> and length <span class="math notranslate nohighlight">\(a\)</span>. In the first example, the rod rotates about an axis perpendicular to itself which passes through one of its ends. The appropriate moment of inertia is thus:</p>
+<p><a class="reference internal" href="#fig-rodmoi"><span class="std std-numref">Fig. 6.6</span></a> shows appropriate coordinates for calculating the moment of inertia of a thin rod of total mass <span class="math notranslate nohighlight">\(m\)</span> and length <span class="math notranslate nohighlight">\(a\)</span>. In the first example, the rod rotates about an axis perpendicular to itself which passes through one of its ends. The appropriate moment of inertia is thus:</p>
 <div class="math notranslate nohighlight">
 \[\int_{x=0}^a\,(m/a)\,x^2\,dx = ma^2/3.\]</div>
 <p>In the second example, the axis of rotation passes through the midpoint of the rod, and the moment of inertia becomes:</p>

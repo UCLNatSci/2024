@@ -232,7 +232,7 @@ The X-ray source Cygnus X-1 is a binary system consisting of a $\sim20\,M_{\odot
 ---
 name: Cygnus_X-1
 ---
-Artist's impression of Cygnus X-1] (Credit: ESA/HST)
+Artist's impression of Cygnus X-1 (Credit: ESA/HST)
 ```
 
 ## Dynamics of Collisions
@@ -347,14 +347,16 @@ Comparing the last two equations shows that $\mathbf{p}'_1 \cdot \mathbf{p}'_2 =
 
 {numref}`fig:cofmcoord` shows the same collision between two particles in two different coordinate frames. In the so-called laboratory frame, we observe an incident particle of mass $ m_1 $ and velocity $ \mathbf{v}_1 $ striking a stationary target particle of mass $ m_2 $. After the collision, both particles are in motion and their velocities make angles $ \phi_1 $ and $ \phi_2 $ with the direction of the incident velocity.
 
-Now, if we consider the same collision in the centre-of-mass coordinates, in which the centre of mass is stationary, the picture changes. We recall that for a system such as this, with two particles and no external forces, the centre of mass does not accelerate and remains situated on the line connecting the two particles. In the frame of reference where the centre of mass is stationary, the total momentum before collision and after collision must be zero. Thus, in the centre-of-mass frame, the particles move in opposite directions before the collision, both approaching the stationary centre of mass. And after the collision, their velocities make the same angle $ \theta $ with their initial directions of motion.
 
 ```{figure} Figs/cofmcoord.png
-
+---
 name: fig:cofmcoord
 ---
 The same collision viewed in laboratory (left) and centre-of-mass (right) coordinates.
 ```
+
+
+Now, if we consider the same collision in the centre-of-mass coordinates, in which the centre of mass is stationary, the picture changes. We recall that for a system such as this, with two particles and no external forces, the centre of mass does not accelerate and remains situated on the line connecting the two particles. In the frame of reference where the centre of mass is stationary, the total momentum before collision and after collision must be zero. Thus, in the centre-of-mass frame, the particles move in opposite directions before the collision, both approaching the stationary centre of mass. And after the collision, their velocities make the same angle $ \theta $ with their initial directions of motion.
 
 The momentum conservation and energy balance in the centre-of-mass coordinates can be written:
 
@@ -383,10 +385,14 @@ Q,
 ```
 where we use the usual definition of reduced mass $ \mu $, introduced in section on [two-body](#sec:2bodyp) methods.
 
-![labcmvels](Figs/labcmvels.png)  
-*The relation between velocity in the laboratory and centre-of-mass frames.*
+```{figure} Figs/labcmvels.png
+---
+name: fig:labcmvels
+---
+The relation between velocity in the laboratory and centre-of-mass frames.
+```
 
-Let us now consider the relationship between the velocity in the laboratory and the centre-of-mass frames of reference. Figure ![labcmvels](Figs/labcmvels.png) illustrates the definition of the post-collision velocity in these two frames:
+Let us now consider the relationship between the velocity in the laboratory and the centre-of-mass frames of reference.  {numref}`fig:labcmvels` illustrates the definition of the post-collision velocity in these two frames:
 
 ```{math}
 \overline{\mathbf{v}}'_1 = \mathbf{v}'_1 - \mathbf{v}_{cm} = \mathbf{v}'_1 - \dfrac{m_1 \mathbf{v}_1}{m_1 + m_2}
@@ -424,8 +430,6 @@ This value of $ \gamma $ for the elastic collision case indicates that, for the 
 \tan\phi_1 = \tan\left(\dfrac{\theta}{2}\right),
 ```
 i.e., the scattering angle in the centre-of-mass frame is twice the value it has in the lab frame. Similar reasoning applied to the target particle shows that it has a scattering angle of $ (\pi-\theta)/2 $ in the laboratory system. Therefore, when an incident particle strikes a target of equal mass in the lab frame, the post-collision velocities are perpendicular to each other.
-
-*{PUT ROCKET PROBLEM IN PROBLEM SET}*
 
 ## Rotation of Rigid Bodies
 
