@@ -201,14 +201,14 @@ This form clarifies that terminal velocity is approached </mark>exponentially</m
 
 ## Centrifugal Force and Rotating Frames of Reference
 
-In investigating equations of motion, it's important to note how the chosen coordinate frame affects their form. Here, we compare a fixed coordinate system $ S $ with axes $ (x, y, z) $ to a rotating system $ S^{\prime} $ with axes $ (x^{\prime}, y^{\prime}, z^{\prime}) $ that share the same origin as $ S $ and rotate about a direction given by unit vector $ \mathbf{n} $ (see {numref}`fig:rotnaxes`). The angular velocity vector of the primed axes, as seen in frame $ P $, is $ \mathbf{\omega} = \omega \mathbf{n} $. The direction of $ \mathbf{n} $ follows a right-handed sense with respect to the rotation.
+In investigating equations of motion, it's important to note how the chosen coordinate frame affects their form. Here, we compare a fixed coordinate system $ S $ with axes $ (x, y, z) $ to a rotating system $ S^{\prime} $ with axes $ (x^{\prime}, y^{\prime}, z^{\prime}) $ that share the same origin as $ S $ and rotate about a direction given by unit vector $ \mathbf{n} $ (see {numref}`fig:rotnaxes`). The angular velocity vector of the primed axes, as seen in frame $ P $, is $ \boldsymbol{\omega} = \omega \mathbf{n} $. The direction of $ \mathbf{n} $ follows a right-handed sense with respect to the rotation.
 
 
 ```{figure} Figs/rotnaxes.png
 ---
 name: fig:rotnaxes
 ---
-The angular velocity vector $\vec{\omega}$ describes the rotation of the primed axes / frame, $S'$, as observed in the unprimed frame $S$.  From Fowles and Cassiday.
+The angular velocity vector $\boldsymbol{\omega}$ describes the rotation of the primed axes / frame, $S'$, as observed in the unprimed frame $S$.  From Fowles and Cassiday.
 ```
 
 At any time, the coordinates of a point in space can be described by either $ (x, y, z) $ or $ (x', y', z') $, depending on the frame chosen. The full position vector must be equivalent between frames:
@@ -226,53 +226,62 @@ A corotating observer in $ S' $ sees a velocity with components $ \left( \frac{\
 \mathbf{v} = \mathbf{v'} + x' \frac{\mathrm{d}\mathbf{i'}}{\mathrm{d}t} + y' \frac{\mathrm{d}\mathbf{j'}}{\mathrm{d}t} + z' \frac{\mathrm{d}\mathbf{k'}}{\mathrm{d}t}.
 ```
 
-For any vector $ \mathbf{p'} $ of fixed magnitude rotating about a fixed axis with angular velocity $ \mathbf{\omega} $, the rate of change is:
+For any vector $ \mathbf{p'} $ of fixed magnitude rotating about a fixed axis with angular velocity $ \boldsymbol{\omega} $, the rate of change is:
 ```{math}
-\frac{\mathrm{d}\mathbf{p'}}{\mathrm{d}t} = \mathbf{\omega} \times \mathbf{p'}.
+\frac{\mathrm{d}\mathbf{p'}}{\mathrm{d}t} = \boldsymbol{\omega} \times \mathbf{p'}.
 ```
-To understand this, we note that, in a small time increment $\delta t$, the change in the vector will point along the local direction of its rotation, which is the direction of the corresponding cross product $\mathbf{\omega} \times \mathbf{p'}\,\delta t$. Thus for our general velocity relation, we can write:
+To understand this, we note that, in a small time increment $\delta t$, the change in the vector will point along the local direction of its rotation, which is the direction of the corresponding cross product $\boldsymbol{\omega} \times \mathbf{p'}\,\delta t$. Thus for our general velocity relation, we can write:
 ```{math}
 :label: eq:vdefn
-\mathbf{v} = \mathbf{v'} + x' (\mathbf{\omega} \times \mathbf{i'}) + y' (\mathbf{\omega} \times \mathbf{j'}) + z' (\mathbf{\omega} \times \mathbf{k'}) = \mathbf{v'} + \mathbf{\omega} \times \mathbf{r'}.
+\mathbf{v} = \mathbf{v'} + x' (\boldsymbol{\omega} \times \mathbf{i'}) + y' (\boldsymbol{\omega} \times \mathbf{j'}) + z' (\boldsymbol{\omega} \times \mathbf{k'}) = \mathbf{v'} + \boldsymbol{\omega} \times \mathbf{r'}.
 ```
 
 ### Acceleration Relation
 To find a relation between acceleration vectors, we use the definition of $ \mathbf{v'} $:
 ```{math}
-\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t} = \ddot{x'} \mathbf{i'} + \ddot{y'} \mathbf{j'} + \ddot{z'} \mathbf{k'} + \dot{x'} \mathbf{\omega} \times \mathbf{i'} + \dot{y'} \mathbf{\omega} \times \mathbf{j'} + \dot{z'} \mathbf{\omega} \times \mathbf{k'} = \mathbf{a'} + \mathbf{\omega} \times \mathbf{v'}.
+\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t} = \ddot{x'} \mathbf{i'} + \ddot{y'} \mathbf{j'} + \ddot{z'} \mathbf{k'} + \dot{x'} \boldsymbol{\omega} \times \mathbf{i'} + \dot{y'} \boldsymbol{\omega} \times \mathbf{j'} + \dot{z'} \boldsymbol{\omega} \times \mathbf{k'} = \mathbf{a'} + \boldsymbol{\omega} \times \mathbf{v'}.
 ```
 Here, the components of the vector $\mathbf{a'}$ are the same acceleration components that would be perceived by the co-rotating observer. In a similar manner to how we derived
 $\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t}$ above, we could also show that:
 
 ```{math}
-\frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t} = \mathbf{v'} + \mathbf{\omega} \times \mathbf{r'}.
+\frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t} = \mathbf{v'} + \boldsymbol{\omega} \times \mathbf{r'}.
 ```
 Returning now to Equation {eq}`eq:vdefn`, we can differentiate both sides, making use of the above expressions for both $\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t}$ and $\frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t}$:
 ```{math}
-\mathbf{a} = \frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t} = \frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t} + \dot{\mathbf{\omega}} \times \mathbf{r'} + \mathbf{\omega} \times \frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t},
-```
-```{math}
-= \mathbf{a'} + \mathbf{\omega} \times \mathbf{v'} + \dot{\mathbf{\omega}} \times \mathbf{r'} + \mathbf{\omega} \times (\mathbf{v'} + \mathbf{\omega} \times \mathbf{r'}).
+\mathbf{a} &= \frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t} = \frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t} + \dot{\boldsymbol{\omega}} \times \mathbf{r'} + \boldsymbol{\omega} \times \frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t},\\
+&= \mathbf{a'} + \boldsymbol{\omega} \times \mathbf{v'} + \dot{\boldsymbol{\omega}} \times \mathbf{r'} + \boldsymbol{\omega} \times (\mathbf{v'} + \boldsymbol{\omega} \times \mathbf{r'}).
 ```
 Simplifying gives:
 ```{math}
-\mathbf{a} = \mathbf{a'} + 2 \mathbf{\omega} \times \mathbf{v'} + \dot{\mathbf{\omega}} \times \mathbf{r'} + \mathbf{\omega} \times (\mathbf{\omega} \times \mathbf{r'}).
+\mathbf{a} = \mathbf{a'} + 2 \boldsymbol{\omega} \times \mathbf{v'} + \dot{\boldsymbol{\omega}} \times \mathbf{r'} + \boldsymbol{\omega} \times (\boldsymbol{\omega} \times \mathbf{r'}).
 ```
 
-This expression relates actual acceleration $ \mathbf{a} $ to apparent acceleration $ \mathbf{a'} $, where the terms on the right include position and velocity in the rotating frame. Rearranging for $ \mathbf{a'} $ reveals that:
-- $ -2 \mathbf{\omega} \times \mathbf{v'} $: </mark>Coriolis acceleration</mark>
-- $ -\mathbf{\omega} \times (\mathbf{\omega} \times \mathbf{r'}) $: </mark>Centrifugal acceleration</mark>
-- $ -\dot{\mathbf{\omega}} \times \mathbf{r'} $: </mark>Transverse acceleration</mark>
+This expression relates actual acceleration $ \mathbf{a} $ to apparent acceleration $ \mathbf{a'} $, where the terms on the right include position and velocity in the rotating frame. Rearranging for $ \mathbf{a'}$ which is the acceleration in the rotating frame:
+
+```{math}
+\mathbf{a'} = \mathbf{a} - 2 \boldsymbol{\omega} \times \mathbf{v'} - \dot{\boldsymbol{\omega}} \times \mathbf{r'} - \boldsymbol{\omega} \times (\boldsymbol{\omega} \times \mathbf{r'}).
+```
+
+The term $-2\boldsymbol{\omega} \times \mathbf{v'}$ is an apparent acceleration known as the <mark>Coriolis acceleration</mark>.
+
+The term $-\omega \times (\boldsymbol{\omega} \times \mathbf{r'})$ is the <mark>centrifugal acceleration</mark>.
+
+Both of these terms are *apparent accelerations* which arise in a rotating frame of reference.
+
+Similarly, the term $-\dot{\boldsymbol{\omega}} \times \mathbf{r'}$ is a transverse acceleration (so called since it is always perpendicular to position) which arises when the angular velocity $\boldsymbol{\omega}$ of the frame $S'$ rotation (as viewed from $S$) is changing in magnitude or direction.
 
 In frame $ S $, the equation of motion for a particle of mass $ m $ is $ \mathbf{F} = m \mathbf{a} $. Replacing $ \mathbf{a} $ with the above, the analogous equation in $ S' $ becomes:
 ```{math}
 :label: eq:eomrot
-m \mathbf{a'} = \mathbf{F} - 2 m \mathbf{\omega} \times \mathbf{v'} - m \mathbf{\omega} \times (\mathbf{\omega} \times \mathbf{r'}) - m \dot{\mathbf{\omega}} \times \mathbf{r'}.
+m \mathbf{a'} = \mathbf{F} - 2 m \boldsymbol{\omega} \times \mathbf{v'} - m \boldsymbol{\omega} \times (\boldsymbol{\omega} \times \mathbf{r'}) - m \dot{\boldsymbol{\omega}} \times \mathbf{r'}.
 ```
 
-Here, the observer in $ S' $ includes these </mark>inertial forces</mark> to determine the motion in their frame. The right-hand side terms represent the real force, Coriolis force, centrifugal force, and transverse force.
+Hence, the observer in frame $S'$ has to include these inertial (or 'pseudo') forces in their equation of motion to calculate the correct motion of the particle in their coordinate frame. Reading from left to right on the right hand side of the above equation, we have terms representing the real, physical force; the Coriolis force, the centrifugal force, and the transverse force.
 
-The Coriolis force deflects moving particles at right angles to their motion. It affects airflow around pressure systems in Earth's atmosphere. The centrifugal force, always directed outward from the rotation axis, has magnitude $ m r' \sin \theta \, \omega^2 $, where $ r' \sin \theta $ is the distance between the particle and the rotation axis.
+When we view the motion of a particle in a rotating frame, the Coriolis force seems to deflect a moving particle at right angles to its direction of motion. To experience the Coriolis force, one can try moving radially inward or outward on a rotating `merry-go-round'. Coriolis forces drive the circulation of air around high- or low-pressure systems in the Earth's atmosphere.
+
+The centrifugal force is a familiar one. It is always directed outward from, and perpendicular to, the axis of rotation. In general, if a particle of mass $m$ is positioned in the rotating system at an angle $\theta$ to the axis of rotation, and at radial distance $r'$ from the origin (which lies somewhere on the axis of rotation), the magnitude of the centrifugal force it experiences will be $m (r'  sin\theta) \, \omega^2$. $r'\sin\theta$ is the shortest distance between particle and axis of rotation.
 
 ## Example: Motion in the Earth's Corotating Frame
 
@@ -326,7 +335,7 @@ The angle $ \epsilon $, as expected, vanishes at the equator and the poles, and 
 We will now make use of the results and symbols from the last section to write a more general equation of motion for a projectile moving near the Earth's surface, whose motion is described in a similar, corotating frame illustrated in {numref}`fig:projaxes`. The origin lies at a fixed latitude and longitude. The axes are oriented such that the $ z' $ axis is along the upward vertical direction (as defined by the direction of the string from which a static weight hangs), $ y' $ points locally northward and $ x' $ points locally eastward. Our equation of motion in this frame of reference is thus:
 
 ```{math}
-m \frac{\mathrm{d}^2 \mathbf{r'}}{\mathrm{d}t^2} = \mathbf{F} + m \mathbf{g} - 2m \mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{d}t} - m \mathbf{\omega} \times (\mathbf{\omega} \times \mathbf{r'}),
+m \frac{\mathrm{d}^2 \mathbf{r'}}{\mathrm{d}t^2} = \mathbf{F} + m \mathbf{g} - 2m \boldsymbol{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{d}t} - m \boldsymbol{\omega} \times (\boldsymbol{\omega} \times \mathbf{r'}),
 ```
 
 where $ \mathbf{F} $ is any actual applied force, other than gravity, $ \mathbf{g} = \mathbf{g_0} - \mathbf{A_0} $, and we have added the Coriolis and centrifugal terms since our projectile is moving.
@@ -341,13 +350,13 @@ Axes for analysing projectile motion (Fowles and Cassiday).
 Let us simplify the problem by ignoring forces such as air resistance and setting $ \mathbf{F} = 0 $. We will also ignore the centrifugal force, since it is usually very small compared with the other terms, in practice. Thus:
 
 ```{math}
-m \frac{\mathrm{d}^2 \mathbf{r'}}{\mathrm{d}t^2} = m \mathbf{g} - 2m \mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{d}t}.
+m \frac{\mathrm{d}^2 \mathbf{r'}}{\mathrm{d}t^2} = m \mathbf{g} - 2m \boldsymbol{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{d}t}.
 ```
 
-With the axes we have chosen, we can define unit vectors $ \mathbf{i'}, \mathbf{j'}, \mathbf{k'} $ along the respective $ x', y', z' $ directions. Hence we can write $ \mathbf{g} = -g \mathbf{k'} $ and $ \mathbf{\omega} = \omega \cos \lambda \mathbf{j'} + \omega \sin \lambda \mathbf{k'} $. With some vector algebra, we can show that:
+With the axes we have chosen, we can define unit vectors $ \mathbf{i'}, \mathbf{j'}, \mathbf{k'} $ along the respective $ x', y', z' $ directions. Hence we can write $ \mathbf{g} = -g \mathbf{k'} $ and $ \boldsymbol{\omega} = \omega \cos \lambda \mathbf{j'} + \omega \sin \lambda \mathbf{k'} $. With some vector algebra, we can show that:
 
 ```{math}
-\mathbf{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{d}t} = \mathbf{i'} (\omega \dot{z'} \cos \lambda - \omega \dot{y'} \sin \lambda) + \mathbf{j'} (\omega \dot{x'} \sin \lambda) + \mathbf{k'} (-\omega \dot{x'} \cos \lambda).
+\boldsymbol{\omega} \times \frac{\mathrm{d} \mathbf{r'}}{\mathrm{d}t} = \mathbf{i'} (\omega \dot{z'} \cos \lambda - \omega \dot{y'} \sin \lambda) + \mathbf{j'} (\omega \dot{x'} \sin \lambda) + \mathbf{k'} (-\omega \dot{x'} \cos \lambda).
 ```
 
 Using this result, the components of the equation of motion now read as:
@@ -393,5 +402,5 @@ If we substitute the preceding expression for $x'$ into the final two equations 
     {z'}(t) &= \dfrac{-1}{2} g t^2 + \dot{z'}_0 t + \omega\,\dot{x'}_0 t^2 \cos\lambda.
 ```
 The terms involving $\omega$ in the expressions for projectile position coordinates represent the effect of the Earth's rotation, and describing the motion in a coordinate system fixed to the Earth itself. Note that if we omit these terms, we retrieve the familiar parabolic trajectory in a single plane for problems where the only acceleration
-comes from a uniform downwards gravitational term, $-g\vec{k'}$.
+comes from a uniform downwards gravitational term, $-g\mathbf{k'}$.
 

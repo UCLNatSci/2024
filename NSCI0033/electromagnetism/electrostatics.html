@@ -405,7 +405,16 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coulombs-law">7.1. Coulombs Law</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition-of-charges">7.2. Superposition of charges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition-of-charges">7.2. Superposition of charges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-superposition-of-electric-fields">7.2.1. Example Problem: Superposition of Electric Fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-electric-field-contributions">7.2.2. Step 1: Electric Field Contributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-electric-field-magnitudes">7.2.3. Step 2: Electric Field Magnitudes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-direction-of-electric-fields">7.2.4. Step 3: Direction of Electric Fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-net-electric-field">7.2.5. Step 4: Net Electric Field</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-magnitude-and-direction">7.2.6. Step 5: Magnitude and Direction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-answer">7.2.7. Final Answer:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-coulombs-law">7.3. Infinitesimal Coulombs law</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rectilinear-rod">7.3.1. Rectilinear Rod</a></li>
 </ul>
@@ -441,7 +450,8 @@ charges <span class="math notranslate nohighlight">\(Q_i\)</span>, <span class="
 <p>This force <span class="math notranslate nohighlight">\(\mathbf{F}_{12}\)</span> is related directly to the size of the charges and to the inverse square of the distance between them.  We can define the <mark>Electric Field</mark> <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> as the <mark>force per unit charge</mark>, in this case we can find the electric field due to the charge <span class="math notranslate nohighlight">\(Q_1\)</span> measured at <span class="math notranslate nohighlight">\(\mathbf{r}_2\)</span> as:</p>
 <div class="math notranslate nohighlight" id="equation-efieldcharge">
 <span class="eqno">(7.2)<a class="headerlink" href="#equation-efieldcharge" title="Link to this equation">#</a></span>\[\mathbf{E} = \frac{\mathbf{F}_c}{Q_2} = \frac{Q_1}{4\,\pi\,\epsilon_0}\frac{1}{|\mathbf{r}_2-\mathbf{r}_1|^2}\,\mathbf{\hat{r}}_{12}\]</div>
-<p>This expression has <span class="math notranslate nohighlight">\(Q_1\)</span> taking the role of a <mark>Source Charge</mark>.  If we have a point charge, we can draw the electric field around it,
+<p>This expression has <span class="math notranslate nohighlight">\(Q_1\)</span> taking the role of a <mark>source charge</mark>.</p>
+<p>The direction of <span class="math notranslate nohighlight">\( \mathbf{E} \)</span> depends on the sign of the charges, positive sources have <span class="math notranslate nohighlight">\( \mathbf{E} \)</span> pointing <mark>away</mark> from the charge, negative sources have <span class="math notranslate nohighlight">\( \mathbf{E} \)</span> pointing <mark>towards</mark> the charge.  We can see this from an electric field diagram, such
 as shown in <a class="reference internal" href="#positivechargeefield"><span class="std std-numref">Fig. 7.1</span></a>.</p>
 <figure class="align-default" id="positivechargeefield">
 <img alt="../_images/PositiveChargeEField.png" src="../_images/PositiveChargeEField.png" />
@@ -449,14 +459,128 @@ as shown in <a class="reference internal" href="#positivechargeefield"><span cla
 <p><span class="caption-number">Fig. 7.1 </span><span class="caption-text">Electric fields lines from a positive charge</span><a class="headerlink" href="#positivechargeefield" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Our field lines radiate outwards radially, depending only on the distance from a point to the charge (here we are just assuming a point charge)
-and in the direction a positive charge would follow (here outwards as like charges repel).</p>
-<p>These are all very sound ideas that we have no doubt learnt before, the question is whilst Coulombs law is a very effective tool to empirically
-describe electric fields from point charges, where does is arrive from? Will it work in more complicated situations?</p>
+<p>Our field lines radiate outwards radially, depending only on the distance from a point to the charge (here we are just assuming a point charge) and in the direction a positive charge would follow (here outwards as like charges repel).</p>
+<p>These are all very sound ideas that we have no doubt learnt before, the question is whilst Coulombs law is a very effective tool to empirically describe electric fields from point charges, where does is arrive from? Will it work in more complicated situations?</p>
 </section>
 <section id="superposition-of-charges">
 <h2><span class="section-number">7.2. </span>Superposition of charges<a class="headerlink" href="#superposition-of-charges" title="Link to this heading">#</a></h2>
-<p>One of the great properties of electric fields is that charges</p>
+<p>The net electric field at a point due to multiple charges is the <mark>vector sum</mark> of the electric fields produced by each charge individually.  This principle applies because electric fields obey the laws of vector addition.  This means we can break down (in principle) a complicated system (or distribution of charges) into its component charge parts.</p>
+<p>In a given electrostatic system, we can aim to identify all charges and their positions, calculate the electric field vector <span class="math notranslate nohighlight">\( \mathbf{E}_i \)</span> at the point of interest due to each charge <span class="math notranslate nohighlight">\( q_i \)</span> and then add the vectors:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{E}_{\text{net}} = \sum_i \mathbf{E}_i\]</div>
+<p>For charges distributed in 2D or 3D, we can break each electric field into components:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{E}_i = E_{i,x} \hat{\mathbf{i}} + E_{i,y} \hat{\mathbf{j}} + E_{i,z} \hat{\mathbf{k}}\]</div>
+<p>And then sum the components along each axis:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{E}_{\text{net},x} = \sum_i E_{i,x}, \quad \mathbf{E}_{\text{net},y} = \sum_i E_{i,y}, \quad \mathbf{E}_{\text{net},z} = \sum_i E_{i,z}\]</div>
+<p>We can use this method to calculate fields in systems with multiple discrete charges (or in the case of <em>continuous</em> charge distributions with integration to find the total charge).</p>
+<p>Symmetry can often be exploited to simplify calculations (e.g., fields cancel out along certain axes).</p>
+<section id="example-problem-superposition-of-electric-fields">
+<h3><span class="section-number">7.2.1. </span>Example Problem: Superposition of Electric Fields<a class="headerlink" href="#example-problem-superposition-of-electric-fields" title="Link to this heading">#</a></h3>
+<p>Two point charges, <span class="math notranslate nohighlight">\( q_1 \)</span> and <span class="math notranslate nohighlight">\( q_2 \)</span>, are placed in a 2D coordinate plane:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( q_1 = +2 \, \mu\mathrm{C} \)</span> is located at <span class="math notranslate nohighlight">\( \mathbf{r}_1 = (0, 0) \, \mathrm{m} \)</span> (origin).</p></li>
+<li><p><span class="math notranslate nohighlight">\( q_2 = -3 \, \mu\mathrm{C} \)</span> is located at <span class="math notranslate nohighlight">\( \mathbf{r}_2 = (4, 0) \, \mathrm{m} \)</span> (along the x-axis).</p></li>
+<li><p>Find the net electric field <span class="math notranslate nohighlight">\( \mathbf{E}_{\text{net}} \)</span> at point <span class="math notranslate nohighlight">\( P \)</span> located at <span class="math notranslate nohighlight">\( (2, 3) \, \mathrm{m} \)</span>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="step-1-electric-field-contributions">
+<h3><span class="section-number">7.2.2. </span>Step 1: Electric Field Contributions<a class="headerlink" href="#step-1-electric-field-contributions" title="Link to this heading">#</a></h3>
+<p>The electric field <span class="math notranslate nohighlight">\( \mathbf{E}_i \)</span> due to a point charge <span class="math notranslate nohighlight">\( q_i \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{E}_i = \frac{1}{4\pi\epsilon_0} \frac{|q_i|}{r_i^2} \hat{\mathbf{r}}_i\]</div>
+<p>where <span class="math notranslate nohighlight">\( r_i \)</span> is the distance between the charge <span class="math notranslate nohighlight">\( q_i \)</span> and point <span class="math notranslate nohighlight">\( P \)</span>, and <span class="math notranslate nohighlight">\( \hat{\mathbf{r}}_i \)</span> is the unit vector from <span class="math notranslate nohighlight">\( q_i \)</span> to <span class="math notranslate nohighlight">\( P \)</span>.</p>
+<ol class="arabic simple">
+<li><p><strong>Distance from <span class="math notranslate nohighlight">\( q_1 \)</span> to <span class="math notranslate nohighlight">\( P \)</span>:</strong></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[r_1 = \sqrt{(2 - 0)^2 + (3 - 0)^2} = \sqrt{4 + 9} = 3 \, \mathrm{m}\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Distance from <span class="math notranslate nohighlight">\( q_2 \)</span> to <span class="math notranslate nohighlight">\( P \)</span>:</strong></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[r_2 = \sqrt{(2 - 4)^2 + (3 - 0)^2} = \sqrt{(-2)^2 + 3^2} = \sqrt{4 + 9} = 3 \, \mathrm{m}\]</div>
+</section>
+<hr class="docutils" />
+<section id="step-2-electric-field-magnitudes">
+<h3><span class="section-number">7.2.3. </span>Step 2: Electric Field Magnitudes<a class="headerlink" href="#step-2-electric-field-magnitudes" title="Link to this heading">#</a></h3>
+<p>Using <span class="math notranslate nohighlight">\( \frac{1}{4\pi\epsilon_0} \approx 9 \times 10^9 \, \mathrm{N \cdot m^2 / C^2} \)</span>:</p>
+<ol class="arabic simple">
+<li><p><strong>Electric field from <span class="math notranslate nohighlight">\( q_1 \)</span>:</strong></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[E_1 = \frac{9 \times 10^9 \cdot 2 \times 10^{-6}}{3^2} = \frac{18 \times 10^3}{9} = 2 \times 10^3 \, \mathrm{N/C}\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Electric field from <span class="math notranslate nohighlight">\( q_2 \)</span>:</strong></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[E_2 = \frac{9 \times 10^9 \cdot 3 \times 10^{-6}}{3^2} = \frac{27 \times 10^3}{9} = 3 \times 10^3 \, \mathrm{N/C}\]</div>
+</section>
+<hr class="docutils" />
+<section id="step-3-direction-of-electric-fields">
+<h3><span class="section-number">7.2.4. </span>Step 3: Direction of Electric Fields<a class="headerlink" href="#step-3-direction-of-electric-fields" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Direction of <span class="math notranslate nohighlight">\( \mathbf{E}_1 \)</span>:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( q_1 &gt; 0 \)</span>, so <span class="math notranslate nohighlight">\( \mathbf{E}_1 \)</span> points away from <span class="math notranslate nohighlight">\( q_1 \)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{r}}_1 = \frac{\mathbf{r}_P - \mathbf{r}_1}{r_1} = \frac{(2, 3) - (0, 0)}{3} = \left(\frac{2}{3}, 1\right)\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{E}_1 = E_1 \hat{\mathbf{r}}_1 = 2 \times 10^3 \left(\frac{2}{3} \hat{\mathbf{i}} + \hat{\mathbf{j}}\right) = \left(1333 \hat{\mathbf{i}} + 2000 \hat{\mathbf{j}}\right) \, \mathrm{N/C}\]</div>
+</li>
+<li><p><strong>Direction of <span class="math notranslate nohighlight">\( \mathbf{E}_2 \)</span>:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( q_2 &lt; 0 \)</span>, so <span class="math notranslate nohighlight">\( \mathbf{E}_2 \)</span> points toward <span class="math notranslate nohighlight">\( q_2 \)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{r}}_2 = \frac{\mathbf{r}_P - \mathbf{r}_2}{r_2} = \frac{(2, 3) - (4, 0)}{3} = \left(\frac{-2}{3}, 1\right)\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{E}_2 = E_2 \hat{\mathbf{r}}_2 = 3 \times 10^3 \left(\frac{-2}{3} \hat{\mathbf{i}} + \hat{\mathbf{j}}\right) = \left(-2000 \hat{\mathbf{i}} + 3000 \hat{\mathbf{j}}\right) \, \mathrm{N/C}\]</div>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="step-4-net-electric-field">
+<h3><span class="section-number">7.2.5. </span>Step 4: Net Electric Field<a class="headerlink" href="#step-4-net-electric-field" title="Link to this heading">#</a></h3>
+<p>Add <span class="math notranslate nohighlight">\( \mathbf{E}_1 \)</span> and <span class="math notranslate nohighlight">\( \mathbf{E}_2 \)</span> component-wise:</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\( x \)</span>-component:</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{net},x} = 1333 - 2000 = -667 \, \mathrm{N/C}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\( y \)</span>-component:</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{net},y} = 2000 + 3000 = 5000 \, \mathrm{N/C}\]</div>
+</li>
+</ol>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{E}_{\text{net}} = -667 \hat{\mathbf{i}} + 5000 \hat{\mathbf{j}} \, \mathrm{N/C}\]</div>
+</section>
+<hr class="docutils" />
+<section id="step-5-magnitude-and-direction">
+<h3><span class="section-number">7.2.6. </span>Step 5: Magnitude and Direction<a class="headerlink" href="#step-5-magnitude-and-direction" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Magnitude</strong>:</p>
+<div class="math notranslate nohighlight">
+\[|\mathbf{E}_{\text{net}}| = \sqrt{(-667)^2 + 5000^2} = \sqrt{445889 + 25000000} \approx 5022 \, \mathrm{N/C}\]</div>
+</li>
+<li><p><strong>Angle (relative to <span class="math notranslate nohighlight">\( x \)</span>-axis)</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\theta = \tan^{-1}\left(\frac{E_{\text{net},y}}{E_{\text{net},x}}\right) = \tan^{-1}\left(\frac{5000}{-667}\right) \approx -83.4^\circ\]</div>
+<p>(or <span class="math notranslate nohighlight">\( 96.6^\circ \)</span> counterclockwise from the positive <span class="math notranslate nohighlight">\( x \)</span>-axis).</p>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="final-answer">
+<h3><span class="section-number">7.2.7. </span>Final Answer:<a class="headerlink" href="#final-answer" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\mathbf{E}_{\text{net}} = 5022 \, \mathrm{N/C} \, \text{at an angle of } 96.6^\circ \, \text{counterclockwise from the } x\text{-axis.}\]</div>
+</section>
 </section>
 <section id="infinitesimal-coulombs-law">
 <h2><span class="section-number">7.3. </span>Infinitesimal Coulombs law<a class="headerlink" href="#infinitesimal-coulombs-law" title="Link to this heading">#</a></h2>
@@ -685,7 +809,16 @@ which we find results in the analogue of <a class="reference internal" href="sol
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coulombs-law">7.1. Coulombs Law</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition-of-charges">7.2. Superposition of charges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition-of-charges">7.2. Superposition of charges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-superposition-of-electric-fields">7.2.1. Example Problem: Superposition of Electric Fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-electric-field-contributions">7.2.2. Step 1: Electric Field Contributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-electric-field-magnitudes">7.2.3. Step 2: Electric Field Magnitudes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-direction-of-electric-fields">7.2.4. Step 3: Direction of Electric Fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-net-electric-field">7.2.5. Step 4: Net Electric Field</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-magnitude-and-direction">7.2.6. Step 5: Magnitude and Direction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-answer">7.2.7. Final Answer:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-coulombs-law">7.3. Infinitesimal Coulombs law</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rectilinear-rod">7.3.1. Rectilinear Rod</a></li>
 </ul>

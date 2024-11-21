@@ -25,7 +25,10 @@ This force $\mathbf{F}_{12}$ is related directly to the size of the charges and 
 :label: EFieldCharge
 \mathbf{E} = \frac{\mathbf{F}_c}{Q_2} = \frac{Q_1}{4\,\pi\,\epsilon_0}\frac{1}{|\mathbf{r}_2-\mathbf{r}_1|^2}\,\mathbf{\hat{r}}_{12}
 ```
-This expression has $Q_1$ taking the role of a <mark>Source Charge</mark>.  If we have a point charge, we can draw the electric field around it, 
+
+This expression has $Q_1$ taking the role of a <mark>source charge</mark>.
+
+The direction of $ \mathbf{E} $ depends on the sign of the charges, positive sources have $ \mathbf{E} $ pointing <mark>away</mark> from the charge, negative sources have $ \mathbf{E} $ pointing <mark>towards</mark> the charge.  We can see this from an electric field diagram, such
 as shown in {numref}`PositiveChargeEField`.
 ```{figure} ../figures/PositiveChargeEField.png
 ---
@@ -34,16 +37,150 @@ name: PositiveChargeEField
 Electric fields lines from a positive charge
 ```
 
-Our field lines radiate outwards radially, depending only on the distance from a point to the charge (here we are just assuming a point charge) 
-and in the direction a positive charge would follow (here outwards as like charges repel).  
+Our field lines radiate outwards radially, depending only on the distance from a point to the charge (here we are just assuming a point charge) and in the direction a positive charge would follow (here outwards as like charges repel).  
 
-These are all very sound ideas that we have no doubt learnt before, the question is whilst Coulombs law is a very effective tool to empirically 
-describe electric fields from point charges, where does is arrive from? Will it work in more complicated situations?  
+These are all very sound ideas that we have no doubt learnt before, the question is whilst Coulombs law is a very effective tool to empirically describe electric fields from point charges, where does is arrive from? Will it work in more complicated situations?  
 
 
 ## Superposition of charges
 
-One of the great properties of electric fields is that charges 
+The net electric field at a point due to multiple charges is the <mark>vector sum</mark> of the electric fields produced by each charge individually.  This principle applies because electric fields obey the laws of vector addition.  This means we can break down (in principle) a complicated system (or distribution of charges) into its component charge parts.
+
+In a given electrostatic system, we can aim to identify all charges and their positions, calculate the electric field vector $ \mathbf{E}_i $ at the point of interest due to each charge $ q_i $ and then add the vectors:
+
+```{math}
+\mathbf{E}_{\text{net}} = \sum_i \mathbf{E}_i
+```
+
+For charges distributed in 2D or 3D, we can break each electric field into components:
+
+```{math}
+\mathbf{E}_i = E_{i,x} \hat{\mathbf{i}} + E_{i,y} \hat{\mathbf{j}} + E_{i,z} \hat{\mathbf{k}}
+```
+
+And then sum the components along each axis:
+
+```{math}
+\mathbf{E}_{\text{net},x} = \sum_i E_{i,x}, \quad \mathbf{E}_{\text{net},y} = \sum_i E_{i,y}, \quad \mathbf{E}_{\text{net},z} = \sum_i E_{i,z}
+```
+
+We can use this method to calculate fields in systems with multiple discrete charges (or in the case of *continuous* charge distributions with integration to find the total charge).
+
+Symmetry can often be exploited to simplify calculations (e.g., fields cancel out along certain axes).
+
+
+### Example Problem: Superposition of Electric Fields
+
+
+Two point charges, $ q_1 $ and $ q_2 $, are placed in a 2D coordinate plane:
+- $ q_1 = +2 \, \mu\mathrm{C} $ is located at $ \mathbf{r}_1 = (0, 0) \, \mathrm{m} $ (origin).
+- $ q_2 = -3 \, \mu\mathrm{C} $ is located at $ \mathbf{r}_2 = (4, 0) \, \mathrm{m} $ (along the x-axis).
+- Find the net electric field $ \mathbf{E}_{\text{net}} $ at point $ P $ located at $ (2, 3) \, \mathrm{m} $.
+
+---
+
+### Step 1: Electric Field Contributions
+The electric field $ \mathbf{E}_i $ due to a point charge $ q_i $ is:
+
+```{math}
+\mathbf{E}_i = \frac{1}{4\pi\epsilon_0} \frac{|q_i|}{r_i^2} \hat{\mathbf{r}}_i
+```
+
+where $ r_i $ is the distance between the charge $ q_i $ and point $ P $, and $ \hat{\mathbf{r}}_i $ is the unit vector from $ q_i $ to $ P $.
+
+1. **Distance from $ q_1 $ to $ P $:**
+
+```{math}
+r_1 = \sqrt{(2 - 0)^2 + (3 - 0)^2} = \sqrt{4 + 9} = 3 \, \mathrm{m}
+```
+
+2. **Distance from $ q_2 $ to $ P $:**
+
+```{math}
+r_2 = \sqrt{(2 - 4)^2 + (3 - 0)^2} = \sqrt{(-2)^2 + 3^2} = \sqrt{4 + 9} = 3 \, \mathrm{m}
+```
+
+---
+
+### Step 2: Electric Field Magnitudes
+Using $ \frac{1}{4\pi\epsilon_0} \approx 9 \times 10^9 \, \mathrm{N \cdot m^2 / C^2} $:
+
+1. **Electric field from $ q_1 $:**
+
+```{math}
+E_1 = \frac{9 \times 10^9 \cdot 2 \times 10^{-6}}{3^2} = \frac{18 \times 10^3}{9} = 2 \times 10^3 \, \mathrm{N/C}
+```
+
+2. **Electric field from $ q_2 $:**
+
+```{math}
+E_2 = \frac{9 \times 10^9 \cdot 3 \times 10^{-6}}{3^2} = \frac{27 \times 10^3}{9} = 3 \times 10^3 \, \mathrm{N/C}
+```
+
+---
+
+### Step 3: Direction of Electric Fields
+1. **Direction of $ \mathbf{E}_1 $:**
+   - $ q_1 > 0 $, so $ \mathbf{E}_1 $ points away from $ q_1 $:
+   ```{math}
+   \hat{\mathbf{r}}_1 = \frac{\mathbf{r}_P - \mathbf{r}_1}{r_1} = \frac{(2, 3) - (0, 0)}{3} = \left(\frac{2}{3}, 1\right)
+   ```
+   ```{math}
+   \mathbf{E}_1 = E_1 \hat{\mathbf{r}}_1 = 2 \times 10^3 \left(\frac{2}{3} \hat{\mathbf{i}} + \hat{\mathbf{j}}\right) = \left(1333 \hat{\mathbf{i}} + 2000 \hat{\mathbf{j}}\right) \, \mathrm{N/C}
+   ```
+
+2. **Direction of $ \mathbf{E}_2 $:**
+   - $ q_2 < 0 $, so $ \mathbf{E}_2 $ points toward $ q_2 $:
+   ```{math}
+   \hat{\mathbf{r}}_2 = \frac{\mathbf{r}_P - \mathbf{r}_2}{r_2} = \frac{(2, 3) - (4, 0)}{3} = \left(\frac{-2}{3}, 1\right)
+   ```
+   ```{math}
+   \mathbf{E}_2 = E_2 \hat{\mathbf{r}}_2 = 3 \times 10^3 \left(\frac{-2}{3} \hat{\mathbf{i}} + \hat{\mathbf{j}}\right) = \left(-2000 \hat{\mathbf{i}} + 3000 \hat{\mathbf{j}}\right) \, \mathrm{N/C}
+   ```
+
+---
+
+### Step 4: Net Electric Field
+Add $ \mathbf{E}_1 $ and $ \mathbf{E}_2 $ component-wise:
+
+1. $ x $-component:
+   ```{math}
+   E_{\text{net},x} = 1333 - 2000 = -667 \, \mathrm{N/C}
+   ```
+
+2. $ y $-component:
+   ```{math}
+   E_{\text{net},y} = 2000 + 3000 = 5000 \, \mathrm{N/C}
+   ```
+
+Thus:
+
+```{math}
+\mathbf{E}_{\text{net}} = -667 \hat{\mathbf{i}} + 5000 \hat{\mathbf{j}} \, \mathrm{N/C}
+```
+
+---
+
+### Step 5: Magnitude and Direction
+1. **Magnitude**:
+   ```{math}
+   |\mathbf{E}_{\text{net}}| = \sqrt{(-667)^2 + 5000^2} = \sqrt{445889 + 25000000} \approx 5022 \, \mathrm{N/C}
+   ```
+
+2. **Angle (relative to $ x $-axis)**:
+   ```{math}
+   \theta = \tan^{-1}\left(\frac{E_{\text{net},y}}{E_{\text{net},x}}\right) = \tan^{-1}\left(\frac{5000}{-667}\right) \approx -83.4^\circ
+   ```
+
+   (or $ 96.6^\circ $ counterclockwise from the positive $ x $-axis).
+
+---
+
+### Final Answer:
+```{math}
+\mathbf{E}_{\text{net}} = 5022 \, \mathrm{N/C} \, \text{at an angle of } 96.6^\circ \, \text{counterclockwise from the } x\text{-axis.}
+```
+
 
 ## Infinitesimal Coulombs law
 Lets start with a simpler problem first though, a semicircular arc of charge, as depicted in {numref}`SemiCircularArcofCharge`
