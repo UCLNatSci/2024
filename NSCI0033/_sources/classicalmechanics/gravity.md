@@ -14,7 +14,7 @@ We can represent this statement mathematically by using vectors, as follows:
 \mathbf{F}_{ij} = \dfrac{G m_i m_j}{r_{ij}^2} \dfrac{\mathbf{r}_{ij}}{r_{ij}}.
 ```
 
-In {eq}`eq:gravlaw`, $\mathbf{F}_{ij}$ is the attractive force on a point mass $m_i$ due to another mass $m_j$, which is situated at a distance $r_{ij}$ from $m_i$. The vector $\mathbf{r}_{ij}$ is a vector running from the position of $m_i$ to that of $m_j$ (we can write $\mathbf{r}_{ij} = \mathbf{r}_j - \mathbf{r}_i$). In accordance with Newton's law of action and reaction, we can see that $\mathbf{F}_{ij} = -\mathbf{F}_{ji}$.
+In Equation {eq}`eq:gravlaw`, $\mathbf{F}_{ij}$ is the attractive force on a point mass $m_i$ due to another mass $m_j$, which is situated at a distance $r_{ij}$ from $m_i$. The vector $\mathbf{r}_{ij}$ is a vector running from the position of $m_i$ to that of $m_j$ (we can write $\mathbf{r}_{ij} = \mathbf{r}_j - \mathbf{r}_i$). In accordance with Newton's law of action and reaction, we can see that $\mathbf{F}_{ij} = -\mathbf{F}_{ji}$.
 
 The value of $G$, the <mark>universal constant of gravitation</mark>, is $(6.67259 \pm 0.00085) \times 10^{-11} \, \mathrm{N \cdot m^2 \cdot kg^2}$. Gravitational force is an example of a <mark>central force</mark>—these are forces whose lines of action emerge from, or terminate on, a single point or center. It is also an <mark>isotropic force</mark>, since its magnitude does not depend on the direction along which it acts. If we approximate the Earth as a body with perfect spherical symmetry, the gravitational force due to the Earth acting upon any mass $m$ on its surface would be:
 
@@ -56,7 +56,7 @@ Similarly, the angle $\phi$ is related to the triangle's side lengths according 
 R^2 = s^2 + r^2 - 2 r s \cos \phi \quad \rightarrow \quad \cos \phi = \frac{s^2 + r^2 - R^2}{2 r s}.
 ```
 
-We can now eliminate factors involving $\theta$ and $\phi$ from our expression for $\Delta F_{\text{ring}}$ in {eq}`eq:dfring`:
+We can now eliminate factors involving $\theta$ and $\phi$ from our expression for $\Delta F_{\text{ring}}$ in Equation {eq}`eq:dfring`:
 
 ```{math}
 :label: eq:dfringupd
@@ -169,7 +169,7 @@ Differentiating a second time to obtain an expression for $ \ddot{r} $, we get:
 \ddot{r} = -l \, \dfrac{\mathrm{d}}{\mathrm{d}t} \left(\dfrac{\mathrm{d}u}{\mathrm{d}\theta}\right) = -l \dot{\theta} \dfrac{\mathrm{d}^2u}{\mathrm{d}\theta^2}.
 ```
 
-If we now substitute our expressions for $ \dot{r} $, $ \dot{\theta} $, and $ \ddot{r} $ into {eq}`eq:eomcompr`, we obtain the following differential equation for $ u $ as a function of $ \theta $:
+If we now substitute our expressions for $ \dot{r} $, $ \dot{\theta} $, and $ \ddot{r} $ into Equation {eq}`eq:eomcompr`, we obtain the following differential equation for $ u $ as a function of $ \theta $:
 
 ```{math}
 :label: eq:uorbit
@@ -178,7 +178,7 @@ l \left( \frac{l}{r^2} \right) \dfrac{\mathrm{d}^2u}{\mathrm{d}\theta^2} + r \le
 ```
 This equation allows us to determine the shape of an orbit ($ u(\theta) $), given the nature of the force function $ f(r) $ (a function of radial distance only). Conversely, given the function $ u(\theta) $, one can, in principle, determine the force function $ f(r) $, which then gives insight as to the nature of the central force producing the given orbital trajectory.
 
-Let's now look for solutions of {eq}`eq:uorbit` corresponding to the orbit of a planet of mass $ m $ around the Sun of mass $ M $. We will assume that $ m \ll M $ so that the Sun stays fixed at the origin of our coordinate system (i.e.\ its position is unperturbed by the presence of any planet). For this case, the function $ f(r)= -k/r^2 $, where the constant
+Let's now look for solutions of Equation {eq}`eq:uorbit` corresponding to the orbit of a planet of mass $ m $ around the Sun of mass $ M $. We will assume that $ m \ll M $ so that the Sun stays fixed at the origin of our coordinate system (i.e.\ its position is unperturbed by the presence of any planet). For this case, the function $ f(r)= -k/r^2 $, where the constant
 $ k = GMm $. Our equation for the orbit then becomes:
 ```{math}
 \dfrac{\mathrm{d}^2u}{\mathrm{d}\theta^2} + u = \dfrac{ku^2}{ml^2} = \dfrac{GM}{l^2}.
@@ -218,12 +218,12 @@ name: fig:conicsecn
 (a) Circle, $ \epsilon = 0 $; (b) Ellipse, $ 0 < \epsilon < 1 $; (c) Parabola, $ \epsilon = 1 $; (d) Hyperbola, $ \epsilon > 1 $; (e) Family of conic sections which describe orbits. (from the book by Fowles and Cassiday)
 ```
 
-{eq}`eq:conicsecn` shows that the points of closest approach and farthest distance on the elliptical orbit of a planet around the Sun, referred to as its <mark>perihelion</mark> and <mark>apohelion</mark>, occur when $ \theta = 0, \pi $ and thus $ r_{min} = a(1 - \epsilon) $, $ r_{max} = a(1 + \epsilon) $. The Earth's moon, since it orbits the Earth, has a <mark>perigee</mark> and <mark>apogee</mark> during its orbital motion.
+Equation {eq}`eq:conicsecn` shows that the points of closest approach and farthest distance on the elliptical orbit of a planet around the Sun, referred to as its <mark>perihelion</mark> and <mark>apohelion</mark>, occur when $ \theta = 0, \pi $ and thus $ r_{min} = a(1 - \epsilon) $, $ r_{max} = a(1 + \epsilon) $. The Earth's moon, since it orbits the Earth, has a <mark>perigee</mark> and <mark>apogee</mark> during its orbital motion.
 
 Generally speaking, the planets of the Solar System have small orbital eccentricities. The highest value is that of Mercury, for which $ \epsilon \approx 0.206 $. The Earth's orbit is much closer to circular, having $ \epsilon \approx 0.017 $. For the Earth, $ r_{min} \approx 146 \, \text{million km} $ and $ r_{max} \approx 153 \, \text{million km} $. By contrast, Halley's comet has a highly eccentric orbit, $ \epsilon \approx 0.967 $ with a perihelion of only $ r_{min} \approx 89 \, \text{million km} $ and an apohelion beyond the orbit of Neptune. Non-recurring comets are on parabolic or hyperbolic orbits.
 
 ### Periodic Orbital Motion and Kepler's Third Law
-Kepler's third law relates the orbital period of a planet to its distance from the Sun. In this section, we will demonstrate how it can be derived using Newton's laws of motion. We start with Kepler's second law, as summarised by {eq}`eq:dareadt`; the rate at which the position vector of the orbiting planet sweeps out area is proportional to its constant angular momentum:
+Kepler's third law relates the orbital period of a planet to its distance from the Sun. In this section, we will demonstrate how it can be derived using Newton's laws of motion. We start with Kepler's second law, as summarised by Equation {eq}`eq:dareadt`; the rate at which the position vector of the orbiting planet sweeps out area is proportional to its constant angular momentum:
 ```{math}
 \dfrac{\mathrm{d}A}{\mathrm{d}t} = \dfrac{L}{2m}.
 ```
@@ -241,7 +241,7 @@ Squaring both sides:
     \rightarrow 4\pi^2 a^4 \, (1-\epsilon^2)\,\dfrac{1}{l^2} &= \tau^2,
 ```
 where $ l $ is the angular momentum per unit mass, or </mark>specific angular momentum</mark>.  
-Now, by comparing {eq}`eq:rvsthetaorb` and {eq}`eq:conicsecn`, we can make the identification $ a\,(1-\epsilon^2) = l^2/(GM) $. Thus we can replace a factor $ a\,(1-\epsilon^2) $ in the equation above with the constant $ l^2/(GM) $:
+Now, by comparing Equations {eq}`eq:rvsthetaorb` and {eq}`eq:conicsecn`, we can make the identification $ a\,(1-\epsilon^2) = l^2/(GM) $. Thus we can replace a factor $ a\,(1-\epsilon^2) $ in the equation above with the constant $ l^2/(GM) $:
 ```{math}
     4\pi^2 a^3 \, \dfrac{l^2}{GM}\,\dfrac{1}{l^2} &= \tau^2, \\
     \rightarrow \dfrac{4\pi^2}{GM_{\odot}}\, a^3  &= \tau^2.
@@ -349,13 +349,13 @@ Finally, replacing $u$ with $1/r$ and re-inserting the constant definitions give
 r = \frac{ml^2/k}{1 + \sqrt{1 + 2Eml^2/k^2} \cos(\theta - \theta_0)}.
 ```
 
-Now compare this to the equivalent orbital trajectory given by equations {eq}`eq:conicsecn` and {eq}`eq:uorbit` (as before we can set $\theta_0 = 0$ to be the angle corresponding to the periapsis of the orbit). We observe that the eccentricity is given by:
+Now compare this to the equivalent orbital trajectory given by equations Equation {eq}`eq:conicsecn` and Equation {eq}`eq:uorbit` (as before we can set $\theta_0 = 0$ to be the angle corresponding to the periapsis of the orbit). We observe that the eccentricity is given by:
 
 ```{math}
 \epsilon = \sqrt{1 + \frac{2Eml^2}{k^2}}.
 ```
 
-We also note, from the numerator of {eq}`eq:rvsthetaenergy`, that we can identify:
+We also note, from the numerator of Equation {eq}`eq:rvsthetaenergy`, that we can identify:
 
 ```{math}
 a(1 - \epsilon^2) = \frac{ml^2}{k}, \\
@@ -381,7 +381,7 @@ Hence for bound orbits about the Sun, $v^2$ cannot equal or exceed the value $2 
 
 ## The Limits of Radial Motion
 
-Since the angular momentum of a particle moving under the influence of a central field of force is a constant of the motion, we can rewrite {eq}`eq:energygen` as follows (using $\dot{\theta} = l/r^2$):
+Since the angular momentum of a particle moving under the influence of a central field of force is a constant of the motion, we can rewrite Equation {eq}`eq:energygen` as follows (using $\dot{\theta} = l/r^2$):
 
 ```{math}
 :label: eq:energygen2

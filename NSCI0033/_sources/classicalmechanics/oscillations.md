@@ -33,7 +33,7 @@ One possible solution of this equation is:
 x = A\,\sin(\omega_0\,t + \phi_0),
 ```
 where $A$ and $\phi_0$ are constants, and the constant $\omega_0$ is known as the <mark>angular frequency</mark>.
-In order to satisfy {eq}`eq:shm`, we require <mark>$\omega_0=\sqrt{k/m}$</mark>. Sometimes we use the term "frequency" to refer to the reciprocal of the oscillation period, $f_0=1/T_0$ (we can think of $f_0$ as representing the number of cycles of oscillation per unit time).
+In order to satisfy Equation {eq}`eq:shm`, we require <mark>$\omega_0=\sqrt{k/m}$</mark>. Sometimes we use the term "frequency" to refer to the reciprocal of the oscillation period, $f_0=1/T_0$ (we can think of $f_0$ as representing the number of cycles of oscillation per unit time).
 
 The displacement of the mass at time zero is $x_0 = A\,\sin\phi_0$. The motion repeats itself after the argument of the sine function increases by $2\pi$; that is, the period of the motion $T_0$ satisfies $\omega_0\,(t+T_0) = \omega_0\,t + 2\pi$. Hence $T_0 = 2\pi/\omega_0$ and so the period of the motion depends on the constant $k$, which describes the "stiffness" of the spring, and the mass $m$. The amplitude of the motion $A$ describes the fact that the motion is <mark>bounded</mark>, i.e., $x$ varies between values of $-A$ and $A$.  {numref}`fig:xvsomtplot` illustrates the behaviour of $x$ as a function of $\omega_0\,t$, emphasising the periodic property of the motion.
 
@@ -53,7 +53,7 @@ x_0 = A\,\sin\phi_0, \quad v_0 = \dot{x}(0) = \omega_0\,A\,\cos\phi_0,
 ```
 from which we obtain $\tan\phi_0 = \omega_0 x_0 / v_0$. Note that if the mass is released from rest at time zero ($v_0 = 0$) from some non-zero positive displacement $x_0$, then $\phi_0 = \pi/2$ and so $x_0$ will be the maximum positive displacement, which will re-occur during the motion with the period $T_0$.
 
-Note that the equations in {eq}`eq:shmconstr` can also be used to show that the amplitude of the motion must satisfy $A^2 = x_0^2 + v_0^2/\omega_0^2$.
+Note that the equations in Equation {eq}`eq:shmconstr` can also be used to show that the amplitude of the motion must satisfy $A^2 = x_0^2 + v_0^2/\omega_0^2$.
 
 ### Simple Harmonic Motion: Rotating Vector Representation
 
@@ -139,9 +139,9 @@ The different choice of sign indicates that the mass will have the same magnitud
 ```
 Here, $C$ is a constant of integration and $A = \sqrt{2E/k}$.
 
-We also note from equation \ref{eq:shmE} that, at times when $\dot{x}=0$ and the mass is changing direction, it must be at the extreme points of its displacement. We see from this equation that $x=\pm\sqrt{2E/k}$ when $\dot{x}=0$, and thus $A$ can be identified as the <mark>amplitude</mark> of the motion.
+We also note from equation \refEquation {eq:shmE} that, at times when $\dot{x}=0$ and the mass is changing direction, it must be at the extreme points of its displacement. We see from this equation that $x=\pm\sqrt{2E/k}$ when $\dot{x}=0$, and thus $A$ can be identified as the <mark>amplitude</mark> of the motion.
 
-{eq}`eq:shmE` also shows us that the maximum speed of the mass occurs when $x=0$ and is given by $|\dot{x}|_{max} = \sqrt{2E/m} =\sqrt{k/m}\,A$. The total energy is conserved during the motion, but is continually converted between kinetic and potential energy. All of the energy is kinetic when $x=0,\dot{x} = \pm\sqrt{k/m}\,A$ and all potential when $x=\pm A, \dot{x}=0$.
+Equation {eq}`eq:shmE` also shows us that the maximum speed of the mass occurs when $x=0$ and is given by $|\dot{x}|_{max} = \sqrt{2E/m} =\sqrt{k/m}\,A$. The total energy is conserved during the motion, but is continually converted between kinetic and potential energy. All of the energy is kinetic when $x=0,\dot{x} = \pm\sqrt{k/m}\,A$ and all potential when $x=\pm A, \dot{x}=0$.
 
 We can apply these same energy-related concepts to the case of the simple pendulum from the section [before](#sec:pendulum). In this case, the potential energy of the pendulum bob can be written as $V = mgh$, where $h$ is its vertical displacement with respect to some reference level of zero potential, which we can conveniently choose to be the equilibrium point corresponding to $s = \theta = 0$.
 
@@ -419,7 +419,7 @@ The homogeneous solution decays as $ e^{-\gamma t} $. Physically, this means tha
 This steady-state behavior has two important aspects: (1) the response of the oscillating mass lags the driving force by phase $ \phi_{\mathrm{d}r} $; and (2) the amplitude of the position depends on the driving frequency. This leads to the phenomenon of <mark>resonance</mark>, where the amplitude maximizes when the driving frequency is close to the natural frequency.
 
 #### Amplitude of the Motion
-{eq}`eq:ddhoss` reveals that the real-valued amplitude of the steady-state motion of the driven, damped oscillator is a function of the driving frequency and other parameters of the motion, as given by:
+Equation {eq}`eq:ddhoss` reveals that the real-valued amplitude of the steady-state motion of the driven, damped oscillator is a function of the driving frequency and other parameters of the motion, as given by:
 ```{math}
 :label: eq:ampfn
 A_{\mathrm{d}r}(\omega) = \frac{F_0/m}{\sqrt{(\omega_0^2 - \omega^2)^2 + 4\gamma^2 \omega^2}}.
@@ -432,7 +432,7 @@ As $ \gamma \rightarrow 0 $, $ \omega_r \rightarrow \omega_0 $.
 
 For strong damping $ \gamma > \sqrt{2}\,\omega_0 $, there is no local maximum, and the amplitude decreases monotonically with the driving frequency $ \omega $.
 
-We can obtain the maximum amplitude of the motion for the case where there is a real value of $\omega_r$ by substituting $\omega = \omega_r$ into {eq}`eq:ampfn`. The result is:
+We can obtain the maximum amplitude of the motion for the case where there is a real value of $\omega_r$ by substituting $\omega = \omega_r$ into Equation {eq}`eq:ampfn`. The result is:
 ```{math}
 A_{max} = \dfrac{F_0/m}{2\gamma \sqrt{\omega_0^2-\gamma^2}}.
 ```
@@ -445,7 +445,7 @@ In practical applications, resonance may be avoided to prevent large oscillation
 
 #### "Sharpness" of the Resonance: Quality Factor
 
-{numref}`fig:ampplot` shows a plot of the function $ A(\omega) $ from {eq}`eq:ampfn`. The “sharpness” of the peak in amplitude, which occurs at frequency $ \omega_{\mathrm{d}r} $, depends on the damping parameter $ \gamma $. We can quantify how “sharp” or broad this local maximum is.
+{numref}`fig:ampplot` shows a plot of the function $ A(\omega) $ from Equation {eq}`eq:ampfn`. The “sharpness” of the peak in amplitude, which occurs at frequency $ \omega_{\mathrm{d}r} $, depends on the damping parameter $ \gamma $. We can quantify how “sharp” or broad this local maximum is.
 
 ```{figure} Figs/ampplot.png
 ---

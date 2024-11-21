@@ -515,7 +515,7 @@ document.write(`
 <div class="math notranslate nohighlight" id="equation-eq-dangmom">
 <span class="eqno">(6.1)<a class="headerlink" href="#equation-eq-dangmom" title="Link to this equation">#</a></span>\[\frac{\mathrm{d}\mathbf{L}}{\mathrm{d}t} = \sum_i \mathbf{r}_i \times \mathbf{F}_i.\]</div>
 <p>Therefore, <mark>in the absence of external forces, the total angular momentum of the system is conserved</mark>, as well as its total linear momentum.</p>
-<p>When the external forces are non-zero, <a class="reference internal" href="#equation-eq-dangmom">(6.1)</a> indicates that the total angular momentum will change with time, and its rate of change is given by the total moment of force, or <mark>torque</mark>, acting on the system.</p>
+<p>When the external forces are non-zero, Equation <a class="reference internal" href="#equation-eq-dangmom">(6.1)</a> indicates that the total angular momentum will change with time, and its rate of change is given by the total moment of force, or <mark>torque</mark>, acting on the system.</p>
 <p>The concept of the centre of mass can help us gain a little more insight into the nature of the individual motions which comprise the total angular momentum. We can rewrite the position of each particle as the sum of the position of the centre of mass plus the position of the particle relative to the centre of mass:</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{r}_i = \mathbf{r}_{cm} + \overline{\mathbf{r}}_i.\]</div>
@@ -620,7 +620,7 @@ document.write(`
 <p>Solving this quadratic equation in <span class="math notranslate nohighlight">\((\dot{x}_1-\dot{x}'_1)\)</span>, we find the velocity after collision. It is appropriate to choose the more physically meaningful solution which corresponds to:</p>
 <div class="math notranslate nohighlight" id="equation-eq-solx1pdot">
 <span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-solx1pdot" title="Link to this equation">#</a></span>\[\dot{x}'_1 = \dfrac{(m_1-\epsilon m_2)\,\dot{x_1} + (m_2 + \epsilon m_2)\,\dot{x_2}}{m_1+m_2}.\]</div>
-<p>This is an appropriate choice because, for the case <span class="math notranslate nohighlight">\(\epsilon=1,m_1=m_2,\dot{x}_2 = -\dot{x}_1\)</span>, it correctly predicts that the bodies will rebound after collision, and change direction (<span class="math notranslate nohighlight">\(\dot{x}'_1 = -\dot{x}_1\)</span>). The solution for <span class="math notranslate nohighlight">\(\dot{x}'_2\)</span> that accompanies <a class="reference internal" href="#equation-eq-solx1pdot">(6.4)</a> is:</p>
+<p>This is an appropriate choice because, for the case <span class="math notranslate nohighlight">\(\epsilon=1,m_1=m_2,\dot{x}_2 = -\dot{x}_1\)</span>, it correctly predicts that the bodies will rebound after collision, and change direction (<span class="math notranslate nohighlight">\(\dot{x}'_1 = -\dot{x}_1\)</span>). The solution for <span class="math notranslate nohighlight">\(\dot{x}'_2\)</span> that accompanies Equation <a class="reference internal" href="#equation-eq-solx1pdot">(6.4)</a> is:</p>
 <div class="math notranslate nohighlight" id="equation-eq-solx2pdot">
 <span class="eqno">(6.5)<a class="headerlink" href="#equation-eq-solx2pdot" title="Link to this equation">#</a></span>\[\dot{x}'_2 = \dfrac{(m_1 + \epsilon m_1)\,\dot{x_1} + (m_2 - \epsilon m_1)\,\dot{x_2}}{m_1+m_2}.\]</div>
 <p>For an elastic collisions with <span class="math notranslate nohighlight">\(\epsilon=0\)</span>, where the bodies stick together after collision, we find that the post-collision velocities agree, <span class="math notranslate nohighlight">\(\dot{x}'_2 = \dot{x}'_1\)</span>, as expected. For the elastic case <span class="math notranslate nohighlight">\(\epsilon=1, m_1=m_2\)</span>, the bodies simply exchange velocities after collision – <span class="math notranslate nohighlight">\(\dot{x}'_1 = \dot{x}_2, \dot{x}'_2 = \dot{x}_1\)</span>.</p>
@@ -938,12 +938,12 @@ For the case of a body which takes the form of a thin wire, we could replace the
 <p>where <span class="math notranslate nohighlight">\(\theta\)</span> is an angular coordinate. The particle is constrained to move in a single plane, as we have explored in the section “Gravity”. The Lagrangian is:</p>
 <div class="math notranslate nohighlight">
 \[L = T - V = \frac{1}{2}\,m\,(\dot{r}^2 + r^2\,\dot{\theta}^2) + \dfrac{GMm}{r}.\]</div>
-<p><a class="reference internal" href="#equation-eq-lagrange">(6.6)</a>, for the radial distance coordinate, reads:</p>
+<p>Equation <a class="reference internal" href="#equation-eq-lagrange">(6.6)</a>, for the radial distance coordinate, reads:</p>
 <div class="math notranslate nohighlight">
 \[    \dfrac{\partial L}{\partial r} = \dfrac{\mathrm{d}}{\mathrm{d}t} \left( \dfrac{\partial L}{\partial \dot{r}}  \right)     \rightarrow 
     m r \,\dot{\theta}^2 -\dfrac{G M m}{r^2} = m \ddot{r} \rightarrow 
     -\dfrac{G M}{r^2} = \ddot{r} - r \,\dot{\theta}^2.\]</div>
-<p><a class="reference internal" href="#equation-eq-lagrange">(6.6)</a>, for the angular coordinate, reads:</p>
+<p>Equation <a class="reference internal" href="#equation-eq-lagrange">(6.6)</a>, for the angular coordinate, reads:</p>
 <div class="math notranslate nohighlight">
 \[    \dfrac{\partial L}{\partial \theta} = \dfrac{\mathrm{d}}{\mathrm{d}t} \left( \dfrac{\partial L}{\partial \dot{\theta}}  \right)     \rightarrow 
     0 = \dfrac{\mathrm{d}}{\mathrm{d}t} \left( m r^2 \dot{\theta} \right).\]</div>

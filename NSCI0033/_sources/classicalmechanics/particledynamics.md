@@ -270,7 +270,7 @@ We now have enough information to evaluate all the terms (scalar and vector deri
 &= \dot{r}\,\mathbf{e_r} + r\,\dot{\theta}\,\mathbf{e_{\theta}} + r\,\sin\theta\,\dot{\phi}\,\mathbf{e_{\phi}}.
 ```
 
-Similar calculations to those which led to equation {eq}`eq:duvecrdt`, for the other unit vectors (proof is left to the reader), give:
+Similar calculations to those which led to Equation {eq}`eq:duvecrdt`, for the other unit vectors (proof is left to the reader), give:
 
 ```{math}
 :label: eq:duvecthetadt
@@ -281,9 +281,8 @@ Similar calculations to those which led to equation {eq}`eq:duvecrdt`, for the o
 \frac{\mathrm{d}\mathbf{e_{\phi}}}{\mathrm{d}t} = -\sin\theta\,\dot{\phi}\,\mathbf{e_{r}} - \cos\theta\,\dot{\phi}\,\mathbf{e_{\theta}}.
 ```
 
-Finally, we can obtain the spherical polar components of acceleration by differentiating
-equation {eq}`eq:dvecrdt`, and using the unit vector results from equations
-{eq}`eq:duvecrdt`, {eq}`eq:duvecthetadt`, {eq}`eq:duvecphidtsp`:
+Finally, we can obtain the spherical polar components of acceleration by differentiating Equation {eq}`eq:dvecrdt`, and using the unit vector results from Equations
+{eq}`eq:duvecrdt`, {eq}`eq:duvecthetadt` and {eq}`eq:duvecphidtsp`:
 
 ```{math}
 :label: eq:accelsph

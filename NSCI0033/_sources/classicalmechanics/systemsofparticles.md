@@ -114,7 +114,7 @@ Now consider a pair of distinct particles with labels $ i $ and $ j $. The sum o
 
 Therefore, <mark>in the absence of external forces, the total angular momentum of the system is conserved</mark>, as well as its total linear momentum.
 
-When the external forces are non-zero, {eq}`eq:dangmom` indicates that the total angular momentum will change with time, and its rate of change is given by the total moment of force, or <mark>torque</mark>, acting on the system.
+When the external forces are non-zero, Equation {eq}`eq:dangmom` indicates that the total angular momentum will change with time, and its rate of change is given by the total moment of force, or <mark>torque</mark>, acting on the system.
 
 The concept of the centre of mass can help us gain a little more insight into the nature of the individual motions which comprise the total angular momentum. We can rewrite the position of each particle as the sum of the position of the centre of mass plus the position of the particle relative to the centre of mass:
 
@@ -293,7 +293,7 @@ Solving this quadratic equation in $(\dot{x}_1-\dot{x}'_1)$, we find the velocit
 \dot{x}'_1 = \dfrac{(m_1-\epsilon m_2)\,\dot{x_1} + (m_2 + \epsilon m_2)\,\dot{x_2}}{m_1+m_2}.
 ```
 
-This is an appropriate choice because, for the case $\epsilon=1,m_1=m_2,\dot{x}_2 = -\dot{x}_1$, it correctly predicts that the bodies will rebound after collision, and change direction ($\dot{x}'_1 = -\dot{x}_1$). The solution for $\dot{x}'_2$ that accompanies {eq}`eq:solx1pdot` is:
+This is an appropriate choice because, for the case $\epsilon=1,m_1=m_2,\dot{x}_2 = -\dot{x}_1$, it correctly predicts that the bodies will rebound after collision, and change direction ($\dot{x}'_1 = -\dot{x}_1$). The solution for $\dot{x}'_2$ that accompanies Equation {eq}`eq:solx1pdot` is:
 
 ```{math}
 :label: eq:solx2pdot
@@ -706,14 +706,14 @@ where $\theta$ is an angular coordinate. The particle is constrained to move in 
 L = T - V = \frac{1}{2}\,m\,(\dot{r}^2 + r^2\,\dot{\theta}^2) + \dfrac{GMm}{r}.
 ```
 
-{eq}`eq:lagrange`, for the radial distance coordinate, reads:
+Equation {eq}`eq:lagrange`, for the radial distance coordinate, reads:
 ```{math}
     \dfrac{\partial L}{\partial r} = \dfrac{\mathrm{d}}{\mathrm{d}t} \left( \dfrac{\partial L}{\partial \dot{r}}  \right)     \rightarrow 
     m r \,\dot{\theta}^2 -\dfrac{G M m}{r^2} = m \ddot{r} \rightarrow 
     -\dfrac{G M}{r^2} = \ddot{r} - r \,\dot{\theta}^2.
 ```
 
-{eq}`eq:lagrange`, for the angular coordinate, reads:
+Equation {eq}`eq:lagrange`, for the angular coordinate, reads:
 ```{math}
     \dfrac{\partial L}{\partial \theta} = \dfrac{\mathrm{d}}{\mathrm{d}t} \left( \dfrac{\partial L}{\partial \dot{\theta}}  \right)     \rightarrow 
     0 = \dfrac{\mathrm{d}}{\mathrm{d}t} \left( m r^2 \dot{\theta} \right).

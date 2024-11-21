@@ -115,7 +115,7 @@ Suppose our particle moves under this force from a position $ \mathbf{r_i} $ at 
 ```
 If we define the <mark>kinetic energy</mark> of our particle as $ T = \frac{1}{2} m \dot{\mathbf{r}} \cdot \dot{\mathbf{r}} $, this integral represents the change in kinetic energy $ T_f - T_i $ between the endpoints.
 
-Now, let's line-integrate the right-hand side of {eq}`eq:maeqf`. We obtain:
+Now, let's line-integrate the right-hand side of Equation {eq}`eq:maeqf`. We obtain:
 ```{math}
 T_f - T_i = \int_{\mathbf{r_i}}^{\mathbf{r_f}} \mathbf{F}(\mathbf{r}) \cdot \mathrm{d}\mathbf{r}.
 ```
@@ -173,11 +173,11 @@ x_f = x_{max} = \frac{v_0^2}{2g} \left( 1 - \frac{v_0^2}{2 g R_E} \right)^{-1}.
 \tag{3}
 ```
 
-If $ x \ll R_E $, {eq}`eq:vfsqrd` approximates to $ v_f^2 \approx v_0^2 - 2 g x_f $, familiar from cases with close-to-constant downward acceleration $ g $.
+If $ x \ll R_E $, Equation {eq}`eq:vfsqrd` approximates to $ v_f^2 \approx v_0^2 - 2 g x_f $, familiar from cases with close-to-constant downward acceleration $ g $.
 
-Similarly, for $v_0^2 \ll 2gR_E$, {eq}`eq:xmax` reduces to $x_{max} \approx v_0^2/(2g)$.
+Similarly, for $v_0^2 \ll 2gR_E$, Equation {eq}`eq:xmax` reduces to $x_{max} \approx v_0^2/(2g)$.
 
-From the exact expression {eq}`eq:xmax`, we see that for $ x_{max} \to \infty $, the <mark>escape velocity</mark> can be found by setting $ v_0^2 = v_{esc}^2 = 2 g R_E $. For $ g = 9.8 \, \mathrm{m \cdot s^{-2}} $ and $ R_E = 6400 \, \mathrm{km} $, we find $ v_{esc} \approx 11 \, \mathrm{km \cdot s^{-1}} $. Similar values apply for other planets with different masses and radii.
+From the exact expression Equation {eq}`eq:xmax`, we see that for $ x_{max} \to \infty $, the <mark>escape velocity</mark> can be found by setting $ v_0^2 = v_{esc}^2 = 2 g R_E $. For $ g = 9.8 \, \mathrm{m \cdot s^{-2}} $ and $ R_E = 6400 \, \mathrm{km} $, we find $ v_{esc} \approx 11 \, \mathrm{km \cdot s^{-1}} $. Similar values apply for other planets with different masses and radii.
 
 ## Fluid Resistance: Terminal Velocity
 
@@ -247,7 +247,7 @@ $\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t}$ above, we could also show that:
 ```{math}
 \frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t} = \mathbf{v'} + \mathbf{\omega} \times \mathbf{r'}.
 ```
-Returning now to {eq}`eq:vdefn`, we can differentiate both sides, making use of the above expressions for both $\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t}$ and $\frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t}$:
+Returning now to Equation {eq}`eq:vdefn`, we can differentiate both sides, making use of the above expressions for both $\frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t}$ and $\frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t}$:
 ```{math}
 \mathbf{a} = \frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t} = \frac{\mathrm{d}\mathbf{v'}}{\mathrm{d}t} + \dot{\mathbf{\omega}} \times \mathbf{r'} + \mathbf{\omega} \times \frac{\mathrm{d}\mathbf{r'}}{\mathrm{d}t},
 ```
@@ -290,7 +290,7 @@ name: fig:plumbbobaxes
 Forces on a plumb bob hanging just above a location of longitude $ \lambda $ on the Earth's surface. The primed axes shown form a rotating reference frame in which the bob appears stationary. From Fowles and Cassiday.
 ```
 
-Let us now think about each of the terms in {eq}`eq:eomrot` and the form they take for our simple example of a hanging bob at rest in this frame of reference. Firstly, the bob is stationary and not accelerating in this frame, hence $ \mathbf{a'} = 0 $. The centrifugal force on the bob, since we have placed it at the origin position $ \mathbf{r'} = 0 $, must also be zero. There is no transverse force as we are assuming the Earth rotates at a steady rate and so $ \dot{\omega} = 0 $. Because the bob is at rest in this frame, $ \mathbf{v'} = 0 $, which means the Coriolis force is zero. Thus, the only surviving term is $ \mathbf{F} $, the sum of the real forces on the bob. There is another term we have to include, which was not derived in the work leading to {eq}`eq:eomrot`. Since our coordinate axes are rotating about a particular direction, _as well as their origin undergoing a translational motion_, we need to add an apparent force of the form $ -m \mathbf{A_0} $, linked to the acceleration associated with the translational part of the motion. Hence, in our reference frame, the equation of motion for the bob is equivalent to
+Let us now think about each of the terms in Equation {eq}`eq:eomrot` and the form they take for our simple example of a hanging bob at rest in this frame of reference. Firstly, the bob is stationary and not accelerating in this frame, hence $ \mathbf{a'} = 0 $. The centrifugal force on the bob, since we have placed it at the origin position $ \mathbf{r'} = 0 $, must also be zero. There is no transverse force as we are assuming the Earth rotates at a steady rate and so $ \dot{\omega} = 0 $. Because the bob is at rest in this frame, $ \mathbf{v'} = 0 $, which means the Coriolis force is zero. Thus, the only surviving term is $ \mathbf{F} $, the sum of the real forces on the bob. There is another term we have to include, which was not derived in the work leading to Equation {eq}`eq:eomrot`. Since our coordinate axes are rotating about a particular direction, _as well as their origin undergoing a translational motion_, we need to add an apparent force of the form $ -m \mathbf{A_0} $, linked to the acceleration associated with the translational part of the motion. Hence, in our reference frame, the equation of motion for the bob is equivalent to
 
 ```{math}
 \mathbf{F} - m \mathbf{A_0} = 0.
@@ -369,7 +369,7 @@ $(\dot{x'}_0,\dot{y'}_0,\dot{z'}_0)$ at time zero, we can integrate the equation
     \dot{z'}(t) &= \dot{z'}_0 - gt + 2\omega\,{x'(t)}\,\cos\lambda.
 ```
 We can now substitute the above forms for $\dot{y'}$ and $\dot{z'}$ into the original
-equation of motion along the $x'$ direction (first of {eq}`eq:accelwcoriol`).
+equation of motion along the $x'$ direction (first of Equation {eq}`eq:accelwcoriol`).
 We obtain:
 ```{math}
     \ddot{x'} = 2\omega g t \, \cos\lambda - 2\omega \,(\dot{z'}_0\,\cos\lambda
@@ -387,7 +387,7 @@ Now the right-hand side of the equation above is quadratic in time, and comparat
               - \omega t^2 \,(\dot{z'}_0\,\cos\lambda
                 - \dot{y'}_0\,\sin\lambda).
 ```
-If we substitute the preceding expression for $x'$ into the final two equations of {eq}`eq:velwcoriol`, and then integrate those, we obtain these equations for the evolution of $y'$ and $z'$:
+If we substitute the preceding expression for $x'$ into the final two equations of Equation {eq}`eq:velwcoriol`, and then integrate those, we obtain these equations for the evolution of $y'$ and $z'$:
 ```{math}
     {y'}(t) &= \dot{y'}_0 t - \omega \dot{x'}_0 t^2 \, \sin\lambda,  \\
     {z'}(t) &= \dfrac{-1}{2} g t^2 + \dot{z'}_0 t + \omega\,\dot{x'}_0 t^2 \cos\lambda.
