@@ -375,15 +375,20 @@ Factor the numerator and denominator:
 
 5. Perform polynomial long division: $ \frac{3x^2 - 5x + 2}{x - 2} $:
 
-1. Divide the leading term $ 3x^2 $ by $ x $: $ 3x $.
-2. Multiply $ 3x $ by $ x - 2 $: $ 3x^2 - 6x $.
-3. Subtract $ (3x^2 - 6x) $ from $ 3x^2 - 5x + 2 $: $ x + 2 $.
-4. Divide $ x $ by $ x $: $ 1 $.
-5. Multiply $ 1 $ by $ x - 2 $: $ x - 2 $.
-6. Subtract $ (x - 2) $ from $ x + 2 $: $ 4 $.
+a. Divide the leading term $ 3x^2 $ by $ x $: $ 3x $.
+
+b. Multiply $ 3x $ by $ x - 2 $: $ 3x^2 - 6x $.
+
+c. Subtract $ (3x^2 - 6x) $ from $ 3x^2 - 5x + 2 $: $ x + 2 $.
+
+d. Divide $ x $ by $ x $: $ 1 $.
+
+e. Multiply $ 1 $ by $ x - 2 $: $ x - 2 $.
+
+f. Subtract $ (x - 2) $ from $ x + 2 $: $ 4 $.
 
 Thus, the quotient is $ 3x + 1 $ and the remainder is $ 4 $, so:
 ```{math}
-\frac{3x^2 - 5x + 2}{x - 2} = 3x + 1 + \frac{4}{x - 2}.
-\}
+\frac{3x^2 - 5x + 2}{x - 2} = 3x + 1 + \frac{4}{x - 2}
+```
 
