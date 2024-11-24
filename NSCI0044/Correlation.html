@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; NSCI0044 Notes</title>
+    <title>Correlation in Statistics &#8212; NSCI0044 Notes</title>
   
   
   
@@ -57,9 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Practice copy';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Correlation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Practice Problems" href="Practice.html" />
+    <link rel="prev" title="Statistics and Probability" href="Stats.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,7 +181,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Algebra.html">Algebra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Trigonometry.html">Trigonometry</a></li>
@@ -190,6 +192,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Integration.html">Areas and Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ODEs.html">Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Stats.html">Statistics and Probability</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Correlation in Statistics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practice.html">Practice Problems</a></li>
 
 </ul>
@@ -263,7 +266,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPractice copy.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCorrelation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +296,7 @@
       
       
       
-      <li><a href="_sources/Practice copy.md" target="_blank"
+      <li><a href="_sources/Correlation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -377,7 +380,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Correlation in Statistics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -386,9 +389,19 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-correlation">Types of Correlation:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#product-moment-correlation-coefficient-r">Product Moment Correlation Coefficient (<span class="math notranslate nohighlight">\(r\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spearmans-rank-correlation-coefficient-rho">Spearman’s Rank Correlation Coefficient (<span class="math notranslate nohighlight">\(\rho\)</span>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties-of-rank-correlation">Key Properties of Rank Correlation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-rank-correlation">Applications of Rank Correlation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations:</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example-for-spearmans-rho">Practical Example for Spearman’s <span class="math notranslate nohighlight">\(\rho\)</span>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-representation">Visual Representation:</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -399,7 +412,103 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  
+  <section id="correlation-in-statistics">
+<h1>Correlation in Statistics<a class="headerlink" href="#correlation-in-statistics" title="Link to this heading">#</a></h1>
+<section id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
+<p>Correlation measures the strength and direction of a relationship between two variables. It quantifies how one variable changes as another changes. In particular, <strong>rank correlation</strong> examines the relationship based on the relative ordering (ranks) of the data values rather than their actual magnitudes.</p>
+</section>
+<section id="types-of-correlation">
+<h2>Types of Correlation:<a class="headerlink" href="#types-of-correlation" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><em>Positive Correlation</em>: As one variable increases, the other variable also increases (e.g., height and weight).</p></li>
+<li><p><em>Negative Correlation</em>: As one variable increases, the other variable decreases (e.g., speed and travel time for the same distance).</p></li>
+<li><p><strong>Zero Correlation</strong>: No relationship exists between the variables.</p></li>
+</ul>
+</section>
+<section id="product-moment-correlation-coefficient-r">
+<h2>Product Moment Correlation Coefficient (<span class="math notranslate nohighlight">\(r\)</span>)<a class="headerlink" href="#product-moment-correlation-coefficient-r" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Ranges from <span class="math notranslate nohighlight">\(-1\)</span> to <span class="math notranslate nohighlight">\(1\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(r = 1\)</span>: Perfect positive correlation.</p></li>
+<li><p><span class="math notranslate nohighlight">\(r = -1\)</span>: Perfect negative correlation.</p></li>
+<li><p><span class="math notranslate nohighlight">\(r = 0\)</span>: No linear correlation.</p></li>
+</ul>
+</li>
+<li><p><em>Product Moment Correlation Coefficient</em> (Linear Relationships):</p>
+<div class="math notranslate nohighlight">
+\[r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}\]</div>
+</li>
+<li><p><em>Rank Correlation Coefficients</em> (Ordinal Relationships): Used for non-linear or monotonic relationships.</p></li>
+</ul>
+</section>
+<section id="spearmans-rank-correlation-coefficient-rho">
+<h2>Spearman’s Rank Correlation Coefficient (<span class="math notranslate nohighlight">\(\rho\)</span>)<a class="headerlink" href="#spearmans-rank-correlation-coefficient-rho" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Measures the strength and direction of a monotonic relationship between two variables using ranks.</p></li>
+<li><p>Formula:</p>
+<div class="math notranslate nohighlight">
+\[\rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(d_i\)</span> is the difference between the ranks of corresponding values, and <span class="math notranslate nohighlight">\(n\)</span> is the number of observations.</p>
+</li>
+<li><p>Ideal for datasets with outliers or when the relationship is not strictly linear.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> ranges from <span class="math notranslate nohighlight">\(-1\)</span> (perfect negative correlation) to <span class="math notranslate nohighlight">\(1\)</span> (perfect positive correlation).</p></li>
+</ul>
+<section id="key-properties-of-rank-correlation">
+<h3>Key Properties of Rank Correlation:<a class="headerlink" href="#key-properties-of-rank-correlation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Non-parametric: Does not assume normality or linearity in the data.</p></li>
+<li><p>Handles outliers and tied values more robustly than the product moment correlation.</p></li>
+<li><p>Measures monotonic relationships rather than strictly linear relationships.</p></li>
+</ul>
+</section>
+<section id="applications-of-rank-correlation">
+<h3>Applications of Rank Correlation:<a class="headerlink" href="#applications-of-rank-correlation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Examining relationships in ordinal data (e.g., satisfaction surveys, rankings in competitions).</p></li>
+<li><p>Situations with non-linear but monotonic relationships.</p></li>
+<li><p>Robust to outliers and skewed distributions.</p></li>
+</ul>
+</section>
+<section id="limitations">
+<h3>Limitations:<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Rank correlation ignores the magnitude of differences between values, focusing only on their relative order.</p></li>
+<li><p>Ties in data may require adjustments, especially in Spearman’s <span class="math notranslate nohighlight">\(\rho\)</span>.</p></li>
+</ul>
+</section>
+</section>
+<section id="practical-example-for-spearmans-rho">
+<h2>Practical Example for Spearman’s <span class="math notranslate nohighlight">\(\rho\)</span>:<a class="headerlink" href="#practical-example-for-spearmans-rho" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Data:</p>
+<ul class="simple">
+<li><p>Variable <span class="math notranslate nohighlight">\(X\)</span>: 3, 5, 8, 9, 10</p></li>
+<li><p>Variable <span class="math notranslate nohighlight">\(Y\)</span>: 2, 6, 8, 9, 11</p></li>
+</ul>
+</li>
+<li><p>Rank the data for both <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>, calculate <span class="math notranslate nohighlight">\(d_i^2\)</span>, and substitute into the formula:</p>
+<div class="math notranslate nohighlight">
+\[\rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}\]</div>
+</li>
+<li><p>Interpretation: A <span class="math notranslate nohighlight">\(\rho\)</span> close to 1 or <span class="math notranslate nohighlight">\(-1\)</span> indicates a strong monotonic relationship, while a <span class="math notranslate nohighlight">\(\rho\)</span> near 0 suggests no monotonic trend.</p></li>
+</ul>
+</section>
+<section id="visual-representation">
+<h2>Visual Representation:<a class="headerlink" href="#visual-representation" title="Link to this heading">#</a></h2>
+<p>Below is a plot showing examples of different correlation coefficients:</p>
+<p><img alt="Correlation Examples" src="_images/correlation_examples.png" /></p>
+<ul class="simple">
+<li><p><em>Perfect Positive Correlation (<span class="math notranslate nohighlight">\(r = 1\)</span>)</em>: Points lie exactly on an upward-sloping straight line.</p></li>
+<li><p><em>Strong Positive Correlation (<span class="math notranslate nohighlight">\(r \approx 0.8\)</span>)</em>: Points are close to an upward-sloping line, but with some scatter.</p></li>
+<li><p><em>No Correlation (<span class="math notranslate nohighlight">\(r \approx 0\)</span>)</em>: Points are randomly scattered, showing no discernible trend.</p></li>
+<li><p><em>Strong Negative Correlation (<span class="math notranslate nohighlight">\(r \approx -0.8\)</span>)</em>: Points are close to a downward-sloping line, with some scatter.</p></li>
+<li><p><em>Perfect Negative Correlation (<span class="math notranslate nohighlight">\(r = -1\)</span>)</em>: Points lie exactly on a downward-sloping straight line.</p></li>
+</ul>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -430,6 +539,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Stats.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Statistics and Probability</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Practice.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Practice Problems</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -445,9 +572,19 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-correlation">Types of Correlation:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#product-moment-correlation-coefficient-r">Product Moment Correlation Coefficient (<span class="math notranslate nohighlight">\(r\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spearmans-rank-correlation-coefficient-rho">Spearman’s Rank Correlation Coefficient (<span class="math notranslate nohighlight">\(\rho\)</span>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties-of-rank-correlation">Key Properties of Rank Correlation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-rank-correlation">Applications of Rank Correlation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations:</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example-for-spearmans-rho">Practical Example for Spearman’s <span class="math notranslate nohighlight">\(\rho\)</span>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-representation">Visual Representation:</a></li>
+</ul>
   </nav></div>
 
 </div></div>
