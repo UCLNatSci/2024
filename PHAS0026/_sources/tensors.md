@@ -489,7 +489,7 @@ Contraction of a tensor assumes:
 1. Equating two subscripts
 2. Summing over all possible values of these subscripts.
 
-In the case of the 2nd-order tensor, contraction of $ \mathbf{T}1 $ gives the sum of its diagonal elements:
+In the case of the 2nd-order tensor, contraction of $ \mathbf{T} $ gives the sum of its diagonal elements:
 
 ```{math}
 T_{ii} = \text{Tr}(T)
@@ -1084,9 +1084,16 @@ Stress is defined as the average force per unit area of a surface within a defor
 ```{math}
 \sigma = \frac{F}{S}
 ```
-![Components of the stress tensor](tensors_fig6.png)
 
-Components of the stress tensor
+
+```{figure} tensors_fig6.png
+---
+name: fig:tensors_fig6
+---
+Components of the stress tensor.
+```
+
+
 
 Consider a small volume shown in the above figure. The $i^{th}$ component of the total force acting on a volume $ V $ is given by:
 
