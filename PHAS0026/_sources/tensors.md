@@ -8,10 +8,14 @@ How many independent variables are needed to describe the response of a solid to
 
 In this chapter, we will consider how representation of these properties changes upon transformation from one coordinate system to another. We will consider real variables only and focus on three-dimensional Euclidean space. Some of the definitions will be given for $ N $-dimensional space.
 
-![Properties of Independent Variables](tensors_fig1.png)
-Examples of (a) *scalar* - volume of a cake; (b) *vector* - velocity of a champaign cork; (c) relation between directions of forces and displacements of each point in a solid; (d) metric of Minkowski space.
 
+```{figure} tensors_fig1.png
 ---
+name: fig:tensors_fig1
+---
+Examples of (a) *scalar* - volume of a cake; (b) *vector* - velocity of a champaign cork; (c) relation between directions of forces and displacements of each point in a solid; (d) metric of Minkowski space.
+```
+
 
 ### N-dimensional space
 
@@ -138,9 +142,9 @@ x = x_1 \mathbf{e}_1 + x_2 \mathbf{e}_2 + x_3 \mathbf{e}_3 = x_k \mathbf{e}_k,
 where $ x_1, x_2, x_3 $ are called components of the vector $ x $. Consider a new basis set $ e'_1, e'_2, e'_3 $ related to the old one by:
 
 ```{math}
-e'_1 &= S_{11} \mathbf{e}_1 + S_{21} \mathbf{e}_2 + S_{31} \mathbf{e}_3 = S_{k1} \mathbf{e}_k\\
-e'_2 &= S_{12} \mathbf{e}_1 + S_{22} \mathbf{e}_2 + S_{32} \mathbf{e}_3 = S_{k2} \mathbf{e}_k\\
-e'_3 &= S_{13} \mathbf{e}_1 + S_{23} \mathbf{e}_2 + S_{33} \mathbf{e}_3 = S_{k3} \mathbf{e}_k
+\mathbf{e}'_1 &= S_{11} \mathbf{e}_1 + S_{21} \mathbf{e}_2 + S_{31} \mathbf{e}_3 = S_{k1} \mathbf{e}_k\\
+\mathbf{e}'_2 &= S_{12} \mathbf{e}_1 + S_{22} \mathbf{e}_2 + S_{32} \mathbf{e}_3 = S_{k2} \mathbf{e}_k\\
+\mathbf{e}'_3 &= S_{13} \mathbf{e}_1 + S_{23} \mathbf{e}_2 + S_{33} \mathbf{e}_3 = S_{k3} \mathbf{e}_k
 ```
 or
 ```{math}
@@ -149,7 +153,7 @@ or
 where $ S_{ij} $ are elements of a matrix $ S $. In the new basis set, vector $ \mathbf{x} $ can be written as:
 
 ```{math}
-\mathbf{x} = x'_1 e'_1 + x'_2 e'_2 + x'_3 e'_3 = x'_k e'_k.
+\mathbf{x} = x'_1 \mathbf{e}'_1 + x'_2 \mathbf{e}'_2 + x'_3 \mathbf{e}'_3 = x'_k \mathbf{e}'_k.
 ```
 
 Substituting the expressions for $ e'_1, e'_2, e'_3 $ into this equation gives:
@@ -237,15 +241,15 @@ x_i = \psi_i(x'_1, x'_2, \dots, x'_N) \quad (i = 1, 2, \dots, N).
 Lets investigate how components of a vector are changed by a rotation of the Cartesian coordinate system. For convenience, introduce transformation matrix $ L = S^{-1} $, where matrix $ S $ defines the rotation of the basis set vectors. Then,
 
 ```{math}
-x'^{i} &= L^{i}_{j} x^{j}\\
-x^{i} &= L^{j}_{i} x'^{j}
+x'_{i} &= L_{ij} x_{j}\\
+x_{i} &= L_{ij} x'_{j}
 ```
 
 Orthogonality of $ L $ means that
 
 ```{math}
-L^{ik} L^{jk} &= \delta^{ij} \quad \text{(orthogonality of rows)}\\
-L_{ki} L_{kj} &= \delta^{ij}  \quad \text{(orthogonality of columns)}
+L_{ik} L_{jk} &= \delta_{ij} \quad \text{(orthogonality of rows)}\\
+L_{ki} L_{kj} &= \delta_{ij}  \quad \text{(orthogonality of columns)}
 ```
 
 (In the following we always assume that matrix $ L $ is orthogonal.)
@@ -275,11 +279,13 @@ L =
 \end{pmatrix}
 ```
 
+
+```{figure} tensors_fig2.png
 ---
-
-![Rotation of Cartesian axes by an angle α about the x3 axis.](tensors_fig2.png)
-
+name: fig:tensors_fig2
+---
 Rotation of Cartesian axes by an angle $ \alpha $ about the $ x_3 $ axis. Note that the rotation of the axes changes components of the vector $ x $ but not the vector itself.
+```
 
 *Exercise:* Show that two consecutive rotations of the coordinate system by an angle $ \theta $ about the $ \mathbf{e}_3 $ axis is also a rotation with the value of the rotation angle of $ 2\theta $.
 
@@ -343,7 +349,7 @@ Review:
 3. Basis set $ \mathbf{e}_i $, rotation of the coordinate system: $ e'_j = S_{ij} \mathbf{e}_i $ and the corresponding transformation of coordinates $ x'_i = (S^{-1})_{ij} x_j $.
 4. 1st-order Cartesian tensors $ v = (v_1, v_2, v_3) $: $ v'_i = (S^{-1})_{ij} v_j = L_{ij} v_j $.
 
-*Exercise:* Clearly (by definition), $ v $ is a vector if
+*Exercise:* Clearly (by definition), $ \mathbf{v} $ is a vector if
 
 ```{math}
 v_1 = x_1, \quad v_2 = x_2, \quad v_3 = x_3,
@@ -352,15 +358,19 @@ v_1 = x_1, \quad v_2 = x_2, \quad v_3 = x_3,
 i.e., $ v = (x_1, x_2, x_3) $. Consider other sets of $ v_i $ in 2D space. Which of these functions are scalars, vectors, or neither?
 
 ```{math}
-v(x_1, x_2) &= v_1 = x_1 + x_2 \\
-v(x_1, x_2) &= v_1 = x_1^2 + x_2^2 \\
-v(x_1, x_2) &= (v_1, v_2) = (x_1, x_2) \\
-v(x_1, x_2) &= (v_1, v_2) = (x_2, -x_1) \\
-v(x_1, x_2) &= (v_1, v_2) = (x_2, x_1) 
+\mathbf{v}(x_1, x_2) &= v_1 = x_1 + x_2 \\
+\mathbf{v}(x_1, x_2) &= v_1 = x_1^2 + x_2^2 \\
+\mathbf{v}(x_1, x_2) &= (v_1, v_2) = (x_1, x_2) \\
+\mathbf{v}(x_1, x_2) &= (v_1, v_2) = (x_2, -x_1) \\
+\mathbf{v}(x_1, x_2) &= (v_1, v_2) = (x_2, x_1) 
 ```
 
-![Examples of functions in 2D case](tensors_fig3.png)
-Examples of functions in the 2D case: (a) $v(x_1, x_2) = x_1 \mathbf{e}_1 + x_2 \mathbf{e}_2$; (b) $v(x_1, x_2) = x_2 \mathbf{e}_1 - x_1 \mathbf{e}_2$;(c) $v(x_1, x_2) = x_2 \mathbf{e}_1 + x_1 \mathbf{e}_2$
+```{figure} tensors_fig3.png
+---
+name: fig:tensors_fig3
+---
+Examples of functions in the 2D case: (a) $\mathbf{v}(x_1, x_2) = x_1 \mathbf{e}_1 + x_2 \mathbf{e}_2$; (b) $\mathbf{v}(x_1, x_2) = x_2 \mathbf{e}_1 - x_1 \mathbf{e}_2$;(c) $\mathbf{v}(x_1, x_2) = x_2 \mathbf{e}_1 + x_1 \mathbf{e}_2$.
+```
 
 
 *Exercise*: For the case of a two-dimensional space, show that $ \mathbf{v} = (x_2, -x_1) $ transforms as a vector under rotation of the coordinate system and $ \mathbf{v} = (x_2, x_1) $ does not.
@@ -456,7 +466,7 @@ Thus, components of the outer products of two vectors transform in the same way 
 Since $ \mathbf{a} = a_i \mathbf{e}_i $ and $ \mathbf{b} = b_j \mathbf{e}_j $, the tensor formed by the outer product of $ \mathbf{a} $ and $ \mathbf{b} $ can be written as:
 
 ```{math}
-\mathbf{T} = \mathbf{a} \otimes \mathbf{b} = T' e' \otimes e'
+\mathbf{T} = \mathbf{a} \otimes \mathbf{b} = a_i\,b_j\, \mathbf{e}_i \otimes \mathbf{e}_j = = T_{ij}'  \mathbf{e}_i' \otimes \mathbf{e}_j'
 ```
 
 Note that while components of the tensor $ T $ depend on the coordinate system, it is the *same* tensor in both coordinate systems.
@@ -622,8 +632,13 @@ Where:
 T_{ij} = T_{ji}
 ```
 
-![Stress in a Loaded Deformable Body](tensors_fig4.png)
+```{figure} tensors_fig4.png
+---
+name: fig:tensors_fig4
+---
 Stress in a loaded deformable body.
+```
+
 
 ---
 
@@ -873,9 +888,13 @@ In vector form, this is expressed as
 ```
 
 *Example:* Double cross products are used in solving geometrical problems. It is also used as an order parameter in complex dipolar structures in mag- nets and ferroelectrics 
-![Predicted hysteresis loops in asymmetric ferromagnetic rings](tensors_fig5.png)
 
+```{figure} tensors_fig5.png
+---
+name: fig:tensors_fig5
+---
 Predicted hysteresis loops in asymmetric ferromagnetic ring. [S. Prosandeev and L. Bellaiche, Phys. Rev. B, 77 060101(R) (2008).]
+```
 
 
 *Exercise:* Find an explicit expression for the $ i $-th component of 

@@ -199,7 +199,7 @@ Solve these integrals to find the full solution.
 
 ## General Case: $ n $-th Order ODEs*
 
-* This is section not examinable!
+NB This is subsection non-examinable!
 
 For an $ n $-th order ODE:
 ```{math}

@@ -455,9 +455,12 @@ document.write(`
 <p>Physical properties are described using one or several independent variables. For example, volume <span class="math notranslate nohighlight">\( V \)</span> of a cake (see figure below a) is described using only one variable. Such properties are called <strong>scalars</strong>. Three independent variables are needed to describe the velocity of the champagne cork (see figure below b). Such properties are called <strong>vectors</strong>. We can use <span class="math notranslate nohighlight">\( v \)</span> or <span class="math notranslate nohighlight">\( (v_x, v_y, v_z) \)</span> or <span class="math notranslate nohighlight">\( x_1, x_2, x_3 \)</span> to represent the vector of velocity.</p>
 <p>How many independent variables are needed to describe the response of a solid to external stress? This property should reflect the direction and magnitude of the force applied to each point, and the direction and magnitude of the displacement of each point. Hence, nine independent variables are needed. Thus, in general, physical properties are described using <span class="math notranslate nohighlight">\( N \)</span> independent variables.</p>
 <p>In this chapter, we will consider how representation of these properties changes upon transformation from one coordinate system to another. We will consider real variables only and focus on three-dimensional Euclidean space. Some of the definitions will be given for <span class="math notranslate nohighlight">\( N \)</span>-dimensional space.</p>
-<p><img alt="Properties of Independent Variables" src="_images/tensors_fig1.png" />
-Examples of (a) <em>scalar</em> - volume of a cake; (b) <em>vector</em> - velocity of a champaign cork; (c) relation between directions of forces and displacements of each point in a solid; (d) metric of Minkowski space.</p>
-<hr class="docutils" />
+<figure class="align-default" id="fig-tensors-fig1">
+<img alt="_images/tensors_fig1.png" src="_images/tensors_fig1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Examples of (a) <em>scalar</em> - volume of a cake; (b) <em>vector</em> - velocity of a champaign cork; (c) relation between directions of forces and displacements of each point in a solid; (d) metric of Minkowski space.</span><a class="headerlink" href="#fig-tensors-fig1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <section id="n-dimensional-space">
 <h3>N-dimensional space<a class="headerlink" href="#n-dimensional-space" title="Link to this heading">#</a></h3>
 <p>Consider a set of <span class="math notranslate nohighlight">\( N \)</span> real independent variables <span class="math notranslate nohighlight">\( x_1, x_2, \dots, x_i, \dots, x_N \)</span>. These values will be called coordinates of a point. All the points corresponding to all the possible values of the coordinates form the <strong>N-dimensional space</strong>. This space will be denoted as <span class="math notranslate nohighlight">\( V_N \)</span>.</p>
@@ -545,15 +548,15 @@ a_{ij}\,b_{jk}\,\delta_{kl} &amp;= a_{ki}\,b_{ji} = a_{kj}\,b_{jk}
 \[x = x_1 \mathbf{e}_1 + x_2 \mathbf{e}_2 + x_3 \mathbf{e}_3 = x_k \mathbf{e}_k,\]</div>
 <p>where <span class="math notranslate nohighlight">\( x_1, x_2, x_3 \)</span> are called components of the vector <span class="math notranslate nohighlight">\( x \)</span>. Consider a new basis set <span class="math notranslate nohighlight">\( e'_1, e'_2, e'_3 \)</span> related to the old one by:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}e'_1 &amp;= S_{11} \mathbf{e}_1 + S_{21} \mathbf{e}_2 + S_{31} \mathbf{e}_3 = S_{k1} \mathbf{e}_k\\
-e'_2 &amp;= S_{12} \mathbf{e}_1 + S_{22} \mathbf{e}_2 + S_{32} \mathbf{e}_3 = S_{k2} \mathbf{e}_k\\
-e'_3 &amp;= S_{13} \mathbf{e}_1 + S_{23} \mathbf{e}_2 + S_{33} \mathbf{e}_3 = S_{k3} \mathbf{e}_k\end{split}\]</div>
+\[\begin{split}\mathbf{e}'_1 &amp;= S_{11} \mathbf{e}_1 + S_{21} \mathbf{e}_2 + S_{31} \mathbf{e}_3 = S_{k1} \mathbf{e}_k\\
+\mathbf{e}'_2 &amp;= S_{12} \mathbf{e}_1 + S_{22} \mathbf{e}_2 + S_{32} \mathbf{e}_3 = S_{k2} \mathbf{e}_k\\
+\mathbf{e}'_3 &amp;= S_{13} \mathbf{e}_1 + S_{23} \mathbf{e}_2 + S_{33} \mathbf{e}_3 = S_{k3} \mathbf{e}_k\end{split}\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{e}_j' = S_{jk}\,\mathbf{e}_k\]</div>
 <p>where <span class="math notranslate nohighlight">\( S_{ij} \)</span> are elements of a matrix <span class="math notranslate nohighlight">\( S \)</span>. In the new basis set, vector <span class="math notranslate nohighlight">\( \mathbf{x} \)</span> can be written as:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{x} = x'_1 e'_1 + x'_2 e'_2 + x'_3 e'_3 = x'_k e'_k.\]</div>
+\[\mathbf{x} = x'_1 \mathbf{e}'_1 + x'_2 \mathbf{e}'_2 + x'_3 \mathbf{e}'_3 = x'_k \mathbf{e}'_k.\]</div>
 <p>Substituting the expressions for <span class="math notranslate nohighlight">\( e'_1, e'_2, e'_3 \)</span> into this equation gives:</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{x} = x'_1 (S_{k1} \mathbf{e}_k) + x'_2 (S_{k2} \mathbf{e}_k) + x'_3 (S_{k3} \mathbf{e}_k)
@@ -608,12 +611,12 @@ x_3 &amp;= S_{31} x'_{1} + S_{32} x'_{2} + S_{33} x'_{3} = S_{3k} x'_{k}\end{spl
 <h2>Rotations of Cartesian coordinate systems<a class="headerlink" href="#rotations-of-cartesian-coordinate-systems" title="Link to this heading">#</a></h2>
 <p>Lets investigate how components of a vector are changed by a rotation of the Cartesian coordinate system. For convenience, introduce transformation matrix <span class="math notranslate nohighlight">\( L = S^{-1} \)</span>, where matrix <span class="math notranslate nohighlight">\( S \)</span> defines the rotation of the basis set vectors. Then,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}x'^{i} &amp;= L^{i}_{j} x^{j}\\
-x^{i} &amp;= L^{j}_{i} x'^{j}\end{split}\]</div>
+\[\begin{split}x'_{i} &amp;= L_{ij} x_{j}\\
+x_{i} &amp;= L_{ij} x'_{j}\end{split}\]</div>
 <p>Orthogonality of <span class="math notranslate nohighlight">\( L \)</span> means that</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}L^{ik} L^{jk} &amp;= \delta^{ij} \quad \text{(orthogonality of rows)}\\
-L_{ki} L_{kj} &amp;= \delta^{ij}  \quad \text{(orthogonality of columns)}\end{split}\]</div>
+\[\begin{split}L_{ik} L_{jk} &amp;= \delta_{ij} \quad \text{(orthogonality of rows)}\\
+L_{ki} L_{kj} &amp;= \delta_{ij}  \quad \text{(orthogonality of columns)}\end{split}\]</div>
 <p>(In the following we always assume that matrix <span class="math notranslate nohighlight">\( L \)</span> is orthogonal.)</p>
 <p>Since we defined new basis <span class="math notranslate nohighlight">\( e'_j \)</span> (<span class="math notranslate nohighlight">\( j = 1, 2, 3 \)</span>) as</p>
 <div class="math notranslate nohighlight">
@@ -630,9 +633,12 @@ L_{ki} L_{kj} &amp;= \delta^{ij}  \quad \text{(orthogonality of columns)}\end{sp
 -\sin \theta &amp; \cos \theta &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{pmatrix}\end{split}\]</div>
-<hr class="docutils" />
-<p><img alt="Rotation of Cartesian axes by an angle α about the x3 axis." src="_images/tensors_fig2.png" /></p>
-<p>Rotation of Cartesian axes by an angle <span class="math notranslate nohighlight">\( \alpha \)</span> about the <span class="math notranslate nohighlight">\( x_3 \)</span> axis. Note that the rotation of the axes changes components of the vector <span class="math notranslate nohighlight">\( x \)</span> but not the vector itself.</p>
+<figure class="align-default" id="fig-tensors-fig2">
+<img alt="_images/tensors_fig2.png" src="_images/tensors_fig2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Rotation of Cartesian axes by an angle <span class="math notranslate nohighlight">\( \alpha \)</span> about the <span class="math notranslate nohighlight">\( x_3 \)</span> axis. Note that the rotation of the axes changes components of the vector <span class="math notranslate nohighlight">\( x \)</span> but not the vector itself.</span><a class="headerlink" href="#fig-tensors-fig2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p><em>Exercise:</em> Show that two consecutive rotations of the coordinate system by an angle <span class="math notranslate nohighlight">\( \theta \)</span> about the <span class="math notranslate nohighlight">\( \mathbf{e}_3 \)</span> axis is also a rotation with the value of the rotation angle of <span class="math notranslate nohighlight">\( 2\theta \)</span>.</p>
 <p>In general, the product of two rotations is also a rotation, i.e., if</p>
 <div class="math notranslate nohighlight">
@@ -669,18 +675,22 @@ L_{ki} L_{kj} &amp;= \delta^{ij}  \quad \text{(orthogonality of columns)}\end{sp
 <li><p>Basis set <span class="math notranslate nohighlight">\( \mathbf{e}_i \)</span>, rotation of the coordinate system: <span class="math notranslate nohighlight">\( e'_j = S_{ij} \mathbf{e}_i \)</span> and the corresponding transformation of coordinates <span class="math notranslate nohighlight">\( x'_i = (S^{-1})_{ij} x_j \)</span>.</p></li>
 <li><p>1st-order Cartesian tensors <span class="math notranslate nohighlight">\( v = (v_1, v_2, v_3) \)</span>: <span class="math notranslate nohighlight">\( v'_i = (S^{-1})_{ij} v_j = L_{ij} v_j \)</span>.</p></li>
 </ol>
-<p><em>Exercise:</em> Clearly (by definition), <span class="math notranslate nohighlight">\( v \)</span> is a vector if</p>
+<p><em>Exercise:</em> Clearly (by definition), <span class="math notranslate nohighlight">\( \mathbf{v} \)</span> is a vector if</p>
 <div class="math notranslate nohighlight">
 \[v_1 = x_1, \quad v_2 = x_2, \quad v_3 = x_3,\]</div>
 <p>i.e., <span class="math notranslate nohighlight">\( v = (x_1, x_2, x_3) \)</span>. Consider other sets of <span class="math notranslate nohighlight">\( v_i \)</span> in 2D space. Which of these functions are scalars, vectors, or neither?</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}v(x_1, x_2) &amp;= v_1 = x_1 + x_2 \\
-v(x_1, x_2) &amp;= v_1 = x_1^2 + x_2^2 \\
-v(x_1, x_2) &amp;= (v_1, v_2) = (x_1, x_2) \\
-v(x_1, x_2) &amp;= (v_1, v_2) = (x_2, -x_1) \\
-v(x_1, x_2) &amp;= (v_1, v_2) = (x_2, x_1) \end{split}\]</div>
-<p><img alt="Examples of functions in 2D case" src="_images/tensors_fig3.png" />
-Examples of functions in the 2D case: (a) <span class="math notranslate nohighlight">\(v(x_1, x_2) = x_1 \mathbf{e}_1 + x_2 \mathbf{e}_2\)</span>; (b) <span class="math notranslate nohighlight">\(v(x_1, x_2) = x_2 \mathbf{e}_1 - x_1 \mathbf{e}_2\)</span>;(c) <span class="math notranslate nohighlight">\(v(x_1, x_2) = x_2 \mathbf{e}_1 + x_1 \mathbf{e}_2\)</span></p>
+\[\begin{split}\mathbf{v}(x_1, x_2) &amp;= v_1 = x_1 + x_2 \\
+\mathbf{v}(x_1, x_2) &amp;= v_1 = x_1^2 + x_2^2 \\
+\mathbf{v}(x_1, x_2) &amp;= (v_1, v_2) = (x_1, x_2) \\
+\mathbf{v}(x_1, x_2) &amp;= (v_1, v_2) = (x_2, -x_1) \\
+\mathbf{v}(x_1, x_2) &amp;= (v_1, v_2) = (x_2, x_1) \end{split}\]</div>
+<figure class="align-default" id="fig-tensors-fig3">
+<img alt="_images/tensors_fig3.png" src="_images/tensors_fig3.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Examples of functions in the 2D case: (a) <span class="math notranslate nohighlight">\(\mathbf{v}(x_1, x_2) = x_1 \mathbf{e}_1 + x_2 \mathbf{e}_2\)</span>; (b) <span class="math notranslate nohighlight">\(\mathbf{v}(x_1, x_2) = x_2 \mathbf{e}_1 - x_1 \mathbf{e}_2\)</span>;(c) <span class="math notranslate nohighlight">\(\mathbf{v}(x_1, x_2) = x_2 \mathbf{e}_1 + x_1 \mathbf{e}_2\)</span>.</span><a class="headerlink" href="#fig-tensors-fig3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p><em>Exercise</em>: For the case of a two-dimensional space, show that <span class="math notranslate nohighlight">\( \mathbf{v} = (x_2, -x_1) \)</span> transforms as a vector under rotation of the coordinate system and <span class="math notranslate nohighlight">\( \mathbf{v} = (x_2, x_1) \)</span> does not.</p>
 </section>
 <section id="transformation-of-scalars">
@@ -736,7 +746,7 @@ Examples of functions in the 2D case: (a) <span class="math notranslate nohighli
 <p>Thus, components of the outer products of two vectors transform in the same way as components of a 2nd-order tensor.</p>
 <p>Since <span class="math notranslate nohighlight">\( \mathbf{a} = a_i \mathbf{e}_i \)</span> and <span class="math notranslate nohighlight">\( \mathbf{b} = b_j \mathbf{e}_j \)</span>, the tensor formed by the outer product of <span class="math notranslate nohighlight">\( \mathbf{a} \)</span> and <span class="math notranslate nohighlight">\( \mathbf{b} \)</span> can be written as:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{T} = \mathbf{a} \otimes \mathbf{b} = T' e' \otimes e'\]</div>
+\[\mathbf{T} = \mathbf{a} \otimes \mathbf{b} = a_i\,b_j\, \mathbf{e}_i \otimes \mathbf{e}_j = = T_{ij}'  \mathbf{e}_i' \otimes \mathbf{e}_j'\]</div>
 <p>Note that while components of the tensor <span class="math notranslate nohighlight">\( T \)</span> depend on the coordinate system, it is the <em>same</em> tensor in both coordinate systems.</p>
 <p>The outer product operation can be applied to arbitrary tensors <span class="math notranslate nohighlight">\( \mathbf{A} \)</span> and <span class="math notranslate nohighlight">\( \mathbf{B} \)</span> of orders <span class="math notranslate nohighlight">\( N \)</span> and <span class="math notranslate nohighlight">\( M \)</span>, respectively; the resulting tensor has order <span class="math notranslate nohighlight">\( N + M \)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -850,8 +860,12 @@ C_m &amp;= A_{ijk} B_{kmji}\end{split}\]</div>
 <p>Where:</p>
 <div class="math notranslate nohighlight">
 \[T_{ij} = T_{ji}\]</div>
-<p><img alt="Stress in a Loaded Deformable Body" src="_images/tensors_fig4.png" />
-Stress in a loaded deformable body.</p>
+<figure class="align-default" id="fig-tensors-fig4">
+<img alt="_images/tensors_fig4.png" src="_images/tensors_fig4.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Stress in a loaded deformable body.</span><a class="headerlink" href="#fig-tensors-fig4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <hr class="docutils" />
 <section id="maxwell-stress-tensor">
@@ -1014,9 +1028,13 @@ c \epsilon_{ijk} &amp;= C_{il} C_{jm} C_{kn} \epsilon_{lmn}\end{split}\]</div>
 <p>In vector form, this is expressed as</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{d} = \mathbf{a} \times (\mathbf{b} \times \mathbf{c}) = (\mathbf{a} \cdot \mathbf{c}) \mathbf{b} - (\mathbf{a} \cdot \mathbf{b}) \mathbf{c}.\]</div>
-<p><em>Example:</em> Double cross products are used in solving geometrical problems. It is also used as an order parameter in complex dipolar structures in mag- nets and ferroelectrics
-<img alt="Predicted hysteresis loops in asymmetric ferromagnetic rings" src="_images/tensors_fig5.png" /></p>
-<p>Predicted hysteresis loops in asymmetric ferromagnetic ring. [S. Prosandeev and L. Bellaiche, Phys. Rev. B, 77 060101(R) (2008).]</p>
+<p><em>Example:</em> Double cross products are used in solving geometrical problems. It is also used as an order parameter in complex dipolar structures in mag- nets and ferroelectrics</p>
+<figure class="align-default" id="fig-tensors-fig5">
+<img alt="_images/tensors_fig5.png" src="_images/tensors_fig5.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Predicted hysteresis loops in asymmetric ferromagnetic ring. [S. Prosandeev and L. Bellaiche, Phys. Rev. B, 77 060101(R) (2008).]</span><a class="headerlink" href="#fig-tensors-fig5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p><em>Exercise:</em> Find an explicit expression for the <span class="math notranslate nohighlight">\( i \)</span>-th component of</p>
 <div class="math notranslate nohighlight">
 \[\nabla \times (\mathbf{r} \times \mathbf{a})\]</div>
