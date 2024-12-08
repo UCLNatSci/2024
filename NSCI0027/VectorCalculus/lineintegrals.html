@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>7. Line Integrals &#8212; NSCI0027</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'VectorCalculus/lineintegrals';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8. Surface Integrals" href="surfaceintegrals.html" />
+    <link rel="prev" title="6. Variations of Fields" href="divandcurl.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="NSCI0027 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="NSCI0027 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Linear Algebra and Vector Calculus
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Background Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Background/integration.html">1. Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Background/matrices.html">2. Matrix Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus Methods</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="coordinatesystems.html">3. Coordinate Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubletripleintegrals.html">4. Multidimensional Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calculusonfields.html">5. Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divandcurl.html">6. Variations of Fields</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceintegrals.html">8. Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectorcalctheorems.html">9. Vector Calculus Theorems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Algebra Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/echelon_form.html">10. Linear Systems of Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/vectors.html">11. Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/matrix_equations.html">12. Matrix Equation <span class="math notranslate nohighlight">\(Ax = b\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/linear_independence.html">13. Linear Independence and Bases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/subspaces.html">14. Linear Subspaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/linear_maps.html">15. Linear Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/matrices.html">16. Matrices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/composition.html">17. Composing Linear Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/inverses.html">18. Inverses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/determinants.html">19. Determinants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/diagonalisation.html">20. Matrix Diagonalisation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/VectorCalculus/lineintegrals.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Line Integrals</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterising-and-evaluating-integrals">7.1. Parameterising and evaluating integrals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterising-contours">7.1.1. Parameterising contours</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-line-integrals">7.1.2. Evaluating line integrals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservative-vector-fields">7.2. Conservative vector fields</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="line-integrals">
+<h1><span class="section-number">7. </span>Line Integrals<a class="headerlink" href="#line-integrals" title="Link to this heading">#</a></h1>
+<p>If we apply the total differential expression:</p>
+<div class="notice math notranslate nohighlight">
+\[\nabla f \cdot \mathrm{d}{\bf r} = \mathrm{d}f\]</div>
+<p>and now try to integrate this:</p>
+<div class="math notranslate nohighlight">
+\[\int \,\mathrm{d}f = \int\,\nabla f \cdot \mathrm{d}{\bf r}\]</div>
+<p>we see that this can be thought of doing the scalar product between two vectors <span class="math notranslate nohighlight">\({\bf F}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{d}{\bf r}\)</span>
+before finally integrating:</p>
+<div class="math notranslate nohighlight">
+\[\int {\bf F}\cdot \mathrm{d}{\bf r}\]</div>
+<p>We call integrals of this kind <strong>line integrals</strong> or otherwise called <strong>contour integrals</strong>.</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>We can define:</p>
+<div class="math notranslate nohighlight">
+\[\int_{\mathcal{C}} {\bf F(r)} \cdot \mathrm{d}{\bf r}\]</div>
+<p>which we call a <em>vector line integral</em>.  This is an integral through coordinate space along a contour, here denoted <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>.</p>
+<p>For some vector field:</p>
+<div class="math notranslate nohighlight">
+\[{\bf F(r)} = \hat{\bf x}\,P({\bf r}) +\hat{\bf y}\,Q({\bf r}) +\hat{\bf z}\,R({\bf r})\]</div>
+<p>this simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[\int_{\mathcal{C}} {\bf F(r)} \cdot \mathrm{d}{\bf r} = \int_{\,\mathcal{C}} \left(F\,\mathrm{d}x + G\,\mathrm{d}y + R\,\mathrm{d}z \right)\]</div>
+<p>We notice that that this is a scalar, found from scalar product of <span class="math notranslate nohighlight">\(\bf F\)</span> with the differential line element <span class="math notranslate nohighlight">\(\mathrm{d}{\bf r}\)</span> along the path <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>.</p>
+<p>We can also think about a <em>scalar line integral</em>:</p>
+<div class="math notranslate nohighlight">
+\[\int_{\mathcal{C}} f(r)\, \mathrm{d}s\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathrm{d}s\)</span> is the infinitesimal arc length element, which is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathrm{d} {\bf r} &amp;= \hat{\bf x}\,\mathrm{d}x +\hat{\bf y}\,\mathrm{d}y +\hat{\bf z}\,\mathrm{d}z\\
+\mathrm{d} s &amp;= |\mathrm{d} {\bf r}|= \sqrt{\mathrm{d}x^2 + \mathrm{d}y^2 + \mathrm{d}z^2}\end{split}\]</div>
+<p>If we pick a closed path through the vector field, we call this a <strong>loop integral</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\oint_{\mathcal{C}} {\bf F(r)} \cdot \mathrm{d}{\bf r}\]</div>
+</div>
+<p>What does a line integral actually do? We can think about moving along some line which we denoted <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>, broken up
+into infintesimal sections <span class="math notranslate nohighlight">\(\mathrm{d} r\)</span>, as depicted in <a class="reference internal" href="#lineintegral"><span class="std std-numref">Fig. 7.1</span></a>.</p>
+<figure class="align-default" id="lineintegral">
+<img alt="../_images/lineintegral.png" src="../_images/lineintegral.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 7.1 </span><span class="caption-text">Ilustration of a line integral, with <span class="math notranslate nohighlight">\(\int_{\mathcal{C}} {\bf F}({\bf r})\cdot \mathrm{d}{\bf r}\)</span></span><a class="headerlink" href="#lineintegral" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="parameterising-and-evaluating-integrals">
+<h2><span class="section-number">7.1. </span>Parameterising and evaluating integrals<a class="headerlink" href="#parameterising-and-evaluating-integrals" title="Link to this heading">#</a></h2>
+<p>Whilst our expressions for line integrals are powerful, they also do not really explain how we can go about <em>calculating</em> integrals.<br />
+To see how we can go about this, we need to think about how to parameterise our paths (contours) through coordinate space.  Once
+we have a good way to think about parameterising our contours, we will aim to use a change of variable to evaluate the integrals.</p>
+<section id="parameterising-contours">
+<h3><span class="section-number">7.1.1. </span>Parameterising contours<a class="headerlink" href="#parameterising-contours" title="Link to this heading">#</a></h3>
+<p>Lets think about different contours between the points <span class="math notranslate nohighlight">\(A(-1,\,1)\)</span> and <span class="math notranslate nohighlight">\(B(1,\,1)\)</span>, as depicted in <a class="reference internal" href="#linecontours"><span class="std std-numref">Fig. 7.2</span></a>.</p>
+<figure class="align-default" id="linecontours">
+<img alt="../_images/linecontours.png" src="../_images/linecontours.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 7.2 </span><span class="caption-text">Ilustration of a three contours <span class="math notranslate nohighlight">\(C_1,\, C_2,\, C_3\)</span> between the points <span class="math notranslate nohighlight">\(A(-1,\,1)\)</span> and <span class="math notranslate nohighlight">\(B(1,\,1)\)</span>.</span><a class="headerlink" href="#linecontours" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we travel along contour <span class="math notranslate nohighlight">\(C_1\)</span> which follows <span class="math notranslate nohighlight">\(y = x^2\)</span> for <span class="math notranslate nohighlight">\(-1\leq x \leq 1\)</span>, whilst we can also travel along contour <span class="math notranslate nohighlight">\(C_2\)</span> which takes
+<span class="math notranslate nohighlight">\(y = 1\)</span> for <span class="math notranslate nohighlight">\(-\ leq x \leq 1\)</span> and <span class="math notranslate nohighlight">\(C_3\)</span> which is a contour with theopposite direction.  These sorts of contours are problematic
+to describe using just <span class="math notranslate nohighlight">\(x,\,y\)</span> variables and the orientation of the contours is also not well captured.</p>
+<p>We can use some <em>standard</em> parameterisation schemes to capture all the relevant details here:</p>
+<ul class="simple">
+<li><p>For straight lines over points <span class="math notranslate nohighlight">\((x_0,\, y_0,\, z_0)\)</span> to <span class="math notranslate nohighlight">\((x_1,\, y_1,\, z_1)\)</span>, we can parameterise this contour using:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= x_1 (1-t) + x_1 t\\
+y &amp;= y_1 (1-t) + y_1 t\\
+z &amp;= z_1 (1-t) + z_1 t\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(0 \leq t \leq 1\)</span>.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Worked example</p>
+<p>For the contour <span class="math notranslate nohighlight">\(C_2\)</span> between <span class="math notranslate nohighlight">\(A(-1,\,1)\)</span> and <span class="math notranslate nohighlight">\(B(1,\,1)\)</span>, we can see that with <span class="math notranslate nohighlight">\(0 \leq t \leq 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= 2t-1 \\
+y &amp;= 1\end{split}\]</div>
+<p>and for the contour <span class="math notranslate nohighlight">\(C_3\)</span> between <span class="math notranslate nohighlight">\(B(1,\,1)\)</span> and <span class="math notranslate nohighlight">\(A(-1,\,1)\)</span>, we can see that with <span class="math notranslate nohighlight">\(0 \leq t \leq 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= 1-2t \\
+y &amp;= 1\end{split}\]</div>
+</div>
+<ul class="simple">
+<li><p>For functions <span class="math notranslate nohighlight">\(y = f(x)\)</span> over range <span class="math notranslate nohighlight">\(a \leq x \leq b\)</span>, i.e. over <span class="math notranslate nohighlight">\((a,\, f(a)) \rightarrow b,\, f(b)\)</span>, we can parameterise
+using <span class="math notranslate nohighlight">\(a \leq t \leq b\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}y &amp;= f(t) \\
+x &amp;= t\end{split}\]</div>
+<p>We note that here we can also go in the opposite orientation <span class="math notranslate nohighlight">\((b,\, f(b)) \rightarrow (a,\, f(a))\)</span> by switching <span class="math notranslate nohighlight">\(x = t \rightarrow x = -t\)</span>.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Worked example</p>
+<p>For the contour <span class="math notranslate nohighlight">\(C_1\)</span> between <span class="math notranslate nohighlight">\(A(-1,\,1)\)</span> and <span class="math notranslate nohighlight">\(B(1,\,1)\)</span>, we can see that with <span class="math notranslate nohighlight">\(-1 \leq t \leq 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}y &amp;= t^2 \\
+x &amp;=t\end{split}\]</div>
+<p>and in order to reverse the contour direction we can just switch <span class="math notranslate nohighlight">\(x = t \rightarrow x = -t\)</span>.</p>
+</div>
+<ul class="simple">
+<li><p>For a circular path (or circular arc) between points <span class="math notranslate nohighlight">\((a,\, b)\)</span> and <span class="math notranslate nohighlight">\((c,\, d)\)</span> such that <span class="math notranslate nohighlight">\(a^2 + b^2 = c^2 + d^2 = r^2\)</span>,
+we can parameterise using <span class="math notranslate nohighlight">\( t_i \leq t \leq t_f\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= r\,\cos(t) \\
+y &amp;= r\,\sin(t)\end{split}\]</div>
+<p>For scalar line integrals, the direction we travel along the contour does not change the result:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\mathcal{C}}f\,\mathrm{d}s = \int_{\mathcal{C}} f\,\mathrm{d}s\]</div>
+<p>this is because the length element <span class="math notranslate nohighlight">\(\mathrm{d}s = |\mathrm{d}{\bf r}|\)</span> is taken from the magnitude of a vector, so any
+changes in the orientation are washed out in this.</p>
+<p>For vector line integrals, the direction we travel along the contour <strong>does</strong> change the result:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\mathcal{C}} {\bf F}\cdot \,\mathrm{d}{\bf r} = -\int_{\mathcal{C}} {\bf F}\cdot \,\mathrm{d}{\bf r} \]</div>
+<p>and given that for <span class="math notranslate nohighlight">\(Q = R = 0\)</span>, we can do a line integral in <span class="math notranslate nohighlight">\(x\)</span>, or similarly for <span class="math notranslate nohighlight">\(y\)</span> <span class="math notranslate nohighlight">\(z\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_{-\mathcal{C}} P({\bf r})\,\mathrm{d}x &amp;= -\int_{\mathcal{C}} P({\bf r})\,\mathrm{d}x\\
+\int_{-\mathcal{C}} Q({\bf r})\,\mathrm{d}y &amp;= -\int_{\mathcal{C}} Q({\bf r})\,\mathrm{d}y\\
+\int_{-\mathcal{C}} R({\bf r})\,\mathrm{d}z &amp;= -\int_{\mathcal{C}} R({\bf r})\,\mathrm{d}z\end{split}\]</div>
+</section>
+<section id="evaluating-line-integrals">
+<h3><span class="section-number">7.1.2. </span>Evaluating line integrals<a class="headerlink" href="#evaluating-line-integrals" title="Link to this heading">#</a></h3>
+<p>If we can find one variable <span class="math notranslate nohighlight">\(t\)</span> which will effectively parameterise the path through the (scalar or vector) field, then our
+expression simplify:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_{\mathcal{C}} f({\bf r})\,\mathrm{d}s = \int_{t=a}^{t=b} \left(f({\bf r}(t))\,\frac{\mathrm{d}s}{\mathrm{d}t}\right)\,\mathrm{d}t \\
+\int_{\mathcal{C}} {\bf F}({\bf r})\cdot \mathrm{d}{\bf r} = \int_{t=a}^{t=b} \left({\bf F}({\bf r}(t))\cdot\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} \right)\,\mathrm{d}t\end{split}\]</div>
+<p>where the infinitesimal coordinate vector derivatives are given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} &amp;= \hat{\bf x}\,\frac{\mathrm{d}x}{\mathrm{d}t} + \hat{\bf y}\,\frac{\mathrm{d}y}{\mathrm{d}t} + \hat{\bf z}\,\frac{\mathrm{d}z}{\mathrm{d}t}\\
+\frac{\mathrm{d}s}{\mathrm{d}t} &amp;= \left|\frac{\mathrm{d}{\bf r}}{\mathrm{d}t}  \right| = \sqrt{\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}y}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}z}{\mathrm{d}t}\right)^2}\end{split}\]</div>
+<div class="seealso admonition">
+<p class="admonition-title">Worked examples</p>
+<p>1. Evaluate the scalar line integral <span class="math notranslate nohighlight">\(\int_{\mathcal{C}} (x^2 + y^2)\,\mathrm{d}s\)</span> over the contours:</p>
+<p>a. A straight line linking <span class="math notranslate nohighlight">\((1,\,0) \rightarrow (-1,\,0)\)</span>.</p>
+<p>Here we can use the straight line parametrisation for <span class="math notranslate nohighlight">\(0 \leq t \leq 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= x_0(1-t) + x_1 t = 1-t - t = 1-2t \\
+y &amp;= y_0(1-t) + y_1 t = 0\end{split}\]</div>
+<p>Then we can rewrite the integrand in this parameterisation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x^2 + y^2 &amp;= (1-2t)^2 + 0^2 = 1 - 4t + 4t^2 \\
+\frac{\mathrm{d}x}{\mathrm{d}t} &amp;= -2\\
+\frac{\mathrm{d}y}{\mathrm{d}t} &amp;= 0\\
+\frac{\mathrm{d}s}{\mathrm{d}t} = \sqrt{(-2)^2 + 0^2} = 2\end{split}\]</div>
+<p>Finally lets evaluate the integral:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^1 2(1 - 4t + 4t^2)\,\mathrm{d}t = \left[2t - 4t^2 + \frac{8}{3}t^3\right]_0^1 = \frac{2}{3}\]</div>
+<p>b. A semi-circular arc linking <span class="math notranslate nohighlight">\((1,\,0) \rightarrow (-1,\,0)\)</span> in the top half of the plane.</p>
+<p>Here we can use polar coordinates, with <span class="math notranslate nohighlight">\(r=1\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= \cos(\theta) \\
+y &amp;= \sin(\theta)\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(0 \leq \theta \leq \pi\)</span>.</p>
+<p>Rewriting the integrand in this parameterisation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x^2 + y^2 &amp;= (\cos(\theta))^2 + (\sin(\theta))^2 = 1 \\
+\frac{\mathrm{d}x}{\mathrm{d}t} &amp;= -\sin(\theta)\\
+\frac{\mathrm{d}y}{\mathrm{d}t} &amp;= \cos(\theta)\\
+\frac{\mathrm{d}s}{\mathrm{d}t} &amp;= \sqrt{(-\sin(\theta))^2 + (\cos(\theta))^2} = 1\end{split}\]</div>
+<p>Finally lets evaluate the integral:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^\pi (1)\,(1)\mathrm{d}\theta = \Big[\theta\Big]_0^\pi = \pi\]</div>
+<p>We can picture this system by plotting the surface <span class="math notranslate nohighlight">\(z = x^2 + y^2\)</span>:</p>
+<figure class="align-default" id="parabolasurface">
+<img alt="../_images/parabola.png" src="../_images/parabola.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 7.3 </span><span class="caption-text">Ilustration of a parabolic surface <span class="math notranslate nohighlight">\(z = x^2 + y^2\)</span> with the contours in (a) and (b) shown.</span><a class="headerlink" href="#parabolasurface" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can see that the distance for contour (a) is shorter than for contour (b) and since the scalar function is <span class="math notranslate nohighlight">\(x^2\)</span> along
+both contours, the integral is the weighted sum of <span class="math notranslate nohighlight">\(x^2\)</span> along each of these lengths, hence it makes sense that <span class="math notranslate nohighlight">\(I_a &lt; I_b\)</span>.</p>
+<p>2. Evaluate the vector line integral <span class="math notranslate nohighlight">\(\int_{\mathcal{C}} {\bf F}\cdot \mathrm{d}{\bf r}\)</span> for <span class="math notranslate nohighlight">\({\bf F} = xz\,\hat{\bf x} - yz\,\hat{\bf z}\)</span>
+along the line linking <span class="math notranslate nohighlight">\((-1,\,2,\,0) \rightarrow (3,\,0,\,1)\)</span>.</p>
+<p>Here we need a parameterise the line over <span class="math notranslate nohighlight">\(0 \leq t \leq 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= x_0(1-t) + x_1 t = -1(1-t) + 3(t) = 4t - 1\\
+y &amp;= y_0(1-t) + y_1 t = 2(1-t) + 0(t) = 2-2t\\
+z &amp;= z_0(1-t) + z_1 t = 0(1-t) + 1(t) = t\end{split}\]</div>
+<p>Using this we can rewrite the variables in terms of <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf F} &amp;= t(4t-1)\,\hat{\bf x} - t(2-2t)\,\hat{\bf z}\\
+\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} &amp;= 4\,\hat{\bf x} -2\,\hat{\bf y} + \hat{\bf z}\end{split}\]</div>
+<p>and so we can find the dot product:</p>
+<div class="math notranslate nohighlight">
+\[{\bf F}\cdot \frac{\mathrm{d}{\bf r}}{\mathrm{d}t} = 4(4t^2-t) - 2t(1-t) = 18t^2 - 6t\]</div>
+<p>which we can then just integrate:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^1 (18t^2 - 6t)\,\mathrm{d}t = \Big[6t^3 - 3t^2\Big]_0^1 = 3\]</div>
+</div>
+<div class="seealso dropdown admonition">
+<p class="admonition-title">Further worked examples</p>
+<p>1. Find the line integral of the vector field:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf G(r)} = \begin{pmatrix} xy\\ -y^2 \end{pmatrix}\end{split}\]</div>
+<p>over the following contours:</p>
+<p>a. Straight line path <span class="math notranslate nohighlight">\((0,\,0) \rightarrow (1,\, 2)\)</span></p>
+<p>The path followed can be parameterised over <span class="math notranslate nohighlight">\(0\ leq t \leq 1\)</span> by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= x_0(1-t) + x_1t = 0(1-t) + 1t = t\\
+y &amp;= y_0(1-t) + y_1t = 0(1-t) + 2t = 2t\end{split}\]</div>
+<p>Thus <span class="math notranslate nohighlight">\({\bf G}({\bf r}(t))\)</span> will be:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf G}({\bf r}(t)) = \begin{pmatrix} 2t^2 \\ -4t^2 \end{pmatrix}\end{split}\]</div>
+<p>and <span class="math notranslate nohighlight">\({\bf r'}(t)\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf r}'(t) = \begin{pmatrix} 1 \\ 2 \end{pmatrix}\end{split}\]</div>
+<p>so the line integral is found by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}I &amp;=  \int_{\mathcal{C}} {\bf G}(r) \cdot \mathrm{d}{\bf r} = \int_0^1 {\bf G}({\bf r}(t)) \cdot {\bf r}'(t)\,\mathrm{d}t = 
+\int_0^1 \begin{pmatrix} 2t^2 \\ -4t^2 \end{pmatrix} \cdot \begin{pmatrix} 1 \\ 2 \end{pmatrix} \mathrm{d}t \\
+&amp;=  \int_0^1 \left( 2t^2 - 8t^2 \right)\,\textrm{d}t = -\int_0^1 6t^2 \,\textrm{d}t = \Big[ -\frac{6}{3}t^3\Big ]_0^1 = -2\end{split}\]</div>
+<p>b.  Curved path following <span class="math notranslate nohighlight">\(y = x^2\)</span> for <span class="math notranslate nohighlight">\(0 \leq x \leq 1\)</span></p>
+<p>So the parameterisation for <span class="math notranslate nohighlight">\(0 \leq t \leq 1\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf r}(t) = \begin{pmatrix} t \\ t^2 \end{pmatrix}\end{split}\]</div>
+<p>Thus <span class="math notranslate nohighlight">\({\bf G}({\bf r}(t))\)</span> will be:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf G}({\bf r}(t)) = \begin{pmatrix} t^3 \\ -t^4 \end{pmatrix}\end{split}\]</div>
+<p>and <span class="math notranslate nohighlight">\({\bf r'}(t)\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf r}'(x) = \begin{pmatrix} 1 \\ 2t \end{pmatrix}\end{split}\]</div>
+<p>so the line integral is found by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}I &amp;=  \int_{\mathcal{C}} {\bf G}(r) \cdot \mathrm{d}{\bf r} = \int_0^1 {\bf G}({\bf r}(t)) \cdot {\bf r}'(t)\,\mathrm{d}t = 
+\int_0^1 \begin{pmatrix} t^3 \\ -t^4 \end{pmatrix} \cdot \begin{pmatrix} 1 \\ 2t \end{pmatrix} \mathrm{d}t \\
+&amp;=  \int_0^1 \left( t^3 - 2t^5 \right)\,\textrm{d}t = \Big[\frac{1}{4}t^4 - \frac{1}{3}t^6 \Big ]_0^1 = -\frac{1}{12}\end{split}\]</div>
+<p>c. Curved path following <span class="math notranslate nohighlight">\(y = x^{1/2}\)</span> over <span class="math notranslate nohighlight">\(0 \leq x \leq 1\)</span></p>
+<p>So the parameterisation for <span class="math notranslate nohighlight">\(0 \leq t \leq 1\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf r}(t) = \begin{pmatrix} t \\ t^{1/2} \end{pmatrix}\end{split}\]</div>
+<p>Thus <span class="math notranslate nohighlight">\({\bf G}({\bf r}(t))\)</span> will be:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf G}({\bf r}(t)) = \begin{pmatrix} t^{3/2} \\ -t \end{pmatrix}\end{split}\]</div>
+<p>and <span class="math notranslate nohighlight">\({\bf r'}(x)\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf r}'(t) = \begin{pmatrix} 1 \\ \frac{1}{2} t^{-1/2} \end{pmatrix}\end{split}\]</div>
+<p>so the line integral is found by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}I &amp;=  \int_{\mathcal{C}} {\bf G}(r) \cdot \mathrm{d}{\bf r} = \int_0^1 {\bf G}({\bf r}(t)) \cdot {\bf r}'(t)\,\mathrm{d}t = 
+\int_0^1 \begin{pmatrix} t^{3/2} \\ -t \end{pmatrix} \cdot \begin{pmatrix} 1 \\ \frac{1}{2} t^{-1/2} \end{pmatrix} \mathrm{d}t \\
+&amp;=  \int_0^1 \left( t^{3/2} - \frac{1}{2}t^{1/2} \right)\,\textrm{d}t = \Big[\frac{2}{5}t^{5/2} - \frac{1}{3}t^{3/2} \Big ]_0^1 = \frac{1}{15}\end{split}\]</div>
+</div>
+</section>
+</section>
+<section id="conservative-vector-fields">
+<h2><span class="section-number">7.2. </span>Conservative vector fields<a class="headerlink" href="#conservative-vector-fields" title="Link to this heading">#</a></h2>
+<p>In the case of a conservative vector field <span class="math notranslate nohighlight">\({\bf F} = \nabla f\)</span>, then we find that the line integral is actually <strong>path independent</strong>, something which
+allows us to dramatically simplify calculating it in some cases.  To see this fact, go back to the total derivative:</p>
+<div class="math notranslate nohighlight">
+\[\nabla f \cdot \mathrm{d}{\bf r} = \mathrm{d}f\]</div>
+<p>If this is true, then when we calculate the line integral of a conservative vector field:</p>
+<div class="math notranslate nohighlight">
+\[\int_{\mathcal{C}} \nabla f \cdot \mathrm{d}{\bf r} = \int_{f_{initial}}^{f_{final}} \mathrm{d}f = \Big[ f\Big]_{f_{initial}}^{f_{final}} = f_{final} - f_{initial}\]</div>
+<p>over some points <span class="math notranslate nohighlight">\(f_{initial} \rightarrow f_{final}\)</span> which correspond to the points <span class="math notranslate nohighlight">\(a \leq t \leq b\)</span> in the parameterised version of the line integral.</p>
+<p>Hence this answer <strong>only</strong> depends on the starting/ending values of the path integral, not the path taken.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./VectorCalculus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="divandcurl.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Variations of Fields</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="surfaceintegrals.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Surface Integrals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterising-and-evaluating-integrals">7.1. Parameterising and evaluating integrals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterising-contours">7.1.1. Parameterising contours</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-line-integrals">7.1.2. Evaluating line integrals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservative-vector-fields">7.2. Conservative vector fields</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Natural Sciences
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

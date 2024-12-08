@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5. Vector Fields &#8212; NSCI0027</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'VectorCalculus/calculusonfields';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Variations of Fields" href="divandcurl.html" />
+    <link rel="prev" title="4. Multidimensional Integrals" href="doubletripleintegrals.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="NSCI0027 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="NSCI0027 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Linear Algebra and Vector Calculus
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Background Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Background/integration.html">1. Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Background/matrices.html">2. Matrix Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus Methods</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="coordinatesystems.html">3. Coordinate Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubletripleintegrals.html">4. Multidimensional Integrals</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divandcurl.html">6. Variations of Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineintegrals.html">7. Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceintegrals.html">8. Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectorcalctheorems.html">9. Vector Calculus Theorems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Algebra Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/echelon_form.html">10. Linear Systems of Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/vectors.html">11. Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/matrix_equations.html">12. Matrix Equation <span class="math notranslate nohighlight">\(Ax = b\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/linear_independence.html">13. Linear Independence and Bases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/subspaces.html">14. Linear Subspaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/linear_maps.html">15. Linear Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/matrices.html">16. Matrices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/composition.html">17. Composing Linear Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/inverses.html">18. Inverses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/determinants.html">19. Determinants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearAlgebra/diagonalisation.html">20. Matrix Diagonalisation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/VectorCalculus/calculusonfields.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Vector Fields</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-fields">5.1. Scalar Fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.2. Vector Fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-on-fields">5.3. Calculus on Fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-differential">5.4. Total Differential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-coordinate-systems">5.5. Different coordinate systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cylindrical-polar-coordinates">5.5.1. Cylindrical polar coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-polar-coordinates">5.5.2. Spherical polar coordinates</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="vector-fields">
+<h1><span class="section-number">5. </span>Vector Fields<a class="headerlink" href="#vector-fields" title="Link to this heading">#</a></h1>
+<p>A field in a mathematical sense is some function which can be defined within some domain <span class="math notranslate nohighlight">\(D\)</span>, we will examine fields in two and three spatial dimensions,
+(but this can be extended to more later as required), therefore <span class="math notranslate nohighlight">\(D \subset \mathbb{R}^2\)</span> or <span class="math notranslate nohighlight">\(D \subset \mathbb{R}^3\)</span> respectively.  If <span class="math notranslate nohighlight">\(D\)</span> is not specified, then
+we assume the whole of the space is being used as the domain.</p>
+<p>In a physical sense, a field is some physical quantity which has a value at every point within a space, examples of which include temperature, distances, velocities,
+acceleations, forces, electric and magnetic fields.</p>
+<p>One important distinction to make between fields is whether they are <b>Scalar</b>, <b>Vector</b> or some other (e.g. <b>Tensor</b> although this is beyond
+the scope of this course).</p>
+<section id="scalar-fields">
+<h2><span class="section-number">5.1. </span>Scalar Fields<a class="headerlink" href="#scalar-fields" title="Link to this heading">#</a></h2>
+<p>A scalar field is a physical quantity which has some value (or magnitude) but contains no information about direction, at every point <span class="math notranslate nohighlight">\({\bf r} = (x, \,y, \,z)\)</span>
+within a domain. Physical examples include <em>pressure</em>, <em>density</em> and <em>temperature</em>.  Mathematically we can write this as a function <span class="math notranslate nohighlight">\(\phi = \phi({\bf r})\)</span>.    We can
+picture scalar fields in <a class="reference internal" href="#scalarfield"><span class="std std-numref">Fig. 5.1</span></a>, where the value of the scalar could be plotted as a surface or contour plot.</p>
+<figure class="align-default" id="scalarfield">
+<img alt="../_images/scalarfieldexample.png" src="../_images/scalarfieldexample.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text"><b> Left Pane:</b> An example of a two-dimensional scalar field, <span class="math notranslate nohighlight">\(\phi(x,\, y) = \exp(-(x^2+y^2))\)</span> (plotted in green on the <span class="math notranslate nohighlight">\(z\)</span> axis) defined
+over the domain <span class="math notranslate nohighlight">\(D\,:\,x^2 + y^2 \leq 1\)</span> (shown in red on the <span class="math notranslate nohighlight">\((x,\,y)\)</span> plane),
+<b> Right Pane:</b> Contour lines of the scalar field, showing lines of constant <span class="math notranslate nohighlight">\(\phi\)</span> in blue, within the domain <span class="math notranslate nohighlight">\(D\)</span>.</span><a class="headerlink" href="#scalarfield" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id1">
+<h2><span class="section-number">5.2. </span>Vector Fields<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>A vector field A scalar field is a physical quantity which has both magnitude and direction, at every point <span class="math notranslate nohighlight">\({\bf r} = (x, \,y, \,z)\)</span> within a domain.  Physical
+examples include <em>velocity</em>, <em>force</em>, <em>electric field</em> and <em>magnetic field</em>.  Mathematically we can write this as a function <span class="math notranslate nohighlight">\(\bf A(r)\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf A(r)} = 
+\begin{pmatrix}
+ A_x \,({\bf r})\\
+ A_y \,({\bf r})\\
+ A_z \,({\bf r}) 
+\end{pmatrix}\end{split}\]</div>
+<p>We can picture vector fields in <a class="reference internal" href="#vectorfield"><span class="std std-numref">Fig. 5.2</span></a>, outlining a vector field</p>
+<figure class="align-default" id="vectorfield">
+<img alt="../_images/vectorfieldexample.png" src="../_images/vectorfieldexample.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.2 </span><span class="caption-text">The vector field <span class="math notranslate nohighlight">\(\displaystyle {\bf A(r)} = \frac{1}{10}\begin{pmatrix}
+ x\\
+ y^2
+\end{pmatrix}\)</span> over the domain <span class="math notranslate nohighlight">\(D\,:\,x^2 + y^2 \leq 1\)</span> (shown in red on the <span class="math notranslate nohighlight">\((x,\,y)\)</span> plane)</span><a class="headerlink" href="#vectorfield" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="calculus-on-fields">
+<h2><span class="section-number">5.3. </span>Calculus on Fields<a class="headerlink" href="#calculus-on-fields" title="Link to this heading">#</a></h2>
+<p>Now that we have defined fields, which can vary according to different parameters at every point within a domain, we can begin to apply
+our toolkit of mathematical tools, here calculus.</p>
+<p>We can find the partial derivatives of fields in a similar way to functions,</p>
+<div class="seealso admonition">
+<p class="admonition-title">Worked example</p>
+<p>Find the <span class="math notranslate nohighlight">\(x,\, y\)</span> derivatives for the fields:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\phi = \exp(-(x^2+y^2), \qquad  {\bf A(r)} = \frac{1}{10}\begin{pmatrix}
+ x\\
+ y^2
+\end{pmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\partial_x \phi &amp;=  -2x\,\exp(-(x^2+y^2) \\
+\partial_y \phi &amp;=  -2y\,\exp(-(x^2+y^2) \\
+\partial_x {\bf A(r)} &amp;=  \frac{1}{10}\begin{pmatrix}
+ 1\\
+ 0
+\end{pmatrix} \\
+\partial_y {\bf A(r)} &amp;=  \frac{1}{10}\begin{pmatrix}
+ 0\\
+ 2y
+\end{pmatrix} \end{split}\]</div>
+</div>
+<p>These partial derivatives measure the change of <span class="math notranslate nohighlight">\(\phi\)</span> along the directions of <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span>, but can we calculate the derivative of <span class="math notranslate nohighlight">\(\phi\)</span> along some
+general direction, characterised by a unit vector <span class="math notranslate nohighlight">\(\hat{\bf u}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\hat{\bf u} = \begin{pmatrix}
+ u_x\\
+ u_y\\
+ u_z
+\end{pmatrix} \end{split}\]</div>
+<p>We need a directional derivative, which can tell us about the changes in <span class="math notranslate nohighlight">\(\phi\)</span> along each component of <span class="math notranslate nohighlight">\(\hat{\bf u}\)</span>.  This leads us to the gradient
+operator:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\nabla = \begin{pmatrix}
+ \partial/\partial x \\
+ \partial/\partial y \\
+ \partial/\partial z 
+\end{pmatrix} = \frac{\partial}{\partial x} \, \hat {\bf x} + \frac{\partial }{\partial y} \, \hat {\bf y}+ \frac{\partial}{\partial z} \, \hat {\bf z}\end{split}\]</div>
+<p>which as an operator needs to act on a scalar field:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\nabla \phi = \begin{pmatrix}
+ \partial\phi/\partial x \\
+ \partial\phi/\partial y \\
+ \partial\phi/\partial z 
+\end{pmatrix} = \frac{\partial \phi}{\partial x} \, \hat {\bf x} + \frac{\partial \phi}{\partial y} \, \hat {\bf y}+ \frac{\partial \phi}{\partial z} \, \hat {\bf z}\end{split}\]</div>
+<p>We see that this is now a vector field, which we can resolve in the <span class="math notranslate nohighlight">\(\hat{\bf u}\)</span> direction:</p>
+<div class="math notranslate nohighlight">
+\[\hat{\bf u} \cdot \nabla \phi\]</div>
+<p>which is our <b>directional derivative</b> of <span class="math notranslate nohighlight">\(\phi\)</span> in the <span class="math notranslate nohighlight">\(\hat{\bf u}\)</span> direction, which we often write as <span class="math notranslate nohighlight">\(\nabla_{\hat{\bf u}} \phi\)</span>.</p>
+<p>Looking at this expression further:</p>
+<div class="math notranslate nohighlight">
+\[|\nabla_{\hat{\bf u}} \phi| = \hat{\bf u} \cdot \nabla \phi = |\hat{\bf u}||\nabla \phi|\cos (\theta) = |\nabla \phi|\cos (\theta)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(|\nabla_{\hat{\bf u}} \phi|\)</span> is maximised when <span class="math notranslate nohighlight">\(\theta = 0\)</span> - The gradient <span class="math notranslate nohighlight">\(\nabla \phi\)</span> of a scalar field <span class="math notranslate nohighlight">\(\phi\)</span> always points toward the
+direction of maximum increase of <span class="math notranslate nohighlight">\(\phi\)</span> (i.e. a maxima).</p></li>
+<li><p><span class="math notranslate nohighlight">\(|\nabla_{\hat{\bf u}} \phi|\)</span> is zero when <span class="math notranslate nohighlight">\(\theta = \pi/2\)</span>, i.e. tangential surfaces, which would be given by <span class="math notranslate nohighlight">\(\phi({\bf r}) = \text{constant}\)</span> - this
+is always therefore one dimension lower than the dimension of the problem (therefore in 3D these would be surface areas and in 2D they would be contour lines).</p></li>
+</ul>
+<p>We can always take some surface <span class="math notranslate nohighlight">\(z = z(x,\,y)\)</span> and convert it into a scalar field <span class="math notranslate nohighlight">\(\phi\)</span> with some surface normal <span class="math notranslate nohighlight">\({\bf n} = \nabla \phi\)</span>.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Worked example</p>
+<p>Consider <span class="math notranslate nohighlight">\(\phi = \exp(-(x^2+y^2)\)</span> defined over the domain <span class="math notranslate nohighlight">\(x^2 + y^2 \leq 1\)</span>, find <span class="math notranslate nohighlight">\(\nabla \phi\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\nabla \phi = \begin{pmatrix}
+ -2x\,\exp(-(x^2+y^2) \\
+ -2y\,\exp(-(x^2+y^2)
+\end{pmatrix} = -2\,\exp(-(x^2+y^2) \begin{pmatrix}
+ x \\
+ y
+\end{pmatrix}\end{split}\]</div>
+<p>We see that for all <span class="math notranslate nohighlight">\(x,\, y\)</span> within the domain, the vector will be directed inwards, as we see in <a class="reference internal" href="#scalarfieldgradient"><span class="std std-numref">Fig. 5.3</span></a>.</p>
+<figure class="align-default" id="scalarfieldgradient">
+<img alt="../_images/scalarfieldgradient.png" src="../_images/scalarfieldgradient.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.3 </span><span class="caption-text">Gradients <span class="math notranslate nohighlight">\(\nabla \phi\)</span> for a scalar field <span class="math notranslate nohighlight">\(\phi({\bf r}) = \exp(-(x^2+y^2))\)</span> at a few different points along the contour plot (denoted
+<span class="math notranslate nohighlight">\(\bf r=r_0\)</span>).  The gradients are perpendicular to the contour lines and point toward the direction of the largest increase of <span class="math notranslate nohighlight">\(\phi\)</span>,
+which from the surface plot in <a class="reference internal" href="#scalarfield"><span class="std std-numref">Fig. 5.1</span></a> we know is a maxima.</span><a class="headerlink" href="#scalarfieldgradient" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The gradient of <span class="math notranslate nohighlight">\(\phi(x,\,y,\,z)\)</span> will therefore be perpendicular to the surface <span class="math notranslate nohighlight">\(\phi=c\)</span>, and we can use this to find the tangent plane
+to the surface at a given point.</p>
+</div>
+<div class="seealso dropdown admonition">
+<p class="admonition-title">Further worked examples</p>
+<p>1. Find the gradient of the function <span class="math notranslate nohighlight">\(f(x,\,y,\,z) = xyz\)</span> at the point <span class="math notranslate nohighlight">\((−2,\,3,\,4)\)</span> and find the directional
+derivative of this function in the direction <span class="math notranslate nohighlight">\({\bf v} = (3, \,-4, \,12)\)</span>.</p>
+<p>We can find <span class="math notranslate nohighlight">\(\nabla f\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\nabla f = \begin{pmatrix}yz \\ xz \\ xy\end{pmatrix} \Rightarrow \nabla f\Bigg|_{(−2,\,3,\,4)} = \begin{pmatrix} 12 \\ -8 \\ -6\end{pmatrix}\end{split}\]</div>
+<p>and therefore the directional derivative is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{1}{|{\bf v}|}{\bf v} \cdot \nabla f\Bigg|_{(−2,\,3,\,4)} \Rightarrow 
+\frac{1}{\sqrt{3^2 + 4^2 + 12^2}} \begin{pmatrix} 3 \\ -4 \\ 12 \end{pmatrix}\cdot \begin{pmatrix} 12 \\ -8 \\ -6\end{pmatrix} = -\frac{4}{13}\end{split}\]</div>
+<p>2. Find the tangent plane for the surface</p>
+<div class="math notranslate nohighlight">
+\[z = x^3−y^3−2xy+2\]</div>
+<p>at <span class="math notranslate nohighlight">\(x=y=1\)</span>.</p>
+<p>This equation means we can write <span class="math notranslate nohighlight">\(\phi = x^3−y^3−2xy+2 - z = 0\)</span> and therefore:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf n} = \nabla \phi = \begin{pmatrix} 3x^2 - 2y \\ -3y^2 - 2x \\ -1 \end{pmatrix}\end{split}\]</div>
+<p>The gradient of <span class="math notranslate nohighlight">\(z = z(x,\,y)\)</span> will be perpendicular to the contours of <span class="math notranslate nohighlight">\(z\)</span>, projected in the <span class="math notranslate nohighlight">\((x,\,y)\)</span> plane,
+as illustrated in <a class="reference internal" href="#quiver"><span class="std std-numref">Fig. 5.4</span></a>.</p>
+<figure class="align-default" id="quiver">
+<img alt="../_images/quiver.png" src="../_images/quiver.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text">A contour plot of the surface <span class="math notranslate nohighlight">\(z = x^3−y^3−2xy+2\)</span>, together with the gradient field given by <span class="math notranslate nohighlight">\(\nabla \phi = (3x^2−2y,\,−3y^2−2x,\,-1)\)</span>.</span><a class="headerlink" href="#quiver" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can see that the gradient field vectors map out the stationary points on the function.</p>
+<p>If we want to find the equation of the resulting tangent surface at a <span class="math notranslate nohighlight">\(x=y=1\)</span> we find <span class="math notranslate nohighlight">\(z = 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[A:(1,\,1,\,0)\]</div>
+<p>then we know that the scalar form of the tangent plane, which must satisfy <span class="math notranslate nohighlight">\({\bf n}\cdot ({\bf r}- {\bf r_0}) = 0\)</span> means:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf n}|_A &amp;=  \begin{pmatrix} 3-2\\-3-2\\-1 \end{pmatrix} = \begin{pmatrix} 1\\-5\\-1 \end{pmatrix} \\
+{\bf n}\cdot ({\bf r}- {\bf r_0}) = 0 &amp;\Rightarrow  \begin{pmatrix} 1\\-5\\-1 \end{pmatrix} \cdot\begin{pmatrix} x-1\\y-1\\z-0 \end{pmatrix} =  0 \\
+&amp;\Rightarrow x - 5y - z  =-4\end{split}\]</div>
+</div>
+</section>
+<section id="total-differential">
+<h2><span class="section-number">5.4. </span>Total Differential<a class="headerlink" href="#total-differential" title="Link to this heading">#</a></h2>
+<p>Recall from our discussions about partial derivatives, we can also define a <em>scalar total differential</em> for a scalar field <span class="math notranslate nohighlight">\(\phi(x,\,y,\,z)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}\phi(x,\,y,\,z) = \frac{\partial \phi}{\partial x} \mathrm{d} x + \frac{\partial \phi}{\partial y} \mathrm{d} y + \frac{\partial \phi}{\partial z} \mathrm{d} z\]</div>
+<p>which measures the infinitesimal change of  <span class="math notranslate nohighlight">\(\phi\)</span> as we change <span class="math notranslate nohighlight">\(x, \,y,\,z\)</span> by infinitesimal amounts <span class="math notranslate nohighlight">\(\mathrm{d}x, \,\mathrm{d}y,\, \mathrm{d}z\)</span>.<br />
+Likewise we can can the vectorial line element:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathrm{d}{\bf r} = \begin{pmatrix} \mathrm{d}x \\\mathrm{d}y\\ \mathrm{d}z\end{pmatrix} = \hat{\bf x}\, \mathrm{d}x  + \hat{\bf y}\, \mathrm{d}y  + \hat{\bf z} \, \mathrm{d}z \end{split}\]</div>
+<p>to write the total differential in a slightly more compact notation:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}\]</div>
+<p>To find the <em>vector total differential</em>, we can just use the multi-variate chain rule expression for a vectorised variable:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}{\bf A}(x,\,y,\,z) = \frac{\partial {\bf A} }{\partial x} \mathrm{d} x + \frac{\partial {\bf A} }{\partial y} \mathrm{d} y + \frac{\partial {\bf A} }{\partial z} \mathrm{d} z\]</div>
+</section>
+<section id="different-coordinate-systems">
+<h2><span class="section-number">5.5. </span>Different coordinate systems<a class="headerlink" href="#different-coordinate-systems" title="Link to this heading">#</a></h2>
+<p>The gradient operator does not need to be specified in Cartesian coordinates, we can also look at it in other
+coordinate systems too.</p>
+<p>Using the result <span class="math notranslate nohighlight">\(\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}\)</span>, we can examine the change in <span class="math notranslate nohighlight">\(\mathrm{d}{\bf r}\)</span> over
+different systems of coordinates, which will tell us how <span class="math notranslate nohighlight">\(\nabla \phi\)</span> will be different.</p>
+<section id="cylindrical-polar-coordinates">
+<h3><span class="section-number">5.5.1. </span>Cylindrical polar coordinates<a class="headerlink" href="#cylindrical-polar-coordinates" title="Link to this heading">#</a></h3>
+<p>Here the vectorial line element has the form:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}{\bf r} = \hat{\bf r}\, \mathrm{d}r + \hat{\bf \theta }\,r\,\mathrm{d}\theta  + \hat{\bf z} \,\mathrm{d}z\]</div>
+<p>and looking at what we expect to get <span class="math notranslate nohighlight">\(\mathrm{d}\phi\)</span> from the multi-variate chain rule:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}f = \frac{\partial f}{\partial r} \mathrm{d} r + \frac{\partial f}{\partial \theta} \mathrm{d} \theta + \frac{\partial f}{\partial z} \mathrm{d} z\]</div>
+<p>then our expression for and so for <span class="math notranslate nohighlight">\(\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}\)</span> to match, we must have a gradient operator to be of the form:</p>
+<div class="math notranslate nohighlight">
+\[\nabla f = \hat{\bf r}\, \frac{\partial f}{\partial r}  + \hat{\bf \theta }\,\frac{1}{r}\,\frac{\partial f}{\partial \theta}  + \hat{\bf z} \,\frac{\partial f}{\partial z} \]</div>
+</section>
+<section id="spherical-polar-coordinates">
+<h3><span class="section-number">5.5.2. </span>Spherical polar coordinates<a class="headerlink" href="#spherical-polar-coordinates" title="Link to this heading">#</a></h3>
+<p>Here the vectorial line element has the form:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}{\bf r} = \hat{\bf r} \,\mathrm{d}r + \hat{\bf \phi}\,r\,\mathrm{d}\phi + \hat{\bf \theta} \,r\,\sin(\phi)\,\mathrm{d}\theta\]</div>
+<p>and looking at what we expect to get <span class="math notranslate nohighlight">\(\mathrm{d}\phi\)</span> from the multi-variate chain rule:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}f = \frac{\partial f}{\partial r} \mathrm{d} r + \frac{\partial f}{\partial \phi} \mathrm{d} \phi + \frac{\partial f}{\partial \theta} \mathrm{d} \theta\]</div>
+<p>then our expression for and so for <span class="math notranslate nohighlight">\(\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}\)</span> to match, we must have a gradient operator to be of the form:</p>
+<div class="math notranslate nohighlight">
+\[\nabla f = \hat{\bf r}\, \frac{\partial f}{\partial r}  + \hat{\bf \phi}\,\frac{1}{r}\,\frac{\partial f}{\partial \phi}  + \hat{\bf \theta} \,\frac{1}{r\sin(\phi)}\,\frac{\partial f}{\partial \theta} \]</div>
+<p>A very good resource for all these expressions can be found at
+<a href="https://en.wikipedia.org/wiki/Del_in_cylindrical_and_spherical_coordinates" target="_blank">Del in cylindrical and spherical coordinates</a></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./VectorCalculus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="doubletripleintegrals.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Multidimensional Integrals</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="divandcurl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Variations of Fields</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-fields">5.1. Scalar Fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.2. Vector Fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus-on-fields">5.3. Calculus on Fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-differential">5.4. Total Differential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-coordinate-systems">5.5. Different coordinate systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cylindrical-polar-coordinates">5.5.1. Cylindrical polar coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-polar-coordinates">5.5.2. Spherical polar coordinates</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Natural Sciences
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

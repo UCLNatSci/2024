@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>17. Composing Linear Functions &#8212; NSCI0027</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'LinearAlgebra/composition';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="18. Inverses" href="inverses.html" />
+    <link rel="prev" title="16. Matrices" href="matrices.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="NSCI0027 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="NSCI0027 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Linear Algebra and Vector Calculus
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Background Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Background/integration.html">1. Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Background/matrices.html">2. Matrix Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/coordinatesystems.html">3. Coordinate Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/doubletripleintegrals.html">4. Multidimensional Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/calculusonfields.html">5. Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/divandcurl.html">6. Variations of Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/lineintegrals.html">7. Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/surfaceintegrals.html">8. Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/vectorcalctheorems.html">9. Vector Calculus Theorems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Algebra Methods</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="echelon_form.html">10. Linear Systems of Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">11. Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_equations.html">12. Matrix Equation <span class="math notranslate nohighlight">\(Ax = b\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_independence.html">13. Linear Independence and Bases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subspaces.html">14. Linear Subspaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_maps.html">15. Linear Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrices.html">16. Matrices</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">17. Composing Linear Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inverses.html">18. Inverses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="determinants.html">19. Determinants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagonalisation.html">20. Matrix Diagonalisation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/LinearAlgebra/composition.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Composing Linear Functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-identity-matrix">17.1. The identity matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composition-of-linear-transformations">17.2. Composition of Linear Transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">17.3. Solutions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="composing-linear-functions">
+<h1><span class="section-number">17. </span>Composing Linear Functions<a class="headerlink" href="#composing-linear-functions" title="Link to this heading">#</a></h1>
+<section id="the-identity-matrix">
+<h2><span class="section-number">17.1. </span>The identity matrix<a class="headerlink" href="#the-identity-matrix" title="Link to this heading">#</a></h2>
+<p>The identity matrix <span class="math notranslate nohighlight">\(I_n\)</span> is the unique <span class="math notranslate nohighlight">\((n \times n)\)</span> matrix which has the property</p>
+<div class="math notranslate nohighlight">
+\[I_n x = x \]</div>
+<p>for any <span class="math notranslate nohighlight">\(x \in \mathbb{R}^n\)</span>.</p>
+<p>The identity matrix transforms the vector <span class="math notranslate nohighlight">\(x\)</span> to itself. It plays the same role in matrix multiplication as the number 1 does for multiplication of real numbers.</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>The <strong>identity matrix</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}I_n = \begin{pmatrix}1 &amp; 0 &amp; \cdots &amp; 0\\0 &amp; 1 &amp; \cdots &amp; 0\\\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\0&amp; 0 &amp; \cdots &amp; 1\end{pmatrix}.\end{split}\]</div>
+<p>We usually drop the subscript <span class="math notranslate nohighlight">\(n\)</span> when working with the identity matrix, because the order can be inferred.</p>
+</div>
+<div class="exercise admonition" id="q_matrix_identity">
+
+<p class="admonition-title"><span class="caption-number">Exercise 17.1 </span></p>
+<section id="exercise-content">
+<ol class="arabic simple">
+<li><p>Calculate <span class="math notranslate nohighlight">\(I\begin{pmatrix}1 &amp; 2\\3 &amp; 4\end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(\begin{pmatrix}1 &amp; 2\\3 &amp; 4\end{pmatrix}I\)</span>.</p></li>
+<li><p>Use the identify matrix to factorise <span class="math notranslate nohighlight">\(AB+\lambda B\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is a scalar and <span class="math notranslate nohighlight">\(A,B\)</span> are square matrices.</p></li>
+</ol>
+</section>
+</div>
+</section>
+<section id="composition-of-linear-transformations">
+<h2><span class="section-number">17.2. </span>Composition of Linear Transformations<a class="headerlink" href="#composition-of-linear-transformations" title="Link to this heading">#</a></h2>
+<p>Given two linear transformations <span class="math notranslate nohighlight">\(T:\mathbb{R}^n\rightarrow\mathbb{R}^m\)</span> and <span class="math notranslate nohighlight">\(U:\mathbb{R}^p\rightarrow\mathbb{R}^n\)</span>, the function <span class="math notranslate nohighlight">\(T \circ U:\mathbb{R}^p\rightarrow\mathbb{R}^m\)</span> is the composition of the two functions. That is, the function corresponding to applying first the function <span class="math notranslate nohighlight">\(U\)</span>, then the function <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[(T\circ U)(x) = T(U(x))\]</div>
+<p>If <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(U\)</span> are linear transformations with matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> respectively, then the product matrix <span class="math notranslate nohighlight">\(AB\)</span> represents the composition function <span class="math notranslate nohighlight">\((T\circ U)\)</span>.</p>
+<p>For example, suppose matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> represent reflection in the <span class="math notranslate nohighlight">\(y\)</span>- and <span class="math notranslate nohighlight">\(x\)</span>-axis respectively:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}-1 &amp;0\\0&amp;1\end{pmatrix}, \quad B = \begin{pmatrix}1 &amp;0\\0&amp;-1\end{pmatrix}.\end{split}\]</div>
+<p>Then the matrix <span class="math notranslate nohighlight">\(AB\)</span> represents a rotation by <span class="math notranslate nohighlight">\(\pi\)</span> around the origin:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}AB = \begin{pmatrix}-1 &amp;0\\0&amp;1\end{pmatrix}\begin{pmatrix}1 &amp;0\\0&amp;-1\end{pmatrix}=\begin{pmatrix}-1 &amp;0\\0&amp;-1\end{pmatrix}.\end{split}\]</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>In <a class="reference internal" href="linear_maps.html#q_transformation_matrix"><span class="std std-numref">Exercise 15.3</span></a> we reflected a set of points in the line through the origin at angle <span class="math notranslate nohighlight">\(\theta\)</span> with the <span class="math notranslate nohighlight">\(x\)</span>-axis. An equivalent way to do this would be to rotate clockwise by angle <span class="math notranslate nohighlight">\(\theta\)</span>, reflect in the line <span class="math notranslate nohighlight">\(y=0\)</span> and then rotate back!</p>
+<figure class="align-default" id="three-step">
+<a class="reference internal image-reference" href="LinearAlgebra/three-step.png"><img alt="LinearAlgebra/three-step.png" src="LinearAlgebra/three-step.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17.1 </span><span class="caption-text">Reflection in a line as a three-step process. Equivalent to a reflection in the dashed line, we can 1) rotate clockwise by angle <span class="math notranslate nohighlight">\(\theta\)</span> 2) reflect in the horizontal axis 3) rotate anti-clockwise by angle <span class="math notranslate nohighlight">\(\theta\)</span>.</span><a class="headerlink" href="#three-step" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The transformation matrix for reflection in the line <span class="math notranslate nohighlight">\(y=0\)</span> is just <span class="math notranslate nohighlight">\(\left(\begin{array}{cc}1 &amp; 0 \\0 &amp; -1 \\\end{array}\right)\)</span>, since <span class="math notranslate nohighlight">\(x\mapsto x \)</span>, <span class="math notranslate nohighlight">\(y\mapsto -y\)</span>.</p>
+<p>Therefore, in matrix terms, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+A &amp;=
+\begin{pmatrix}\cos\theta&amp;-\sin\theta\\\sin\theta&amp;\cos\theta\end{pmatrix}
+\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}
+\begin{pmatrix}\cos\theta&amp;\sin\theta\\-\sin\theta&amp;\cos\theta\end{pmatrix}\\
+&amp;=
+\begin{pmatrix}\cos\theta&amp;-\sin\theta\\\sin\theta&amp;\cos\theta\end{pmatrix}
+\begin{pmatrix}\cos\theta&amp;\sin\theta\\\sin\theta&amp;-\cos\theta\end{pmatrix}\\
+&amp;=
+\begin{pmatrix}\cos 2\theta&amp;\sin 2\theta\\\sin 2\theta&amp;-\cos 2\theta\end{pmatrix}
+\end{align*}
+\end{split}\]</div>
+<p>which is the result given previously.</p>
+</div>
+<div class="exercise admonition" id="q_transformation_composition">
+
+<p class="admonition-title"><span class="caption-number">Exercise 17.2 </span></p>
+<section id="exercise-content">
+<p>Use a composition of three matrix transformations to calculate the 2-d transformation matrix for a stretch, scale factor <span class="math notranslate nohighlight">\(k\)</span> parallel to the line <span class="math notranslate nohighlight">\(y=\tan(\theta)x\)</span>.</p>
+</section>
+</div>
+</section>
+<section id="solutions">
+<h2><span class="section-number">17.3. </span>Solutions<a class="headerlink" href="#solutions" title="Link to this heading">#</a></h2>
+<div class="solution admonition" id="LinearAlgebra/composition-solution-2">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(I\begin{pmatrix}1 &amp; 2\\3 &amp; 4\end{pmatrix}=\begin{pmatrix}1 &amp; 2\\3 &amp; 4\end{pmatrix}I = \begin{pmatrix}1 &amp; 2\\3 &amp; 4\end{pmatrix}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(AB+\lambda B = (A+\lambda I)B\)</span>.</p></li>
+</ol>
+</section>
+</div>
+<div class="solution admonition" id="LinearAlgebra/composition-solution-3">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<p>We can describe this transformation as a rotation by <span class="math notranslate nohighlight">\(\theta\)</span> followed by a scale 2 stretch parallel to the <span class="math notranslate nohighlight">\(x\)</span>-axis followed by a rotation by <span class="math notranslate nohighlight">\(-\theta\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+A &amp;=\begin{pmatrix}\cos\theta&amp;-\sin\theta\\\sin\theta&amp;\cos\theta\end{pmatrix}\begin{pmatrix}2&amp;0\\0&amp;1\end{pmatrix}\begin{pmatrix}\cos\theta&amp;\sin\theta\\-\sin\theta&amp;\cos\theta\end{pmatrix}\\
+&amp;=\begin{pmatrix}\cos\theta&amp;-\sin\theta\\\sin\theta&amp;\cos\theta\end{pmatrix}\begin{pmatrix}2\cos\theta&amp;2\sin\theta\\-\sin\theta&amp;\cos\theta\end{pmatrix}\\
+&amp;=\begin{pmatrix}k\cos^2\theta+\sin^2\theta &amp; \frac{k-1}{2}\sin 2\theta\\\frac{k-1}{2}\sin 2\theta &amp; k\cos^2\theta+\sin^2\theta\end{pmatrix}
+\end{align*}
+\end{split}\]</div>
+</section>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./LinearAlgebra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="matrices.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Matrices</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="inverses.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>Inverses</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-identity-matrix">17.1. The identity matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composition-of-linear-transformations">17.2. Composition of Linear Transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">17.3. Solutions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Natural Sciences
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

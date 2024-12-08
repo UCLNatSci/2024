@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>11. Vectors &#8212; NSCI0027</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'LinearAlgebra/vectors';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="12. Matrix Equation \(Ax = b\)" href="matrix_equations.html" />
+    <link rel="prev" title="10. Linear Systems of Equations" href="echelon_form.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="NSCI0027 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="NSCI0027 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Linear Algebra and Vector Calculus
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Background Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Background/integration.html">1. Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Background/matrices.html">2. Matrix Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/coordinatesystems.html">3. Coordinate Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/doubletripleintegrals.html">4. Multidimensional Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/calculusonfields.html">5. Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/divandcurl.html">6. Variations of Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/lineintegrals.html">7. Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/surfaceintegrals.html">8. Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VectorCalculus/vectorcalctheorems.html">9. Vector Calculus Theorems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Algebra Methods</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="echelon_form.html">10. Linear Systems of Equations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix_equations.html">12. Matrix Equation <span class="math notranslate nohighlight">\(Ax = b\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_independence.html">13. Linear Independence and Bases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subspaces.html">14. Linear Subspaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_maps.html">15. Linear Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrices.html">16. Matrices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="composition.html">17. Composing Linear Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inverses.html">18. Inverses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="determinants.html">19. Determinants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagonalisation.html">20. Matrix Diagonalisation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/LinearAlgebra/vectors.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Vectors</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors-in-mathbb-r-n">11.1. Vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-addition-and-scalar-multiplication">11.2. Vector Addition and Scalar Multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combinations-of-vectors">11.3. Linear Combinations of Vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-equations">11.4. Vector Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spans">11.5. Spans</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="vectors">
+<h1><span class="section-number">11. </span>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h1>
+<p>In this section we review the definition of a vector, how vectors can be interpreted geometrically, and how we can manipulate them algebraically.</p>
+<section id="vectors-in-mathbb-r-n">
+<h2><span class="section-number">11.1. </span>Vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span><a class="headerlink" href="#vectors-in-mathbb-r-n" title="Link to this heading">#</a></h2>
+<p>A <strong>vector</strong> is simply point in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, usually written as a vertical list of <span class="math notranslate nohighlight">\(n\)</span> elements representing the <span class="math notranslate nohighlight">\(n\)</span> coordinates. For example a vector <span class="math notranslate nohighlight">\(v\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> has two elements:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}v = \begin{pmatrix}1\\3\end{pmatrix}.\end{split}\]</div>
+<p>A vector can be represented visually as an arrow.</p>
+<p><img alt="" src="LinearAlgebra/vector_1_3_arrow.png" /></p>
+<p>The visual representation of vectors as an arrow will be crucial when understanding the linear algebra concepts we study in this course. Even though we are limited to two or three dimensions when visualising vectors, the geometrical intuition extends naturally to higher dimensional vectors.</p>
+</section>
+<section id="vector-addition-and-scalar-multiplication">
+<h2><span class="section-number">11.2. </span>Vector Addition and Scalar Multiplication<a class="headerlink" href="#vector-addition-and-scalar-multiplication" title="Link to this heading">#</a></h2>
+<p>Two vectors can be added together by adding together individual coordinates:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}+\begin{pmatrix}y_1\\y_2\\y_3\end{pmatrix} = \begin{pmatrix}x_1+y_1\\x_2+y_2\\x_3+y_3\end{pmatrix}.\end{split}\]</div>
+<p>A vector can be multiplied by a real number <span class="math notranslate nohighlight">\(c\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}c\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix} = \begin{pmatrix}cx_1\\cx_2\\cx_3\end{pmatrix}.\end{split}\]</div>
+<p>You have also studied how to multiply two vectors (for example using the dot or cross products) but multiplication of two vectors won’t feature in the linear algebra studied in this course.</p>
+<p>Addition of vectors can be interpreted geometrically using the <strong>parallelogram law</strong>. Given two vectors <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(w\)</span>, the sum <span class="math notranslate nohighlight">\(v+w\)</span> is the vector formed by placing the tail of <span class="math notranslate nohighlight">\(w\)</span> at the head of <span class="math notranslate nohighlight">\(v\)</span>. For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}1\\3\end{pmatrix}+\begin{pmatrix}4\\2\end{pmatrix} = \begin{pmatrix}5\\5\end{pmatrix}.\end{split}\]</div>
+<p>Doing this is the reverse order (placing the tail of <span class="math notranslate nohighlight">\(v\)</span> at the head of <span class="math notranslate nohighlight">\(w\)</span>) creates a parallelogram.</p>
+<p><img alt="" src="LinearAlgebra/parallelogram_law.png" /></p>
+<p>A scalar multiple of a vector <span class="math notranslate nohighlight">\(v\)</span> has the same (or opposite) direction, but a different length. For instance, <span class="math notranslate nohighlight">\(2v\)</span> is the vector in the direction of <span class="math notranslate nohighlight">\(v\)</span> but twice as long, and <span class="math notranslate nohighlight">\(−\frac{1}{2}v\)</span> is the vector in the opposite direction of <span class="math notranslate nohighlight">\(v\)</span>, but half as long. Note that the set of all scalar multiples of a (nonzero) vector <span class="math notranslate nohighlight">\(v\)</span> is a line.</p>
+<p><img alt="" src="LinearAlgebra/vector_scalar_multiples.png" /></p>
+</section>
+<section id="linear-combinations-of-vectors">
+<h2><span class="section-number">11.3. </span>Linear Combinations of Vectors<a class="headerlink" href="#linear-combinations-of-vectors" title="Link to this heading">#</a></h2>
+<p>We can add and scale multiple vectors in a single expression.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Definition</div>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(c_1, c_2, \ldots, c_k\)</span> be scalars and let <span class="math notranslate nohighlight">\(v_1, v_2, \ldots, v_k\)</span> be vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>. Then the vector in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span></p>
+<div class="math notranslate nohighlight">
+\[c_1v_1 + c_2v_2 + \cdots + c_kv_k\]</div>
+<p class="sd-card-text">is a <strong>linear combination</strong> of the vectors <span class="math notranslate nohighlight">\(v_1, v_2, \ldots, v_k\)</span>.</p>
+</div>
+</div>
+<p>Geometrically, a linear combination is obtained by stretching / shrinking the vectors <span class="math notranslate nohighlight">\(v_1, v_2, \ldots, v_k\)</span>, then adding them together using the parallelogram law.</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let <span class="math notranslate nohighlight">\(v_1 = \begin{pmatrix}1\\2\end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(v_2 = \begin{pmatrix}1\\0\end{pmatrix}\)</span>. Below are some linear combinations of <span class="math notranslate nohighlight">\(v_1\)</span> and <span class="math notranslate nohighlight">\(v_2\)</span>.</p>
+<p><img alt="" src="LinearAlgebra/linear_combinations.png" /></p>
+<p>The locations of these points are found using the parallelogram law for vector addition. Any vector on the plane is a linear combination of <span class="math notranslate nohighlight">\(v_1\)</span> and <span class="math notranslate nohighlight">\(v_2\)</span>.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>A linear combination of a single vector <span class="math notranslate nohighlight">\(v = \begin{pmatrix}1\\2\end{pmatrix}\)</span> is just a scalar multiple of <span class="math notranslate nohighlight">\(v\)</span>. Some examples include</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}v = \begin{pmatrix}1\\2\end{pmatrix}, \quad\frac{3}{2}v = \begin{pmatrix}3/2\\3\end{pmatrix}, \quad-\frac{1}{2}v = \begin{pmatrix}-1/2\\-1\end{pmatrix}, \quad\cdots.\end{split}\]</div>
+<p><img alt="" src="LinearAlgebra/linear_combination_single_vector.png" /></p>
+<p>The set of all linear combinations is the <em>line through v</em>.</p>
+</div>
+</section>
+<section id="vector-equations">
+<h2><span class="section-number">11.4. </span>Vector Equations<a class="headerlink" href="#vector-equations" title="Link to this heading">#</a></h2>
+<p>Given <span class="math notranslate nohighlight">\(k\)</span> vectors <span class="math notranslate nohighlight">\(v_1, \ldots, v_k\)</span> and another vector <span class="math notranslate nohighlight">\(b\)</span> we can ask if <span class="math notranslate nohighlight">\(b\)</span> is a linear combination of <span class="math notranslate nohighlight">\(v_1, \ldots, v_k\)</span>. If so then we can find coefficients <span class="math notranslate nohighlight">\(c_1, \ldots, c_k\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[c_1v_1 + \cdots + c_kv_k = b.\]</div>
+<p>For example, suppose we have the vectors <span class="math notranslate nohighlight">\(v_1 = \begin{pmatrix}1\\2\\6\end{pmatrix}, v_2 = \begin{pmatrix}-1\\-2\\-1\end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(b = \begin{pmatrix}8\\16\\3\end{pmatrix}\)</span>. Is <span class="math notranslate nohighlight">\(b\)</span> a linear combination of <span class="math notranslate nohighlight">\(v_1\)</span> and <span class="math notranslate nohighlight">\(v_2\)</span>? If so then there exist scalars <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> which solve the equation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}c_1\begin{pmatrix}1\\2\\6\end{pmatrix} + c_2\begin{pmatrix}-1\\-2\\-1\end{pmatrix} = \begin{pmatrix}8\\16\\3\end{pmatrix}.\end{split}\]</div>
+<p>This simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}c_1\\2c_1\\6c_1\end{pmatrix} + \begin{pmatrix}-c_2\\-2c_2\\-c_2\end{pmatrix}=\begin{pmatrix}8\\16\\3\end{pmatrix}\quad\mathrm{or}\quad\begin{pmatrix}c_1-c_2\\2c_1-2c_2\\6c_1-c_2\end{pmatrix} = \begin{pmatrix}8\\16\\3\end{pmatrix}.\end{split}\]</div>
+<p>For two vectors to be equal, all of their coordinates must be equal, so this is just the system of linear equations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}c_1 - c_2 &amp;=8\\2c_1-2c_2&amp;=16\\6c_1-c_2&amp;=3.\end{align*}
+\end{split}\]</div>
+<p>Solving the vector equation is exactly the same as solving a system of linear equations.</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Is <span class="math notranslate nohighlight">\(\begin{pmatrix}8\\16\\3\end{pmatrix}\)</span> a linear combination of <span class="math notranslate nohighlight">\(\begin{pmatrix}1\\2\\6\end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(\begin{pmatrix}-1\\-2\\-1\end{pmatrix}\)</span> ?</p>
+<p><strong>Solution</strong></p>
+<p>As shown above, this is exactly the same as asking whether the following system of equations has a solution:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}c_1 - c_2 &amp;=8\\2c_1-2c_2&amp;=16\\6c_1-c_2&amp;=3.\end{align*}
+\end{split}\]</div>
+<p>This can be determined using row reduction:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left(
+\begin{array}{cc|c}
+1 &amp; -1 &amp; 8 \\
+2 &amp; -2 &amp; 16 \\
+6 &amp; -1 &amp; 3
+\end{array}
+\right)
+\xrightarrow{\mathrm{RREF}}
+\left(
+\begin{array}{cc|c}
+1 &amp; 0 &amp; -1 \\
+0 &amp; 1 &amp; -9 \\
+0 &amp; 0 &amp; 0
+\end{array}
+\right)
+\end{split}\]</div>
+<p>From this we see that the equation is consistent with solution <span class="math notranslate nohighlight">\(c_1=-1\)</span> and <span class="math notranslate nohighlight">\(c_2=-9\)</span>. Therefore <span class="math notranslate nohighlight">\(\begin{pmatrix}8\\16\\3\end{pmatrix}\)</span> is indeed a linear combination of <span class="math notranslate nohighlight">\(\begin{pmatrix}1\\2\\6\end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(\begin{pmatrix}-1\\-2\\-1\end{pmatrix}\)</span> with coefficients <span class="math notranslate nohighlight">\(-1\)</span> and <span class="math notranslate nohighlight">\(-9\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}-\begin{pmatrix}1\\2\\6\end{pmatrix} -9\begin{pmatrix}-1\\-2\\-1\end{pmatrix} = \begin{pmatrix}8\\16\\3\end{pmatrix}.\end{split}\]</div>
+</div>
+</section>
+<section id="spans">
+<h2><span class="section-number">11.5. </span>Spans<a class="headerlink" href="#spans" title="Link to this heading">#</a></h2>
+<p>Given a set of vectors <span class="math notranslate nohighlight">\(v_1, v_2, \ldots, v_k\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, we can consider the set of <em>all</em> of their linear combinations.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Definition</div>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(v_1, v_2, \ldots, v_k\)</span> be vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>. The <strong>span</strong> of <span class="math notranslate nohighlight">\(v_1, v_2, \ldots, v_k\)</span> is the set of all linear combinations of <span class="math notranslate nohighlight">\(v_1, v_2, \ldots, v_k\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Span}\left\{v_1, v_2, \ldots, v_k\right\} = \left\{c_1v_1 + c_2v_2 + \cdots + c_kv_k | c_1, c_2, \ldots, c_k \in \mathbb{R}\right\}.\]</div>
+<p class="sd-card-text">We also say that <span class="math notranslate nohighlight">\(\mathrm{Span}\left\{v_1, v_2, \ldots, v_k\right\}\)</span> is the subset <strong>spanned by</strong> or <strong>generated by</strong> the vectors <span class="math notranslate nohighlight">\(v_1, v_2, \ldots, v_k\)</span>.</p>
+</div>
+</div>
+<div class="admonition-consistency admonition">
+<p class="admonition-title">Consistency</p>
+<p>Suppose we have vectors <span class="math notranslate nohighlight">\(v_1, v_2, \ldots, v_k\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> and another vector <span class="math notranslate nohighlight">\(b\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>. Then we have three equivalent ways of making the same statement:</p>
+<p>1. The vector <span class="math notranslate nohighlight">\(b\)</span> is in <span class="math notranslate nohighlight">\(\mathrm{Span}\{v_1, v_2, \ldots, v_k\}\)</span>.</p>
+<p>2. The vector equation</p>
+<div class="math notranslate nohighlight">
+\[c_1v_1 + \cdots + c_kv_k = b\]</div>
+<p>has a solution.</p>
+<p>3. The linear system with augmented matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left(
+\begin{array}{cccc|c}
+| &amp; | &amp; &amp; | &amp; |\\
+v_1 &amp; v_2 &amp; \cdots &amp; v_k &amp;b \\
+| &amp; | &amp; &amp; | &amp; | \\
+\end{array}
+\right)\end{split}\]</div>
+<p>is consistent.</p>
+</div>
+<p>A picture of <span class="math notranslate nohighlight">\(\mathrm{Span}\left\{v_1, v_2, \ldots, v_k\right\}\)</span> consists of a picture of all linear combinations of <span class="math notranslate nohighlight">\(v_1, v_2, \ldots, v_k\)</span>. For example the following three pictures show three different possibilities for spans in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.</p>
+<p>1. A single vector whose span is a straight line through the origin.</p>
+<p><img alt="" src="LinearAlgebra/span_1.png" /></p>
+<p>2. Two vectors whose span is the whole of <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.</p>
+<p><img alt="" src="LinearAlgebra/span_2.png" /></p>
+<p>3. Two vectors whose span is a straight line through the origin.</p>
+<p><img alt="" src="LinearAlgebra/span_3.png" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./LinearAlgebra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="echelon_form.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Linear Systems of Equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="matrix_equations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Matrix Equation <span class="math notranslate nohighlight">\(Ax = b\)</span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors-in-mathbb-r-n">11.1. Vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-addition-and-scalar-multiplication">11.2. Vector Addition and Scalar Multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combinations-of-vectors">11.3. Linear Combinations of Vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-equations">11.4. Vector Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spans">11.5. Spans</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Natural Sciences
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
