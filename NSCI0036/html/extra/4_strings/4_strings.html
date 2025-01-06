@@ -1,0 +1,1407 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Strings &#8212; Scientific Computing Workbook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Questions" href="practice_4.html" />
+    <link rel="prev" title="Answers" href="../3_lists_plotting/answers_3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/nsci0036_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific Computing Workbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Before You Begin
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Before_you_begin/cocalc.html">
+   Introduction to CoCalc
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming with Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../calculations/calculations_intro.html">
+   1. Fundamentals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../calculations/calculations_notes.html">
+     1.2. Notes
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../calculations/calculations.html">
+     1.3. Workshop
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../calculations/calculations_solutions.html">
+       Solutions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../calculations/calculations_homework.html">
+     1.4. Exercises
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../calculations/calculations_digits_solutions.html">
+       Solutions (1.16)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../calculations/calculations_homework_solutions.html">
+       Solutions (1.17 to 1.21)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../rate_equations/rate_equations_intro.html">
+   2. Modelling Change
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../rate_equations/rate_equations_notes.html">
+     2.2. Notes
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../rate_equations/rate_equations.html">
+     2.3. Workshop
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../rate_equations/rate_equations_solutions.html">
+       Solutions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../rate_equations/rate_equations_extra.html">
+     2.4. Exercises
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../rate_equations/rate_equations_homework_answers.html">
+       Solution (2.16)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../rate_equations/rate_equations_extra_solutions.html">
+       Solutions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../functions/functions_intro.html">
+   3. Functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../functions/functions_notes.html">
+     3.2. Notes
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../functions/functions.html">
+     3.3. Workshop
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../functions/functions_solutions.html">
+       Solutions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../functions/functions_extra.html">
+     3.4. Exercises
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../functions/functions_homework_answers.html">
+       Solutions (3.13)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../functions/functions_extra_answers.html">
+       Solutions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../2d_arrays/2d_arrays_intro.html">
+   4. Modelling Space
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2d_arrays/2d_arrays_notes.html">
+     4.2. Notes
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../2d_arrays/2d_arrays.html">
+     4.3. Workshop
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2d_arrays/2d_arrays_answers.html">
+       Solutions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../2d_arrays/2d_arrays_extra.html">
+     4.4. Exercises
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2d_arrays/2d_arrays_extra_answers.html">
+       Solution (4.12)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../cellular_automata/cellular_automata_intro.html">
+   5. Cellular Automata
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cellular_automata/cellular_automata_notes.html">
+     5.2. Notes
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../cellular_automata/cellular_automata.html">
+     5.3. Workshop
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cellular_automata/cellular_automata_answers.html">
+       Solutions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../cellular_automata/cellular_automata_extra.html">
+     5.4. Exercises
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cellular_automata/cellular_automata_homework_answers.html">
+       Solution (5.6)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../projects/projects_about.html">
+   About the Project
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/projects.html">
+   Project Briefs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/epidemics/project_brief_epidemics.html">
+     Epidemics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/neurosphere/project_brief_neurosphere.html">
+     Neurospheres
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../projects/modules/Modules.html">
+   Modules
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Further Programming (Optional)
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3_lists_plotting/3_lists_plotting.html">
+   Lists
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_lists_plotting/practice_3.html">
+     Questions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_lists_plotting/answers_3.html">
+     Answers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Strings
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="practice_4.html">
+     Questions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="practice_4_answers.html">
+     Answers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../6_files/6_files.html">
+   Files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6_files/practice_6.html">
+     Questions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6_files/practice_6_answers.html">
+     Answers
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/extra/4_strings/4_strings.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/extra/4_strings/4_strings.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-rna-sequences">
+   Example: RNA Sequences
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-variables">
+   String Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-concatenation">
+   String Concatenation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-between-strings-and-numbers">
+   Converting between strings and numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-methods">
+   String Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings-and-characters">
+   Strings and Characters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slicing-lists-and-strings">
+   Slicing Lists and Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escape-sequences">
+   Escape Sequences
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multi-line-strings">
+   Multi-line Strings
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Strings</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-rna-sequences">
+   Example: RNA Sequences
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-variables">
+   String Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-concatenation">
+   String Concatenation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-between-strings-and-numbers">
+   Converting between strings and numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-methods">
+   String Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings-and-characters">
+   Strings and Characters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slicing-lists-and-strings">
+   Slicing Lists and Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escape-sequences">
+   Escape Sequences
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multi-line-strings">
+   Multi-line Strings
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="strings">
+<h1>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">What you’ll learn</p>
+<ul class="simple">
+<li><p>How to store a sequence of character data in a string</p></li>
+<li><p>How to extract substrings by slicing</p></li>
+<li><p>How to use string methods</p></li>
+</ul>
+</div>
+<section id="example-rna-sequences">
+<h2>Example: RNA Sequences<a class="headerlink" href="#example-rna-sequences" title="Permalink to this headline">#</a></h2>
+<p>In biology, an RNA sequence consists of a chain of the nucleotides Adenine, Uracil, Cytosine and Guanine in a specific order. We can represent an RNA sequence using the four letters <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">U</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
+<figure class="align-default" id="rna-sequence">
+<img alt="../../_images/rna.png" src="../../_images/rna.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">An RNA sequence represented by the string <code class="docutils literal notranslate"><span class="pre">AUGAGACUCUGAGAC</span></code>. The sequence is composed of three-character subsequences called codons, each of which identifies a specific amino acid.</span><a class="headerlink" href="#rna-sequence" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<aside class="sidebar">
+<p class="sidebar-title">Amino Acid Translation Table</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Amino Acid</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>codons</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Leucine</p></td>
+<td><p>L</p></td>
+<td><p>UUA, UUG, CUU, CUC, CUA, CUG</p></td>
+</tr>
+<tr class="row-odd"><td><p>Methionine</p></td>
+<td><p>M</p></td>
+<td><p>AUG</p></td>
+</tr>
+<tr class="row-even"><td><p>Arginine</p></td>
+<td><p>R</p></td>
+<td><p>AGA, AGG, CGA, CGU, CGG, CGC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Aspartic Acid</p></td>
+<td><p>D</p></td>
+<td><p>GAU, GAC</p></td>
+</tr>
+<tr class="row-even"><td><p>(stop)</p></td>
+<td><p>.</p></td>
+<td><p>UGA</p></td>
+</tr>
+</tbody>
+</table>
+</aside>
+<p>In the body, the RNA sequence is used to produce a protein in a process called translation. The sequence is first divided into three character subsequences termed ‘codons’. For example, the 15 character RNA sequence <code class="docutils literal notranslate"><span class="pre">AUGAGACUCUGAGAC</span></code> is divided into the codons <code class="docutils literal notranslate"><span class="pre">AUG</span></code>, <code class="docutils literal notranslate"><span class="pre">AGA</span></code>, <code class="docutils literal notranslate"><span class="pre">CUC</span></code>, <code class="docutils literal notranslate"><span class="pre">UGA</span></code>, and <code class="docutils literal notranslate"><span class="pre">GAC</span></code>.</p>
+<p>Each of the codons identifies a specific amino acid, as shown in the partial amino acid translation table on the right. The RNA sequence <code class="docutils literal notranslate"><span class="pre">AUGAGACUCUGAGAC</span></code> would therefore be translated by the body into the amino acid sequence <code class="docutils literal notranslate"><span class="pre">methionine</span></code>, <code class="docutils literal notranslate"><span class="pre">arginine</span></code>, <code class="docutils literal notranslate"><span class="pre">leucine</span></code>, <code class="docutils literal notranslate"><span class="pre">(stop)</span></code>, <code class="docutils literal notranslate"><span class="pre">aspartic</span> <span class="pre">acid</span></code>. Using the abbreviated one-letter characters, this could be written as <code class="docutils literal notranslate"><span class="pre">MRL.D</span></code>.</p>
+<p>Finally, the body chains together these amino acids into a protein. The stop codon represents the end of the chain, so the RNA sequence would be translated into a protein comprising a chain of three amino acids <code class="docutils literal notranslate"><span class="pre">methionine-arginine-leucine</span></code>.</p>
+<div class="admonition-rna-translation admonition">
+<p class="admonition-title">RNA Translation</p>
+<ol class="simple">
+<li><p>RNA sequence: <code class="docutils literal notranslate"><span class="pre">AUGAGACUCUGAGAC</span></code></p></li>
+<li><p>Codons:  <code class="docutils literal notranslate"><span class="pre">AUG</span></code> <code class="docutils literal notranslate"><span class="pre">AGA</span></code> <code class="docutils literal notranslate"><span class="pre">CUC</span></code> <code class="docutils literal notranslate"><span class="pre">UGA</span></code> <code class="docutils literal notranslate"><span class="pre">GAC</span></code></p></li>
+<li><p>Amino Acids: <code class="docutils literal notranslate"><span class="pre">MRL.D</span></code></p></li>
+<li><p>Protein sequence: <code class="docutils literal notranslate"><span class="pre">MRL</span></code></p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Bioinformatics</p>
+<p>Bioinformatics is the application of tools of computation and analysis to the capture and interpretation of biological data. One of the main applications of bioinformatics is the analysis of genome sequence data, such as that undertaken by the Human Genome Project.</p>
+</div>
+<p>we’ll now see how we can implement this procedure programmatically. In Python, a sequence of character data is termed a <strong>string</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>rna_seq = &quot;AUGAGACUCUGAGAC&quot;
+print(&quot;RNA sequence:&quot;, rna_seq)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RNA sequence: AUGAGACUCUGAGAC
+</pre></div>
+</div>
+</div>
+</div>
+<p>First, let’s write a function <code class="docutils literal notranslate"><span class="pre">translate</span></code> which takes a three letter string and returns a single letter representing the corresponding amino acid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def translate(codon):
+    codon_list = [&quot;UUA&quot;, &quot;UUG&quot;, &quot;CUU&quot;, &quot;CUC&quot;, &quot;CUA&quot;, &quot;CUG&quot;, &quot;AUG&quot;, &quot;AGA&quot;, &quot;AGG&quot;, &quot;CGA&quot;, &quot;CGU&quot;, &quot;CGG&quot;, &quot;CGC&quot;, &quot;GAU&quot;, &quot;GAC&quot;, &quot;UAA&quot;, &quot;UAG&quot;, &quot;UGA&quot;]
+    amino_acids = [&quot;L&quot;, &quot;L&quot;, &quot;L&quot;, &quot;L&quot;, &quot;L&quot;, &quot;L&quot;, &quot;M&quot;, &quot;R&quot;, &quot;R&quot;, &quot;R&quot;, &quot;R&quot;, &quot;R&quot;, &quot;R&quot;, &quot;D&quot;, &quot;D&quot;, &quot;.&quot;,  &quot;.&quot;,  &quot;.&quot;]
+    
+    i = codon_list.index(codon)
+    aa = amino_acids[i]
+    return aa
+
+
+# Test the function using the CGG codon
+codon = &quot;CGG&quot;
+aa = translate(&quot;CGG&quot;)
+print(&quot;Codon:&quot;, codon)
+print(&quot;Amino acid:&quot;, aa)
+   
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Codon: CGG
+Amino acid: R
+</pre></div>
+</div>
+</div>
+</div>
+<p>The list <code class="docutils literal notranslate"><span class="pre">codon_list</span></code> contains the three letter codons, and the list <code class="docutils literal notranslate"><span class="pre">amino_acids</span></code> contains the correspdonding single-letter amino acid abbreviations. Translating from codon to amino acid is simply a case of finding the index position of the codon in <code class="docutils literal notranslate"><span class="pre">codon_list</span></code> and identifying the character in the same position in <code class="docutils literal notranslate"><span class="pre">amino_acids</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">codon_list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">codon</span><span class="p">)</span>
+<span class="n">aa</span> <span class="o">=</span> <span class="n">amino_acids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">i</span></code> is an integer represnting the index of the string <code class="docutils literal notranslate"><span class="pre">codon</span></code> in <code class="docutils literal notranslate"><span class="pre">codon_list</span></code>.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Finding items in a list</p>
+<p>See the previous section <strong>Lists and Plotting</strong> for how to find items in a list.</p>
+</div>
+<p>Next, we would like to split the string <code class="docutils literal notranslate"><span class="pre">rna_seq</span></code> into three-character codons, then use our function to determine the amino acid for each.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>n = len(rna_seq)
+for i in range(0, n, 3):
+    codon = rna_seq[i:i+3]
+    print(translate(codon))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>M
+R
+L
+.
+D
+</pre></div>
+</div>
+</div>
+</div>
+<p>First we use the <code class="docutils literal notranslate"><span class="pre">len</span></code> function to determine the number of characters in the string <code class="docutils literal notranslate"><span class="pre">rna_seq</span></code>. Next we generate a loop from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">n</span></code> in steps of <code class="docutils literal notranslate"><span class="pre">3</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>The expression <code class="docutils literal notranslate"><span class="pre">rna_seq[i:i+3]</span></code> extracts the a 3-character substring from <code class="docutils literal notranslate"><span class="pre">rna_seq</span></code> begining at the character at index <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+<p>Finally, what if we’d like to stop processing the sequence once we reach the ‘stop’ codon? Python has a useful keyword <code class="docutils literal notranslate"><span class="pre">break</span></code> which allows us to do exactly that:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>n = len(rna_seq)
+for i in range(0, n, 3):
+    codon = rna_seq[i:i+3]
+    if codon == &quot;UGA&quot;:
+        break
+    print(translate(codon))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>M
+R
+L
+</pre></div>
+</div>
+</div>
+</div>
+<p>As soon as the <code class="docutils literal notranslate"><span class="pre">break</span></code> keyword is reached, the enclosing <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is exited, even if this means aborting the loop early.</p>
+</section>
+<section id="string-variables">
+<h2>String Variables<a class="headerlink" href="#string-variables" title="Permalink to this headline">#</a></h2>
+<p>A string is data type representing character data. In Python, string literals are surrounded either by double quote <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> or single quote <code class="docutils literal notranslate"><span class="pre">'</span></code> characters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>greeting_start = &quot;Season&#39;s&quot;
+greeting_end = &#39;greetings&#39;
+
+print(greeting_start, greeting_end)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Season&#39;s greetings
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="string-concatenation">
+<h2>String Concatenation<a class="headerlink" href="#string-concatenation" title="Permalink to this headline">#</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">+</span></code> symbol to <strong>concatentate</strong> strings</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>greeting = greeting_start + &quot; &quot; + greeting_end
+print(greeting)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Season&#39;s greetings
+</pre></div>
+</div>
+</div>
+</div>
+<p>But it is not possible to concatentate a string and a number:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>id = greeting + 55
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1438</span><span class="o">/</span><span class="mf">2560201398.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">id</span> <span class="o">=</span> <span class="n">greeting</span> <span class="o">+</span> <span class="mi">55</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="converting-between-strings-and-numbers">
+<h2>Converting between strings and numbers<a class="headerlink" href="#converting-between-strings-and-numbers" title="Permalink to this headline">#</a></h2>
+<p>Functions <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> are available to convert between strings and other data types.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># convert from integer to string
+id = 1729
+new_id = str(id) + &quot;_NEW&quot;
+print(new_id)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1729_NEW
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># convert from string to floating-point number
+price = &quot;12.99&quot;
+total_price = float(price) * 1.2
+print(total_price)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.588
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="string-methods">
+<h2>String Methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">#</a></h2>
+<p>A string is an <strong>object</strong>, which is a data type with <strong>methods</strong> directly attached with it which can be called similarly to calling a function. The <code class="docutils literal notranslate"><span class="pre">upper</span></code> method converts a string to upper case, and <code class="docutils literal notranslate"><span class="pre">lower</span></code> to lowercase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>name = &quot;Jeremy Bentham&quot;
+name_uppercase = name.upper()
+print(name_uppercase)
+name_lowercase = name.lower()
+print(name_lowercase)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>JEREMY BENTHAM
+jeremy bentham
+</pre></div>
+</div>
+</div>
+</div>
+<p>Other useful methods are <code class="docutils literal notranslate"><span class="pre">split</span></code>, <code class="docutils literal notranslate"><span class="pre">join</span></code> and <code class="docutils literal notranslate"><span class="pre">trim</span></code>. <code class="docutils literal notranslate"><span class="pre">split</span></code> splits the string into individual words and returns them as a list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>text = &quot;The time has come&quot;
+word_list = text.split()
+print(word_list)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;The&#39;, &#39;time&#39;, &#39;has&#39;, &#39;come&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">join</span></code> does the reverse, combining a list of strings into a single string. <code class="docutils literal notranslate"><span class="pre">s1.join(word_list)</span></code> joins the strings in ``</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&quot;, &quot;.join(word_list)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The, time, has, come&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">strip</span></code> removes any white space characters (spaces, tabs or newlines) at the start or end of the string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>text = &quot;  too much space!   &quot;
+text2 = text.strip()
+print(text2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>too much space!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="strings-and-characters">
+<h2>Strings and Characters<a class="headerlink" href="#strings-and-characters" title="Permalink to this headline">#</a></h2>
+<p>A string is composed of a sequence of characters, and most of the operations that can be performed on lists can also be performed on strings. For example, individual characters can be accessed using square brackets enclosing the index position.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>text = &quot;Natural Sciences&quot;
+# first character is at index 0
+first_initial = text[0]
+# last character is at index -1
+final_character = text[-1]
+print(first_initial, final_character)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N s
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">len</span></code> function to find the length of a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s = &quot;Mighty&quot;
+x = len(s)
+print(x)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An important difference between lists and strings: whereas it is possible to change the value of an an individual list item, it is <strong>not</strong> possible to change an indivdual string character. We say that strings are <strong>immutable</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># this is OK</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;ABC&quot;</span>
+<span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;X&quot;</span> <span class="c1"># this will result in an error</span>
+</pre></div>
+</div>
+<p>Likewise, it is not possible to append a character to a string. Instead, use string concatenation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span> <span class="c1"># Error</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s2">&quot;D&quot;</span> <span class="c1"># This is OK</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="slicing-lists-and-strings">
+<h2>Slicing Lists and Strings<a class="headerlink" href="#slicing-lists-and-strings" title="Permalink to this headline">#</a></h2>
+<p>Given a list or string, we can access a single element using square brackets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = [4, 5, 6, 7, 8, 9]
+y = x[0]
+print(y)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we want to access a sublist, we can use array <strong>slicing</strong>. Given integers <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">x[a:b]</span></code> returns a new list which contains the elements of <code class="docutils literal notranslate"><span class="pre">x</span></code> from index <code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-</span> <span class="pre">1</span></code> (i.e. including element <code class="docutils literal notranslate"><span class="pre">a</span></code> but excluding element <code class="docutils literal notranslate"><span class="pre">b</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>z = x[0:3]
+print(z)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 5, 6]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">x[a:b:c]</span></code> returns a list containing items <code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-</span> <span class="pre">1</span></code> with a step size of <code class="docutils literal notranslate"><span class="pre">c</span></code> (this is very similar to the <code class="docutils literal notranslate"><span class="pre">range</span></code> function),</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>w = x[0:9:2]
+print(w)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 6, 8]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<p>Natural Sciences modules are identified by a 8 character code consisting of <code class="docutils literal notranslate"><span class="pre">NSCI</span></code> followed by a four digit number. The following paragraph of text contains Natural Sciences module codes mixed up with other data. We will write Python code to extract a list of Module codes from the text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>text = &quot;Surrounded NSCI0007 me occasional pianoforte NSCI0011 alteration unaffected impossible ye. For saw half than cold.  arrived adapted. Numerous ladyship so raillery humoured goodness received an. So NSCI0004 formal length my highly NSCI0005 afford oh. Tall neat he make or at dull ye.&quot;
+
+n = len(text) # determine the number of characters in the text
+module_list = [] # create an empty list
+for i in range(n): # i loops of all index positions in text
+    if text[i:i + 4] == &quot;NSCI&quot;: # exctact a 4 character substring and check if it is equal to &quot;NSCI&quot;
+        module_list.append(text[i:i + 8]) # add 8 characters to the list
+print(module_list)
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;NSCI0007&#39;, &#39;NSCI0011&#39;, &#39;NSCI0004&#39;, &#39;NSCI0005&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>String comparison is <strong>case-sensitive</strong> so <code class="docutils literal notranslate"><span class="pre">&quot;S&quot;</span> <span class="pre">==</span> <span class="pre">&quot;s&quot;</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p>Remember to use a double equals to check for equality.</p></li>
+</ul>
+</div>
+</section>
+<section id="escape-sequences">
+<h2>Escape Sequences<a class="headerlink" href="#escape-sequences" title="Permalink to this headline">#</a></h2>
+<p>If you want to include special characters in a string, use an <strong>escape sequence</strong>. Precede the character you want to want to escape by a backslash character <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>quote = &#39;&quot;The time has come&quot;, the Walrus said.&#39;
+print(quote)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;The time has come&quot;, the Walrus said.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>quote = &quot;\&quot;The time has come\&quot;, the Walrus said.&quot;
+print(quote)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;The time has come&quot;, the Walrus said.
+</pre></div>
+</div>
+</div>
+</div>
+<p>This can also be used to include a backslash character in the string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>quote = &quot;A\\B&quot;
+print(quote)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A\B
+</pre></div>
+</div>
+</div>
+</div>
+<p>A very useful excape sequence is <code class="docutils literal notranslate"><span class="pre">\n</span></code>, which denotes a <strong>newline</strong> character.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(&quot;A\nAB\nABC&quot;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A
+AB
+ABC
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="multi-line-strings">
+<h2>Multi-line Strings<a class="headerlink" href="#multi-line-strings" title="Permalink to this headline">#</a></h2>
+<p>String literals can span multiple lines, using triple-quotes: <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>…<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">'''</span></code>…<code class="docutils literal notranslate"><span class="pre">'''</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>long_string = &quot;&quot;&quot;Twas the night before Christmas,
+when all through the house
+Not a creature was stirring,
+not even a mouse.&quot;&quot;&quot;
+print(long_string)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Twas the night before Christmas,
+when all through the house
+Not a creature was stirring,
+not even a mouse.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./extra/4_strings"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../3_lists_plotting/answers_3.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Answers</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="practice_4.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Questions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Natural Sciences<br/>
+  
+      &copy; Copyright 2024.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
