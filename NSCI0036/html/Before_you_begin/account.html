@@ -117,7 +117,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Before You Begin
+  Getting Started
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -138,10 +138,32 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../calculations/calculations_intro.html">
    1. Fundamentals
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../calculations/calculations_notes.html">
+     1.2. Notes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../calculations/calculations.html">
+     1.3. Workshop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../calculations/calculations_homework.html">
+     1.4. Exercises
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../rate_equations/rate_equations_intro.html">
@@ -298,7 +320,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="set-up-your-cocalc-account">
-<h1>Set up your Cocalc Account<a class="headerlink" href="#set-up-your-cocalc-account" title="Permalink to this headline">#</a></h1>
+<span id="getting-started"></span><h1>Set up your Cocalc Account<a class="headerlink" href="#set-up-your-cocalc-account" title="Permalink to this headline">#</a></h1>
 <p>Before using CoCalc for the first time you will need to create an account. You will need to do this using your UCL email address, because a licensed, personal project has already been set up for you linked to that email. Follow the steps below to setup your account and access your project.</p>
 <h4> ✓  Create your account</h4>
 <blockquote>
@@ -307,16 +329,40 @@ title="Print to PDF"
 <p><img alt="Example sign up screen" src="../_images/sign_up_2.png" /></p>
 <h4> ✓ Access your project</h4>
 <blockquote>
-<div><p>Click on <img alt="Projects" src="../_images/cocalc_projects.png" /> in the top-left corner.</p>
+<div><p>Click on <img alt="Projects button" src="../_images/cocalc_projects_button.png" /> in the top-left corner.</p>
 </div></blockquote>
-<p>You should see a project titled something like ‘NSCI0036’.</p>
+<p>You should see two projects titled ‘NSCI0036’ and ‘NSCI0036_Homework’.</p>
 <blockquote>
-<div><p>Click on the project ‘NSCI0036’ to open it.</p>
+<div><p>Click on the project ‘NSCI0036’ to open it. DON’T OPEN THE NSCI0036_Homework PROJECT!</p>
 </div></blockquote>
+<p><img alt="Project list" src="../_images/cocalc_projects.png" /></p>
 <p>Your project is essentially a virtual computer hosted in the cloud, including operating system (Linux) and preinstalled software libraries so that you can start programming with Python straight away.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>If you don’t see a project named ‘NSCI0036’, ask an instructor for help before continuing.</p>
+<h4> ✓ Set up collaboration</h4>
+<p>Next you’ll need to find someone to collaborate with.</p>
+<blockquote>
+<div><p>Turn to the person sitting next to you and ask them for their email address (e.g. <code class="docutils literal notranslate"><span class="pre">ucqsabc&#64;ucl.ac.uk</span></code>)</p>
+</div></blockquote>
+<blockquote>
+<div><p>Click the <img alt="Users" src="../_images/cocalc_users.png" /> button on the left menu. Enter your partner’s email address in the ‘Add New Collaborators’ box and click ‘Add Selected User’.</p>
+</div></blockquote>
+<p><img alt="add_collaborator" src="../_images/add_collaborator.png" /></p>
+<blockquote>
+<div><p>Ask your partner to open your project by clicking the <img alt="Projects button" src="../_images/cocalc_projects_button.png" /> in the top-left corner and finding your project in their project list.</p>
+</div></blockquote>
+<h4> ✓ Collaborate</h4>
+<p>Cocalc collaboration enables multiple users to edit and run the same Python document simultanously, in a similar fashion to Google Docs or other online office tools.</p>
+<blockquote>
+<div><p>Open your NSCI0036 project, select the <img alt="Explorer" src="../_images/explorer.png" /> button and select <code class="docutils literal notranslate"><span class="pre">before_you_begin</span> <span class="pre">&gt;</span> <span class="pre">cubic_graph.ipynb</span></code> in the file list.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Ask your partner to open the same NSCI0036 project and select <code class="docutils literal notranslate"><span class="pre">before_you_begin</span> <span class="pre">&gt;</span> <span class="pre">cubic_graph.ipynb</span></code> in the file list.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Make some edits to the file and notice that any changes are immediately visible to your partner.</p>
+</div></blockquote>
+<div class="admonition-experiment admonition">
+<p class="admonition-title">Experiment!</p>
+<p>There are lots collaboration features in Cocalc - experiment!</p>
 </div>
 </section>
 

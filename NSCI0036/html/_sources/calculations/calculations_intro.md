@@ -14,8 +14,7 @@ Programming is all about breaking down a problem into simple steps that a comput
 
 ## This Week
 
-**Before class** read the [notes](calculations_notes.ipynb) and complete embedded exercises.
-
-**During class** work through the [workshop](calculations.ipynb).
-
-**During and after class** complete the [exercises](calculations_homework.md).
+1. Read the [notes](calculations_notes.ipynb) and complete embedded exercises.
+2. Work through the [workshop](calculations.ipynb).
+3. Complete the [exercises](calculations_homework.md).
+4. Complete and submit the homework problems (see Moodle).

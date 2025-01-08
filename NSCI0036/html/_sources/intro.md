@@ -1,10 +1,10 @@
 # Introduction
 
-This workbook contains all the required material for the module NSCI0036. Before starting work you need to set up your Cocalc account by following the instructions in the section [Before You Begin](before-you-begin).
+This workbook contains all the required material for the module NSCI0036. Before starting work you need to set up your Cocalc account by following the instructions in the section [Getting Started](getting-started).
 
 ## How to Interact with the Material
 
-For the first five weeks you will be working through the material in the 'Programming with Python' section. Each week there are three activities to complete:
+For the first five weeks you will be working through the material in the 'Programming with Python' section. Each week there are the following activities to complete:
 
 ### 1. Notes
 
@@ -19,6 +19,10 @@ The workshops lead you through some examples of practical programming in Science
 ### 3. Exercises
 
 Work on the exercises during and after class.
+
+### 4. Homework
+
+Complete the homework individually and submit the following week. DO NOT SHARE YOUR HOMEWORK SOLUTIONS WITH OTHER STUDENTS.
 
 ## Collaboration
 

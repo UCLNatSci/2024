@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Solutions (1.15)" href="calculations_digits_solutions.html" />
-    <link rel="prev" title="Solutions" href="calculations_solutions.html" />
+    <link rel="next" title="2. Modelling Change" href="../rate_equations/rate_equations_intro.html" />
+    <link rel="prev" title="1.3. Workshop 1: Fundamentals" href="calculations.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -119,7 +119,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Before You Begin
+  Getting Started
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -155,46 +155,37 @@ const thebe_selector_output = ".output, .cell_output"
      1.2. Notes
     </a>
    </li>
-   <li class="toctree-l2 has-children">
+   <li class="toctree-l2">
     <a class="reference internal" href="calculations.html">
      1.3. Workshop
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="calculations_solutions.html">
-       Solutions
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toctree-l2 current active has-children">
+   <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      1.4. Exercises
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="calculations_digits_solutions.html">
-       Solutions (1.15)
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="calculations_homework_solutions.html">
-       Solutions (1.16 to 1.18)
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../rate_equations/rate_equations_intro.html">
+   2. Modelling Change
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../functions/functions_intro.html">
+   3. Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2d_arrays/2d_arrays_intro.html">
+   4. Modelling Space
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cellular_automata/cellular_automata_intro.html">
+   5. Cellular Automata
+  </a>
  </li>
 </ul>
 
@@ -334,7 +325,7 @@ title="Print to PDF"
 <h1><span class="section-number">1.4. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
 <div class="exercise admonition" id="calculations_extra_digits">
 
-<p class="admonition-title"><span class="caption-number">Exercise 1.15 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 1.16 </span></p>
 <section id="exercise-content">
 <p>We can calculate how many digits there are in a number by repeatedly dividing by 10 until the number is less than one. The number of divisions is the number of digits in the number. For example, the number <span class="math notranslate nohighlight">\(8468\)</span> has four digits:</p>
 <div class="math notranslate nohighlight">
@@ -352,7 +343,7 @@ title="Print to PDF"
 </div>
 <div class="exercise admonition" id="calculations_extra_factorial">
 
-<p class="admonition-title"><span class="caption-number">Exercise 1.16 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 1.17 </span></p>
 <section id="exercise-content">
 <p>Recall the definition of factorial of a number <span class="math notranslate nohighlight">\(n\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -404,7 +395,7 @@ Given two integers $n$ and $m$ it is possible to perform division-with-remainder
 0-->
 <div class="exercise admonition" id="calculations_extra_duration">
 
-<p class="admonition-title"><span class="caption-number">Exercise 1.17 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 1.18 </span></p>
 <section id="exercise-content">
 <p>A duration <code class="docutils literal notranslate"><span class="pre">t</span></code> in seconds can be converted to days, hours, minutes and seconds using integer division:</p>
 <ol class="simple">
@@ -420,7 +411,7 @@ Given two integers $n$ and $m$ it is possible to perform division-with-remainder
 </div>
 <div class="exercise admonition" id="calculations_extra_primes">
 
-<p class="admonition-title"><span class="caption-number">Exercise 1.18 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 1.19 </span></p>
 <section id="exercise-content">
 <p>A student has written the pseudocode below to test if a number <span class="math notranslate nohighlight">\(n\)</span> is a prime number.</p>
 <ol class="simple">
@@ -452,7 +443,17 @@ display result</p>
 </div>
 </div>
 </div>
-<div class="toctree-wrapper compound">
+<div class="exercise admonition" id="calculations_extra_gcd">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1.20 </span></p>
+<section id="exercise-content">
+<p>The <strong>Euclidean algorithm</strong> is a method that will find the highest common factor (HCF) of two numbers. The HCF is the largest number that will evenly divide (wihout remainder) both values. For example, The HCF of 5 and 15 is 5.</p>
+<p>Write Python code which calculates the HCF of two numbers <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<ul class="simple">
+<li><p>identify the smaller value and subtract it from the larger value. Replace the larger number with the result of the subtraction.</p></li>
+<li><p>repeat the two steps until the values are equal. This value is the HCF of <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+</ul>
+</section>
 </div>
 </section>
 
@@ -483,17 +484,17 @@ display result</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="calculations_solutions.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="calculations.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Solutions</p>
+            <p class="prev-next-title"><span class="section-number">1.3. </span>Workshop 1: Fundamentals</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="calculations_digits_solutions.html" title="next page">
+    <a class='right-next' id="next-link" href="../rate_equations/rate_equations_intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solutions (1.15)</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Modelling Change</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

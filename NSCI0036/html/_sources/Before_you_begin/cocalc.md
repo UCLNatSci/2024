@@ -33,10 +33,13 @@ After completing this section you should be able to:
 
 <h4> ✓ Access your project</h4>
 
-> Click on ![Projects](cocalc_projects.png) in the top-left corner.
+> Click on ![Projects](cocalc_projects_button.png) in the top-left corner.
 
-You should see a project titled something like 'NSCI0036'.
-> Click on the project 'NSCI0036' to open it.
+You should see two projects titled 'NSCI0036' and 'NSCI0036_Homework'.
+
+> Click on the project 'NSCI0036' to open it. DON'T OPEN THE NSCI0036_Homework PROJECT!
+
+![Projects](cocalc_projects.png)
 
 <h4> ✓ Open a notebook file</h4>
 
@@ -50,7 +53,7 @@ The file explorer shows you the currently selected folder and the list of files 
 
 Your course instructors have added some files to your project to get you started. All of the files in the project are your own. For example, every student has their own individual copy of the `cubic_graph` notebook.
 
-> Click on the folder `week 1` then click the file `cubic_graph.ipynb` to open it.
+> Click on the folder `before_you_begin` then click the file `cubic_graph.ipynb` to open it.
 
 The extension `.ipynb` indicates that the file is a Jupyter notebook, also known as an IPython notebook. This type of file contains Python code and formatted text allowing us to combine computations, results and descriptive text in a single file.
 

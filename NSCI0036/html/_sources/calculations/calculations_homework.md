@@ -114,3 +114,13 @@ repeat while i is less than n:
 display result
 ```
 :::
+
+:::{exercise}
+:label: calculations_extra_gcd
+The **Euclidean algorithm** is a method that will find the highest common factor (HCF) of two numbers. The HCF is the largest number that will evenly divide (wihout remainder) both values. For example, The HCF of 5 and 15 is 5.
+
+Write Python code which calculates the HCF of two numbers `a` and `b`.
+
+- identify the smaller value and subtract it from the larger value. Replace the larger number with the result of the subtraction.
+- repeat the two steps until the values are equal. This value is the HCF of `a` and `b`.
+:::
