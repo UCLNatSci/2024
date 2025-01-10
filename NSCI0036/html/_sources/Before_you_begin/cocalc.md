@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Introduction to CoCalc (Optional)
+# Introduction to CoCalc
 
 We will be using an online platform called *CoCalc* to run and edit *notebooks* containing code written in the *Python* programming language. By the end of the workshop you will be comfortable creating, editing and running notebook files using the platform. You will also see some Python code, but don't worry as you’re not expected to understand it yet.
 

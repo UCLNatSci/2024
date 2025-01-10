@@ -130,7 +130,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Before_you_begin/cocalc.html">
-   Introduction to CoCalc (Optional)
+   Introduction to CoCalc
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Before_you_begin/submitting.html">
+   Submitting your work
   </a>
  </li>
 </ul>
@@ -654,9 +659,9 @@ Write a program which finds the smallest number $n$ whose Collatz Number is grea
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>i = 1
-while i &lt; 10:
+while i &lt;= 6:
     j = 1
-    while j &lt; 10:
+    while j &lt;= i:
         print(j, end=&quot;&quot;)
         j = j + 1
     print()
@@ -665,15 +670,12 @@ while i &lt; 10:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123456789
-123456789
-123456789
-123456789
-123456789
-123456789
-123456789
-123456789
-123456789
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+12
+123
+1234
+12345
+123456
 </pre></div>
 </div>
 </div>
@@ -684,15 +686,29 @@ while i &lt; 10:
 <section id="exercise-content">
 <p>Write a program which uses nested loops to print the following patterns:</p>
 <p>a)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">123456123451234123121</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">123456</span>
+<span class="mi">12345</span>
+<span class="mi">1234</span>
+<span class="mi">123</span>
+<span class="mi">12</span>
+<span class="mi">1</span>
 </pre></div>
 </div>
 <p>b)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10101</span>
-<span class="mi">01010</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">01010</span>
 <span class="mi">10101</span>
 <span class="mi">01010</span>
 <span class="mi">10101</span>
+<span class="mi">01010</span>
+</pre></div>
+</div>
+<p>c)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AAAAAB</span>
+<span class="n">AAAABB</span>
+<span class="n">AAABBB</span>
+<span class="n">AABBBB</span>
+<span class="n">ABBBBB</span>
+<span class="n">BBBBBB</span>
 </pre></div>
 </div>
 </section>

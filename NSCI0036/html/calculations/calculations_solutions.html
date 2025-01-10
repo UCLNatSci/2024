@@ -119,7 +119,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Before You Begin
+  Getting Started
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -130,7 +130,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Before_you_begin/cocalc.html">
-   Introduction to CoCalc (Optional)
+   Introduction to CoCalc
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Before_you_begin/submitting.html">
+   Submitting your work
   </a>
  </li>
 </ul>
@@ -851,6 +856,86 @@ repeat while n is greater than 1:<br />
 </pre></div>
 </div>
 </section>
+</div>
+<div class="solution admonition" id="calculations/calculations_solutions-solution-9">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="calculations.html#exercise_1_16"> Exercise 1.15</a></p>
+<section id="solution-content">
+</section>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>i = 6
+while i &gt;= 1:
+    j = 1
+    while j &lt;= i:
+        print(j, end=&quot;&quot;)
+        j = j + 1
+    print()
+    i = i - 1
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123456
+12345
+1234
+123
+12
+1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>i = 1
+while i &lt;= 5:
+    j = 1
+    while j &lt;= 5:
+        print((i + j) % 2, end=&quot;&quot;)
+        j = j + 1
+    print()
+    i = i + 1
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>01010
+10101
+01010
+10101
+01010
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>i = 1
+while i &lt;= 6:
+    j = 1
+    while j &lt;= 6:
+        if i + j &lt;= 6:
+            print(&quot;A&quot;, end=&quot;&quot;)
+        else:
+            print(&quot;B&quot;, end=&quot;&quot;)
+        j = j + 1
+    print()
+    i = i + 1
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AAAAAB
+AAAABB
+AAABBB
+AABBBB
+ABBBBB
+BBBBBB
+</pre></div>
+</div>
+</div>
 </div>
 <!-- :::{solution} exercise_1_15
 To do this we need to 'nest' one while loop (to calculate Collatz numbers) inside another one (to check each if each integer meets the condition).

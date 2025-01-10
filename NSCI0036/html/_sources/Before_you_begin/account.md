@@ -37,9 +37,9 @@ Next you'll need to find someone to collaborate with.
 
 Cocalc collaboration enables multiple users to edit and run the same Python document simultanously, in a similar fashion to Google Docs or other online office tools.
 
-> Open your NSCI0036 project, select the ![Explorer](explorer.png) button and select `before_you_begin > cubic_graph.ipynb` in the file list.
+> Open your NSCI0036 project, select the ![Explorer](explorer.png) button and select `before_you_begin > collaboration_test.ipynb` in the file list.
 
-> Ask your partner to open the same NSCI0036 project and select `before_you_begin > cubic_graph.ipynb` in the file list.
+> Ask your partner to open the your NSCI0036 project and select `before_you_begin > collaboration_test.ipynb` in the file list.
 
 > Make some edits to the file and notice that any changes are immediately visible to your partner.
 
