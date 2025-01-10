@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4.1. Homework Answers and Mark Scheme &#8212; Neural Circuits</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Project Brief" href="../project/neural_circuits_project_2.html" />
+    <link rel="prev" title="4. Homework" href="ws1_homework.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/brain.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Neural Circuits</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Neural Circuits
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introductory Material
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ws1.html">
+   1. Introduction to Graphs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ws1_answers.html">
+     1.7. Answers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ws1_computing.html">
+   2. Computing with Graphs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ws1_computing_answers.html">
+     2.5. Answers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ws1_questions.html">
+   3. Exercises
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ws1_questions_answers.html">
+     3.1. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ws1_homework.html">
+   4. Homework
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.1. Homework Answers and Mark Scheme
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../project/neural_circuits_project_2.html">
+   5. Project Brief
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../project/outline.html">
+   6. Outline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../project/isomorphisms/graph_isomorphisms.html">
+   7. Isomorphic Graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../project/random_graphs.html">
+   8. Random Graphs
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ws1/ws1_homework_answers.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ws1/ws1_homework_answers.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-1">
+   4.1.1. Question 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2">
+   4.1.2. Question 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-3">
+   4.1.3. Question 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-4">
+   4.1.4. Question 4
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Homework Answers and Mark Scheme</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-1">
+   4.1.1. Question 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2">
+   4.1.2. Question 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-3">
+   4.1.3. Question 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-4">
+   4.1.4. Question 4
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="homework-answers-and-mark-scheme">
+<h1><span class="section-number">4.1. </span>Homework Answers and Mark Scheme<a class="headerlink" href="#homework-answers-and-mark-scheme" title="Permalink to this headline">#</a></h1>
+<p><strong>Results/objectives</strong> Maximum score: 5 (see mark breakdown below)<br />
+These marks are awarded for submissions that produce the correct outputs. The code should run without errors and should fulfil the criteria set by the question. You must ensure that you include a written explanation of the output produced by your code.</p>
+<p><strong>Implementation/technique</strong> Maximum score: 5<br />
+Marks are awarded here for demonstration of good coding practice. The code should be easy to follow. It should use methods/techniques demonstrated in the notes appropriately and correctly. Markers will also be looking out for code that is reasonably efficient, as this is important in the field of numerical methods. You must be able to explain/justify your method to the marker.</p>
+<p>The specimen answers below are just one example of how to solve the problems. My answers are not necessarily more ‘correct’ than yours!</p>
+<section id="question-1">
+<h2><span class="section-number">4.1.1. </span>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = [[3], [11, 6, 5], [4, 11, 5], [0], [2, 6, 6], [12, 19, 2, 1],
+        [4, 17, 1, 4, 8],[14, 11], [6], [], [15, 11], [10, 2, 1, 16, 15, 7],
+        [5], [], [7], [10, 11], [11], [6, 19], [], [5, 17]]
+
+# The following code loops over every edge in the graph.
+# For each edge i -&gt; j it then checks if there exists an
+# edge j -&gt; i.
+
+n = len(x)
+T = True
+for i in range(n):
+    for j in x[i]:
+        if not i in x[j]:
+            T = False
+            
+print(&quot;x is the adjacency list of a directed graph:&quot;, T)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is the adjacency list of a directed graph: True
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>1 mark</strong> for a solution which works for any adjacency list.</p>
+</section>
+<section id="question-2">
+<h2><span class="section-number">4.1.2. </span>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">#</a></h2>
+<p>Note that the question asks for two nodes not connected <em>by a path</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># First We use the breadth first search to determine all nodes connected
+# to node 0
+
+
+def bfs(adj, i):
+    visited = [i]
+    frontier = [i]
+
+    while len(frontier) &gt; 0:
+        next = frontier
+        frontier = []
+        for j in next:
+            neighbours = adj[j]
+            for k in neighbours:
+                if not k in visited:
+                    frontier.append(k)
+                    visited.append(k)
+    return visited
+
+comp1 = bfs(x, 0)
+
+# Because the graph is not connected, comp1  only contains a subset
+# of the nodes. Any node not in comp1 is not connected to node 0
+# by a path.
+
+# The following loop terminates once it finds a node not in comp1:
+
+i = 0
+while i in comp1:
+    i += 1
+print(&quot;Node 0 is not connected to node&quot;, i) # [0, 3]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 0 is not connected to node 1
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>1 mark</strong> for a solution which finds any pair of disconnected nodes (or a solution which finds all pairs of disconnected nodes).</p>
+<p>NB the function <code class="docutils literal notranslate"><span class="pre">bfs(adj,</span> <span class="pre">i)</span></code> is defined in the notes.</p>
+</section>
+<section id="question-3">
+<h2><span class="section-number">4.1.3. </span>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">#</a></h2>
+<p>See the <a class="reference internal" href="ws1_computing.html#exercise_path_distances_bfs"><span class="std std-numref">Exercise 2.5</span></a> to understand how to calculate path distances by making a simple change to the <code class="docutils literal notranslate"><span class="pre">bfs</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import numpy as np
+
+def path_distances(adj, i):
+    visited = [i]
+    frontier = [i]
+
+    distances = np.zeros(len(adj))
+    distances[:] = -1
+    distances[i] = 0
+    d = 0
+    while len(frontier) &gt; 0:
+        d += 1 # increase d by 1 at each iteration
+        next = frontier
+        frontier = []
+        for j in next:
+            neighbours = adj[j]
+            for k in neighbours:
+                if not k in visited:
+                    frontier.append(k)
+                    visited.append(k)
+                    distances[k] = d
+    return distances
+
+# First create an n by n array
+# whose elements are the path distances
+# between node pairs
+n = len(x)
+distances = np.zeros((n, n))
+for i in range(n):
+    distances[i] = path_distances(x, i)
+
+# The maximum path distance is the maximum
+# of the array
+max_dis = np.max(distances)
+
+print(&quot;Maximum distance:&quot;, max_dis)
+
+# Now loop over the array and determine all node
+# pairs with the maximum distance
+node_pairs = []
+for i in range(n):
+    for j in range(i-1):
+        if distances[i, j] == max_dis:
+            node_pairs.append([i, j])
+
+print(&quot;Node pairs with maximum path distance:&quot;, node_pairs)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">path_distances</span><span class="p">(</span><span class="n">adj</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>1.5 marks</strong> for a solution which finds all four pairs of nodes with path distance 5 (it is not necessary to state the distance). <strong>1 mark</strong> if only one node-pair is identified.</p>
+</section>
+<section id="question-4">
+<h2><span class="section-number">4.1.4. </span>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+# Loop over every node in the graph, performing BFS
+# on each to determine its connected component.
+# Maintain a list of visited nodes and only perform
+# the BFS if the node hasn&#39;t already been visited.
+
+visited = []
+components = []
+for i in range(len(x)):
+    if not i in visited:
+        comp = bfs(x, i)
+        components.append(comp)
+        # these two lines could be replaced by
+        # visited.extend(comp)
+        for j in comp:
+            visited.append(j)
+
+print(&quot;Graph components:&quot;, components)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph components: [[0, 3], [1, 11, 6, 5, 10, 2, 16, 15, 7, 4, 17, 8, 12, 19, 14], [9], [13], [18]]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>1.5 marks</strong> for a solution which identifies the nodes in each of the 5 connected components. Subtract 0.5 marks if any components are repeated. Subtract 0.5 marks if the method is not entirely automated.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ws1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ws1_homework.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Homework</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../project/neural_circuits_project_2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Project Brief</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Natural Sciences<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
