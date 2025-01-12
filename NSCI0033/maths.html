@@ -410,9 +410,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forcing-terms-and-particular-solutions">1.1.3. Forcing Terms and Particular Solutions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux">1.2. Flux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-and-stokes-theorems">1.3. Divergence and Stokes Theorems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-decomposition">1.4. Helmholtz Decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cylindrical-coordinates">1.2. Cylindrical Coordinates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-coordinates">1.3. Spherical Coordinates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux">1.4. Flux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-and-stokes-theorems">1.5. Divergence and Stokes Theorems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-decomposition">1.6. Helmholtz Decomposition</a></li>
 </ul>
             </nav>
         </div>
@@ -547,14 +549,108 @@ For <span class="math notranslate nohighlight">\( x'' - 5x' + 6x = e^{3t} \)</sp
 </ul>
 </section>
 </section>
+<section id="cylindrical-coordinates">
+<h2><span class="section-number">1.2. </span>Cylindrical Coordinates<a class="headerlink" href="#cylindrical-coordinates" title="Link to this heading">#</a></h2>
+<p>An illustration of cylindrical coordinates and associated, locally defined unit vectors is shown in <a class="reference internal" href="#fig-cylcoords"><span class="std std-numref">Fig. 1.1</span></a>. The three coordinates are: <span class="math notranslate nohighlight">\( R \)</span> (cylindrical radial distance), which is the perpendicular distance of the point of interest from some reference axis (here chosen to be the Cartesian <span class="math notranslate nohighlight">\( z \)</span>-axis); <span class="math notranslate nohighlight">\( \phi \)</span>, the azimuthal angle between the <span class="math notranslate nohighlight">\( x \)</span>-axis and the projection of the position vector onto the <span class="math notranslate nohighlight">\( xy \)</span>-plane; and <span class="math notranslate nohighlight">\( z \)</span>, which is identical to the usual Cartesian <span class="math notranslate nohighlight">\( z \)</span>-coordinate.</p>
+<figure class="align-default" id="fig-cylcoords">
+<img alt="_images/cylcoords.png" src="_images/cylcoords.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Illustration of cylindrical coordinates and unit vectors (from the book by Fowles and Cassiday).</span><a class="headerlink" href="#fig-cylcoords" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now, the position vector of any moving particle with respect to the origin can be expressed, using the corresponding (locally defined) unit vectors in this system, as:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r}(t) = R\,\mathbf{e_R} + z\,\mathbf{e_z}.\]</div>
+<p>The unit vector <span class="math notranslate nohighlight">\( \mathbf{e_R} \)</span> will change direction as the particle moves, since it is parallel to the direction from the closest point on the <span class="math notranslate nohighlight">\( z \)</span>-axis to the position of the particle itself. On the other hand, the unit vector <span class="math notranslate nohighlight">\( \mathbf{e_z} \)</span> will not change with the particle motion.</p>
+<p>We can thus use similar calculations as were done in the previous section to prove that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}\mathbf{e_R}}{\mathrm{d}t} = \dot{\phi}\,\mathbf{e_{\phi}},\]</div>
+<p>where we have used the ‘overdot’ notation to denote time derivative, <span class="math notranslate nohighlight">\( \dot{\phi} = \frac{\mathrm{d}\phi}{\mathrm{d}t} \)</span>.</p>
+<p>Using this same notation now to calculate the velocity in cylindrical coordinates:</p>
+<div class="math notranslate nohighlight">
+\[\dot{\mathbf{r}} = \dot{R}\,\mathbf{e_R} + R\,\frac{\mathrm{d}\mathbf{e_R}}{\mathrm{d}t} + \dot{z}\,\mathbf{e_z}
+            = \dot{R}\,\mathbf{e_R} + R\,\dot{\phi}\,\mathbf{e_{\phi}} + \dot{z}\,\mathbf{e_z}.\]</div>
+<p>The cylindrical components of the above equation represent the cylindrical radial velocity, the azimuthal velocity (equivalent to a local rotational component of motion about the <span class="math notranslate nohighlight">\( z \)</span>-axis), and the axial velocity.</p>
+<p>Differentiating the azimuthal unit vector <span class="math notranslate nohighlight">\( \mathbf{e_{\phi}} \)</span> with respect to time, using similar reasoning as for equation <span class="math notranslate nohighlight">\( \frac{\mathrm{d}\mathbf{e_{\phi}}}{\mathrm{d}t} \)</span>, gives us:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{e_{\phi}}'(t) = -\dot{\phi}\,\mathbf{e_R}.\]</div>
+<p>If we now use this result and the equation for <span class="math notranslate nohighlight">\( \frac{\mathrm{d}\mathbf{e_R}}{\mathrm{d}t} \)</span> when we differentiate velocity (equation <span class="math notranslate nohighlight">\( \dot{\mathbf{r}} \)</span>) to get acceleration, we arrive at (proof is left for the reader as an exercise):</p>
+<div class="math notranslate nohighlight">
+\[\ddot{\mathbf{r}} = (\ddot{R}-R\,\dot{\phi}^2)\,\mathbf{e_R} + (R\,\ddot{\phi} + 2\dot{R}\dot{\phi})\,\mathbf{e_{\phi}} + \ddot{z}\,\mathbf{e_z}.\]</div>
+<p>We can identify the term <span class="math notranslate nohighlight">\( -R\,\dot{\phi}^2\,\mathbf{e_R} \)</span> in this expression as the centripetal acceleration associated with that component of the motion which represents rotation about the <span class="math notranslate nohighlight">\( z \)</span>-axis.</p>
+</section>
+<section id="spherical-coordinates">
+<h2><span class="section-number">1.3. </span>Spherical Coordinates<a class="headerlink" href="#spherical-coordinates" title="Link to this heading">#</a></h2>
+<p>In this section, we repeat the same general strategy for deriving formulas for velocity and acceleration in the <mark>spherical polar coordinates</mark> for three-dimensional space. We remind ourselves, from the previous section, that this strategy involves expressing the local unit vectors of our coordinate system in a form that is relatively straightforward to differentiate — the Cartesian form of these vectors is a good choice here. Differentiation then allows us to express the time derivatives of each of our local unit vectors in terms of other unit vectors in the triad, which in turn allows us to make final derivations of the spherical polar implementations of velocity and acceleration of a moving particle. Note that the vectors which we obtain for a particle’s velocity and acceleration ultimately must have the same final magnitude and direction in all coordinate systems. However, the different orientations of unit coordinate vectors in these different systems mean that the individual <mark>components</mark> of acceleration and velocity are indeed dependent on our choice of coordinates.</p>
+<figure class="align-default" id="fig-spherecoords">
+<img alt="_images/spherecoords.png" src="_images/spherecoords.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Illustration of spherical coordinates and unit vectors (from the book by Fowles and Cassiday).</span><a class="headerlink" href="#fig-spherecoords" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>With these concepts in mind, we now turn to the spherical polar coordinate system, whose position coordinates and local unit vectors are illustrated in <a class="reference internal" href="#fig-spherecoords"><span class="std std-numref">Fig. 1.2</span></a>. We see that in this system, the three quantities which now specify a particle’s position are: <span class="math notranslate nohighlight">\(r\)</span>, its radial distance from the origin; <span class="math notranslate nohighlight">\(\theta\)</span>, the polar angle which is the angle between the <span class="math notranslate nohighlight">\(z\)</span>-Cartesian axis and the position vector of the particle; <span class="math notranslate nohighlight">\(\phi\)</span>, the azimuthal angle, which is the angle between the <span class="math notranslate nohighlight">\(x\)</span>-axis and the projection of the position vector onto the <span class="math notranslate nohighlight">\(xy\)</span>-plane. If we express these unit vectors in the Cartesian components, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{e_{r}} &amp;= \sin\theta \cos\phi\,\mathbf{e_x} + \sin\theta \sin\phi\,\mathbf{e_y} + \cos\theta\,\mathbf{e_z}
+\\
+\mathbf{e_{\theta}} &amp;= \cos\theta \cos\phi\,\mathbf{e_x} + \cos\theta \sin\phi\,\mathbf{e_y} - \sin\theta\,\mathbf{e_z}
+\\
+\mathbf{e_{\phi}} &amp;= -\sin\phi\,\mathbf{e_x} + \cos\phi\,\mathbf{e_y}\end{split}\]</div>
+<p>As usual, these unit vectors point along the local direction of maximum increase of the corresponding position coordinate.</p>
+<p>Taking the general time derivative of the radial unit vector (assuming that both <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> are functions of time along the particle trajectory):</p>
+<div class="math notranslate nohighlight" id="equation-eq-duvecrdt">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-eq-duvecrdt" title="Link to this equation">#</a></span>\[\begin{split}\frac{\mathrm{d}\mathbf{e_r}}{\mathrm{d}t} &amp;= \frac{\partial \mathbf{e_r}}{\partial \theta}\,\dot{\theta} + \frac{\partial \mathbf{e_r}}{\partial \phi}\,\dot{\phi} \\
+&amp;= \cos\theta \cos\phi\,\dot{\theta}\,\mathbf{e_x} + \cos\theta \sin\phi\,\dot{\theta}\,\mathbf{e_y} - \sin\theta\,\dot{\theta}\,\mathbf{e_z}
+\\
+&amp;- \sin\theta \sin\phi\,\dot{\phi}\,\mathbf{e_x} + \sin\theta \cos\phi\,\dot{\phi}\,\mathbf{e_y}
+\\
+&amp;= \dot{\theta}\,\mathbf{e_{\theta}} + \sin\theta\,\dot{\phi}\,\mathbf{e_{\phi}}.\end{split}\]</div>
+<p>Note that these expressions have geometrical meaning. For example, if a particle moves such that its <span class="math notranslate nohighlight">\(\phi\)</span> coordinate does not change, and it only increases its coordinate <span class="math notranslate nohighlight">\(\theta\)</span>, following a circular path of constant radial distance <span class="math notranslate nohighlight">\(r\)</span>, then in a time <span class="math notranslate nohighlight">\(\delta t\)</span>, the incremental change in the radial unit vector `carried along’ with the particle would be of magnitude <span class="math notranslate nohighlight">\(\dot{\theta}\,\delta t\)</span> and of direction parallel to the maximum-rate direction of increasing <span class="math notranslate nohighlight">\(\theta\)</span>, i.e., parallel to <span class="math notranslate nohighlight">\(\mathbf{e_{\theta}}\)</span>.</p>
+<p>We now have enough information to evaluate all the terms (scalar and vector derivatives) needed in the definition of velocity:</p>
+<div class="math notranslate nohighlight" id="equation-eq-dvecrdt">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-eq-dvecrdt" title="Link to this equation">#</a></span>\[\begin{split}\dfrac{\mathrm{d}(r\mathbf{e_r})}{\mathrm{d}t} &amp;= \dot{r}\,\mathbf{e_r} + r\,\dfrac{\mathrm{d}\mathbf{e_r}}{\mathrm{d}t}
+\\
+&amp;= \dot{r}\,\mathbf{e_r} + r\,\dot{\theta}\,\mathbf{e_{\theta}} + r\,\sin\theta\,\dot{\phi}\,\mathbf{e_{\phi}}.\end{split}\]</div>
+<p>Similar calculations to those which led to Equation <a class="reference internal" href="#equation-eq-duvecrdt">(1.1)</a>, for the other unit vectors (proof is left to the reader), give:</p>
+<div class="math notranslate nohighlight" id="equation-eq-duvecthetadt">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-eq-duvecthetadt" title="Link to this equation">#</a></span>\[\frac{\mathrm{d}\mathbf{e_{\theta}}}{\mathrm{d}t} = -\dot{\theta}\,\mathbf{e_{r}} + \cos\theta\,\dot{\phi}\,\mathbf{e_{\phi}},\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-duvecphidtsp">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-eq-duvecphidtsp" title="Link to this equation">#</a></span>\[\frac{\mathrm{d}\mathbf{e_{\phi}}}{\mathrm{d}t} = -\sin\theta\,\dot{\phi}\,\mathbf{e_{r}} - \cos\theta\,\dot{\phi}\,\mathbf{e_{\theta}}.\]</div>
+<p>Finally, we can obtain the spherical polar components of acceleration by differentiating Equation <a class="reference internal" href="#equation-eq-dvecrdt">(1.2)</a>, and using the unit vector results from Equations
+<a class="reference internal" href="#equation-eq-duvecrdt">(1.1)</a>, <a class="reference internal" href="#equation-eq-duvecthetadt">(1.3)</a> and <a class="reference internal" href="#equation-eq-duvecphidtsp">(1.4)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-accelsph">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-eq-accelsph" title="Link to this equation">#</a></span>\[\begin{split}\mathbf{a} = \dfrac{\mathrm{d}^2(r\mathbf{e_r})}{\mathrm{d}t^2} &amp;= \ddot{r}\,\mathbf{e_r} + \dot{r}\,\dot{\theta}\mathbf{e_{\theta}} + 
++ r\,\ddot{\theta}\,\mathbf{e_{\theta}}  \\
+&amp;+ \dot{r}\,\sin\theta\,\dot{\phi}\,\mathbf{e_{\phi}} 
+ + r\,\cos\theta\,\dot{\theta}\,\dot{\phi}\,\mathbf{e_{\phi}} 
+ + r\,\sin\theta\,\ddot{\phi}\,\mathbf{e_{\phi}}  \\
+ &amp; + \dot{r}\dfrac{\mathrm{d}\mathbf{e_r}}{\mathrm{d}t}
+ + r\,\dot{\theta}\dfrac{\mathrm{d}\mathbf{e_{\theta}}}{\mathrm{d}t}
+ + r\,\sin\theta\,\dot{\phi}\dfrac{\mathrm{d}\mathbf{e_{\phi}}}{\mathrm{d}t} \notag \\
+ &amp;= \ddot{r}\,\mathbf{e_r} + \dot{r}\,\dot{\theta}\mathbf{e_{\theta}} + 
++ r\,\ddot{\theta}\,\mathbf{e_{\theta}}  \\
+&amp;+ \dot{r}\,\sin\theta\,\dot{\phi}\,\mathbf{e_{\phi}} 
+ + r\,\cos\theta\,\dot{\theta}\,\dot{\phi}\,\mathbf{e_{\phi}} 
+ + r\,\sin\theta\,\ddot{\phi}\,\mathbf{e_{\phi}}  \\
+ &amp; + \dot{r}\,\dot{\theta}\,\mathbf{{e}_{\theta}} + \dot{r}\,\sin\theta\,\dot{\phi}\,\mathbf{{e}_{\phi}}
+ -r\,\dot{\theta}^2\,\mathbf{{e}_{r}} +
+r\,\cos\theta\,\dot{\theta}\,\dot{\phi}\,\mathbf{{e}_{\phi}} \notag \\
+ &amp; -r\,\sin^2\theta\,\dot{\phi}^2\,\mathbf{{e}_{r}} -
+r\,\sin\theta\,\cos\theta\,\dot{\phi}^2\,\mathbf{{e}_{\theta}}. \end{split}\]</div>
+<p>Collecting terms corresponding to each component of the acceleration vector, this expression simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{a} =&amp; (\ddot{r}-r \dot{\theta}^2-r\, {\sin^2\theta} \, \dot{\phi}^2)\,\mathbf{e_r} \\
+&amp; (r \ddot{\theta} + 2 \dot{r} \dot{\theta} -r\,\sin\theta\,\cos\theta\,\dot{\phi}^2) \, \mathbf{e_{\theta}}  \\
+&amp; (r\,\sin\theta\,\ddot{\phi} + 2\sin\theta\,\dot{r}\dot{\phi}
++ 2 r\,\cos\theta\,\dot{\theta}\dot{\phi})\,\mathbf{e_{\phi}}.\end{split}\]</div>
+</section>
 <section id="flux">
-<h2><span class="section-number">1.2. </span>Flux<a class="headerlink" href="#flux" title="Link to this heading">#</a></h2>
-<p>Lets think about a house pipe, as depicted in <a class="reference internal" href="#hosepipe"><span class="std std-numref">Fig. 1.1</span></a> with water of density <span class="math notranslate nohighlight">\(\rho\)</span>, moving through a hose pipe of cross sectional
+<h2><span class="section-number">1.4. </span>Flux<a class="headerlink" href="#flux" title="Link to this heading">#</a></h2>
+<p>Lets think about a house pipe, as depicted in <a class="reference internal" href="#hosepipe"><span class="std std-numref">Fig. 1.3</span></a> with water of density <span class="math notranslate nohighlight">\(\rho\)</span>, moving through a hose pipe of cross sectional
 area <span class="math notranslate nohighlight">\(A\)</span> with a velocity of <span class="math notranslate nohighlight">\(\bf v\)</span>,</p>
 <figure class="align-default" id="hosepipe">
 <img alt="_images/HoseFlux2.png" src="_images/HoseFlux2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Flux of water passing through a hose pipe, with cross sectional area <span class="math notranslate nohighlight">\(A\)</span></span><a class="headerlink" href="#hosepipe" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Flux of water passing through a hose pipe, with cross sectional area <span class="math notranslate nohighlight">\(A\)</span></span><a class="headerlink" href="#hosepipe" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We can see that the cross sectional area is perpendicular to the velocity in this case, so we define:</p>
@@ -568,11 +664,11 @@ called the <b>Mass Current</b> <span class="math notranslate nohighlight">\(I_m\
 <div class="math notranslate nohighlight">
 \[\Phi_m = \rho {\bf v}\]</div>
 <p>If we increase or decrease the size of the hose, we can figure out the flow rate of the resulting water flow using this mass flux, as we illustrate
-in <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 1.2</span></a>.</p>
+in <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 1.4</span></a>.</p>
 <figure class="align-default" id="id1">
 <img alt="_images/flux.png" src="_images/flux.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text"><b>Left panel,</b> flux changes with increase to flow;
+<p><span class="caption-number">Fig. 1.4 </span><span class="caption-text"><b>Left panel,</b> flux changes with increase to flow;
 <b>Middle panel</b>, flux changes with increase to area;
 <b>Right panel</b>, distorting the area can change the flux through it.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
@@ -583,17 +679,17 @@ flows the cross sectional area <span class="math notranslate nohighlight">\(A\)<
 <figure class="align-default" id="flux3dda">
 <img alt="_images/Flux3DdA.png" src="_images/Flux3DdA.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Depiction of some 3D surface area <span class="math notranslate nohighlight">\(A\)</span> decomposed into area elements <span class="math notranslate nohighlight">\(\mathrm{d} A\)</span>, with some vector field <span class="math notranslate nohighlight">\(\bf F\)</span> shown in the red. The flux of the vector
+<p><span class="caption-number">Fig. 1.5 </span><span class="caption-text">Depiction of some 3D surface area <span class="math notranslate nohighlight">\(A\)</span> decomposed into area elements <span class="math notranslate nohighlight">\(\mathrm{d} A\)</span>, with some vector field <span class="math notranslate nohighlight">\(\bf F\)</span> shown in the red. The flux of the vector
 field is shown in blue as the components of <span class="math notranslate nohighlight">\(\bf F\)</span> in the direction of the normal vectors <span class="math notranslate nohighlight">\(\bf n\)</span> in <span class="math notranslate nohighlight">\(\mathrm{d} A\)</span>.</span><a class="headerlink" href="#flux3dda" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Consider the system shown in <a class="reference internal" href="#flux3dda"><span class="std std-numref">Fig. 1.3</span></a>, where some vector field <span class="math notranslate nohighlight">\(\bf F(x)\)</span> is passing through a surface with area <span class="math notranslate nohighlight">\(A\)</span>.  We can split up
+<p>Consider the system shown in <a class="reference internal" href="#flux3dda"><span class="std std-numref">Fig. 1.5</span></a>, where some vector field <span class="math notranslate nohighlight">\(\bf F(x)\)</span> is passing through a surface with area <span class="math notranslate nohighlight">\(A\)</span>.  We can split up
 the area into smaller surface elements <span class="math notranslate nohighlight">\(\mathrm{d} A\)</span> and consider the flux <span class="math notranslate nohighlight">\(\Phi\)</span> passing through each of these.  In each surface element,
-we can define a surface normal <span class="math notranslate nohighlight">\(\bf n\)</span> and then just resolve <span class="math notranslate nohighlight">\(\bf F\)</span> into <span class="math notranslate nohighlight">\(\bf F_\parallel\)</span> and <span class="math notranslate nohighlight">\(\bf F_\perp\)</span> components, as shown in <a class="reference internal" href="#flux3d"><span class="std std-numref">Fig. 1.4</span></a>.</p>
+we can define a surface normal <span class="math notranslate nohighlight">\(\bf n\)</span> and then just resolve <span class="math notranslate nohighlight">\(\bf F\)</span> into <span class="math notranslate nohighlight">\(\bf F_\parallel\)</span> and <span class="math notranslate nohighlight">\(\bf F_\perp\)</span> components, as shown in <a class="reference internal" href="#flux3d"><span class="std std-numref">Fig. 1.6</span></a>.</p>
 <figure class="align-default" id="flux3d">
 <img alt="_images/flux3D.png" src="_images/flux3D.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1.4 </span><span class="caption-text">A vector <span class="math notranslate nohighlight">\(\bf F\)</span> passes through some surface (depicted in the green), <b>Left panel,</b> the situation for a flat surface, <b>Right panel</b> the situation for a curved surface.
+<p><span class="caption-number">Fig. 1.6 </span><span class="caption-text">A vector <span class="math notranslate nohighlight">\(\bf F\)</span> passes through some surface (depicted in the green), <b>Left panel,</b> the situation for a flat surface, <b>Right panel</b> the situation for a curved surface.
 Notice that in each case the setting up a surface normal vector at each position and resolving the vector <span class="math notranslate nohighlight">\(\bf F\)</span> into parallel <span class="math notranslate nohighlight">\(\bf F_\parallel\)</span> and
 perpendicular <span class="math notranslate nohighlight">\(\bf F_\perp\)</span> components.</span><a class="headerlink" href="#flux3d" title="Link to this image">#</a></p>
 </figcaption>
@@ -606,37 +702,37 @@ perpendicular <span class="math notranslate nohighlight">\(\bf F_\perp\)</span> 
 \[\Phi = \iint_A \left({\bf F} \cdot {\bf n}\right) \,\mathrm{d} A = \iint_A {\bf F} \cdot \mathrm{d} {\bf A}\]</div>
 </section>
 <section id="divergence-and-stokes-theorems">
-<h2><span class="section-number">1.3. </span>Divergence and Stokes Theorems<a class="headerlink" href="#divergence-and-stokes-theorems" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.5. </span>Divergence and Stokes Theorems<a class="headerlink" href="#divergence-and-stokes-theorems" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>For a vector field <span class="math notranslate nohighlight">\(\bf F\)</span> within some volume <span class="math notranslate nohighlight">\(V\)</span>, bounded by a surface area <span class="math notranslate nohighlight">\(A\)</span> with surface normal <span class="math notranslate nohighlight">\(\bf n\)</span>, as depicted in
-<a class="reference internal" href="#divergencetheorem"><span class="std std-numref">Fig. 1.5</span></a>, then we can relate:</p></li>
+<a class="reference internal" href="#divergencetheorem"><span class="std std-numref">Fig. 1.7</span></a>, then we can relate:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\iiint _{V}\left(\nabla\cdot {\bf F} \right)\,\mathrm{d} V = \iint_A {\bf F} \cdot \mathrm{d} {\bf A}\]</div>
 <figure class="align-default" id="divergencetheorem">
 <img alt="_images/DivergenceTheorem2.png" src="_images/DivergenceTheorem2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1.5 </span><span class="caption-text">A pictorial look at flux of a vector field <span class="math notranslate nohighlight">\(\bf F\)</span> crossing a bounding area <span class="math notranslate nohighlight">\(A\)</span> which can be related to a divergence <span class="math notranslate nohighlight">\(\nabla \cdot {\bf F}\)</span> within the volume <span class="math notranslate nohighlight">\(V\)</span>.</span><a class="headerlink" href="#divergencetheorem" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.7 </span><span class="caption-text">A pictorial look at flux of a vector field <span class="math notranslate nohighlight">\(\bf F\)</span> crossing a bounding area <span class="math notranslate nohighlight">\(A\)</span> which can be related to a divergence <span class="math notranslate nohighlight">\(\nabla \cdot {\bf F}\)</span> within the volume <span class="math notranslate nohighlight">\(V\)</span>.</span><a class="headerlink" href="#divergencetheorem" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
-<li><p>For a vector field <span class="math notranslate nohighlight">\(\bf F\)</span> within boundary <span class="math notranslate nohighlight">\(\ell\)</span> of a surface area <span class="math notranslate nohighlight">\(A\)</span> with surface normal <span class="math notranslate nohighlight">\(\bf n\)</span>, as depicted in <a class="reference internal" href="#stokestheorem"><span class="std std-numref">Fig. 1.6</span></a>, then we can relate:</p></li>
+<li><p>For a vector field <span class="math notranslate nohighlight">\(\bf F\)</span> within boundary <span class="math notranslate nohighlight">\(\ell\)</span> of a surface area <span class="math notranslate nohighlight">\(A\)</span> with surface normal <span class="math notranslate nohighlight">\(\bf n\)</span>, as depicted in <a class="reference internal" href="#stokestheorem"><span class="std std-numref">Fig. 1.8</span></a>, then we can relate:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\int _{\ell}\,{\bf F}\cdot\mathrm{d} \ell = \iint_A (\nabla \times {\bf F}) \cdot \mathrm{d}  {\bf A}\]</div>
 <figure class="align-default" id="stokestheorem">
 <img alt="_images/StokesTheorem.png" src="_images/StokesTheorem.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1.6 </span><span class="caption-text">A pictorial look at a vector <span class="math notranslate nohighlight">\({\bf F}\)</span> on the boundary <span class="math notranslate nohighlight">\(\ell\)</span> which can be related to the curl <span class="math notranslate nohighlight">\(\nabla \times {\bf F}\)</span> within the area <span class="math notranslate nohighlight">\(A\)</span>.</span><a class="headerlink" href="#stokestheorem" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.8 </span><span class="caption-text">A pictorial look at a vector <span class="math notranslate nohighlight">\({\bf F}\)</span> on the boundary <span class="math notranslate nohighlight">\(\ell\)</span> which can be related to the curl <span class="math notranslate nohighlight">\(\nabla \times {\bf F}\)</span> within the area <span class="math notranslate nohighlight">\(A\)</span>.</span><a class="headerlink" href="#stokestheorem" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="helmholtz-decomposition">
-<h2><span class="section-number">1.4. </span>Helmholtz Decomposition<a class="headerlink" href="#helmholtz-decomposition" title="Link to this heading">#</a></h2>
-<p>The Helmholtz decomposition, shown in Equation <a class="reference internal" href="#equation-helmholtzdecomp">(1.1)</a> states that a suitably smooth vector field <span class="math notranslate nohighlight">\(\bf F\)</span> can, in general, be decomposed
+<h2><span class="section-number">1.6. </span>Helmholtz Decomposition<a class="headerlink" href="#helmholtz-decomposition" title="Link to this heading">#</a></h2>
+<p>The Helmholtz decomposition, shown in Equation <a class="reference internal" href="#equation-helmholtzdecomp">(1.6)</a> states that a suitably smooth vector field <span class="math notranslate nohighlight">\(\bf F\)</span> can, in general, be decomposed
 into two components:</p>
 <div class="math notranslate nohighlight" id="equation-helmholtzdecomp">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-helmholtzdecomp" title="Link to this equation">#</a></span>\[{\bf F} = -\nabla \phi + \nabla \times {\bf A}\]</div>
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-helmholtzdecomp" title="Link to this equation">#</a></span>\[{\bf F} = -\nabla \phi + \nabla \times {\bf A}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\phi\)</span> is a scalar field, also called the <b>Scalar Potential</b>, and <span class="math notranslate nohighlight">\(\bf A\)</span> is a vector field, also called the <b>Vector Potential</b>.</p>
 </section>
 </section>
@@ -711,9 +807,11 @@ into two components:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forcing-terms-and-particular-solutions">1.1.3. Forcing Terms and Particular Solutions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux">1.2. Flux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-and-stokes-theorems">1.3. Divergence and Stokes Theorems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-decomposition">1.4. Helmholtz Decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cylindrical-coordinates">1.2. Cylindrical Coordinates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-coordinates">1.3. Spherical Coordinates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux">1.4. Flux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-and-stokes-theorems">1.5. Divergence and Stokes Theorems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-decomposition">1.6. Helmholtz Decomposition</a></li>
 </ul>
   </nav></div>
 

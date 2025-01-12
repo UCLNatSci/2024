@@ -422,7 +422,7 @@ document.write(`
 <h1>Mathematical Preliminaries<a class="headerlink" href="#mathematical-preliminaries" title="Link to this heading">#</a></h1>
 <section id="flux">
 <h2>Flux<a class="headerlink" href="#flux" title="Link to this heading">#</a></h2>
-<p>Lets think about a house pipe, as depicted in <a class="reference internal" href="../maths.html#hosepipe"><span class="std std-numref">Fig. 1.1</span></a> with water of density <span class="math notranslate nohighlight">\(\rho\)</span>, moving through a hose pipe of cross sectional
+<p>Lets think about a house pipe, as depicted in <a class="reference internal" href="../maths.html#hosepipe"><span class="std std-numref">Fig. 1.3</span></a> with water of density <span class="math notranslate nohighlight">\(\rho\)</span>, moving through a hose pipe of cross sectional
 area <span class="math notranslate nohighlight">\(A\)</span> with a velocity of <span class="math notranslate nohighlight">\(\bf v\)</span>,</p>
 <figure class="align-default" id="hosepipe">
 <img alt="../_images/HoseFlux2.png" src="../_images/HoseFlux2.png" />
@@ -441,7 +441,7 @@ called the <b>Mass Current</b> <span class="math notranslate nohighlight">\(I_m\
 <div class="math notranslate nohighlight">
 \[\Phi_m = \rho {\bf v}\]</div>
 <p>If we increase or decrease the size of the hose, we can figure out the flow rate of the resulting water flow using this mass flux, as we illustrate
-in <a class="reference internal" href="../maths.html#id1"><span class="std std-numref">Fig. 1.2</span></a>.</p>
+in <a class="reference internal" href="../maths.html#id1"><span class="std std-numref">Fig. 1.4</span></a>.</p>
 <figure class="align-default" id="id1">
 <img alt="../_images/flux.png" src="../_images/flux.png" />
 <figcaption>
@@ -460,9 +460,9 @@ flows the cross sectional area <span class="math notranslate nohighlight">\(A\)<
 field is shown in blue as the components of <span class="math notranslate nohighlight">\(\bf F\)</span> in the direction of the normal vectors <span class="math notranslate nohighlight">\(\bf n\)</span> in <span class="math notranslate nohighlight">\(\mathrm{d} A\)</span>.</span><a class="headerlink" href="#flux3dda" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Consider the system shown in <a class="reference internal" href="../maths.html#flux3dda"><span class="std std-numref">Fig. 1.3</span></a>, where some vector field <span class="math notranslate nohighlight">\(\bf F(x)\)</span> is passing through a surface with area <span class="math notranslate nohighlight">\(A\)</span>.  We can split up
+<p>Consider the system shown in <a class="reference internal" href="../maths.html#flux3dda"><span class="std std-numref">Fig. 1.5</span></a>, where some vector field <span class="math notranslate nohighlight">\(\bf F(x)\)</span> is passing through a surface with area <span class="math notranslate nohighlight">\(A\)</span>.  We can split up
 the area into smaller surface elements <span class="math notranslate nohighlight">\(\mathrm{d} A\)</span> and consider the flux <span class="math notranslate nohighlight">\(\Phi\)</span> passing through each of these.  In each surface element,
-we can define a surface normal <span class="math notranslate nohighlight">\(\bf n\)</span> and then just resolve <span class="math notranslate nohighlight">\(\bf F\)</span> into <span class="math notranslate nohighlight">\(\bf F_\parallel\)</span> and <span class="math notranslate nohighlight">\(\bf F_\perp\)</span> components, as shown in <a class="reference internal" href="../maths.html#flux3d"><span class="std std-numref">Fig. 1.4</span></a>.</p>
+we can define a surface normal <span class="math notranslate nohighlight">\(\bf n\)</span> and then just resolve <span class="math notranslate nohighlight">\(\bf F\)</span> into <span class="math notranslate nohighlight">\(\bf F_\parallel\)</span> and <span class="math notranslate nohighlight">\(\bf F_\perp\)</span> components, as shown in <a class="reference internal" href="../maths.html#flux3d"><span class="std std-numref">Fig. 1.6</span></a>.</p>
 <figure class="align-default" id="flux3d">
 <img alt="../_images/flux3D.png" src="../_images/flux3D.png" />
 <figcaption>
@@ -482,7 +482,7 @@ perpendicular <span class="math notranslate nohighlight">\(\bf F_\perp\)</span> 
 <h2>Divergence and Stokes Theorems<a class="headerlink" href="#divergence-and-stokes-theorems" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>For a vector field <span class="math notranslate nohighlight">\(\bf F\)</span> within some volume <span class="math notranslate nohighlight">\(V\)</span>, bounded by a surface area <span class="math notranslate nohighlight">\(A\)</span> with surface normal <span class="math notranslate nohighlight">\(\bf n\)</span>, as depicted in
-<a class="reference internal" href="../maths.html#divergencetheorem"><span class="std std-numref">Fig. 1.5</span></a>, then we can relate:</p></li>
+<a class="reference internal" href="../maths.html#divergencetheorem"><span class="std std-numref">Fig. 1.7</span></a>, then we can relate:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\iiint _{V}\left(\nabla\cdot {\bf F} \right)\,\mathrm{d} V = \iint_A {\bf F} \cdot \mathrm{d} {\bf A}\]</div>
@@ -493,7 +493,7 @@ perpendicular <span class="math notranslate nohighlight">\(\bf F_\perp\)</span> 
 </figcaption>
 </figure>
 <ul class="simple">
-<li><p>For a vector field <span class="math notranslate nohighlight">\(\bf F\)</span> within boundary <span class="math notranslate nohighlight">\(\ell\)</span> of a surface area <span class="math notranslate nohighlight">\(A\)</span> with surface normal <span class="math notranslate nohighlight">\(\bf n\)</span>, as depicted in <a class="reference internal" href="../maths.html#stokestheorem"><span class="std std-numref">Fig. 1.6</span></a>, then we can relate:</p></li>
+<li><p>For a vector field <span class="math notranslate nohighlight">\(\bf F\)</span> within boundary <span class="math notranslate nohighlight">\(\ell\)</span> of a surface area <span class="math notranslate nohighlight">\(A\)</span> with surface normal <span class="math notranslate nohighlight">\(\bf n\)</span>, as depicted in <a class="reference internal" href="../maths.html#stokestheorem"><span class="std std-numref">Fig. 1.8</span></a>, then we can relate:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\int _{\ell}\,{\bf F}\cdot\mathrm{d} \ell = \iint_A (\nabla \times {\bf F}) \cdot \mathrm{d}  {\bf A}\]</div>
@@ -506,7 +506,7 @@ perpendicular <span class="math notranslate nohighlight">\(\bf F_\perp\)</span> 
 </section>
 <section id="helmholtz-decomposition">
 <h2>Helmholtz Decomposition<a class="headerlink" href="#helmholtz-decomposition" title="Link to this heading">#</a></h2>
-<p>The Helmholtz decomposition, shown in Equation <a class="reference internal" href="../maths.html#equation-helmholtzdecomp">(1.1)</a> states that a suitably smooth vector field <span class="math notranslate nohighlight">\(\bf F\)</span> can, in general, be decomposed
+<p>The Helmholtz decomposition, shown in Equation <a class="reference internal" href="../maths.html#equation-helmholtzdecomp">(1.6)</a> states that a suitably smooth vector field <span class="math notranslate nohighlight">\(\bf F\)</span> can, in general, be decomposed
 into two components:</p>
 <div class="math notranslate nohighlight" id="equation-helmholtzdecomp">
 <span class="eqno">()<a class="headerlink" href="#equation-helmholtzdecomp" title="Link to this equation">#</a></span>\[{\bf F} = -\nabla \phi + \nabla \times {\bf A}\]</div>
