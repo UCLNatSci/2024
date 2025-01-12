@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
   
@@ -450,39 +450,39 @@ our toolkit of mathematical tools, here calculus.</p>
 \end{pmatrix} \end{split}\]</div>
 </div>
 <p>These partial derivatives measure the change of <span class="math notranslate nohighlight">\(\phi\)</span> along the directions of <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span>, but can we calculate the derivative of <span class="math notranslate nohighlight">\(\phi\)</span> along some
-general direction, characterised by a unit vector <span class="math notranslate nohighlight">\(\hat{\bf u}\)</span>:</p>
+general direction, characterised by a unit vector <span class="math notranslate nohighlight">\(\hat{\mathbf{u}}\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\hat{\bf u} = \begin{pmatrix}
+\[\begin{split}\hat{\mathbf{u}} = \begin{pmatrix}
  u_x\\
  u_y\\
  u_z
 \end{pmatrix} \end{split}\]</div>
-<p>We need a directional derivative, which can tell us about the changes in <span class="math notranslate nohighlight">\(\phi\)</span> along each component of <span class="math notranslate nohighlight">\(\hat{\bf u}\)</span>.  This leads us to the gradient
+<p>We need a directional derivative, which can tell us about the changes in <span class="math notranslate nohighlight">\(\phi\)</span> along each component of <span class="math notranslate nohighlight">\(\hat{\mathbf{u}}\)</span>.  This leads us to the gradient
 operator:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\nabla = \begin{pmatrix}
  \partial/\partial x \\
  \partial/\partial y \\
  \partial/\partial z 
-\end{pmatrix} = \frac{\partial}{\partial x} \, \hat {\bf x} + \frac{\partial }{\partial y} \, \hat {\bf y}+ \frac{\partial}{\partial z} \, \hat {\bf z}\end{split}\]</div>
+\end{pmatrix} = \frac{\partial}{\partial x} \, \mathbf{e_x} + \frac{\partial }{\partial y} \, \mathbf{e_y}+ \frac{\partial}{\partial z} \, \mathbf{e_z}\end{split}\]</div>
 <p>which as an operator needs to act on a scalar field:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\nabla \phi = \begin{pmatrix}
  \partial\phi/\partial x \\
  \partial\phi/\partial y \\
  \partial\phi/\partial z 
-\end{pmatrix} = \frac{\partial \phi}{\partial x} \, \hat {\bf x} + \frac{\partial \phi}{\partial y} \, \hat {\bf y}+ \frac{\partial \phi}{\partial z} \, \hat {\bf z}\end{split}\]</div>
-<p>We see that this is now a vector field, which we can resolve in the <span class="math notranslate nohighlight">\(\hat{\bf u}\)</span> direction:</p>
+\end{pmatrix} = \frac{\partial \phi}{\partial x} \, \mathbf{e_x} + \frac{\partial \phi}{\partial y} \, \mathbf{e_y}+ \frac{\partial \phi}{\partial z} \, \mathbf{e_z}\end{split}\]</div>
+<p>We see that this is now a vector field, which we can resolve in the <span class="math notranslate nohighlight">\(\hat{\mathbf{u}}\)</span> direction:</p>
 <div class="math notranslate nohighlight">
-\[\hat{\bf u} \cdot \nabla \phi\]</div>
-<p>which is our <b>directional derivative</b> of <span class="math notranslate nohighlight">\(\phi\)</span> in the <span class="math notranslate nohighlight">\(\hat{\bf u}\)</span> direction, which we often write as <span class="math notranslate nohighlight">\(\nabla_{\hat{\bf u}} \phi\)</span>.</p>
+\[\hat{\mathbf{u}} \cdot \nabla \phi\]</div>
+<p>which is our <b>directional derivative</b> of <span class="math notranslate nohighlight">\(\phi\)</span> in the <span class="math notranslate nohighlight">\(\hat{\mathbf{u}}\)</span> direction, which we often write as <span class="math notranslate nohighlight">\(\nabla_{\hat{\mathbf{u}}} \phi\)</span>.</p>
 <p>Looking at this expression further:</p>
 <div class="math notranslate nohighlight">
-\[|\nabla_{\hat{\bf u}} \phi| = \hat{\bf u} \cdot \nabla \phi = |\hat{\bf u}||\nabla \phi|\cos (\theta) = |\nabla \phi|\cos (\theta)\]</div>
+\[|\nabla_{\hat{\mathbf{u}}} \phi| = \hat{\mathbf{u}} \cdot \nabla \phi = |\hat{\mathbf{u}}||\nabla \phi|\cos (\theta) = |\nabla \phi|\cos (\theta)\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(|\nabla_{\hat{\bf u}} \phi|\)</span> is maximised when <span class="math notranslate nohighlight">\(\theta = 0\)</span> - The gradient <span class="math notranslate nohighlight">\(\nabla \phi\)</span> of a scalar field <span class="math notranslate nohighlight">\(\phi\)</span> always points toward the
+<li><p><span class="math notranslate nohighlight">\(|\nabla_{\hat{\mathbf{u}}} \phi|\)</span> is maximised when <span class="math notranslate nohighlight">\(\theta = 0\)</span> - The gradient <span class="math notranslate nohighlight">\(\nabla \phi\)</span> of a scalar field <span class="math notranslate nohighlight">\(\phi\)</span> always points toward the
 direction of maximum increase of <span class="math notranslate nohighlight">\(\phi\)</span> (i.e. a maxima).</p></li>
-<li><p><span class="math notranslate nohighlight">\(|\nabla_{\hat{\bf u}} \phi|\)</span> is zero when <span class="math notranslate nohighlight">\(\theta = \pi/2\)</span>, i.e. tangential surfaces, which would be given by <span class="math notranslate nohighlight">\(\phi({\bf r}) = \text{constant}\)</span> - this
+<li><p><span class="math notranslate nohighlight">\(|\nabla_{\hat{\mathbf{u}}} \phi|\)</span> is zero when <span class="math notranslate nohighlight">\(\theta = \pi/2\)</span>, i.e. tangential surfaces, which would be given by <span class="math notranslate nohighlight">\(\phi({\bf r}) = \text{constant}\)</span> - this
 is always therefore one dimension lower than the dimension of the problem (therefore in 3D these would be surface areas and in 2D they would be contour lines).</p></li>
 </ul>
 <p>We can always take some surface <span class="math notranslate nohighlight">\(z = z(x,\,y)\)</span> and convert it into a scalar field <span class="math notranslate nohighlight">\(\phi\)</span> with some surface normal <span class="math notranslate nohighlight">\({\bf n} = \nabla \phi\)</span>.</p>
@@ -554,7 +554,7 @@ as illustrated in <a class="reference internal" href="#quiver"><span class="std 
 <p>which measures the infinitesimal change of  <span class="math notranslate nohighlight">\(\phi\)</span> as we change <span class="math notranslate nohighlight">\(x, \,y,\,z\)</span> by infinitesimal amounts <span class="math notranslate nohighlight">\(\mathrm{d}x, \,\mathrm{d}y,\, \mathrm{d}z\)</span>.<br />
 Likewise we can can the vectorial line element:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathrm{d}{\bf r} = \begin{pmatrix} \mathrm{d}x \\\mathrm{d}y\\ \mathrm{d}z\end{pmatrix} = \hat{\bf x}\, \mathrm{d}x  + \hat{\bf y}\, \mathrm{d}y  + \hat{\bf z} \, \mathrm{d}z \end{split}\]</div>
+\[\begin{split}\mathrm{d}{\bf r} = \begin{pmatrix} \mathrm{d}x \\\mathrm{d}y\\ \mathrm{d}z\end{pmatrix} = \mathbf{e_x}\, \mathrm{d}x  + \mathbf{e_y}\, \mathrm{d}y  + \mathbf{e_z} \, \mathrm{d}z \end{split}\]</div>
 <p>to write the total differential in a slightly more compact notation:</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}\]</div>
@@ -572,25 +572,25 @@ different systems of coordinates, which will tell us how <span class="math notra
 <h3><span class="section-number">5.5.1. </span>Cylindrical polar coordinates<a class="headerlink" href="#cylindrical-polar-coordinates" title="Link to this heading">#</a></h3>
 <p>Here the vectorial line element has the form:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}{\bf r} = \hat{\bf r}\, \mathrm{d}r + \hat{\bf \theta }\,r\,\mathrm{d}\theta  + \hat{\bf z} \,\mathrm{d}z\]</div>
+\[\mathrm{d}{\bf r} = \mathbf{e_R}\, \mathrm{d}R + \mathbf{e_\theta}\,R\,\mathrm{d}\theta  + \mathbf{e_z} \,\mathrm{d}z\]</div>
 <p>and looking at what we expect to get <span class="math notranslate nohighlight">\(\mathrm{d}\phi\)</span> from the multi-variate chain rule:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}f = \frac{\partial f}{\partial r} \mathrm{d} r + \frac{\partial f}{\partial \theta} \mathrm{d} \theta + \frac{\partial f}{\partial z} \mathrm{d} z\]</div>
+\[\mathrm{d}f = \frac{\partial f}{\partial R} \mathrm{d}R + \frac{\partial f}{\partial \theta} \mathrm{d} \theta + \frac{\partial f}{\partial z} \mathrm{d} z\]</div>
 <p>then our expression for and so for <span class="math notranslate nohighlight">\(\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}\)</span> to match, we must have a gradient operator to be of the form:</p>
 <div class="math notranslate nohighlight">
-\[\nabla f = \hat{\bf r}\, \frac{\partial f}{\partial r}  + \hat{\bf \theta }\,\frac{1}{r}\,\frac{\partial f}{\partial \theta}  + \hat{\bf z} \,\frac{\partial f}{\partial z} \]</div>
+\[\nabla f = \mathbf{e_R}\, \frac{\partial f}{\partial R}  + \mathbf{e_\theta }\,\frac{1}{R}\,\frac{\partial f}{\partial \theta}  + \mathbf{e_z} \,\frac{\partial f}{\partial z} \]</div>
 </section>
 <section id="spherical-polar-coordinates">
 <h3><span class="section-number">5.5.2. </span>Spherical polar coordinates<a class="headerlink" href="#spherical-polar-coordinates" title="Link to this heading">#</a></h3>
 <p>Here the vectorial line element has the form:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}{\bf r} = \hat{\bf r} \,\mathrm{d}r + \hat{\bf \phi}\,r\,\mathrm{d}\phi + \hat{\bf \theta} \,r\,\sin(\phi)\,\mathrm{d}\theta\]</div>
+\[\mathrm{d}{\bf r} = \mathbf{e_r} \,\mathrm{d}r + \mathbf{e_\phi}\,r\,\mathrm{d}\phi + \mathbf{e_\theta} \,r\,\sin(\phi)\,\mathrm{d}\theta\]</div>
 <p>and looking at what we expect to get <span class="math notranslate nohighlight">\(\mathrm{d}\phi\)</span> from the multi-variate chain rule:</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{d}f = \frac{\partial f}{\partial r} \mathrm{d} r + \frac{\partial f}{\partial \phi} \mathrm{d} \phi + \frac{\partial f}{\partial \theta} \mathrm{d} \theta\]</div>
 <p>then our expression for and so for <span class="math notranslate nohighlight">\(\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}\)</span> to match, we must have a gradient operator to be of the form:</p>
 <div class="math notranslate nohighlight">
-\[\nabla f = \hat{\bf r}\, \frac{\partial f}{\partial r}  + \hat{\bf \phi}\,\frac{1}{r}\,\frac{\partial f}{\partial \phi}  + \hat{\bf \theta} \,\frac{1}{r\sin(\phi)}\,\frac{\partial f}{\partial \theta} \]</div>
+\[\nabla f = \mathbf{e_r}\, \frac{\partial f}{\partial r}  + \mathbf{e_\phi}\,\frac{1}{r}\,\frac{\partial f}{\partial \phi}  + \mathbf{e_\theta} \,\frac{1}{r\sin(\phi)}\,\frac{\partial f}{\partial \theta} \]</div>
 <p>A very good resource for all these expressions can be found at
 <a href="https://en.wikipedia.org/wiki/Del_in_cylindrical_and_spherical_coordinates" target="_blank">Del in cylindrical and spherical coordinates</a></p>
 </section>

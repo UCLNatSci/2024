@@ -81,23 +81,23 @@ Find the $x,\, y$ derivatives for the fields:
 ```` 
 
 These partial derivatives measure the change of $\phi$ along the directions of $x$ or $y$, but can we calculate the derivative of $\phi$ along some 
-general direction, characterised by a unit vector $\hat{\bf u}$:
+general direction, characterised by a unit vector $\hat{\mathbf{u}}$:
 
 ```{math}
-\hat{\bf u} = \begin{pmatrix}
+\hat{\mathbf{u}} = \begin{pmatrix}
  u_x\\
  u_y\\
  u_z
 \end{pmatrix} 
 ```
-We need a directional derivative, which can tell us about the changes in $\phi$ along each component of $\hat{\bf u}$.  This leads us to the gradient
+We need a directional derivative, which can tell us about the changes in $\phi$ along each component of $\hat{\mathbf{u}}$.  This leads us to the gradient
 operator:
 ```{math}
 \nabla = \begin{pmatrix}
  \partial/\partial x \\
  \partial/\partial y \\
  \partial/\partial z 
-\end{pmatrix} = \frac{\partial}{\partial x} \, \hat {\bf x} + \frac{\partial }{\partial y} \, \hat {\bf y}+ \frac{\partial}{\partial z} \, \hat {\bf z}
+\end{pmatrix} = \frac{\partial}{\partial x} \, \mathbf{e_x} + \frac{\partial }{\partial y} \, \mathbf{e_y}+ \frac{\partial}{\partial z} \, \mathbf{e_z}
 ```
 which as an operator needs to act on a scalar field:
 ```{math}
@@ -105,26 +105,26 @@ which as an operator needs to act on a scalar field:
  \partial\phi/\partial x \\
  \partial\phi/\partial y \\
  \partial\phi/\partial z 
-\end{pmatrix} = \frac{\partial \phi}{\partial x} \, \hat {\bf x} + \frac{\partial \phi}{\partial y} \, \hat {\bf y}+ \frac{\partial \phi}{\partial z} \, \hat {\bf z}
+\end{pmatrix} = \frac{\partial \phi}{\partial x} \, \mathbf{e_x} + \frac{\partial \phi}{\partial y} \, \mathbf{e_y}+ \frac{\partial \phi}{\partial z} \, \mathbf{e_z}
 ```
-We see that this is now a vector field, which we can resolve in the $\hat{\bf u}$ direction:
+We see that this is now a vector field, which we can resolve in the $\hat{\mathbf{u}}$ direction:
 
 ```{math}
-\hat{\bf u} \cdot \nabla \phi
+\hat{\mathbf{u}} \cdot \nabla \phi
 ```
 
-which is our <b>directional derivative</b> of $\phi$ in the $\hat{\bf u}$ direction, which we often write as $\nabla_{\hat{\bf u}} \phi$.  
+which is our <b>directional derivative</b> of $\phi$ in the $\hat{\mathbf{u}}$ direction, which we often write as $\nabla_{\hat{\mathbf{u}}} \phi$.  
 
 Looking at this expression further:
 
 ```{math}
-|\nabla_{\hat{\bf u}} \phi| = \hat{\bf u} \cdot \nabla \phi = |\hat{\bf u}||\nabla \phi|\cos (\theta) = |\nabla \phi|\cos (\theta)
+|\nabla_{\hat{\mathbf{u}}} \phi| = \hat{\mathbf{u}} \cdot \nabla \phi = |\hat{\mathbf{u}}||\nabla \phi|\cos (\theta) = |\nabla \phi|\cos (\theta)
 ```
 
--  $|\nabla_{\hat{\bf u}} \phi|$ is maximised when $\theta = 0$ - The gradient $\nabla \phi$ of a scalar field $\phi$ always points toward the 
+-  $|\nabla_{\hat{\mathbf{u}}} \phi|$ is maximised when $\theta = 0$ - The gradient $\nabla \phi$ of a scalar field $\phi$ always points toward the 
 direction of maximum increase of $\phi$ (i.e. a maxima).  
 
-- $|\nabla_{\hat{\bf u}} \phi|$ is zero when $\theta = \pi/2$, i.e. tangential surfaces, which would be given by $\phi({\bf r}) = \text{constant}$ - this 
+- $|\nabla_{\hat{\mathbf{u}}} \phi|$ is zero when $\theta = \pi/2$, i.e. tangential surfaces, which would be given by $\phi({\bf r}) = \text{constant}$ - this 
 is always therefore one dimension lower than the dimension of the problem (therefore in 3D these would be surface areas and in 2D they would be contour lines).
 
 We can always take some surface $z = z(x,\,y)$ and convert it into a scalar field $\phi$ with some surface normal ${\bf n} = \nabla \phi$.
@@ -219,7 +219,7 @@ Recall from our discussions about partial derivatives, we can also define a <em>
 which measures the infinitesimal change of  $\phi$ as we change $x, \,y,\,z$ by infinitesimal amounts $\mathrm{d}x, \,\mathrm{d}y,\, \mathrm{d}z$.  
 Likewise we can can the vectorial line element:
 ```{math}
-\mathrm{d}{\bf r} = \begin{pmatrix} \mathrm{d}x \\\mathrm{d}y\\ \mathrm{d}z\end{pmatrix} = \hat{\bf x}\, \mathrm{d}x  + \hat{\bf y}\, \mathrm{d}y  + \hat{\bf z} \, \mathrm{d}z 
+\mathrm{d}{\bf r} = \begin{pmatrix} \mathrm{d}x \\\mathrm{d}y\\ \mathrm{d}z\end{pmatrix} = \mathbf{e_x}\, \mathrm{d}x  + \mathbf{e_y}\, \mathrm{d}y  + \mathbf{e_z} \, \mathrm{d}z 
 ```
 to write the total differential in a slightly more compact notation:
 ```{math}
@@ -242,22 +242,22 @@ different systems of coordinates, which will tell us how $\nabla \phi$ will be d
 
 Here the vectorial line element has the form:
 ```{math}
-\mathrm{d}{\bf r} = \hat{\bf r}\, \mathrm{d}r + \hat{\bf \theta }\,r\,\mathrm{d}\theta  + \hat{\bf z} \,\mathrm{d}z
+\mathrm{d}{\bf r} = \mathbf{e_R}\, \mathrm{d}R + \mathbf{e_\theta}\,R\,\mathrm{d}\theta  + \mathbf{e_z} \,\mathrm{d}z
 ```
 and looking at what we expect to get $\mathrm{d}\phi$ from the multi-variate chain rule:
 ```{math}
-\mathrm{d}f = \frac{\partial f}{\partial r} \mathrm{d} r + \frac{\partial f}{\partial \theta} \mathrm{d} \theta + \frac{\partial f}{\partial z} \mathrm{d} z
+\mathrm{d}f = \frac{\partial f}{\partial R} \mathrm{d}R + \frac{\partial f}{\partial \theta} \mathrm{d} \theta + \frac{\partial f}{\partial z} \mathrm{d} z
 ```
 then our expression for and so for $\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}$ to match, we must have a gradient operator to be of the form:
 ```{math}
-\nabla f = \hat{\bf r}\, \frac{\partial f}{\partial r}  + \hat{\bf \theta }\,\frac{1}{r}\,\frac{\partial f}{\partial \theta}  + \hat{\bf z} \,\frac{\partial f}{\partial z} 
+\nabla f = \mathbf{e_R}\, \frac{\partial f}{\partial R}  + \mathbf{e_\theta }\,\frac{1}{R}\,\frac{\partial f}{\partial \theta}  + \mathbf{e_z} \,\frac{\partial f}{\partial z} 
 ```
 
 ### Spherical polar coordinates
 
 Here the vectorial line element has the form:
 ```{math}
-\mathrm{d}{\bf r} = \hat{\bf r} \,\mathrm{d}r + \hat{\bf \phi}\,r\,\mathrm{d}\phi + \hat{\bf \theta} \,r\,\sin(\phi)\,\mathrm{d}\theta
+\mathrm{d}{\bf r} = \mathbf{e_r} \,\mathrm{d}r + \mathbf{e_\phi}\,r\,\mathrm{d}\phi + \mathbf{e_\theta} \,r\,\sin(\phi)\,\mathrm{d}\theta
 ```
 and looking at what we expect to get $\mathrm{d}\phi$ from the multi-variate chain rule:
 ```{math}
@@ -265,7 +265,7 @@ and looking at what we expect to get $\mathrm{d}\phi$ from the multi-variate cha
 ```
 then our expression for and so for $\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}$ to match, we must have a gradient operator to be of the form:
 ```{math}
-\nabla f = \hat{\bf r}\, \frac{\partial f}{\partial r}  + \hat{\bf \phi}\,\frac{1}{r}\,\frac{\partial f}{\partial \phi}  + \hat{\bf \theta} \,\frac{1}{r\sin(\phi)}\,\frac{\partial f}{\partial \theta} 
+\nabla f = \mathbf{e_r}\, \frac{\partial f}{\partial r}  + \mathbf{e_\phi}\,\frac{1}{r}\,\frac{\partial f}{\partial \phi}  + \mathbf{e_\theta} \,\frac{1}{r\sin(\phi)}\,\frac{\partial f}{\partial \theta} 
 ```
 
 A very good resource for all these expressions can be found at 

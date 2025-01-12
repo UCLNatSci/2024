@@ -7,7 +7,7 @@ Suppose that we have a function $y = f(x)$, we know through integration that we 
 ---
 name: FunctionArea
 ---
-The area (in blue) under a function $f(x)$ over the interval $x \in [a,\,b]$ given by the integral $\displaystyle \int_a^bf(x)\,\mathrm(d)x$.
+The area (in blue) under a function $f(x)$ over the interval $x \in [a,\,b]$ given by the integral $\displaystyle \int_a^bf(x)\,\mathrm{d}x$.
 ```
 Another question that we could ask however is what is the length of the path traced out by the function $f(x)$ over the range $[a,\,b]$:
 
@@ -17,19 +17,19 @@ name: FunctionPathLength
 ---
 The path traced out by the function $f(x)$ over the interval $x \in [a,\,b]$.
 ```
-To find an expression for this length $S$, we can break up the path into infinitesimal segments and then integrate these over the whole function.  We can see this 
-process breaking down the change in arc length $\Delta s$ by Pythagoras graphically as:
+To find an expression for this length $L$, we can break up the path into infinitesimal segments and then integrate these over the whole function.  We can see this 
+process breaking down the change in arc length $\Delta r$ by Pythagoras graphically as:
 
 ```{math}
-(\Delta s)^2 = (\Delta x)^2 + (\Delta y)^2 \Rightarrow \Delta s = \sqrt{(\Delta x)^2 + (\Delta y)^2} = \Delta x\,\sqrt{1 + \left(\frac{\Delta y}{\Delta x}\right)^2}
+(\Delta r)^2 = (\Delta x)^2 + (\Delta y)^2 \Rightarrow \Delta r = \sqrt{(\Delta x)^2 + (\Delta y)^2} = \Delta x\,\sqrt{1 + \left(\frac{\Delta y}{\Delta x}\right)^2}
 ```
 
 ```{figure} ../Figures/ArcLength2.png
 ---
 name: ArcLength
 ---
-**Left Pane:** Breaking down path legnth segment $\Delta s$ into $x,\, y$ components $\Delta x,\, \Delta y$.  The distance $\Delta s$ moved along a curve, corresponding 
-to small changes $\Delta x \Delta y$ can be calculated by Pythagoras' formula.
+**Left Pane:** Breaking down path legnth segment $\Delta r$ into $x,\, y$ components $\Delta x,\, \Delta y$.  The distance $\Delta r$ moved along a curve, corresponding 
+to small changes $\Delta x,\, \Delta y$ can be calculated by Pythagoras' formula.
 
 **Right Pane:** Effect of taking the limit of smaller $\Delta x$ in finding the path length.  By decreasing the difference $\Delta x$ between the joined up points, we 
 obtain a better approximation.
@@ -38,18 +38,18 @@ obtain a better approximation.
 
 Taking the limit of $\Delta x\rightarrow 0$ we find:
 ```{math}
-\mathrm{d}s = \mathrm{d}x\, \sqrt{1 + \left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}
+\mathrm{d}r = \mathrm{d}x\, \sqrt{1 + \left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}
 ```
 and therefore to find the path length:
 ```{math}
-L = \int_{x=a}^{x=b} \mathrm{d}s = \int_a^b \sqrt{1 + \left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\,\mathrm{d}x
+L = \int_{x=a}^{x=b} \mathrm{d}r = \int_a^b \sqrt{1 + \left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\,\mathrm{d}x
 ```
 
 We might also have a function which is parameterised $y = y(t),\, x=x(t)$, it is also possible to find an 
 expression for the path length for $t \in [t_a,\, t_b]$, taking the limit of $\Delta t \rightarrow 0$:
 ```{math}
-\Delta s &=  \Delta t\,\sqrt{\left(\frac{\Delta x}{\Delta t}\right)^2 + \left(\frac{\Delta y}{\Delta t}\right)^2} \\
-\Rightarrow \mathrm{d}s &=  \mathrm{d}t\, \sqrt{\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}y}{\mathrm{d}t}\right)^2}\\
+\Delta r &=  \Delta t\,\sqrt{\left(\frac{\Delta x}{\Delta t}\right)^2 + \left(\frac{\Delta y}{\Delta t}\right)^2} \\
+\Rightarrow \mathrm{d}r &=  \mathrm{d}t\, \sqrt{\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}y}{\mathrm{d}t}\right)^2}\\
 L &= \int_{t_a}^{t_b}  \sqrt{\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}y}{\mathrm{d}t}\right)^2}\,\mathrm{d}t
 ```
 
@@ -119,7 +119,7 @@ The result simply gives the arc length of a portion of the unit circle ($x^2 + y
 Calculate the length of the curve $y=2(x-1)^\frac{3}{2}$ between $x=1$ and $x=4$.
 
 ```{math}
-\frac{\mathrm{d}y}{\mathrm{d}x}=3\sqrt{x-1}, \quad \mathrm{d}S 
+\frac{\mathrm{d}y}{\mathrm{d}x}=3\sqrt{x-1}, \quad \mathrm{d}r 
 = \sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\,\mathrm{d}x=\sqrt{1+9(x-1)}\,\mathrm{d}x=\sqrt{9x-8}\,\mathrm{d}x
 ```
 and therefore:
@@ -163,14 +163,14 @@ We can also find the surface area of this solid of revolution, if we rotate over
 slice $2\pi\,y$ multiplied by the path length $\mathrm{d} s$ along the surface, so we find:
 
 ```{math}
-A_x = \int_{x=a}^{x=b} 2\pi\,y\,\mathrm{d}s = \int_a^b 2\pi\,y\,\sqrt{1 + \left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\,\mathrm{d}x
+A_x = \int_{x=a}^{x=b} 2\pi\,y\,\mathrm{d}r = \int_a^b 2\pi\,y\,\sqrt{1 + \left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\,\mathrm{d}x
 ```
 
 We could rotate over the $y$ axis instead, in which case we just switch the circumference we are interested in to be $2\pi\,x$ and integrate the 
 path length over the $y$ axis:
 
 ```{math}
-A_y = \int_{y(a)}^{y(b)} 2\pi\,x\,\mathrm{d}s = \int_{y(a)}^{y(b)} 2\pi\,x\,\sqrt{1 + \left(\frac{\mathrm{d}x}{\mathrm{d}y}\right)^2}\,\mathrm{d}y
+A_y = \int_{y(a)}^{y(b)} 2\pi\,x\,\mathrm{d}r = \int_{y(a)}^{y(b)} 2\pi\,x\,\sqrt{1 + \left(\frac{\mathrm{d}x}{\mathrm{d}y}\right)^2}\,\mathrm{d}y
 ```
 
 ````{admonition} Worked example
@@ -240,7 +240,7 @@ y = x^2\Rightarrow x = y^{1/2}\\
 ```
 so integral is:
 ```{math}
-A &= \int_{y=0}^{y=4} 2\pi\,x\,\mathrm{d}s = 1\pi\int_0^4 x\,(1+4x^2)^{1/2}\,\mathrm{d}x \\ 
+A &= \int_{y=0}^{y=4} 2\pi\,x\,\mathrm{d}r = 1\pi\int_0^4 x\,(1+4x^2)^{1/2}\,\mathrm{d}x \\ 
 &= \frac{\pi}{4}\bigg[\frac{2}{3} (1+4x^2)^{3/2} \bigg]_0^2 = \frac{\pi}{6}\left(17^{3/2}-1\right) \approx 36.2\dots
 ```
 
@@ -271,13 +271,13 @@ which we can solve by inspection (or reverse chain rule), where $\int f^n\,f'\,\
 S = 2\pi\frac{1}{36}\Big[\frac{2}{3}\left(9y^4+1 \right)^{3/2}\Big]_1^2 = \frac{\pi}{27}\left(145^{3/2} - 10^{3/2} \right) \simeq 199.48\dots
 ```
 
-4\. Given that the surface for a rotated solid around the $x$ axis is $\int_a^b 2\pi y\,\mathrm{d}s$ and we have $x = r \cos(\theta),\, y = r \sin(\theta)$, 
+4\. Given that the surface for a rotated solid around the $x$ axis is $\int_a^b 2\pi y\,\mathrm{d}r$ and we have $x = r \cos(\theta),\, y = r \sin(\theta)$, 
 then this is just a parametric problem, where:
 ```{math}
-\mathrm{d}s &= \sqrt{\left(\frac{\mathrm{d}x}{\mathrm{d}\theta}\right)^2 + \left(\frac{\mathrm{d}y}{\mathrm{d}\theta}\right)^2}\,\mathrm{d}\theta\\
+\mathrm{d}r &= \sqrt{\left(\frac{\mathrm{d}x}{\mathrm{d}\theta}\right)^2 + \left(\frac{\mathrm{d}y}{\mathrm{d}\theta}\right)^2}\,\mathrm{d}\theta\\
 \mathrm{d}x &= \cos(\theta)\,\mathrm{d}r - r \sin(\theta)\,\mathrm{d}\theta \Rightarrow \frac{\mathrm{d}x}{\mathrm{d}\theta} = \cos(\theta)\,\frac{\mathrm{d}r}{\mathrm{d}\theta} - r \sin(\theta)\\
 \mathrm{d}y &= \sin(\theta)\,\mathrm{d}r + r \cos(\theta)\,\mathrm{d}\theta \Rightarrow \frac{\mathrm{d}y}{\mathrm{d}\theta} = \sin(\theta)\,\frac{\mathrm{d}r}{\mathrm{d}\theta} + r \cos(\theta)\\
-\mathrm{d}s &= \sqrt{r^2 + \left(\frac{\mathrm{d}r}{\mathrm{d}\theta}\right)^2}\,\mathrm{d}\theta 
+\mathrm{d}r &= \sqrt{r^2 + \left(\frac{\mathrm{d}r}{\mathrm{d}\theta}\right)^2}\,\mathrm{d}\theta 
 ```
 Given that $r = \cos(\theta)$ then:
 ```{math}

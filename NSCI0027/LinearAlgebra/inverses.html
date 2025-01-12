@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
   
@@ -437,17 +437,6 @@ document.write(`
 <p><span class="caption-number">Fig. 18.2 </span><span class="caption-text">If the matrix <span class="math notranslate nohighlight">\(A = R_{\pi/2}\)</span> is a <span class="math notranslate nohighlight">\(\pi/2\)</span> anticlockwise rotation about the origin then its inverse <span class="math notranslate nohighlight">\(A^{-1} = R_{3\pi/2}\)</span> is a <span class="math notranslate nohighlight">\(\pi/2\)</span> clockwise rotation about the origin. The matrix <span class="math notranslate nohighlight">\(A^{-1}A = I\)</span> represents the identity transformation.</span><a class="headerlink" href="#inverse-transformation" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<div class="exercise admonition" id="q_matrix_inverse_1">
-
-<p class="admonition-title"><span class="caption-number">Exercise 18.2 </span></p>
-<section id="exercise-content">
-<ol class="arabic simple">
-<li><p>Show that <span class="math notranslate nohighlight">\(R_{3\pi/2}\)</span> is the inverse of <span class="math notranslate nohighlight">\(R_{\pi/2}\)</span>.</p></li>
-<li><p>What is the inverse of the matrix <span class="math notranslate nohighlight">\(R_{\theta}\)</span> representing an anticlockwise rotation about the origin by <span class="math notranslate nohighlight">\(\theta\)</span>? Calculate <span class="math notranslate nohighlight">\(R_{\theta}R_{\theta}^{-1}\)</span> and show that it equals the identity matrix.</p></li>
-<li><p>Given that <span class="math notranslate nohighlight">\(C X D = E\)</span>, write down the solution for <span class="math notranslate nohighlight">\(X\)</span> explicitly in terms of inverse matrices <span class="math notranslate nohighlight">\(C^{-1}\)</span> and <span class="math notranslate nohighlight">\(D^{-1}\)</span>.</p></li>
-</ol>
-</section>
-</div>
 </section>
 <section id="solving-matrix-equations">
 <h2><span class="section-number">18.3. </span>Solving Matrix Equations<a class="headerlink" href="#solving-matrix-equations" title="Link to this heading">#</a></h2>
@@ -491,21 +480,6 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(\text{adj}(A)\)</span> is known as the <strong>adjugate matrix</strong>. For a (2x2) matrix, the adjugate is given by swapping the diagonal elements and multiplying the anti-diagonal elements by -1.</p>
 <p>Notice the special notation <span class="math notranslate nohighlight">\(|A|\)</span> that is used to denote the determinant of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 </div>
-<div class="exercise admonition" id="q_twobytwo_inverse">
-
-<p class="admonition-title"><span class="caption-number">Exercise 18.3 </span></p>
-<section id="exercise-content">
-<p>1. 	Calculate the determinant of the matrix <span class="math notranslate nohighlight">\(M=\left(\begin{array}{cc}2 &amp; -1 \\3 &amp; 4 \end{array}\right)\)</span>.</p>
-<p>2. 	Write the equations below in the form <span class="math notranslate nohighlight">\(Ax=b\)</span>:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-2x-3y&amp;=1\\
-3x-2y&amp;=2
-\end{align*}\]</div>
-<p>Calculate the coefficient matrix <span class="math notranslate nohighlight">\(A\)</span> and hence obtain the solution for <span class="math notranslate nohighlight">\(x\)</span></p>
-<p>3.	Solve the problem given in <a class="reference internal" href="#equation-a-ab">(18.1)</a> to find B.</p>
-</section>
-</div>
 </section>
 <section id="what-it-means-if-det-a-0">
 <h2><span class="section-number">18.5. </span>What it means if <span class="math notranslate nohighlight">\(\det(A)=0\)</span><a class="headerlink" href="#what-it-means-if-det-a-0" title="Link to this heading">#</a></h2>
@@ -534,7 +508,7 @@ document.write(`
 </div>
 <div class="exercise admonition" id="q_invertible_matrix_theorem">
 
-<p class="admonition-title"><span class="caption-number">Exercise 18.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 18.2 </span></p>
 <section id="exercise-content">
 <p>Let</p>
 <div class="math notranslate nohighlight">
@@ -552,8 +526,8 @@ document.write(`
 <h3><span class="section-number">18.5.1. </span>Derivation of the (2x2) inverse from first principles<a class="headerlink" href="#derivation-of-the-2x2-inverse-from-first-principles" title="Link to this heading">#</a></h3>
 <p>Consider the problem <span class="math notranslate nohighlight">\(A X = I\)</span>, which has solution <span class="math notranslate nohighlight">\(X=A^{-1}\)</span>. We can solve this problem applying row reduction operations (Gaussian elimination) to the augmented matrix <span class="math notranslate nohighlight">\(\biggr[\begin{array}{c|c}A&amp;I\end{array}\biggr]\)</span>.</p>
 <p>The algorithm proceeds as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a58fb194-bab9-460f-8b0b-778ce79d37b1">
-<span class="eqno">(18.5)<a class="headerlink" href="#equation-a58fb194-bab9-460f-8b0b-778ce79d37b1" title="Permalink to this equation">#</a></span>\[\begin{equation}\biggr[\begin{array}{c|c}A&amp;I\end{array}\biggr]\quad \rightarrow \quad \biggr[\begin{array}{c|c}U&amp;L\end{array}\biggr] \quad \rightarrow \quad \biggr[\begin{array}{c|c}I&amp;A^{-1}\end{array}\biggr]\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0a71d019-9d65-48ca-8a1a-913bb2279cf2">
+<span class="eqno">(18.5)<a class="headerlink" href="#equation-0a71d019-9d65-48ca-8a1a-913bb2279cf2" title="Permalink to this equation">#</a></span>\[\begin{equation}\biggr[\begin{array}{c|c}A&amp;I\end{array}\biggr]\quad \rightarrow \quad \biggr[\begin{array}{c|c}U&amp;L\end{array}\biggr] \quad \rightarrow \quad \biggr[\begin{array}{c|c}I&amp;A^{-1}\end{array}\biggr]\end{equation}\]</div>
 <p>in which <span class="math notranslate nohighlight">\(U\)</span> is an upper-diagonal matrix and <span class="math notranslate nohighlight">\(L\)</span> is a lower-diagonal matrix.</p>
 <p>For the (2x2) problem we start with the augmented matrix:</p>
 <div class="math notranslate nohighlight">
@@ -565,8 +539,8 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\hat{r}_1=r_1-r_2 a_{12}/a_{11}\)</span></p></li>
 </ol>
 <p>We obtain</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a482d8a5-77d1-4e7d-b8e9-8c5589b7c491">
-<span class="eqno">(18.6)<a class="headerlink" href="#equation-a482d8a5-77d1-4e7d-b8e9-8c5589b7c491" title="Permalink to this equation">#</a></span>\[\begin{equation}\left[\begin{array}{cc|cc}a_{11}&amp;a_{12}&amp;1&amp;0\\a_{21}&amp;a_{22}&amp;0&amp;1\end{array}\right] \quad \Rightarrow \quad \left[\begin{array}{cc|cc}1&amp;0&amp;\frac{a_{22}}{a_{11}a_{22}-a_{12}a_{21}}&amp;\frac{-a_{12}}{a_{11}a_{22}-a_{12}a_{21}}\\0&amp;1&amp;\frac{-a_{21}}{a_{11}a_{22}-a_{12}a_{21}}&amp;\frac{a_{11}}{a_{11}a_{22}-a_{12}a_{21}}\end{array}\right]\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-32ce473e-64b9-4887-922e-236a8da9fb78">
+<span class="eqno">(18.6)<a class="headerlink" href="#equation-32ce473e-64b9-4887-922e-236a8da9fb78" title="Permalink to this equation">#</a></span>\[\begin{equation}\left[\begin{array}{cc|cc}a_{11}&amp;a_{12}&amp;1&amp;0\\a_{21}&amp;a_{22}&amp;0&amp;1\end{array}\right] \quad \Rightarrow \quad \left[\begin{array}{cc|cc}1&amp;0&amp;\frac{a_{22}}{a_{11}a_{22}-a_{12}a_{21}}&amp;\frac{-a_{12}}{a_{11}a_{22}-a_{12}a_{21}}\\0&amp;1&amp;\frac{-a_{21}}{a_{11}a_{22}-a_{12}a_{21}}&amp;\frac{a_{11}}{a_{11}a_{22}-a_{12}a_{21}}\end{array}\right]\end{equation}\]</div>
 <p>from which the following result for the inverse matrix <span class="math notranslate nohighlight">\(A^{-1}\)</span> is inferred:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}A^{-1}=\frac{1}{a_{11} a_{22}-a_{12} a_{21}}\left(\begin{array}{cc}a_{22} &amp; -a_{12} \\ -a_{22} &amp; a_{11} \end{array}\right)\end{split}\]</div>
@@ -609,7 +583,7 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(A^{-1}=\frac{-1}{3}\left(\begin{array}{ccc}-11&amp;10&amp;2\\1&amp;1&amp;-1\\8&amp;-7&amp;-2\end{array}\right)\)</span></p>
 <div class="exercise admonition" id="three_by_three_inverse">
 
-<p class="admonition-title"><span class="caption-number">Exercise 18.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 18.3 </span></p>
 <section id="exercise-content">
 <p>Calculate the inverse of the matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. Check your answer by checking that <span class="math notranslate nohighlight">\(A^{-1}A=I\)</span> and <span class="math notranslate nohighlight">\(B^{-1}B=I\)</span>.</p>
 <p>1.</p>
@@ -636,17 +610,17 @@ document.write(`
 <section id="linking-matrix-multiplication-and-gaussian-elimination">
 <h3><span class="section-number">18.7.1. </span>Linking matrix multiplication and Gaussian elimination<a class="headerlink" href="#linking-matrix-multiplication-and-gaussian-elimination" title="Link to this heading">#</a></h3>
 <p>The row-reduction operations that were introduced in the section on Gaussian elimination can be implemented by matrix multiplication. The illustration here matches the example that was given in <a class="reference internal" href="echelon_form.html#id1"><span class="std std-ref">A systematic technique for solving systems of equations</span></a> for the augmented coefficient matrix:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0ab4b23e-2e88-45a9-9250-54e08bb08dd5">
-<span class="eqno">(18.7)<a class="headerlink" href="#equation-0ab4b23e-2e88-45a9-9250-54e08bb08dd5" title="Permalink to this equation">#</a></span>\[\begin{equation}A = \left(\begin{array}{ccc|c}1&amp;1&amp;2&amp;2\\2&amp;3&amp;-4&amp;1\\-1&amp;1&amp;1&amp;3\end{array}\right).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-182192be-00bb-499d-b741-0b7753961d89">
+<span class="eqno">(18.7)<a class="headerlink" href="#equation-182192be-00bb-499d-b741-0b7753961d89" title="Permalink to this equation">#</a></span>\[\begin{equation}A = \left(\begin{array}{ccc|c}1&amp;1&amp;2&amp;2\\2&amp;3&amp;-4&amp;1\\-1&amp;1&amp;1&amp;3\end{array}\right).\end{equation}\]</div>
 <p>In the first step we used the row operations <span class="math notranslate nohighlight">\(r_2-2r_1\longrightarrow r_2\)</span>,   <span class="math notranslate nohighlight">\(r_3+r_1\longrightarrow r_3\)</span>, and in the second step we used the row operation <span class="math notranslate nohighlight">\(r_3-2r_2\longrightarrow r_3\)</span>. These are equivalent to the following row operation matrices:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}L_1 = \left(\begin{array}{ccc}1&amp;0&amp;0\\-2&amp;1&amp;0\\1&amp;0&amp;1\end{array}\right), \quad  L_2=\left(\begin{array}{ccc}1 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0 \\0 &amp; -2 &amp; 1 \\\end{array}\right) \end{split}\]</div>
 <p>The composition of these two matrices puts the coefficient matrix into the upper triangular form previously obtained:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1f8256eb-2d23-429c-992d-5f9127540741">
-<span class="eqno">(18.8)<a class="headerlink" href="#equation-1f8256eb-2d23-429c-992d-5f9127540741" title="Permalink to this equation">#</a></span>\[\begin{equation}L_2 L_1 A = \left(\begin{array}{ccc}1 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0 \\0 &amp; -2 &amp; 1 \\\end{array}\right)\left(\begin{array}{ccc|c}1 &amp; 1 &amp; 2 &amp; 2 \\0 &amp; 1 &amp; -8 &amp; -3 \\0 &amp; 2 &amp; 3 &amp; 5 \\\end{array}\right)=\left(\begin{array}{ccc|c}1 &amp; 1 &amp; 2 &amp; 2 \\0 &amp; 1 &amp; -8 &amp; -3 \\0 &amp; 0 &amp; 19 &amp; 11 \\\end{array}\right).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0527026e-9b39-48d4-97de-cfd520d40017">
+<span class="eqno">(18.8)<a class="headerlink" href="#equation-0527026e-9b39-48d4-97de-cfd520d40017" title="Permalink to this equation">#</a></span>\[\begin{equation}L_2 L_1 A = \left(\begin{array}{ccc}1 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0 \\0 &amp; -2 &amp; 1 \\\end{array}\right)\left(\begin{array}{ccc|c}1 &amp; 1 &amp; 2 &amp; 2 \\0 &amp; 1 &amp; -8 &amp; -3 \\0 &amp; 2 &amp; 3 &amp; 5 \\\end{array}\right)=\left(\begin{array}{ccc|c}1 &amp; 1 &amp; 2 &amp; 2 \\0 &amp; 1 &amp; -8 &amp; -3 \\0 &amp; 0 &amp; 19 &amp; 11 \\\end{array}\right).\end{equation}\]</div>
 <p>The additional operations that were carried out to fully row-reduce the matrix can be captured in the following row-reduction matrices:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b30f3a10-3b84-4c05-9598-0612a5374bb5">
-<span class="eqno">(18.9)<a class="headerlink" href="#equation-b30f3a10-3b84-4c05-9598-0612a5374bb5" title="Permalink to this equation">#</a></span>\[\begin{equation}P=\left(\begin{array}{ccc}1 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0 \\0 &amp; 0 &amp; \frac{1}{19} \\\end{array}\right), \quad U_1=\left(\begin{array}{ccc}1 &amp; 0 &amp; -2 \\0 &amp; 1 &amp; 8 \\0 &amp; 0 &amp; 1 \\\end{array}\right), \quad U_2 = \left(\begin{array}{ccc}1 &amp; 0 &amp; -2 \\0 &amp; 1 &amp; 8 \\0 &amp; 0 &amp; 1 \\\end{array}\right)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-70a14801-27e6-4f71-bad1-d87ef5297f69">
+<span class="eqno">(18.9)<a class="headerlink" href="#equation-70a14801-27e6-4f71-bad1-d87ef5297f69" title="Permalink to this equation">#</a></span>\[\begin{equation}P=\left(\begin{array}{ccc}1 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0 \\0 &amp; 0 &amp; \frac{1}{19} \\\end{array}\right), \quad U_1=\left(\begin{array}{ccc}1 &amp; 0 &amp; -2 \\0 &amp; 1 &amp; 8 \\0 &amp; 0 &amp; 1 \\\end{array}\right), \quad U_2 = \left(\begin{array}{ccc}1 &amp; 0 &amp; -2 \\0 &amp; 1 &amp; 8 \\0 &amp; 0 &amp; 1 \\\end{array}\right)\end{equation}\]</div>
 <p>You may verify the result:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}U_2 U_1 P L_2 L_1 A =\left(\begin{array}{ccc|c}1 &amp; 0 &amp; 0 &amp; -\frac{15}{19} \\0 &amp; 1 &amp; 0 &amp; \frac{31}{19} \\0 &amp; 0 &amp; 1 &amp; \frac{11}{19} \\\end{array}\right)\end{split}\]</div>

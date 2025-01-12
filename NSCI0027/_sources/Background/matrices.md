@@ -265,3 +265,128 @@ $$\left(\begin{array}{cc}1 & 2 \\-3 & 0 \end{array}\right) \left(\begin{array}{c
 $$\left(\begin{array}{cc}2 & 1 \\1 & 2 \\\end{array}\right) \left(\begin{array}{cc}1 & 2 \\-3 & 0 \end{array}\right)=\left(\begin{array}{cc}2\ 1+1 (-3) & 2\ 2+1\ 0 \\1\ 1+2 (-3) & 1\ 2+2\ 0 \end{array}\right)=\left(\begin{array}{cc}-1 & 4 \\-5 & 2 \\\end{array}\right)$$
 ```
 
+
+## Matrix Inverses
+
+Since a matrix represents a linear transformation, which is a function, we can consider if a matrix has an inverse. For example, consider the $(2 \times 2)$ matrix $R_{\pi/2}$ which represents a $\pi/2$ anticlockwise rotation about the origin:
+
+$$R_{\pi/2} = \begin{pmatrix}0 & -1 \\1 & 0\end{pmatrix}.$$
+
+Its inverse is a $\pi/2$ *clockwise* rotation about the origin, represented by the following matrix:
+
+$$R_{3\pi/2} = \begin{pmatrix}0 & 1 \\-1 & 0\end{pmatrix}.$$
+
+
+```{figure} ../Figures/linear_transformations_8_0.png
+---
+width: 600px
+name: inverse_transformation
+---
+If the matrix $A = R_{\pi/2}$ is a $\pi/2$ anticlockwise rotation about the origin then its inverse $A^{-1} = R_{3\pi/2}$ is a $\pi/2$ clockwise rotation about the origin. The matrix $A^{-1}A = I$ represents the identity transformation.
+```
+
+In general, if $A$ is an $n \times n$ matrix and $B$ is its inverse, then $B$ is also an $(n \times n)$ matrix which satisfies
+
+$$ABx = x$$
+
+for all $x \in \mathbb{R}^n$.
+
+In other words, $AB$ is a matrix which leaves $x$ unchanged. The only matrix which leaves $x$ unchanged is the identity matrix $I$, and so we have the following definition of the inverse matrix.
+
+```{admonition} Definition
+
+Let $A$ be an $(n \times n)$ square matrix. If there is an $(n \times n)$ matrix $B$ such that
+
+$$AB = BA = I_n$$
+
+then $A$ is **invertible** and $B$ is the **inverse** of A.
+
+We write $B = A^{-1}$.
+```
+
+
+```{exercise}
+:label: q_matrix_inverse_1
+
+1. Show that $R_{3\pi/2}$ is the inverse of $R_{\pi/2}$.
+2. What is the inverse of the matrix $R_{\theta}$ representing an anticlockwise rotation about the origin by $\theta$? Calculate $R_{\theta}R_{\theta}^{-1}$ and show that it equals the identity matrix.
+3. Given that $C X D = E$, write down the solution for $X$ explicitly in terms of inverse matrices $C^{-1}$ and $D^{-1}$.
+```
+
+## Solving Matrix Equations
+
+Suppose that we are given the definitions below and asked to compute the result for $B$ :
+
+$$A=\left(\begin{array}{cc}1 & 2 \\2 & 1 \end{array}\right), \quad A B=\left(\begin{array}{cc}5 & 3 \\4 & 3 \end{array}\right)$$ (a_ab)
+
+If this was ordinary scalar algebra, then $B$ would be given by $\frac{AB}{A}$, but we have not defined the concept of division for matrices. Indeed, we should recognise a difficulty in doing so, since matrix multiplication is not commutative. The problems $Q X = P$ and $X Q=P$ do not generally have the same solution, and so the expression $X=\frac{P}{Q}$ would be ambiguous.
+
+The difficulty could be addressed by introducing separate concepts of "left-division" and "right-division", and some authors have done exactly this. However, a more fundamental approach is to abandon the idea of division for matrices altogether, and consider what it means for matrix multiplication to be invertible.
+
+To illustrate the use of the inverse matrix, we multiply each side of the equation for $A B$ in {eq}`a_ab` by $A^{-1}$ as follows:
+
+$$A^{-1}(AB)=A^{-1}\left(\begin{array}{cc}5&3\\4&3\end{array}\right)$$ (a_inverse_ab)
+
+It is very important to recognise that we must do exactly the same thing to both sides of the equation. Since we pre-multiply (left multiply) the left-hand side by $A^{-1}$, we must also pre-multiply the right-hand side by $A^{-1}$.
+
+Due to the non-commutative nature of matrix multiplication, the result $A^{-1}(A B)$ is not the same as the result $(A B)A^{-1}$.
+
+Now, since matrix multiplication is associative, the left hand side of {eq}`a_inverse_ab` can be rewritten as $(A^{-1} A)B$, and by the definitions of the inverse and identity matrix, we can write $(A^{-1} A)B=I B=B$ in order to obtain
+
+$$B=A^{-1}\left(\begin{array}{cc}5&3\\4&3\end{array}\right)$$
+
+Thus, the result for $B$ can be determined by performing a matrix multiplication, provided that we can find $A^{-1}$.
+
+```{admonition} Solving $AX=B$ and $XA=B$
+
+Let $A$ be an invertible $(n \times n)$ square matrix and $B$ an ($n \times m)$ matrix. Then
+
+$A X = B$ has solution $X=A^{-1}B $
+
+$X A = B$ has solution $X=B A^{-1}$.
+```
+
+## Calculating the (2x2) inverse
+
+The (2x2) matrix that satisfies the definition $A A^{-1} = A^{-1}A=I$ is outlined in the box below. In section 3.6 we will examine how the result may be derived from first principles, but for now you may simply verify the claim by checking the result of the products $A A^{-1}$ and $A^{-1}A$.
+
+```{admonition} The inverse of a (2x2) matrix
+
+The inverse of a (2x2) matrix $A=\left(\begin{array}{cc}a_{11} & a_{12} \\a_{21} & a_{22} \end{array}\right)$ is given by
+
+$$A^{-1}=\frac{1}{\mathrm{det}(A)}\mathrm{adj}(A)$$
+
+where
+
+$$\mathrm{det}(A)=\left|\begin{array}{cc}a_{11} & a_{12} \\a_{21} & a_{22} \end{array}\right|=a_{11} a_{22}-a_{12} a_{21}$$
+
+and
+
+$$\mathrm{adj}(A)=\left(\begin{array}{cc}a_{22} & -a_{12} \\-a_{21} & a_{11} \end{array}\right)$$
+
+Note that $\text{det}(A)$ is a scalar quantity.
+
+$\text{det}(A)$ s referred to as the **determinant** of $A$. For a (2x2) matrix, the determinant is given by subtracting the product of the anti-diagonal elements from the product of the leading diagonal elements.  
+
+$\text{adj}(A)$ is known as the **adjugate matrix**. For a (2x2) matrix, the adjugate is given by swapping the diagonal elements and multiplying the anti-diagonal elements by -1.
+
+Notice the special notation $|A|$ that is used to denote the determinant of $A$.
+```
+
+```{exercise}
+:label: q_twobytwo_inverse
+
+1\. 	Calculate the determinant of the matrix $M=\left(\begin{array}{cc}2 & -1 \\3 & 4 \end{array}\right)$.
+
+2\. 	Write the equations below in the form $Ax=b$:
+\begin{align*}
+2x-3y&=1\\
+3x-2y&=2
+\end{align*}
+
+Calculate the coefficient matrix $A$ and hence obtain the solution for $x$
+
+3\.	Solve the problem given in {eq}`a_ab` to find B.
+
+```
+

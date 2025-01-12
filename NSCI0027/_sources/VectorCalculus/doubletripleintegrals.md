@@ -292,21 +292,20 @@ V &=  \iiint\,\mathrm{d}V = \int_0^R r^2\,\mathrm{d}r\,\int_0^\pi\sin(\phi)\,\ma
 as expected.
 
 ### Cylindrical polar coordinates
-We can find the volume of a cylinder with radius $R$ and height $H$ (recall this could be done through a solid of revolution type 
-calculation, but here we aim to think about 3D axes), in Cartesian coordinates this would take the form of $x \in [-R,\, R]$ then in 2D 
-the circular cross section would be found through $y \in [-\sqrt{R^2 - x^2},\,\sqrt{R^2 - x^2}]$ and then the height $z \in [0,\, H]$, giving:
+We can find the volume of a cylinder with radius $\rho$ and height $H$ (recall this could be done through a solid of revolution type 
+calculation, but here we aim to think about 3D axes), in Cartesian coordinates this would take the form of $x \in [-\rho,\, \rho]$ then in 2D 
+the circular cross section would be found through $y \in [-\sqrt{\rho^2 - x^2},\,\sqrt{\rho^2 - x^2}]$ and then the height $z \in [0,\, H]$, giving:
 
 ```{math}
-V = \iiint\,\mathrm{d}V = \int_{-R}^R \,\mathrm{d}y\,\int_{-\sqrt{R^2 - x^2}}^{\sqrt{R^2 - x^2}}\,
-\mathrm{d}y\,\int_{0}^{H} \,\mathrm{d}z
+V = \iiint\,\mathrm{d}V = \int_{-\rho}^\rho \,\mathrm{d}y\,\int_{-\sqrt{\rho^2 - x^2}}^{\sqrt{\rho^2 - x^2}}\,\mathrm{d}y\,\int_{0}^{H} \,\mathrm{d}z
 ```
 still not a great integral to compute, an integration variable change would be required.  
 
-In cylindrical polar coordinates however, $r \in[0, R], \theta \in [0,\, 2\pi],\, z \in [0,\, H]$:
+In cylindrical polar coordinates however, $R \in[0, \rho], \theta \in [0,\, 2\pi],\, z \in [0,\, H]$:
 
 ```{math}
-V &=  \iiint\,\mathrm{d}V = \int_0^R r\,\mathrm{d}r\,\int_0^{2\pi}\,\mathrm{d}\theta\,\int_0^{H}\,\mathrm{d}z \\
-&=  2\pi H \Bigg[\frac{1}{2}r^2\Bigg]_0^R = \pi R^2 H
+V &=  \iiint\,\mathrm{d}V = \int_0^\rho R\,\mathrm{d}R\,\int_0^{2\pi}\,\mathrm{d}\theta\,\int_0^{H}\,\mathrm{d}z \\
+&=  2\pi H \Bigg[\frac{1}{2}R^2\Bigg]_0^\rho = \pi \,\rho^2 \,H
 ```
 as expected.
 

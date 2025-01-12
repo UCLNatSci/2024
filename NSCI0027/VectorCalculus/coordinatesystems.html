@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
   
@@ -386,14 +386,13 @@ document.write(`
 <p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">A set of 2D Cartesian coordinate axes.</span><a class="headerlink" href="#cartesian2d" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The standard ideas of presenting Cartesian coodinates as <em>along the corridor and up the stairs</em> apply, with <span class="math notranslate nohighlight">\((x,\, y)\)</span> or in terms of a
-vector:</p>
+<p>The standard ideas of presenting Cartesian coodinates as <em>along the corridor and up the stairs</em> apply, with <span class="math notranslate nohighlight">\((x,\, y)\)</span> or in terms of a position vector <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}{\bf r} = \begin{pmatrix} x\\ y\end{pmatrix}\end{split}\]</div>
-<p>These coordinates can take any real value within <span class="math notranslate nohighlight">\(x \in (\infty,\, \infty), \,y \in (\infty,\, \infty)\)</span></p>
+\[\begin{split}\mathbf{r} = \begin{pmatrix} x\\ y\end{pmatrix} = x \begin{pmatrix} 1\\ 0\end{pmatrix} + y \begin{pmatrix} 0\\ 1\end{pmatrix} = x\,\mathbf{e_x} + y\,\mathbf{e_y}\end{split}\]</div>
+<p>These coordinates can take any real value within <span class="math notranslate nohighlight">\(x \in \mathbb{R}, \, y \in \mathbb{R}\)</span></p>
 <p>We can also find the infinitesimal changes in a Cartesian vector:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathrm{d}{\bf r} = \begin{pmatrix} \mathrm{d}x \\ \mathrm{d}y \end{pmatrix}\end{split}\]</div>
+\[\begin{split}\mathrm{d}\mathbf{r} = \begin{pmatrix} \mathrm{d}x \\ \mathrm{d}y \end{pmatrix} = \mathrm{d}x\, \begin{pmatrix} 1\\ 0\end{pmatrix} + \mathrm{d}y\, \begin{pmatrix} 0\\ 1\end{pmatrix} = \mathrm{d}x\,\mathbf{e_x} + \mathrm{d}y\,\mathbf{e_y}\end{split}\]</div>
 <p>and therefore the area element <span class="math notranslate nohighlight">\(\mathrm{d}A\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{d}A = \mathrm{d}x\,\mathrm{d}y\]</div>
@@ -416,21 +415,23 @@ y &amp;= r \sin(\theta) &amp;\quad&amp; \tan(\theta) = \frac{y}{x}\end{split}\]<
 <span class="math notranslate nohighlight">\(\theta \in (-\pi,\,\pi]\)</span> is used instead.</p>
 <p>In doing so we can rewrite the coordinate vector and find the infinitesimal changes:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}{\bf r} &amp;=  \begin{pmatrix} r \cos(\theta) \\ r \sin(\theta)  \end{pmatrix}  \\ \Rightarrow \mathrm{d}{\bf r} &amp;= 
- \begin{pmatrix} \mathrm{d}r \cos(\theta) - r \sin(\theta)\mathrm{d}\theta \\ \mathrm{d}r \sin(\theta) + r \cos(\theta) \mathrm{d}\theta \end{pmatrix}\\
- &amp;=  \begin{pmatrix} \cos(\theta) \\ \sin(\theta)\end{pmatrix}\mathrm{d}r + \begin{pmatrix} -\sin(\theta) \\ \cos(\theta) \end{pmatrix}r\mathrm{d}\theta\\
- &amp;=  \hat{\bf r} \mathrm{d}r + \hat{\bf \theta} \mathrm{d}\theta\end{split}\]</div>
+\[\begin{split}\mathbf{r} &amp;= \begin{pmatrix} r \cos(\theta) \\ r \sin(\theta)  \end{pmatrix} = r\begin{pmatrix} \cos(\theta) \\ \sin(\theta)  \end{pmatrix} = r\,\mathbf{e_r}  \\ 
+\mathrm{d}\mathbf{r} &amp;=  \begin{pmatrix} \mathrm{d}r \cos(\theta) - r \sin(\theta)\mathrm{d}\theta \\ 
+\mathrm{d}r \sin(\theta) + r \cos(\theta) \mathrm{d}\theta \end{pmatrix}\\
+ &amp;=  \begin{pmatrix} \cos(\theta) \\ 
+\sin(\theta)\end{pmatrix}\mathrm{d}r + \begin{pmatrix} -\sin(\theta) \\ \cos(\theta) \end{pmatrix}r\mathrm{d}\theta\\
+ &amp;=  \mathbf{e_r}\, \mathrm{d}r + \mathbf{e_\theta}\, \mathrm{d}\theta\end{split}\]</div>
 <p>where we have defined vectors for the <span class="math notranslate nohighlight">\(r,\,\theta\)</span> directions.</p>
 <p>We notice here that these are actually unit vectors:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}|\hat{\bf r}|^2 &amp;= \cos^2(\theta) + \sin^2(\theta) = 1 \\
-|\hat{\bf \theta}|^2 &amp;= (-\sin(\theta))^2 + \cos^2(\theta) = 1\end{split}\]</div>
+\[\begin{split}|\mathbf{e_r}|^2 &amp;= \cos^2(\theta) + \sin^2(\theta) = 1 \\
+|\mathbf{e_\theta}|^2 &amp;= (-\sin(\theta))^2 + \cos^2(\theta) = 1\end{split}\]</div>
 <p>and they are also orthogonal (perpendicular):</p>
 <div class="math notranslate nohighlight">
-\[\hat{\bf r} \cdot \hat{\bf \theta} = -\cos(\theta)\,\sin(\theta) + \sin(\theta)\,\cos(\theta) = 0\]</div>
+\[\mathbf{e_r} \cdot \mathbf{e_\theta} = -\cos(\theta)\,\sin(\theta) + \sin(\theta)\,\cos(\theta) = 0\]</div>
 <p>So 2D polar coordinates actually make up an <em>orthonormal</em> coordinate basis (orthongoal and normalised)</p>
 <p>We can see these illustrated in
-<a class="reference internal" href="#polaraxes"><span class="std std-numref">Fig. 3.3</span></a>, where the <span class="math notranslate nohighlight">\(\hat{\bf r},\, \hat{\bf \theta}\)</span> coordinates can we see to be perpendicular
+<a class="reference internal" href="#polaraxes"><span class="std std-numref">Fig. 3.3</span></a>, where the <span class="math notranslate nohighlight">\(\mathbf{e_r},\, \mathbf{e_\theta}\)</span> coordinates can we see to be perpendicular
 and from the definition we see that that they staisfy all the properties of Equation <a class="reference internal" href="#equation-vectorproperties">(3.1)</a>.</p>
 <figure class="align-default" id="polaraxes">
 <img alt="../_images/polaraxes.png" src="../_images/polaraxes.png" />
@@ -453,27 +454,26 @@ diagram in <a class="reference internal" href="#cartesian"><span class="std std-
 </figcaption>
 </figure>
 <p>Here we see that the coordindates can take any value in <span class="math notranslate nohighlight">\(x \in (\infty,\, \infty), \,y \in (\infty,\, \infty),\, z \in (\infty,\, \infty)\)</span></p>
-<p>We can write any vector in 3D as:</p>
+<p>We can write any vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> in 3D as:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}{\bf v} &amp;=   v_x\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + v_y\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + 
-v_z\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}\\
-&amp;=  v_x\hat{\bf x} + v_y\hat{\bf y} + v_z\hat{\bf z}\end{split}\]</div>
+\[\begin{split}\mathbf{A} &amp;=   A_x\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + A_y\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + A_z\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}\\
+&amp;=  A_x\mathbf{e_x} + A_y\mathbf{e_y} + A_z\mathbf{e_z}\end{split}\]</div>
 <p>where we have clarified the basis vectors.  Note that these satisfy the following properties;:</p>
 <div class="math notranslate nohighlight" id="equation-vectorproperties">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-vectorproperties" title="Link to this equation">#</a></span>\[\begin{split}|\hat{\bf x }| &amp;=  |\hat{\bf y }| = |\hat{\bf z }| = 1\\
-\hat{\bf x} \cdot \hat{\bf y} &amp;=  \hat{\bf x} \cdot \hat{\bf y} = \hat{\bf x} \cdot \hat{\bf y} = 0 \\
-\hat{\bf x} \times \hat{\bf y} &amp;=  \hat{\bf z} \\
-\hat{\bf y} \times \hat{\bf z} &amp;=  \hat{\bf x} \\
-\hat{\bf z} \times \hat{\bf x} &amp;=  \hat{\bf y} \end{split}\]</div>
-<p>Another way to represent this is using a coordinate vector <span class="math notranslate nohighlight">\({\bf r}\)</span>:</p>
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-vectorproperties" title="Link to this equation">#</a></span>\[\begin{split}|\mathbf{e_x}| &amp;=  |\mathbf{e_y}| = |\mathbf{e_z}| = 1\\
+\mathbf{e_x} \cdot \mathbf{e_y} &amp;=  \mathbf{e_x} \cdot \mathbf{e_y} = \mathbf{e_x} \cdot \mathbf{e_y} = 0 \\
+\mathbf{e_x} \times \mathbf{e_y} &amp;=  \mathbf{e_z} \\
+\mathbf{e_y} \times \mathbf{e_z} &amp;=  \mathbf{e_x} \\
+\mathbf{e_z} \times \mathbf{e_x} &amp;=  \mathbf{e_y} \end{split}\]</div>
+<p>Another way to represent this is using a coordinate vector <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}{\bf r} = \begin{pmatrix} x \\ y \\ z \end{pmatrix}\end{split}\]</div>
-<p>which means we can look at the infinitesimal changes <span class="math notranslate nohighlight">\(\mathrm{d}{\bf r}\)</span>:</p>
+\[\begin{split}\mathbf{r} = \begin{pmatrix} x \\ y \\ z \end{pmatrix} = x\,\mathbf{e_x} + y\,\mathbf{e_y} + z\,\mathbf{e_z}\end{split}\]</div>
+<p>which means we can look at the infinitesimal changes <span class="math notranslate nohighlight">\(\mathrm{d}\mathbf{r}\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}{\bf r} = \begin{pmatrix} \mathrm{d}x \\  \mathrm{d}y \\ \mathrm{d} z \end{pmatrix}\end{split}\]</div>
+\[\begin{split}\mathbf{r} = \begin{pmatrix} \mathrm{d}x \\  \mathrm{d}y \\ \mathrm{d} z \end{pmatrix} = \mathrm{d}x\,\mathbf{e_x} + \mathrm{d}y\,\mathbf{e_y} + \mathrm{d}z\,\mathbf{e_z}\end{split}\]</div>
 <p>and therefore the volume element <span class="math notranslate nohighlight">\(\mathrm{d}V\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}V = \mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z\]</div>
+\[\mathrm{d}V = \mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z \]</div>
 </section>
 <section id="spherical-polar-coordinates-3d">
 <h2><span class="section-number">3.4. </span>Spherical Polar Coordinates (3D)<a class="headerlink" href="#spherical-polar-coordinates-3d" title="Link to this heading">#</a></h2>
@@ -494,8 +494,8 @@ and <b>Azimuthal</b> components (respectively), we further project on to the <sp
 </figure>
 <p>We can then write the infinitesimal changes in the coordinate vector <span class="math notranslate nohighlight">\(\bf r\)</span> as:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}{\bf r} &amp;=  \begin{pmatrix} r \cos(\theta)\sin(\phi) \\r \sin(\theta)\sin(\phi) \\ r \cos(\phi)  \end{pmatrix}  \\ 
-\Rightarrow \mathrm{d}{\bf r} &amp;=  \begin{pmatrix} 
+\[\begin{split}\mathbf{r} &amp;=  \begin{pmatrix} r \cos(\theta)\sin(\phi) \\r \sin(\theta)\sin(\phi) \\ r \cos(\phi)  \end{pmatrix}  \\ 
+\mathrm{d}\mathbf{r} &amp;=  \begin{pmatrix} 
 \mathrm{d}r \cos(\theta)\sin(\phi) - r \sin(\theta)\sin(\phi) \mathrm{d}\theta + r \cos(\theta)\cos(\phi) \mathrm{d}\phi\\ 
 \mathrm{d}r \sin(\theta)\sin(\phi) + r \cos(\theta)\sin(\phi) \mathrm{d}\theta + r \sin(\theta) \cos(\phi)\mathrm{d}\phi \\ 
 \mathrm{d}r \cos(\phi) - r \sin(\phi)\mathrm{d}\phi 
@@ -513,17 +513,17 @@ and <b>Azimuthal</b> components (respectively), we further project on to the <sp
 -\sin(\theta) \\ 
  \cos(\theta)\\ 
 0\end{pmatrix} r\sin(\phi)\mathrm{d}\theta \\
- &amp;=  \hat{\bf r} \,\mathrm{d}r + \hat{\bf \phi}\,r\,\mathrm{d}\phi + \hat{\bf \theta} \,r\,\sin(\phi)\,\mathrm{d}\theta\end{split}\]</div>
+ &amp;=  \mathbf{e_r} \,\mathrm{d}r + \mathbf{e_\phi}\,r\,\mathrm{d}\phi + \mathbf{e_\theta} \,r\,\sin(\phi)\,\mathrm{d}\theta\end{split}\]</div>
 <p>and once again notice these are unit vectors:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}|\hat{\bf r}|^2 &amp;= \sin^2(\phi)\left(\cos^2(\theta) + \sin^2(\theta)\right) + \cos^2(\phi) = \sin^2(\phi) + \cos^2(\phi)= 1 \\
-|\hat{\bf \phi}|^2 &amp;= \cos^2(\phi)\left(\cos^2(\theta) + \sin^2(\theta)\right) + \sin^2(\phi) = \cos^2(\phi) + \sin^2(\phi)= 1 \\
-|\hat{\bf \theta}|^2 &amp;= (-\sin(\theta))^2 + \cos^2(\theta) = 1 \end{split}\]</div>
+\[\begin{split}|\mathbf{e_r}|^2 &amp;= \sin^2(\phi)\left(\cos^2(\theta) + \sin^2(\theta)\right) + \cos^2(\phi) = \sin^2(\phi) + \cos^2(\phi)= 1 \\
+|\mathbf{e_\phi}|^2 &amp;= \cos^2(\phi)\left(\cos^2(\theta) + \sin^2(\theta)\right) + \sin^2(\phi) = \cos^2(\phi) + \sin^2(\phi)= 1 \\
+|\mathbf{e_\theta}|^2 &amp;= (-\sin(\theta))^2 + \cos^2(\theta) = 1 \end{split}\]</div>
 <p>and they are also orthogonal (perpendicular):</p>
 <div class="math notranslate nohighlight">
-\[\hat{\bf r} \cdot \hat{\bf \phi} = \hat{\bf r} \cdot \hat{\bf \theta} = \hat{\bf \phi} \cdot \hat{\bf \theta} = 0\]</div>
+\[\mathbf{e_r} \cdot \mathbf{e_\phi} = \mathbf{e_r} \cdot \mathbf{e_\theta} = \mathbf{e_\phi} \cdot \mathbf{e_\theta} = 0\]</div>
 <p>so spherical polar coordinates also form an <em>orthonormal</em> coordinate basis.</p>
-<p>Each coordinate here has a range, <span class="math notranslate nohighlight">\(r \in [0,\, \infty)\)</span>, whereas the two angles here have <span class="math notranslate nohighlight">\(\theta \in [0,\, 2\pi),\, \phi \in [0,\, \pi)\)</span>.  It might be a little confusing why
+<p>Each coordinate here has a range, <span class="math notranslate nohighlight">\(r \in [0,\, \infty)\)</span>, whereas the two angles here have <span class="math notranslate nohighlight">\(\theta \in [0,\, 2\pi),\, \phi \in [0,\, \pi]\)</span>.  It might be a little confusing why
 the angles do not both go to <span class="math notranslate nohighlight">\(2\pi\)</span>, however if we think about the going form <span class="math notranslate nohighlight">\(\phi = 0 \rightarrow \phi = \pi\)</span> this will form a semicircle.  Rotating this around
 <span class="math notranslate nohighlight">\(\theta = 0\rightarrow \theta = 2\pi\)</span> does give a full sphere - so only <em>one</em> of the two spherical angles should be up to <span class="math notranslate nohighlight">\(\pi\)</span> and the other up to <span class="math notranslate nohighlight">\(2\pi\)</span>.</p>
 <p>In this convention, the volume element <span class="math notranslate nohighlight">\(\mathrm{d}V\)</span> is given by:</p>
@@ -543,8 +543,8 @@ this would trace out a semi-circle, which when rotated around the equator  (i.e.
 illustrated in <a class="reference internal" href="#sphericalpolarphysics"><span class="std std-numref">Fig. 3.7</span></a>.  In this system the azimuthal angle is switched with the polar angle, but the physical intutition
 remains the same.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}{\bf r} &amp;=  \begin{pmatrix} r \cos(\phi)\sin(\theta ) \\r \sin(\phi)\sin(\theta ) \\ r \cos(\theta )  \end{pmatrix}  \\ 
-\Rightarrow \mathrm{d}{\bf r} &amp;=  \begin{pmatrix} 
+\[\begin{split}\mathbf{r} &amp;=  \begin{pmatrix} r \cos(\phi)\sin(\theta ) \\r \sin(\phi)\sin(\theta ) \\ r \cos(\theta )  \end{pmatrix} = r\,\mathbf{e_r} \\ 
+\Rightarrow \mathrm{d}\mathbf{r} &amp;=  \begin{pmatrix} 
 \mathrm{d}r \cos(\phi)\sin(\theta ) - r \sin(\phi)\sin(\theta ) \mathrm{d}\phi + r \cos(\phi)\cos(\theta ) \mathrm{d}\theta \\ 
 \mathrm{d}r \sin(\phi)\sin(\theta ) + r \cos(\phi)\sin(\theta ) \mathrm{d}\phi + r \sin(\phi) \cos(\theta )\mathrm{d}\theta  \\ 
 \mathrm{d}r \cos(\theta ) - r \sin(\theta )\mathrm{d}\theta  
@@ -561,8 +561,8 @@ remains the same.</p>
 \begin{pmatrix} 
 -\sin(\phi) \\ 
  \cos(\phi)\\ 
-0\end{pmatrix} r\sin(\theta )\mathrm{d}\phi \\x`
- &amp;=  \hat{\bf r} \mathrm{d}r + \hat{\bf \theta }r\mathrm{d}\theta  + \hat{\bf \phi} r\sin(\theta )\mathrm{d}\phi\end{split}\]</div>
+0\end{pmatrix} r\sin(\theta )\mathrm{d}\phi \\
+ &amp;=  \mathbf{e_r} \mathrm{d}r + \mathbf{e_\theta}r\mathrm{d}\theta  + \mathbf{e_\phi} r\sin(\theta)\mathrm{d}\phi\end{split}\]</div>
 <figure class="align-default" id="sphericalpolarphysics">
 <img alt="../_images/sphericalpolarphysics.png" src="../_images/sphericalpolarphysics.png" />
 <figcaption>
@@ -570,7 +570,7 @@ remains the same.</p>
 this then leads to a projection on to the <span class="math notranslate nohighlight">\(x-y\)</span> plane which then projects this further as per the polar coordinates <span class="math notranslate nohighlight">\(r,\, \phi\)</span>.</span><a class="headerlink" href="#sphericalpolarphysics" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Therefore here we see that in this convention <span class="math notranslate nohighlight">\(r \in [0,\, \infty),\, \phi \in [0,\, 2\pi),\, \theta \in [0,\, \pi)\)</span>.</p>
+<p>Therefore here we see that in this convention <span class="math notranslate nohighlight">\(r \in [0,\, \infty),\, \phi \in [0,\, 2\pi),\, \theta \in [0,\, \pi]\)</span>.</p>
 <p>In this convention the volume element <span class="math notranslate nohighlight">\(\mathrm{d}V\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{d}V = r^2\,\mathrm{d}r\,\sin(\theta)\,\mathrm{d}\theta\,\mathrm{d}\phi\]</div>
@@ -581,44 +581,46 @@ this then leads to a projection on to the <span class="math notranslate nohighli
 <p>Sometimes it makes more sense to combine the rotation symmetry of polar coordinates with the rectilinear nature of 3D Cartesian coodiantes,
 which results in a cylindrical coordinate system.  Thus was have coordinate transforms of the form:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}x &amp;=  r \cos(\theta)\\
-y &amp;=  r \sin(\theta)\\
+\[\begin{split}x &amp;=  R \cos(\theta)\\
+y &amp;=  R \sin(\theta)\\
 z &amp;=  z\end{split}\]</div>
+<p>or in terms of position vector <span class="math notranslate nohighlight">\(r\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{r} = \begin{pmatrix}R \cos(\theta) \\ R \sin(\theta) \\ z \end{pmatrix} = R \begin{pmatrix}\cos(\theta) \\ \sin(\theta) \\ 0\end{pmatrix}  + z \begin{pmatrix}0  \\ 0 \\ 1 \end{pmatrix} = R\,\mathbf{e_R} + z\,\mathbf{e_z}\end{split}\]</div>
 <figure class="align-default" id="cylindricalaxes">
 <img alt="../_images/cylindricalaxes.png" src="../_images/cylindricalaxes.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3.8 </span><span class="caption-text">One set of cylidrical polar axes, where the angle <span class="math notranslate nohighlight">\(\theta\)</span> is the polar angle around the <span class="math notranslate nohighlight">\(z\)</span> axis and distance <span class="math notranslate nohighlight">\(r\)</span> is in the <span class="math notranslate nohighlight">\(x-y\)</span> plane, with the
-elevation from the plane determined by <span class="math notranslate nohighlight">\(z\)</span>.</span><a class="headerlink" href="#cylindricalaxes" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.8 </span><span class="caption-text">One set of cylidrical polar axes, where the angle <span class="math notranslate nohighlight">\(\theta\)</span> is the polar angle around the <span class="math notranslate nohighlight">\(z\)</span> axis and distance <span class="math notranslate nohighlight">\(R\)</span> is in the <span class="math notranslate nohighlight">\(x-y\)</span> plane, with the elevation from the plane determined by <span class="math notranslate nohighlight">\(z\)</span>.</span><a class="headerlink" href="#cylindricalaxes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Here <span class="math notranslate nohighlight">\(r \in [0,\, \infty),\, \theta \in [0,\, 2\pi),\, z \in (-\infty,\, \infty)\)</span>. Notice that in contrast to the spherical polar coordinate system,
-the radial vector <span class="math notranslate nohighlight">\(r\)</span> is only the distance in the <span class="math notranslate nohighlight">\(x-y\)</span> plane.  Sometimes this system is written in terms of <span class="math notranslate nohighlight">\((\rho, \,\phi,\, z)\)</span>, but this is just a
+<p>Here <span class="math notranslate nohighlight">\(R \in [0,\, \infty),\, \theta \in [0,\, 2\pi),\, z \in \mathbb{R}\)</span>. Notice that in contrast to the spherical polar coordinate system,
+the radial vector <span class="math notranslate nohighlight">\(R\)</span> is only the distance in the <span class="math notranslate nohighlight">\(x-y\)</span> plane.  Sometimes this system is written in terms of <span class="math notranslate nohighlight">\((\rho, \,\phi,\, z)\)</span>, but this is just a
 variable relabelling.</p>
 <p>To find the infinitesimal changes in the coordinates here we find:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}{\bf r} &amp;=  \begin{pmatrix} r \cos(\theta) \\r \sin(\theta) \\ z \end{pmatrix}  \\ 
-\Rightarrow \mathrm{d}{\bf r} &amp;=  \begin{pmatrix} 
-\mathrm{d}r \cos(\theta)  - r \sin(\theta) \mathrm{d}\theta \\ 
-\mathrm{d}r \sin(\theta) + r \cos(\theta) \mathrm{d}\theta  \\ 
+\[\begin{split}\mathbf{r} &amp;=  \begin{pmatrix} R \cos(\theta) \\R \sin(\theta) \\ z \end{pmatrix}  \\ 
+\Rightarrow \mathrm{d}\mathbf{r} &amp;=  \begin{pmatrix} 
+\mathrm{d}R \cos(\theta) - R \sin(\theta) \mathrm{d}\theta \\ 
+\mathrm{d}R \sin(\theta) + R \cos(\theta) \mathrm{d}\theta  \\ 
 \mathrm{d}z
 \end{pmatrix} \\ &amp;=   \begin{pmatrix} 
 \cos(\theta) \\ 
 \sin(\theta) \\ 
 0
-\end{pmatrix} \mathrm{d}r 
+\end{pmatrix} \mathrm{d}R 
 + \begin{pmatrix} 
 -\sin(\theta) \\ 
 \cos(\theta)\\ 
 0
-\end{pmatrix}r\mathrm{d}\theta  + 
+\end{pmatrix}R\mathrm{d}\theta  + 
 \begin{pmatrix} 
 0 \\ 
 0\\ 
 1\end{pmatrix}\mathrm{d}z \\
- &amp;=  \hat{\bf r} \mathrm{d}r + \hat{\bf \theta }r\mathrm{d}\theta  + \hat{\bf z} \mathrm{d}z\end{split}\]</div>
+ &amp;=  \mathbf{e_R}\, \mathrm{d}R + \mathbf{e_\theta }\,R\,\mathrm{d}\theta  + \mathbf{e_z} \,\mathrm{d}z\end{split}\]</div>
 <p>and therefore the volume element <span class="math notranslate nohighlight">\(\mathrm{d}V\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}V = r\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}z\]</div>
+\[\mathrm{d}V = R\,\mathrm{d}R\,\mathrm{d}\theta\,\mathrm{d}z\]</div>
 </section>
 </section>
 

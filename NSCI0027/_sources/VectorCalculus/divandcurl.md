@@ -2,7 +2,7 @@
 
 ## Divergence
 
-If we start with a vector field ${\bf A(r)} = A_x({\bf r})\,\hat{\bf x} + A_y({\bf r})\,\hat{\bf y} + A_z({\bf r})\,\hat{\bf z} $, then we can define the quantity 
+If we start with a vector field ${\bf A(r)} = A_x({\bf r})\,\mathbf{e_x} + A_y({\bf r})\,\mathbf{e_y} + A_z({\bf r})\,\mathbf{e_z} $, then we can define the quantity 
 $\nabla\cdot {\bf A(r)}$, i.e. taking the scalar product of the gradient operator with vector field ${\bf A(r)} $ which since the gradient vector is a differential 
 operator, means the expression has the form:
 
@@ -40,15 +40,15 @@ $\nabla \cdot {\bf A} < 0$, field lines would flow into a point and there would 
 ### Cylindrical coordinate system
 In cylindrical polar coordinates, we have the additional complication that the unit vectors:
 ```{math}
- \hat{\bf r}  = \begin{pmatrix} 
+ \mathbf{e_R}  = \begin{pmatrix} 
 \cos(\theta) \\ 
 \sin(\theta) \\ 
 0
-\end{pmatrix}, \qquad  \hat{\bf \theta } = \begin{pmatrix} 
+\end{pmatrix}, \qquad  \mathbf{e_\theta } = \begin{pmatrix} 
 -\sin(\theta) \\ 
 \cos(\theta)\\ 
 0
-\end{pmatrix},  \qquad \hat{\bf z} = 
+\end{pmatrix},  \qquad \mathbf{e_z} = 
 \begin{pmatrix} 
 0 \\ 
 0\\ 
@@ -57,48 +57,46 @@ In cylindrical polar coordinates, we have the additional complication that the u
 are now not all constant, so in fact when we apply the derivative operator, we need to do any derivatives *ahead* of the dot product:
 
 ```{math}
-\nabla \cdot {\bf A} &= \left(\hat{\bf r}\, \frac{\partial }{\partial r}  
-+ \frac{\hat{\bf \theta }}{r}\,\frac{\partial }{\partial \theta}  
-+ \hat{\bf z} \,\frac{\partial }{\partial z} 
- \right) \cdot \left( A_r\,\hat{\bf r} + A_\theta\,\hat{\bf \theta} + A_z\,\hat{\bf z}\right) \\
- &=\hat{\bf r}\cdot \left(\frac{\partial (A_r\,\hat{\bf r})}{\partial r} + \frac{\partial (A_\theta\,\hat{\bf \theta})}{\partial r}  + \frac{\partial (A_z\,\hat{\bf z})}{\partial r} \right) 
-\\ &+ \frac{\hat{\bf \theta}}{r}\cdot\left(\frac{\partial (A_r\,\hat{\bf r})}{\partial \theta} + \frac{\partial (A_\theta\,\hat{\bf \theta})}{\partial \theta} + \frac{\partial (A_z\,\hat{\bf z})}{\partial \theta}  \right) 
-\\ &+ \hat{\bf z}\cdot \left(\frac{\partial (A_r\,\hat{\bf r})}{\partial z}  + \frac{\partial (A_\theta\,\hat{\bf \theta})}{\partial z} +\frac{\partial (A_z\,\hat{\bf z})}{\partial z}  \right) 
+\nabla \cdot {\bf A} &= \left(\mathbf{e_R}\, \frac{\partial }{\partial R}  + \frac{\mathbf{e_\theta }}{R}\,\frac{\partial }{\partial \theta}  + \mathbf{e_z} \,\frac{\partial }{\partial z}  \right) \cdot \left( A_R\,\mathbf{e_R} + A_\theta\,\mathbf{e_\theta} + A_z\,\mathbf{e_z}\right) \\
+&=\mathbf{e_R}\cdot \left(\frac{\partial (A_R\,\mathbf{e_R})}{\partial R} + \frac{\partial (A_\theta\,\mathbf{e_\theta})}{\partial R}  + \frac{\partial (A_z\,\mathbf{e_z})}{\partial R} \right) \\ 
+&+ \frac{\mathbf{e_\theta}}{R}\cdot\left(\frac{\partial (A_R\,\mathbf{e_R})}{\partial \theta} + \frac{\partial (A_\theta\,\mathbf{e_\theta})}{\partial \theta} + \frac{\partial (A_z\,\mathbf{e_z})}{\partial \theta}  \right) \\ 
+&+ \mathbf{e_z}\cdot \left(\frac{\partial (A_R\,\mathbf{e_R})}{\partial z}  + \frac{\partial (A_\theta\,\mathbf{e_\theta})}{\partial z} +\frac{\partial (A_z\,\mathbf{e_z})}{\partial z}  \right) 
 ```
-So whereas the first and third sets of terms here will not have additional terms, the middle set of terms will be more complicated, because $\hat{\bf r} = \hat{\bf r} (\theta), \, \hat{\bf \theta} = \hat{\bf \theta} (\theta)$.
+
+So whereas the first and third sets of terms here will not have additional terms, the middle set of terms will be more complicated, because $\mathbf{e_R} = \mathbf{e_R} (\theta), \, \mathbf{e_\theta} = \mathbf{e_\theta} (\theta)$.
 
 We find that:
 ```{math}
-\frac{\partial \hat{\bf r}}{\partial \theta} = \begin{pmatrix} -\sin(\theta) \\ \cos(\theta)\end{pmatrix} = \hat{\bf \theta}, 
-\qquad \frac{\partial \hat{\bf \theta}}{\partial \theta} = \begin{pmatrix} -\cos(\theta) \\ -\sin(\theta)\end{pmatrix} = - \hat{\bf r}
+\frac{\partial \mathbf{e_R}}{\partial \theta} = \begin{pmatrix} -\sin(\theta) \\ \cos(\theta)\end{pmatrix} = \mathbf{e_\theta}, 
+\qquad \frac{\partial \mathbf{e_\theta}}{\partial \theta} = \begin{pmatrix} -\cos(\theta) \\ -\sin(\theta)\end{pmatrix} = - \mathbf{e_R}
 ```
 which means that:
 ```{math}
-\nabla \cdot {\bf A} &= \hat{\bf r}\cdot \left(\frac{\partial (A_r)}{\partial r}\,\hat{\bf r} + \frac{\partial (A_\theta)}{\partial r} \,\hat{\bf \theta} + \frac{\partial (A_z)}{\partial r} \,\hat{\bf z}\right) 
-\\ &+ \frac{\hat{\bf \theta}}{r}\cdot\left(\frac{\partial (A_r)}{\partial \theta}\,\hat{\bf r} + A_r \,\hat{\bf \theta} + \frac{\partial (A_\theta)}{\partial \theta}\,\hat{\bf \theta} - A_\theta\,\hat{\bf r} + \frac{\partial (A_z)}{\partial \theta} \,\hat{\bf z} \right) 
-\\ &+ \hat{\bf z}\cdot \left(\frac{\partial (A_r)}{\partial z}\,\hat{\bf r} + \frac{\partial (A_\theta)}{\partial z}\,\hat{\bf \theta} +\frac{\partial (A_z)}{\partial z} \,\hat{\bf z} \right) \\
-&= \frac{\partial (A_r)}{\partial r} + \frac{1}{r}\frac{\partial (A_\theta)}{\partial \theta} + \frac{A_r}{r} + \frac{\partial (A_z)}{\partial z} \\
-\Rightarrow \nabla \cdot {\bf A}&= \frac{1}{r}\frac{\partial (r\,A_r)}{\partial r} + \frac{1}{r}\frac{\partial (A_\theta)}{\partial \theta}  + \frac{\partial (A_z)}{\partial z}
+\nabla \cdot {\bf A} &= \mathbf{e_R}\cdot \left(\frac{\partial (A_R)}{\partial R}\,\mathbf{e_R} + \frac{\partial (A_\theta)}{\partial R} \,\mathbf{e_\theta} + \frac{\partial (A_z)}{\partial R} \,\mathbf{e_z}\right) 
+\\ &+ \frac{\mathbf{e_\theta}}{R}\cdot\left(\frac{\partial (A_R)}{\partial \theta}\,\mathbf{e_R} + A_R \,\mathbf{e_\theta} + \frac{\partial (A_\theta)}{\partial \theta}\,\mathbf{e_\theta} - A_\theta\,\mathbf{e_R} + \frac{\partial (A_z)}{\partial \theta} \,\mathbf{e_z} \right) 
+\\ &+ \mathbf{e_z}\cdot \left(\frac{\partial (A_r)}{\partial z}\,\mathbf{e_r} + \frac{\partial (A_\theta)}{\partial z}\,\mathbf{e_\theta} +\frac{\partial (A_z)}{\partial z} \,\mathbf{e_z} \right) \\
+&= \frac{\partial (A_R)}{\partial R} + \frac{1}{R}\frac{\partial (A_\theta)}{\partial \theta} + \frac{A_r}{R} + \frac{\partial (A_z)}{\partial z} \\
+\Rightarrow \nabla \cdot {\bf A}&= \frac{1}{R}\frac{\partial (R\,A_R)}{\partial R} + \frac{1}{R}\frac{\partial (A_\theta)}{\partial \theta}  + \frac{\partial (A_z)}{\partial z}
 ```
 
 If we consider a vector in cylindrical coordinates, a vector with constant coefficients, e.g. $\displaystyle {\bf A} = \begin{pmatrix} a\\b\\c \end{pmatrix}$ will have non-zero divergence if 
-and only if the $A_r \neq 0$, since:
+and only if the $A_R \neq 0$, since:
 ```{math}
-\nabla \cdot {\bf A} = \frac{1}{r}\frac{\partial (r\,a)}{\partial r} + \frac{1}{r}\frac{\partial b}{\partial \theta}  + \frac{\partial c}{\partial z} = \frac{a}{r}
+\nabla \cdot {\bf A} = \frac{1}{R}\frac{\partial (R\,a)}{\partial R} + \frac{1}{R}\frac{\partial b}{\partial \theta}  + \frac{\partial c}{\partial z} = \frac{a}{R}
 ```
 
 ### Spherical coordinate system
 In spherical polar coordinates, we also have the additional complication that the unit vectors:
 ```{math}
- \hat{\bf r}  = \begin{pmatrix} 
+ \mathbf{e_r}  = \begin{pmatrix} 
 \cos(\theta)\,\sin(\phi) \\ 
 \sin(\theta)\,\sin(\phi) \\ 
 \cos(\phi)
-\end{pmatrix}, \qquad  \hat{\bf \phi } = \begin{pmatrix} 
+\end{pmatrix}, \qquad  \mathbf{e_\phi } = \begin{pmatrix} 
 \cos(\theta)\,\cos(\phi) \\ 
 \sin(\theta)\,\cos(\phi) \\ 
 -\sin(\phi)
-\end{pmatrix},  \qquad \hat{\bf \theta} = 
+\end{pmatrix},  \qquad \mathbf{e_\theta} = 
 \begin{pmatrix} 
 -\sin(\theta) \\ 
 \cos(\theta)\\ 
@@ -108,59 +106,59 @@ In spherical polar coordinates, we also have the additional complication that th
 are now not all constant, so we need to do any derivatives *ahead* of the dot product:
 
 ```{math}
-\nabla \cdot {\bf A} &= \left(\hat{\bf r}\, \frac{\partial }{\partial r}  
-+ \frac{\hat{\bf \phi }}{r}\,\frac{\partial }{\partial \phi}  
-+ \frac{\hat{\bf \theta}}{r\sin(\phi)} \,\frac{\partial }{\partial \theta} 
- \right) \cdot \left( A_r\,\hat{\bf r} + A_\phi\,\hat{\bf \phi} + A_\theta\,\hat{\bf \theta}\right) \\
- &=\hat{\bf r}\cdot \left(\frac{\partial (A_r\,\hat{\bf r})}{\partial r} + \frac{\partial (A_\phi\,\hat{\bf \phi})}{\partial r}  + \frac{\partial (A_\theta\,\hat{\bf \theta})}{\partial r} \right) 
-\\ &+ \frac{\hat{\bf \phi}}{r}\cdot\left(\frac{\partial (A_r\,\hat{\bf r})}{\partial \phi} + \frac{\partial (A_\phi\,\hat{\bf \phi})}{\partial \phi} + \frac{\partial (A_\theta\,\hat{\bf \theta})}{\partial \phi}  \right) 
-\\ &+ \frac{\hat{\bf \theta}}{r\,\sin(\phi)}\cdot \left(\frac{\partial (A_r\,\hat{\bf r})}{\partial \theta}  + \frac{\partial (A_\phi\,\hat{\bf \phi})}{\partial \theta} +\frac{\partial (A_\theta\,\hat{\bf \theta})}{\partial \theta}  \right) 
+\nabla \cdot {\bf A} &= \left(\mathbf{e_r}\, \frac{\partial }{\partial r}  
++ \frac{\mathbf{e_\phi }}{r}\,\frac{\partial }{\partial \phi}  
++ \frac{\mathbf{e_\theta}}{r\sin(\phi)} \,\frac{\partial }{\partial \theta} 
+ \right) \cdot \left( A_r\,\mathbf{e_r} + A_\phi\,\mathbf{e_\phi} + A_\theta\,\mathbf{e_\theta}\right) \\
+ &=\mathbf{e_r}\cdot \left(\frac{\partial (A_r\,\mathbf{e_r})}{\partial r} + \frac{\partial (A_\phi\,\mathbf{e_\phi})}{\partial r}  + \frac{\partial (A_\theta\,\mathbf{e_\theta})}{\partial r} \right) 
+\\ &+ \frac{\mathbf{e_\phi}}{r}\cdot\left(\frac{\partial (A_r\,\mathbf{e_r})}{\partial \phi} + \frac{\partial (A_\phi\,\mathbf{e_\phi})}{\partial \phi} + \frac{\partial (A_\theta\,\mathbf{e_\theta})}{\partial \phi}  \right) 
+\\ &+ \frac{\mathbf{e_\theta}}{r\,\sin(\phi)}\cdot \left(\frac{\partial (A_r\,\mathbf{e_r})}{\partial \theta}  + \frac{\partial (A_\phi\,\mathbf{e_\phi})}{\partial \theta} +\frac{\partial (A_\theta\,\mathbf{e_\theta})}{\partial \theta}  \right) 
 ```
-So whereas the first set of terms here will not have additional terms, the second and third set of terms will be more complicated, because $\hat{\bf r} = \hat{\bf r} (\phi,\, \theta), \, \hat{\bf \phi} = \hat{\bf \phi}(\phi,\,\theta),\, \hat{\bf \theta} = \hat{\bf \theta} (\phi,\,\theta)$.
+So whereas the first set of terms here will not have additional terms, the second and third set of terms will be more complicated, because $\mathbf{e_r} = \mathbf{e_r} (\phi,\, \theta), \, \mathbf{e_\phi} = \mathbf{e_\phi}(\phi,\,\theta),\, \mathbf{e_\theta} = \mathbf{e_\theta} (\phi,\,\theta)$.
 
 We find that:
 ```{math}
-\frac{\partial \hat{\bf r}}{\partial \phi} &= \begin{pmatrix} 
+\frac{\partial \mathbf{e_r}}{\partial \phi} &= \begin{pmatrix} 
 \cos(\theta)\,\cos(\phi) \\ 
 \sin(\theta)\,\cos(\phi) \\ 
 -\sin(\phi)
-\end{pmatrix} = \hat{\bf \phi}, 
+\end{pmatrix} = \mathbf{e_\phi}, 
 \qquad 
-\frac{\partial \hat{\bf \phi}}{\partial \phi} = \begin{pmatrix} 
+\frac{\partial \mathbf{e_\phi}}{\partial \phi} = \begin{pmatrix} 
 -\cos(\theta)\,\sin(\phi) \\ 
 -\sin(\theta)\,\sin(\phi) \\ 
 -\cos(\phi)
-\end{pmatrix} = - \hat{\bf r},
+\end{pmatrix} = - \mathbf{e_r},
 \qquad
-\frac{\partial \hat{\bf \theta}}{\partial \phi} = \begin{pmatrix} 
+\frac{\partial \mathbf{e_\theta}}{\partial \phi} = \begin{pmatrix} 
 0 \\ 
 0 \\ 
 0
 \end{pmatrix} 
 \\
-\frac{\partial \hat{\bf r}}{\partial \theta} &= \begin{pmatrix} 
+\frac{\partial \mathbf{e_r}}{\partial \theta} &= \begin{pmatrix} 
 -\sin(\theta)\,\sin(\phi) \\ 
 \cos(\theta)\,\sin(\phi)\\ 
 0
-\end{pmatrix} = \sin(\phi)\,\hat{\bf \theta}, 
+\end{pmatrix} = \sin(\phi)\,\mathbf{e_\theta}, 
 \qquad 
-\frac{\partial \hat{\bf \phi}}{\partial \theta} = \begin{pmatrix} 
+\frac{\partial \mathbf{e_\phi}}{\partial \theta} = \begin{pmatrix} 
 -\sin(\theta)\,\cos(\phi) \\ 
 \cos(\theta)\,\cos(\phi)\\ 
 0
-\end{pmatrix} = \cos(\phi)\,\hat{\bf \theta},\\
-\frac{\partial \hat{\bf \theta}}{\partial \theta} &= \begin{pmatrix} 
+\end{pmatrix} = \cos(\phi)\,\mathbf{e_\theta},\\
+\frac{\partial \mathbf{e_\theta}}{\partial \theta} &= \begin{pmatrix} 
 -\cos(\theta) \\ 
 -\sin(\theta) \\ 
 0
-\end{pmatrix} = - (\sin(\phi)\,\hat{\bf r} + \cos(\phi)\,\hat{\bf \phi}),
+\end{pmatrix} = - (\sin(\phi)\,\mathbf{e_r} + \cos(\phi)\,\mathbf{e_\phi}),
 ```
 which means that:
 ```{math}
-\nabla \cdot {\bf A} &= \hat{\bf r}\cdot \left(\frac{\partial (A_r)}{\partial r}\,\hat{\bf r} + \frac{\partial (A_\phi)}{\partial r} \,\hat{\bf \phi} + \frac{\partial (A_\theta)}{\partial r} \,\hat{\bf \theta}\right) 
-\\ &+ \frac{\hat{\bf \phi}}{r}\cdot\left(\frac{\partial (A_r)}{\partial \phi}\,\hat{\bf r} + A_r \,\hat{\bf \phi} + \frac{\partial (A_\phi)}{\partial \phi}\,\hat{\bf \phi} - A_\phi\,\hat{\bf r} + \frac{\partial (A_\theta)}{\partial \phi} \,\hat{\bf \theta} \right) 
-\\ &+ \frac{\hat{\bf \theta}}{r\,\sin(\phi)}\cdot \left(\frac{\partial (A_r)}{\partial \theta}\,\hat{\bf r} + A_r\,\sin(\phi)\,\hat{\bf \theta} + \frac{\partial (A_\phi)}{\partial \theta}\,\hat{\bf \phi} \right.\\
-&\left.\qquad \qquad + A_\phi\,\cos(\theta)\,\hat{\bf \theta} +\frac{\partial (A_\theta)}{\partial \theta} \,\hat{\bf \theta} - A_\theta(\hat{\bf r}\,\sin(\phi) + \hat{\bf \phi}\,\cos(\phi)) \right) \\
+\nabla \cdot {\bf A} &= \mathbf{e_r}\cdot \left(\frac{\partial (A_r)}{\partial r}\,\mathbf{e_r} + \frac{\partial (A_\phi)}{\partial r} \,\mathbf{e_\phi} + \frac{\partial (A_\theta)}{\partial r} \,\mathbf{e_\theta}\right) 
+\\ &+ \frac{\mathbf{e_\phi}}{r}\cdot\left(\frac{\partial (A_r)}{\partial \phi}\,\mathbf{e_r} + A_r \,\mathbf{e_\phi} + \frac{\partial (A_\phi)}{\partial \phi}\,\mathbf{e_\phi} - A_\phi\,\mathbf{e_r} + \frac{\partial (A_\theta)}{\partial \phi} \,\mathbf{e_\theta} \right) 
+\\ &+ \frac{\mathbf{e_\theta}}{r\,\sin(\phi)}\cdot \left(\frac{\partial (A_r)}{\partial \theta}\,\mathbf{e_r} + A_r\,\sin(\phi)\,\mathbf{e_\theta} + \frac{\partial (A_\phi)}{\partial \theta}\,\mathbf{e_\phi} \right.\\
+&\left.\qquad \qquad + A_\phi\,\cos(\theta)\,\mathbf{e_\theta} +\frac{\partial (A_\theta)}{\partial \theta} \,\mathbf{e_\theta} - A_\theta(\mathbf{e_r}\,\sin(\phi) + \mathbf{e_\phi}\,\cos(\phi)) \right) \\
 &= \frac{\partial (A_r)}{\partial r} + \frac{A_r}{r} + \frac{2}{r}\frac{\partial (A_\phi)}{\partial \phi} + \frac{A_\phi\,\cos(\phi)}{r\,\sin(\phi)} + \frac{1}{r\,\sin(\phi)}\frac{\partial (A_\theta)}{\partial \theta} \\
 \Rightarrow \nabla \cdot {\bf A}&= \frac{1}{r^2}\frac{\partial (r^2\,A_r)}{\partial r} + \frac{1}{r\,\sin(\phi)}\,\frac{\partial (\sin(\phi)\,A_\phi)}{\partial \phi}  + \frac{1}{r\,\sin(\phi)}\,\frac{\partial (A_\theta)}{\partial \theta}
 ```
@@ -171,7 +169,7 @@ We can likewise take a vector field ${\bf A(r)} $ and here take the vector produ
 
 ```{math}
 \nabla\times {\bf A(r)} = 
-\begin{vmatrix} \hat{\bf x} & \hat{\bf y} & \hat{\bf z}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ A_x & A_y & A_z\end{vmatrix}
+\begin{vmatrix} \mathbf{e_x} & \mathbf{e_y} & \mathbf{e_z}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ A_x & A_y & A_z\end{vmatrix}
 = \begin{pmatrix} \partial_y\, A_z - \partial_z\, A_y \\ \partial_z\, A_x - \partial_x\, A_z \\ \partial_x\, A_y - \partial_y\, A_x  \end{pmatrix}
 ```
 
@@ -225,31 +223,30 @@ We can use the product rule as well as the rules following scalar and vector pro
 
 As with the divergence, the variation of the unit vectors causes additional complexity in calculating the curl:
 ```{math}
-\nabla \times {\bf A} = \left(\hat{\bf r}\, \frac{\partial }{\partial r}  
-+ \frac{\hat{\bf \theta }}{r}\,\frac{\partial }{\partial \theta}  
-+ \hat{\bf z} \,\frac{\partial }{\partial z} 
- \right) \times \left( A_r\,\hat{\bf r} + A_\theta\,\hat{\bf \theta} + A_z\,\hat{\bf z}\right)
+\nabla \times {\bf A} = \left(\mathbf{e_R}\, \frac{\partial }{\partial R} + \frac{\mathbf{e_\theta }}{R}\,\frac{\partial }{\partial \theta}  + \mathbf{e_z} \,\frac{\partial }{\partial z} 
+ \right) \times \left( A_R\,\mathbf{e_R} + A_\theta\,\mathbf{e_\theta} + A_z\,\mathbf{e_z}\right)
 ```
 
 which given our expressions for variation of unit vectors with coordinate variables means:
+
 ```{math}
-\nabla \times {\bf A} &= \hat{\bf r}\times \left(\frac{\partial (A_r)}{\partial r}\,\hat{\bf r} + \frac{\partial (A_\theta)}{\partial r} \,\hat{\bf \theta} + \frac{\partial (A_z)}{\partial r} \,\hat{\bf z}\right) 
-\\ &+ \frac{\hat{\bf \theta}}{r}\times\left(\frac{\partial (A_r)}{\partial \theta}\,\hat{\bf r} + A_r \,\hat{\bf \theta} + \frac{\partial (A_\theta)}{\partial \theta}\,\hat{\bf \theta} - A_\theta\,\hat{\bf r} + \frac{\partial (A_z)}{\partial \theta} \,\hat{\bf z} \right) 
-\\ &+ \hat{\bf z}\times \left(\frac{\partial (A_r)}{\partial z}\,\hat{\bf r} + \frac{\partial (A_\theta)}{\partial z}\,\hat{\bf \theta} +\frac{\partial (A_z)}{\partial z} \,\hat{\bf z} \right) \\
+\nabla \times {\bf A} &= \mathbf{e_R}\times \left(\frac{\partial (A_R)}{\partial R}\,\mathbf{e_R} + \frac{\partial (A_\theta)}{\partial R} \,\mathbf{e_\theta} + \frac{\partial (A_z)}{\partial R} \,\mathbf{e_z}\right) 
+\\ &+ \frac{\mathbf{e_\theta}}{R}\times\left(\frac{\partial (A_R)}{\partial \theta}\,\mathbf{e_R} + A_R \,\mathbf{e_\theta} + \frac{\partial (A_\theta)}{\partial \theta}\,\mathbf{e_\theta} - A_\theta\,\mathbf{e_R} + \frac{\partial (A_z)}{\partial \theta} \,\mathbf{e_z} \right) 
+\\ &+ \mathbf{e_z}\times \left(\frac{\partial (A_R)}{\partial z}\,\mathbf{e_R} + \frac{\partial (A_\theta)}{\partial z}\,\mathbf{e_\theta} +\frac{\partial (A_z)}{\partial z} \,\mathbf{e_z} \right) \\
 ```
 Given the cylic nature of unit vectors and their orthongality:
 ```{math}
-\hat{\bf r} \times \hat{\bf \theta} &= \hat{\bf z}\\
-\hat{\bf \theta} \times \hat{\bf z} &= \hat{\bf r}\\
-\hat{\bf z} \times \hat{\bf r} &= \hat{\bf \theta}\\
-\hat{\bf r} \times \hat{\bf r} &= \hat{\bf \theta} \times \hat{\bf \theta} = \hat{\bf z} \times \hat{\bf z} = 0
+\mathbf{e_R} \times \mathbf{e_\theta} &= \mathbf{e_z}\\
+\mathbf{e_\theta} \times \mathbf{e_z} &= \mathbf{e_R}\\
+\mathbf{e_z} \times \mathbf{e_R} &= \mathbf{e_\theta}\\
+\mathbf{e_r} \times \mathbf{e_R} &= \mathbf{e_\theta} \times \mathbf{e_\theta} = \mathbf{e_z} \times \mathbf{e_z} = 0
 ```
 means we find that:
 ```{math}
-\nabla \times {\bf A} &= \left(\frac{\partial (A_\theta)}{\partial r} \,\hat{\bf z} - \frac{\partial (A_z)}{\partial r} \,\hat{\bf \theta}\right) 
-+ \left(-\frac{1}{r}\frac{\partial (A_r)}{\partial \theta}\,\hat{\bf z} + \frac{A_\theta}{r}\,\hat{\bf z} + \frac{1}{r}\frac{\partial (A_z)}{\partial \theta} \,\hat{\bf r} \right) \\
-&+ \left(\frac{\partial (A_r)}{\partial z}\,\hat{\bf \theta} - \frac{\partial (A_\theta)}{\partial z}\,\hat{\bf r}\right)\\
-\Rightarrow \nabla \times {\bf A}&= \left(\frac{1}{r}\,\frac{\partial A_z}{\partial \theta} - \frac{\partial A_\theta}{\partial z} \right)\,\hat{\bf r} + \left(\frac{\partial A_r}{\partial z} - \frac{\partial A_z}{\partial r}\right)\,\hat{\bf \theta} + \frac{1}{r}\left(\frac{\partial (r\,A_\theta)}{\partial r}-\frac{\partial A_r}{\partial \theta}\right)\,\hat{\bf z}
+\nabla \times {\bf A} &= \left(\frac{\partial (A_\theta)}{\partial R} \,\mathbf{e_z} - \frac{\partial (A_z)}{\partial R} \,\mathbf{e_\theta}\right) 
++ \left(-\frac{1}{R}\frac{\partial (A_R)}{\partial \theta}\,\mathbf{e_z} + \frac{A_\theta}{R}\,\mathbf{e_z} + \frac{1}{R}\frac{\partial (A_z)}{\partial \theta} \,\mathbf{e_r} \right) \\
+&+ \left(\frac{\partial (A_R)}{\partial z}\,\mathbf{e_\theta} - \frac{\partial (A_\theta)}{\partial z}\,\mathbf{e_R}\right)\\
+\Rightarrow \nabla \times {\bf A}&= \left(\frac{1}{R}\,\frac{\partial A_z}{\partial \theta} - \frac{\partial A_\theta}{\partial z} \right)\,\mathbf{e_R} + \left(\frac{\partial A_R}{\partial z} - \frac{\partial A_z}{\partial R}\right)\,\mathbf{e_\theta} + \frac{1}{R}\left(\frac{\partial (R\,A_\theta)}{\partial R}-\frac{\partial A_R}{\partial \theta}\right)\,\mathbf{e_z}
 ```
 
 ### Spherical coordinate systems
@@ -257,32 +254,32 @@ means we find that:
 In a similar fashion to the cylindrical polar coordinates, we need to consider how the unit vectors change under differentiation first before 
 applying the cross product, therefore:
 ```{math}
-\nabla \times {\bf A} &= \left(\hat{\bf r}\, \frac{\partial }{\partial r}  
-+ \frac{\hat{\bf \phi }}{r}\,\frac{\partial }{\partial \phi}  
-+ \frac{\hat{\bf \theta}}{r\sin(\phi)} \,\frac{\partial }{\partial \theta} 
- \right) \times \left( A_r\,\hat{\bf r} + A_\phi\,\hat{\bf \phi} + A_\theta\,\hat{\bf \theta}\right) \\
- &=\hat{\bf r}\times \left(\frac{\partial (A_r)}{\partial r}\,\hat{\bf r} + \frac{\partial (A_\phi)}{\partial r} \,\hat{\bf \phi} + \frac{\partial (A_\theta)}{\partial r} \,\hat{\bf \theta}\right) 
-\\ &+ \frac{\hat{\bf \phi}}{r}\times\left(\frac{\partial (A_r)}{\partial \phi}\,\hat{\bf r} + A_r \,\hat{\bf \phi} + \frac{\partial (A_\phi)}{\partial \phi}\,\hat{\bf \phi} - A_\phi\,\hat{\bf r} + \frac{\partial (A_\theta)}{\partial \phi} \,\hat{\bf \theta} \right) 
-\\ &+ \frac{\hat{\bf \theta}}{r\,\sin(\phi)}\times \left(\frac{\partial (A_r)}{\partial \theta}\,\hat{\bf r} + A_r\,\sin(\phi)\,\hat{\bf \theta} + \frac{\partial (A_\phi)}{\partial \theta}\,\hat{\bf \phi} \right.\\
-&\left.\qquad \qquad + A_\phi\,\cos(\theta)\,\hat{\bf \theta} +\frac{\partial (A_\theta)}{\partial \theta} \,\hat{\bf \theta} - A_\theta(\hat{\bf r}\,\sin(\phi) + \hat{\bf \phi}\,\cos(\phi)) \right) 
+\nabla \times {\bf A} &= \left(\mathbf{e_r}\, \frac{\partial }{\partial r}  
++ \frac{\mathbf{e_\phi }}{r}\,\frac{\partial }{\partial \phi}  
++ \frac{\mathbf{e_\theta}}{r\sin(\phi)} \,\frac{\partial }{\partial \theta} 
+ \right) \times \left( A_r\,\mathbf{e_r} + A_\phi\,\mathbf{e_\phi} + A_\theta\,\mathbf{e_\theta}\right) \\
+ &=\mathbf{e_r}\times \left(\frac{\partial (A_r)}{\partial r}\,\mathbf{e_r} + \frac{\partial (A_\phi)}{\partial r} \,\mathbf{e_\phi} + \frac{\partial (A_\theta)}{\partial r} \,\mathbf{e_\theta}\right) 
+\\ &+ \frac{\mathbf{e_\phi}}{r}\times\left(\frac{\partial (A_r)}{\partial \phi}\,\mathbf{e_r} + A_r \,\mathbf{e_\phi} + \frac{\partial (A_\phi)}{\partial \phi}\,\mathbf{e_\phi} - A_\phi\,\mathbf{e_r} + \frac{\partial (A_\theta)}{\partial \phi} \,\mathbf{e_\theta} \right) 
+\\ &+ \frac{\mathbf{e_\theta}}{r\,\sin(\phi)}\times \left(\frac{\partial (A_r)}{\partial \theta}\,\mathbf{e_r} + A_r\,\sin(\phi)\,\mathbf{e_\theta} + \frac{\partial (A_\phi)}{\partial \theta}\,\mathbf{e_\phi} \right.\\
+&\left.\qquad \qquad + A_\phi\,\cos(\theta)\,\mathbf{e_\theta} +\frac{\partial (A_\theta)}{\partial \theta} \,\mathbf{e_\theta} - A_\theta(\mathbf{e_r}\,\sin(\phi) + \mathbf{e_\phi}\,\cos(\phi)) \right) 
 ```
 Given the cylic nature of unit vectors and their orthongality:
 ```{math}
-\hat{\bf r} \times \hat{\bf \phi} &= \hat{\bf \theta}\\
-\hat{\bf \phi} \times \hat{\bf \theta} &= \hat{\bf r}\\
-\hat{\bf \theta} \times \hat{\bf r} &= \hat{\bf \phi}\\
-\hat{\bf r} \times \hat{\bf r} &= \hat{\bf \phi} \times \hat{\bf \phi} = \hat{\bf \theta} \times \hat{\bf \theta} = 0
+\mathbf{e_r} \times \mathbf{e_\phi} &= \mathbf{e_\theta}\\
+\mathbf{e_\phi} \times \mathbf{e_\theta} &= \mathbf{e_r}\\
+\mathbf{e_\theta} \times \mathbf{e_r} &= \mathbf{e_\phi}\\
+\mathbf{e_r} \times \mathbf{e_r} &= \mathbf{e_\phi} \times \mathbf{e_\phi} = \mathbf{e_\theta} \times \mathbf{e_\theta} = 0
 ```
 means we find that:
 ```{math}
-\nabla \times {\bf A} &= \left(\frac{\partial (A_\phi)}{\partial r} \,\hat{\bf \theta} - \frac{\partial (A_\theta)}{\partial r} \,\hat{\bf \phi}\right) 
-+ \left(-\frac{1}{r}\frac{\partial (A_r)}{\partial \phi}\,\hat{\bf \theta} + \frac{A_\phi}{r}\,\hat{\bf \theta} 
-+ \frac{1}{r}\frac{\partial (A_\theta)}{\partial \phi} \,\hat{\bf r} \right) \\
-&+ \left(\frac{1}{r\,\sin(\phi)}\frac{\partial (A_r)}{\partial \theta}\,\hat{\bf \phi} - \frac{1}{r\,\sin(\phi)}\frac{\partial (A_\phi)}{\partial \theta}\,\hat{\bf r} - \frac{A_\theta}{r}\,\hat{\bf \phi} 
-+ \frac{A_\theta\,\cos(\phi)}{r\,\sin(\phi)}\,\hat{\bf r}\right)\\
-\Rightarrow \nabla \times {\bf A}&= \frac{1}{r\,\sin(\phi)}\left(\frac{\partial (A_\theta\,\sin(\phi))}{\partial \phi} - \frac{\partial A_\phi}{\partial \theta} \right)\,\hat{\bf r} 
-\\&+ \frac{1}{r}\left(\frac{1}{\sin(\phi)}\frac{\partial A_r}{\partial \theta} - \frac{\partial (r\,A_\theta)}{\partial r}\right)\,\hat{\bf \phi} 
-\\&+ \frac{1}{r}\left(\frac{\partial (r\,A_\phi)}{\partial r}-\frac{\partial A_r}{\partial \phi}\right)\,\hat{\bf \theta}
+\nabla \times {\bf A} &= \left(\frac{\partial (A_\phi)}{\partial r} \,\mathbf{e_\theta} - \frac{\partial (A_\theta)}{\partial r} \,\mathbf{e_\phi}\right) 
++ \left(-\frac{1}{r}\frac{\partial (A_r)}{\partial \phi}\,\mathbf{e_\theta} + \frac{A_\phi}{r}\,\mathbf{e_\theta} 
++ \frac{1}{r}\frac{\partial (A_\theta)}{\partial \phi} \,\mathbf{e_r} \right) \\
+&+ \left(\frac{1}{r\,\sin(\phi)}\frac{\partial (A_r)}{\partial \theta}\,\mathbf{e_\phi} - \frac{1}{r\,\sin(\phi)}\frac{\partial (A_\phi)}{\partial \theta}\,\mathbf{e_r} - \frac{A_\theta}{r}\,\mathbf{e_\phi} 
++ \frac{A_\theta\,\cos(\phi)}{r\,\sin(\phi)}\,\mathbf{e_r}\right)\\
+\Rightarrow \nabla \times {\bf A}&= \frac{1}{r\,\sin(\phi)}\left(\frac{\partial (A_\theta\,\sin(\phi))}{\partial \phi} - \frac{\partial A_\phi}{\partial \theta} \right)\,\mathbf{e_r} 
+\\&+ \frac{1}{r}\left(\frac{1}{\sin(\phi)}\frac{\partial A_r}{\partial \theta} - \frac{\partial (r\,A_\theta)}{\partial r}\right)\,\mathbf{e_\phi} 
+\\&+ \frac{1}{r}\left(\frac{\partial (r\,A_\phi)}{\partial r}-\frac{\partial A_r}{\partial \phi}\right)\,\mathbf{e_\theta}
 ```
 
 
@@ -361,8 +358,8 @@ Lets examine the case of a vector field $\bf v$ formed from the function $f(x,\,
 
 and if we take the curl of such a vector field:
 ```{math}
-\nabla \times {\bf v} &= \begin{vmatrix} \hat{\bf x} & \hat{\bf y} & \hat{\bf z} \\ \partial_x & \partial_y & \partial_z \\ yz & xz & xy\end{vmatrix} \\
-&= (x - x)\,\hat{\bf x} + (y - y)\,\hat{\bf y} + (z - z)\,\hat{\bf z} = 0
+\nabla \times {\bf v} &= \begin{vmatrix} \mathbf{e_x} & \mathbf{e_y} & \mathbf{e_z} \\ \partial_x & \partial_y & \partial_z \\ yz & xz & xy\end{vmatrix} \\
+&= (x - x)\,\mathbf{e_x} + (y - y)\,\mathbf{e_y} + (z - z)\,\mathbf{e_z} = 0
 ```
 Likewise if we started with some vector field and wanted to work out if it is conservative (and if so which scalar field sourced it), we could examine 
 each component and integrate, for instance if:

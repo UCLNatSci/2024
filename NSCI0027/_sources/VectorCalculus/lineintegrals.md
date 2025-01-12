@@ -3,7 +3,7 @@
 If we apply the total differential expression:
 ```{math}
 :class:  notice
-\nabla f \cdot \mathrm{d}{\bf r} = \mathrm{d}f
+\nabla f \cdot \mathrm{d}\mathbf{r}= \mathrm{d}f
 ```
 and now try to integrate this:
 ```{math}
@@ -34,20 +34,20 @@ For some vector field:
 ```
 this simplifies to:
 ```{math}
-\int_{\mathcal{C}} {\bf F(r)} \cdot \mathrm{d}{\bf r} = \int_{\,\mathcal{C}} \left(F\,\mathrm{d}x + G\,\mathrm{d}y + R\,\mathrm{d}z \right)
+\int_{\mathcal{C}} {\bf F(r)} \cdot \mathrm{d}\mathbf{r}= \int_{\,\mathcal{C}} \left(F\,\mathrm{d}x + G\,\mathrm{d}y + R\,\mathrm{d}z \right)
 ```
 We notice that that this is a scalar, found from scalar product of $\bf F$ with the differential line element $\mathrm{d}{\bf r}$ along the path $\mathcal{C}$.
 
 We can also think about a *scalar line integral*:
 
 ```{math}
-\int_{\mathcal{C}} f(r)\, \mathrm{d}s
+\int_{\mathcal{C}} f(r)\, \mathrm{d}r
 ```
 
-where $\mathrm{d}s$ is the infinitesimal arc length element, which is given by:
+where $\mathrm{d}r$ is the infinitesimal arc length element, which is given by:
 ```{math}
-\mathrm{d} {\bf r} &= \hat{\bf x}\,\mathrm{d}x +\hat{\bf y}\,\mathrm{d}y +\hat{\bf z}\,\mathrm{d}z\\
-\mathrm{d} s &= |\mathrm{d} {\bf r}|= \sqrt{\mathrm{d}x^2 + \mathrm{d}y^2 + \mathrm{d}z^2}
+\mathrm{d} \mathbf{r}&= \hat{\bf x}\,\mathrm{d}x +\hat{\bf y}\,\mathrm{d}y +\hat{\bf z}\,\mathrm{d}z\\
+\mathrm{d} r &= |\mathrm{d} {\bf r}|= \sqrt{\mathrm{d}x^2 + \mathrm{d}y^2 + \mathrm{d}z^2}
 ``` 
 
 If we pick a closed path through the vector field, we call this a **loop integral**:
@@ -146,14 +146,14 @@ y &= r\,\sin(t)
 
 For scalar line integrals, the direction we travel along the contour does not change the result:
 ```{math}
-\int_{-\mathcal{C}}f\,\mathrm{d}s = \int_{\mathcal{C}} f\,\mathrm{d}s
+\int_{-\mathcal{C}}f\,\mathrm{d}r = \int_{\mathcal{C}} f\,\mathrm{d}r
 ```
-this is because the length element $\mathrm{d}s = |\mathrm{d}{\bf r}|$ is taken from the magnitude of a vector, so any 
+this is because the length element $\mathrm{d}r = |\mathrm{d}{\bf r}|$ is taken from the magnitude of a vector, so any 
 changes in the orientation are washed out in this.
 
 For vector line integrals, the direction we travel along the contour **does** change the result:
 ```{math}
-\int_{-\mathcal{C}} {\bf F}\cdot \,\mathrm{d}{\bf r} = -\int_{\mathcal{C}} {\bf F}\cdot \,\mathrm{d}{\bf r} 
+\int_{-\mathcal{C}} {\bf F}\cdot \,\mathrm{d}\mathbf{r}= -\int_{\mathcal{C}} {\bf F}\cdot \,\mathrm{d}\mathbf{r}
 ```
 and given that for $Q = R = 0$, we can do a line integral in $x$, or similarly for $y$ $z$:
 ```{math}
@@ -167,18 +167,18 @@ and given that for $Q = R = 0$, we can do a line integral in $x$, or similarly f
 If we can find one variable $t$ which will effectively parameterise the path through the (scalar or vector) field, then our 
 expression simplify:
 ```{math}
-\int_{\mathcal{C}} f({\bf r})\,\mathrm{d}s = \int_{t=a}^{t=b} \left(f({\bf r}(t))\,\frac{\mathrm{d}s}{\mathrm{d}t}\right)\,\mathrm{d}t \\
-\int_{\mathcal{C}} {\bf F}({\bf r})\cdot \mathrm{d}{\bf r} = \int_{t=a}^{t=b} \left({\bf F}({\bf r}(t))\cdot\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} \right)\,\mathrm{d}t
+\int_{\mathcal{C}} f({\bf r})\,\mathrm{d}r = \int_{t=a}^{t=b} \left(f({\bf r}(t))\,\frac{\mathrm{d}r}{\mathrm{d}t}\right)\,\mathrm{d}t \\
+\int_{\mathcal{C}} {\bf F}({\bf r})\cdot \mathrm{d}\mathbf{r}= \int_{t=a}^{t=b} \left({\bf F}({\bf r}(t))\cdot\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} \right)\,\mathrm{d}t
 ```
 where the infinitesimal coordinate vector derivatives are given by:
 ```{math}
 \frac{\mathrm{d}{\bf r}}{\mathrm{d}t} &= \hat{\bf x}\,\frac{\mathrm{d}x}{\mathrm{d}t} + \hat{\bf y}\,\frac{\mathrm{d}y}{\mathrm{d}t} + \hat{\bf z}\,\frac{\mathrm{d}z}{\mathrm{d}t}\\
-\frac{\mathrm{d}s}{\mathrm{d}t} &= \left|\frac{\mathrm{d}{\bf r}}{\mathrm{d}t}  \right| = \sqrt{\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}y}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}z}{\mathrm{d}t}\right)^2}
+\frac{\mathrm{d}r}{\mathrm{d}t} &= \left|\frac{\mathrm{d}{\bf r}}{\mathrm{d}t}  \right| = \sqrt{\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}y}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}z}{\mathrm{d}t}\right)^2}
 ```
 
 ````{admonition} Worked examples
 :class: seealso
-1\. Evaluate the scalar line integral $\int_{\mathcal{C}} (x^2 + y^2)\,\mathrm{d}s$ over the contours:
+1\. Evaluate the scalar line integral $\int_{\mathcal{C}} (x^2 + y^2)\,\mathrm{d}r$ over the contours:
 
 a\. A straight line linking $(1,\,0) \rightarrow (-1,\,0)$.
 
@@ -193,7 +193,7 @@ Then we can rewrite the integrand in this parameterisation:
 x^2 + y^2 &= (1-2t)^2 + 0^2 = 1 - 4t + 4t^2 \\
 \frac{\mathrm{d}x}{\mathrm{d}t} &= -2\\
 \frac{\mathrm{d}y}{\mathrm{d}t} &= 0\\
-\frac{\mathrm{d}s}{\mathrm{d}t} = \sqrt{(-2)^2 + 0^2} = 2
+\frac{\mathrm{d}r}{\mathrm{d}t} = \sqrt{(-2)^2 + 0^2} = 2
 ```
 Finally lets evaluate the integral:
 ```{math}
@@ -214,7 +214,7 @@ Rewriting the integrand in this parameterisation:
 x^2 + y^2 &= (\cos(\theta))^2 + (\sin(\theta))^2 = 1 \\
 \frac{\mathrm{d}x}{\mathrm{d}t} &= -\sin(\theta)\\
 \frac{\mathrm{d}y}{\mathrm{d}t} &= \cos(\theta)\\
-\frac{\mathrm{d}s}{\mathrm{d}t} &= \sqrt{(-\sin(\theta))^2 + (\cos(\theta))^2} = 1
+\frac{\mathrm{d}r}{\mathrm{d}t} &= \sqrt{(-\sin(\theta))^2 + (\cos(\theta))^2} = 1
 ```
 
 Finally lets evaluate the integral:
@@ -295,7 +295,7 @@ and ${\bf r'}(t)$ is given by:
 so the line integral is found by:
 
 ```{math}
-I &=  \int_{\mathcal{C}} {\bf G}(r) \cdot \mathrm{d}{\bf r} = \int_0^1 {\bf G}({\bf r}(t)) \cdot {\bf r}'(t)\,\mathrm{d}t = 
+I &=  \int_{\mathcal{C}} {\bf G}(r) \cdot \mathrm{d}\mathbf{r}= \int_0^1 {\bf G}({\bf r}(t)) \cdot {\bf r}'(t)\,\mathrm{d}t = 
 \int_0^1 \begin{pmatrix} 2t^2 \\ -4t^2 \end{pmatrix} \cdot \begin{pmatrix} 1 \\ 2 \end{pmatrix} \mathrm{d}t \\
 &=  \int_0^1 \left( 2t^2 - 8t^2 \right)\,\textrm{d}t = -\int_0^1 6t^2 \,\textrm{d}t = \Big[ -\frac{6}{3}t^3\Big ]_0^1 = -2
 ```
@@ -321,7 +321,7 @@ and ${\bf r'}(t)$ is given by:
 so the line integral is found by:
 
 ```{math}
-I &=  \int_{\mathcal{C}} {\bf G}(r) \cdot \mathrm{d}{\bf r} = \int_0^1 {\bf G}({\bf r}(t)) \cdot {\bf r}'(t)\,\mathrm{d}t = 
+I &=  \int_{\mathcal{C}} {\bf G}(r) \cdot \mathrm{d}\mathbf{r}= \int_0^1 {\bf G}({\bf r}(t)) \cdot {\bf r}'(t)\,\mathrm{d}t = 
 \int_0^1 \begin{pmatrix} t^3 \\ -t^4 \end{pmatrix} \cdot \begin{pmatrix} 1 \\ 2t \end{pmatrix} \mathrm{d}t \\
 &=  \int_0^1 \left( t^3 - 2t^5 \right)\,\textrm{d}t = \Big[\frac{1}{4}t^4 - \frac{1}{3}t^6 \Big ]_0^1 = -\frac{1}{12}
 ```
@@ -349,7 +349,7 @@ and ${\bf r'}(x)$ is given by:
 so the line integral is found by:
 
 ```{math}
-I &=  \int_{\mathcal{C}} {\bf G}(r) \cdot \mathrm{d}{\bf r} = \int_0^1 {\bf G}({\bf r}(t)) \cdot {\bf r}'(t)\,\mathrm{d}t = 
+I &=  \int_{\mathcal{C}} {\bf G}(r) \cdot \mathrm{d}\mathbf{r}= \int_0^1 {\bf G}({\bf r}(t)) \cdot {\bf r}'(t)\,\mathrm{d}t = 
 \int_0^1 \begin{pmatrix} t^{3/2} \\ -t \end{pmatrix} \cdot \begin{pmatrix} 1 \\ \frac{1}{2} t^{-1/2} \end{pmatrix} \mathrm{d}t \\
 &=  \int_0^1 \left( t^{3/2} - \frac{1}{2}t^{1/2} \right)\,\textrm{d}t = \Big[\frac{2}{5}t^{5/2} - \frac{1}{3}t^{3/2} \Big ]_0^1 = \frac{1}{15}
 ```
@@ -362,12 +362,12 @@ In the case of a conservative vector field ${\bf F} = \nabla f$, then we find th
 allows us to dramatically simplify calculating it in some cases.  To see this fact, go back to the total derivative:
 
 ```{math}
-\nabla f \cdot \mathrm{d}{\bf r} = \mathrm{d}f
+\nabla f \cdot \mathrm{d}\mathbf{r}= \mathrm{d}f
 ```
 
 If this is true, then when we calculate the line integral of a conservative vector field:
 ```{math}
-\int_{\mathcal{C}} \nabla f \cdot \mathrm{d}{\bf r} = \int_{f_{initial}}^{f_{final}} \mathrm{d}f = \Big[ f\Big]_{f_{initial}}^{f_{final}} = f_{final} - f_{initial}
+\int_{\mathcal{C}} \nabla f \cdot \mathrm{d}\mathbf{r}= \int_{f_{initial}}^{f_{final}} \mathrm{d}f = \Big[ f\Big]_{f_{initial}}^{f_{final}} = f_{final} - f_{initial}
 ```
 over some points $f_{initial} \rightarrow f_{final}$ which correspond to the points $a \leq t \leq b$ in the parameterised version of the line integral.
 
