@@ -112,32 +112,68 @@ Introducing the substitution $\sin {\frac{{{\theta _0}}}{2}} = k$ and $\sin \fra
 \int {\frac{{d\phi}}{{\sqrt {1 - {k^2}\,{{\sin }^2}\phi } }}}  = \sqrt {\frac{g}{L}} \int {dt}.
 ```
 
-The oscillation period is given by:
+Lets look at the limits of integration, the passage of the arc from the lowest point $\alpha = 0$ to the maximum deviation $\alpha = \alpha_0$ corresponds to a quarter of the oscillation period $\frac{T}{4}$. It follows from the relationship between the angles $\alpha$ and $\theta$ that $\sin \theta = 1$ or $\theta = \frac{\pi}{2}$ at $\alpha = \alpha_0$. 
+
+Therefore, we obtain the following expression for the period of oscillation of the pendulum:
 
 ```{math}
-T = 4\sqrt {\frac{L}{g}} \int\limits_0^{\frac{\pi }{2}} {\frac{{d\phi}}{{\sqrt {1 - {k^2}\,{{\sin }^2}\phi } }}} .
+\sqrt{\frac{g}{L}} \frac{T}{4} = \int\limits_0^{\frac{\pi}{2}} \frac{d\theta}{\sqrt{1 - k^2 \sin^2\theta}} \;\; \text{or} \;\; T = 4\sqrt{\frac{L}{g}} \int\limits_0^{\frac{\pi}{2}} \frac{d\theta}{\sqrt{1 - k^2 \sin^2\theta}}.
 ```
 
-This integral, a **complete elliptic integral of the first kind**, is expressed as:
+The integral on the right cannot be expressed in terms of elementary functions. It is the so-called **complete elliptic integral of the first kind**:
 
 ```{math}
-K\left( k \right) = \int\limits_0^{\frac{\pi }{2}} {\frac{{d\phi}}{{\sqrt {1 - {k^2}\,{{\sin }^2}\phi } }}} .
+K(k) = \int\limits_0^{\frac{\pi}{2}} \frac{d\theta}{\sqrt{1 - k^2 \sin^2\theta}}.
 ```
 
-Approximating $K(k) \approx \frac{\pi}{2}$ for small amplitudes, the period becomes:
+We can see how this looks with a plot:
+````{admonition} Elliptic Function
+:class: dropdown
+
+```python 
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import ellipk
+
+# Generate k values from 0 to 1 (excluding 1)
+k_values = np.linspace(0, 0.99, 500)
+elliptic_values = ellipk(k_values**2)
+
+# Plotting
+plt.figure(figsize=(8, 6))
+plt.plot(k_values, elliptic_values, lw=2)
+plt.title('Complete Elliptic Integral of the First Kind', fontsize=14)
+plt.xlabel(r'$k$', fontsize=12)
+plt.ylabel(r'$K(k)$', fontsize=12)
+plt.grid(True, alpha=0.5)
+plt.show()
+
+````
+
+What is also interest is that $K(k)$ can also be represented as a power series:
 
 ```{math}
-T_0 \approx 2\pi \sqrt {\frac{L}{g}} .
+K(k) = \frac{\pi}{2} \left\{ 1 + \left(\frac{1}{2}\right)^2 k^2 + \left(\frac{1 \cdot 3}{2 \cdot 4}\right)^2 k^4 + \left(\frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6}\right)^2 k^6 + \ldots + \left[\frac{\left(2n - 1\right)!!}{\left(2n\right)!!}\right]^2 k^{2n} + \ldots \right\},
 ```
+
+where the double factorials $\left(2n - 1\right)!!$ and $\left(2n\right)!!$ denote the product, respectively, of odd and even natural numbers.
+
+Note that if we restrict ourselves to the zero term of the expansion, assuming that $K(k) \approx \frac{\pi}{2}$, we obtain the known formula for the period of small oscillations:
+
+```{math}
+T_0 = 4\sqrt{\frac{L}{g}} K(k) \approx 4\sqrt{\frac{L}{g}} \frac{\pi}{2} = 2\pi \sqrt{\frac{L}{g}}.
+```
+
+Further terms of the series for $n \ge 1$ allow consideration of the anharmonicity of the oscillations of the pendulum and the nonlinear dependence of the period $T$ on the oscillation amplitude $\alpha_0$.
+
 
 Higher-order terms account for anharmonicity and the nonlinear dependence of $T$ on ${\theta_0}$.
 
 
 
-
-
 ### Energy Conservation
-The total mechanical energy $E$ of the pendulum is the sum of its kinetic energy ($T$) and potential energy ($U$):
+
+There is a little more to the origin of the time period expression.  The total mechanical energy $E$ of the pendulum is the sum of its kinetic energy ($T$) and potential energy ($U$):
 
 ```{math}
 E = T + U.
