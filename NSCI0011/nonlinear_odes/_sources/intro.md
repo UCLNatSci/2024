@@ -22,11 +22,11 @@ Non-linear ordinary differential equations (ODEs) form the cornerstone of many r
 ## Examples of Non-Linear ODEs
 
 ### 1. Simple Pendulum
-The equation for the angular displacement \(\theta(t)\) of a simple pendulum is:
+The equation for the angular displacement $\theta(t)$ of a simple pendulum is:
 ```{math}
 \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2} + \frac{g}{l}\sin\theta = 0
 ```
-This equation is non-linear due to the \(\sin\theta\) term. For small angles, it simplifies to the linearized form used in simple harmonic motion.
+This equation is non-linear due to the $\sin\theta$ term. For small angles, it simplifies to the linearized form used in simple harmonic motion.
 
 ### 2. Van der Pol Oscillator
 A model for electrical circuits and heartbeats:
@@ -40,7 +40,7 @@ A non-linear model for population dynamics with external harvesting:
 ```{math}
 \frac{\mathrm{d}N}{\mathrm{d}t} = rN\left(1 - \frac{N}{K}\right) - hN
 ```
-Here \(r\) is the growth rate, \(K\) is the carrying capacity, and \(h\) is the harvesting rate.
+Here $r$ is the growth rate, $K$ is the carrying capacity, and $h$ is the harvesting rate.
 
 ### 4. Duffing Oscillator
 Modeling non-linear stiffness in mechanical systems:
