@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Solving Non-Linear Ordinary Differential Equations &#8212; Non-Linear ODEs</title>
+    <title>Thomas Fermi Equation &#8212; Non-Linear ODEs</title>
   
   
   
@@ -59,10 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ThomasFermi';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Looking at Numerical Solutions to ODEs" href="NumericalMethods.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -145,7 +144,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,8 +175,8 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Solving Non-Linear Ordinary Differential Equations
                 </a>
             </li>
@@ -257,7 +256,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FThomasFermi.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +286,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/ThomasFermi.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -371,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Solving Non-Linear Ordinary Differential Equations</h1>
+    <h1>Thomas Fermi Equation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,19 +380,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-non-linear-odes-important">Why Are Non-Linear ODEs Important?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-non-linear-odes">Examples of Non-Linear ODEs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pendulum">Pendulum</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-pol-oscillator">Van der Pol Oscillator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-growth-with-harvesting">Logistic Growth with Harvesting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#duffing-oscillator">Duffing Oscillator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ermakov-pinney-equation">Ermakov-Pinney equation:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-thomas-fermi-equation">The Thomas-Fermi equation:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ginzburg-landu-equation">The Ginzburg-Landu equation:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Thomas Fermi Equation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-on-solving-the-thomas-fermi-equation">Notes on Solving the Thomas-Fermi Equation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-equation">1. The Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions-and-their-implications">2. Boundary Conditions and Their Implications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-of-order">3. Reduction of Order</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asymptotic-analysis">4. Asymptotic Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#near-r-0">Near <span class="math notranslate nohighlight">\(r = 0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#far-from-the-origin-r-to-infty">Far from the Origin (<span class="math notranslate nohighlight">\(r \to \infty\)</span>)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-of-the-notes">Scope of the Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-solution-techniques">5. Numerical Solution Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shooting-method">Shooting Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-difference-method">Finite Difference Method</a></li>
 </ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties">6. Key Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-numerical-steps">7. Example of Numerical Steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-the-solution">8. Applications of the Solution</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -404,101 +412,109 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="solving-non-linear-ordinary-differential-equations">
-<h1>Solving Non-Linear Ordinary Differential Equations<a class="headerlink" href="#solving-non-linear-ordinary-differential-equations" title="Link to this heading">#</a></h1>
-<p>Non-linear ordinary differential equations (ODEs) form the cornerstone of many real-world phenomena where the relationships between variables are inherently non-linear. Understanding and solving non-linear ODEs is critical for exploring many systems in physics, biology, engineering, and economics.</p>
-<section id="why-are-non-linear-odes-important">
-<h2>Why Are Non-Linear ODEs Important?<a class="headerlink" href="#why-are-non-linear-odes-important" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="thomas-fermi-equation">
+<h1>Thomas Fermi Equation<a class="headerlink" href="#thomas-fermi-equation" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="notes-on-solving-the-thomas-fermi-equation">
+<h1>Notes on Solving the Thomas-Fermi Equation<a class="headerlink" href="#notes-on-solving-the-thomas-fermi-equation" title="Link to this heading">#</a></h1>
+<p>The Thomas-Fermi equation is a nonlinear ordinary differential equation that can be studied as a mathematical problem, focusing on the methods for solving and analyzing it.</p>
+<hr class="docutils" />
+<section id="the-equation">
+<h2>1. The Equation<a class="headerlink" href="#the-equation" title="Link to this heading">#</a></h2>
+<p>The Thomas-Fermi equation is given by:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2\phi}{\mathrm{d}r^2} = \frac{1}{\sqrt{r}} \phi^{3/2}(r),\]</div>
+<p>with the boundary conditions:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\phi(0) = 1\)</span>: The potential is normalized at the origin.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi(r) \to 0\)</span> as <span class="math notranslate nohighlight">\(r \to \infty\)</span>: The potential vanishes at large distances.</p></li>
+</ul>
+<p>Here, <span class="math notranslate nohighlight">\(r &gt; 0\)</span> is the radial distance, and <span class="math notranslate nohighlight">\(\phi(r)\)</span> is the unknown function to solve for.</p>
+</section>
+<hr class="docutils" />
+<section id="boundary-conditions-and-their-implications">
+<h2>2. Boundary Conditions and Their Implications<a class="headerlink" href="#boundary-conditions-and-their-implications" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>At <span class="math notranslate nohighlight">\(r = 0\)</span></strong>: Regularity requires <span class="math notranslate nohighlight">\(\phi'(0) = 0\)</span> to avoid divergence in the second derivative.</p></li>
+<li><p><strong>As <span class="math notranslate nohighlight">\(r \to \infty\)</span></strong>: The solution decays to zero, ensuring a well-behaved function at large distances.</p></li>
+</ul>
+<p>These conditions guide the numerical or analytical approach to solving the equation.</p>
+</section>
+<hr class="docutils" />
+<section id="reduction-of-order">
+<h2>3. Reduction of Order<a class="headerlink" href="#reduction-of-order" title="Link to this heading">#</a></h2>
+<p>To simplify the problem, substitute <span class="math notranslate nohighlight">\(\phi(r) = r^{-1/2}y(r)\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2\phi}{\mathrm{d}r^2} = r^{-5/2} \left( y''(r) - \frac{1}{4}r^{-2}y(r) \right),\]</div>
+<p>and the equation becomes:</p>
+<div class="math notranslate nohighlight">
+\[y''(r) = \frac{1}{4}r^{-2}y(r) + y^{3/2}(r).\]</div>
+<p>This substitution removes the singularity at <span class="math notranslate nohighlight">\(r = 0\)</span> and can make numerical solutions more stable.</p>
+</section>
+<hr class="docutils" />
+<section id="asymptotic-analysis">
+<h2>4. Asymptotic Analysis<a class="headerlink" href="#asymptotic-analysis" title="Link to this heading">#</a></h2>
+<section id="near-r-0">
+<h3>Near <span class="math notranslate nohighlight">\(r = 0\)</span><a class="headerlink" href="#near-r-0" title="Link to this heading">#</a></h3>
+<p>Assuming a power-series solution <span class="math notranslate nohighlight">\(\phi(r) = 1 - kr^{n}\)</span>, substitution gives:</p>
+<div class="math notranslate nohighlight">
+\[\phi(r) \approx 1 - \frac{2}{3}r^{3/2}.\]</div>
+</section>
+<section id="far-from-the-origin-r-to-infty">
+<h3>Far from the Origin (<span class="math notranslate nohighlight">\(r \to \infty\)</span>)<a class="headerlink" href="#far-from-the-origin-r-to-infty" title="Link to this heading">#</a></h3>
+<p>The decay of <span class="math notranslate nohighlight">\(\phi(r)\)</span> is slow. Using asymptotic expansion methods, one finds:</p>
+<div class="math notranslate nohighlight">
+\[\phi(r) \sim \frac{A}{r^3},\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is determined numerically or from matching conditions.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="numerical-solution-techniques">
+<h2>5. Numerical Solution Techniques<a class="headerlink" href="#numerical-solution-techniques" title="Link to this heading">#</a></h2>
+<section id="shooting-method">
+<h3>Shooting Method<a class="headerlink" href="#shooting-method" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p><strong>Real-World Applications</strong>: Many different systems are governed by non-linear dynamics, examples include:</p>
+<li><p>Transform the boundary value problem into an initial value problem.</p></li>
+<li><p>Guess initial slopes <span class="math notranslate nohighlight">\(\phi'(0)\)</span> and adjust iteratively to satisfy <span class="math notranslate nohighlight">\(\phi(r) \to 0\)</span> as <span class="math notranslate nohighlight">\(r \to \infty\)</span>.</p></li>
+</ol>
+</section>
+<section id="finite-difference-method">
+<h3>Finite Difference Method<a class="headerlink" href="#finite-difference-method" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Discretize the domain into small steps <span class="math notranslate nohighlight">\(r_i\)</span> and approximate derivatives with finite differences.</p></li>
+<li><p>Solve the resulting nonlinear algebraic equations iteratively.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="key-properties">
+<h2>6. Key Properties<a class="headerlink" href="#key-properties" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Climate models.</p></li>
-<li><p>Population dynamics in ecology.</p></li>
-<li><p>Circuit designs in electrical engineering.</p></li>
-<li><p>Fluid mechanics and turbulence.</p></li>
+<li><p><strong>Nonlinearity</strong>: The term <span class="math notranslate nohighlight">\(\phi^{3/2}\)</span> introduces a strong nonlinearity, complicating direct integration methods.</p></li>
+<li><p><strong>Singular Behavior</strong>: The factor <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{r}}\)</span> requires careful handling near <span class="math notranslate nohighlight">\(r = 0\)</span>.</p></li>
 </ul>
-</li>
-<li><p><strong>Rich Behavior</strong>: Non-linear systems can exhibit phenomena absent in linear systems, such as:</p>
-<ul class="simple">
-<li><p><strong>Chaos</strong>: Extreme sensitivity to initial conditions.</p></li>
-<li><p><strong>Limit Cycles</strong>: Stable, repeating oscillations.</p></li>
-<li><p><strong>Bifurcations</strong>: Sudden qualitative changes in behavior as parameters vary.</p></li>
-</ul>
-</li>
-<li><p><strong>Challenges in Analysis</strong>: Unlike linear ODEs, non-linear equations often cannot be solved explicitly, we have to make use of different methods like perturbation theory, numerical analysis, and qualitative techniques to gain some intution.</p></li>
+</section>
+<hr class="docutils" />
+<section id="example-of-numerical-steps">
+<h2>7. Example of Numerical Steps<a class="headerlink" href="#example-of-numerical-steps" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Start with the substitution <span class="math notranslate nohighlight">\(\phi(r) = r^{-1/2}y(r)\)</span> to remove singular behavior.</p></li>
+<li><p>Choose a numerical grid for <span class="math notranslate nohighlight">\(r \in [\varepsilon, R]\)</span> (<span class="math notranslate nohighlight">\(\varepsilon\)</span> small to avoid division by zero, <span class="math notranslate nohighlight">\(R\)</span> large enough to approximate infinity).</p></li>
+<li><p>Use a method like Runge-Kutta or finite differences to integrate the equation.</p></li>
+<li><p>Adjust boundary conditions iteratively to ensure smooth decay to zero.</p></li>
 </ol>
 </section>
 <hr class="docutils" />
-<section id="examples-of-non-linear-odes">
-<h2>Examples of Non-Linear ODEs<a class="headerlink" href="#examples-of-non-linear-odes" title="Link to this heading">#</a></h2>
-<section id="pendulum">
-<h3>Pendulum<a class="headerlink" href="#pendulum" title="Link to this heading">#</a></h3>
-<p>The equation for the angular displacement <span class="math notranslate nohighlight">\(\theta(t)\)</span> of a simple pendulum is:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2} + \frac{g}{l}\sin\theta = 0\]</div>
-<p>This equation is non-linear due to the <span class="math notranslate nohighlight">\(\sin\theta\)</span> term. For small angles, it simplifies to the linearized form used in simple harmonic motion.</p>
-</section>
-<section id="van-der-pol-oscillator">
-<h3>Van der Pol Oscillator<a class="headerlink" href="#van-der-pol-oscillator" title="Link to this heading">#</a></h3>
-<p>A model for electrical circuits and heartbeats:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}^2x}{\mathrm{d}t^2} - \mu(1-x^2)\frac{\mathrm{d}x}{\mathrm{d}t} + x = 0\]</div>
-<p>This exhibits limit cycles and is a classic example of a self-sustaining oscillatory system.</p>
-</section>
-<section id="logistic-growth-with-harvesting">
-<h3>Logistic Growth with Harvesting<a class="headerlink" href="#logistic-growth-with-harvesting" title="Link to this heading">#</a></h3>
-<p>A non-linear model for population dynamics with external harvesting:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}N}{\mathrm{d}t} = rN\left(1 - \frac{N}{K}\right) - hN\]</div>
-<p>Here <span class="math notranslate nohighlight">\(r\)</span> is the growth rate, <span class="math notranslate nohighlight">\(K\)</span> is the carrying capacity, and <span class="math notranslate nohighlight">\(h\)</span> is the harvesting rate.</p>
-</section>
-<section id="duffing-oscillator">
-<h3>Duffing Oscillator<a class="headerlink" href="#duffing-oscillator" title="Link to this heading">#</a></h3>
-<p>Modeling non-linear stiffness in mechanical systems:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}^2x}{\mathrm{d}t^2} + \delta \frac{\mathrm{d}x}{\mathrm{d}t} + \alpha x + \beta x^3 = \gamma \cos(\omega t)\]</div>
-</section>
-<section id="ermakov-pinney-equation">
-<h3>Ermakov-Pinney equation:<a class="headerlink" href="#ermakov-pinney-equation" title="Link to this heading">#</a></h3>
-<p>Modelling a time varying mass term in harmonic motion systems:</p>
-<div class="math notranslate nohighlight">
-\[{\mathrm{d}^{2}x \over \mathrm{d}t^{2}}+\omega(t)^{2}x={\frac {h(t)^{2}}{x^{3}}}\]</div>
-</section>
-<section id="the-thomas-fermi-equation">
-<h3>The Thomas-Fermi equation:<a class="headerlink" href="#the-thomas-fermi-equation" title="Link to this heading">#</a></h3>
-<p>Modelling the electric potential in different types of atom:</p>
-<div class="math notranslate nohighlight">
-\[\frac {\mathrm{d}^{2}y}{\mathrm{d}x^{2}}={\frac {1}{\sqrt {x}}}y^{3/2}\]</div>
-<p>Subject to the boundary conditions:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}y(0) = 1, \quad 
-  \begin{cases} 
-  y(\infty) = 0, &amp; \text{for neutral atoms}, \\ 
-  y(x_0) = 0, &amp; \text{for positive ions}, \\ 
-  y(x_1) - x_1 y'(x_1) = 0, &amp; \text{for compressed neutral atoms}.
-  \end{cases}\end{split}\]</div>
-</section>
-<section id="the-ginzburg-landu-equation">
-<h3>The Ginzburg-Landu equation:<a class="headerlink" href="#the-ginzburg-landu-equation" title="Link to this heading">#</a></h3>
-<p>Modelling the evolution of small disturbances near a stable state of certain dynamical systems:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial A}{\partial t} = \mu A - g A|A|^{2} + \nu \nabla^{2}A\]</div>
-<p>We can find a longer list of non-linear ordinary differential equations <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_nonlinear_ordinary_differential_equations">online</a>.</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="scope-of-the-notes">
-<h2>Scope of the Notes<a class="headerlink" href="#scope-of-the-notes" title="Link to this heading">#</a></h2>
-<p>In these notes, we will:</p>
+<section id="applications-of-the-solution">
+<h2>8. Applications of the Solution<a class="headerlink" href="#applications-of-the-solution" title="Link to this heading">#</a></h2>
+<p>While derived in a physical context, the equation and its solutions are mathematically rich, providing insights into:</p>
 <ul class="simple">
-<li><p>Explore analytical, semi-analytical, and numerical techniques to solve non-linear ODEs.</p></li>
-<li><p>Study the qualitative behavior of solutions using phase plane analysis.</p></li>
-<li><p>Apply these techniques to classic problems, such as the ones outlined above, and introduce more advanced systems as the notes progress.</p></li>
+<li><p>Behavior of nonlinear ODEs.</p></li>
+<li><p>Singular boundary value problems.</p></li>
+<li><p>Numerical approximation methods.</p></li>
 </ul>
-<p>Non-linear ODEs are a fascinating and vital area of study, offering insights into the complexity of the natural world and engineered systems.</p>
+<p>The Thomas-Fermi equation is a valuable case study in solving challenging nonlinear differential equations.</p>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -531,15 +547,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="NumericalMethods.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Looking at Numerical Solutions to ODEs</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -556,19 +563,28 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-non-linear-odes-important">Why Are Non-Linear ODEs Important?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-non-linear-odes">Examples of Non-Linear ODEs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pendulum">Pendulum</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-pol-oscillator">Van der Pol Oscillator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-growth-with-harvesting">Logistic Growth with Harvesting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#duffing-oscillator">Duffing Oscillator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ermakov-pinney-equation">Ermakov-Pinney equation:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-thomas-fermi-equation">The Thomas-Fermi equation:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ginzburg-landu-equation">The Ginzburg-Landu equation:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Thomas Fermi Equation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-on-solving-the-thomas-fermi-equation">Notes on Solving the Thomas-Fermi Equation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-equation">1. The Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions-and-their-implications">2. Boundary Conditions and Their Implications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-of-order">3. Reduction of Order</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asymptotic-analysis">4. Asymptotic Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#near-r-0">Near <span class="math notranslate nohighlight">\(r = 0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#far-from-the-origin-r-to-infty">Far from the Origin (<span class="math notranslate nohighlight">\(r \to \infty\)</span>)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-of-the-notes">Scope of the Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-solution-techniques">5. Numerical Solution Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shooting-method">Shooting Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-difference-method">Finite Difference Method</a></li>
 </ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties">6. Key Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-numerical-steps">7. Example of Numerical Steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-the-solution">8. Applications of the Solution</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

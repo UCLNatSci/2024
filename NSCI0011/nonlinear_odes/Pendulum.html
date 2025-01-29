@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Solving the Non-Linear Pendulum &#8212; My sample book</title>
+    <title>Solving the Non-Linear Pendulum &#8212; Non-Linear ODEs</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,6 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Pendulum';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The Van der Pol Oscillator" href="VanderPol.html" />
     <link rel="prev" title="Looking at Numerical Solutions to ODEs" href="NumericalMethods.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -154,8 +155,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Non-Linear ODEs - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Non-Linear ODEs - Home"/>`);</script>
   
   
 </a></div>
@@ -183,6 +184,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="NumericalMethods.html">Looking at Numerical Solutions to ODEs</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Solving the Non-Linear Pendulum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VanderPol.html">The Van der Pol Oscillator</a></li>
 </ul>
 
     </div>
@@ -378,19 +380,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-methods">Analytical Methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#period-of-oscillation">Period of Oscillation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-methods">Analytical Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-conservation">Energy Conservation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#period-of-oscillation">Period of Oscillation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbation-methods">Perturbation Methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zeroth-order-solution-shm">Zeroth-Order Solution (SHM)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-correction">First-Order Correction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbative-methods">Perturbative  Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-perturbation">Introduction to perturbation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbative-solution">Perturbative Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-by-powers-of-varepsilon">Sorting by Powers of <span class="math notranslate nohighlight">\(\varepsilon\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-methods">Numerical Methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-system">Define the System</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-numerically">Solving Numerically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-methods">Numerical Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-pendulum">Non-Linear Pendulum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-solution">Final Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secular-terms">Secular Terms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-solutions">Plotting the solutions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
@@ -423,22 +429,47 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(L\)</span>: Length of the pendulum.</p></li>
 </ul>
 <p>Below, we explore three approaches to solving this equation: analytical, perturbative, and numerical.</p>
+<p>The non-linear pendulum equation cannot generally be solved in terms of elementary functions. However we can use different methods to understand how to characterise it’s behaviour.</p>
 <hr class="docutils" />
 <section id="analytical-methods">
 <h2>Analytical Methods<a class="headerlink" href="#analytical-methods" title="Link to this heading">#</a></h2>
-<p>The non-linear pendulum equation cannot generally be solved in terms of elementary functions. However we can use different methods to understand how to characterise it’s behaviour.</p>
-<p>In the case of small oscillations, one can set <span class="math notranslate nohighlight">\(\sin \theta \approx \theta\)</span>. As a result, we have a linear differential equation:</p>
+<section id="energy-conservation">
+<h3>Energy Conservation<a class="headerlink" href="#energy-conservation" title="Link to this heading">#</a></h3>
+<p>The total mechanical energy <span class="math notranslate nohighlight">\(E\)</span> of the pendulum is the sum of its kinetic energy (<span class="math notranslate nohighlight">\(T\)</span>) and potential energy (<span class="math notranslate nohighlight">\(U\)</span>):</p>
 <div class="math notranslate nohighlight">
-\[\frac{{{d^2}\theta }}{{d{t^2}}} + \frac{g}{L}\theta  = 0\;\; \text{or}\;\;\frac{{{d^2}\theta }}{{d{t^2}}} + {\omega ^2}\theta  = 0,\]</div>
-<p>where <span class="math notranslate nohighlight">\(\omega  = \sqrt {\frac{g}{L}} \)</span> is the angular frequency of oscillation.</p>
-<p>The period of small oscillations is described by the well-known formula:</p>
+\[E = T + U.\]</div>
+<ul>
+<li><p><strong>Kinetic Energy</strong>:
+The kinetic energy arises from the motion of the pendulum bob. If the angular displacement of the pendulum is <span class="math notranslate nohighlight">\(\theta\)</span> and the angular velocity is <span class="math notranslate nohighlight">\(\dot{\theta} = \frac{d\theta}{dt}\)</span>, the kinetic energy is given by:</p>
 <div class="math notranslate nohighlight">
-\[T = \frac{{2\pi }}{\omega } = 2\pi \sqrt {\frac{L}{g}}.\]</div>
-<p>However, with increasing amplitude, the linear equation ceases to be valid.</p>
-</section>
+\[T = \frac{1}{2} I \dot{\theta}^2,\]</div>
+<p>where <span class="math notranslate nohighlight">\(I = mL^2\)</span> is the moment of inertia for a point mass <span class="math notranslate nohighlight">\(m\)</span> at a distance <span class="math notranslate nohighlight">\(L\)</span> from the pivot. Substituting for <span class="math notranslate nohighlight">\(I\)</span>, the kinetic energy becomes:</p>
+<div class="math notranslate nohighlight">
+\[T = \frac{1}{2} mL^2 \dot{\theta}^2.\]</div>
+</li>
+<li><p><strong>Potential Energy</strong>:
+The potential energy depends on the height of the pendulum bob relative to its lowest point. For an angular displacement <span class="math notranslate nohighlight">\(\theta\)</span>, the vertical displacement <span class="math notranslate nohighlight">\(h\)</span> of the bob from its lowest position is:</p>
+<div class="math notranslate nohighlight">
+\[h = L(1 - \cos\theta).\]</div>
+<p>The corresponding potential energy is:</p>
+<div class="math notranslate nohighlight">
+\[U = mgh = mgL(1 - \cos\theta).\]</div>
+</li>
+</ul>
+<p>Thus, the total mechanical energy is:</p>
+<div class="math notranslate nohighlight">
+\[E = \frac{1}{2} mL^2 \dot{\theta}^2 + mgL(1 - \cos\theta).\]</div>
 <hr class="docutils" />
+<p>In an ideal pendulum (no damping or external forces), mechanical energy is conserved. Therefore, the total energy <span class="math notranslate nohighlight">\(E\)</span> remains constant during the motion. This conservation law can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2} mL^2 \dot{\theta}^2 + mgL(1 - \cos\theta) = E_0,\]</div>
+<p>where <span class="math notranslate nohighlight">\(E_0\)</span> is the total energy of the system, determined by the initial conditions (e.g., the initial angular displacement <span class="math notranslate nohighlight">\(\theta_0\)</span>).</p>
+<p>At the maximum displacement (<span class="math notranslate nohighlight">\(\theta = \theta_0\)</span>), the angular velocity is zero (<span class="math notranslate nohighlight">\(\dot{\theta} = 0\)</span>), so the total energy is purely potential:</p>
+<div class="math notranslate nohighlight">
+\[E_0 = mgL(1 - \cos\theta_0).\]</div>
+</section>
 <section id="period-of-oscillation">
-<h2>Period of Oscillation<a class="headerlink" href="#period-of-oscillation" title="Link to this heading">#</a></h2>
+<h3>Period of Oscillation<a class="headerlink" href="#period-of-oscillation" title="Link to this heading">#</a></h3>
 <p>Suppose that the pendulum is described by the nonlinear second-order differential equation:</p>
 <div class="math notranslate nohighlight">
 \[\frac{{{d^2}\theta }}{{d{t^2}}} + \frac{g}{L}\sin \theta  = 0.\]</div>
@@ -508,182 +539,178 @@ document.write(`
 \[T_0 = 4\sqrt{\frac{L}{g}} K(k) \approx 4\sqrt{\frac{L}{g}} \frac{\pi}{2} = 2\pi \sqrt{\frac{L}{g}}.\]</div>
 <p>Further terms of the series for <span class="math notranslate nohighlight">\(n \ge 1\)</span> allow consideration of the anharmonicity of the oscillations of the pendulum and the nonlinear dependence of the period <span class="math notranslate nohighlight">\(T\)</span> on the oscillation amplitude <span class="math notranslate nohighlight">\(\alpha_0\)</span>.</p>
 <p>Higher-order terms account for anharmonicity and the nonlinear dependence of <span class="math notranslate nohighlight">\(T\)</span> on <span class="math notranslate nohighlight">\({\theta_0}\)</span>.</p>
-<section id="energy-conservation">
-<h3>Energy Conservation<a class="headerlink" href="#energy-conservation" title="Link to this heading">#</a></h3>
-<p>There is a little more to the origin of the time period expression.  The total mechanical energy <span class="math notranslate nohighlight">\(E\)</span> of the pendulum is the sum of its kinetic energy (<span class="math notranslate nohighlight">\(T\)</span>) and potential energy (<span class="math notranslate nohighlight">\(U\)</span>):</p>
+</section>
+</section>
+<section id="perturbative-methods">
+<h2>Perturbative  Methods<a class="headerlink" href="#perturbative-methods" title="Link to this heading">#</a></h2>
+<section id="introduction-to-perturbation">
+<h3>Introduction to perturbation<a class="headerlink" href="#introduction-to-perturbation" title="Link to this heading">#</a></h3>
+<p>Lets look at a perturbation series solution of the equation:</p>
 <div class="math notranslate nohighlight">
-\[E = T + U.\]</div>
-<ul>
-<li><p><strong>Kinetic Energy</strong>:
-The kinetic energy arises from the motion of the pendulum bob. If the angular displacement of the pendulum is <span class="math notranslate nohighlight">\(\theta\)</span> and the angular velocity is <span class="math notranslate nohighlight">\(\dot{\theta} = \frac{d\theta}{dt}\)</span>, the kinetic energy is given by:</p>
+\[y'' + \varepsilon y' = 1, \varepsilon \ll 1\]</div>
+<p>This problem has a closed-form exact solution, which is a linear combination of homogeneous solutions  plus a particular solution:</p>
 <div class="math notranslate nohighlight">
-\[T = \frac{1}{2} I \dot{\theta}^2,\]</div>
-<p>where <span class="math notranslate nohighlight">\(I = mL^2\)</span> is the moment of inertia for a point mass <span class="math notranslate nohighlight">\(m\)</span> at a distance <span class="math notranslate nohighlight">\(L\)</span> from the pivot. Substituting for <span class="math notranslate nohighlight">\(I\)</span>, the kinetic energy becomes:</p>
+\[y_E(x) = \frac{x}{\varepsilon} + c_1 e^{-\varepsilon x} + c_2.\]</div>
+<p>The coefficients <span class="math notranslate nohighlight">\(c_1,\, c_2\)</span> can be determined from the boundary conditions of the system, lets pick some simple boundary conditions here:</p>
 <div class="math notranslate nohighlight">
-\[T = \frac{1}{2} mL^2 \dot{\theta}^2.\]</div>
-</li>
-<li><p><strong>Potential Energy</strong>:
-The potential energy depends on the height of the pendulum bob relative to its lowest point. For an angular displacement <span class="math notranslate nohighlight">\(\theta\)</span>, the vertical displacement <span class="math notranslate nohighlight">\(h\)</span> of the bob from its lowest position is:</p>
+\[\begin{split}y(0) &amp;= 1 \\
+y(1) &amp;= 0\end{split}\]</div>
+<p>NB we could pick intital conditions (e.g. <span class="math notranslate nohighlight">\(y(0), \,y'(0)\)</span>), this is just a choice!</p>
+<p>So we find here:</p>
 <div class="math notranslate nohighlight">
-\[h = L(1 - \cos\theta).\]</div>
-<p>The corresponding potential energy is:</p>
+\[y(0) = c_1 + c_2 = 1,\]</div>
 <div class="math notranslate nohighlight">
-\[U = mgh = mgL(1 - \cos\theta).\]</div>
-</li>
+\[y(1) = \frac{1}{\varepsilon} + c_1 e^{-\varepsilon} + c_2 = 0.\]</div>
+<p>From these:</p>
+<div class="math notranslate nohighlight">
+\[c_1 = \frac{1 + 1/\varepsilon}{1 - e^{-\varepsilon}}, \quad c_2 = 1 - c_1 = 1 - \frac{1 + 1/\varepsilon}{1 - e^{-\varepsilon}}\]</div>
+<p>This solution can be used to test the convergence of the perturbative solution.</p>
+</section>
+<hr class="docutils" />
+<section id="perturbative-solution">
+<h3>Perturbative Solution<a class="headerlink" href="#perturbative-solution" title="Link to this heading">#</a></h3>
+<p>Now lets assume a series solution to <span class="math notranslate nohighlight">\(y(x)\)</span> which also depends on the perturbative parameter <span class="math notranslate nohighlight">\(\varepsilon\)</span>, we can do this in the form of some Taylor style series expansion in <span class="math notranslate nohighlight">\(\varepsilon\)</span>, which in the limit of <span class="math notranslate nohighlight">\(\varepsilon \rightarrow 0\)</span> will produce just one solution <span class="math notranslate nohighlight">\(y_0(x)\)</span> which satisfies <span class="math notranslate nohighlight">\(y_0(x)'' = 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y(x, \varepsilon) = y_0(x) + \varepsilon y_1(x) + \varepsilon^2 y_2(x) + \cdots\]</div>
+<p>Substituting into the differential equation:</p>
+<div class="math notranslate nohighlight">
+\[y_0''(x) + \varepsilon y_1''(x) + \varepsilon y_2''(x) +\cdots + \varepsilon\left(y_0'(x) + \varepsilon y_1'(x) + \varepsilon y_2'(x)+ \cdots\right) = 1.\]</div>
+<p>Applying boundary conditions, which is crucial to solving these problems:</p>
+<div class="math notranslate nohighlight">
+\[y(0) = y_0(0) + \varepsilon y_1(0) + \varepsilon^2 y_2(0) + \cdots = 1 + \varepsilon\,0 + \varepsilon^2\,0 + \dots = 1,\]</div>
+<div class="math notranslate nohighlight">
+\[y(1) = y_0(1) + \varepsilon y_1(1) + \varepsilon^2 y_2(1) + \cdots = 0 + \varepsilon\,0 + \varepsilon^2\,0 + \dots = 0.\]</div>
+<p>Note that we apply these boundary conditions order by order, so the easiest way to think about these here is to have the zeroth order ones slightly different to the first order and higher ones - again this is a choice!</p>
+</section>
+<hr class="docutils" />
+<section id="sorting-by-powers-of-varepsilon">
+<h3>Sorting by Powers of <span class="math notranslate nohighlight">\(\varepsilon\)</span><a class="headerlink" href="#sorting-by-powers-of-varepsilon" title="Link to this heading">#</a></h3>
+<p><strong>Order <span class="math notranslate nohighlight">\(\varepsilon^0\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[y_0''(x) = 1, \quad y_0(0) = 1, \quad y_0(1) = 0.\]</div>
+<p>Solving gives:</p>
+<div class="math notranslate nohighlight">
+\[y_0(x) = \frac{x^2}{2} - \frac{3x}{2} + 1.\]</div>
+<hr class="docutils" />
+<p><strong>Order <span class="math notranslate nohighlight">\(\varepsilon^1\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[y_1''(x) + y_0'(x) = 0 \implies y_1''(x) = -y_0'(x) = - x + \frac{3}{2}\]</div>
+<p>Solution:</p>
+<div class="math notranslate nohighlight">
+\[y_1(x) = -\frac{x^3}{6} + \frac{3x^2}{4} + c_3 x + c_4.\]</div>
+<p>Using boundary conditions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}y_1(0) &amp;= c_4 = 0\\
+y_1(1) &amp;= -\frac{1}{6} + \frac{3}{4} + c_3 = 0 \implies c_3 = -\frac{7}{12}\\\end{split}\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[y_1(x) = -\frac{x^3}{6} + \frac{3x^2}{4} - \frac{7x}{12}\]</div>
+<hr class="docutils" />
+<p><strong>Order <span class="math notranslate nohighlight">\(\varepsilon^2\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[y''_2(x) + y'_1(x) = 0, \quad y_2(0) = 0, \quad y_2(1) = 0.\]</div>
+<p>Substituting <span class="math notranslate nohighlight">\( y'_1(x) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y''_2(x) = x^2 - \frac{3}{2}x + \frac{7}{12}.\]</div>
+<p>Integrating twice:</p>
+<div class="math notranslate nohighlight">
+\[y_2(x) = \frac{x^4}{24} - \frac{x^3}{4} + \frac{7x^2}{24} + c_5 x + c_6.\]</div>
+<p>Using boundary conditions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}y_2(0) &amp;= c_6 = 0\\
+y_2(1) &amp;= \frac{1}{24} - \frac{1}{4} + \frac{7}{24} + c_5 = 0 \implies c_5 = -\frac{1}{12}.\end{split}\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[y_2(x) = \frac{x^4}{24} - \frac{x^3}{4} + \frac{7x^2}{24} - \frac{x}{12}.\]</div>
+</section>
+<hr class="docutils" />
+<section id="observations">
+<h3>Observations<a class="headerlink" href="#observations" title="Link to this heading">#</a></h3>
+<p>The upper-left panel of the Figure shows the exact solutions for <span class="math notranslate nohighlight">\(\varepsilon = 1, 2, 3\)</span> matched against the pertubative. Despite <span class="math notranslate nohighlight">\(\varepsilon\)</span> being relatively large, the exact solutions vary smoothly and linearly with <span class="math notranslate nohighlight">\(\varepsilon\)</span>, suggesting that the perturbation series in powers of <span class="math notranslate nohighlight">\(\varepsilon\)</span> might be accurate.</p>
+<p>The remaining panels plot the error of the 0th, 1st, and 2nd-order perturbation series approximations. Key observations:</p>
+<ul class="simple">
+<li><p>The 0th-order series has a maximum error proportional to <span class="math notranslate nohighlight">\(\varepsilon\)</span>.</p></li>
+<li><p>The 1st-order series has a maximum error proportional to <span class="math notranslate nohighlight">\(\varepsilon^2\)</span>.</p></li>
+<li><p>The 2nd-order series has a maximum error proportional to <span class="math notranslate nohighlight">\(\varepsilon^3\)</span>.</p></li>
 </ul>
-<p>Thus, the total mechanical energy is:</p>
-<div class="math notranslate nohighlight">
-\[E = \frac{1}{2} mL^2 \dot{\theta}^2 + mgL(1 - \cos\theta).\]</div>
+<p>For <span class="math notranslate nohighlight">\(\varepsilon = 1\)</span>, the 2nd-order perturbation series has a maximum error of 0.0025, demonstrating the excellent accuracy of the series across a wide range of <span class="math notranslate nohighlight">\(\varepsilon\)</span>.</p>
 <hr class="docutils" />
-<p>In an ideal pendulum (no damping or external forces), mechanical energy is conserved. Therefore, the total energy <span class="math notranslate nohighlight">\(E\)</span> remains constant during the motion. This conservation law can be expressed as:</p>
-<div class="math notranslate nohighlight">
-\[\frac{1}{2} mL^2 \dot{\theta}^2 + mgL(1 - \cos\theta) = E_0,\]</div>
-<p>where <span class="math notranslate nohighlight">\(E_0\)</span> is the total energy of the system, determined by the initial conditions (e.g., the initial angular displacement <span class="math notranslate nohighlight">\(\theta_0\)</span>).</p>
-<p>At the maximum displacement (<span class="math notranslate nohighlight">\(\theta = \theta_0\)</span>), the angular velocity is zero (<span class="math notranslate nohighlight">\(\dot{\theta} = 0\)</span>), so the total energy is purely potential:</p>
-<div class="math notranslate nohighlight">
-\[E_0 = mgL(1 - \cos\theta_0).\]</div>
+<p><img alt="Exact and Perturbative Solutions" src="_images/plots.png" /></p>
 </section>
 </section>
-<hr class="docutils" />
-<section id="perturbation-methods">
-<h2>Perturbation Methods<a class="headerlink" href="#perturbation-methods" title="Link to this heading">#</a></h2>
-<p>When the angular displacement <span class="math notranslate nohighlight">\(\theta\)</span> is small, we approximate <span class="math notranslate nohighlight">\(\sin\theta \approx \theta - \frac{\theta^3}{6}\)</span>. The equation becomes:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2} + \omega_0^2 \theta - \frac{\omega_0^2}{6} \theta^3 = 0, \quad \omega_0 = \sqrt{\frac{g}{L}}.\]</div>
-<section id="zeroth-order-solution-shm">
-<h3>Zeroth-Order Solution (SHM)<a class="headerlink" href="#zeroth-order-solution-shm" title="Link to this heading">#</a></h3>
-<p>The zeroth-order solution assumes no non-linear effects:</p>
-<div class="math notranslate nohighlight">
-\[\theta_0(t) = A \cos(\omega_0 t),\]</div>
-<p>where <span class="math notranslate nohighlight">\(A\)</span> is the amplitude of oscillation.</p>
-</section>
-<section id="first-order-correction">
-<h3>First-Order Correction<a class="headerlink" href="#first-order-correction" title="Link to this heading">#</a></h3>
-<p>To account for non-linearity, we expand:</p>
-<div class="math notranslate nohighlight">
-\[\theta(t) = \theta_0(t) + \epsilon \theta_1(t),\]</div>
-<p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a small parameter. Substituting into the equation and solving order-by-order:</p>
-<ol class="arabic">
-<li><p><strong>First-order equation:</strong></p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}^2\theta_1}{\mathrm{d}t^2} + \omega_0^2 \theta_1 = \frac{\omega_0^2}{6} \theta_0^3.\]</div>
-</li>
-<li><p><strong>Expand <span class="math notranslate nohighlight">\(\theta_0^3\)</span>:</strong>
-Using <span class="math notranslate nohighlight">\(\cos^3x = \frac{3}{4} \cos x + \frac{1}{4} \cos(3x)\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[\theta_0^3 = \frac{3}{4} A^3 \cos(\omega_0 t) + \frac{1}{4} A^3 \cos(3\omega_0 t).\]</div>
-</li>
-<li><p><strong>First-order solution:</strong></p>
-<div class="math notranslate nohighlight">
-\[\theta_1(t) = \frac{A^3}{8 \omega_0^2} t \sin(\omega_0 t) + \frac{A^3}{216 \omega_0^2} \cos(3\omega_0 t).\]</div>
-</li>
-<li><p><strong>Total perturbative solution:</strong></p>
-<div class="math notranslate nohighlight">
-\[\theta(t) \approx A \cos(\omega_0 t) + \frac{A^3}{8 \omega_0^2} t \sin(\omega_0 t) + \frac{A^3}{216 \omega_0^2} \cos(3\omega_0 t).\]</div>
-</li>
-</ol>
-<p>We can see the difference between the zeroth and first order ODE solutions using a Python plot:</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Comparative Plot</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># Parameters</span>
-<span class="n">g</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># gravitational acceleration</span>
-<span class="n">l</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># pendulum length</span>
-<span class="n">omega_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span> <span class="o">/</span> <span class="n">l</span><span class="p">)</span>  <span class="c1"># natural frequency</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span>  <span class="c1"># initial amplitude (45 degrees)</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># time</span>
-
-<span class="c1"># Zeroth-order solution (SHM)</span>
-<span class="n">theta_0</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega_0</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
-
-<span class="c1"># Forcing terms for the first-order correction</span>
-<span class="n">forcing_cos_omega</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">l</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">A</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega_0</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
-<span class="n">forcing_cos_3omega</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">l</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">A</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">omega_0</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
-
-<span class="c1"># First-order correction</span>
-<span class="n">theta_1_omega</span> <span class="o">=</span> <span class="p">(</span><span class="n">forcing_cos_omega</span> <span class="o">/</span> <span class="p">(</span><span class="n">omega_0</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">t</span>  <span class="c1"># Particular solution for omega_0</span>
-<span class="n">theta_1_3omega</span> <span class="o">=</span> <span class="p">(</span><span class="n">forcing_cos_3omega</span> <span class="o">/</span> <span class="p">(</span><span class="mi">9</span> <span class="o">*</span> <span class="n">omega_0</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># Particular solution for 3 * omega_0</span>
-<span class="n">theta_1</span> <span class="o">=</span> <span class="n">theta_1_omega</span> <span class="o">+</span> <span class="n">theta_1_3omega</span>
-
-<span class="c1"># Total perturbative solution</span>
-<span class="n">theta_total</span> <span class="o">=</span> <span class="n">theta_0</span> <span class="o">+</span> <span class="n">theta_1</span>
-
-<span class="c1"># Plot the solutions</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">theta_total</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;1st Order Perturbative Solution&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">theta_0</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;0th Order Solution (SHM)&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Perturbative Solution for Non-Linear Pendulum&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Angular Displacement (rad)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</section>
-</section>
-<hr class="docutils" />
 <section id="numerical-methods">
 <h2>Numerical Methods<a class="headerlink" href="#numerical-methods" title="Link to this heading">#</a></h2>
-<p>Numerical integration provides an exact solution for any initial conditions and non-linearity.</p>
-<section id="define-the-system">
-<h3>Define the System<a class="headerlink" href="#define-the-system" title="Link to this heading">#</a></h3>
-<p>The equation can be written as a first-order system:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}\theta}{\mathrm{d}t} = \omega, \quad \frac{\mathrm{d}\omega}{\mathrm{d}t} = -\frac{g}{L} \sin\theta.\]</div>
+<p>Numerical integration provides us with some working solutions for any initial conditions and non-linearity.</p>
+<p>Remember we need to write the system as a set of coupled first order ODEs, but once we get it into Python, using methods like Runge-Kutta (RK45), the equations can integrated over time. We can compare these results with the small angle SHM solutions:</p>
+<p><img alt="Exact and Approx Solutions" src="_images/plot3.png" /></p>
+<p>The solid red line is the full numerical solution and the dashed blue line is the equivalent SHM system.</p>
 </section>
-<section id="solving-numerically">
-<h3>Solving Numerically<a class="headerlink" href="#solving-numerically" title="Link to this heading">#</a></h3>
-<p>Using methods like Runge-Kutta (RK45), the equations are integrated over time. Below is an example:</p>
-<div class="dropdown admonition">
-<p class="admonition-title">ODE code using ivp.solve</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
-
-<span class="c1"># Define the differential equations for the non-linear pendulum</span>
-<span class="k">def</span> <span class="nf">pendulum</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
-    <span class="n">theta</span><span class="p">,</span> <span class="n">omega</span> <span class="o">=</span> <span class="n">y</span>
-    <span class="n">dydt</span> <span class="o">=</span> <span class="p">[</span><span class="n">omega</span><span class="p">,</span> <span class="o">-</span><span class="n">g</span> <span class="o">/</span> <span class="n">l</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)]</span>
-    <span class="k">return</span> <span class="n">dydt</span>
-
-<span class="c1"># Define the linearized solution for small-angle approximation</span>
-<span class="k">def</span> <span class="nf">linearized_solution</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">theta_0</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
-    <span class="n">omega_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span> <span class="o">/</span> <span class="n">l</span><span class="p">)</span>  <span class="c1"># natural frequency</span>
-    <span class="k">return</span> <span class="n">theta_0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega_0</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
-
-<span class="c1"># Parameters</span>
-<span class="n">g</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># gravitational acceleration</span>
-<span class="n">l</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># pendulum length</span>
-<span class="n">theta_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span>  <span class="c1"># initial angle (45 degrees)</span>
-<span class="n">omega_0</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># initial angular velocity</span>
-<span class="n">t_span</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># time range</span>
-<span class="n">t_eval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">*</span><span class="n">t_span</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-
-<span class="c1"># Solve the non-linear pendulum numerically</span>
-<span class="n">solution</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">pendulum</span><span class="p">,</span> <span class="n">t_span</span><span class="p">,</span> <span class="p">[</span><span class="n">theta_0</span><span class="p">,</span> <span class="n">omega_0</span><span class="p">],</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">t_eval</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">l</span><span class="p">))</span>
-<span class="n">time</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">t</span>
-<span class="n">theta_nonlinear</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="c1"># Compute the linearized solution</span>
-<span class="n">theta_linear</span> <span class="o">=</span> <span class="n">linearized_solution</span><span class="p">(</span><span class="n">t_eval</span><span class="p">,</span> <span class="n">theta_0</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
-
-<span class="c1"># Plot both solutions</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">theta_nonlinear</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Non-linear Solution&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_eval</span><span class="p">,</span> <span class="n">theta_linear</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Linearized SHM Solution&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Comparison of Non-Linear and Linearised Pendulum Solutions&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Angular Displacement (rad)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<section id="non-linear-pendulum">
+<h2>Non-Linear Pendulum<a class="headerlink" href="#non-linear-pendulum" title="Link to this heading">#</a></h2>
+<p>Lets think about the non-linear pendulum system</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2\theta}{\mathrm{d}\tau^2} + \omega^2 \sin\theta = 0 \Rightarrow \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2} + \sin\theta = 0, \quad \theta(0) = \varepsilon \ll 1, \quad \frac{\mathrm{d}\theta}{\mathrm{d}t}(0) = 0. \tag{P}\]</div>
+<p>We’ve nondimensionalized time <span class="math notranslate nohighlight">\(t\)</span> by multiplying it by the linear pendulum frequency <span class="math notranslate nohighlight">\( \omega = (g/L)^{1/2} \)</span>, i.e. <span class="math notranslate nohighlight">\(t = \omega\,\tau\)</span> , changing the coefficient of <span class="math notranslate nohighlight">\( \sin\theta \)</span> from <span class="math notranslate nohighlight">\( \omega^2 = g/L \)</span> to 1.</p>
+<p>In this system we will set up the initial condition as perturbative and given we expect <span class="math notranslate nohighlight">\( \theta(t) \)</span> to oscillate between <span class="math notranslate nohighlight">\( \pm\varepsilon \)</span>, we substitute the series:</p>
+<div class="math notranslate nohighlight">
+\[\theta(t) = \varepsilon\theta_1(t) + \varepsilon^2\theta_2(t) + \varepsilon^3\theta_3(t) + \dots\]</div>
+<p>Substituting into the ODE <span class="math notranslate nohighlight">\( (P) \)</span>, and keeping terms through to <span class="math notranslate nohighlight">\( \mathcal{O}(\varepsilon^3) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon\theta_1''(t) + \varepsilon^2\theta_2''(t) + \varepsilon^3\theta_3''(t) + \sin(\varepsilon\theta_1(t) + \varepsilon^2\theta_2(t) + \dots) = 0\]</div>
+<p>Expanding <span class="math notranslate nohighlight">\( \sin\theta \)</span> using a Taylor series:</p>
+<div class="math notranslate nohighlight">
+\[\sin\theta = \theta - \frac{\theta^3}{6} + \dots,\]</div>
+<p>we substitute into the ODE:</p>
+<div class="math notranslate nohighlight">
+\[\sin(\varepsilon\theta_1(t) + \varepsilon^2\theta_2(t) + \varepsilon^3\theta_3(t)) = \varepsilon\theta_1(t) + \varepsilon^2\theta_2(t) + \varepsilon^3\theta_3(t) - \frac{(\varepsilon\theta_1(t) + \varepsilon^2\theta_2(t) + \varepsilon^3\theta_3(t))^3}{6} + \dots\]</div>
+<p>The cubic term can be expanded as:</p>
+<div class="math notranslate nohighlight">
+\[(\varepsilon\theta_1 + \varepsilon^2\theta_2 + \varepsilon^3\theta_3)^3 = \varepsilon^3\theta_1^3 + 3\varepsilon^4\theta_1^2\theta_2 + 3\varepsilon^5\theta_1\theta_2^2 + \varepsilon^5\theta_2^3 + 3\varepsilon^5\theta_1^2\theta_3 + \dots\]</div>
+<p>Keeping terms up to <span class="math notranslate nohighlight">\( \mathcal{O}(\varepsilon^3) \)</span>, only the cubic term <span class="math notranslate nohighlight">\( \varepsilon^3\theta_1^3 \)</span> contributes.</p>
+<p>The ODE now becomes:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon\theta_1''(t) + \varepsilon^2\theta_2''(t) + \varepsilon^3\theta_3''(t) + \left(\varepsilon\theta_1 + \varepsilon^2\theta_2 + \varepsilon^3\theta_3 - \frac{\varepsilon^3\theta_1^3}{6}\right) = 0.\]</div>
+<p><strong>Order <span class="math notranslate nohighlight">\(\varepsilon^1\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[  \theta_1''(t) + \theta_1 = 0, \quad \theta_1(0) = 1, \quad \theta_1'(0) = 0 \]</div>
+<p>We can solve this using <span class="math notranslate nohighlight">\(\theta_1(t) = A\cos(t) + B \sin(t)\)</span> but applying the boundary conditions leaves us with:</p>
+<div class="math notranslate nohighlight">
+\[\theta_1(t) = \cos(t)\]</div>
+<p><strong>Order <span class="math notranslate nohighlight">\(\varepsilon^2\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[  \theta_2''(t) + \theta_2 = 0, \quad \theta_2(0) = 0, \quad \theta_2'(0) = 0 \]</div>
+<p>We can solve this using <span class="math notranslate nohighlight">\(\theta_2(t) = A\cos(t) + B \sin(t)\)</span> but applying the boundary conditions leaves us with:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\theta_2(t) = 0\\**Order $\varepsilon^3$:**
+  ```{math}
+  \theta_3''(t) + \theta_3 = \frac{\theta_1^3}{6} = \frac{\cos^3(t)}{6}, \quad \theta_3(0) = 0, \quad \theta_3'(0) = 0.\end{aligned}\end{align} \]</div>
+<p>Expanding <span class="math notranslate nohighlight">\( \cos^3(t) \)</span> using the trigonometric identity:</p>
+<div class="math notranslate nohighlight">
+\[\cos^3(t) = \frac{3\cos(t) + \cos(3t)}{4},\]</div>
+<p>the equation becomes:</p>
+<div class="math notranslate nohighlight">
+\[\theta_3''(t) + \theta_3(t) = -\frac{1}{6} \cdot \frac{3\cos(t) + \cos(3t)}{4} = -\frac{\cos(t)}{8} - \frac{\cos(3t)}{24}.\]</div>
+<p>Thus, the ODE is:</p>
+<div class="math notranslate nohighlight">
+\[\theta_3''(t) + \theta_3(t) = -\frac{\cos(t)}{8} - \frac{\cos(3t)}{24}.\]</div>
+<p>We can solve this with homogeneous and particular solution method of second order ODEs, another way to approach this problem is to use Laplace transforms, however after some work we can find:</p>
+<div class="math notranslate nohighlight">
+\[\theta_3(t) = \frac{1}{16}t\sin(t) + \frac{1}{192}\cos(t) - \frac{1}{192}\cos(3t).\]</div>
+<section id="final-solution">
+<h3>Final Solution<a class="headerlink" href="#final-solution" title="Link to this heading">#</a></h3>
+<p>The perturbative solution therefore is:</p>
+<div class="math notranslate nohighlight">
+\[\theta(t) = \varepsilon\cos(t) + \varepsilon^3\left[\frac{1}{16}t\sin(t) + \frac{1}{192}\cos(t) - \frac{1}{192}\cos(3t)\right] + \dots\]</div>
+</section>
+<section id="secular-terms">
+<h3>Secular Terms<a class="headerlink" href="#secular-terms" title="Link to this heading">#</a></h3>
+<p>The <span class="math notranslate nohighlight">\( \mathcal{O}(\varepsilon^3) \)</span> term grows linearly with <span class="math notranslate nohighlight">\( t \)</span> - we call these <strong>secular terms</strong>. At large times <span class="math notranslate nohighlight">\( t = \mathcal{O}(\varepsilon^{-2}) \)</span>, this term dominates, and the perturbation series loses validity. This growth corresponds to phase drift due to slower nonlinear oscillation compared to linear oscillation.  Secular terms therefore can grow without bound and can cause solutions to diverge, which invalidates perturbation theory.</p>
+<p>Using a more advanced perturbation method, such as method of <strong>multiple scales</strong>, we can remove secular terms systematically.</p>
+</section>
+<section id="plotting-the-solutions">
+<h3>Plotting the solutions<a class="headerlink" href="#plotting-the-solutions" title="Link to this heading">#</a></h3>
+<p><img alt="Comparison of numerical and perturbation series solutions to the nonlinear pendulum problem" src="_images/plot2.png" /></p>
+<p>We notice that the secular terms ruin the pertubative solutions for larger <span class="math notranslate nohighlight">\(\varepsilon\)</span>.  For low <span class="math notranslate nohighlight">\(\varepsilon\)</span> we see a great agreement between the numerical and the perturbative.</p>
 </section>
 </section>
 <section id="exercises">
@@ -691,8 +718,9 @@ Using <span class="math notranslate nohighlight">\(\cos^3x = \frac{3}{4} \cos x 
 <div class="admonition-exercises-with-ode-solvers admonition">
 <p class="admonition-title">Exercises with ODE solvers</p>
 <p>1. Get some numerical solutions out of Python, compare with the linearised solutions and the perturbative solutions.</p>
-<p>2. Get a phase portrait out and look at small and large angle results (where the SHM solutions are not valid)</p>
+<p>2. Get a phase portrait out and look at small (SHM solutions are valid) and large angle results (SHM solutions are not valid) - what conclusions can we draw?</p>
 <p>3. How could we include damping in this system now? Add this to your code and compare.</p>
+<p>4. Looking at the time period, add more perurbative terms into the expression to show how it changes for larger and larger <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 </div>
 </section>
 </section>
@@ -736,6 +764,15 @@ Using <span class="math notranslate nohighlight">\(\cos^3x = \frac{3}{4} \cos x 
         <p class="prev-next-title">Looking at Numerical Solutions to ODEs</p>
       </div>
     </a>
+    <a class="right-next"
+       href="VanderPol.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Van der Pol Oscillator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -752,19 +789,23 @@ Using <span class="math notranslate nohighlight">\(\cos^3x = \frac{3}{4} \cos x 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-methods">Analytical Methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#period-of-oscillation">Period of Oscillation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-methods">Analytical Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-conservation">Energy Conservation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#period-of-oscillation">Period of Oscillation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbation-methods">Perturbation Methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zeroth-order-solution-shm">Zeroth-Order Solution (SHM)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-correction">First-Order Correction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbative-methods">Perturbative  Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-perturbation">Introduction to perturbation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbative-solution">Perturbative Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-by-powers-of-varepsilon">Sorting by Powers of <span class="math notranslate nohighlight">\(\varepsilon\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-methods">Numerical Methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-system">Define the System</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-numerically">Solving Numerically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-methods">Numerical Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-pendulum">Non-Linear Pendulum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-solution">Final Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secular-terms">Secular Terms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-solutions">Plotting the solutions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
@@ -782,7 +823,7 @@ Using <span class="math notranslate nohighlight">\(\cos^3x = \frac{3}{4} \cos x 
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Natural Sciences
 </p>
 
   </div>

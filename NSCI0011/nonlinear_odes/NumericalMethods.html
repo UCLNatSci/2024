@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Looking at Numerical Solutions to ODEs &#8212; My sample book</title>
+    <title>Looking at Numerical Solutions to ODEs &#8212; Non-Linear ODEs</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -155,8 +155,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Non-Linear ODEs - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Non-Linear ODEs - Home"/>`);</script>
   
   
 </a></div>
@@ -184,6 +184,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Looking at Numerical Solutions to ODEs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pendulum.html">Solving the Non-Linear Pendulum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VanderPol.html">The Van der Pol Oscillator</a></li>
 </ul>
 
     </div>
@@ -392,14 +393,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-field-flows-in-phase-portrait-diagrams">Vector Field Flows in Phase Portrait Diagrams</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direction">Direction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude">Magnitude</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Trajectories</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-behavior">Qualitative Behavior</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-analysis">Stability Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-simple-harmonic-motion-shm">Example: Simple Harmonic Motion (SHM)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-in-phase-portraits">Importance in Phase Portraits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-simple-harmonic-motion-shm">Example - Simple Harmonic Motion (SHM)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
@@ -690,49 +685,37 @@ document.write(`
 <h2>Vector Field Flows in Phase Portrait Diagrams<a class="headerlink" href="#vector-field-flows-in-phase-portrait-diagrams" title="Link to this heading">#</a></h2>
 <p>A <strong>vector field</strong> in a phase portrait represents the direction and rate of change of the system’s state variables at each point in the phase space. It provides a comprehensive view of how the system evolves over time, independent of specific initial conditions.</p>
 <p>Key Features of Vector Field Flows</p>
-<section id="direction">
-<h3>Direction<a class="headerlink" href="#direction" title="Link to this heading">#</a></h3>
+<p><strong>Direction</strong></p>
 <ul class="simple">
 <li><p>The direction of the arrows in the vector field indicates the instantaneous rate of change of the system’s variables.</p></li>
 <li><p>For a two-dimensional system, this corresponds to the derivatives <span class="math notranslate nohighlight">\(\dot{x}\)</span> and <span class="math notranslate nohighlight">\(\dot{v}\)</span> (or <span class="math notranslate nohighlight">\(\dot{y}\)</span>, depending on the system).</p></li>
 </ul>
-</section>
-<section id="magnitude">
-<h3>Magnitude<a class="headerlink" href="#magnitude" title="Link to this heading">#</a></h3>
+<p><strong>Magnitude</strong></p>
 <ul class="simple">
 <li><p>The length of the arrows reflects the speed at which the system evolves at that point in the phase space.</p></li>
 <li><p>Arrows in regions where the system changes slowly are shorter, while those in rapidly changing regions are longer.</p></li>
 </ul>
-</section>
-<section id="normalization">
-<h3>Normalization<a class="headerlink" href="#normalization" title="Link to this heading">#</a></h3>
+<p><strong>Normalization</strong></p>
 <ul class="simple">
 <li><p>In many visualizations, the arrows are normalized to emphasize direction rather than magnitude. This ensures that the flow patterns remain visible even when the system has regions with drastically different speeds.</p></li>
 </ul>
-</section>
-<section id="interpretation">
-<h3>Interpretation<a class="headerlink" href="#interpretation" title="Link to this heading">#</a></h3>
+<p><strong>Interpretation</strong></p>
 <ul class="simple">
 <li><p>The vector field provides a “map” of the system’s dynamics, showing how trajectories flow toward, away from, or around features like fixed points and limit cycles.</p></li>
 <li><p>Arrows pointing toward a fixed point suggest it is an <strong>attractor</strong>, while arrows pointing away indicate a <strong>repeller</strong>.</p></li>
 </ul>
 <hr class="docutils" />
-<p>Importance in Phase Portraits</p>
-</section>
-<section id="id1">
-<h3>Trajectories<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="importance-in-phase-portraits">
+<h3>Importance in Phase Portraits<a class="headerlink" href="#importance-in-phase-portraits" title="Link to this heading">#</a></h3>
+<p><strong>Trajectories</strong></p>
 <ul class="simple">
 <li><p>By integrating the vector field, we obtain the trajectories of the system for given initial conditions. These trajectories describe the actual paths followed in the phase space.</p></li>
 </ul>
-</section>
-<section id="qualitative-behavior">
-<h3>Qualitative Behavior<a class="headerlink" href="#qualitative-behavior" title="Link to this heading">#</a></h3>
+<p><strong>Qualitative Behavior</strong></p>
 <ul class="simple">
 <li><p>The vector field reveals qualitative behavior, such as oscillations, divergence, or convergence, without requiring explicit solutions to the ODE.</p></li>
 </ul>
-</section>
-<section id="stability-analysis">
-<h3>Stability Analysis<a class="headerlink" href="#stability-analysis" title="Link to this heading">#</a></h3>
+<p><strong>Stability Analysis</strong></p>
 <ul class="simple">
 <li><p>The flow around fixed points can help determine their stability. For example:</p>
 <ul>
@@ -745,7 +728,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="example-simple-harmonic-motion-shm">
-<h3>Example: Simple Harmonic Motion (SHM)<a class="headerlink" href="#example-simple-harmonic-motion-shm" title="Link to this heading">#</a></h3>
+<h3>Example - Simple Harmonic Motion (SHM)<a class="headerlink" href="#example-simple-harmonic-motion-shm" title="Link to this heading">#</a></h3>
 <p>In the case of SHM (<span class="math notranslate nohighlight">\(\ddot{x} + \omega^2 x = 0\)</span>):</p>
 <ul>
 <li><p>The vector field is defined by:</p>
@@ -831,6 +814,8 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\ddot{x} + 2 \omega_0 \zeta \dot{x} + \omega_0^2 x = F_0\,\cos(\Omega t)\]</div>
 <p>where we can add in an oscilating term with amplitude <span class="math notranslate nohighlight">\(F_0\)</span> and frequency <span class="math notranslate nohighlight">\(\Omega\)</span> and repeat your analysis.</p>
+<p>How will this change the phase portrait analysis when <span class="math notranslate nohighlight">\(\omega\)</span> and <span class="math notranslate nohighlight">\(\Omega\)</span> get close in value?</p>
+<p><em>(HINT turn off the damping term to begin with).</em></p>
 </div>
 </section>
 </section>
@@ -912,14 +897,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-field-flows-in-phase-portrait-diagrams">Vector Field Flows in Phase Portrait Diagrams</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direction">Direction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude">Magnitude</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">Normalization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Trajectories</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-behavior">Qualitative Behavior</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-analysis">Stability Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-simple-harmonic-motion-shm">Example: Simple Harmonic Motion (SHM)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-in-phase-portraits">Importance in Phase Portraits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-simple-harmonic-motion-shm">Example - Simple Harmonic Motion (SHM)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
@@ -937,7 +916,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Natural Sciences
 </p>
 
   </div>

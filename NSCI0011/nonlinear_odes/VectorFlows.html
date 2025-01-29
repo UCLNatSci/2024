@@ -1,0 +1,1113 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Two Dimensional Flows and Phase Diagrams &#8212; Non-Linear ODEs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'VectorFlows';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Non-Linear ODEs - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Non-Linear ODEs - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Solving Non-Linear Ordinary Differential Equations
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="NumericalMethods.html">Looking at Numerical Solutions to ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pendulum.html">Solving the Non-Linear Pendulum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VanderPol.html">The Van der Pol Oscillator</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FVectorFlows.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/VectorFlows.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Two Dimensional Flows and Phase Diagrams</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Two Dimensional Flows and Phase Diagrams</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-systems">Linear Systems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-of-fixed-points-for-linear-systems">Classification of Fixed Points for Linear Systems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-systems">Nonlinear Systems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-points">Fixed Points</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-strogatz-151-152">Example: (Strogatz 151-152)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-stability">Linearized Stability</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jacobian-matrix">Jacobian Matrix</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jacobian-matrix-and-fixed-point-dynamics">Jacobian Matrix and Fixed Point Dynamics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-of-fixed-points-for-nonlinear-systems">Classification of Fixed Points for Nonlinear Systems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-classification">Topological Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-stability-analysis">Example: Stability Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-at-x-1-y-1-0-0">Stability at ( (x_1^<em>, y_1^</em>) = (0, 0) ):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-at-x-2-y-2-1-0">Stability at ( (x_2^<em>, y_2^</em>) = (-1, 0) ):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-at-x-3-y-3-1-0">Stability at ( (x_3^<em>, y_3^</em>) = (1, 0) ):</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#direction-field-and-phase-portrait">Direction Field and Phase Portrait</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-boyce-and-diprima-487-488">Example: (Boyce and DiPrima 487-488)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Fixed Points</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Jacobian Matrix</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-analysis">Stability Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-0-or-n-even">( n = 0 ) or ( n ) even:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-odd">( n ) odd:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-portrait">Phase Portrait</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#basin-of-attraction">Basin of Attraction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#homoclinic-orbits">Homoclinic Orbits</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#heteroclinic-orbits">Heteroclinic Orbits</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-interpretation-the-oscillating-pendulum-boyce-and-diprima-476-477">Physical Interpretation: The Oscillating Pendulum (Boyce and DiPrima 476-477)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oscillating-pendulum-dynamics">Oscillating Pendulum Dynamics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lotkavolterra-model-decreasing-and-increasing-returns">Lotka–Volterra Model: Decreasing and Increasing Returns</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Fixed Points</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Jacobian Matrix</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Stability Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#at-x-1-y-1-0-0">At ( (x_1^<em>, y_1^</em>) = (0, 0) ):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#at-x-2-y-2-left-frac-3-2-frac-3-4-e-frac-3-2-right">At ( (x_2^<em>, y_2^</em>) = \left( \frac{3}{2} + \frac{3}{4}e, \frac{3}{2} \right) ):</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-portraits">Phase Portraits</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="two-dimensional-flows-and-phase-diagrams">
+<h1>Two Dimensional Flows and Phase Diagrams<a class="headerlink" href="#two-dimensional-flows-and-phase-diagrams" title="Link to this heading">#</a></h1>
+<p>One can describe the dynamics of a two-dimensional, continuous-time process by a pair of differential equations and initial conditions:</p>
+<p>[
+\frac{dx}{dt} = f(x, y), \quad \quad (1)
+]</p>
+<p>[
+\frac{dy}{dt} = g(x, y), \quad \quad (2)
+]</p>
+<p>[
+x(0) = x_0, ; y(0) = y_0, \quad \quad (3)
+]</p>
+<p>whose solution is a <strong>pair of functions of time, ( x(t) ) and ( y(t) )</strong>.</p>
+<p>This process is also described using the notation:</p>
+<p>[
+\frac{dx_1}{dt} = f_1(x_1, x_2),
+]</p>
+<p>[
+\frac{dx_2}{dt} = f_2(x_1, x_2),
+]</p>
+<p>[
+x_1(0) = x_{01}, ; x_2(0) = x_{02}.
+]</p>
+<p>In vector notation, these dynamics are described as:</p>
+<p>[
+\begin{pmatrix} \frac{dx_1}{dt} \ \frac{dx_2}{dt} \end{pmatrix} = \begin{pmatrix} f_1(x_1, x_2) \ f_2(x_1, x_2) \end{pmatrix}, \quad \text{or}
+]</p>
+<p>[
+\mathbf{x}^T = (x_1, x_2), \quad \mathbf{f}^T(\mathbf{x}) = (f_1(x_1, x_2), f_2(x_1, x_2)),
+]</p>
+<p>[
+\frac{d\mathbf{x}}{dt} = \mathbf{f}(\mathbf{x}), \quad \mathbf{x}^T(0) = (x_{01}, x_{02}).
+]</p>
+<p>where <strong>“T”</strong> indicates the transpose from a column vector to a row vector.</p>
+<hr class="docutils" />
+</section>
+<section id="linear-systems">
+<h1>Linear Systems<a class="headerlink" href="#linear-systems" title="Link to this heading">#</a></h1>
+<p>The simplest two-dimensional, continuous-time process is the second-order, linear homogeneous system with constant coefficients:</p>
+<p>[
+\frac{dx_1}{dt} = a \cdot x_1 + b \cdot x_2,
+]</p>
+<p>[
+\frac{dx_2}{dt} = c \cdot x_1 + d \cdot x_2.
+]</p>
+<p>Let the matrix ( A ) be:</p>
+<p>[
+A = \begin{pmatrix} a &amp; b \ c &amp; d \end{pmatrix} \quad \quad (4)
+]</p>
+<p>and the column vectors ( \mathbf{x} ) and ( \frac{d\mathbf{x}}{dt} ) be:</p>
+<p>[
+\mathbf{x}^T = (x_1, x_2),
+]</p>
+<p>[
+\frac{d\mathbf{x}^T}{dt} = \begin{pmatrix} \frac{dx_1}{dt} \ \frac{dx_2}{dt} \end{pmatrix}.
+]</p>
+<p>The linear system has the form:</p>
+<p>[
+\frac{d\mathbf{x}}{dt} = A \cdot \mathbf{x}. \quad \quad (5)
+]</p>
+<hr class="docutils" />
+<p>The origin, <strong>( \mathbf{o}^T = (0, 0) )</strong>, is an equilibrium (fixed) point of <strong>(5)</strong> because <strong>( A \cdot \mathbf{o} = \mathbf{o} )</strong>. One can examine the behavior (stability) of the solution vector:</p>
+<p>[
+\mathbf{x}^T(t) = (x_1(t), x_2(t)),
+]</p>
+<p>near the origin, <strong>( \mathbf{o} )</strong>, by analyzing the eigenvalues and eigenvectors of ( A ).</p>
+<p>Click <a class="reference external" href="http://www.egwald.ca/linearalgebra/lineardifferentialequations.php#classification">here</a> for a detailed classification of the equilibrium point at the origin.</p>
+<hr class="docutils" />
+<p>The general ( 2 \times 2 ) matrix, ( A ), has:</p>
+<p>[
+p = \text{trace}(A) = a + d, \quad q = \det(A) = a \cdot d - b \cdot c.
+]</p>
+<p>Its characteristic equation is:</p>
+<p>[
+f(\mu) = \mu^2 - p \cdot \mu + q.
+]</p>
+<p>Factoring this quadratic equation yields the pair of eigenvalues, <strong>( \mu_1 ) and ( \mu_2 )</strong>, where:</p>
+<p>[
+\mu_1 = \frac{p + \sqrt{p^2 - 4q}}{2}, \quad \mu_2 = \frac{p - \sqrt{p^2 - 4q}}{2}.
+]</p>
+<p>Moreover:</p>
+<p>[
+p = \mu_1 + \mu_2, \quad q = \mu_1 \cdot \mu_2.
+]</p>
+<p>Designate the discriminant of the characteristic equation by:</p>
+<p>[
+d = \text{disc}(A) = p^2 - 4q.
+]</p>
+</section>
+<section id="classification-of-fixed-points-for-linear-systems">
+<h1>Classification of Fixed Points for Linear Systems<a class="headerlink" href="#classification-of-fixed-points-for-linear-systems" title="Link to this heading">#</a></h1>
+<p>The following diagram classifies the fixed points (critical points) of the linear system (5) according to the values of ( p = \text{trace}(A) ), ( q = \det(A) ), and ( d = \text{disc}(A) ). The parabola, ( p^2 - 4q = 0 ), is the locus of points ((p, q)) for which ( d = 0 ).</p>
+<p><img alt="Stability Diagram" src="php_images/twodflows_1.php" /></p>
+<p>In the region of the ((q, p)) plane enclosed by the parabola, ( d = p^2 - 4q &lt; 0 ). Consequently, the eigenvalues ( \mu_1 ) and ( \mu_2 ) are complex numbers. If ( p \neq 0 ), complex eigenvalues result in spiral trajectories. If ( p = 0 ), eigenvalues are purely imaginary, and trajectories enclose the fixed point in ellipses or circles.</p>
+<ul class="simple">
+<li><p><strong>Unstable fixed point</strong>: If ( p &gt; 0 ) and ( q &gt; 0 ), both eigenvalues have positive real parts, and the fixed point is unstable. If ( p &gt; 0 ) and ( q = 0 ), one eigenvalue is positive, and the other is zero, resulting in unstable lines.</p></li>
+<li><p><strong>Stable fixed point</strong>: If ( p &lt; 0 ) and ( q &gt; 0 ), both eigenvalues have negative real parts, and the fixed point is stable. If ( p &lt; 0 ) and ( q = 0 ), one eigenvalue is negative, and the other is zero, resulting in stable lines.</p></li>
+<li><p><strong>Saddle point</strong>: If ( q &lt; 0 ), one eigenvalue is positive, and the other is negative, leading to saddle point trajectories.</p></li>
+</ul>
+<p>Finally, if ( p = 0 ) and ( q = 0 ):</p>
+<ul class="simple">
+<li><p>If ( A ) is the zero matrix, every vector ( \mathbf{x} ) is an equilibrium point.</p></li>
+<li><p>If ( A ) is not the zero matrix, there is a line of equilibrium points through the eigenvector corresponding to one zero eigenvalue. Other trajectories are parallel to this line, running in opposite directions on either side of it.</p></li>
+</ul>
+<p><img alt="Equilibrium Line Stability Diagram" src="php_images/twodflows_equline_points.php" /></p>
+<hr class="docutils" />
+</section>
+<section id="nonlinear-systems">
+<h1>Nonlinear Systems<a class="headerlink" href="#nonlinear-systems" title="Link to this heading">#</a></h1>
+<p>The general form of a two-dimensional nonlinear system is:</p>
+<p>[
+\frac{dx}{dt} = f(x, y), \quad \quad (6)
+]</p>
+<p>[
+\frac{dy}{dt} = g(x, y), \quad \quad (7)
+]</p>
+<p>[
+x(t_0) = x_0, ; y(t_0) = y_0. \quad \quad (8)
+]</p>
+<hr class="docutils" />
+</section>
+<section id="fixed-points">
+<h1>Fixed Points<a class="headerlink" href="#fixed-points" title="Link to this heading">#</a></h1>
+<p>The fixed points of the nonlinear system are numbers ( x^* ) and ( y^* ) such that:</p>
+<p>[
+f(x^<em>, y^</em>) = 0, \quad \quad (9)
+]</p>
+<p>[
+g(x^<em>, y^</em>) = 0. \quad \quad (10)
+]</p>
+<p>Fixed points occur where the locus of points of equations (9) and (10) intersect.</p>
+<hr class="docutils" />
+</section>
+<section id="example-strogatz-151-152">
+<h1>Example: (Strogatz 151-152)<a class="headerlink" href="#example-strogatz-151-152" title="Link to this heading">#</a></h1>
+<p>The nonlinear system with functions ( f ) and ( g ) given by:</p>
+<p>[
+\frac{dx}{dt} = f(x, y) = -x + x^3,
+]</p>
+<p>[
+\frac{dy}{dt} = g(x, y) = -2y,
+]</p>
+<p>has fixed points that satisfy:</p>
+<p>[
+f(x, y) = -x + x^3 = 0,
+]</p>
+<p>[
+g(x, y) = -2y = 0.
+]</p>
+<p>In the diagram below, the fixed points occur at the intersections of the lines ( x = -1 ), ( x = 0 ), and ( x = 1 ) with the line ( y = 0 ) (the ( x )-axis). These lines are called <strong>nullclines</strong>.</p>
+<p><img alt="Fixed Points and Nullclines" src="php_images/twodflows_3.php" /></p>
+<p>The fixed points are:</p>
+<p>[
+(x_1^<em>, y_1^</em>) = (0, 0), \quad (x_2^<em>, y_2^</em>) = (-1, 0), \quad (x_3^<em>, y_3^</em>) = (1, 0).
+]</p>
+<hr class="docutils" />
+</section>
+<section id="linearized-stability">
+<h1>Linearized Stability<a class="headerlink" href="#linearized-stability" title="Link to this heading">#</a></h1>
+<p>The dynamics of a nonlinear system near a fixed point can be analyzed by <a class="reference external" href="https://www.egwald.ca/nonlineardynamics/mathappendix.php#linearization">linearizing the system</a> about the fixed point, ( (x^<em>, y^</em>) ).</p>
+<hr class="docutils" />
+</section>
+<section id="jacobian-matrix">
+<h1>Jacobian Matrix<a class="headerlink" href="#jacobian-matrix" title="Link to this heading">#</a></h1>
+<p>The <a class="reference external" href="https://www.egwald.ca/nonlineardynamics/mathappendix.php#nonlinearjacobian">Jacobian matrix</a> of the nonlinear system described by equations (6) and (7) at the fixed point ( (x^<em>, y^</em>) ) is the matrix of partial derivatives of the functions ( f ) and ( g ), evaluated at ( (x^<em>, y^</em>) ):</p>
+<p>[
+J(x^<em>, y^</em>) =
+\begin{pmatrix}
+f_x(x^<em>, y^</em>) &amp; f_y(x^<em>, y^</em>) \
+g_x(x^<em>, y^</em>) &amp; g_y(x^<em>, y^</em>)
+\end{pmatrix}. \quad \quad (11)
+]</p>
+</section>
+<section id="jacobian-matrix-and-fixed-point-dynamics">
+<h1>Jacobian Matrix and Fixed Point Dynamics<a class="headerlink" href="#jacobian-matrix-and-fixed-point-dynamics" title="Link to this heading">#</a></h1>
+<p>The Jacobian matrix of constant coefficients, ( J ), is identified with the matrix ( A ) of linear systems. Near a fixed point ( (x^<em>, y^</em>) ), the dynamics of the nonlinear system are qualitatively similar to the dynamics of the linear system associated with the ( J(x^<em>, y^</em>) ) matrix, provided the eigenvalues of the ( J ) matrix have non-zero real parts. Fixed points with a ( J ) matrix such that ( \text{Re}(\mu_{1, 2}) \neq 0 ) are called <strong>hyperbolic fixed points</strong>. Otherwise, fixed points are <strong>non-hyperbolic fixed points</strong>, whose stabilities must be determined directly.</p>
+<hr class="docutils" />
+</section>
+<section id="classification-of-fixed-points-for-nonlinear-systems">
+<h1>Classification of Fixed Points for Nonlinear Systems<a class="headerlink" href="#classification-of-fixed-points-for-nonlinear-systems" title="Link to this heading">#</a></h1>
+<p>Let the Jacobian matrix ( J ) evaluated at a fixed point ( (x^<em>, y^</em>) ) be:</p>
+<p>[
+J = \begin{pmatrix} a &amp; b \ c &amp; d \end{pmatrix}
+]</p>
+<p>For this matrix ( J ):</p>
+<p>[
+p = \text{trace}(J) = a + d, \quad q = \det(J) = ad - bc.
+]</p>
+<p>Its characteristic equation is:</p>
+<p>[
+f(\mu) = \mu^2 - p \mu + q
+]</p>
+<p>Factoring this quadratic equation yields the pair of eigenvalues, <strong>( \mu_1 ) and ( \mu_2 )</strong>:</p>
+<p>[
+\mu_1 = \frac{p + \sqrt{p^2 - 4q}}{2}, \quad \mu_2 = \frac{p - \sqrt{p^2 - 4q}}{2}.
+]</p>
+<p>Moreover:</p>
+<p>[
+p = \mu_1 + \mu_2, \quad q = \mu_1 \cdot \mu_2.
+]</p>
+<hr class="docutils" />
+</section>
+<section id="topological-classification">
+<h1>Topological Classification<a class="headerlink" href="#topological-classification" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Hyperbolic Fixed Points</strong>:</p>
+<ul>
+<li><p><strong>Repellers (Sources)</strong>: Unstable when ( p &gt; 0, , q &gt; 0 ), and ( \text{Re}(\mu_{1, 2}) &gt; 0 ).</p></li>
+<li><p><strong>Attractors (Sinks)</strong>: Stable when ( p &lt; 0, , q &gt; 0 ), and ( \text{Re}(\mu_{1, 2}) &lt; 0 ).</p></li>
+<li><p><strong>Saddle Points</strong>: Unstable when ( q &lt; 0 ), with ( \text{Re}(\mu_1) &lt; 0 ) and ( \text{Re}(\mu_2) &gt; 0 ).</p></li>
+</ul>
+</li>
+<li><p><strong>Non-Hyperbolic Fixed Points</strong>:</p>
+<ul>
+<li><p><strong>Marginal Case 1</strong>: ( p = 0, , q &gt; 0 ), with ( \text{Re}(\mu_{1, 2}) = 0 ).</p></li>
+<li><p><strong>Marginal Case 2</strong>: ( p \neq 0, , q = 0 ), with ( \mu_1 = 0 ) or ( \mu_2 = 0 ).</p></li>
+<li><p><strong>Marginal Case 3</strong>: ( p = 0, , q = 0 ), with ( \mu_1 = 0 ) and ( \mu_2 = 0 ).</p></li>
+</ul>
+</li>
+</ul>
+<p>The classifications for the fixed points of a nonlinear system are summarized in the following table:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Fixed Point Type</p></th>
+<th class="head"><p>Conditions</p></th>
+<th class="head"><p>Stability</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Repellers (Sources)</strong></p></td>
+<td><p>( p &gt; 0, q &gt; 0 ), ( \text{Re}(\mu_{1, 2}) &gt; 0 )</p></td>
+<td><p>Unstable</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Attractors (Sinks)</strong></p></td>
+<td><p>( p &lt; 0, q &gt; 0 ), ( \text{Re}(\mu_{1, 2}) &lt; 0 )</p></td>
+<td><p>Stable</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Saddle Points</strong></p></td>
+<td><p>( q &lt; 0 ), ( \text{Re}(\mu_1) &lt; 0, \text{Re}(\mu_2) &gt; 0 )</p></td>
+<td><p>Unstable</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Marginal Case 1</strong></p></td>
+<td><p>( p = 0, q &gt; 0 ), ( \text{Re}(\mu_{1, 2}) = 0 )</p></td>
+<td><p>Indeterminate</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Marginal Case 2</strong></p></td>
+<td><p>( p \neq 0, q = 0 ), ( \mu_1 = 0 ) or ( \mu_2 = 0 )</p></td>
+<td><p>Indeterminate</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Marginal Case 3</strong></p></td>
+<td><p>( p = 0, q = 0 ), ( \mu_1 = 0, \mu_2 = 0 )</p></td>
+<td><p>Indeterminate</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The classifications for the fixed points of a nonlinear system are visualized in the following diagram:</p>
+<p><img alt="Nonlinear Stability Diagram" src="php_images/twodflows_4.php" /></p>
+<hr class="docutils" />
+</section>
+<section id="example-stability-analysis">
+<h1>Example: Stability Analysis<a class="headerlink" href="#example-stability-analysis" title="Link to this heading">#</a></h1>
+<p>The Jacobian matrix for the system is:</p>
+<p>[
+J(x, y) = \begin{pmatrix} -1 + 3x^2 &amp; 0 \ 0 &amp; -2 \end{pmatrix}
+]</p>
+<section id="stability-at-x-1-y-1-0-0">
+<h2>Stability at ( (x_1^<em>, y_1^</em>) = (0, 0) ):<a class="headerlink" href="#stability-at-x-1-y-1-0-0" title="Link to this heading">#</a></h2>
+<p>[
+J(0, 0) = \begin{pmatrix} -1 &amp; 0 \ 0 &amp; -2 \end{pmatrix}, \quad p = -3, \quad q = 2
+]</p>
+<p>[
+d = p^2 - 4q = 1, \quad \mu_1 = -1, \quad \mu_2 = -2
+]</p>
+<p>The point ( (0, 0) ) is a <strong>hyperbolic fixed point</strong>. The system has a <strong>stable node (attractor)</strong> at ( (0, 0) ).</p>
+</section>
+<section id="stability-at-x-2-y-2-1-0">
+<h2>Stability at ( (x_2^<em>, y_2^</em>) = (-1, 0) ):<a class="headerlink" href="#stability-at-x-2-y-2-1-0" title="Link to this heading">#</a></h2>
+<p>[
+J(-1, 0) = \begin{pmatrix} 2 &amp; 0 \ 0 &amp; -2 \end{pmatrix}, \quad p = 0, \quad q = -4
+]</p>
+<p>[
+d = p^2 - 4q = 16, \quad \mu_1 = 2, \quad \mu_2 = -2
+]</p>
+<p>The point ( (-1, 0) ) is a <strong>hyperbolic fixed point</strong>. The system has a <strong>saddle point</strong> at ( (-1, 0) ).</p>
+</section>
+<section id="stability-at-x-3-y-3-1-0">
+<h2>Stability at ( (x_3^<em>, y_3^</em>) = (1, 0) ):<a class="headerlink" href="#stability-at-x-3-y-3-1-0" title="Link to this heading">#</a></h2>
+<p>[
+J(1, 0) = \begin{pmatrix} 2 &amp; 0 \ 0 &amp; -2 \end{pmatrix}, \quad p = 0, \quad q = -4
+]</p>
+<p>[
+d = p^2 - 4q = 16, \quad \mu_1 = 2, \quad \mu_2 = -2
+]</p>
+<p>The point ( (1, 0) ) is a <strong>hyperbolic fixed point</strong>. The system has a <strong>saddle point</strong> at ( (1, 0) ).</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="direction-field-and-phase-portrait">
+<h1>Direction Field and Phase Portrait<a class="headerlink" href="#direction-field-and-phase-portrait" title="Link to this heading">#</a></h1>
+<p>The stability analysis for this example is verified by the following direction field and phase portrait of the nonlinear system:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Direction Field</p></th>
+<th class="head"><p>Phase Portrait</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="Direction Field" src="php_images/twodflows_2_1.php" /></p></td>
+<td><p><img alt="Phase Portrait" src="php_images/twodflows_2.php" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="example-boyce-and-diprima-487-488">
+<h1>Example: (Boyce and DiPrima 487-488)<a class="headerlink" href="#example-boyce-and-diprima-487-488" title="Link to this heading">#</a></h1>
+<p>The nonlinear system with functions ( f ) and ( g ) given by:</p>
+<p>[
+\frac{dx}{dt} = f(x, y) = y,
+]</p>
+<p>[
+\frac{dy}{dt} = g(x, y) = -9 \sin(x) - \frac{1}{5} y,
+]</p>
+<p>has fixed points that satisfy:</p>
+<p>[
+f(x, y) = y = 0,
+]</p>
+<p>[
+g(x, y) = -9 \sin(x) - \frac{1}{5} y = 0.
+]</p>
+<p>The fixed points of this nonlinear system occur at the intersections of the <strong>x-nullcline</strong>, ( y = 0 ), and the <strong>y-nullcline</strong>, ( y = -45 \sin(x) ), as displayed in the diagram below:</p>
+<p><img alt="Fixed Points and Nullclines" src="php_images/twodflows_5.php" /></p>
+<section id="id1">
+<h2>Fixed Points<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>The fixed points are:</p>
+<p>[
+(x^<em>, y^</em>) = (n\pi, 0), \quad \text{for } n = \ldots, -2, -1, 0, 1, 2, \ldots
+]</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="id2">
+<h1>Jacobian Matrix<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<p>The Jacobian matrix for the example is:</p>
+<p>[
+J(x^<em>, y^</em>) =
+\begin{pmatrix}
+0 &amp; 1 \
+-9 \cos(x) &amp; -\frac{1}{5}
+\end{pmatrix}
+]</p>
+<hr class="docutils" />
+</section>
+<section id="stability-analysis">
+<h1>Stability Analysis<a class="headerlink" href="#stability-analysis" title="Link to this heading">#</a></h1>
+<section id="n-0-or-n-even">
+<h2>( n = 0 ) or ( n ) even:<a class="headerlink" href="#n-0-or-n-even" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>( p = -0.2 &lt; 0 ), ( q = 9 &gt; 0 ).</p></li>
+<li><p>The fixed points are <strong>hyperbolic attractors</strong>.</p></li>
+</ul>
+</section>
+<section id="n-odd">
+<h2>( n ) odd:<a class="headerlink" href="#n-odd" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>( p = -0.2 &lt; 0 ), ( q = -9 &lt; 0 ).</p></li>
+<li><p>The fixed points are <strong>hyperbolic saddle points</strong>.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+</section>
+<section id="phase-portrait">
+<h1>Phase Portrait<a class="headerlink" href="#phase-portrait" title="Link to this heading">#</a></h1>
+<p>The following phase portrait of the nonlinear system verifies the stability analysis:</p>
+<p><img alt="Nonlinear Phase Portrait" src="php_images/twodflows_6.php" /></p>
+<hr class="docutils" />
+</section>
+<section id="basin-of-attraction">
+<h1>Basin of Attraction<a class="headerlink" href="#basin-of-attraction" title="Link to this heading">#</a></h1>
+<p>The basin of attraction of an attracting fixed point is the set of all initial points whose solution trajectories lead to the fixed point. In the diagram below, the yellow region represents the <strong>basin of attraction</strong> of the hyperbolic attractor at the origin:</p>
+<p><img alt="Basin of Attraction" src="php_images/twodflows_6_1.png" /></p>
+<hr class="docutils" />
+</section>
+<section id="homoclinic-orbits">
+<h1>Homoclinic Orbits<a class="headerlink" href="#homoclinic-orbits" title="Link to this heading">#</a></h1>
+<p>Solution trajectories that begin and terminate at the same fixed point are called <strong>homoclinic orbits</strong>. An example is shown below, with the homoclinic orbits in red:</p>
+<p><img alt="Homoclinic Orbits" src="php_images/twodflows_14.php" /></p>
+<p>This nonlinear system has functions ( f ) and ( g ):</p>
+<p>[
+\frac{dx}{dt} = f(x, y) = y,
+]</p>
+<p>[
+\frac{dy}{dt} = g(x, y) = x - x^3,
+]</p>
+<p>with a saddle point at ( (0, 0) ), and centers at ( (-1, 0) ) and ( (1, 0) ).</p>
+<hr class="docutils" />
+</section>
+<section id="heteroclinic-orbits">
+<h1>Heteroclinic Orbits<a class="headerlink" href="#heteroclinic-orbits" title="Link to this heading">#</a></h1>
+<p>Solution trajectories that begin and terminate at different saddle points are called <strong>heteroclinic orbits</strong>. An example is shown below, with the heteroclinic orbits in red:</p>
+<p><img alt="Heteroclinic Orbits" src="php_images/twodflows_12_1.php" /></p>
+<p>This nonlinear system has functions ( f ) and ( g ):</p>
+<p>[
+\frac{dx}{dt} = f(x, y) = y,
+]</p>
+<p>[
+\frac{dy}{dt} = g(x, y) = -\sin(x),
+]</p>
+<p>The fixed points are:</p>
+<p>[
+(x^<em>, y^</em>) = (n\pi, 0), \quad \text{for } n = \ldots, -2, -1, 0, 1, 2, \ldots
+]</p>
+<ul class="simple">
+<li><p>( n = 0 ) or ( n ) even: The fixed points are <strong>centers</strong>.</p></li>
+<li><p>( n ) odd: The fixed points are <strong>hyperbolic saddle points</strong>.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="physical-interpretation-the-oscillating-pendulum-boyce-and-diprima-476-477">
+<h1>Physical Interpretation: The Oscillating Pendulum (Boyce and DiPrima 476-477)<a class="headerlink" href="#physical-interpretation-the-oscillating-pendulum-boyce-and-diprima-476-477" title="Link to this heading">#</a></h1>
+<p>An object of mass ( m ) is suspended from a point ( O ) by a rigid, weightless rod of length ( L ). The angle of the rod with the vertical is ( \theta ), with the counterclockwise direction as positive. The rod can swing or rotate about ( O ). The <strong>gravitational force</strong> is ( F = mg ), while the <strong>damping force</strong> opposing the motion is ( c \left| \frac{d\theta}{dt} \right| ), where ( c &gt; 0 ). The tangential gravitational force is ( F_1 = -mg\sin(\theta) ).</p>
+<p><img alt="Oscillating Pendulum" src="php_images/twodflows_7.php" /></p>
+<p>With the damping force, the equation of motion is:</p>
+<p>[
+mL^2 \frac{d^2\theta}{dt^2} = -cL \frac{d\theta}{dt} - mgL\sin(\theta),
+]</p>
+<p>or equivalently:</p>
+<p>[
+\frac{d^2\theta}{dt^2} + \frac{c}{mL} \frac{d\theta}{dt} + \frac{g}{L}\sin(\theta) = 0.
+]</p>
+<p>Letting ( \gamma = \frac{c}{mL} ) and ( \omega^2 = \frac{g}{L} ), the equation becomes:</p>
+<p>[
+\frac{d^2\theta}{dt^2} + \gamma \frac{d\theta}{dt} + \omega^2 \sin(\theta) = 0.
+]</p>
+<p>This system can be rewritten as a two-dimensional nonlinear system:</p>
+<p>[
+\frac{dx}{dt} = y, \quad \frac{dy}{dt} = -\omega^2 \sin(x) - \gamma y.
+]</p>
+<p>For ( \omega^2 = 9 ) and ( \gamma = \frac{1}{5} ), the relevant phase portrait is shown for ( x ) between ( -\pi ) and ( \pi ).</p>
+<p><img alt="Phase Portrait" src="php_images/twodflows_6.php" /></p>
+<hr class="docutils" />
+</section>
+<section id="oscillating-pendulum-dynamics">
+<h1>Oscillating Pendulum Dynamics<a class="headerlink" href="#oscillating-pendulum-dynamics" title="Link to this heading">#</a></h1>
+<p>The next graphic displays the motion of the pendulum with ( \omega^2 = 9 ) and ( \gamma = \frac{1}{5} ), starting from a position slightly displaced from the vertical (( x = -3.04159 ) radians, ( y = 0.010000 ) radians/second):</p>
+<p><img alt="Oscillating Pendulum Dynamics" src="php_images/pendulum.gif" /></p>
+</section>
+<section id="lotkavolterra-model-decreasing-and-increasing-returns">
+<h1>Lotka–Volterra Model: Decreasing and Increasing Returns<a class="headerlink" href="#lotkavolterra-model-decreasing-and-increasing-returns" title="Link to this heading">#</a></h1>
+<p>The Lotka–Volterra model is sensitive to modifications in the differential equations describing the dynamics of the nonlinear system. The following system represents a perturbation of the original model:</p>
+<p>[
+\frac{dx}{dt} = f(x, y) = 3x - 2xy,
+]</p>
+<p>[
+\frac{dy}{dt} = g(x, y) = -3y + 2xy - e y^2,
+]</p>
+<p>where the parameter ( e ) is either ( -2 &lt; e &lt; 0 ) (increasing returns) or ( e &gt; 0 ) (decreasing returns). The parameter ( e ) measures the returns available to the entity represented by ( y ).</p>
+<hr class="docutils" />
+</section>
+<section id="id3">
+<h1>Fixed Points<a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
+<p>The fixed points are:</p>
+<p>[
+(x_1^<em>, y_1^</em>) = (0, 0),
+]</p>
+<p>[
+(x_2^<em>, y_2^</em>) = \left( \frac{3}{2} + \frac{3}{4}e, \frac{3}{2} \right),
+]</p>
+<p>where ( x_2^* &gt; 0 ) requires ( e &gt; -2 ).</p>
+<hr class="docutils" />
+</section>
+<section id="id4">
+<h1>Jacobian Matrix<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+<p>The Jacobian matrix for the system is:</p>
+<p>[
+J(x^<em>, y^</em>) =
+\begin{pmatrix}
+3 - 2y &amp; -2x \
+2y &amp; -3 + 2x - 2ey
+\end{pmatrix}
+]</p>
+<hr class="docutils" />
+</section>
+<section id="id5">
+<h1>Stability Analysis<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+<section id="at-x-1-y-1-0-0">
+<h2>At ( (x_1^<em>, y_1^</em>) = (0, 0) ):<a class="headerlink" href="#at-x-1-y-1-0-0" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>( p = \text{trace}(J) = 0 ),</p></li>
+<li><p>( q = \det(J) = -9 ).</p></li>
+</ul>
+<p>The fixed point is a <strong>hyperbolic saddle point</strong>.</p>
+</section>
+<section id="at-x-2-y-2-left-frac-3-2-frac-3-4-e-frac-3-2-right">
+<h2>At ( (x_2^<em>, y_2^</em>) = \left( \frac{3}{2} + \frac{3}{4}e, \frac{3}{2} \right) ):<a class="headerlink" href="#at-x-2-y-2-left-frac-3-2-frac-3-4-e-frac-3-2-right" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>( p = \text{trace}(J) = -\frac{3}{2}e ),</p></li>
+<li><p>( q = \det(J) = \frac{9}{2}e + 9 ).</p></li>
+<li><p>For ( e &gt; 0 ):</p>
+<ul>
+<li><p>( p &lt; 0 ), ( q &gt; 0 ),</p></li>
+<li><p>The fixed point is a <strong>hyperbolic attractor</strong>.</p></li>
+</ul>
+</li>
+<li><p>For ( -2 &lt; e &lt; 0 ):</p>
+<ul>
+<li><p>( p &gt; 0 ), ( q &gt; 0 ),</p></li>
+<li><p>The fixed point is a <strong>hyperbolic repeller</strong>.</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+</section>
+</section>
+<section id="phase-portraits">
+<h1>Phase Portraits<a class="headerlink" href="#phase-portraits" title="Link to this heading">#</a></h1>
+<p>The phase portraits below illustrate the behavior for both decreasing (( e &gt; 0 )) and increasing (( e &lt; 0 )) returns:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><img alt="Decreasing Returns" src="php_images/twodflows_9.php" /></p></th>
+<th class="head text-center"><p><img alt="Increasing Returns" src="php_images/twodflows_9.php?e=-.25&amp;nobs=1&amp;sobs=0&amp;lit=Increasing%20Returns" /></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>( e = 0.25 &gt; 0 )</p></td>
+<td class="text-center"><p>( e = -0.25 &lt; 0 )</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Two Dimensional Flows and Phase Diagrams</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-systems">Linear Systems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-of-fixed-points-for-linear-systems">Classification of Fixed Points for Linear Systems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-systems">Nonlinear Systems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-points">Fixed Points</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-strogatz-151-152">Example: (Strogatz 151-152)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-stability">Linearized Stability</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jacobian-matrix">Jacobian Matrix</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jacobian-matrix-and-fixed-point-dynamics">Jacobian Matrix and Fixed Point Dynamics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-of-fixed-points-for-nonlinear-systems">Classification of Fixed Points for Nonlinear Systems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-classification">Topological Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-stability-analysis">Example: Stability Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-at-x-1-y-1-0-0">Stability at ( (x_1^<em>, y_1^</em>) = (0, 0) ):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-at-x-2-y-2-1-0">Stability at ( (x_2^<em>, y_2^</em>) = (-1, 0) ):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-at-x-3-y-3-1-0">Stability at ( (x_3^<em>, y_3^</em>) = (1, 0) ):</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#direction-field-and-phase-portrait">Direction Field and Phase Portrait</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-boyce-and-diprima-487-488">Example: (Boyce and DiPrima 487-488)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Fixed Points</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Jacobian Matrix</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-analysis">Stability Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-0-or-n-even">( n = 0 ) or ( n ) even:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-odd">( n ) odd:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-portrait">Phase Portrait</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#basin-of-attraction">Basin of Attraction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#homoclinic-orbits">Homoclinic Orbits</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#heteroclinic-orbits">Heteroclinic Orbits</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-interpretation-the-oscillating-pendulum-boyce-and-diprima-476-477">Physical Interpretation: The Oscillating Pendulum (Boyce and DiPrima 476-477)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oscillating-pendulum-dynamics">Oscillating Pendulum Dynamics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lotkavolterra-model-decreasing-and-increasing-returns">Lotka–Volterra Model: Decreasing and Increasing Returns</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Fixed Points</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Jacobian Matrix</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Stability Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#at-x-1-y-1-0-0">At ( (x_1^<em>, y_1^</em>) = (0, 0) ):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#at-x-2-y-2-left-frac-3-2-frac-3-4-e-frac-3-2-right">At ( (x_2^<em>, y_2^</em>) = \left( \frac{3}{2} + \frac{3}{4}e, \frac{3}{2} \right) ):</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-portraits">Phase Portraits</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Natural Sciences
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
