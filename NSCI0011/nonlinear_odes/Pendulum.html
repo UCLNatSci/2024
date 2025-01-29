@@ -667,6 +667,7 @@ y_2(1) &amp;= \frac{1}{24} - \frac{1}{4} + \frac{7}{24} + c_5 = 0 \implies c_5 =
 <div class="math notranslate nohighlight">
 \[(\varepsilon\theta_1 + \varepsilon^2\theta_2 + \varepsilon^3\theta_3)^3 = \varepsilon^3\theta_1^3 + 3\varepsilon^4\theta_1^2\theta_2 + 3\varepsilon^5\theta_1\theta_2^2 + \varepsilon^5\theta_2^3 + 3\varepsilon^5\theta_1^2\theta_3 + \dots\]</div>
 <p>Keeping terms up to <span class="math notranslate nohighlight">\( \mathcal{O}(\varepsilon^3) \)</span>, only the cubic term <span class="math notranslate nohighlight">\( \varepsilon^3\theta_1^3 \)</span> contributes.</p>
+
 <p>The ODE now becomes:</p>
 <div class="math notranslate nohighlight">
 \[\varepsilon\theta_1''(t) + \varepsilon^2\theta_2''(t) + \varepsilon^3\theta_3''(t) + \left(\varepsilon\theta_1 + \varepsilon^2\theta_2 + \varepsilon^3\theta_3 - \frac{\varepsilon^3\theta_1^3}{6}\right) = 0.\]</div>
@@ -681,9 +682,12 @@ y_2(1) &amp;= \frac{1}{24} - \frac{1}{4} + \frac{7}{24} + c_5 = 0 \implies c_5 =
 \[  \theta_2''(t) + \theta_2 = 0, \quad \theta_2(0) = 0, \quad \theta_2'(0) = 0 \]</div>
 <p>We can solve this using <span class="math notranslate nohighlight">\(\theta_2(t) = A\cos(t) + B \sin(t)\)</span> but applying the boundary conditions leaves us with:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\theta_2(t) = 0\\**Order $\varepsilon^3$:**
-  ```{math}
-  \theta_3''(t) + \theta_3 = \frac{\theta_1^3}{6} = \frac{\cos^3(t)}{6}, \quad \theta_3(0) = 0, \quad \theta_3'(0) = 0.\end{aligned}\end{align} \]</div>
+
+<p><strong>Order <span class="math notranslate nohighlight">\(\varepsilon^3\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+
+\[    \theta_3''(t) + \theta_3 = \frac{\theta_1^3}{6} = \frac{\cos^3(t)}{6}, \quad \theta_3(0) = 0, \quad \theta_3'(0) = 0.\end{aligned}\end{align} \] </div>
+
 <p>Expanding <span class="math notranslate nohighlight">\( \cos^3(t) \)</span> using the trigonometric identity:</p>
 <div class="math notranslate nohighlight">
 \[\cos^3(t) = \frac{3\cos(t) + \cos(3t)}{4},\]</div>
@@ -691,6 +695,7 @@ y_2(1) &amp;= \frac{1}{24} - \frac{1}{4} + \frac{7}{24} + c_5 = 0 \implies c_5 =
 <div class="math notranslate nohighlight">
 \[\theta_3''(t) + \theta_3(t) = -\frac{1}{6} \cdot \frac{3\cos(t) + \cos(3t)}{4} = -\frac{\cos(t)}{8} - \frac{\cos(3t)}{24}.\]</div>
 <p>Thus, the ODE is:</p>
+
 <div class="math notranslate nohighlight">
 \[\theta_3''(t) + \theta_3(t) = -\frac{\cos(t)}{8} - \frac{\cos(3t)}{24}.\]</div>
 <p>We can solve this with homogeneous and particular solution method of second order ODEs, another way to approach this problem is to use Laplace transforms, however after some work we can find:</p>
