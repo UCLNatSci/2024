@@ -388,39 +388,6 @@ T_2 = \varepsilon^2 t.
 
 
 ---
-## Other Semi-Analytic Methods
-
-### Energy Methods (Averaging)
-- For periodic solutions, averaging techniques approximate the system's behavior over one oscillation period.
-- Transform the system into a slowly varying amplitude and phase form:
-  ```{math}
-  x(t) = A(t)\cos(\omega t + \phi),
-  ```
-  where $A(t)$ and $\phi(t)$ evolve slowly.
-- Use averaging to derive differential equations for $A(t)$ and $\phi(t)$.
-
----
-
-
-
-### Slow-Fast Decomposition
-- For large $\mu$, the system separates into:
-  - **Slow dynamics:** Regions where $|x| \approx 1$ and the system evolves gradually.
-  - **Fast dynamics:** Rapid transitions between $x \approx -1$ and $x \approx 1$.
-- The **geometric singular perturbation theory** analyzes these slow and fast dynamics by considering the system's behavior in different time scales.
-
----
-
-### Harmonic Balance
-- Assume a periodic solution of the form:
-  ```{math}
-  x(t) \approx A\cos(\omega t) + B\sin(\omega t),
-  ```
-  where $A$, $B$, and $\omega$ are determined by balancing the harmonics of the nonlinear equation.
-- This method provides an approximate frequency and amplitude of oscillations.
-
-
----
 
 
 

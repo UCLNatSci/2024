@@ -401,12 +401,6 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-semi-analytic-methods">Other Semi-Analytic Methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-methods-averaging">Energy Methods (Averaging)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slow-fast-decomposition">Slow-Fast Decomposition</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-balance">Harmonic Balance</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
             </nav>
@@ -675,47 +669,6 @@ The Van der Pol oscillator is often used to study synchronization phenomena in c
 </section>
 </section>
 <hr class="docutils" />
-<section id="other-semi-analytic-methods">
-<h2>Other Semi-Analytic Methods<a class="headerlink" href="#other-semi-analytic-methods" title="Link to this heading">#</a></h2>
-<section id="energy-methods-averaging">
-<h3>Energy Methods (Averaging)<a class="headerlink" href="#energy-methods-averaging" title="Link to this heading">#</a></h3>
-<ul>
-<li><p>For periodic solutions, averaging techniques approximate the system’s behavior over one oscillation period.</p></li>
-<li><p>Transform the system into a slowly varying amplitude and phase form:</p>
-<div class="math notranslate nohighlight">
-\[x(t) = A(t)\cos(\omega t + \phi),\]</div>
-<p>where <span class="math notranslate nohighlight">\(A(t)\)</span> and <span class="math notranslate nohighlight">\(\phi(t)\)</span> evolve slowly.</p>
-</li>
-<li><p>Use averaging to derive differential equations for <span class="math notranslate nohighlight">\(A(t)\)</span> and <span class="math notranslate nohighlight">\(\phi(t)\)</span>.</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="slow-fast-decomposition">
-<h3>Slow-Fast Decomposition<a class="headerlink" href="#slow-fast-decomposition" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>For large <span class="math notranslate nohighlight">\(\mu\)</span>, the system separates into:</p>
-<ul>
-<li><p><strong>Slow dynamics:</strong> Regions where <span class="math notranslate nohighlight">\(|x| \approx 1\)</span> and the system evolves gradually.</p></li>
-<li><p><strong>Fast dynamics:</strong> Rapid transitions between <span class="math notranslate nohighlight">\(x \approx -1\)</span> and <span class="math notranslate nohighlight">\(x \approx 1\)</span>.</p></li>
-</ul>
-</li>
-<li><p>The <strong>geometric singular perturbation theory</strong> analyzes these slow and fast dynamics by considering the system’s behavior in different time scales.</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="harmonic-balance">
-<h3>Harmonic Balance<a class="headerlink" href="#harmonic-balance" title="Link to this heading">#</a></h3>
-<ul>
-<li><p>Assume a periodic solution of the form:</p>
-<div class="math notranslate nohighlight">
-\[x(t) \approx A\cos(\omega t) + B\sin(\omega t),\]</div>
-<p>where <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(\omega\)</span> are determined by balancing the harmonics of the nonlinear equation.</p>
-</li>
-<li><p>This method provides an approximate frequency and amplitude of oscillations.</p></li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="admonition-exercises-with-ode-solvers admonition">
@@ -818,12 +771,6 @@ y(0) = 1, &amp;\quad  y(\infty) = 0,  \text{for neutral atoms},\end{split}\]</di
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#breakdown-of-asymptotics-at-higher-orders">Breakdown of Asymptotics at Higher Orders</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-semi-analytic-methods">Other Semi-Analytic Methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-methods-averaging">Energy Methods (Averaging)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slow-fast-decomposition">Slow-Fast Decomposition</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-balance">Harmonic Balance</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
