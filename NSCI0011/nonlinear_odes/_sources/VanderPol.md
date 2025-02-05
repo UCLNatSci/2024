@@ -242,6 +242,9 @@ Thus,
 
 which is consistent with the regular perturbation series - but without the secular terms!
 
+We can see the difference in a plot, against the numerical solutions:
+![method of multiple scales against numerical solutions](nonlinearpmms.png)
+
 ### Van der Pol Application
 Applying this method to the Van der Pol oscillator,
 
