@@ -438,6 +438,7 @@ We can solve this using $\theta_1(t) = A\cos(t) + B \sin(t)$ but applying the bo
 We can solve this using $\theta_2(t) = A\cos(t) + B \sin(t)$ but applying the boundary conditions leaves us with:
 ```{math}
 \theta_2(t) = 0
+```
 
 **Order $\varepsilon^3$:**
   ```{math}
@@ -453,13 +454,13 @@ Expanding $ \cos^3(t) $ using the trigonometric identity:
 the equation becomes:
 
 ```{math}
-\theta_3''(t) + \theta_3(t) = -\frac{1}{6} \cdot \frac{3\cos(t) + \cos(3t)}{4} = -\frac{\cos(t)}{8} - \frac{\cos(3t)}{24}.
+\theta_3''(t) + \theta_3(t) = \frac{1}{6} \cdot \frac{3\cos(t) + \cos(3t)}{4} = \frac{\cos(t)}{8} + \frac{\cos(3t)}{24}.
 ```
 
 Thus, the ODE is:
 
 ```{math}
-\theta_3''(t) + \theta_3(t) = -\frac{\cos(t)}{8} - \frac{\cos(3t)}{24}.
+\theta_3''(t) + \theta_3(t) = \frac{\cos(t)}{8} + \frac{\cos(3t)}{24}.
 ```
 
 We can solve this with homogeneous and particular solution method of second order ODEs, another way to approach this problem is to use Laplace transforms, however after some work we can find:

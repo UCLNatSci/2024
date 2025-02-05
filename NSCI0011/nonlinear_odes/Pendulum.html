@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -667,7 +667,6 @@ y_2(1) &amp;= \frac{1}{24} - \frac{1}{4} + \frac{7}{24} + c_5 = 0 \implies c_5 =
 <div class="math notranslate nohighlight">
 \[(\varepsilon\theta_1 + \varepsilon^2\theta_2 + \varepsilon^3\theta_3)^3 = \varepsilon^3\theta_1^3 + 3\varepsilon^4\theta_1^2\theta_2 + 3\varepsilon^5\theta_1\theta_2^2 + \varepsilon^5\theta_2^3 + 3\varepsilon^5\theta_1^2\theta_3 + \dots\]</div>
 <p>Keeping terms up to <span class="math notranslate nohighlight">\( \mathcal{O}(\varepsilon^3) \)</span>, only the cubic term <span class="math notranslate nohighlight">\( \varepsilon^3\theta_1^3 \)</span> contributes.</p>
-
 <p>The ODE now becomes:</p>
 <div class="math notranslate nohighlight">
 \[\varepsilon\theta_1''(t) + \varepsilon^2\theta_2''(t) + \varepsilon^3\theta_3''(t) + \left(\varepsilon\theta_1 + \varepsilon^2\theta_2 + \varepsilon^3\theta_3 - \frac{\varepsilon^3\theta_1^3}{6}\right) = 0.\]</div>
@@ -685,7 +684,7 @@ y_2(1) &amp;= \frac{1}{24} - \frac{1}{4} + \frac{7}{24} + c_5 = 0 \implies c_5 =
 \[\theta_2(t) = 0\]</div>
 <p><strong>Order <span class="math notranslate nohighlight">\(\varepsilon^3\)</span>:</strong></p>
 <div class="math notranslate nohighlight">
-\[\theta_3''(t) + \theta_3 = \frac{\theta_1^3}{6} = \frac{\cos^3(t)}{6}, \quad \theta_3(0) = 0, \quad \theta_3'(0) = 0.\] </div>
+\[\theta_3''(t) + \theta_3 = \frac{\theta_1^3}{6} = \frac{\cos^3(t)}{6}, \quad \theta_3(0) = 0, \quad \theta_3'(0) = 0.\]</div>
 <p>Expanding <span class="math notranslate nohighlight">\( \cos^3(t) \)</span> using the trigonometric identity:</p>
 <div class="math notranslate nohighlight">
 \[\cos^3(t) = \frac{3\cos(t) + \cos(3t)}{4},\]</div>
@@ -722,8 +721,7 @@ y_2(1) &amp;= \frac{1}{24} - \frac{1}{4} + \frac{7}{24} + c_5 = 0 \implies c_5 =
 <p>1. Get some numerical solutions out of Python, compare with the linearised solutions and the perturbative solutions.</p>
 <p>2. Get a phase portrait out and look at small (SHM solutions are valid) and large angle results (SHM solutions are not valid) - what conclusions can we draw?</p>
 <p>3. How could we include damping in this system now? Add this to your code and compare.</p>
-<p>4. Looking at the time period, add more perurbative terms into the expression to show how it changes for larger and larger <span class="math notranslate nohighlight">\(\theta_0\)</span>.</p>
-<p>5. Redo the perurbative solutions around <span class="math notranslate nohighlight">\(\theta_0 = \pi/2\)</span>.</p>
+<p>4. Looking at the time period, add more perurbative terms into the expression to show how it changes for larger and larger <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 </div>
 </section>
 </section>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -381,21 +381,33 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-formulation">Mathematical Formulation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics">Dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forced-van-der-pol-oscillator">Forced Van der Pol Oscillator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-parameters">Example Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">Solutions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbative-methods">Perturbative Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-multiple-scales">Method of Multiple Scales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rationale">Rationale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-pendulum">Non-linear Pendulum</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-o-left-varepsilon-1-right-order"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^1\right) Order \)</span>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-o-left-varepsilon-3-right-order"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^3\right) \)</span> Order:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#theta-3-t-0-t-2-correction-term"><span class="math notranslate nohighlight">\( \theta_3(t_0, t_2) \)</span> Correction Term</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-pol-application">Van der Pol Application</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-o-left-varepsilon-0-right-order"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^0\right) \)</span> order:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^1\right) \)</span> Order:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions">Initial Conditions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#breakdown-of-asymptotics-at-higher-orders">Breakdown of Asymptotics at Higher Orders</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-semi-analytic-methods">Other Semi-Analytic Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-methods-averaging">Energy Methods (Averaging)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slow-fast-decomposition">Slow-Fast Decomposition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-balance">Harmonic Balance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-plane-analysis">Phase Plane Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-cycle-analysis">Limit Cycle Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-and-hamiltonian-formulations">Lagrangian and Hamiltonian Formulations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applicability">Applicability</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -437,8 +449,11 @@ document.write(`
 <li><p><strong>Small <span class="math notranslate nohighlight">\(\mu\)</span>:</strong> The system behaves like a harmonic oscillator with nearly sinusoidal solutions.</p></li>
 <li><p><strong>Large <span class="math notranslate nohighlight">\(\mu\)</span>:</strong> The system exhibits nonlinear effects, with relaxation oscillations—periodic oscillations with sharp transitions and slow changes in amplitude.</p></li>
 </ul>
+<p>We can see this in the phase-portrait of this system:</p>
 </section>
-<hr class="docutils" />
+<section id="id1">
+<h2><img alt="Van der Pol Oscillator" src="_images/vanderpol_plot.png" /><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+</section>
 <section id="key-features">
 <h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h2>
 <ol class="arabic">
@@ -477,53 +492,189 @@ The Van der Pol oscillator is often used to study synchronization phenomena in c
 </ul>
 </section>
 <hr class="docutils" />
-<section id="forced-van-der-pol-oscillator">
-<h2>Forced Van der Pol Oscillator<a class="headerlink" href="#forced-van-der-pol-oscillator" title="Link to this heading">#</a></h2>
-<p>The forced Van der Pol oscillator includes an external driving term:</p>
+<section id="method-of-multiple-scales">
+<h2>Method of Multiple Scales<a class="headerlink" href="#method-of-multiple-scales" title="Link to this heading">#</a></h2>
+<section id="rationale">
+<h3>Rationale<a class="headerlink" href="#rationale" title="Link to this heading">#</a></h3>
+<p>A simple example illustrating the need for an additional <strong>super-slow time scale</strong> is the <strong>linearly damped oscillator</strong>:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}^2x}{\mathrm{d}t^2} - \mu(1 - x^2)\frac{\mathrm{d}x}{\mathrm{d}t} + x = F\cos(\omega t),\]</div>
-<p>where <span class="math notranslate nohighlight">\(F\)</span> is the forcing amplitude and <span class="math notranslate nohighlight">\(\omega\)</span> is the forcing frequency. This introduces phenomena like:</p>
-<ul class="simple">
-<li><p>Frequency entrainment.</p></li>
-<li><p>Chaos for certain parameter regimes.</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="example-parameters">
-<h2>Example Parameters<a class="headerlink" href="#example-parameters" title="Link to this heading">#</a></h2>
-<p>A typical numerical simulation uses:</p>
-<ul class="simple">
-<li><p><strong>Initial conditions:</strong> <span class="math notranslate nohighlight">\(x(0) = 1, y(0) = 0\)</span>.</p></li>
-<li><p><strong>Parameter:</strong> <span class="math notranslate nohighlight">\(\mu = 0.1\)</span> (weak nonlinearity) or <span class="math notranslate nohighlight">\(\mu = 5\)</span> (strong nonlinearity).</p></li>
-</ul>
-</section>
-<section id="solutions">
-<h2>Solutions<a class="headerlink" href="#solutions" title="Link to this heading">#</a></h2>
-<p>The Van der Pol oscillator is inherently nonlinear, making exact analytical solutions challenging. However, various techniques can be used to analyze and approximate solutions, depending on the parameter <span class="math notranslate nohighlight">\(\mu\)</span> and the context. Below are some common analytical methods:</p>
-<hr class="docutils" />
-<section id="perturbative-methods">
-<h3>Perturbative Methods<a class="headerlink" href="#perturbative-methods" title="Link to this heading">#</a></h3>
-<p>Perturbation techniques are effective when the parameter <span class="math notranslate nohighlight">\(\mu\)</span> is small (<span class="math notranslate nohighlight">\(0 &lt; \mu \ll 1\)</span>) or large (<span class="math notranslate nohighlight">\(\mu \gg 1\)</span>).</p>
-<ul>
-<li><p><strong>Small <span class="math notranslate nohighlight">\(\mu\)</span>:</strong></p>
-<ul>
-<li><p>Assume the solution is a perturbation of the linear harmonic oscillator.</p></li>
-<li><p>Use an expansion of the form:</p>
+\[\ddot{x} + 2\varepsilon \dot{x} + x = 0.\]</div>
+<p>The solution is:</p>
 <div class="math notranslate nohighlight">
-\[x(t) = x_0(t) + \mu x_1(t) + \mu^2 x_2(t) + \dots\]</div>
-</li>
-<li><p>Substitute into the Van der Pol equation and solve iteratively at each order of <span class="math notranslate nohighlight">\(\mu\)</span>.</p></li>
-</ul>
-</li>
-<li><p><strong>Large <span class="math notranslate nohighlight">\(\mu\)</span>:</strong></p>
+\[x = e^{-\varepsilon t} \cos \left(\sqrt{1- \varepsilon^2} t\right)\]</div>
+<p>In this case:</p>
 <ul class="simple">
-<li><p>In this regime, the system exhibits relaxation oscillations, with rapid transitions between slow and fast dynamics.</p></li>
-<li><p>Asymptotic methods (e.g., matched asymptotic expansions) are used to approximate the solution in different time scales.</p></li>
+<li><p>The <strong>amplitude</strong> drifts on the time scale <span class="math notranslate nohighlight">\( O(\varepsilon^{-1}) \)</span>.</p></li>
+<li><p>The <strong>phase</strong> drifts on the longer time scale <span class="math notranslate nohighlight">\( O(\varepsilon^{-2}) \)</span>.</p></li>
 </ul>
-</li>
-</ul>
+<p>By the time the phase has shifted significantly, the amplitude has already decayed substantially. In general when working to <span class="math notranslate nohighlight">\(\mathcal{O}(\varepsilon^k)\)</span> on a time scale <span class="math notranslate nohighlight">\(\mathcal{O}(\varepsilon^{k-n})\)</span> one must expect to have a hierarchy of <span class="math notranslate nohighlight">\(n\)</span> slow time scales. Some of these may be essential to the system, representing genuinely different processes.</p>
+</section>
+<section id="non-linear-pendulum">
+<h3>Non-linear Pendulum<a class="headerlink" href="#non-linear-pendulum" title="Link to this heading">#</a></h3>
+<p>For the non-linear pendulum, <span class="math notranslate nohighlight">\(\ddot{\theta} + \sin(\theta) = 0\)</span> we examined perturbatie solutions last week.  The perturbation series that we derived for <span class="math notranslate nohighlight">\( \theta(t) \)</span> had a secular term (proportional to <span class="math notranslate nohighlight">\( t \)</span>) that causes it to lose validity at large times, even for small <span class="math notranslate nohighlight">\( \varepsilon \)</span>. The physical cause of this problem was a slow phase drift of the true solution away from the unperturbed solution due to the nonlinear correction to the pendulum period. It would be nice to devise a perturbation series approach that remained valid at long time by accounting for such slow drifts to avoid secular terms. The method of multiple scales accomplishes this goal.</p>
+<p>The idea, as applied to the nonlinear pendulum problem,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2\theta}{dt^2} + \sin\theta = 0, \quad \theta(0) = \varepsilon \ll1, \quad \frac{d\theta}{dt}(0) = 0.\]</div>
+<p>is to make <span class="math notranslate nohighlight">\( \theta(t) \)</span> formally a function of multiple time scales that capture the fast and slow time variability of the solution. Since the first nonlinear correction to the solution is of order <span class="math notranslate nohighlight">\( \varepsilon^2 \)</span> compared to the unperturbed solution, we introduce the timescales</p>
+<div class="math notranslate nohighlight">
+\[t_0 = t, \quad t_2 = \varepsilon^2 t, \dots\]</div>
+<p>and (to the order of accuracy needed for our purposes)</p>
+<div class="math notranslate nohighlight">
+\[\theta(t) = \varepsilon \theta_1(t_0, t_2) + \varepsilon^3 \theta_3(t_0, t_2) + \dots\]</div>
+<p>Having multiple variables to describe the time dependence is redundant, but this redundancy can be exploited to develop a perturbation series with no secular terms that is uniformly valid for all small <span class="math notranslate nohighlight">\( \varepsilon \)</span>.</p>
+<p>Turning to the equation, note that</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\theta_k}{dt} = \frac{\partial \theta_k}{\partial t_0} + \varepsilon^2 \frac{\partial \theta_k}{\partial t_2}\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2\theta_k}{dt^2} = \left( \frac{\partial}{\partial t_0} + \varepsilon^2 \frac{\partial}{\partial t_2} \right)^2 \theta_k = \frac{\partial^2 \theta_k}{\partial t_0^2} + 2\varepsilon^2 \frac{\partial^2 \theta_k}{\partial t_0 \partial t_2} + \dots\]</div>
+<p>while</p>
+<div class="math notranslate nohighlight">
+\[\sin \theta = \varepsilon \theta_1 + \varepsilon^3 (\theta_3 - \frac{\theta_1^3}{6}) + \dots\]</div>
+<p>Substituting these series into the nonlinear pendulum equation and sorting by increasing powers of <span class="math notranslate nohighlight">\( \varepsilon \)</span>, we get:</p>
+<section id="mathcal-o-left-varepsilon-1-right-order">
+<h4><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^1\right) Order \)</span>:<a class="headerlink" href="#mathcal-o-left-varepsilon-1-right-order" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[0 = \frac{\partial^2 \theta_1}{\partial t_0^2} + \theta_1, \quad \theta_1(t_0 = 0, t_2 = 0) = 1, \quad \frac{\partial \theta_1}{\partial t_0}(t_0 = 0, t_2 = 0) = 0.\]</div>
+<p>Solving this,</p>
+<div class="math notranslate nohighlight">
+\[\theta_1(t) = A(t_2) \cos t_0 + B(t_2) \sin t_0, \quad A(0) = 1, \quad B(0) = 0.\]</div>
+<p>The formal dependence on the slow time <span class="math notranslate nohighlight">\( t_2 \)</span> allows the leading-order solution to be more general than in our original perturbation series solution. This is how the method accounts for the slow phase shift of the perturbed solution.</p>
+</section>
+<section id="mathcal-o-left-varepsilon-3-right-order">
+<h4><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^3\right) \)</span> Order:<a class="headerlink" href="#mathcal-o-left-varepsilon-3-right-order" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 \theta_3}{\partial t_0^2} + 2 \frac{\partial^2 \theta_1}{\partial t_0 \partial t_2} + \theta_3 - \frac{\theta_1^3}{6} = 0.\]</div>
+<p>Using the known form of <span class="math notranslate nohighlight">\( \theta_1 \)</span>, we deduce:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 \theta_3}{\partial t_0^2} + \theta_3 = -2 \frac{dA}{dt_2} \sin t_0 + 2 \frac{dB}{dt_2} \cos t_0 + \frac{1}{6} (A \cos t_0 + B \sin t_0)^3.\]</div>
+<p>To suppress secular terms, the coefficient of <span class="math notranslate nohighlight">\( e^{it} \)</span> and <span class="math notranslate nohighlight">\( e^{-it} \)</span> must be zero:</p>
+<div class="math notranslate nohighlight">
+\[0 = -\frac{dB}{dt_2} + i \frac{dA}{dt_2} + \frac{3}{48} (A - iB)^2 (A + iB).\]</div>
+<p>Separating into real and imaginary parts,</p>
+<div class="math notranslate nohighlight">
+\[\frac{dB}{dt_2} = \frac{1}{16} A(A^2 + B^2), \quad \frac{dA}{dt_2} = -\frac{1}{16} B(A^2 + B^2).\]</div>
+<p>This pair of coupled ODEs determines the slow evolution of the leading-order solution. Noting that</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt_2} (A^2 + B^2) = 0 \Rightarrow A^2 + B^2 = 1.\]</div>
+<p>Thus, the ODEs simplify to:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dB}{dt_2} = \frac{1}{16} A, \quad \frac{dA}{dt_2} = -\frac{1}{16} B.\]</div>
+<p>Solving these,</p>
+<div class="math notranslate nohighlight">
+\[A(t_2) = \cos \frac{t_2}{16}, \quad B(t_2) = \sin \frac{t_2}{16}.\]</div>
+<p>Thus, the slow-time behavior of the leading-order solution is:</p>
+<div class="math notranslate nohighlight">
+\[\theta_1(t) = \cos \frac{t_2}{16} \cos t_0 + \sin \frac{t_2}{16} \sin t_0 = \cos \left( t_0 - \frac{t_2}{16} \right) = \cos t \left( 1 - \frac{\varepsilon^2}{16} \right).\]</div>
+<p>The corresponding period is:</p>
+<div class="math notranslate nohighlight">
+\[T = 2\pi \left( 1 - \frac{\varepsilon^2}{16} \right) \approx 2\pi \left( 1 + \frac{\varepsilon^2}{16} \right),\]</div>
+<p>which matches the result derived from previous methods.</p>
+</section>
+<section id="theta-3-t-0-t-2-correction-term">
+<h4><span class="math notranslate nohighlight">\( \theta_3(t_0, t_2) \)</span> Correction Term<a class="headerlink" href="#theta-3-t-0-t-2-correction-term" title="Link to this heading">#</a></h4>
+<p>Solving for the correction term,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 \theta_3}{\partial t_0^2} + \theta_3 = \frac{1}{48} \left( [A - iB]^3 e^{3it_0} + [A + iB]^3 e^{-3it_0} \right).\]</div>
+<p>By solving for <span class="math notranslate nohighlight">\( \theta_3 \)</span>, we find:</p>
+<div class="math notranslate nohighlight">
+\[\theta_3(t_0, t_2) = -\frac{1}{192} \left( \cos^3 (t_0 - t_2/16) + A_3(t_2) \cos t_0 + B_3(t_2) \sin t_0 \right).\]</div>
+<p>Matching initial conditions,</p>
+<div class="math notranslate nohighlight">
+\[A_3(t_2) = \frac{1}{192}, \quad B_3(0) = 0.\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[\theta_3(t_0, t_2) = \frac{1}{192} \left( \cos (t_0 - t_2/16) - \cos^3 (t_0 - t_2/16) \right),\]</div>
+<p>which is consistent with the regular perturbation series - but without the secular terms!</p>
+</section>
+</section>
+<section id="van-der-pol-application">
+<h3>Van der Pol Application<a class="headerlink" href="#van-der-pol-application" title="Link to this heading">#</a></h3>
+<p>Applying this method to the Van der Pol oscillator,</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x} + \varepsilon (x^2 - 1) \dot{x} + x = 0, \quad t &gt; 0, \quad \text{with } \varepsilon \ll 0\]</div>
+<p>subject to:</p>
+<div class="math notranslate nohighlight">
+\[x(0) = 1, \quad \dot{x}(0) = 0.\]</div>
+<p>Treating the problem as a regular one yields the approximation:</p>
+<div class="math notranslate nohighlight">
+\[x(t, \varepsilon) \approx \cos t + \varepsilon \left[ \frac{3}{8} \left(t \cos t - \sin t\right) - \frac{1}{32} \left(\sin 3t - 3 \sin t\right) \right].\]</div>
+<p>This expansion is asymptotic for fixed <span class="math notranslate nohighlight">\( t \)</span> as <span class="math notranslate nohighlight">\( \varepsilon \to 0 \)</span>, but breaks down when <span class="math notranslate nohighlight">\( t = \mathcal{O}\left(\varepsilon^{-1}\right) \)</span>. (It is, however, possible to prove that the expansion converges!)</p>
+<p>The problem with the naive approximation is that the <span class="math notranslate nohighlight">\( \varepsilon \)</span>-damping changes the amplitude of the oscillation on a time scale <span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^{-1}\right) \)</span> due to the slow accumulation of small effects. Thus, the oscillator has two processes acting on their own time scales:</p>
+<ol class="arabic simple">
+<li><p>The basic oscillation on the time scale of <span class="math notranslate nohighlight">\( \mathcal{O}\left(1\right) \)</span> due to inertia causing the restoring force to overshoot the equilibrium position.</p></li>
+<li><p>The slow drift in the amplitude (and possibly the phase) on the time scale <span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^{-1}\right) \)</span> due to small friction.</p></li>
+</ol>
+<p>We recognize these two time scales by introducing two time variables:</p>
+<div class="math notranslate nohighlight">
+\[\tau = t \quad \text{(the fast time of the oscillation)}\]</div>
+<div class="math notranslate nohighlight">
+\[T = \varepsilon t \quad \text{(the slow time of the amplitude drift)}\]</div>
+<p>The slowly changing features will then be combined into factors that are functions of <span class="math notranslate nohighlight">\( T \)</span>, while the rapidly changing features will be combined into factors that are functions of <span class="math notranslate nohighlight">\( \tau \)</span>. Thus, we look for a solution of the form:</p>
+<div class="math notranslate nohighlight">
+\[x(t; \varepsilon) = X(T, \tau; \varepsilon).\]</div>
+<p>As real time <span class="math notranslate nohighlight">\( t \)</span> increases, the fast time <span class="math notranslate nohighlight">\( \tau \)</span> increases at the same rate, while the slow time <span class="math notranslate nohighlight">\( T \)</span> increases slowly. Thus,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt} = \frac{\partial}{\partial \tau} + \varepsilon \frac{\partial}{\partial T}.\]</div>
+<p>We now seek an asymptotic approximation for <span class="math notranslate nohighlight">\( x \)</span> allowing for changes over the long time scale. Thus, we pose:</p>
+<div class="math notranslate nohighlight">
+\[x(t; \varepsilon) \approx X_0(T, \tau) + \varepsilon X_1(T, \tau)\]</div>
+<p>with the requirement that the expansion be asymptotic for <span class="math notranslate nohighlight">\( T = O(1) \)</span>. Substituting into the governing equation and comparing coefficients of <span class="math notranslate nohighlight">\( \varepsilon^n \)</span>, we find a sequence of problems.</p>
+<section id="mathcal-o-left-varepsilon-0-right-order">
+<h4><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^0\right) \)</span> order:<a class="headerlink" href="#mathcal-o-left-varepsilon-0-right-order" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 X_0}{\partial \tau^2} + X_0 = 0, \quad t &gt; 0\]</div>
+<p>with initial conditions:</p>
+<div class="math notranslate nohighlight">
+\[X_0(0) = 1, \quad \frac{\partial X_0}{\partial \tau}(0) = 0.\]</div>
+<p>Integrating with respect to <span class="math notranslate nohighlight">\( \tau \)</span>, treating <span class="math notranslate nohighlight">\( T \)</span> as an independent variable held constant, we obtain the general solution:</p>
+<div class="math notranslate nohighlight">
+\[X_0 = R(T) \cos (\tau + \theta(T)),\]</div>
+<p>where <span class="math notranslate nohighlight">\( R \)</span> and <span class="math notranslate nohighlight">\( \theta \)</span> are constant as far as the rapid <span class="math notranslate nohighlight">\( \tau \)</span> variations are concerned but are allowed to vary over the long <span class="math notranslate nohighlight">\( T \)</span> time scale. The initial conditions give:</p>
+<div class="math notranslate nohighlight">
+\[R(0) = 1, \quad \theta(0) = 0.\]</div>
+<p>Except for this information, <span class="math notranslate nohighlight">\( R \)</span> and <span class="math notranslate nohighlight">\( \theta \)</span> are unknown in the leading order analysis. Knowing that the amplitude is controlled by the action of the small friction over a long time, we must proceed to the next order.</p>
+</section>
+<section id="id2">
+<h4><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^1\right) \)</span> Order:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 X_1}{\partial \tau^2} + X_1 = -(X_0^3 - X_0).\]</div>
+<p>Substituting the leading order solution:</p>
+<div class="math notranslate nohighlight">
+\[2 R \frac{d\theta}{dT} \cos (\tau + \theta) + \left( 2 \frac{dR}{dT} + \frac{3}{4} R^3 - R \right) \sin (\tau + \theta) + \frac{1}{4} R^3 \sin 3(\tau + \theta) = 0.\]</div>
+<p>To maintain the asymptotic validity of the expansion, we must eliminate secular terms that grow unboundedly. This leads to the solvability conditions:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\theta}{dT} = 0, \quad \frac{dR}{dT} = \frac{1}{8} R (4 -  R^2).\]</div>
+<p>Using the initial conditions:</p>
+<div class="math notranslate nohighlight">
+\[\theta = 0, \quad R = 2(1 + 3e^{-T})^{-1/2}.\]</div>
+<p>Thus, eventually, the amplitude of the oscillator drifts to 2. Note that the amplitude and phase of the leading order term are fully determined in the next order problem by ensuring that the correction term does not break the asymptotic validity; it is not necessary to explicitly find the correction term.</p>
+<p>However, the correction term can still be found and is given by:</p>
+<div class="math notranslate nohighlight">
+\[X_1 = -\frac{1}{32} R^3 \sin 3\tau + S(T) \sin (\tau + \theta(T)),\]</div>
+<p>where <span class="math notranslate nohighlight">\( S(T) \)</span> and <span class="math notranslate nohighlight">\( \theta(T) \)</span> are new unknown amplitude and phase functions.</p>
+<p>The amplitude drifts on the time scale <span class="math notranslate nohighlight">\( \mathcal{O}\left(1\right) \)</span>, while the phase drifts on the longer time scale <span class="math notranslate nohighlight">\( O(\varepsilon^{-2}) \)</span>. In this example, by the time the phase has shifted significantly, the amplitude has already decayed considerably.</p>
+<p>In general, when working at <span class="math notranslate nohighlight">\( \mathcal{O}\left(k\right) \)</span> on a time scale <span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^{-n}\right) \)</span>, one must expect a <strong>hierarchy of <span class="math notranslate nohighlight">\( n \)</span> slow time scales</strong>. Some of these slow time scales represent genuinely different physical processes, while others may simply be <strong>adjustments to a previous process</strong>, such as frequency corrections, which are often better handled using coordinate straining.</p>
+</section>
+<section id="initial-conditions">
+<h4>Initial Conditions<a class="headerlink" href="#initial-conditions" title="Link to this heading">#</a></h4>
+<p>The unknown functions <span class="math notranslate nohighlight">\( S(T) \)</span> and <span class="math notranslate nohighlight">\( \theta(T) \)</span> satisfy the initial conditions:</p>
+<div class="math notranslate nohighlight">
+\[S(0) = -\frac{9}{32}, \quad \theta(0) = 0.\]</div>
+<p>These new amplitude and phase functions will ultimately be determined by the <strong>secularity condition</strong> in the <span class="math notranslate nohighlight">\( O(\varepsilon) \)</span> problem.</p>
+</section>
+<section id="breakdown-of-asymptotics-at-higher-orders">
+<h4>Breakdown of Asymptotics at Higher Orders<a class="headerlink" href="#breakdown-of-asymptotics-at-higher-orders" title="Link to this heading">#</a></h4>
+<p>At higher orders, resonant forcing may become <strong>unavoidable</strong> due to insufficient freedom in the undetermined functions. This leads to a <strong>loss of asymptotic validity</strong>.</p>
+<p>This is precisely what occurs in the <strong>Van der Pol oscillator</strong> when attempting to determine <span class="math notranslate nohighlight">\( X_2 \)</span> at <span class="math notranslate nohighlight">\( O(\varepsilon) \)</span> for <span class="math notranslate nohighlight">\( t = O(\varepsilon^{-1}) \)</span>. The issue can be resolved by introducing an <strong>additional slow time scale</strong>:</p>
+<div class="math notranslate nohighlight">
+\[T_2 = \varepsilon^2 t.\]</div>
+</section>
+</section>
 </section>
 <hr class="docutils" />
+<section id="other-semi-analytic-methods">
+<h2>Other Semi-Analytic Methods<a class="headerlink" href="#other-semi-analytic-methods" title="Link to this heading">#</a></h2>
 <section id="energy-methods-averaging">
 <h3>Energy Methods (Averaging)<a class="headerlink" href="#energy-methods-averaging" title="Link to this heading">#</a></h3>
 <ul>
@@ -561,47 +712,32 @@ The Van der Pol oscillator is often used to study synchronization phenomena in c
 <li><p>This method provides an approximate frequency and amplitude of oscillations.</p></li>
 </ul>
 </section>
-<hr class="docutils" />
-<section id="phase-plane-analysis">
-<h3>Phase Plane Analysis<a class="headerlink" href="#phase-plane-analysis" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Analyze the system in the <span class="math notranslate nohighlight">\((x, y)\)</span>-plane (phase plane) by studying trajectories and nullclines:</p>
-<ul>
-<li><p>Nullclines: <span class="math notranslate nohighlight">\(y = 0\)</span> and <span class="math notranslate nohighlight">\(y = x/(1 - x^2)\)</span> for large <span class="math notranslate nohighlight">\(\mu\)</span>.</p></li>
-<li><p>Identify fixed points, stability, and the shape of the limit cycle.</p></li>
-</ul>
-</li>
-<li><p>Construct approximate solutions based on the geometric properties of the phase plane.</p></li>
-</ul>
 </section>
 <hr class="docutils" />
-<section id="limit-cycle-analysis">
-<h3>Limit Cycle Analysis<a class="headerlink" href="#limit-cycle-analysis" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Analyze the <strong>existence</strong> and <strong>stability</strong> of the limit cycle using tools like:</p>
-<ul>
-<li><p><strong>Poincaré-Bendixson Theorem:</strong> Guarantees a periodic orbit for planar systems under certain conditions.</p></li>
-<li><p><strong>Jacobian Stability Analysis:</strong> Study the linearized system around fixed points.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="lagrangian-and-hamiltonian-formulations">
-<h3>Lagrangian and Hamiltonian Formulations<a class="headerlink" href="#lagrangian-and-hamiltonian-formulations" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Construct approximate Lagrangian or Hamiltonian descriptions for specific parameter regimes.</p></li>
-<li><p>For small <span class="math notranslate nohighlight">\(\mu\)</span>, the system resembles a slightly damped harmonic oscillator.</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="applicability">
-<h3>Applicability<a class="headerlink" href="#applicability" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Analytical methods often provide insight into system behavior (e.g., limit cycles, stability) rather than exact solutions.</p></li>
-<li><p>Numerical simulations are usually required to validate or refine approximations.</p></li>
-</ul>
-</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<div class="admonition-exercises-with-ode-solvers admonition">
+<p class="admonition-title">Exercises with ODE solvers</p>
+<p>1. Get some numerical solutions out of Python, what does the time series for the Van der Pol Oscillator look like?</p>
+<p>2. Get a phase portrait out and look at small <span class="math notranslate nohighlight">\(\mu\)</span> (where daqmped oscillator solutions are valid) and large <span class="math notranslate nohighlight">\(\mu\)</span> results (damped oscillator solutions are not valid) - what conclusions can we draw?</p>
+<p>3. The forced Van der Pol oscillator includes an external driving term:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2x}{\mathrm{d}t^2} - \mu(1 - x^2)\frac{\mathrm{d}x}{\mathrm{d}t} + x = F\cos(\Omega t),\]</div>
+<p>where <span class="math notranslate nohighlight">\(F\)</span> is the forcing amplitude and <span class="math notranslate nohighlight">\(\Omega\)</span> is the forcing frequency.</p>
+<p>How does adding in a forcing term change the dynamics of this system? Add this to your code and compare.</p>
+<p>4. Look over the different projects, which one will you start working on?</p>
+<p>Develop some simple code which produces some <strong>useable</strong> numerical results for your prototype. <em>(Due in Thursday Feb 13th, 2pm).</em>  We will use this as a starting point for the project! Recall you only need to pick one of the following equations:</p>
+<p><strong>Duffing Oscillator</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2x}{\mathrm{d}t^2} + \delta \frac{\mathrm{d}x}{\mathrm{d}t} + \alpha x + \beta x^3 = \gamma \cos(\omega t)\]</div>
+<p><strong>Ermakov-Pinney Equation</strong></p>
+<div class="math notranslate nohighlight">
+\[{\mathrm{d}^{2}x \over \mathrm{d}t^{2}}+\omega(t)^{2}x={\frac {h(t)^{2}}{x^{3}}}\]</div>
+<p><strong>Thomas-Fermi Equation</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac {\mathrm{d}^{2}y}{\mathrm{d}x^{2}}&amp;={\frac {1}{\sqrt {x}}}y^{3/2}\\
+y(0) = 1, &amp;\quad  y(\infty) = 0,  \text{for neutral atoms},\end{split}\]</div>
+</div>
 </section>
 </section>
 
@@ -662,21 +798,33 @@ The Van der Pol oscillator is often used to study synchronization phenomena in c
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-formulation">Mathematical Formulation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics">Dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forced-van-der-pol-oscillator">Forced Van der Pol Oscillator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-parameters">Example Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">Solutions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbative-methods">Perturbative Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-multiple-scales">Method of Multiple Scales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rationale">Rationale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-pendulum">Non-linear Pendulum</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-o-left-varepsilon-1-right-order"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^1\right) Order \)</span>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-o-left-varepsilon-3-right-order"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^3\right) \)</span> Order:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#theta-3-t-0-t-2-correction-term"><span class="math notranslate nohighlight">\( \theta_3(t_0, t_2) \)</span> Correction Term</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-pol-application">Van der Pol Application</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-o-left-varepsilon-0-right-order"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^0\right) \)</span> order:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^1\right) \)</span> Order:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions">Initial Conditions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#breakdown-of-asymptotics-at-higher-orders">Breakdown of Asymptotics at Higher Orders</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-semi-analytic-methods">Other Semi-Analytic Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-methods-averaging">Energy Methods (Averaging)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slow-fast-decomposition">Slow-Fast Decomposition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-balance">Harmonic Balance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-plane-analysis">Phase Plane Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-cycle-analysis">Limit Cycle Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-and-hamiltonian-formulations">Lagrangian and Hamiltonian Formulations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applicability">Applicability</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
   </nav></div>
 
