@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Solution (4.12)" href="2d_arrays_extra_answers.html" />
-    <link rel="prev" title="Solutions" href="2d_arrays_answers.html" />
+    <link rel="next" title="5. Cellular Automata" href="../cellular_automata/cellular_automata_intro.html" />
+    <link rel="prev" title="4.3. Workshop 4: Modelling Space" href="2d_arrays.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -304,11 +304,6 @@ const thebe_selector_output = ".output, .cell_output"
        Solutions (3.13)
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../functions/functions_extra_answers.html">
-       Solutions
-      </a>
-     </li>
     </ul>
    </li>
   </ul>
@@ -328,39 +323,15 @@ const thebe_selector_output = ".output, .cell_output"
      4.2. Notes
     </a>
    </li>
-   <li class="toctree-l2 has-children">
+   <li class="toctree-l2">
     <a class="reference internal" href="2d_arrays.html">
      4.3. Workshop
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-    <label for="toctree-checkbox-11">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="2d_arrays_answers.html">
-       Solutions
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toctree-l2 current active has-children">
+   <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      4.4. Exercises
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-    <label for="toctree-checkbox-12">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="2d_arrays_extra_answers.html">
-       Solution (4.12)
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -571,31 +542,37 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1><span class="section-number">4.4. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
-<div class="exercise admonition" id="ex_2d_arrays_downsampling">
+<!--
+:::{exercise}
+:label: ex_2d_arrays_downsampling
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.12 </span></p>
-<section id="exercise-content">
-<p>Downsampling is the process of reducing the size of an image. For example, Downsampling by a factor of 2 would reduce a 10 by 10 image to a 5 by 5 image. One way to do this is to divide the image into 2 x 2 blocks and calculate the average of each block as in <a class="reference internal" href="#downsampling-fig"><span class="std std-numref">Fig. 4.9</span></a>.</p>
-<figure class="align-default" id="downsampling-fig">
-<a class="reference internal image-reference" href="../_images/downsampling.jpg"><img alt="../_images/downsampling.jpg" src="../_images/downsampling.jpg" style="height: 150px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.9 </span><span class="caption-text">Downsampling a 4 by 4 array by a factor of 2 by averaging 2 by 2 blocks.</span><a class="headerlink" href="#downsampling-fig" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<ol class="simple">
-<li><p>Write code which downsamples the falling cat image by a factor of 2.</p></li>
-<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">downsample(x,</span> <span class="pre">k)</span></code> which downsamples the array <code class="docutils literal notranslate"><span class="pre">x</span></code> by a factor <code class="docutils literal notranslate"><span class="pre">k</span></code>. Test your function against the falling cat image for various values of <code class="docutils literal notranslate"><span class="pre">k</span></code>.</p></li>
-</ol>
-<p>Upsampling is the reverse process. For example, upsampling by a factor of 2 would increase a 10 by 10 image to a 20 by 20 image. This can be achieved by repeating each element in 2 by 2 blocks as in <a class="reference internal" href="#upsampling-fig"><span class="std std-numref">Fig. 4.10</span></a>.</p>
-<figure class="align-default" id="upsampling-fig">
-<a class="reference internal image-reference" href="../_images/upsampling.jpg"><img alt="../_images/upsampling.jpg" src="../_images/upsampling.jpg" style="height: 150px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.10 </span><span class="caption-text">Upsampling a 4 by 4 array by a factor of 2 by repeating each element in 2 by 2 blocks.</span><a class="headerlink" href="#upsampling-fig" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>3. Write a function <code class="docutils literal notranslate"><span class="pre">upsample(x,</span> <span class="pre">k)</span></code> which upsamples the array <code class="docutils literal notranslate"><span class="pre">x</span></code> by a factor <code class="docutils literal notranslate"><span class="pre">k</span></code>. Test your function against the falling cat image for various values of <code class="docutils literal notranslate"><span class="pre">k</span></code>.</p>
-</section>
-</div>
+Downsampling is the process of reducing the size of an image. For example, Downsampling by a factor of 2 would reduce a 10 by 10 image to a 5 by 5 image. One way to do this is to divide the image into 2 x 2 blocks and calculate the average of each block as in {numref}`downsampling-fig`.
+
+```{figure} downsampling.jpg
+---
+height: 150px
+name: downsampling-fig
+---
+Downsampling a 4 by 4 array by a factor of 2 by averaging 2 by 2 blocks.
+```
+
+1. Write code which downsamples the falling cat image by a factor of 2.
+2. Write a function `downsample(x, k)` which downsamples the array `x` by a factor `k`. Test your function against the falling cat image for various values of `k`.
+
+Upsampling is the reverse process. For example, upsampling by a factor of 2 would increase a 10 by 10 image to a 20 by 20 image. This can be achieved by repeating each element in 2 by 2 blocks as in {numref}`upsampling-fig`.
+
+```{figure} upsampling.jpg
+---
+height: 150px
+name: upsampling-fig
+---
+Upsampling a 4 by 4 array by a factor of 2 by repeating each element in 2 by 2 blocks.
+```
+
+3\. Write a function `upsample(x, k)` which upsamples the array `x` by a factor `k`. Test your function against the falling cat image for various values of `k`.
+
+:::
+-->
 <section id="scalar-fields">
 <h2>Scalar Fields<a class="headerlink" href="#scalar-fields" title="Permalink to this headline">#</a></h2>
 <p>A scalar field is a mapping which associates a number with points in space. Examples of scalar fields area atmospheric pressure (measured in millibars) of points in a geographical area, or  the temperature (in Kelvin) of points in a 3 dimensional solid body.</p>
@@ -617,7 +594,7 @@ title="Print to PDF"
 </div>
 <div class="exercise admonition" id="2d_arrays_scalar_field">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.13 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.12 </span></p>
 <section id="exercise-content">
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">height(x,</span> <span class="pre">y)</span></code> which returns the value of <span class="math notranslate nohighlight">\(f\)</span> evaluated at position <span class="math notranslate nohighlight">\(x, y\)</span>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -636,9 +613,9 @@ title="Print to PDF"
 <p>Check that your function works for the two cases above, and write a third test case of your choice.</p>
 </section>
 </div>
-<div class="exercise admonition" id="2d_arrays/2d_arrays_extra-exercise-2">
+<div class="exercise admonition" id="2d_arrays/2d_arrays_extra-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.14 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.13 </span></p>
 <section id="exercise-content">
 <p>Create a 10 by 10 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array <code class="docutils literal notranslate"><span class="pre">z</span></code> which contains the values of the scalar field in the region <span class="math notranslate nohighlight">\(-2 &lt; x &lt; 2\)</span> and <span class="math notranslate nohighlight">\(-2 &lt; y &lt; 2\)</span>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
@@ -683,24 +660,22 @@ plt.legend()
 <img alt="../_images/2d_arrays_extra_6_2.png" src="../_images/2d_arrays_extra_6_2.png" />
 </div>
 </div>
-<div class="exercise admonition" id="2d_arrays/2d_arrays_extra-exercise-3">
+<div class="exercise admonition" id="2d_arrays/2d_arrays_extra-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.15 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.14 </span></p>
 <section id="exercise-content">
 <p>Plot a graph showing three cross-sections for fixed <span class="math notranslate nohighlight">\(x\)</span>, and another graph with three cross-sections for fixed <span class="math notranslate nohighlight">\(y\)</span>. You may choose the values of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
 </section>
 </div>
-<div class="exercise admonition" id="2d_arrays/2d_arrays_extra-exercise-4">
+<div class="exercise admonition" id="2d_arrays/2d_arrays_extra-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.16 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.15 </span></p>
 <section id="exercise-content">
 <p>The file <a href="../modelling_space/pressure_2d.txt" download>pressure_2d.txt</a> contains the pressure (in millibars) in a 2-dimensional square region. Download the file then use the function <code class="docutils literal notranslate"><span class="pre">np.loadtxt</span></code> to load the data into an array.</p>
 <p>Use the techniques you have learnt to investigate the scalar field defined by this data. How many local maxima (peaks) and minima (troughs) are there? What are there co-ordinates and what is the value of the pressure at these points?</p>
 </section>
 </div>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -730,17 +705,17 @@ plt.legend()
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="2d_arrays_answers.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="2d_arrays.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Solutions</p>
+            <p class="prev-next-title"><span class="section-number">4.3. </span>Workshop 4: Modelling Space</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="2d_arrays_extra_answers.html" title="next page">
+    <a class='right-next' id="next-link" href="../cellular_automata/cellular_automata_intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solution (4.12)</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Cellular Automata</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
