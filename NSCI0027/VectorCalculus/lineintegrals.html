@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
   
@@ -397,7 +397,7 @@ before finally integrating:</p>
 <p>which we call a <em>vector line integral</em>.  This is an integral through coordinate space along a contour, here denoted <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>.</p>
 <p>For some vector field:</p>
 <div class="math notranslate nohighlight">
-\[{\bf F(r)} = \hat{\bf x}\,P({\bf r}) +\hat{\bf y}\,Q({\bf r}) +\hat{\bf z}\,R({\bf r})\]</div>
+\[{\bf F(r)} = \mathrm{e_x}\,P({\bf r}) +\mathrm{e_y}\,Q({\bf r}) +\mathrm{e_z}\,R({\bf r})\]</div>
 <p>this simplifies to:</p>
 <div class="math notranslate nohighlight">
 \[\int_{\mathcal{C}} {\bf F(r)} \cdot \mathrm{d}\mathbf{r}= \int_{\,\mathcal{C}} \left(F\,\mathrm{d}x + G\,\mathrm{d}y + R\,\mathrm{d}z \right)\]</div>
@@ -407,7 +407,7 @@ before finally integrating:</p>
 \[\int_{\mathcal{C}} f(r)\, \mathrm{d}r\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathrm{d}r\)</span> is the infinitesimal arc length element, which is given by:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathrm{d} \mathbf{r}&amp;= \hat{\bf x}\,\mathrm{d}x +\hat{\bf y}\,\mathrm{d}y +\hat{\bf z}\,\mathrm{d}z\\
+\[\begin{split}\mathrm{d} \mathbf{r}&amp;= \mathrm{e_x}\,\mathrm{d}x +\mathrm{e_y}\,\mathrm{d}y +\mathrm{e_z}\,\mathrm{d}z\\
 \mathrm{d} r &amp;= |\mathrm{d} {\bf r}|= \sqrt{\mathrm{d}x^2 + \mathrm{d}y^2 + \mathrm{d}z^2}\end{split}\]</div>
 <p>If we pick a closed path through the vector field, we call this a <strong>loop integral</strong>:</p>
 <div class="math notranslate nohighlight">
@@ -443,9 +443,9 @@ to describe using just <span class="math notranslate nohighlight">\(x,\,y\)</spa
 <li><p>For straight lines over points <span class="math notranslate nohighlight">\((x_0,\, y_0,\, z_0)\)</span> to <span class="math notranslate nohighlight">\((x_1,\, y_1,\, z_1)\)</span>, we can parameterise this contour using:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\begin{split}x &amp;= x_1 (1-t) + x_1 t\\
-y &amp;= y_1 (1-t) + y_1 t\\
-z &amp;= z_1 (1-t) + z_1 t\end{split}\]</div>
+\[\begin{split}x &amp;= x_0 (1-t) + x_1 t\\
+y &amp;= y_0 (1-t) + y_1 t\\
+z &amp;= z_0 (1-t) + z_1 t\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(0 \leq t \leq 1\)</span>.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Worked example</p>
@@ -504,7 +504,7 @@ expression simplify:</p>
 \int_{\mathcal{C}} {\bf F}({\bf r})\cdot \mathrm{d}\mathbf{r}= \int_{t=a}^{t=b} \left({\bf F}({\bf r}(t))\cdot\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} \right)\,\mathrm{d}t\end{split}\]</div>
 <p>where the infinitesimal coordinate vector derivatives are given by:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} &amp;= \hat{\bf x}\,\frac{\mathrm{d}x}{\mathrm{d}t} + \hat{\bf y}\,\frac{\mathrm{d}y}{\mathrm{d}t} + \hat{\bf z}\,\frac{\mathrm{d}z}{\mathrm{d}t}\\
+\[\begin{split}\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} &amp;= \mathrm{e_x}\,\frac{\mathrm{d}x}{\mathrm{d}t} + \mathrm{e_y}\,\frac{\mathrm{d}y}{\mathrm{d}t} + \mathrm{e_z}\,\frac{\mathrm{d}z}{\mathrm{d}t}\\
 \frac{\mathrm{d}r}{\mathrm{d}t} &amp;= \left|\frac{\mathrm{d}{\bf r}}{\mathrm{d}t}  \right| = \sqrt{\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}y}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}z}{\mathrm{d}t}\right)^2}\end{split}\]</div>
 <div class="seealso admonition">
 <p class="admonition-title">Worked examples</p>
@@ -547,7 +547,7 @@ y &amp;= \sin(\theta)\end{split}\]</div>
 </figure>
 <p>We can see that the distance for contour (a) is shorter than for contour (b) and since the scalar function is <span class="math notranslate nohighlight">\(x^2\)</span> along
 both contours, the integral is the weighted sum of <span class="math notranslate nohighlight">\(x^2\)</span> along each of these lengths, hence it makes sense that <span class="math notranslate nohighlight">\(I_a &lt; I_b\)</span>.</p>
-<p>2. Evaluate the vector line integral <span class="math notranslate nohighlight">\(\int_{\mathcal{C}} {\bf F}\cdot \mathrm{d}{\bf r}\)</span> for <span class="math notranslate nohighlight">\({\bf F} = xz\,\hat{\bf x} - yz\,\hat{\bf z}\)</span>
+<p>2. Evaluate the vector line integral <span class="math notranslate nohighlight">\(\int_{\mathcal{C}} {\bf F}\cdot \mathrm{d}{\bf r}\)</span> for <span class="math notranslate nohighlight">\({\bf F} = xz\,\mathrm{e_x} - yz\,\mathrm{e_z}\)</span>
 along the line linking <span class="math notranslate nohighlight">\((-1,\,2,\,0) \rightarrow (3,\,0,\,1)\)</span>.</p>
 <p>Here we need a parameterise the line over <span class="math notranslate nohighlight">\(0 \leq t \leq 1\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -556,8 +556,8 @@ y &amp;= y_0(1-t) + y_1 t = 2(1-t) + 0(t) = 2-2t\\
 z &amp;= z_0(1-t) + z_1 t = 0(1-t) + 1(t) = t\end{split}\]</div>
 <p>Using this we can rewrite the variables in terms of <span class="math notranslate nohighlight">\(t\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}{\bf F} &amp;= t(4t-1)\,\hat{\bf x} - t(2-2t)\,\hat{\bf z}\\
-\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} &amp;= 4\,\hat{\bf x} -2\,\hat{\bf y} + \hat{\bf z}\end{split}\]</div>
+\[\begin{split}{\bf F} &amp;= t(4t-1)\,\mathrm{e_x} - t(2-2t)\,\mathrm{e_z}\\
+\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} &amp;= 4\,\mathrm{e_x} -2\,\mathrm{e_y} + \mathrm{e_z}\end{split}\]</div>
 <p>and so we can find the dot product:</p>
 <div class="math notranslate nohighlight">
 \[{\bf F}\cdot \frac{\mathrm{d}{\bf r}}{\mathrm{d}t} = 4(4t^2-t) - 2t(1-t) = 18t^2 - 6t\]</div>
@@ -572,7 +572,7 @@ z &amp;= z_0(1-t) + z_1 t = 0(1-t) + 1(t) = t\end{split}\]</div>
 \[\begin{split}{\bf G(r)} = \begin{pmatrix} xy\\ -y^2 \end{pmatrix}\end{split}\]</div>
 <p>over the following contours:</p>
 <p>a. Straight line path <span class="math notranslate nohighlight">\((0,\,0) \rightarrow (1,\, 2)\)</span></p>
-<p>The path followed can be parameterised over <span class="math notranslate nohighlight">\(0\ leq t \leq 1\)</span> by:</p>
+<p>The path followed can be parameterised over <span class="math notranslate nohighlight">\(0 \leq t \leq 1\)</span> by:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}x &amp;= x_0(1-t) + x_1t = 0(1-t) + 1t = t\\
 y &amp;= y_0(1-t) + y_1t = 0(1-t) + 2t = 2t\end{split}\]</div>

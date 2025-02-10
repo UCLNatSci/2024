@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
   
@@ -385,7 +385,7 @@ document.write(`
 <p>Although we are used to find the area under a curve from the integral of a function <span class="math notranslate nohighlight">\(f(x)\)</span> over some limits <span class="math notranslate nohighlight">\(x \in [a,\, b]\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[A = \int_a^b f(x)\,\mathrm{d}x\]</div>
-<p>we could think about area of a space a difference way.  Suppose we had a revion described by some boundary function <span class="math notranslate nohighlight">\(B(x,\,y)\)</span>, as depicted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">infinitesimalarea</span></code>:</p>
+<p>we could think about area of a space a difference way.  Suppose we had a revion described by some boundary function <span class="math notranslate nohighlight">\(B(x,\,y)\)</span>, as depicted in <a class="reference internal" href="#infinitesimalarea"><span class="std std-numref">Fig. 4.1</span></a>:</p>
 <figure class="align-default" id="infinitesimalarea">
 <img alt="../_images/infinitesimalarea.png" src="../_images/infinitesimalarea.png" />
 <figcaption>
@@ -421,7 +421,7 @@ an area <em>weighed</em> by the function <span class="math notranslate nohighlig
 variables (this can happen as when the integration is done, all the other variables are considered constant).</p>
 <div class="seealso admonition">
 <p class="admonition-title">Worked example</p>
-<p>Lets think about a flat 2D sheet with some density <span class="math notranslate nohighlight">\(\sigma(x,\,y)\)</span> (mass per unit area), as depcited in <code class="xref std std-numref docutils literal notranslate"><span class="pre">areaintegral</span></code>,</p>
+<p>Lets think about a flat 2D sheet with some density <span class="math notranslate nohighlight">\(\sigma(x,\,y)\)</span> (mass per unit area), as depcited in <a class="reference internal" href="#areaintegral"><span class="std std-numref">Fig. 4.2</span></a>,</p>
 <figure class="align-default" id="areaintegral">
 <img alt="../_images/areaintegral.png" src="../_images/areaintegral.png" />
 <figcaption>
@@ -458,7 +458,7 @@ variables (this can happen as when the integration is done, all the other variab
 <h3><span class="section-number">4.1.1. </span>Non-constant limits<a class="headerlink" href="#non-constant-limits" title="Link to this heading">#</a></h3>
 <p>Sometimes however we have to deal with boundaries that are not constant (at least in the coordinate system, e.g. a circular arc can be described with constant in
 polar coordinates, but the Cartesian coordinates would be varying).</p>
-<p>Think about a straight line boundary but now one at an angle, as depicted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">areaintegraltriangle</span></code>.</p>
+<p>Think about a straight line boundary but now one at an angle, as depicted in <a class="reference internal" href="#areaintegraltriangle"><span class="std std-numref">Fig. 4.3</span></a>.</p>
 <figure class="align-default" id="areaintegraltriangle">
 <img alt="../_images/areaintegraltriangle.png" src="../_images/areaintegraltriangle.png" />
 <figcaption>
@@ -478,7 +478,7 @@ polar coordinates, but the Cartesian coordinates would be varying).</p>
 &amp;= \int_0^{1}\,\mathrm{d}y\,\Big[x\Big]_0^{1-y} = \int_0^1 (1-y)\,\mathrm{d}y = \left[y - \frac{1}{2}y^2\right]_0^1 = \frac{1}{2}\end{split}\]</div>
 <p>So the order of the integration does matter in this example - if we did the <span class="math notranslate nohighlight">\(x\)</span> integral first, the final result would appear to depend on <span class="math notranslate nohighlight">\(x\)</span>, which the area here clearly cannot.</p>
 <p>In fact the choice of coordinates we choose will not change the value of the integral either, lets look at doing these sorts of integral in polar
-coordinates, given <span class="math notranslate nohighlight">\(y^2 + x^2 = R^2\)</span> for <span class="math notranslate nohighlight">\(y \geq 0\)</span>, as depicted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">semicircle</span></code>:</p>
+coordinates, given <span class="math notranslate nohighlight">\(y^2 + x^2 = R^2\)</span> for <span class="math notranslate nohighlight">\(y \geq 0\)</span>, as depicted in <a class="reference internal" href="#semicircle"><span class="std std-numref">Fig. 4.4</span></a>:</p>
 <figure class="align-default" id="semicircle">
 <img alt="../_images/semicircle.png" src="../_images/semicircle.png" />
 <figcaption>
@@ -499,7 +499,7 @@ we have to find:</p>
 <p>giving the result we expect!</p>
 <div class="seealso dropdown admonition">
 <p class="admonition-title">Further worked examples</p>
-<p>1. Lets look a more involved example, <span class="math notranslate nohighlight">\(f(x,\,y) = x^2 + 2xy\)</span> and we are interested in an area over a triangle, as depicted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">areaintegraltriangle</span></code>:</p>
+<p>1. Lets look a more involved example, <span class="math notranslate nohighlight">\(f(x,\,y) = x^2 + 2xy\)</span> and we are interested in an area over a triangle, as depicted in <a class="reference internal" href="#areaintegraltriangle"><span class="std std-numref">Fig. 4.3</span></a>:</p>
 <p>We see here that the limits of the two integrals cannot both be constant - upper limit of the <span class="math notranslate nohighlight">\(y\)</span> integral will change depending on the value of <span class="math notranslate nohighlight">\(x\)</span>
 (or vice-versa), hence <span class="math notranslate nohighlight">\(x \in[0,\, 1]\)</span> and <span class="math notranslate nohighlight">\(y \in [0,\, 1-x]\)</span> is one way to think about this area:</p>
 <div class="math notranslate nohighlight">
@@ -515,7 +515,7 @@ we have to find:</p>
 &amp;= \Bigg[\frac{1}{6}y^4 - \frac{1}{3}y^3 +\frac{1}{3}y\Bigg]_0^1 = \frac{1}{6}\end{split}\]</div>
 <p>2.
 This looks at a trickier set of limits, lets try and calculate the integral <span class="math notranslate nohighlight">\(I_A = \iint_A x^2y\,\mathrm{d}A\)</span> for an area composed of
-a rectangle and a semi-circle, as depicted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">areaintegralsemicircle</span></code>:</p>
+a rectangle and a semi-circle, as depicted in <a class="reference internal" href="#areaintegralsemicircle"><span class="std std-numref">Fig. 4.5</span></a>:</p>
 <figure class="align-default" id="areaintegralsemicircle">
 <img alt="../_images/areaintegralsemicircle.png" src="../_images/areaintegralsemicircle.png" />
 <figcaption>
@@ -558,7 +558,7 @@ function here also, e.g. to calculate a total mass from a density function:</p>
 </figure>
 <section id="id1">
 <h3><span class="section-number">4.2.1. </span>Non-constant limits<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>We can try to find three dimensional equivalent of the wedge in <code class="xref std std-numref docutils literal notranslate"><span class="pre">areaintegraltriangle</span></code>, with a space bounded by the coorindate axes as well as the plane</p>
+<p>We can try to find three dimensional equivalent of the wedge in <a class="reference internal" href="#areaintegraltriangle"><span class="std std-numref">Fig. 4.3</span></a>, with a space bounded by the coorindate axes as well as the plane</p>
 <div class="math notranslate nohighlight">
 \[x + y+ z = 1\]</div>
 <p>This might look confusing, but if we looks at each of the <span class="math notranslate nohighlight">\(x-y\)</span>, <span class="math notranslate nohighlight">\(x-z\)</span> and <span class="math notranslate nohighlight">\(y-z\)</span> planes we can see that this reduces to three lines:</p>

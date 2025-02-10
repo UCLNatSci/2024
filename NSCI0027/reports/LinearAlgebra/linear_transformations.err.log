@@ -48,9 +48,9 @@ def add_text(ax, x, y, s):
 ----- stderr -----
 <>:10: SyntaxWarning: invalid escape sequence '\l'
 <>:10: SyntaxWarning: invalid escape sequence '\l'
-/var/folders/c3/n_d053q94csd92r2k5pbc0cw0000gp/T/ipykernel_12108/1585843601.py:10: SyntaxWarning: invalid escape sequence '\l'
+/var/folders/c3/n_d053q94csd92r2k5pbc0cw0000gp/T/ipykernel_3575/1585843601.py:10: SyntaxWarning: invalid escape sequence '\l'
   fig.text(0.5, 0.4, "$\longrightarrow$", fontsize=30, ha="center")
-/var/folders/c3/n_d053q94csd92r2k5pbc0cw0000gp/T/ipykernel_12108/1585843601.py:10: SyntaxWarning: invalid escape sequence '\l'
+/var/folders/c3/n_d053q94csd92r2k5pbc0cw0000gp/T/ipykernel_3575/1585843601.py:10: SyntaxWarning: invalid escape sequence '\l'
   fig.text(0.5, 0.4, "$\longrightarrow$", fontsize=30, ha="center")
 ------------------
 

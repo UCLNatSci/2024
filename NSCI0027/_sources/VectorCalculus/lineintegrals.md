@@ -30,7 +30,7 @@ which we call a *vector line integral*.  This is an integral through coordinate 
 
 For some vector field:
 ```{math}
-{\bf F(r)} = \hat{\bf x}\,P({\bf r}) +\hat{\bf y}\,Q({\bf r}) +\hat{\bf z}\,R({\bf r})
+{\bf F(r)} = \mathrm{e_x}\,P({\bf r}) +\mathrm{e_y}\,Q({\bf r}) +\mathrm{e_z}\,R({\bf r})
 ```
 this simplifies to:
 ```{math}
@@ -46,7 +46,7 @@ We can also think about a *scalar line integral*:
 
 where $\mathrm{d}r$ is the infinitesimal arc length element, which is given by:
 ```{math}
-\mathrm{d} \mathbf{r}&= \hat{\bf x}\,\mathrm{d}x +\hat{\bf y}\,\mathrm{d}y +\hat{\bf z}\,\mathrm{d}z\\
+\mathrm{d} \mathbf{r}&= \mathrm{e_x}\,\mathrm{d}x +\mathrm{e_y}\,\mathrm{d}y +\mathrm{e_z}\,\mathrm{d}z\\
 \mathrm{d} r &= |\mathrm{d} {\bf r}|= \sqrt{\mathrm{d}x^2 + \mathrm{d}y^2 + \mathrm{d}z^2}
 ``` 
 
@@ -97,9 +97,9 @@ We can use some *standard* parameterisation schemes to capture all the relevant 
 
 - For straight lines over points $(x_0,\, y_0,\, z_0)$ to $(x_1,\, y_1,\, z_1)$, we can parameterise this contour using:
 ```{math}
-x &= x_1 (1-t) + x_1 t\\
-y &= y_1 (1-t) + y_1 t\\
-z &= z_1 (1-t) + z_1 t
+x &= x_0 (1-t) + x_1 t\\
+y &= y_0 (1-t) + y_1 t\\
+z &= z_0 (1-t) + z_1 t
 ```
 where $0 \leq t \leq 1$.  
 
@@ -172,7 +172,7 @@ expression simplify:
 ```
 where the infinitesimal coordinate vector derivatives are given by:
 ```{math}
-\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} &= \hat{\bf x}\,\frac{\mathrm{d}x}{\mathrm{d}t} + \hat{\bf y}\,\frac{\mathrm{d}y}{\mathrm{d}t} + \hat{\bf z}\,\frac{\mathrm{d}z}{\mathrm{d}t}\\
+\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} &= \mathrm{e_x}\,\frac{\mathrm{d}x}{\mathrm{d}t} + \mathrm{e_y}\,\frac{\mathrm{d}y}{\mathrm{d}t} + \mathrm{e_z}\,\frac{\mathrm{d}z}{\mathrm{d}t}\\
 \frac{\mathrm{d}r}{\mathrm{d}t} &= \left|\frac{\mathrm{d}{\bf r}}{\mathrm{d}t}  \right| = \sqrt{\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}y}{\mathrm{d}t}\right)^2 + \left(\frac{\mathrm{d}z}{\mathrm{d}t}\right)^2}
 ```
 
@@ -235,7 +235,7 @@ both contours, the integral is the weighted sum of $x^2$ along each of these len
 
 
 
-2\. Evaluate the vector line integral $\int_{\mathcal{C}} {\bf F}\cdot \mathrm{d}{\bf r}$ for ${\bf F} = xz\,\hat{\bf x} - yz\,\hat{\bf z}$ 
+2\. Evaluate the vector line integral $\int_{\mathcal{C}} {\bf F}\cdot \mathrm{d}{\bf r}$ for ${\bf F} = xz\,\mathrm{e_x} - yz\,\mathrm{e_z}$ 
 along the line linking $(-1,\,2,\,0) \rightarrow (3,\,0,\,1)$.
 
 Here we need a parameterise the line over $0 \leq t \leq 1$:
@@ -247,8 +247,8 @@ z &= z_0(1-t) + z_1 t = 0(1-t) + 1(t) = t
 
 Using this we can rewrite the variables in terms of $t$:
 ```{math}
-{\bf F} &= t(4t-1)\,\hat{\bf x} - t(2-2t)\,\hat{\bf z}\\
-\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} &= 4\,\hat{\bf x} -2\,\hat{\bf y} + \hat{\bf z}
+{\bf F} &= t(4t-1)\,\mathrm{e_x} - t(2-2t)\,\mathrm{e_z}\\
+\frac{\mathrm{d}{\bf r}}{\mathrm{d}t} &= 4\,\mathrm{e_x} -2\,\mathrm{e_y} + \mathrm{e_z}
 ```
 
 and so we can find the dot product:
@@ -273,7 +273,7 @@ over the following contours:
 
 a\. Straight line path $(0,\,0) \rightarrow (1,\, 2)$
 
-The path followed can be parameterised over $0\ leq t \leq 1$ by:
+The path followed can be parameterised over $0 \leq t \leq 1$ by:
 
 ```{math}
 x &= x_0(1-t) + x_1t = 0(1-t) + 1t = t\\

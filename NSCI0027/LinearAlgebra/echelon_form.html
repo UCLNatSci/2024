@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
   
@@ -393,8 +393,8 @@ document.write(`
 <section id="motivation">
 <h3><span class="section-number">10.1.1. </span>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h3>
 <p>Gaussian elimination is a systematic technique for solving systems of linear equations, which are of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2dd56b35-edc0-4260-8b23-c189b6f80f69">
-<span class="eqno">(10.1)<a class="headerlink" href="#equation-2dd56b35-edc0-4260-8b23-c189b6f80f69" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9e89db69-3254-466b-8309-45347c9cf49f">
+<span class="eqno">(10.1)<a class="headerlink" href="#equation-9e89db69-3254-466b-8309-45347c9cf49f" title="Permalink to this equation">#</a></span>\[\begin{align}
 a_{1,1} x_1 + a_{1,2} x_2 + a_{1,3} x_3 + \dots + a_{1,n} x_n &amp;= b_1 \\
 
    a_{2,1} x_1 + a_{2,2} x_2 + a_{2,3} x_3 + \dots + a_{2,n} x_n &amp;= b_2\\
@@ -404,8 +404,8 @@ a_{1,1} x_1 + a_{1,2} x_2 + a_{1,3} x_3 + \dots + a_{1,n} x_n &amp;= b_1 \\
 <p>where <span class="math notranslate nohighlight">\(a_{i,j}\)</span> are constants. Usually there are the same number of equations as unknowns, so <span class="math notranslate nohighlight">\(m = n\)</span>.  If <span class="math notranslate nohighlight">\(m &lt; n\)</span> then the system is undetermined, if <span class="math notranslate nohighlight">\(m &gt; n\)</span>, the system is over constrained.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
-<div class="amsmath math notranslate nohighlight" id="equation-14525257-f6b5-404c-8c1b-9c88637d9ea9">
-<span class="eqno">(10.2)<a class="headerlink" href="#equation-14525257-f6b5-404c-8c1b-9c88637d9ea9" title="Permalink to this equation">#</a></span>\[\begin{align}4 x_1 - x_2 &amp;= 1\\ -2 x_1 + 3 x_2 &amp;= 12 \end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5bd6d043-bbe5-4e86-b646-8867ce59052d">
+<span class="eqno">(10.2)<a class="headerlink" href="#equation-5bd6d043-bbe5-4e86-b646-8867ce59052d" title="Permalink to this equation">#</a></span>\[\begin{align}4 x_1 - x_2 &amp;= 1\\ -2 x_1 + 3 x_2 &amp;= 12 \end{align}\]</div>
 <p>Each equation here defines a line, and we are looking for a point which satisfies both equations, which means that the lines intersect.</p>
 <p>From the first line we obtain <span class="math notranslate nohighlight">\(x_2 = 4 x_1 - 1\)</span>, and by substituting this into the second line, we obtain <span class="math notranslate nohighlight">\(x = \frac{3}{2}\)</span>, <span class="math notranslate nohighlight">\(y = 5\)</span>. Two equations with two unknowns will always give a unique solution, unless the lines are parallel (and so the equations are just a scaling of each other).</p>
 <ul class="simple">
@@ -585,8 +585,8 @@ r_1 - r_2 &amp; \longrightarrow &amp; (r_1)\\
 <li><p>The first nonzero entry of a row is to the right of the first nonzero entry of the row above.</p></li>
 <li><p>Below the first nonzero entry of a row, all entries are zero.</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-b9842388-ff1e-4a7b-a18f-5ff347e8b1cf">
-<span class="eqno">(10.3)<a class="headerlink" href="#equation-b9842388-ff1e-4a7b-a18f-5ff347e8b1cf" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-1ffa8e0f-5aee-4d7d-b25f-5827721dc283">
+<span class="eqno">(10.3)<a class="headerlink" href="#equation-1ffa8e0f-5aee-4d7d-b25f-5827721dc283" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \boxed{\star} &amp; \star &amp;\star &amp;\star &amp;\star \\
 0     &amp; \boxed{\star} &amp;\star &amp;\star &amp;\star \\
 0     &amp;  0    &amp; 0    &amp; \boxed{\star} &amp;\star \\
@@ -599,8 +599,8 @@ r_1 - r_2 &amp; \longrightarrow &amp; (r_1)\\
 <li><p>Each pivot is equal to 1.</p></li>
 <li><p>Each pivot is the only nonzero entry in its column.</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-08ea02d2-f7af-41d6-bec2-320afc1e9a9e">
-<span class="eqno">(10.4)<a class="headerlink" href="#equation-08ea02d2-f7af-41d6-bec2-320afc1e9a9e" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-ad2e2223-4aee-4d2a-85b9-19cdd6bafd46">
+<span class="eqno">(10.4)<a class="headerlink" href="#equation-ad2e2223-4aee-4d2a-85b9-19cdd6bafd46" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 1 &amp; 0 &amp;\star &amp; 0 &amp;\star \\
 0     &amp; 1 &amp;\star &amp;0 &amp;\star \\
 0     &amp;  0    &amp; 0    &amp; 1 &amp;\star \\

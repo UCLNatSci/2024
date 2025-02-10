@@ -212,9 +212,9 @@ then we know that the scalar form of the tangent plane, which must satisfy ${\bf
 
 ## Total Differential
 
-Recall from our discussions about partial derivatives, we can also define a <em>scalar total differential</em> for a scalar field $\phi(x,\,y,\,z)$:
+Recall from our discussions about partial derivatives, we can also define a <em>scalar total differential</em> for a scalar field $f(x,\,y,\,z)$:
 ```{math}
-\mathrm{d}\phi(x,\,y,\,z) = \frac{\partial \phi}{\partial x} \mathrm{d} x + \frac{\partial \phi}{\partial y} \mathrm{d} y + \frac{\partial \phi}{\partial z} \mathrm{d} z
+\mathrm{d}f(x,\,y,\,z) = \frac{\partial f}{\partial x} \mathrm{d} x + \frac{\partial f}{\partial y} \mathrm{d} y + \frac{\partial f}{\partial z} \mathrm{d} z
 ```
 which measures the infinitesimal change of  $\phi$ as we change $x, \,y,\,z$ by infinitesimal amounts $\mathrm{d}x, \,\mathrm{d}y,\, \mathrm{d}z$.  
 Likewise we can can the vectorial line element:
@@ -223,11 +223,11 @@ Likewise we can can the vectorial line element:
 ```
 to write the total differential in a slightly more compact notation:
 ```{math}
-\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}
+\mathrm{d}f = \nabla f \cdot \mathrm{d}{\bf r}
 ```
-To find the <em>vector total differential</em>, we can just use the multi-variate chain rule expression for a vectorised variable:
+To find the <em>vector total differential</em>, we can just use the multi-variate chain rule expression for a vectorised variable $\mathbf{A} = \mathbf{A}(x,\,y,\,z)$:
 ```{math}
-\mathrm{d}{\bf A}(x,\,y,\,z) = \frac{\partial {\bf A} }{\partial x} \mathrm{d} x + \frac{\partial {\bf A} }{\partial y} \mathrm{d} y + \frac{\partial {\bf A} }{\partial z} \mathrm{d} z
+\mathrm{d}\mathbf{ A}(x,\,y,\,z) = \frac{\partial \mathbf{ A} }{\partial x} \mathrm{d} x + \frac{\partial \mathbf{ A} }{\partial y} \mathrm{d} y + \frac{\partial \mathbf{ A} }{\partial z} \mathrm{d} z
 ```
 
 ## Different coordinate systems
@@ -235,37 +235,37 @@ To find the <em>vector total differential</em>, we can just use the multi-variat
 The gradient operator does not need to be specified in Cartesian coordinates, we can also look at it in other 
 coordinate systems too.
 
-Using the result $\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}$, we can examine the change in $\mathrm{d}{\bf r}$ over 
+Using the result $\mathrm{d}f = \nabla f \cdot \mathrm{d}{\bf r}$, we can examine the change in $\mathrm{d}{\bf r}$ over 
 different systems of coordinates, which will tell us how $\nabla \phi$ will be different.
 
 ### Cylindrical polar coordinates
 
-Here the vectorial line element has the form:
+By taking $f = f(R,\,\phi,\,z)$, then here the vectorial line element has the form:
 ```{math}
-\mathrm{d}{\bf r} = \mathbf{e_R}\, \mathrm{d}R + \mathbf{e_\theta}\,R\,\mathrm{d}\theta  + \mathbf{e_z} \,\mathrm{d}z
+\mathrm{d}{\bf r} = \mathbf{e_R}\, \mathrm{d}R + \mathbf{e_\phi}\,R\,\mathrm{d}\phi + \mathbf{e_z} \,\mathrm{d}z
 ```
-and looking at what we expect to get $\mathrm{d}\phi$ from the multi-variate chain rule:
+and looking at what we expect to get $\mathrm{d}f$ from the multi-variate chain rule:
 ```{math}
-\mathrm{d}f = \frac{\partial f}{\partial R} \mathrm{d}R + \frac{\partial f}{\partial \theta} \mathrm{d} \theta + \frac{\partial f}{\partial z} \mathrm{d} z
+\mathrm{d}f = \frac{\partial f}{\partial R} \mathrm{d}R + \frac{\partial f}{\partial \phi} \mathrm{d} \phi + \frac{\partial f}{\partial z} \mathrm{d} z
 ```
-then our expression for and so for $\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}$ to match, we must have a gradient operator to be of the form:
+then our expression for and so for $\mathrm{d}f = \nabla f \cdot \mathrm{d}{\bf r}$ to match, we must have a gradient operator to be of the form:
 ```{math}
-\nabla f = \mathbf{e_R}\, \frac{\partial f}{\partial R}  + \mathbf{e_\theta }\,\frac{1}{R}\,\frac{\partial f}{\partial \theta}  + \mathbf{e_z} \,\frac{\partial f}{\partial z} 
+\nabla f = \mathbf{e_R}\, \frac{\partial f}{\partial R}  + \mathbf{e_\phi}\,\frac{1}{R}\,\frac{\partial f}{\partial \phi}  + \mathbf{e_z} \,\frac{\partial f}{\partial z} 
 ```
 
 ### Spherical polar coordinates
 
-Here the vectorial line element has the form:
+By taking $f = f(r,\,\theta,\,\phi)$, then here the vectorial line element has the form:
 ```{math}
-\mathrm{d}{\bf r} = \mathbf{e_r} \,\mathrm{d}r + \mathbf{e_\phi}\,r\,\mathrm{d}\phi + \mathbf{e_\theta} \,r\,\sin(\phi)\,\mathrm{d}\theta
+\mathrm{d}{\bf r} = \mathbf{e_r} \,\mathrm{d}r + \mathbf{e_\theta}\,r\,\mathrm{d}\theta + \mathbf{e_\phi} \,r\,\sin(\theta)\,\mathrm{d}\phi
 ```
-and looking at what we expect to get $\mathrm{d}\phi$ from the multi-variate chain rule:
+and looking at what we expect to get $\mathrm{d}f$ from the multi-variate chain rule:
 ```{math}
-\mathrm{d}f = \frac{\partial f}{\partial r} \mathrm{d} r + \frac{\partial f}{\partial \phi} \mathrm{d} \phi + \frac{\partial f}{\partial \theta} \mathrm{d} \theta
+\mathrm{d}f = \frac{\partial f}{\partial r} \mathrm{d} r + \frac{\partial f}{\partial \theta} \mathrm{d} \theta + \frac{\partial f}{\partial \phi} \mathrm{d} \phi
 ```
-then our expression for and so for $\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}$ to match, we must have a gradient operator to be of the form:
+then our expression for and so for $\mathrm{d}f = \nabla f \cdot \mathrm{d}{\bf r}$ to match, we must have a gradient operator to be of the form:
 ```{math}
-\nabla f = \mathbf{e_r}\, \frac{\partial f}{\partial r}  + \mathbf{e_\phi}\,\frac{1}{r}\,\frac{\partial f}{\partial \phi}  + \mathbf{e_\theta} \,\frac{1}{r\sin(\phi)}\,\frac{\partial f}{\partial \theta} 
+\nabla f = \mathbf{e_r}\, \frac{\partial f}{\partial r}  + \mathbf{e_\phi}\,\frac{1}{r}\,\frac{\partial f}{\partial \theta}  + \mathbf{e_\theta} \,\frac{1}{r\sin(\theta)}\,\frac{\partial f}{\partial \phi} 
 ```
 
 A very good resource for all these expressions can be found at 

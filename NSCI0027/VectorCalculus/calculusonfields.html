@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/_static/mystyle.css" />
   
@@ -548,49 +548,49 @@ as illustrated in <a class="reference internal" href="#quiver"><span class="std 
 </section>
 <section id="total-differential">
 <h2><span class="section-number">5.4. </span>Total Differential<a class="headerlink" href="#total-differential" title="Link to this heading">#</a></h2>
-<p>Recall from our discussions about partial derivatives, we can also define a <em>scalar total differential</em> for a scalar field <span class="math notranslate nohighlight">\(\phi(x,\,y,\,z)\)</span>:</p>
+<p>Recall from our discussions about partial derivatives, we can also define a <em>scalar total differential</em> for a scalar field <span class="math notranslate nohighlight">\(f(x,\,y,\,z)\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}\phi(x,\,y,\,z) = \frac{\partial \phi}{\partial x} \mathrm{d} x + \frac{\partial \phi}{\partial y} \mathrm{d} y + \frac{\partial \phi}{\partial z} \mathrm{d} z\]</div>
+\[\mathrm{d}f(x,\,y,\,z) = \frac{\partial f}{\partial x} \mathrm{d} x + \frac{\partial f}{\partial y} \mathrm{d} y + \frac{\partial f}{\partial z} \mathrm{d} z\]</div>
 <p>which measures the infinitesimal change of  <span class="math notranslate nohighlight">\(\phi\)</span> as we change <span class="math notranslate nohighlight">\(x, \,y,\,z\)</span> by infinitesimal amounts <span class="math notranslate nohighlight">\(\mathrm{d}x, \,\mathrm{d}y,\, \mathrm{d}z\)</span>.<br />
 Likewise we can can the vectorial line element:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\mathrm{d}{\bf r} = \begin{pmatrix} \mathrm{d}x \\\mathrm{d}y\\ \mathrm{d}z\end{pmatrix} = \mathbf{e_x}\, \mathrm{d}x  + \mathbf{e_y}\, \mathrm{d}y  + \mathbf{e_z} \, \mathrm{d}z \end{split}\]</div>
 <p>to write the total differential in a slightly more compact notation:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}\]</div>
-<p>To find the <em>vector total differential</em>, we can just use the multi-variate chain rule expression for a vectorised variable:</p>
+\[\mathrm{d}f = \nabla f \cdot \mathrm{d}{\bf r}\]</div>
+<p>To find the <em>vector total differential</em>, we can just use the multi-variate chain rule expression for a vectorised variable <span class="math notranslate nohighlight">\(\mathbf{A} = \mathbf{A}(x,\,y,\,z)\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}{\bf A}(x,\,y,\,z) = \frac{\partial {\bf A} }{\partial x} \mathrm{d} x + \frac{\partial {\bf A} }{\partial y} \mathrm{d} y + \frac{\partial {\bf A} }{\partial z} \mathrm{d} z\]</div>
+\[\mathrm{d}\mathbf{ A}(x,\,y,\,z) = \frac{\partial \mathbf{ A} }{\partial x} \mathrm{d} x + \frac{\partial \mathbf{ A} }{\partial y} \mathrm{d} y + \frac{\partial \mathbf{ A} }{\partial z} \mathrm{d} z\]</div>
 </section>
 <section id="different-coordinate-systems">
 <h2><span class="section-number">5.5. </span>Different coordinate systems<a class="headerlink" href="#different-coordinate-systems" title="Link to this heading">#</a></h2>
 <p>The gradient operator does not need to be specified in Cartesian coordinates, we can also look at it in other
 coordinate systems too.</p>
-<p>Using the result <span class="math notranslate nohighlight">\(\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}\)</span>, we can examine the change in <span class="math notranslate nohighlight">\(\mathrm{d}{\bf r}\)</span> over
+<p>Using the result <span class="math notranslate nohighlight">\(\mathrm{d}f = \nabla f \cdot \mathrm{d}{\bf r}\)</span>, we can examine the change in <span class="math notranslate nohighlight">\(\mathrm{d}{\bf r}\)</span> over
 different systems of coordinates, which will tell us how <span class="math notranslate nohighlight">\(\nabla \phi\)</span> will be different.</p>
 <section id="cylindrical-polar-coordinates">
 <h3><span class="section-number">5.5.1. </span>Cylindrical polar coordinates<a class="headerlink" href="#cylindrical-polar-coordinates" title="Link to this heading">#</a></h3>
-<p>Here the vectorial line element has the form:</p>
+<p>By taking <span class="math notranslate nohighlight">\(f = f(R,\,\phi,\,z)\)</span>, then here the vectorial line element has the form:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}{\bf r} = \mathbf{e_R}\, \mathrm{d}R + \mathbf{e_\theta}\,R\,\mathrm{d}\theta  + \mathbf{e_z} \,\mathrm{d}z\]</div>
-<p>and looking at what we expect to get <span class="math notranslate nohighlight">\(\mathrm{d}\phi\)</span> from the multi-variate chain rule:</p>
+\[\mathrm{d}{\bf r} = \mathbf{e_R}\, \mathrm{d}R + \mathbf{e_\phi}\,R\,\mathrm{d}\phi + \mathbf{e_z} \,\mathrm{d}z\]</div>
+<p>and looking at what we expect to get <span class="math notranslate nohighlight">\(\mathrm{d}f\)</span> from the multi-variate chain rule:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}f = \frac{\partial f}{\partial R} \mathrm{d}R + \frac{\partial f}{\partial \theta} \mathrm{d} \theta + \frac{\partial f}{\partial z} \mathrm{d} z\]</div>
-<p>then our expression for and so for <span class="math notranslate nohighlight">\(\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}\)</span> to match, we must have a gradient operator to be of the form:</p>
+\[\mathrm{d}f = \frac{\partial f}{\partial R} \mathrm{d}R + \frac{\partial f}{\partial \phi} \mathrm{d} \phi + \frac{\partial f}{\partial z} \mathrm{d} z\]</div>
+<p>then our expression for and so for <span class="math notranslate nohighlight">\(\mathrm{d}f = \nabla f \cdot \mathrm{d}{\bf r}\)</span> to match, we must have a gradient operator to be of the form:</p>
 <div class="math notranslate nohighlight">
-\[\nabla f = \mathbf{e_R}\, \frac{\partial f}{\partial R}  + \mathbf{e_\theta }\,\frac{1}{R}\,\frac{\partial f}{\partial \theta}  + \mathbf{e_z} \,\frac{\partial f}{\partial z} \]</div>
+\[\nabla f = \mathbf{e_R}\, \frac{\partial f}{\partial R}  + \mathbf{e_\phi}\,\frac{1}{R}\,\frac{\partial f}{\partial \phi}  + \mathbf{e_z} \,\frac{\partial f}{\partial z} \]</div>
 </section>
 <section id="spherical-polar-coordinates">
 <h3><span class="section-number">5.5.2. </span>Spherical polar coordinates<a class="headerlink" href="#spherical-polar-coordinates" title="Link to this heading">#</a></h3>
-<p>Here the vectorial line element has the form:</p>
+<p>By taking <span class="math notranslate nohighlight">\(f = f(r,\,\theta,\,\phi)\)</span>, then here the vectorial line element has the form:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}{\bf r} = \mathbf{e_r} \,\mathrm{d}r + \mathbf{e_\phi}\,r\,\mathrm{d}\phi + \mathbf{e_\theta} \,r\,\sin(\phi)\,\mathrm{d}\theta\]</div>
-<p>and looking at what we expect to get <span class="math notranslate nohighlight">\(\mathrm{d}\phi\)</span> from the multi-variate chain rule:</p>
+\[\mathrm{d}{\bf r} = \mathbf{e_r} \,\mathrm{d}r + \mathbf{e_\theta}\,r\,\mathrm{d}\theta + \mathbf{e_\phi} \,r\,\sin(\theta)\,\mathrm{d}\phi\]</div>
+<p>and looking at what we expect to get <span class="math notranslate nohighlight">\(\mathrm{d}f\)</span> from the multi-variate chain rule:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}f = \frac{\partial f}{\partial r} \mathrm{d} r + \frac{\partial f}{\partial \phi} \mathrm{d} \phi + \frac{\partial f}{\partial \theta} \mathrm{d} \theta\]</div>
-<p>then our expression for and so for <span class="math notranslate nohighlight">\(\mathrm{d}\phi = \nabla \phi \cdot \mathrm{d}{\bf r}\)</span> to match, we must have a gradient operator to be of the form:</p>
+\[\mathrm{d}f = \frac{\partial f}{\partial r} \mathrm{d} r + \frac{\partial f}{\partial \theta} \mathrm{d} \theta + \frac{\partial f}{\partial \phi} \mathrm{d} \phi\]</div>
+<p>then our expression for and so for <span class="math notranslate nohighlight">\(\mathrm{d}f = \nabla f \cdot \mathrm{d}{\bf r}\)</span> to match, we must have a gradient operator to be of the form:</p>
 <div class="math notranslate nohighlight">
-\[\nabla f = \mathbf{e_r}\, \frac{\partial f}{\partial r}  + \mathbf{e_\phi}\,\frac{1}{r}\,\frac{\partial f}{\partial \phi}  + \mathbf{e_\theta} \,\frac{1}{r\sin(\phi)}\,\frac{\partial f}{\partial \theta} \]</div>
+\[\nabla f = \mathbf{e_r}\, \frac{\partial f}{\partial r}  + \mathbf{e_\phi}\,\frac{1}{r}\,\frac{\partial f}{\partial \theta}  + \mathbf{e_\theta} \,\frac{1}{r\sin(\theta)}\,\frac{\partial f}{\partial \phi} \]</div>
 <p>A very good resource for all these expressions can be found at
 <a href="https://en.wikipedia.org/wiki/Del_in_cylindrical_and_spherical_coordinates" target="_blank">Del in cylindrical and spherical coordinates</a></p>
 </section>
