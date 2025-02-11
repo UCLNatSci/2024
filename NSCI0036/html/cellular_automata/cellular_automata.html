@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Solutions" href="cellular_automata_answers.html" />
+    <link rel="next" title="5.4. Exercises" href="cellular_automata_extra.html" />
     <link rel="prev" title="5.2. Cellular Automata" href="cellular_automata_notes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -362,39 +362,49 @@ const thebe_selector_output = ".output, .cell_output"
      5.2. Notes
     </a>
    </li>
-   <li class="toctree-l2 current active has-children">
+   <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      5.3. Workshop
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-    <label for="toctree-checkbox-13">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="cellular_automata_answers.html">
-       Solutions
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toctree-l2 has-children">
+   <li class="toctree-l2">
     <a class="reference internal" href="cellular_automata_extra.html">
      5.4. Exercises
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-    <label for="toctree-checkbox-14">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="cellular_automata_homework_answers.html">
-       Solution (5.6)
-      </a>
-     </li>
-    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../projects/projects_about.html">
+   About the Project
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../projects/projects.html">
+   Project Briefs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/epidemics/project_brief_epidemics.html">
+     Epidemics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/neurosphere/project_brief_neurosphere.html">
+     Neurospheres
+    </a>
    </li>
   </ul>
  </li>
@@ -565,6 +575,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimensional-cellular-automaton">
+   1-Dimensional Cellular Automaton
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conway-s-game-of-life">
    Conway’s Game of Life
   </a>
@@ -591,6 +606,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#diffusion-model">
    Diffusion Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimensional-cellular-automaton">
+   1-Dimensional Cellular Automaton
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -653,21 +673,105 @@ title="Print to PDF"
 
 <p class="admonition-title"><span class="caption-number">Exercise 5.3 </span></p>
 <section id="exercise-content">
-<p>Build a simulation model similar to <a class="reference internal" href="#diffusion-fig"><span class="std std-numref">Fig. 5.3</span></a>. First create an square array whose elements are zero everywhere except for a square of cells in the centre. Then repeatedly apply the function <code class="docutils literal notranslate"><span class="pre">moving_average_2d</span></code>. Use <code class="docutils literal notranslate"><span class="pre">imshow</span></code> to plot the array at each timestep.</p>
+<p>Build a simulation model similar to <a class="reference internal" href="#diffusion-fig"><span class="std std-numref">Fig. 5.3</span></a>. First create an square array whose elements are zero everywhere except for a square of cells in the centre. Then repeatedly apply the function <code class="docutils literal notranslate"><span class="pre">moving_average_2d</span></code>. Use <code class="docutils literal notranslate"><span class="pre">plt.subplots</span></code> and <code class="docutils literal notranslate"><span class="pre">plt.imshow</span></code> to plot the array at each timestep.</p>
 <p>Experiment with different arrays sizes. Can you achieve a result that looks like <a class="reference internal" href="#diffusion-fig"><span class="std std-numref">Fig. 5.3</span></a>?</p>
+</section>
+</div>
+</section>
+<section id="dimensional-cellular-automaton">
+<h2>1-Dimensional Cellular Automaton<a class="headerlink" href="#dimensional-cellular-automaton" title="Permalink to this headline">#</a></h2>
+<p>An elementary cellular automaton comprises a 1-dimensional array whose values are only <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code>. At each time step, the value of each cell is updated by a rule based on the state of the cell and its two nearest neighbours. For example, the transition rules for the ‘rule 90’ cellular automaton are shown in <a class="reference internal" href="#rule-90-fig"><span class="std std-numref">Fig. 5.4</span></a> and the resulting cellular automaton in <a class="reference internal" href="#rule-90-result-fig"><span class="std std-numref">Fig. 5.5</span></a>.</p>
+<figure class="align-default" id="rule-90-fig">
+<a class="reference internal image-reference" href="../_images/rule_90.png"><img alt="../_images/rule_90.png" src="../_images/rule_90.png" style="height: 80px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text">The rules for the ‘rule 90’ cellular automaton, showing the new state of each cell (bottom) based on the current state of three neighbouring cells (top). This rule can more simply expressed by noticing that if exactly one of the left and right neighbours is <code class="docutils literal notranslate"><span class="pre">1</span></code>, the cell’s state becomes <code class="docutils literal notranslate"><span class="pre">1</span></code>, otherwise it becomes <code class="docutils literal notranslate"><span class="pre">0</span></code>.</span><a class="headerlink" href="#rule-90-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="rule-90-result-fig">
+<a class="reference internal image-reference" href="../_images/rule_90_result.png"><img alt="../_images/rule_90_result.png" src="../_images/rule_90_result.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.5 </span><span class="caption-text">The ‘rule 90’ cellular automaton starting from an initial state comprising a single <code class="docutils literal notranslate"><span class="pre">1</span></code>. Each row is one iteration of the automaton.</span><a class="headerlink" href="#rule-90-result-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The code below calulates one iteration of the ‘rule 90’ cellular automaton.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def rule_90(xarray):
+    n = len(xarray)
+    result = np.zeros(n)
+    for i in range(1, n-1):
+        p = xarray[i-1] # left neighbour
+        q = xarray[i+1] # right neighbour
+        # p + q = 1 when
+        # one of p and q is 1
+        if (p + q == 1):
+            result[i] = 1
+        else:
+            result[i] = 0
+    return result
+
+x = np.zeros(7)
+x[3] = 1
+print(x)
+print(rule_90(x))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 1. 0. 0. 0.]
+[0. 0. 1. 0. 1. 0. 0.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>To generate an image of the cellular automaton we can create a 2-dimensional array, storing each iteration one row at a time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>automaton = np.zeros((2, 7)) # 2-d array 
+x = np.zeros(7)
+x[3] = 1
+
+# top row is initial state of x
+automaton[0,:] = x
+
+x = rule_90(x)
+
+# next row is next state of x
+automaton[1,:] = x
+
+plt.imshow(automaton)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f0165ffbe80&gt;
+</pre></div>
+</div>
+<img alt="../_images/cellular_automata_6_1.png" src="../_images/cellular_automata_6_1.png" />
+</div>
+</div>
+<div class="exercise admonition" id="exercise_5_3_b">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5.4 </span></p>
+<section id="exercise-content">
+<ol class="simple">
+<li><p>Produce a plot similar to <a class="reference internal" href="#rule-90-result-fig"><span class="std std-numref">Fig. 5.5</span></a> showing the first 16 iterations of the ‘rule 90’ automaton.</p></li>
+<li><p>Produce a simulation of the ‘rule 30’ cellular automaton as described here <a class="reference external" href="https://mathworld.wolfram.com/ElementaryCellularAutomaton.html">https://mathworld.wolfram.com/ElementaryCellularAutomaton.html</a>.<br />
+Hint: let <span class="math notranslate nohighlight">\(n\)</span> be the number of <code class="docutils literal notranslate"><span class="pre">1</span></code>s amongst the three neighbours. If <span class="math notranslate nohighlight">\(n=0\)</span> or <span class="math notranslate nohighlight">\(n=3\)</span> then set the cell to <code class="docutils literal notranslate"><span class="pre">0</span></code>, if <span class="math notranslate nohighlight">\(n=1\)</span> then set the cell to <code class="docutils literal notranslate"><span class="pre">1</span></code>. If <span class="math notranslate nohighlight">\(n=2\)</span> then set the cell to <code class="docutils literal notranslate"><span class="pre">1</span></code> only if the left neighbour is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+</ol>
 </section>
 </div>
 </section>
 <section id="conway-s-game-of-life">
 <span id="conway-game-of-life"></span><h2>Conway’s Game of Life<a class="headerlink" href="#conway-s-game-of-life" title="Permalink to this headline">#</a></h2>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> is a simple cellular automaton devised by mathematician John Conway in 1970. The automaton mimics the dynamical evolution of “life-forms” existing in the grid of cells <a class="reference internal" href="#game-of-life-fig"><span class="std std-numref">Fig. 5.4</span></a> shows an example evolution of the Game of Life.</p>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> is a simple cellular automaton devised by mathematician John Conway in 1970. The automaton mimics the dynamical evolution of “life-forms” existing in the grid of cells <a class="reference internal" href="#game-of-life-fig"><span class="std std-numref">Fig. 5.6</span></a> shows an example evolution of the Game of Life.</p>
 <figure class="align-default" id="game-of-life-fig">
 <a class="reference internal image-reference" href="../_images/GOL.gif"><img alt="../_images/GOL.gif" src="../_images/GOL.gif" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text">The Game of Life is an example of a 2-dimensional cellular automaton.</span><a class="headerlink" href="#game-of-life-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5.6 </span><span class="caption-text">The Game of Life is an example of a 2-dimensional cellular automaton.</span><a class="headerlink" href="#game-of-life-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The rules of Conway’s Game of Life are given below, and an example of two iterations of the Game are shown in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.5</span></a>.</p>
+<p>The rules of Conway’s Game of Life are given below, and an example of two iterations of the Game are shown in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.7</span></a>.</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
@@ -686,14 +790,14 @@ d. any dead cell with exactly three live neighbours becomes alive, and otherwise
 <figure class="align-default" id="game-of-life-2-iterations-fig">
 <a class="reference internal image-reference" href="../_images/game_of_life_example.png"><img alt="../_images/game_of_life_example.png" src="../_images/game_of_life_example.png" style="height: 150px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.5 </span><span class="caption-text">An initial configuration of cells (left) and two iterations of the Game of Life (centre and right).</span><a class="headerlink" href="#game-of-life-2-iterations-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5.7 </span><span class="caption-text">An initial configuration of cells (left) and two iterations of the Game of Life (centre and right).</span><a class="headerlink" href="#game-of-life-2-iterations-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="exercise admonition" id="exercise_5_4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 5.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 5.5 </span></p>
 <section id="exercise-content">
-<p>What would the next iteration of the Game of Life in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.5</span></a> look like?</p>
+<p>What would the next iteration of the Game of Life in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.7</span></a> look like?</p>
 <p>Using pseudocode, sketch an algorithm for calculating one iteration of the Game of Life.</p>
 </section>
 </div>
@@ -745,16 +849,14 @@ print(grid0)
 </div>
 <div class="exercise admonition" id="exercise_5_5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 5.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 5.6 </span></p>
 <section id="exercise-content">
-<p>1. Complete the function <code class="docutils literal notranslate"><span class="pre">count_neighbours(x,</span> <span class="pre">i,</span> <span class="pre">j)</span></code> so that it returns the total number of live neighbours of cell <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code>. Test that the function works by setting <code class="docutils literal notranslate"><span class="pre">grid0</span></code> to the initial configuration in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.5</span></a> and checking your function gives the expected result for various values of <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code>.</p>
-<p>2. Complete the function <code class="docutils literal notranslate"><span class="pre">advance(x)</span></code> so that it returns the array after applying the rules of the Game of Life simulation. Test the function by applying it to the initial configuration in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.5</span></a>.</p>
+<p>1. Complete the function <code class="docutils literal notranslate"><span class="pre">count_neighbours(x,</span> <span class="pre">i,</span> <span class="pre">j)</span></code> so that it returns the total number of live neighbours of cell <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code>. Test that the function works by setting <code class="docutils literal notranslate"><span class="pre">grid0</span></code> to the initial configuration in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.7</span></a> and checking your function gives the expected result for various values of <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code>.</p>
+<p>2. Complete the function <code class="docutils literal notranslate"><span class="pre">advance(x)</span></code> so that it returns the array after applying the rules of the Game of Life simulation. Test the function by applying it to the initial configuration in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.7</span></a>.</p>
 <p>3. By repeatedly calling <code class="docutils literal notranslate"><span class="pre">advance</span></code>, execute the simulation for 10 or more steps, using <code class="docutils literal notranslate"><span class="pre">imshow</span></code> to display the array at each step. Check that your simulation works by comparing to an <a class="reference external" href="https://academo.org/demos/conways-game-of-life/">online Game of Life simulator</a>.</p>
 </section>
 </div>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -791,10 +893,10 @@ print(grid0)
             <p class="prev-next-title"><span class="section-number">5.2. </span>Cellular Automata</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="cellular_automata_answers.html" title="next page">
+    <a class='right-next' id="next-link" href="cellular_automata_extra.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solutions</p>
+        <p class="prev-next-title"><span class="section-number">5.4. </span>Exercises</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -682,7 +682,100 @@ for i in range(num-1):
 <p>To make it look identical to the figure, you’d have to use a different diffusion model. See <code class="xref std std-numref docutils literal notranslate"><span class="pre">notes-subplots-ref</span></code>.</p>
 <div class="solution admonition" id="cellular_automata/cellular_automata_answers-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="cellular_automata.html#exercise_5_5"> Exercise 5.5</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="cellular_automata.html#exercise_5_3_b"> Exercise 5.4</a></p>
+<section id="solution-content">
+</section>
+</div>
+<ol class="simple">
+<li></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def rule_90(xarray):
+    n = len(xarray)
+    result = np.zeros(n)
+    for i in range(1, n-1):
+        p = xarray[i-1] # left neighbour
+        q = xarray[i+1] # right neighbour
+        # p + q = 1 when
+        # one of p and q is 1
+        if (p + q == 1):
+            result[i] = 1
+        else:
+            result[i] = 0
+    return result
+
+n_cells = 33
+n_iterations = 15
+
+x = np.zeros(n_cells)
+x[n_cells // 2] = 1 # sets the central cell to 1
+
+automaton = np.zeros((n_iterations + 1, n_cells))
+automaton[0,:] = x # set the top row to the initial x
+
+for i in range(n_iterations):
+    x = rule_90(x)
+    automaton[i+1,:] = x
+
+plt.imshow(automaton)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f8ccb075000&gt;
+</pre></div>
+</div>
+<img alt="../_images/cellular_automata_answers_5_1.png" src="../_images/cellular_automata_answers_5_1.png" />
+</div>
+</div>
+<ol class="simple">
+<li></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def rule_30(xarray):
+    n = len(xarray)
+    result = np.zeros(n)
+    for i in range(1, n-1):
+        k = np.sum(xarray[i-1:i+2])
+        if k == 0 or k == 3:
+            result[i] = 0
+        elif k == 1:
+            result[i] = 1
+        elif k == 2 and xarray[i-1] == 0:
+            result[i] = 1
+        else:
+            result[i] = 0
+    return result
+
+n_cells = 33
+n_iterations = 15
+
+x = np.zeros(n_cells)
+x[n_cells // 2] = 1 # sets the central cell to 1
+
+automaton = np.zeros((n_iterations + 1, n_cells))
+automaton[0,:] = x # set the top row to the initial x
+
+for i in range(n_iterations):
+    x = rule_30(x)
+    automaton[i+1,:] = x
+
+plt.imshow(automaton)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f8ccb9f6230&gt;
+</pre></div>
+</div>
+<img alt="../_images/cellular_automata_answers_7_1.png" src="../_images/cellular_automata_answers_7_1.png" />
+</div>
+</div>
+<div class="solution admonition" id="cellular_automata/cellular_automata_answers-solution-2">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="cellular_automata.html#exercise_5_5"> Exercise 5.6</a></p>
 <section id="solution-content">
 </section>
 </div>
@@ -709,7 +802,7 @@ def count_neighbours(x, i, j):
 </div>
 </div>
 </div>
-<p>Before we go any further, let’s test it with the initial pattern shown in <a class="reference internal" href="cellular_automata.html#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.5</span></a>.</p>
+<p>Before we go any further, let’s test it with the initial pattern shown in <a class="reference internal" href="cellular_automata.html#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.7</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>grid0 = np.zeros((5, 5))
@@ -837,10 +930,10 @@ for i in range(3):
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cellular_automata_answers_12_0.png" src="../_images/cellular_automata_answers_12_0.png" />
-<img alt="../_images/cellular_automata_answers_12_1.png" src="../_images/cellular_automata_answers_12_1.png" />
-<img alt="../_images/cellular_automata_answers_12_2.png" src="../_images/cellular_automata_answers_12_2.png" />
-<img alt="../_images/cellular_automata_answers_12_3.png" src="../_images/cellular_automata_answers_12_3.png" />
+<img alt="../_images/cellular_automata_answers_16_0.png" src="../_images/cellular_automata_answers_16_0.png" />
+<img alt="../_images/cellular_automata_answers_16_1.png" src="../_images/cellular_automata_answers_16_1.png" />
+<img alt="../_images/cellular_automata_answers_16_2.png" src="../_images/cellular_automata_answers_16_2.png" />
+<img alt="../_images/cellular_automata_answers_16_3.png" src="../_images/cellular_automata_answers_16_3.png" />
 </div>
 </div>
 <p>This works, but let’s run it for more steps and plot in a single figure (see <code class="xref std std-numref docutils literal notranslate"><span class="pre">notes-subplots-ref</span></code>):</p>
@@ -863,7 +956,7 @@ for i in range(num-1):
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cellular_automata_answers_14_0.png" src="../_images/cellular_automata_answers_14_0.png" />
+<img alt="../_images/cellular_automata_answers_18_0.png" src="../_images/cellular_automata_answers_18_0.png" />
 </div>
 </div>
 <p>Comparing to an <a class="reference external" href="https://academo.org/demos/conways-game-of-life/">online simulator</a> this is correct up to the 5th step. The problem is that our array isn’t big enough, so the rules break down at the edges. Let’s try a bigger array.</p>
@@ -889,7 +982,7 @@ for i in range(num-1):
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cellular_automata_answers_16_0.png" src="../_images/cellular_automata_answers_16_0.png" />
+<img alt="../_images/cellular_automata_answers_20_0.png" src="../_images/cellular_automata_answers_20_0.png" />
 </div>
 </div>
 </section>
