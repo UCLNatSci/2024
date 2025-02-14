@@ -412,7 +412,7 @@ depicted in <a class="reference internal" href="#gaussdivergence"><span class="s
 <img alt="../_images/gaussdivergence.png" src="../_images/gaussdivergence.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 9.1 </span><span class="caption-text">Vectorial surface-area element <span class="math notranslate nohighlight">\(\mathrm{d}{\bf A}\)</span> of a closed surface <span class="math notranslate nohighlight">\(S = \partial V\)</span>, with the convention that
-<span class="math notranslate nohighlight">\(\mathrm{d}{\bf A} = \hat{\bf n} \mathrm{d}A\)</span> points outwards.</span><a class="headerlink" href="#gaussdivergence" title="Link to this image">#</a></p>
+<span class="math notranslate nohighlight">\(\mathrm{d}{\bf A} = \hat{\mathbf{n}}\, \mathrm{d}A\)</span> points outwards.</span><a class="headerlink" href="#gaussdivergence" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -462,18 +462,18 @@ depicted in <a class="reference internal" href="#gaussdivergence"><span class="s
 <p>Thinking about an infinitesimal flux element <span class="math notranslate nohighlight">\(\mathrm{d}J\)</span> for some vector field <span class="math notranslate nohighlight">\({\bf F}({\bf r})\)</span> crossing the sides of the infinitesimal
 volume element <span class="math notranslate nohighlight">\(\mathrm{d}V = \mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-divtheoremproof">
-<span class="eqno">(9.1)<a class="headerlink" href="#equation-divtheoremproof" title="Link to this equation">#</a></span>\[\begin{split}\mathrm{d}J &amp;=  {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\cdot \hat{\bf x}\,\mathrm{d}y\,\mathrm{d}z 
-+ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\cdot (-\hat{\bf x})\,\mathrm{d}y\,\mathrm{d}z\\
-&amp;+\, {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}y\,\hat{\bf y} \right)\cdot \hat{\bf y}\,\mathrm{d}x\,\mathrm{d}z 
-+ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\hat{\bf y} \right)\cdot (-\hat{\bf y})\,\mathrm{d}x\,\mathrm{d}z\\
-&amp;+\, {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}z\,\hat{\bf z} \right)\cdot \hat{\bf z}\,\mathrm{d}x\,\mathrm{d}y 
-+ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\hat{\bf z} \right)\cdot (-\hat{\bf z})\,\mathrm{d}x\,\mathrm{d}y\end{split}\]</div>
+<span class="eqno">(9.1)<a class="headerlink" href="#equation-divtheoremproof" title="Link to this equation">#</a></span>\[\begin{split}\mathrm{d}J &amp;=  {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\cdot \mathbf{e_x}\,\mathrm{d}y\,\mathrm{d}z 
++ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\cdot (-\mathbf{e_x})\,\mathrm{d}y\,\mathrm{d}z\\
+&amp;+\, {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}y\,\mathbf{e_y} \right)\cdot \mathbf{e_y}\,\mathrm{d}x\,\mathrm{d}z 
++ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\mathbf{e_y} \right)\cdot (-\mathbf{e_y})\,\mathrm{d}x\,\mathrm{d}z\\
+&amp;+\, {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}z\,\mathbf{e_z} \right)\cdot \mathbf{e_z}\,\mathrm{d}x\,\mathrm{d}y 
++ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\mathbf{e_z} \right)\cdot (-\mathbf{e_z})\,\mathrm{d}x\,\mathrm{d}y\end{split}\]</div>
 <p>The first line of <a class="reference internal" href="#equation-divtheoremproof">(9.1)</a> reduces to:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}&amp;\, \left[{\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\cdot \hat{\bf x}
-+ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\cdot (-\hat{\bf x})\right]\,\mathrm{d}y\,\mathrm{d}z\\
-&amp;=  \left[F_x\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)
-- F_x\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\right]\,\mathrm{d}y\,\mathrm{d}z\\\end{split}\]</div>
+\[\begin{split}&amp;\, \left[{\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\cdot \mathbf{e_x}
++ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\cdot (-\mathbf{e_x})\right]\,\mathrm{d}y\,\mathrm{d}z\\
+&amp;=  \left[F_x\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)
+- F_x\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\right]\,\mathrm{d}y\,\mathrm{d}z\\\end{split}\]</div>
 <p>If we do a Taylor expansion of each vector field, around <span class="math notranslate nohighlight">\(F_x({\bf r})\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}&amp;  \left[F_x({\bf r}) + \frac{1}{2}\partial_x F_x({\bf r})\,\mathrm{d}x 
@@ -553,11 +553,11 @@ at the origin and parameterise the three sections of the contour <span class="ma
 with is the area of the quarter circle, sitting on the <span class="math notranslate nohighlight">\(y-z\)</span> plane.  To make sure the orientation of the contour matches with the
 right hand rule, we have:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}{\bf A} = \mathrm{d}y\,\mathrm{d}z\,\hat{\bf x}  \]</div>
+\[\mathrm{d}{\bf A} = \mathrm{d}y\,\mathrm{d}z\,\mathbf{e_x}  \]</div>
 <p>Therefore given that we can find the cross product as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\nabla \times {\bf F}
-= \begin{vmatrix} \hat{\bf x} &amp; \hat{\bf y} &amp; \hat{\bf z} \\ \partial_x &amp; \partial_y &amp; \partial _ z \\ y &amp; -z &amp; -x^2\end{vmatrix} 
+= \begin{vmatrix} \mathbf{e_x} &amp; \mathbf{e_y} &amp; \mathbf{e_z} \\ \partial_x &amp; \partial_y &amp; \partial _ z \\ y &amp; -z &amp; -x^2\end{vmatrix} 
 = \begin{pmatrix} \partial_y(-x^2) - \partial_z(-z) \\ \partial_z(y) - \partial_x(-x^2) \\ \partial_x(-z) - \partial_y(y) \end{pmatrix}
 = \begin{pmatrix} 1\\ 2x\\ -1\end{pmatrix}\end{split}\]</div>
 <p>we can find:</p>
@@ -569,7 +569,7 @@ right hand rule, we have:</p>
 </div>
 <section id="id1">
 <h3><span class="section-number">9.3.1. </span>A Sketch of a Proof<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>Lets consider a vectorial surface area element <span class="math notranslate nohighlight">\(\mathrm{d}{\bf A} = \mathrm{d}x\,\mathrm{d}y\,\hat{\bf z}\)</span>, as depicted
+<p>Lets consider a vectorial surface area element <span class="math notranslate nohighlight">\(\mathrm{d}{\bf A} = \mathrm{d}x\,\mathrm{d}y\,\mathbf{e_z}\)</span>, as depicted
 in <a class="reference internal" href="#infinitesimalcontour"><span class="std std-numref">Fig. 9.8</span></a>:</p>
 <figure class="align-default" id="infinitesimalcontour">
 <img alt="../_images/infinitesimalcontour.png" src="../_images/infinitesimalcontour.png" />
@@ -579,14 +579,14 @@ in <a class="reference internal" href="#infinitesimalcontour"><span class="std s
 </figure>
 <p>We can find the an infinitesimal loop <span class="math notranslate nohighlight">\(\mathrm{d}\ell\)</span> of a vector field <span class="math notranslate nohighlight">\({\bf F}({\bf r})\)</span> around this contour as:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathrm{d}\ell &amp;=  {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}y\,\hat{\bf y} \right)\cdot \hat{\bf x}\,\mathrm{d}x 
-+ {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\cdot \hat{\bf y}\,\mathrm{d}y \\
-&amp;+\,  {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}y\,\hat{\bf y} \right)\cdot (-\hat{\bf x})\,\mathrm{d}x 
-+ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\cdot (-\hat{\bf y})\,\mathrm{d}y \\
-&amp;=  \left[F_x \left({\bf r} - \frac{1}{2}\mathrm{d}y\,\hat{\bf y} \right) 
-- F_x\left({\bf r} + \frac{1}{2}\mathrm{d}y\,\hat{\bf y} \right) \right]\,\mathrm{d}x 
-+ \left[ F_y\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right) - F_y\left({\bf r} 
-- \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\right]\,\mathrm{d}y\end{split}\]</div>
+\[\begin{split}\mathrm{d}\ell &amp;=  {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}y\,\mathbf{e_y} \right)\cdot \mathbf{e_x}\,\mathrm{d}x 
++ {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\cdot \mathbf{e_y}\,\mathrm{d}y \\
+&amp;+\,  {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}y\,\mathbf{e_y} \right)\cdot (-\mathbf{e_x})\,\mathrm{d}x 
++ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\cdot (-\mathbf{e_y})\,\mathrm{d}y \\
+&amp;=  \left[F_x \left({\bf r} - \frac{1}{2}\mathrm{d}y\,\mathbf{e_y} \right) 
+- F_x\left({\bf r} + \frac{1}{2}\mathrm{d}y\,\mathbf{e_y} \right) \right]\,\mathrm{d}x 
++ \left[ F_y\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right) - F_y\left({\bf r} 
+- \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\right]\,\mathrm{d}y\end{split}\]</div>
 <p>If we do a Taylor expansion of each vector field, around <span class="math notranslate nohighlight">\(F_x({\bf r})\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\mathrm{d}\ell &amp;=  \left[F_x({\bf r}) - \frac{1}{2}\partial_y F_x({\bf r})\,\mathrm{d}y
@@ -599,7 +599,7 @@ in <a class="reference internal" href="#infinitesimalcontour"><span class="std s
 \[\mathrm{d}\ell = \Bigg(\nabla \times {\bf G}\Bigg)_z\,\mathrm{d}x\,\mathrm{d}y\]</div>
 <p>So this is really just a dot product with the <span class="math notranslate nohighlight">\(z\)</span> vector:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathrm{d}\ell &amp;= \Bigg(\nabla \times {\bf G}\Bigg)\cdot \hat{\bf z}\,\mathrm{d}x\,\mathrm{d}y \\
+\[\begin{split}\mathrm{d}\ell &amp;= \Bigg(\nabla \times {\bf G}\Bigg)\cdot \mathbf{e_z}\,\mathrm{d}x\,\mathrm{d}y \\
 &amp;= \Bigg(\nabla \times {\bf G}\Bigg)\cdot\mathrm{d}{\bf S}\end{split}\]</div>
 <p>where we have taken this second part as the area vector normal <span class="math notranslate nohighlight">\(\mathrm{d}{\bf A}\)</span> to the <span class="math notranslate nohighlight">\(x-y\)</span> plane.</p>
 <p>We can integrate this expression up to find:</p>
@@ -635,7 +635,7 @@ have cancellation occuring, as depicted in <a class="reference internal" href="#
 \[\begin{split}{\bf F} = \begin{pmatrix} F_x \\ F_y \\ 0\end{pmatrix}\end{split}\]</div>
 <p>the curl of this will be found to be:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\nabla \times {\bf F} = \begin{vmatrix} \hat{\bf x} &amp; \hat{\bf y} &amp; \hat{\bf z} \\ \partial_x &amp; \partial_y &amp; \partial_z \\ F_x &amp; F_y &amp; 0\end{vmatrix} 
+\[\begin{split}\nabla \times {\bf F} = \begin{vmatrix} \mathbf{e_x} &amp; \mathbf{e_y} &amp; \mathbf{e_z} \\ \partial_x &amp; \partial_y &amp; \partial_z \\ F_x &amp; F_y &amp; 0\end{vmatrix} 
 = \begin{pmatrix} \partial_y(0) - \partial_x(F_y) \\ \partial_z(F_x) - \partial_x(0) \\ \partial_x(F_y) - \partial_y(F_x) \end{pmatrix}
 \end{split}\]</div>
 <p>Given Stoke’s theorem:</p>
@@ -643,7 +643,7 @@ have cancellation occuring, as depicted in <a class="reference internal" href="#
 \[\oint_{\partial S} {\bf F}\cdot\mathrm{d}{\bf r} = \iint_S (\nabla \times {\bf F})\cdot \mathrm{d}{\bf A}\]</div>
 <p>and the fact that the surface normal area must be of the form:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}{\bf A} = \hat{\bf z}\,\mathrm{d}x\,\mathrm{d}y\]</div>
+\[\mathrm{d}{\bf A} = \mathbf{e_z}\,\mathrm{d}x\,\mathrm{d}y\]</div>
 <p>along with the line integral here being of the form:</p>
 <div class="math notranslate nohighlight">
 \[{\bf F} \cdot \mathrm{d}{\bf r} = F_x\,\mathrm{d}x + F_y\,\mathrm{d}y\]</div>

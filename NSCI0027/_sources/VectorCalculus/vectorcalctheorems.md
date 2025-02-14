@@ -36,7 +36,7 @@ depicted in {numref}`gaussdivergence`.
 name: gaussdivergence
 ---
 Vectorial surface-area element $\mathrm{d}{\bf A}$ of a closed surface $S = \partial V$, with the convention that 
-$\mathrm{d}{\bf A} = \hat{\bf n} \mathrm{d}A$ points outwards.
+$\mathrm{d}{\bf A} = \hat{\mathbf{n}}\, \mathrm{d}A$ points outwards.
 ```
 ````
 
@@ -102,20 +102,20 @@ volume element $\mathrm{d}V = \mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z$:
 
 ```{math}
 :label: divtheoremproof
-\mathrm{d}J &=  {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\cdot \hat{\bf x}\,\mathrm{d}y\,\mathrm{d}z 
-+ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\cdot (-\hat{\bf x})\,\mathrm{d}y\,\mathrm{d}z\\
-&+\, {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}y\,\hat{\bf y} \right)\cdot \hat{\bf y}\,\mathrm{d}x\,\mathrm{d}z 
-+ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\hat{\bf y} \right)\cdot (-\hat{\bf y})\,\mathrm{d}x\,\mathrm{d}z\\
-&+\, {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}z\,\hat{\bf z} \right)\cdot \hat{\bf z}\,\mathrm{d}x\,\mathrm{d}y 
-+ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\hat{\bf z} \right)\cdot (-\hat{\bf z})\,\mathrm{d}x\,\mathrm{d}y
+\mathrm{d}J &=  {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\cdot \mathbf{e_x}\,\mathrm{d}y\,\mathrm{d}z 
++ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\cdot (-\mathbf{e_x})\,\mathrm{d}y\,\mathrm{d}z\\
+&+\, {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}y\,\mathbf{e_y} \right)\cdot \mathbf{e_y}\,\mathrm{d}x\,\mathrm{d}z 
++ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\mathbf{e_y} \right)\cdot (-\mathbf{e_y})\,\mathrm{d}x\,\mathrm{d}z\\
+&+\, {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}z\,\mathbf{e_z} \right)\cdot \mathbf{e_z}\,\mathrm{d}x\,\mathrm{d}y 
++ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\mathbf{e_z} \right)\cdot (-\mathbf{e_z})\,\mathrm{d}x\,\mathrm{d}y
 ```
 
 The first line of {eq}`divtheoremproof` reduces to:
 ```{math}
-&\, \left[{\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\cdot \hat{\bf x}
-+ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\cdot (-\hat{\bf x})\right]\,\mathrm{d}y\,\mathrm{d}z\\
-&=  \left[F_x\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)
-- F_x\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\right]\,\mathrm{d}y\,\mathrm{d}z\\
+&\, \left[{\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\cdot \mathbf{e_x}
++ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\cdot (-\mathbf{e_x})\right]\,\mathrm{d}y\,\mathrm{d}z\\
+&=  \left[F_x\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)
+- F_x\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\right]\,\mathrm{d}y\,\mathrm{d}z\\
 ```
 If we do a Taylor expansion of each vector field, around $F_x({\bf r})$:
 ```{math}
@@ -211,12 +211,12 @@ Using Stoke's theorem, we are free to find formally *any* surface which would be
 with is the area of the quarter circle, sitting on the $y-z$ plane.  To make sure the orientation of the contour matches with the 
 right hand rule, we have:
 ```{math}
-\mathrm{d}{\bf A} = \mathrm{d}y\,\mathrm{d}z\,\hat{\bf x}  
+\mathrm{d}{\bf A} = \mathrm{d}y\,\mathrm{d}z\,\mathbf{e_x}  
 ```
 Therefore given that we can find the cross product as:
 ```{math}
 \nabla \times {\bf F}
-= \begin{vmatrix} \hat{\bf x} & \hat{\bf y} & \hat{\bf z} \\ \partial_x & \partial_y & \partial _ z \\ y & -z & -x^2\end{vmatrix} 
+= \begin{vmatrix} \mathbf{e_x} & \mathbf{e_y} & \mathbf{e_z} \\ \partial_x & \partial_y & \partial _ z \\ y & -z & -x^2\end{vmatrix} 
 = \begin{pmatrix} \partial_y(-x^2) - \partial_z(-z) \\ \partial_z(y) - \partial_x(-x^2) \\ \partial_x(-z) - \partial_y(y) \end{pmatrix}
 = \begin{pmatrix} 1\\ 2x\\ -1\end{pmatrix}
 ```
@@ -232,7 +232,7 @@ Therefore for quite a lot less work, we find the same result!
 
 ### A Sketch of a Proof
 
-Lets consider a vectorial surface area element $\mathrm{d}{\bf A} = \mathrm{d}x\,\mathrm{d}y\,\hat{\bf z}$, as depicted 
+Lets consider a vectorial surface area element $\mathrm{d}{\bf A} = \mathrm{d}x\,\mathrm{d}y\,\mathbf{e_z}$, as depicted 
 in {numref}`infinitesimalcontour`:
 
 ```{figure} ../figures/infinitesimalcontour.png
@@ -245,14 +245,14 @@ Closed infinitesimal contour around some point ${\bf r}$.
 We can find the an infinitesimal loop $\mathrm{d}\ell$ of a vector field ${\bf F}({\bf r})$ around this contour as:
 
 ```{math}
-\mathrm{d}\ell &=  {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}y\,\hat{\bf y} \right)\cdot \hat{\bf x}\,\mathrm{d}x 
-+ {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\cdot \hat{\bf y}\,\mathrm{d}y \\
-&+\,  {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}y\,\hat{\bf y} \right)\cdot (-\hat{\bf x})\,\mathrm{d}x 
-+ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\cdot (-\hat{\bf y})\,\mathrm{d}y \\
-&=  \left[F_x \left({\bf r} - \frac{1}{2}\mathrm{d}y\,\hat{\bf y} \right) 
-- F_x\left({\bf r} + \frac{1}{2}\mathrm{d}y\,\hat{\bf y} \right) \right]\,\mathrm{d}x 
-+ \left[ F_y\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right) - F_y\left({\bf r} 
-- \frac{1}{2}\mathrm{d}x\,\hat{\bf x} \right)\right]\,\mathrm{d}y
+\mathrm{d}\ell &=  {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}y\,\mathbf{e_y} \right)\cdot \mathbf{e_x}\,\mathrm{d}x 
++ {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\cdot \mathbf{e_y}\,\mathrm{d}y \\
+&+\,  {\bf F}\left({\bf r} + \frac{1}{2}\mathrm{d}y\,\mathbf{e_y} \right)\cdot (-\mathbf{e_x})\,\mathrm{d}x 
++ {\bf F}\left({\bf r} - \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\cdot (-\mathbf{e_y})\,\mathrm{d}y \\
+&=  \left[F_x \left({\bf r} - \frac{1}{2}\mathrm{d}y\,\mathbf{e_y} \right) 
+- F_x\left({\bf r} + \frac{1}{2}\mathrm{d}y\,\mathbf{e_y} \right) \right]\,\mathrm{d}x 
++ \left[ F_y\left({\bf r} + \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right) - F_y\left({\bf r} 
+- \frac{1}{2}\mathrm{d}x\,\mathbf{e_x} \right)\right]\,\mathrm{d}y
 ```
 If we do a Taylor expansion of each vector field, around $F_x({\bf r})$:
 ```{math}
@@ -268,7 +268,7 @@ We can read this last expression as the $z$ component of the curl of ${\bf F}({\
 ```
 So this is really just a dot product with the $z$ vector:
 ```{math}
-\mathrm{d}\ell &= \Bigg(\nabla \times {\bf G}\Bigg)\cdot \hat{\bf z}\,\mathrm{d}x\,\mathrm{d}y \\
+\mathrm{d}\ell &= \Bigg(\nabla \times {\bf G}\Bigg)\cdot \mathbf{e_z}\,\mathrm{d}x\,\mathrm{d}y \\
 &= \Bigg(\nabla \times {\bf G}\Bigg)\cdot\mathrm{d}{\bf S}
 ```
 where we have taken this second part as the area vector normal $\mathrm{d}{\bf A}$ to the $x-y$ plane.
@@ -312,7 +312,7 @@ Consider a vector field defined in the $x-y$ plane:
 ```
 the curl of this will be found to be:
 ```{math}
-\nabla \times {\bf F} = \begin{vmatrix} \hat{\bf x} & \hat{\bf y} & \hat{\bf z} \\ \partial_x & \partial_y & \partial_z \\ F_x & F_y & 0\end{vmatrix} 
+\nabla \times {\bf F} = \begin{vmatrix} \mathbf{e_x} & \mathbf{e_y} & \mathbf{e_z} \\ \partial_x & \partial_y & \partial_z \\ F_x & F_y & 0\end{vmatrix} 
 = \begin{pmatrix} \partial_y(0) - \partial_x(F_y) \\ \partial_z(F_x) - \partial_x(0) \\ \partial_x(F_y) - \partial_y(F_x) \end{pmatrix}
 
 ```
@@ -322,7 +322,7 @@ Given Stoke's theorem:
 ```
 and the fact that the surface normal area must be of the form:
 ```{math}
-\mathrm{d}{\bf A} = \hat{\bf z}\,\mathrm{d}x\,\mathrm{d}y
+\mathrm{d}{\bf A} = \mathbf{e_z}\,\mathrm{d}x\,\mathrm{d}y
 ```
 along with the line integral here being of the form:
 ```{math}

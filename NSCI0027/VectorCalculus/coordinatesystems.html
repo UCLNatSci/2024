@@ -419,7 +419,7 @@ y &amp;= r \sin(\theta) &amp;\quad&amp; \tan(\theta) = \frac{y}{x}\end{split}\]<
 \mathrm{d}\mathbf{r} &amp;=  \begin{pmatrix} \mathrm{d}r \cos(\theta) - r \sin(\theta)\mathrm{d}\theta \\ 
 \mathrm{d}r \sin(\theta) + r \cos(\theta) \mathrm{d}\theta \end{pmatrix}\\
  &amp;=  \begin{pmatrix} \cos(\theta) \\ 
-\sin(\theta)\end{pmatrix}\mathrm{d}r + \begin{pmatrix} -\sin(\theta) \\ \cos(\theta) \end{pmatrix}r\mathrm{d}\theta\\
+\sin(\theta)\end{pmatrix}\,\mathrm{d}r + \begin{pmatrix} -\sin(\theta) \\ \cos(\theta) \end{pmatrix}r\,\mathrm{d}\theta\\
  &amp;=  \mathbf{e_r}\, \mathrm{d}r + \mathbf{e_\theta}\, \mathrm{d}\theta\end{split}\]</div>
 <p>where we have defined vectors for the <span class="math notranslate nohighlight">\(r,\,\theta\)</span> directions.</p>
 <p>We notice here that these are actually unit vectors:</p>
@@ -508,7 +508,7 @@ and <b>Azimuthal</b> components (respectively), we further project on to the <sp
 \cos(\theta)\cos(\phi) \\ 
 \sin(\theta) \cos(\phi)\\ 
 - \sin(\phi)
-\end{pmatrix}r\mathrm{d}\phi + 
+\end{pmatrix}r\,\mathrm{d}\phi + 
 \begin{pmatrix} 
 -\sin(\theta) \\ 
  \cos(\theta)\\ 
@@ -557,12 +557,12 @@ remains the same.</p>
 \cos(\phi)\cos(\theta ) \\ 
 \sin(\phi) \cos(\theta )\\ 
 - \sin(\theta )
-\end{pmatrix}r\mathrm{d}\theta  + 
+\end{pmatrix}r\,\mathrm{d}\theta  + 
 \begin{pmatrix} 
 -\sin(\phi) \\ 
  \cos(\phi)\\ 
 0\end{pmatrix} r\sin(\theta )\mathrm{d}\phi \\
- &amp;=  \mathbf{e_r} \mathrm{d}r + \mathbf{e_\theta}r\mathrm{d}\theta  + \mathbf{e_\phi} r\sin(\theta)\mathrm{d}\phi\end{split}\]</div>
+ &amp;=  \mathbf{e_r} \mathrm{d}r + \mathbf{e_\theta}r\,\mathrm{d}\theta  + \mathbf{e_\phi} r\sin(\theta)\mathrm{d}\phi\end{split}\]</div>
 <figure class="align-default" id="sphericalpolarphysics">
 <img alt="../_images/sphericalpolarphysics.png" src="../_images/sphericalpolarphysics.png" />
 <figcaption>
@@ -612,11 +612,11 @@ variable relabelling.</p>
 -\sin(\theta) \\ 
 \cos(\theta)\\ 
 0
-\end{pmatrix}R\mathrm{d}\theta  + 
+\end{pmatrix}R\,\mathrm{d}\theta  + 
 \begin{pmatrix} 
 0 \\ 
 0\\ 
-1\end{pmatrix}\mathrm{d}z \\
+1\end{pmatrix}\,\mathrm{d}z \\
  &amp;=  \mathbf{e_R}\, \mathrm{d}R + \mathbf{e_\theta }\,R\,\mathrm{d}\theta  + \mathbf{e_z} \,\mathrm{d}z\end{split}\]</div>
 <p>and therefore the volume element <span class="math notranslate nohighlight">\(\mathrm{d}V\)</span> is given by:</p>
 <div class="math notranslate nohighlight">

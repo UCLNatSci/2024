@@ -52,7 +52,7 @@ In doing so we can rewrite the coordinate vector and find the infinitesimal chan
 \mathrm{d}\mathbf{r} &=  \begin{pmatrix} \mathrm{d}r \cos(\theta) - r \sin(\theta)\mathrm{d}\theta \\ 
 \mathrm{d}r \sin(\theta) + r \cos(\theta) \mathrm{d}\theta \end{pmatrix}\\
  &=  \begin{pmatrix} \cos(\theta) \\ 
-\sin(\theta)\end{pmatrix}\mathrm{d}r + \begin{pmatrix} -\sin(\theta) \\ \cos(\theta) \end{pmatrix}r\mathrm{d}\theta\\
+\sin(\theta)\end{pmatrix}\,\mathrm{d}r + \begin{pmatrix} -\sin(\theta) \\ \cos(\theta) \end{pmatrix}r\,\mathrm{d}\theta\\
  &=  \mathbf{e_r}\, \mathrm{d}r + \mathbf{e_\theta}\, \mathrm{d}\theta
 ```
 where we have defined vectors for the $r,\,\theta$ directions.  
@@ -167,7 +167,7 @@ We can then write the infinitesimal changes in the coordinate vector $\bf r$ as:
 \cos(\theta)\cos(\phi) \\ 
 \sin(\theta) \cos(\phi)\\ 
 - \sin(\phi)
-\end{pmatrix}r\mathrm{d}\phi + 
+\end{pmatrix}r\,\mathrm{d}\phi + 
 \begin{pmatrix} 
 -\sin(\theta) \\ 
  \cos(\theta)\\ 
@@ -227,12 +227,12 @@ remains the same.
 \cos(\phi)\cos(\theta ) \\ 
 \sin(\phi) \cos(\theta )\\ 
 - \sin(\theta )
-\end{pmatrix}r\mathrm{d}\theta  + 
+\end{pmatrix}r\,\mathrm{d}\theta  + 
 \begin{pmatrix} 
 -\sin(\phi) \\ 
  \cos(\phi)\\ 
 0\end{pmatrix} r\sin(\theta )\mathrm{d}\phi \\
- &=  \mathbf{e_r} \mathrm{d}r + \mathbf{e_\theta}r\mathrm{d}\theta  + \mathbf{e_\phi} r\sin(\theta)\mathrm{d}\phi
+ &=  \mathbf{e_r} \mathrm{d}r + \mathbf{e_\theta}r\,\mathrm{d}\theta  + \mathbf{e_\phi} r\sin(\theta)\mathrm{d}\phi
 ```
 
 ```{figure} ../figures/sphericalpolarphysics.png
@@ -295,11 +295,11 @@ To find the infinitesimal changes in the coordinates here we find:
 -\sin(\theta) \\ 
 \cos(\theta)\\ 
 0
-\end{pmatrix}R\mathrm{d}\theta  + 
+\end{pmatrix}R\,\mathrm{d}\theta  + 
 \begin{pmatrix} 
 0 \\ 
 0\\ 
-1\end{pmatrix}\mathrm{d}z \\
+1\end{pmatrix}\,\mathrm{d}z \\
  &=  \mathbf{e_R}\, \mathrm{d}R + \mathbf{e_\theta }\,R\,\mathrm{d}\theta  + \mathbf{e_z} \,\mathrm{d}z
 ```
 
