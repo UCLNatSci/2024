@@ -8,7 +8,7 @@ The Thomas-Fermi equation is a nonlinear ordinary differential equation that can
 
 ## The Equation
 
-The Thomas-Fermi equation is given by:
+The Thomas-Fermi (TF) equation is given by:
 ```{math}
 \frac{\mathrm{d}^2\phi}{\mathrm{d}x^2} = \frac{1}{\sqrt{r}} \phi^{3/2}(x),
 ```
@@ -22,10 +22,16 @@ Here, $x > 0$ is some radial distance, and $\phi(x)$ is the unknown function to 
 
 ## Boundary Conditions and Their Implications
 
-- At $x = 0$: Regularity requires $\phi'(0) = 0$ to avoid divergence in the second derivative.
-- As $x \to \infty$: The solution decays to zero, ensuring a well-behaved function at large distances.
+Typically the TF equation is solved subject to the boundary condtitions:
+```{math}
+\phi(0) = 1, \quad 
+\begin{cases} 
+\phi(\infty) = 0, \quad \text{for neutral atoms} \\ 
+\phi(x_0) = 0, \quad \text{for positive ions} \\ 
+\phi(x_1) - x_1 \phi'(x_1) = 0, \quad \text{for compressed neutral atoms}
+\end{cases}
+```
 
-These conditions guide the numerical or analytical approach to solving the equation.
 
 ---
 

@@ -428,7 +428,7 @@ document.write(`
 <hr class="docutils" />
 <section id="the-equation">
 <h2>The Equation<a class="headerlink" href="#the-equation" title="Link to this heading">#</a></h2>
-<p>The Thomas-Fermi equation is given by:</p>
+<p>The Thomas-Fermi (TF) equation is given by:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\mathrm{d}^2\phi}{\mathrm{d}x^2} = \frac{1}{\sqrt{r}} \phi^{3/2}(x),\]</div>
 <p>with the boundary conditions:</p>
@@ -441,11 +441,14 @@ document.write(`
 <hr class="docutils" />
 <section id="boundary-conditions-and-their-implications">
 <h2>Boundary Conditions and Their Implications<a class="headerlink" href="#boundary-conditions-and-their-implications" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>At <span class="math notranslate nohighlight">\(x = 0\)</span>: Regularity requires <span class="math notranslate nohighlight">\(\phi'(0) = 0\)</span> to avoid divergence in the second derivative.</p></li>
-<li><p>As <span class="math notranslate nohighlight">\(x \to \infty\)</span>: The solution decays to zero, ensuring a well-behaved function at large distances.</p></li>
-</ul>
-<p>These conditions guide the numerical or analytical approach to solving the equation.</p>
+<p>Typically the TF equation is solved subject to the boundary condtitions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\phi(0) = 1, \quad 
+\begin{cases} 
+\phi(\infty) = 0, \quad \text{for neutral atoms} \\ 
+\phi(x_0) = 0, \quad \text{for positive ions} \\ 
+\phi(x_1) - x_1 \phi'(x_1) = 0, \quad \text{for compressed neutral atoms}
+\end{cases}\end{split}\]</div>
 </section>
 <hr class="docutils" />
 <section id="semi-analytic-analysis-and-methods">
