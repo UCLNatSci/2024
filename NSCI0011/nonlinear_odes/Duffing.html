@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project Submission Information &#8212; Non-Linear ODEs</title>
+    <title>Duffing Equation &#8212; Non-Linear ODEs</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Project';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Duffing';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Duffing Equation" href="Duffing.html" />
-    <link rel="prev" title="The Van der Pol Oscillator" href="VanderPol.html" />
+    <link rel="next" title="The Ermakov-Pinney Equation" href="ErmakovPinney.html" />
+    <link rel="prev" title="Project Submission Information" href="Project.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,8 +185,8 @@
 <li class="toctree-l1"><a class="reference internal" href="NumericalMethods.html">Looking at Numerical Solutions to ODEs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pendulum.html">Solving the Non-Linear Pendulum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VanderPol.html">The Van der Pol Oscillator</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project Submission Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Duffing.html">Duffing Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Project.html">Project Submission Information</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Duffing Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ErmakovPinney.html">The Ermakov-Pinney Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ThomasFermi.html">Thomas Fermi Equation</a></li>
 
@@ -259,7 +261,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FProject.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FDuffing.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -289,7 +291,7 @@
       
       
       
-      <li><a href="_sources/Project.md" target="_blank"
+      <li><a href="_sources/Duffing.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -373,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Project Submission Information</h1>
+    <h1>Duffing Equation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,12 +385,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protype-submission">Protype Submission</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code">Python Code</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plots">Plots</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description-document">Description Document</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-cases">Special Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-approximations">Analytical Approximations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-solutions">4. Numerical Solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcations-and-chaos">Bifurcations and Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -400,89 +403,103 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="project-submission-information">
-<h1>Project Submission Information<a class="headerlink" href="#project-submission-information" title="Link to this heading">#</a></h1>
-<section id="protype-submission">
-<h2>Protype Submission<a class="headerlink" href="#protype-submission" title="Link to this heading">#</a></h2>
-<p>Your protype should include the</p>
-<section id="python-code">
-<h3>Python Code<a class="headerlink" href="#python-code" title="Link to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="duffing-equation">
+<h1>Duffing Equation<a class="headerlink" href="#duffing-equation" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The Duffing equation is a nonlinear second-order differential equation used to model damped and driven oscillators with a nonlinear restoring force. It is commonly expressed as:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x} + \delta \dot{x} + \alpha x + \beta x^3 = \gamma \cos(\omega t)\]</div>
+<p>where:</p>
 <ul class="simple">
-<li><p><strong>Complete and Functional Code</strong>: Provide the full Python script that performs the following tasks:</p></li>
+<li><p><span class="math notranslate nohighlight">\( x(t) \)</span> is the displacement of the system,</p></li>
+<li><p><span class="math notranslate nohighlight">\( \delta \)</span> is the damping coefficient,</p></li>
+<li><p><span class="math notranslate nohighlight">\( \alpha \)</span> and <span class="math notranslate nohighlight">\( \beta \)</span> control the linear and nonlinear stiffness of the system,</p></li>
+<li><p><span class="math notranslate nohighlight">\( \gamma \cos(\omega t) \)</span> represents an external periodic driving force with amplitude <span class="math notranslate nohighlight">\( \gamma \)</span> and frequency <span class="math notranslate nohighlight">\( \omega \)</span>.</p></li>
 </ul>
-<ol class="arabic simple">
-<li><p>Solves the specified ordinary differential equation (ODE).</p></li>
-<li><p>Generates a time series plot.</p></li>
-<li><p>Generates a phase portrait plot.</p></li>
-</ol>
-<ul class="simple">
-<li><p><strong>Code Comments</strong>: Include clear and concise comments within your code to explain:</p></li>
-</ul>
-<ol class="arabic simple" start="4">
-<li><p>Initial conditions setup.</p></li>
-<li><p>ODE formulation and integration method.</p></li>
-<li><p>Plotting functions and any other significant code segments.</p></li>
-</ol>
-<p><em>Example</em>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-    <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
-
-    <span class="c1"># Define the system of ODEs</span>
-    <span class="k">def</span> <span class="nf">system</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="n">dydt</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">dydt</span>
-
-    <span class="c1"># Initial conditions</span>
-    <span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-
-    <span class="c1"># Time span for the solution</span>
-    <span class="n">t_span</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-
-    <span class="c1"># Solve the ODE</span>
-    <span class="n">solution</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">t_span</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
-
-    <span class="c1"># Plotting the time series</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">solution</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">solution</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Variable 1&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">solution</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">solution</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Variable 2&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Variables&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Time Series Plot&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-</pre></div>
-</div>
+<p>This equation is widely used in physics and engineering to describe nonlinear oscillations, including mechanical vibrations, electrical circuits, and even fluid dynamics.</p>
 </section>
-<section id="plots">
-<h3>Plots<a class="headerlink" href="#plots" title="Link to this heading">#</a></h3>
+<section id="special-cases">
+<h2>Special Cases<a class="headerlink" href="#special-cases" title="Link to this heading">#</a></h2>
+<p>The Duffing equation can exhibit different behaviors depending on parameter values:</p>
 <ul class="simple">
-<li><p><strong>Time Series Plot</strong>: Illustrate how the system’s variables evolve over time.</p></li>
-<li><p><strong>Phase Portrait Plot</strong>: Depict the trajectories of the system in the phase plane.</p></li>
+<li><p><strong>Linear Oscillator</strong> (<span class="math notranslate nohighlight">\( \beta = 0, \gamma = 0 \)</span>):</p>
+<ul>
+<li><p>The equation reduces to the standard damped harmonic oscillator.</p></li>
 </ul>
-<p><em>Note</em>: Choose initial conditions that highlight interesting behaviors in the system. Exploring a variety of initial conditions can reveal a range of dynamics.</p>
-</section>
-<section id="description-document">
-<h3>Description Document<a class="headerlink" href="#description-document" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Length</strong>: Limit to one page maximum.</p></li>
-<li><p><strong>Content</strong>:</p>
+</li>
+<li><p><strong>Hardening/Softening Nonlinearity</strong> (<span class="math notranslate nohighlight">\( \beta \neq 0 \)</span>):</p>
 <ul>
-<li><p><strong>Analysis of Plots</strong>: Discuss very brieflt the behaviors observed in your plots.</p></li>
-<li><p><strong>Code Explanation</strong>:</p>
+<li><p>If <span class="math notranslate nohighlight">\( \beta &gt; 0 \)</span>, the system exhibits a hardening nonlinearity (stiffness increases with displacement).</p></li>
+<li><p>If <span class="math notranslate nohighlight">\( \beta &lt; 0 \)</span>, the system exhibits a softening nonlinearity (stiffness decreases with displacement).</p></li>
+</ul>
+</li>
+<li><p><strong>Undamped and Unforced</strong> (<span class="math notranslate nohighlight">\( \delta = 0, \gamma = 0 \)</span>):</p>
 <ul>
-<li><p>Describe how the ODE was transformed into a coupled system for numerical solving.</p></li>
-<li><p>Specify the initial conditions used and the rationale behind their selection.</p></li>
-<li><p>Briefly explain the numerical methods or solvers employed.</p></li>
+<li><p>The system conserves energy and exhibits conservative nonlinear oscillations.</p></li>
+</ul>
+</li>
+<li><p><strong>Damped and Driven</strong> (<span class="math notranslate nohighlight">\( \delta &gt; 0, \gamma \neq 0 \)</span>):</p>
+<ul>
+<li><p>The system exhibits forced nonlinear oscillations, leading to interesting phenomena such as bifurcations and chaos.</p></li>
 </ul>
 </li>
 </ul>
+</section>
+<section id="analytical-approximations">
+<h2>Analytical Approximations<a class="headerlink" href="#analytical-approximations" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Perturbation Methods</strong>:</p>
+<ul class="simple">
+<li><p>For small nonlinearities (<span class="math notranslate nohighlight">\( \beta \ll 1 \)</span>), approximate solutions can be found using regular perturbation or the method of multiple scales.</p></li>
+</ul>
+</li>
+<li><p><strong>Harmonic Balance</strong>:</p>
+<ul>
+<li><p>Approximates periodic solutions by assuming an ansatz of the form:</p>
+<div class="math notranslate nohighlight">
+\[x(t) = A\cos(\omega t) + B\cos(3\omega t)\]</div>
 </li>
 </ul>
-<p><em>Example</em>:</p>
-<p>In the time series plot, Variable 1 exhibits damped oscillations, converging to a steady state, while Variable 2 shows a monotonic decrease. The phase portrait reveals a spiral trajectory indicating a stable focus at the origin. The ODE was decomposed into a system of first-order equations to facilitate the use of the <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> solver from SciPy. Initial conditions were selected to demonstrate the system’s response to perturbations from equilibrium.</p>
+</li>
+<li><p><strong>Variational Methods</strong>:</p>
+<ul class="simple">
+<li><p>Can be used to approximate periodic solutions using an energy-based approach.</p></li>
+</ul>
+</li>
+</ul>
 </section>
+<section id="numerical-solutions">
+<h2>4. Numerical Solutions<a class="headerlink" href="#numerical-solutions" title="Link to this heading">#</a></h2>
+<p>Due to its nonlinearity, the Duffing equation often requires numerical integration:</p>
+<ul class="simple">
+<li><p>Runge-Kutta Methods (RK4)</p></li>
+<li><p>Symplectic Integrators (for conservative cases)</p></li>
+<li><p>Shooting Methods (for periodic solutions)</p></li>
+<li><p>Poincaré Maps &amp; Phase Portraits (to analyze chaotic behavior)</p></li>
+</ul>
+</section>
+<section id="bifurcations-and-chaos">
+<h2>Bifurcations and Chaos<a class="headerlink" href="#bifurcations-and-chaos" title="Link to this heading">#</a></h2>
+<p>The Duffing oscillator exhibits rich nonlinear dynamics, including:</p>
+<ul class="simple">
+<li><p><strong>Bifurcations</strong>: As parameters (e.g., <span class="math notranslate nohighlight">\( \gamma, \omega \)</span>) vary, the system transitions between different stable/unstable periodic solutions.</p></li>
+<li><p><strong>Period Doubling</strong>: A route to chaos, where the system undergoes successive period-doubling bifurcations.</p></li>
+<li><p><strong>Chaotic Motion</strong>: At certain parameter values, solutions become aperiodic and sensitive to initial conditions, a hallmark of deterministic chaos.</p></li>
+</ul>
+</section>
+<section id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Mechanical Vibrations</strong>: Modeling beams, plates, and MEMS resonators.</p></li>
+<li><p><strong>Electrical Circuits</strong>: Duffing-like behavior in nonlinear LC circuits.</p></li>
+<li><p><strong>Climate Models</strong>: Nonlinear oscillations in atmospheric and oceanic dynamics.</p></li>
+<li><p><strong>Biological Systems</strong>: Nonlinear oscillators in neuroscience and cardiac rhythms.</p></li>
+</ul>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>The Duffing equation serves as a fundamental example of nonlinear dynamics, showcasing bifurcations, limit cycles, and chaos. Its study provides insight into various natural and engineered systems, making it a cornerstone of modern dynamical systems theory.</p>
 </section>
 </section>
 
@@ -517,20 +534,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="VanderPol.html"
+       href="Project.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Van der Pol Oscillator</p>
+        <p class="prev-next-title">Project Submission Information</p>
       </div>
     </a>
     <a class="right-next"
-       href="Duffing.html"
+       href="ErmakovPinney.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Duffing Equation</p>
+        <p class="prev-next-title">The Ermakov-Pinney Equation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -550,12 +567,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protype-submission">Protype Submission</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code">Python Code</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plots">Plots</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description-document">Description Document</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-cases">Special Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-approximations">Analytical Approximations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-solutions">4. Numerical Solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcations-and-chaos">Bifurcations and Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>
 

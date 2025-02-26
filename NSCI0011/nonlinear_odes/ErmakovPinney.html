@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project Submission Information &#8212; Non-Linear ODEs</title>
+    <title>The Ermakov-Pinney Equation &#8212; Non-Linear ODEs</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Project';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ErmakovPinney';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Duffing Equation" href="Duffing.html" />
-    <link rel="prev" title="The Van der Pol Oscillator" href="VanderPol.html" />
+    <link rel="next" title="Thomas Fermi Equation" href="ThomasFermi.html" />
+    <link rel="prev" title="Duffing Equation" href="Duffing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,9 +185,9 @@
 <li class="toctree-l1"><a class="reference internal" href="NumericalMethods.html">Looking at Numerical Solutions to ODEs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pendulum.html">Solving the Non-Linear Pendulum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VanderPol.html">The Van der Pol Oscillator</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project Submission Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Project.html">Project Submission Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Duffing.html">Duffing Equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ErmakovPinney.html">The Ermakov-Pinney Equation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Ermakov-Pinney Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ThomasFermi.html">Thomas Fermi Equation</a></li>
 
 </ul>
@@ -259,7 +261,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FProject.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FErmakovPinney.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -289,7 +291,7 @@
       
       
       
-      <li><a href="_sources/Project.md" target="_blank"
+      <li><a href="_sources/ErmakovPinney.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -373,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Project Submission Information</h1>
+    <h1>The Ermakov-Pinney Equation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,12 +385,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protype-submission">Protype Submission</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code">Python Code</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plots">Plots</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description-document">Description Document</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-and-origins">Background and Origins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-the-linear-oscillator">Connection to the Linear Oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forms-of-omega-t-and-lambda-t">Forms of <span class="math notranslate nohighlight">\( \omega(t) \)</span> and <span class="math notranslate nohighlight">\( \lambda(t) \)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constant-omega-and-lambda">Constant <span class="math notranslate nohighlight">\( \omega \)</span> and <span class="math notranslate nohighlight">\( \lambda \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-omega-t-with-constant-lambda">Variable <span class="math notranslate nohighlight">\( \omega(t) \)</span> with Constant <span class="math notranslate nohighlight">\( \lambda \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constant-omega-with-variable-lambda-t">Constant <span class="math notranslate nohighlight">\( \omega \)</span> with Variable <span class="math notranslate nohighlight">\( \lambda(t) \)</span></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-for-adiabatically-varying-frequency">Solutions for Adiabatically Varying Frequency</a></li>
 </ul>
             </nav>
         </div>
@@ -400,89 +405,67 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="project-submission-information">
-<h1>Project Submission Information<a class="headerlink" href="#project-submission-information" title="Link to this heading">#</a></h1>
-<section id="protype-submission">
-<h2>Protype Submission<a class="headerlink" href="#protype-submission" title="Link to this heading">#</a></h2>
-<p>Your protype should include the</p>
-<section id="python-code">
-<h3>Python Code<a class="headerlink" href="#python-code" title="Link to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-ermakov-pinney-equation">
+<h1>The Ermakov-Pinney Equation<a class="headerlink" href="#the-ermakov-pinney-equation" title="Link to this heading">#</a></h1>
+<p>The <strong>Ermakov-Pinney equation</strong> is a nonlinear second-order differential equation of the form:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 y}{dt^2} + \omega^2(t) y = \frac{\lambda}{y^3}\]</div>
+<p>where <span class="math notranslate nohighlight">\( y = y(t) \)</span> is the unknown function, <span class="math notranslate nohighlight">\( \omega(t) \)</span> is a given function of time (often related to an oscillator), and <span class="math notranslate nohighlight">\( \lambda \)</span> is a constant.</p>
+<section id="background-and-origins">
+<h2>Background and Origins<a class="headerlink" href="#background-and-origins" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Complete and Functional Code</strong>: Provide the full Python script that performs the following tasks:</p></li>
+<li><p>The equation was originally studied by <strong>Vladimir Ermakov</strong> in 1880 in the context of nonlinear differential equations.</p></li>
+<li><p>Later, <strong>Edward Pinney</strong> (1950) independently rediscovered it while studying solutions to the <strong>time-dependent harmonic oscillator</strong>.</p></li>
+<li><p>The Ermakov-Pinney equation appears naturally in problems involving <strong>parametric oscillators</strong> and <strong>quantum mechanics</strong>.</p></li>
 </ul>
-<ol class="arabic simple">
-<li><p>Solves the specified ordinary differential equation (ODE).</p></li>
-<li><p>Generates a time series plot.</p></li>
-<li><p>Generates a phase portrait plot.</p></li>
-</ol>
-<ul class="simple">
-<li><p><strong>Code Comments</strong>: Include clear and concise comments within your code to explain:</p></li>
-</ul>
-<ol class="arabic simple" start="4">
-<li><p>Initial conditions setup.</p></li>
-<li><p>ODE formulation and integration method.</p></li>
-<li><p>Plotting functions and any other significant code segments.</p></li>
-</ol>
-<p><em>Example</em>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-    <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
-
-    <span class="c1"># Define the system of ODEs</span>
-    <span class="k">def</span> <span class="nf">system</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="n">dydt</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">dydt</span>
-
-    <span class="c1"># Initial conditions</span>
-    <span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-
-    <span class="c1"># Time span for the solution</span>
-    <span class="n">t_span</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-
-    <span class="c1"># Solve the ODE</span>
-    <span class="n">solution</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">t_span</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
-
-    <span class="c1"># Plotting the time series</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">solution</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">solution</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Variable 1&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">solution</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">solution</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Variable 2&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Variables&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Time Series Plot&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-</pre></div>
-</div>
 </section>
-<section id="plots">
-<h3>Plots<a class="headerlink" href="#plots" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Time Series Plot</strong>: Illustrate how the system’s variables evolve over time.</p></li>
-<li><p><strong>Phase Portrait Plot</strong>: Depict the trajectories of the system in the phase plane.</p></li>
-</ul>
-<p><em>Note</em>: Choose initial conditions that highlight interesting behaviors in the system. Exploring a variety of initial conditions can reveal a range of dynamics.</p>
-</section>
-<section id="description-document">
-<h3>Description Document<a class="headerlink" href="#description-document" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Length</strong>: Limit to one page maximum.</p></li>
-<li><p><strong>Content</strong>:</p>
+<section id="connection-to-the-linear-oscillator">
+<h2>Connection to the Linear Oscillator<a class="headerlink" href="#connection-to-the-linear-oscillator" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>Analysis of Plots</strong>: Discuss very brieflt the behaviors observed in your plots.</p></li>
-<li><p><strong>Code Explanation</strong>:</p>
-<ul>
-<li><p>Describe how the ODE was transformed into a coupled system for numerical solving.</p></li>
-<li><p>Specify the initial conditions used and the rationale behind their selection.</p></li>
-<li><p>Briefly explain the numerical methods or solvers employed.</p></li>
-</ul>
+<li><p>The general solution of the <strong>linear</strong> equation</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 x}{dt^2} + \omega^2(t) x = 0\]</div>
+<p>provides a basis for solving the <strong>Ermakov-Pinney equation</strong>. If <span class="math notranslate nohighlight">\( x_1(t) \)</span> and <span class="math notranslate nohighlight">\( x_2(t) \)</span> are two linearly independent solutions of this equation, then the solution to the Ermakov-Pinney equation is given by:</p>
+<div class="math notranslate nohighlight">
+\[y(t) = \sqrt{A x_1^2 + B x_1 x_2 + C x_2^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\( A, B, C \)</span> are constants satisfying <span class="math notranslate nohighlight">\( 4AC - B^2 = \lambda \)</span>.</p>
 </li>
 </ul>
-</li>
-</ul>
-<p><em>Example</em>:</p>
-<p>In the time series plot, Variable 1 exhibits damped oscillations, converging to a steady state, while Variable 2 shows a monotonic decrease. The phase portrait reveals a spiral trajectory indicating a stable focus at the origin. The ODE was decomposed into a system of first-order equations to facilitate the use of the <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> solver from SciPy. Initial conditions were selected to demonstrate the system’s response to perturbations from equilibrium.</p>
 </section>
+<section id="forms-of-omega-t-and-lambda-t">
+<h2>Forms of <span class="math notranslate nohighlight">\( \omega(t) \)</span> and <span class="math notranslate nohighlight">\( \lambda(t) \)</span><a class="headerlink" href="#forms-of-omega-t-and-lambda-t" title="Link to this heading">#</a></h2>
+<section id="constant-omega-and-lambda">
+<h3>Constant <span class="math notranslate nohighlight">\( \omega \)</span> and <span class="math notranslate nohighlight">\( \lambda \)</span><a class="headerlink" href="#constant-omega-and-lambda" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \omega(t) = \omega_0 \)</span>, <span class="math notranslate nohighlight">\( \lambda = \lambda_0 \)</span> (simple harmonic case)</p></li>
+<li><p><span class="math notranslate nohighlight">\( \omega(t) = i \gamma \)</span>, <span class="math notranslate nohighlight">\( \lambda = \lambda_0 \)</span> (damped system)</p></li>
+</ul>
+</section>
+<section id="variable-omega-t-with-constant-lambda">
+<h3>Variable <span class="math notranslate nohighlight">\( \omega(t) \)</span> with Constant <span class="math notranslate nohighlight">\( \lambda \)</span><a class="headerlink" href="#variable-omega-t-with-constant-lambda" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Adiabatic variation</strong>: <span class="math notranslate nohighlight">\( \omega(t) = \omega_0 (1 + \epsilon t) \)</span></p></li>
+<li><p><strong>Parametric modulation</strong>: <span class="math notranslate nohighlight">\( \omega(t) = \omega_0 + \alpha \cos(\Omega t) \)</span></p></li>
+<li><p><strong>Power-law variation</strong>: <span class="math notranslate nohighlight">\( \omega(t) = \frac{\omega_0}{t} \)</span></p></li>
+</ul>
+</section>
+<section id="constant-omega-with-variable-lambda-t">
+<h3>Constant <span class="math notranslate nohighlight">\( \omega \)</span> with Variable <span class="math notranslate nohighlight">\( \lambda(t) \)</span><a class="headerlink" href="#constant-omega-with-variable-lambda-t" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Decaying nonlinearity</strong>: <span class="math notranslate nohighlight">\( \lambda(t) = \lambda_0 e^{- \beta t} \)</span></p></li>
+<li><p><strong>Oscillatory nonlinearity</strong>: <span class="math notranslate nohighlight">\( \lambda(t) = \lambda_0 \cos(\nu t) \)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="solutions-for-adiabatically-varying-frequency">
+<h2>Solutions for Adiabatically Varying Frequency<a class="headerlink" href="#solutions-for-adiabatically-varying-frequency" title="Link to this heading">#</a></h2>
+<p>For an <strong>adiabatic variation</strong> of frequency:</p>
+<div class="math notranslate nohighlight">
+\[\omega(t) = \omega_0 (1 + \epsilon t)\]</div>
+<p>we numerically solve the Ermakov-Pinney equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 y}{dt^2} + (\omega_0 (1 + \epsilon t))^2 y = \frac{\lambda}{y^3}\]</div>
+<p>where <span class="math notranslate nohighlight">\( \lambda = 1.0 \)</span>, <span class="math notranslate nohighlight">\( \omega_0 = 1.0 \)</span>, and different values of <span class="math notranslate nohighlight">\( \epsilon \)</span> are considered.</p>
 </section>
 </section>
 
@@ -517,20 +500,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="VanderPol.html"
+       href="Duffing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Van der Pol Oscillator</p>
+        <p class="prev-next-title">Duffing Equation</p>
       </div>
     </a>
     <a class="right-next"
-       href="Duffing.html"
+       href="ThomasFermi.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Duffing Equation</p>
+        <p class="prev-next-title">Thomas Fermi Equation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -550,12 +533,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protype-submission">Protype Submission</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code">Python Code</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plots">Plots</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description-document">Description Document</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-and-origins">Background and Origins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-the-linear-oscillator">Connection to the Linear Oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forms-of-omega-t-and-lambda-t">Forms of <span class="math notranslate nohighlight">\( \omega(t) \)</span> and <span class="math notranslate nohighlight">\( \lambda(t) \)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constant-omega-and-lambda">Constant <span class="math notranslate nohighlight">\( \omega \)</span> and <span class="math notranslate nohighlight">\( \lambda \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-omega-t-with-constant-lambda">Variable <span class="math notranslate nohighlight">\( \omega(t) \)</span> with Constant <span class="math notranslate nohighlight">\( \lambda \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constant-omega-with-variable-lambda-t">Constant <span class="math notranslate nohighlight">\( \omega \)</span> with Variable <span class="math notranslate nohighlight">\( \lambda(t) \)</span></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions-for-adiabatically-varying-frequency">Solutions for Adiabatically Varying Frequency</a></li>
 </ul>
   </nav></div>
 

@@ -6,53 +6,78 @@ The Thomas-Fermi equation is a nonlinear ordinary differential equation that can
 
 ---
 
-## 1. The Equation
+## The Equation
 
 The Thomas-Fermi equation is given by:
 ```{math}
-\frac{\mathrm{d}^2\phi}{\mathrm{d}r^2} = \frac{1}{\sqrt{r}} \phi^{3/2}(r),
+\frac{\mathrm{d}^2\phi}{\mathrm{d}x^2} = \frac{1}{\sqrt{r}} \phi^{3/2}(x),
 ```
 with the boundary conditions:
 - $\phi(0) = 1$: The potential is normalized at the origin.
-- $\phi(r) \to 0$ as $r \to \infty$: The potential vanishes at large distances.
+- $\phi(x) \to 0$ as $x \to \infty$: The potential vanishes at large distances.
 
-Here, $r > 0$ is the radial distance, and $\phi(r)$ is the unknown function to solve for.
+Here, $x > 0$ is some radial distance, and $\phi(x)$ is the unknown function to solve for.
 
 ---
 
-## 2. Boundary Conditions and Their Implications
+## Boundary Conditions and Their Implications
 
-- **At $r = 0$**: Regularity requires $\phi'(0) = 0$ to avoid divergence in the second derivative.
-- **As $r \to \infty$**: The solution decays to zero, ensuring a well-behaved function at large distances.
+- At $x = 0$: Regularity requires $\phi'(0) = 0$ to avoid divergence in the second derivative.
+- As $x \to \infty$: The solution decays to zero, ensuring a well-behaved function at large distances.
 
 These conditions guide the numerical or analytical approach to solving the equation.
 
 ---
 
-## 3. Reduction of Order
+## Semi-Analytic Analysis and Methods
 
-To simplify the problem, substitute $\phi(r) = r^{-1/2}y(r)$. Then:
+### Reduction of Order
+
+We can use a variable transformation $z=y/x$ converts the equation to
+
 ```{math}
-\frac{\mathrm{d}^2\phi}{\mathrm{d}r^2} = r^{-5/2} \left( y''(r) - \frac{1}{4}r^{-2}y(r) \right),
+\frac{1}{x^2}\frac{d}{dx}\left(x^2\frac{dz}{dx}\right) - z^{3/2}=0
 ```
-and the equation becomes:
+
+The original equation is invariant under the transformation $x\rightarrow c x, \ y\rightarrow c^{-3} y$. Hence, the equation can be made equidimensional by introducing $y=x^{-3} u$ into the equation, leading to
+
 ```{math}
-y''(r) = \frac{1}{4}r^{-2}y(r) + y^{3/2}(r).
+x^2 \frac{d^2u}{dx^2} - 6x\frac{du}{dx} + 12 u = u^{3/2}
 ```
 
-This substitution removes the singularity at $r = 0$ and can make numerical solutions more stable.
+so that the substitution $x=e^t$ reduces the equation to
 
----
+```{math}
+\frac{d^2u}{dt^2} - 7\frac{du}{dt} +12 u = u^{3/2}
+```
 
-## 4. Asymptotic Analysis
+Treating $w =du/dt$ as the dependent variable and $u$ as the independent variable, we can reduce the above equation to
 
-### Near $r = 0$
+```{math}
+w \frac{dw}{du} - 7w = u^{3/2}-12 u
+```
+
+But this first order equation has no known explicit solution, hence, the approach turns to either numerical or approximate methods.
+
+### Sommerfeld's approximation
+
+The TF equation has a particular solution $y_p(x)$, which satisfies the boundary condition that $y\rightarrow 0$ as $x\rightarrow\infty$, but not the  boundary condition $y(0)=1$:
+
+```{math}
+y_p(x) = \frac{144}{x^3}
+```
+
+
+
+### Asymptotic Analysis
+
+#### Near $r = 0$
 Assuming a power-series solution $\phi(r) = 1 - kr^{n}$, substitution gives:
 ```{math}
-\phi(r) \approx 1 - \frac{2}{3}r^{3/2}.
+\phi(r) \approx 1 - \frac{2}{3}r^{3/2} +\dots
 ```
 
-### Far from the Origin ($r \to \infty$)
+#### Far from the Origin ($r \to \infty$)
 The decay of $\phi(r)$ is slow. Using asymptotic expansion methods, one finds:
 ```{math}
 \phi(r) \sim \frac{A}{r^3},
@@ -61,39 +86,81 @@ where $A$ is determined numerically or from matching conditions.
 
 ---
 
-## 5. Numerical Solution Techniques
 
-### Shooting Method
-1. Transform the boundary value problem into an initial value problem.
-2. Guess initial slopes $\phi'(0)$ and adjust iteratively to satisfy $\phi(r) \to 0$ as $r \to \infty$.
 
-### Finite Difference Method
-1. Discretize the domain into small steps $r_i$ and approximate derivatives with finite differences.
-2. Solve the resulting nonlinear algebraic equations iteratively.
+## Extended Forms of the Thomas-Fermi Equation  
+
+Each extension modifies the right-hand side of the classical Thomas-Fermi equation in a different way, leading to distinct ODEs.  Each extension adds corrections for a specific physical effect, improving accuracy for different regimes such as high temperature, exchange interactions, inhomogeneities, and relativistic effects.
+
 
 ---
 
-## 6. Key Properties
+### Finite Temperature Corrections (Finite-T Thomas-Fermi Equation)  
+At finite temperature, the electron density follows a **Fermi-Dirac distribution** instead of a sharp cutoff. This modifies the right-hand side of the ODE by introducing temperature dependence via the **Fermi integral**:
 
-- **Nonlinearity**: The term $\phi^{3/2}$ introduces a strong nonlinearity, complicating direct integration methods.
-- **Singular Behavior**: The factor $\frac{1}{\sqrt{r}}$ requires careful handling near $r = 0$.
+```{math}
+\frac{\mathrm{d}^2 \phi}{\mathrm{d} x^2} = x^{-\frac{1}{2}} F_{1/2} \left(\frac{\phi(x)}{T} \right).
+```
+
+where:  
+- $ F_{1/2} (\eta) $ is the **Fermi-Dirac integral**,
+
+  ```{math}
+  F_{1/2} (\eta) = \int_0^\infty \frac{t^{1/2} \, \mathrm{d}t}{e^{t-\eta} + 1}.
+  ```
+
+- $ T $ is the dimensionless temperature parameter.
+
+Effect:  
+- At **low temperatures** ($ T \to 0 $), the classical Thomas-Fermi equation is recovered.  
+- At **high temperatures**, the screening length increases due to the smearing of the electron density.
 
 ---
 
-## 7. Example of Numerical Steps
+### Thomas-Fermi-Dirac (TFD) Equation (Exchange Corrections)  
+To account for **exchange interactions**, Dirac introduced a correction term that modifies the power-law dependence on $ \phi $:
 
-1. Start with the substitution $\phi(r) = r^{-1/2}y(r)$ to remove singular behavior.
-2. Choose a numerical grid for $r \in [\varepsilon, R]$ ($\varepsilon$ small to avoid division by zero, $R$ large enough to approximate infinity).
-3. Use a method like Runge-Kutta or finite differences to integrate the equation.
-4. Adjust boundary conditions iteratively to ensure smooth decay to zero.
+```{math}
+\frac{\mathrm{d}^2 \phi}{\mathrm{d} x^2} = x^{-\frac{1}{2}} \phi^{\frac{3}{2}} \left(1 - \lambda \phi^{-\frac{1}{6}}\right).
+```
+
+where:  
+- $ \lambda = \frac{3}{2} \left(\frac{3}{\pi}\right)^{1/3} \approx 0.276 $ is a numerical constant.
+
+Effect:  
+- The exchange correction **lowers** the electron density compared to the classical Thomas-Fermi model.
+- The asymptotic decay remains the same as $ \phi(x) \sim x^{-3} $ for large $ x $, but with a modified prefactor.
 
 ---
 
-## 8. Applications of the Solution
+### Thomas-Fermi-Weizsäcker (TFW) Model (Gradient Corrections)  
+This model introduces a **kinetic energy correction** to account for inhomogeneities in the electron density. The ODE now includes a second derivative term:
 
-While derived in a physical context, the equation and its solutions are mathematically rich, providing insights into:
-- Behavior of nonlinear ODEs.
-- Singular boundary value problems.
-- Numerical approximation methods.
+```{math}
+\frac{\mathrm{d}^2 \phi}{\mathrm{d} x^2} = x^{-\frac{1}{2}} \phi^{\frac{3}{2}} + \lambda \frac{\mathrm{d}^3 \phi}{\mathrm{d} x^3}.
+```
 
-The Thomas-Fermi equation is a valuable case study in solving challenging nonlinear differential equations.
+where $ \lambda $ is a parameter that determines the strength of the correction.
+
+Effect:  
+- This equation is now a **third-order** ODE instead of second-order.
+- It accounts for spatial variations in the electron density, improving accuracy in non-uniform systems (e.g., molecules and solids).
+- The boundary conditions require an additional constraint on $ \frac{\mathrm{d} \phi}{\mathrm{d} x} $ at $ x = 0 $.
+
+---
+
+### Relativistic Thomas-Fermi Equation  
+For high-$ Z $ (large nuclear charge) atoms, relativistic effects become significant. The relativistic Thomas-Fermi equation modifies the exponent on $ \phi $:
+
+```{math}
+\frac{\mathrm{d}^2 \phi}{\mathrm{d} x^2} = x^{-\frac{1}{2}} \phi^p, \quad p = \frac{4}{3}.
+```
+
+Effect:  
+- The exponent changes from **$ 3/2 $ (non-relativistic) to $ 4/3 $** (relativistic).  
+- The asymptotic behavior changes to **$ \phi(x) \sim x^{-3/2} $** instead of $ x^{-3} $.  
+- This correction improves predictions for high-energy physics and heavy-element behavior.
+
+
+
+

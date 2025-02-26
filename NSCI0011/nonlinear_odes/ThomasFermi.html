@@ -62,6 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'ThomasFermi';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="The Ermakov-Pinney Equation" href="ErmakovPinney.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,11 +180,15 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="NumericalMethods.html">Looking at Numerical Solutions to ODEs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pendulum.html">Solving the Non-Linear Pendulum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VanderPol.html">The Van der Pol Oscillator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Project.html">Project Submission Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Duffing.html">Duffing Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ErmakovPinney.html">The Ermakov-Pinney Equation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Thomas Fermi Equation</a></li>
+
 </ul>
 
     </div>
@@ -383,22 +386,25 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Thomas Fermi Equation</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-on-solving-the-thomas-fermi-equation">Notes on Solving the Thomas-Fermi Equation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-equation">1. The Equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions-and-their-implications">2. Boundary Conditions and Their Implications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-of-order">3. Reduction of Order</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asymptotic-analysis">4. Asymptotic Analysis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#near-r-0">Near <span class="math notranslate nohighlight">\(r = 0\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#far-from-the-origin-r-to-infty">Far from the Origin (<span class="math notranslate nohighlight">\(r \to \infty\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-equation">The Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions-and-their-implications">Boundary Conditions and Their Implications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semi-analytic-analysis-and-methods">Semi-Analytic Analysis and Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-of-order">Reduction of Order</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sommerfeld-s-approximation">Sommerfeld’s approximation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asymptotic-analysis">Asymptotic Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#near-r-0">Near <span class="math notranslate nohighlight">\(r = 0\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#far-from-the-origin-r-to-infty">Far from the Origin (<span class="math notranslate nohighlight">\(r \to \infty\)</span>)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-solution-techniques">5. Numerical Solution Techniques</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shooting-method">Shooting Method</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-difference-method">Finite Difference Method</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties">6. Key Properties</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-numerical-steps">7. Example of Numerical Steps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-the-solution">8. Applications of the Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-forms-of-the-thomas-fermi-equation">Extended Forms of the Thomas-Fermi Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-temperature-corrections-finite-t-thomas-fermi-equation">Finite Temperature Corrections (Finite-T Thomas-Fermi Equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thomas-fermi-dirac-tfd-equation-exchange-corrections">Thomas-Fermi-Dirac (TFD) Equation (Exchange Corrections)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thomas-fermi-weizsacker-tfw-model-gradient-corrections">Thomas-Fermi-Weizsäcker (TFW) Model (Gradient Corrections)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relativistic-thomas-fermi-equation">Relativistic Thomas-Fermi Equation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -421,100 +427,135 @@ document.write(`
 <p>The Thomas-Fermi equation is a nonlinear ordinary differential equation that can be studied as a mathematical problem, focusing on the methods for solving and analyzing it.</p>
 <hr class="docutils" />
 <section id="the-equation">
-<h2>1. The Equation<a class="headerlink" href="#the-equation" title="Link to this heading">#</a></h2>
+<h2>The Equation<a class="headerlink" href="#the-equation" title="Link to this heading">#</a></h2>
 <p>The Thomas-Fermi equation is given by:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}^2\phi}{\mathrm{d}r^2} = \frac{1}{\sqrt{r}} \phi^{3/2}(r),\]</div>
+\[\frac{\mathrm{d}^2\phi}{\mathrm{d}x^2} = \frac{1}{\sqrt{r}} \phi^{3/2}(x),\]</div>
 <p>with the boundary conditions:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\phi(0) = 1\)</span>: The potential is normalized at the origin.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\phi(r) \to 0\)</span> as <span class="math notranslate nohighlight">\(r \to \infty\)</span>: The potential vanishes at large distances.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi(x) \to 0\)</span> as <span class="math notranslate nohighlight">\(x \to \infty\)</span>: The potential vanishes at large distances.</p></li>
 </ul>
-<p>Here, <span class="math notranslate nohighlight">\(r &gt; 0\)</span> is the radial distance, and <span class="math notranslate nohighlight">\(\phi(r)\)</span> is the unknown function to solve for.</p>
+<p>Here, <span class="math notranslate nohighlight">\(x &gt; 0\)</span> is some radial distance, and <span class="math notranslate nohighlight">\(\phi(x)\)</span> is the unknown function to solve for.</p>
 </section>
 <hr class="docutils" />
 <section id="boundary-conditions-and-their-implications">
-<h2>2. Boundary Conditions and Their Implications<a class="headerlink" href="#boundary-conditions-and-their-implications" title="Link to this heading">#</a></h2>
+<h2>Boundary Conditions and Their Implications<a class="headerlink" href="#boundary-conditions-and-their-implications" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>At <span class="math notranslate nohighlight">\(r = 0\)</span></strong>: Regularity requires <span class="math notranslate nohighlight">\(\phi'(0) = 0\)</span> to avoid divergence in the second derivative.</p></li>
-<li><p><strong>As <span class="math notranslate nohighlight">\(r \to \infty\)</span></strong>: The solution decays to zero, ensuring a well-behaved function at large distances.</p></li>
+<li><p>At <span class="math notranslate nohighlight">\(x = 0\)</span>: Regularity requires <span class="math notranslate nohighlight">\(\phi'(0) = 0\)</span> to avoid divergence in the second derivative.</p></li>
+<li><p>As <span class="math notranslate nohighlight">\(x \to \infty\)</span>: The solution decays to zero, ensuring a well-behaved function at large distances.</p></li>
 </ul>
 <p>These conditions guide the numerical or analytical approach to solving the equation.</p>
 </section>
 <hr class="docutils" />
+<section id="semi-analytic-analysis-and-methods">
+<h2>Semi-Analytic Analysis and Methods<a class="headerlink" href="#semi-analytic-analysis-and-methods" title="Link to this heading">#</a></h2>
 <section id="reduction-of-order">
-<h2>3. Reduction of Order<a class="headerlink" href="#reduction-of-order" title="Link to this heading">#</a></h2>
-<p>To simplify the problem, substitute <span class="math notranslate nohighlight">\(\phi(r) = r^{-1/2}y(r)\)</span>. Then:</p>
+<h3>Reduction of Order<a class="headerlink" href="#reduction-of-order" title="Link to this heading">#</a></h3>
+<p>We can use a variable transformation <span class="math notranslate nohighlight">\(z=y/x\)</span> converts the equation to</p>
 <div class="math notranslate nohighlight">
-\[\frac{\mathrm{d}^2\phi}{\mathrm{d}r^2} = r^{-5/2} \left( y''(r) - \frac{1}{4}r^{-2}y(r) \right),\]</div>
-<p>and the equation becomes:</p>
+\[\frac{1}{x^2}\frac{d}{dx}\left(x^2\frac{dz}{dx}\right) - z^{3/2}=0\]</div>
+<p>The original equation is invariant under the transformation <span class="math notranslate nohighlight">\(x\rightarrow c x, \ y\rightarrow c^{-3} y\)</span>. Hence, the equation can be made equidimensional by introducing <span class="math notranslate nohighlight">\(y=x^{-3} u\)</span> into the equation, leading to</p>
 <div class="math notranslate nohighlight">
-\[y''(r) = \frac{1}{4}r^{-2}y(r) + y^{3/2}(r).\]</div>
-<p>This substitution removes the singularity at <span class="math notranslate nohighlight">\(r = 0\)</span> and can make numerical solutions more stable.</p>
+\[x^2 \frac{d^2u}{dx^2} - 6x\frac{du}{dx} + 12 u = u^{3/2}\]</div>
+<p>so that the substitution <span class="math notranslate nohighlight">\(x=e^t\)</span> reduces the equation to</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2u}{dt^2} - 7\frac{du}{dt} +12 u = u^{3/2}\]</div>
+<p>Treating <span class="math notranslate nohighlight">\(w =du/dt\)</span> as the dependent variable and <span class="math notranslate nohighlight">\(u\)</span> as the independent variable, we can reduce the above equation to</p>
+<div class="math notranslate nohighlight">
+\[w \frac{dw}{du} - 7w = u^{3/2}-12 u\]</div>
+<p>But this first order equation has no known explicit solution, hence, the approach turns to either numerical or approximate methods.</p>
 </section>
-<hr class="docutils" />
+<section id="sommerfeld-s-approximation">
+<h3>Sommerfeld’s approximation<a class="headerlink" href="#sommerfeld-s-approximation" title="Link to this heading">#</a></h3>
+<p>The TF equation has a particular solution <span class="math notranslate nohighlight">\(y_p(x)\)</span>, which satisfies the boundary condition that <span class="math notranslate nohighlight">\(y\rightarrow 0\)</span> as <span class="math notranslate nohighlight">\(x\rightarrow\infty\)</span>, but not the  boundary condition <span class="math notranslate nohighlight">\(y(0)=1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y_p(x) = \frac{144}{x^3}\]</div>
+</section>
 <section id="asymptotic-analysis">
-<h2>4. Asymptotic Analysis<a class="headerlink" href="#asymptotic-analysis" title="Link to this heading">#</a></h2>
+<h3>Asymptotic Analysis<a class="headerlink" href="#asymptotic-analysis" title="Link to this heading">#</a></h3>
 <section id="near-r-0">
-<h3>Near <span class="math notranslate nohighlight">\(r = 0\)</span><a class="headerlink" href="#near-r-0" title="Link to this heading">#</a></h3>
+<h4>Near <span class="math notranslate nohighlight">\(r = 0\)</span><a class="headerlink" href="#near-r-0" title="Link to this heading">#</a></h4>
 <p>Assuming a power-series solution <span class="math notranslate nohighlight">\(\phi(r) = 1 - kr^{n}\)</span>, substitution gives:</p>
 <div class="math notranslate nohighlight">
-\[\phi(r) \approx 1 - \frac{2}{3}r^{3/2}.\]</div>
+\[\phi(r) \approx 1 - \frac{2}{3}r^{3/2} +\dots\]</div>
 </section>
 <section id="far-from-the-origin-r-to-infty">
-<h3>Far from the Origin (<span class="math notranslate nohighlight">\(r \to \infty\)</span>)<a class="headerlink" href="#far-from-the-origin-r-to-infty" title="Link to this heading">#</a></h3>
+<h4>Far from the Origin (<span class="math notranslate nohighlight">\(r \to \infty\)</span>)<a class="headerlink" href="#far-from-the-origin-r-to-infty" title="Link to this heading">#</a></h4>
 <p>The decay of <span class="math notranslate nohighlight">\(\phi(r)\)</span> is slow. Using asymptotic expansion methods, one finds:</p>
 <div class="math notranslate nohighlight">
 \[\phi(r) \sim \frac{A}{r^3},\]</div>
 <p>where <span class="math notranslate nohighlight">\(A\)</span> is determined numerically or from matching conditions.</p>
 </section>
 </section>
-<hr class="docutils" />
-<section id="numerical-solution-techniques">
-<h2>5. Numerical Solution Techniques<a class="headerlink" href="#numerical-solution-techniques" title="Link to this heading">#</a></h2>
-<section id="shooting-method">
-<h3>Shooting Method<a class="headerlink" href="#shooting-method" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Transform the boundary value problem into an initial value problem.</p></li>
-<li><p>Guess initial slopes <span class="math notranslate nohighlight">\(\phi'(0)\)</span> and adjust iteratively to satisfy <span class="math notranslate nohighlight">\(\phi(r) \to 0\)</span> as <span class="math notranslate nohighlight">\(r \to \infty\)</span>.</p></li>
-</ol>
-</section>
-<section id="finite-difference-method">
-<h3>Finite Difference Method<a class="headerlink" href="#finite-difference-method" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Discretize the domain into small steps <span class="math notranslate nohighlight">\(r_i\)</span> and approximate derivatives with finite differences.</p></li>
-<li><p>Solve the resulting nonlinear algebraic equations iteratively.</p></li>
-</ol>
-</section>
 </section>
 <hr class="docutils" />
-<section id="key-properties">
-<h2>6. Key Properties<a class="headerlink" href="#key-properties" title="Link to this heading">#</a></h2>
+<section id="extended-forms-of-the-thomas-fermi-equation">
+<h2>Extended Forms of the Thomas-Fermi Equation<a class="headerlink" href="#extended-forms-of-the-thomas-fermi-equation" title="Link to this heading">#</a></h2>
+<p>Each extension modifies the right-hand side of the classical Thomas-Fermi equation in a different way, leading to distinct ODEs.  Each extension adds corrections for a specific physical effect, improving accuracy for different regimes such as high temperature, exchange interactions, inhomogeneities, and relativistic effects.</p>
+<hr class="docutils" />
+<section id="finite-temperature-corrections-finite-t-thomas-fermi-equation">
+<h3>Finite Temperature Corrections (Finite-T Thomas-Fermi Equation)<a class="headerlink" href="#finite-temperature-corrections-finite-t-thomas-fermi-equation" title="Link to this heading">#</a></h3>
+<p>At finite temperature, the electron density follows a <strong>Fermi-Dirac distribution</strong> instead of a sharp cutoff. This modifies the right-hand side of the ODE by introducing temperature dependence via the <strong>Fermi integral</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2 \phi}{\mathrm{d} x^2} = x^{-\frac{1}{2}} F_{1/2} \left(\frac{\phi(x)}{T} \right).\]</div>
+<p>where:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\( F_{1/2} (\eta) \)</span> is the <strong>Fermi-Dirac integral</strong>,</p>
+<div class="math notranslate nohighlight">
+\[F_{1/2} (\eta) = \int_0^\infty \frac{t^{1/2} \, \mathrm{d}t}{e^{t-\eta} + 1}.\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\( T \)</span> is the dimensionless temperature parameter.</p></li>
+</ul>
+<p>Effect:</p>
 <ul class="simple">
-<li><p><strong>Nonlinearity</strong>: The term <span class="math notranslate nohighlight">\(\phi^{3/2}\)</span> introduces a strong nonlinearity, complicating direct integration methods.</p></li>
-<li><p><strong>Singular Behavior</strong>: The factor <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{r}}\)</span> requires careful handling near <span class="math notranslate nohighlight">\(r = 0\)</span>.</p></li>
+<li><p>At <strong>low temperatures</strong> (<span class="math notranslate nohighlight">\( T \to 0 \)</span>), the classical Thomas-Fermi equation is recovered.</p></li>
+<li><p>At <strong>high temperatures</strong>, the screening length increases due to the smearing of the electron density.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
-<section id="example-of-numerical-steps">
-<h2>7. Example of Numerical Steps<a class="headerlink" href="#example-of-numerical-steps" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Start with the substitution <span class="math notranslate nohighlight">\(\phi(r) = r^{-1/2}y(r)\)</span> to remove singular behavior.</p></li>
-<li><p>Choose a numerical grid for <span class="math notranslate nohighlight">\(r \in [\varepsilon, R]\)</span> (<span class="math notranslate nohighlight">\(\varepsilon\)</span> small to avoid division by zero, <span class="math notranslate nohighlight">\(R\)</span> large enough to approximate infinity).</p></li>
-<li><p>Use a method like Runge-Kutta or finite differences to integrate the equation.</p></li>
-<li><p>Adjust boundary conditions iteratively to ensure smooth decay to zero.</p></li>
-</ol>
+<section id="thomas-fermi-dirac-tfd-equation-exchange-corrections">
+<h3>Thomas-Fermi-Dirac (TFD) Equation (Exchange Corrections)<a class="headerlink" href="#thomas-fermi-dirac-tfd-equation-exchange-corrections" title="Link to this heading">#</a></h3>
+<p>To account for <strong>exchange interactions</strong>, Dirac introduced a correction term that modifies the power-law dependence on <span class="math notranslate nohighlight">\( \phi \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2 \phi}{\mathrm{d} x^2} = x^{-\frac{1}{2}} \phi^{\frac{3}{2}} \left(1 - \lambda \phi^{-\frac{1}{6}}\right).\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \lambda = \frac{3}{2} \left(\frac{3}{\pi}\right)^{1/3} \approx 0.276 \)</span> is a numerical constant.</p></li>
+</ul>
+<p>Effect:</p>
+<ul class="simple">
+<li><p>The exchange correction <strong>lowers</strong> the electron density compared to the classical Thomas-Fermi model.</p></li>
+<li><p>The asymptotic decay remains the same as <span class="math notranslate nohighlight">\( \phi(x) \sim x^{-3} \)</span> for large <span class="math notranslate nohighlight">\( x \)</span>, but with a modified prefactor.</p></li>
+</ul>
 </section>
 <hr class="docutils" />
-<section id="applications-of-the-solution">
-<h2>8. Applications of the Solution<a class="headerlink" href="#applications-of-the-solution" title="Link to this heading">#</a></h2>
-<p>While derived in a physical context, the equation and its solutions are mathematically rich, providing insights into:</p>
+<section id="thomas-fermi-weizsacker-tfw-model-gradient-corrections">
+<h3>Thomas-Fermi-Weizsäcker (TFW) Model (Gradient Corrections)<a class="headerlink" href="#thomas-fermi-weizsacker-tfw-model-gradient-corrections" title="Link to this heading">#</a></h3>
+<p>This model introduces a <strong>kinetic energy correction</strong> to account for inhomogeneities in the electron density. The ODE now includes a second derivative term:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2 \phi}{\mathrm{d} x^2} = x^{-\frac{1}{2}} \phi^{\frac{3}{2}} + \lambda \frac{\mathrm{d}^3 \phi}{\mathrm{d} x^3}.\]</div>
+<p>where <span class="math notranslate nohighlight">\( \lambda \)</span> is a parameter that determines the strength of the correction.</p>
+<p>Effect:</p>
 <ul class="simple">
-<li><p>Behavior of nonlinear ODEs.</p></li>
-<li><p>Singular boundary value problems.</p></li>
-<li><p>Numerical approximation methods.</p></li>
+<li><p>This equation is now a <strong>third-order</strong> ODE instead of second-order.</p></li>
+<li><p>It accounts for spatial variations in the electron density, improving accuracy in non-uniform systems (e.g., molecules and solids).</p></li>
+<li><p>The boundary conditions require an additional constraint on <span class="math notranslate nohighlight">\( \frac{\mathrm{d} \phi}{\mathrm{d} x} \)</span> at <span class="math notranslate nohighlight">\( x = 0 \)</span>.</p></li>
 </ul>
-<p>The Thomas-Fermi equation is a valuable case study in solving challenging nonlinear differential equations.</p>
+</section>
+<hr class="docutils" />
+<section id="relativistic-thomas-fermi-equation">
+<h3>Relativistic Thomas-Fermi Equation<a class="headerlink" href="#relativistic-thomas-fermi-equation" title="Link to this heading">#</a></h3>
+<p>For high-<span class="math notranslate nohighlight">\( Z \)</span> (large nuclear charge) atoms, relativistic effects become significant. The relativistic Thomas-Fermi equation modifies the exponent on <span class="math notranslate nohighlight">\( \phi \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2 \phi}{\mathrm{d} x^2} = x^{-\frac{1}{2}} \phi^p, \quad p = \frac{4}{3}.\]</div>
+<p>Effect:</p>
+<ul class="simple">
+<li><p>The exponent changes from <strong><span class="math notranslate nohighlight">\( 3/2 \)</span> (non-relativistic) to <span class="math notranslate nohighlight">\( 4/3 \)</span></strong> (relativistic).</p></li>
+<li><p>The asymptotic behavior changes to <strong><span class="math notranslate nohighlight">\( \phi(x) \sim x^{-3/2} \)</span></strong> instead of <span class="math notranslate nohighlight">\( x^{-3} \)</span>.</p></li>
+<li><p>This correction improves predictions for high-energy physics and heavy-element behavior.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -548,6 +589,15 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="ErmakovPinney.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Ermakov-Pinney Equation</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -566,22 +616,25 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Thomas Fermi Equation</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-on-solving-the-thomas-fermi-equation">Notes on Solving the Thomas-Fermi Equation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-equation">1. The Equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions-and-their-implications">2. Boundary Conditions and Their Implications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-of-order">3. Reduction of Order</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asymptotic-analysis">4. Asymptotic Analysis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#near-r-0">Near <span class="math notranslate nohighlight">\(r = 0\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#far-from-the-origin-r-to-infty">Far from the Origin (<span class="math notranslate nohighlight">\(r \to \infty\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-equation">The Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions-and-their-implications">Boundary Conditions and Their Implications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semi-analytic-analysis-and-methods">Semi-Analytic Analysis and Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-of-order">Reduction of Order</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sommerfeld-s-approximation">Sommerfeld’s approximation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asymptotic-analysis">Asymptotic Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#near-r-0">Near <span class="math notranslate nohighlight">\(r = 0\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#far-from-the-origin-r-to-infty">Far from the Origin (<span class="math notranslate nohighlight">\(r \to \infty\)</span>)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-solution-techniques">5. Numerical Solution Techniques</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shooting-method">Shooting Method</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-difference-method">Finite Difference Method</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties">6. Key Properties</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-numerical-steps">7. Example of Numerical Steps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-the-solution">8. Applications of the Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-forms-of-the-thomas-fermi-equation">Extended Forms of the Thomas-Fermi Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-temperature-corrections-finite-t-thomas-fermi-equation">Finite Temperature Corrections (Finite-T Thomas-Fermi Equation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thomas-fermi-dirac-tfd-equation-exchange-corrections">Thomas-Fermi-Dirac (TFD) Equation (Exchange Corrections)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thomas-fermi-weizsacker-tfw-model-gradient-corrections">Thomas-Fermi-Weizsäcker (TFW) Model (Gradient Corrections)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relativistic-thomas-fermi-equation">Relativistic Thomas-Fermi Equation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
