@@ -1,0 +1,1 @@
+var facetsStructure={sortOptions:["relevance","title"],initialSort:"title",SearchType:"OR",hideUnselectedTopLevelFacets:!1,hideCount:!1,Faculties:[]};

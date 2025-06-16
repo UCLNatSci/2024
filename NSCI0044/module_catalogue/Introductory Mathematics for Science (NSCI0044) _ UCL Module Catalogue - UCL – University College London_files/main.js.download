@@ -1,0 +1,235 @@
+(function(){
+	var assetLocation = getAssetLocation();
+	var urlArgs = "";
+
+	if(typeof globalSiteSpecificVars.mainJsVersion !=='undefined'){
+		urlArgs = "v" + globalSiteSpecificVars.mainJsVersion;
+	}
+
+	require.config({
+		baseUrl: assetLocation + 'indigo/js/lib',
+		waitSeconds : 300,
+		urlArgs : urlArgs,
+		config: {
+	        text: {
+	            useXhr: function (url, protocol, hostname, port) {
+	                // allow cross-domain requests
+	                // remote server allows CORS
+	                return true;
+	            }
+	        }
+	    },
+		paths: {
+			app: '../app',
+			theme: '../../../skins/indigo-theme-js/app',
+	        templates: getTemplatesLocation(),
+	        allsite: 'all-site-no-ga.min',
+
+			//libaries
+			jquery: globalSiteSpecificVars.pathToJquery,
+//			jqueryInternal: globalSiteSpecificVars.pathToJquery,
+//			jqueryNoConflict: 'jquery.no-conflict',
+			modernizr: 'modernizr-custom',
+	        underscore: [
+	                        '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min'
+	                        ,'underscore-1.6.0.min'
+	        ],
+	        backbone: [
+	                    '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min'
+	                    ,'backbone-1.1.2.min'
+	        ],
+			fastclick: 'fastclick',
+			jqueryUi: assetLocation + 'skins/indigo-theme-js/lib/jquery-ui-1.8.18.custom.min',
+			jqueryTmpl: assetLocation + 'skins/indigo-theme-js/lib/jquery.tmpl.min',
+			jwplayer: 'jwplayer',
+			googleAnalyticsLib: 'googleAnalytics.min',
+			handleBars: 'handlebars.min',
+			typeAheadBundle: 'typeahead.bundle.min',
+			owl: 'owl.carousel.min',
+			opinio: '//opinio.ucl.ac.uk/include/survey',
+
+			// Theme specific
+			searchPack: assetLocation + 'skins/indigo-theme-js/lib/search-pack.min',
+			smoothScroll: assetLocation + 'skins/indigo-theme-js/lib/smoothscroll.min',
+			scrollSpy: assetLocation + 'skins/indigo-theme-js/lib/scrollspy.min',
+			iframeresizer: assetLocation + 'skins/indigo-theme-js/lib/iframeheight.min',
+			researchImpactCaseStudyFeed: 'researchImpactCaseStudyFeed.min',
+
+			rps: 'rps.min'
+		},
+		map: {
+			'*': {'jquery': 'jquery-no-conflict'},
+			'jquery-no-conflict': {'jquery': 'jquery'} 
+		},
+		shim: {
+			allsite: {
+				deps: ['jquery'],
+				exports: 'gen'
+			},
+			underscore: {
+				exports: '_'
+			},
+			backbone: {
+				deps: ['underscore', 'jquery'],
+				exports: 'B'
+			},
+			modernizr: {
+				exports: 'Modernizr'
+			},
+			jqueryUi: {
+				deps: ['jquery']
+			},
+			jwplayer: {
+				exports: 'jwplayer'
+			},
+			jqueryTmpl: {
+				deps: ['jquery']
+			},
+			googleAnalyticsLib: {
+				exports: 'ga'
+			},
+			typeAheadBundle: {
+				deps: ['jquery']
+				,exports: 'Bloodhound'
+			},
+			handleBars : {
+				exports: 'Handlebars'
+			},
+			scrollSpy: {
+				deps: ['jquery']
+			},
+			researchImpactCaseStudyFeed: {
+				deps: ['underscore', 'jquery', 'B']
+			},
+			rps: {
+				deps: ['jquery']
+			},
+			owl: {
+				deps: ['jquery']
+			},
+			searchPack: {
+				deps: ['jquery']
+			},
+			palette: {
+				deps: ['jquery']
+			},
+			iframeresizer: {
+				deps: ['jquery']
+
+			}
+		}
+	});
+
+	function getAssetLocation(){
+		var assetUrl = document.URL;
+		var domainParam = assetUrl.replace(/^([^\?]*)\?(.*)(\&*)domain=([^&]+)(.*)$/ig,'$4');
+		if (domainParam.indexOf("http://") == 0 || domainParam.indexOf("https://") == 0) {
+			// It's not got the domain arg in the query string, so parse the URL
+			if (domainParam.indexOf("cms-dev.ucl.ac.uk") > -1 || domainParam.indexOf("www-pp.ucl.ac.uk") > -1) {
+				domainParam = "uat";
+			} else if (domainParam.indexOf("local.ucl.ac.uk") > -1) {
+				domainParam = "local";
+			}
+		}
+		var assetLoc = "//cdn.ucl.ac.uk/";
+		if(typeof domainParam!=='undefined'){
+
+			switch(domainParam){
+				case "static":
+					assetLoc = "//static.ucl.ac.uk/";
+				break;
+				case "local":
+					assetLoc = "//static-local.ucl.ac.uk/";
+				break;
+				case "uat":
+					assetLoc = "//static-uat.ucl.ac.uk/";
+				break;
+			}
+		}
+		return assetLoc;
+	}
+
+	function getTemplatesLocation() {
+	    var templateDomainLocation = "../../../skins/indigo-theme-js/templates";
+	    var indigoSandboxPatt = /^http(s)*:\/\/www\.indigo\-sandbox\.ucl\.ac\.uk\/(.)*$/gi;
+	    var isIndigoSandbox = indigoSandboxPatt.test(document.URL);
+	    var liveUclPatt = /^http(s)*:\/\/www\.ucl\.ac\.uk\/(.)*$/gi;
+	    var isLiveUcl = liveUclPatt.test(document.URL);
+
+	    if(isIndigoSandbox) {
+	        templateDomainLocation = "//www.indigo-sandbox.ucl.ac.uk/underscore-templates";
+	    }else if(isLiveUcl) {
+	    	templateDomainLocation = "//www.ucl.ac.uk/underscore-templates";
+	    }
+	    return templateDomainLocation;
+	}
+
+	(function loadSocialShares(){
+		//twitter
+		window.twttr = (function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0],
+				t = window.twttr || {};
+			if (d.getElementById(id)) return t;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js, fjs);
+
+			t._e = [];
+			t.ready = function(f) {
+				t._e.push(f);
+			};
+
+			return t;
+		}(document, "script", "twitter-wjs"));
+
+		//facebook
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	}());	
+})();
+
+//Show hide EU Cookie settings.
+function cookieShowHide() {
+	var x = document.getElementById("eu-cookie-compliance-settings_show-hide");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+//Show hide EU Cookie description settings.
+function cookieDescShowHide() {
+	// Reference the parent element
+	var main = document.getElementById('main');
+
+	/* Register main to the click event
+    || when clicked ANYWHERE within main
+    || toggle() is called
+    */
+	main.addEventListener('click', toggle, false);
+
+	function toggle(e) {
+		/* Determine if the current element in the
+        || event chain is the anchor that was
+        || clicked.
+        */
+		if (e.target !== e.currentTarget && e.target.nodeName === "A") {
+			/* tgt is the clicked link
+            || txt is the div that follows tgt
+            */
+			var tgt = e.target;
+			var txt = tgt.nextElementSibling;
+			// Toggle classes .on and .off
+			txt.classList.toggle('on');
+			txt.classList.toggle('off');
+		}
+
+	}
+}
