@@ -289,7 +289,7 @@ f(t) & \text{if } t \geq 0 \\
 \end{cases} 
 \end{split}
 ```
-In other words, it is assumed that the function is zero if $t < 0$. The first half of the integral will\mathrm{d}rop out since the function is zero, and we will get back to the original definition.
+In other words, it is assumed that the function is zero if $t < 0$. The first half of the integral will drop out since the function is zero, and we will get back to the original definition.
 
 We will return to this idea when we discuss the step function.
 
@@ -381,13 +381,15 @@ Consider Laplace transforms of $ f'(x) $ and $ f''(x) $, lets find these explici
    \end{split}
    ```
 
+Therefore we see that the Laplace transform has the power to turn an ODE into a polynomial - a useful property for solving ODEs.
+
 This means that the general result is that:
 
 ```{math}
-\mathcal{L}[f^{(n)}(t)] = p^n\, F(p) - p^{n-1}\, f(0) - p^{n-1} \,f'(0) - \dots - p\,f^{(n-2)}(0) - f^{(n-1)}(0)
+\mathcal{L}[f^{(n)}(t)] &= p^n\, F(p) - p^{n-1}\, f(0) - p^{n-2} \,f'(0) - \dots - p^1\,f^{(n-2)}(0) - f^{(n-1)}(0) \\&= p^n\, F(p) - \sum_{i=0}^{n-1} p^{n-i-1} f^{(i)}(0)
 ```
 
-A related set of transform come in the form of $\mathcal{L}[t\,f(t)]$:
+A related set of transforms come in the form of $\mathcal{L}[t\,f(t)]$:
 
 ```{math}
 \mathcal{L}[t\,f(t)] = \int_0^\infty t\,f(t)\,e^{-pt}\,\mathrm{d}t
@@ -635,9 +637,19 @@ By referring to a Laplace transform table, we find that the solution of the ODE 
 ```{math}
 f(x) = \frac{1}{12} x^4 e^{-2x}
 ```
-## Inverse Laplace Transform
 
-Consider a 2nd-order ODE
+
+## Laplace Transform of Products
+
+Unfortunately there is not a simple general rule for the Laplace transform of a product:
+
+```{math}
+\mathcal{L} \left[f(t)\,g(t)\right] \rightarrow F(p)\,G(p)
+```
+
+The two exceptions are if $f(t) = a t^n$ or $f(t) = e^{at}$ as described above, as these form addition rules for Laplace transforms ($p$ derivative or shifting property)
+
+However we often find ourselves with the opposite problem, consider a 2nd-order ODE:
 
 ```{math}
 A y''(t) + B y'(t) + C y(t) = f(t),
@@ -659,58 +671,86 @@ Y(p) = \frac{F(p)}{A p^2 + B p + C} = \frac{F(p)}{A(p + a)(p + b)},
 
 where $ a $ and $ b $ are constants.
 
-We already know the inverse Laplace transform of $ F(p) $ (it is given to us as $ f(t) $) and we can always find the inverse transform of
+Given we already know the inverse Laplace transform of $F(p)$ and we can try to find the inverse transform of:
 
 ```{math}
-\frac{1}{A(p + a)(p + b)}
+\frac{1}{A(p + a)(p + b)} \rightarrow \frac{B}{p+a} + \frac{C}{p+b}
 ```
 
-by inspecting the table of Laplace transforms. Can we find the inverse transform of $ Y(p) $?
+using partial fractions and then inspecting the table of Laplace transforms, can we find the inverse transform of a function of the form $ Y(p) = F(p) G(p) $ to find $y(t)$?
 
-More generally, assume that inverse Laplace transforms of $ H(p) $ and $ G(p) $ are known functions $ h(t) $ and $ g(t) $, respectively. How do we find the inverse Laplace transform of $ H(p) G(p) $?
-
-## Calculating Inverse Transforms by Convolution
-
-Consider the product $ H(p) G(p) $, where $ H(p) $ and $ G(p) $ are Laplace transforms of $ h(t) $ and $ g(t) $, respectively.
+Lets consider the two transform integrals multiplied (ensuring we don't use the same variables in each to avoid confusion):
 
 ```{math}
-H(p) G(p) = \int_0^\infty h(s) e^{-ps}\mathrm{d}s\int_0^\infty g(t) e^{-pt}\mathrm{d}t= \int_0^\infty \int_0^\infty h(s) g(t) e^{-p(s + t)}\mathrm{d}s\mathrm{d}t.
+F(p) \,G(p) = \int_0^\infty f(s) \,e^{-ps}\,\mathrm{d}s\int_0^\infty g(t)\, e^{-pt}\,\mathrm{d}t= \int_0^\infty \int_0^\infty f(s) \,g(t) \,e^{-p(s + t)}\,\mathrm{d}s\,\mathrm{d}t.
 ```
 
-Introduce a new variable $ r = s + t $ for any fixed $ t $. Then, $ s = r - t $ and $\mathrm{d}s=\mathrm{d}r $. To define the limits of integration with respect to $\mathrm{d}r $, we notice that $ r = t $ if $ s = 0 $ and $ r = \infty $ if $ s = \infty $. Therefore,
+Now lets introduce a new variable, $ r = s + t $, we can rearrange $ s = r - t $ and for the $s$ integral holding $t$ constant we can write $\mathrm{d}s=\mathrm{d}r $. 
+
+To define the limits of integration with respect to $\mathrm{d}r $, we notice that $ r = t $ if $ s = 0 $ and $ r \rightarrow \infty $ as $ s \rightarrow \infty $. 
 
 ```{math}
-H(p) G(p) = \int_0^\infty \left( \int_t^\infty h(r - t) g(t) e^{-pr}\mathrm{d}r \right) \mathrm{d}t.
+F(p) \,G(p) = \int_0^\infty \int_t^\infty f(r - t) \,g(t) \, e^{-pr}\,\mathrm{d}r \,\mathrm{d}t.
 ```
 
-The figure (a) below shows schematically the order of integration in this equation: each horizontal line corresponds to the inner integration from $r=t$ to $r = \infty$, so all lines together cover one half of the first quadrilateral, which corresponds to the outer integral for $0 \leq t < \infty $
+This does not look like it has simplified the problem!  
 
-![(a) Inner integral (over $r$): $t \leq r < 1$, outer integral (over $t$): $0 \leq t < 1$;(b) Inner integral (over $t$): $0 \leq t < r$, outer integral (over $r$): $0 \leq r < 1$.](convolution_integration.png)
+However lets rewrite as:
+```{math}
+F(p) \,G(p) =  \int_t^\infty \left(\int_0^\infty f(r - t) \,g(t)  \,\mathrm{d}t\right)\, e^{-pr}\,\mathrm{d}r
+```
 
-We can change the order of integration with respect to $t$ and $r$ in the equation, as illustrated in the above figure (b), so as:
+This *almost* looks like a Laplace transform, except the limits are not exactly right (we need from 0 to $\infty$ in $r$ for this to properly be a Laplace transform).  Lets we can consider how to interchange the two limits, consider Fig 1 (a) and (b).
+
+```{figure} ./convolution_integration.png
+---
+name: LTconv
+---
+Integration in $r-t$ plane(a) Inner integral (over $r$): $t \leq r < \infty$, outer integral (over $t$): $0 \leq t < \infty$;(b) Inner integral (over $t$): $0 \leq t < r$, outer integral (over $r$): $0 \leq r < \infty$.
+```
+
+In (a) we are integrating from $r = t$ up to $r \rightarrow \infty$ and then integrating this result over all values of $t$ - which is how the integral is currently set up.  We can however also think of this as (b) where we are integrating from $t=0$ up to $t = r$ and then integrating this over all values of $r$.  We see this results in the same shaded area, *but* crucially it will switch both the integration limits:
 
 ```{math}
-H(p) G(p) = \int_0^\infty \left( \int_0^r h(r-t) g(t) \mathrm{d}t\right) e^{-pr} \,dr = \int_0^\infty \left[h \ast g\right]e^{-pr} \,dr .
+F(p) \,G(p) =  \int_0^\infty \left(\int_0^r f(r - t) \,g(t)  \,\mathrm{d}t\right)\, e^{-pr}\,\mathrm{d}r
 ```
 
-This inner integral is called the convolution of functions $ g(x) $ and $ h(x) $:
+We can now see this as the Laplace transform of the inner integral:
 
 ```{math}
-h \ast g = \int_0^r h(r-t) g(t) \mathrm{d}t
+F(p) \,G(p) =  \mathcal{L}\left[\int_0^r f(r - t) \,g(t)  \,\mathrm{d}t\right]
 ```
-Thus, this integral can be written as
+
+This inner integral has a name - the **convolution** of the functions $f(t)$ and $g(t)$.
+
+### Convolution of Two Functions
+
+The convolution is an interesting functional - we create it formally by taking two functions and integrating them to produce a third function:
 
 ```{math}
-H(p) G(p) = \int_0^\infty [h \ast g] e^{-pr}\mathrm{d}r,
+(f\ast g)(r) = \int_{-\infty}^{\infty} f(t) \,g(r-t)  \,\mathrm{d}t
 ```
 
-i.e., the Laplace transform of a convolution of functions $ h(x) $ and $ g(x) $ equals the product of the Laplace transforms of these functions. In other words, $ h \ast g $ is the inverse Laplace transform of $ H(p) G(p) $.
-
-What is interesting about this convolution integral is that it is commutative:
+This operatoin has many properties, for instance it is commutative:
 
 ```{math}
-h \ast g = g \ast h \Rightarrow \int_0^r h(r-t) g(t) \mathrm{d}t = \int_0^t g(t-r) h(r) \mathrm{d}r
+(g\ast f)(r) = \int_{-\infty}^{\infty} g(t) \,f(r-t)  \,\mathrm{d}t
 ```
+If we define $s = r-t$ and therefore $t = r-s$, then $\mathrm{d}t = \mathrm{d}s$, as $r \rightarrow \pm\infty, \, s\rightarrow \mp\infty$, so:
+
+```{math}
+(g\ast f)(r) = \int_{-\infty}^{\infty} g(r-s) \,f(s)  \,\mathrm{d}s = (f\ast g)(r) 
+```
+
+We can think of this integral visually as taking a function $f(t)$ and passing another function $g(t)$ past it and calculating the overlapping areas.  We can see this in Fig 2.
+
+```{figure} ./Convolution_of_box_signal_with_itself.gif
+---
+name: conv
+---
+Here we define a **box** function $f(t)$ which has a unit area and is an even function.  If we convolve this function with itself $f(t) = g(t)$, then we see the result as a triangle (or tent) function.
+```
+
 ---
 
 ### Example
@@ -733,13 +773,13 @@ which gives
 Y(p) = \frac{\mathcal{L}(e^{-t})}{(p^2 + 3p + 2)} = \frac{\mathcal{L}(e^{-t})}{(p+1)(p+2)}.
 ```
 
-The inverse transform of
+Given that we can simplify this down to:
 
 ```{math}
 \frac{1}{(p+1)(p+2)} = \frac{1}{p+1} - \frac{1}{p+2}
 ```
 
-is $ e^{-t} - e^{-2t} $.
+This will result from the Laplace transform of $\mathcal{L}\left[e^{-t} - e^{-2t}\right]$.
 
 Therefore,
 
@@ -750,14 +790,10 @@ Y(p) = \mathcal{L}(e^{-t} - e^{-2t})\mathcal{L}(e^{-t}).
 To find $ y(t) $, we need to calculate the convolution of $ e^{-t} - e^{-2t} $ and $ e^{-t} $:
 
 ```{math}
-y(t) = \int_0^t g(\tau)\,h(t-\tau)\,\mathrm{d}\tau = \int_0^t \left[ e^{-\tau} - e^{-2\tau} \right] e^{-(t - \tau)} d\tau.
+y(t) &= \int_0^t f(r)\,g(t-r)\,\mathrm{d}r \\&= \int_0^t \left( e^{-r} - e^{-2r} \right) e^{-(t - r)} \mathrm{d}r = \int_0^t \left( e^{-t} - e^{-t-r} \right) \mathrm{d}r \\
+&= \left[re^{-t} + e^{-t-r}\right]_0^t = te^{-t} + e^{-2r} - e^{-t}
 ```
-
-This simplifies to:
-
-```{math}
-y(t) = t e^{-t} + e^{-2t} - e^{-t}.
-```
+This is the solution to our ODE.
 
 ## Tables of Transforms
 

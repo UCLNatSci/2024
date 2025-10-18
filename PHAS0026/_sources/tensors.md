@@ -75,7 +75,7 @@ For example, in 3D space ($ N = 3 $):
 ```{math}
 a_i x_i &= a_1 x_1 + a_2 x_2 + a_3 x_3 \\
 a_{ij} b_{jk} &= a_{i1} b_{1k} + a_{i2} b_{2k} + a_{i3} b_{3k} \quad \text{(the sum depends on $ i $ and $ k $)}\\
-a_{ij}\,b_{jk}\,C_{kan} &= \sum_{j=1}^3\,\sum_{k=1}^3 a_{ij}\,b_{jk}\,C_{kmn} \quad \text{(the sum depends on $ i, m $ and $ n $)} \\
+a_{ij}\,b_{jk}\,C_{kmn} &= \sum_{j=1}^3\,\sum_{k=1}^3 a_{ij}\,b_{jk}\,C_{kmn} \quad \text{(the sum depends on $ i, m $ and $ n $)} \\
 \frac{\partial^2 \phi}{\partial x_i^2} &= \frac{\partial^2 \phi}{\partial x_1^2} + \frac{\partial^2 \phi}{\partial x_2^2} + \frac{\partial^2 \phi}{\partial x_3^2}
 ```
 
@@ -104,11 +104,11 @@ d\bar{x}_i = \sum_{j=1}^{N} \frac{\partial \phi_i}{\partial x_j} \mathrm{d}x_j =
 In order to avoid confusion, the same index should not be used more than twice in one term. For example,
 
 ```{math}
-\frac{d\bar{x}_j}{\partial x_i} = \frac{\partial \phi_j}{\partial x_i} \quad \text{but not} \quad \frac{d\bar{x}_j}{\partial x_j}.
+d\bar{x}_j = \frac{\partial \phi_j}{\partial x_i} dx_i\quad \text{but not} \quad d\bar{x}_j = \frac{\partial \phi_j}{\partial x_j} dx_j.
 ```
 and
 ```{math}
-\left( \sum_{i=1}^N a_i\,x_i\right)^2 = (a_x\,x_i)^2 = (a_i\,x_i)(a_j\,x_j) = a_i\,a_j\,x_i\,x_j \quad \text{but not} \quad a_i\,x_i\,a_i\,x_i
+\left( \sum_{i=1}^N a_i\,x_i\right)^2 = (a_i\,x_i)^2 = (a_i\,x_i)(a_j\,x_j) = a_i\,a_j\,x_i\,x_j \quad \text{but not} \quad a_i\,x_i\,a_i\,x_i
 ```
 
 To demonstrate the effect of the Kronecker symbol:
@@ -116,7 +116,7 @@ To demonstrate the effect of the Kronecker symbol:
 ```{math}
 b_j\,\delta_{ij} &= b_i \\
 a_{ij}\,\delta_{jk} &= a_{ik} \\
-a_{ij}\,b_{jk}\,\delta_{kl} &= a_{ki}\,b_{ji} = a_{kj}\,b_{jk}
+a_{ij}\,b_{jk}\,\delta_{ki} &= a_{ij}\,b_{ji} = a_{kj}\,b_{jk}
 
 ```
 
@@ -148,7 +148,7 @@ where $ x_1, x_2, x_3 $ are called components of the vector $ x $. Consider a ne
 ```
 or
 ```{math}
-\mathbf{e}_j' = S_{jk}\,\mathbf{e}_k
+\mathbf{e}_j' = S_{kj}\,\mathbf{e}_k
 ``` 
 where $ S_{ij} $ are elements of a matrix $ S $. In the new basis set, vector $ \mathbf{x} $ can be written as:
 
@@ -170,7 +170,7 @@ Substitution of the expressions for $ \mathbf{e}_{1}, \mathbf{e}_{2}, \mathbf{e}
 &+ x'_{2} (S_{12} \mathbf{e}_1 + S_{22} \mathbf{e}_2 + S_{32} \mathbf{e}_3) \\
 &+ x'_{3} (S_{13} \mathbf{e}_1 + S_{23} \mathbf{e}_2 + S_{33} \mathbf{e}_3) \\
 &= x'_{1} (S_{k1} \mathbf{e}_k) + x'_{2} (S_{k2} \mathbf{e}_k) + x'_{3} (S_{k3} \mathbf{e}_k) \\
-&= x'_{j} (S_{k_j} \mathbf{e}_k).
+&= x'_{j} (S_{kj} \mathbf{e}_k).
 ```
 
 
@@ -191,10 +191,10 @@ i.e. $x_i$ are *functions* of $x'_i$ and components of the transformation matrix
 S_{ik} = \frac{\partial x_i}{\partial x'_k}
 ```
 
-The system of equations $x_i = S_{ij} x_{0j}$ can be resolved with respect to $ x'_{I} $ if $ \det(S) \neq 0 $. In this case, it is possible to define the inverse of the matrix $ S $, which transforms components of $ \mathbf{x} $ from the old basis to the new one:
+The system of equations $x_i = S_{ij} x'_{j}$ can be resolved with respect to $ x’_{I} $ if $ \det(S) \neq 0 $. In this case, it is possible to define the inverse of the matrix $ S $, which transforms components of $ \mathbf{x} $ from the old basis to the new one:
 
 ```{math}
-x'_{I} = (S^{-1})_{ij} x_j.
+x’_{I} = (S^{-1})_{ij} x_j.
 ```
 
 ### Rotation 
@@ -202,7 +202,7 @@ x'_{I} = (S^{-1})_{ij} x_j.
 If the transformation defined by the matrix $ S $ is a *rotation*, i.e., $ S $ is orthogonal ($ S^{-1} = S^T $), then
 
 ```{math}
-x'_{I} = (S^T)_{ij} x_j = S_{ji} x_j.
+x’_{I} = (S^T)_{ij} x_j = S_{ji} x_j.
 ```
 
 
@@ -242,7 +242,7 @@ Lets investigate how components of a vector are changed by a rotation of the Car
 
 ```{math}
 x'_{i} &= L_{ij} x_{j}\\
-x_{i} &= L_{ij} x'_{j}
+x_{i} &= L_{ji} x'_{j}
 ```
 
 Orthogonality of $ L $ means that
@@ -303,7 +303,7 @@ x''_{i} = M_{ij} x'_{j},
 then
 
 ```{math}
-x''_i = M_{ij} x'_j = M_{ij} (L_{jk} x_k) = (M_{ik} L_{jk}) x_k = (ML)_{ik} x_k.
+x''_i = M_{ij} x'_j = M_{ij} (L_{jk} x_k) = (M_{ij} L_{jk}) x_k = (ML)_{ik} x_k.
 ```
 
 ---
@@ -466,7 +466,7 @@ Thus, components of the outer products of two vectors transform in the same way 
 Since $ \mathbf{a} = a_i \mathbf{e}_i $ and $ \mathbf{b} = b_j \mathbf{e}_j $, the tensor formed by the outer product of $ \mathbf{a} $ and $ \mathbf{b} $ can be written as:
 
 ```{math}
-\mathbf{T} = \mathbf{a} \otimes \mathbf{b} = a_i\,b_j\, \mathbf{e}_i \otimes \mathbf{e}_j = = T_{ij}'  \mathbf{e}_i' \otimes \mathbf{e}_j'
+\mathbf{T} = \mathbf{a} \otimes \mathbf{b} = a_i\,b_j\, \mathbf{e}_i \otimes \mathbf{e}_j = T_{ij}  \mathbf{e}_i \otimes \mathbf{e}_j= T_{ij}'  \mathbf{e}_i' \otimes \mathbf{e}_j'
 ```
 
 Note that while components of the tensor $ T $ depend on the coordinate system, it is the *same* tensor in both coordinate systems.
@@ -515,7 +515,7 @@ For the contracted tensor (using the orthogonality of $ L $):
 ```{math}
 T'_{i_1 \ldots i_p \ldots i_p \ldots i_N} &= L_{i_1 j_1} \ldots L_{i_p j_p} \ldots L_{i_p j_q} \ldots L_{i_N j_N} T_{j_1 \ldots j_p \ldots j_q \ldots j_N}\\
 &= L_{i_1 j_1} \ldots L_{i_p j_p} \, \delta_{j_p j_q} \ldots L_{i_N j_N} T_{j_1 \ldots j_p \ldots j_q \ldots j_N} \\
-&= (L_{i_1 j_1} \ldots L_{i_{p-1} j_{p-1}})(L_{i_{p+1} j_{p+1}} \ldots L_{i_{q-1} j_{q-1}})(L_{i_{q+1} j_{q+1}} \ldots L_{i_N j_N}) T_{j_1 \ldots j_q \ldots j_N}.
+&= (L_{i_1 j_1} \ldots L_{i_{p-1} j_{p-1}})(L_{i_{p+1} j_{p+1}} \ldots L_{i_{q-1} j_{q-1}})(L_{i_{q+1} j_{q+1}} \ldots L_{i_N j_N}) T_{j_1 \ldots j_q \ldots j_q \ldots j_N}.
 ```
 
 
@@ -547,7 +547,7 @@ C_{kn} = A_{ki} B_{ni}
 in a rotated coordinate system:
 
 ```{math}
-C_{k' n} &= A'_{k i} B'_{n i} \\
+C'_{k n} &= A'_{k i} B'_{n i} \\
 &= (L_{k p} L_{i q} A_{p q})(L_{n r} L_{i s} B_{r s})\\
 &= L_{k p} L_{n r} (L_{i q} L_{i s}) A_{p q} B_{r s}\\
 &= L_{k p} L_{n r} (\delta_{q s}) A_{p q} B_{r s}\\
@@ -565,7 +565,7 @@ T_{ij} = \frac{\partial v_i}{\partial x_j}
 form components of a 2nd-order tensor. To prove it, consider these quantities in a rotated coordinate system:
 
 ```{math}
-T'_{ij} = \frac{\partial v'_i}{\partial x'_j} = L_{ik} \frac{\partial v_k}{\partial x_l} L_{jl}
+T'_{ij} = \frac{\partial v'_i}{\partial x'_j}= \frac{\partial L_{ik}v_k}{\partial x_l}\frac{\partial x_l}{\partial x'_j}= L_{ik} \frac{\partial v_k}{\partial x_l} L_{jl}=L_{ik} L_{jl} T_{kl}
 ```
 
 Tensor $ \mathbf{T} = \nabla \mathbf{v} $ can be considered as the gradient of a vector.
@@ -603,7 +603,7 @@ T_{ij} = T_{ji}
 for all values of $ i $ and $ j $. In the case of an $ N $-th order tensor, if:
 
 ```{math}
-T_{i_1 \dots i_N} = T_{i_1 \dots i_m \dots i_n \dots i_N}
+T_{i_1 \dots i_n \dots i_m \dots i_N} = T_{i_1 \dots i_m \dots i_n \dots i_N}
 ```
 
 this tensor is said to be symmetric with respect to the $ n $-th and $ m $-th subscripts.
@@ -620,16 +620,22 @@ Examples include Stress and strain tensors.
 \end{pmatrix}
 =
 \begin{pmatrix}
-\tau_{xx} & \tau_{xy} & \tau_{xz} \\
-\tau_{yx} & \tau_{yy} & \tau_{yz} \\
-\tau_{zx} & \tau_{zy} & \tau_{zz}
+\sigma_{xx} & \sigma_{xy} & \sigma_{xz} \\
+\sigma_{yx} & \sigma_{yy} & \sigma_{yz} \\
+\sigma_{zx} & \sigma_{zy} & \sigma_{zz}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\sigma_{x} & \tau_{xy} & \tau_{xz} \\
+\tau_{yx} & \sigma_{y} & \tau_{yz} \\
+\tau_{zx} & \tau_{zy} & \sigma_{z}
 \end{pmatrix}
 ```
 
 Where:
 
 ```{math}
-T_{ij} = T_{ji}
+\tau_{ij} = \tau_{ji}
 ```
 
 ```{figure} tensors_fig4.png
@@ -645,7 +651,7 @@ Stress in a loaded deformable body.
 ### Maxwell Stress Tensor:
 
 ```{math}
-\sigma_{ij} = \epsilon_0 \mathbf{e}_i \mathbf{e}_j + \mu_1 B_i B_j - \frac{1}{2} \left( \epsilon_0 E^2 + \mu_1 B^2 \right) \delta_{ij}
+\sigma_{ij} = \epsilon_0 E_i E_j + \frac{1}{\mu_0} B_i B_j - \frac{1}{2} \left( \epsilon_0 E^2 + \frac{B^2}{\mu_0} \right) \delta_{ij}
 ```
 
 ---
@@ -655,7 +661,7 @@ Stress in a loaded deformable body.
 If:
 
 ```{math}
-T_{i_1 i_2 \dots i_N} = -T_{i_1 \dots i_m \dots i_N}
+T_{i_1 \dots i_n \dots i_m \dots i_N} = -T_{i_1 \dots i_m \dots i_n \dots i_N}
 ```
 
 Then the tensor is said to be **antisymmetric**. 
@@ -667,10 +673,10 @@ Examples include that *Levi-Civita* Tensor and *Electromagnetic* (or *Faraday*) 
 ```{math}
 F^{\mu \nu} =
 \begin{pmatrix}
-0 & \frac{\mathbf{e}_x}{c} & \frac{\mathbf{e}_y}{c} & \frac{\mathbf{e}_z}{c} \\
--\frac{\mathbf{e}_x}{c} & 0 & -B_z & B_y \\
--\frac{\mathbf{e}_y}{c} & B_z & 0 & -B_x \\
--\frac{\mathbf{e}_z}{c} & -B_y & B_x & 0
+0 & \frac{E_x}{c} & \frac{E_y}{c} & \frac{E_z}{c} \\
+-\frac{E_x}{c} & 0 & -B_z & B_y \\
+-\frac{E_y}{c} & B_z & 0 & -B_x \\
+-\frac{E_z}{c} & -B_y & B_x & 0
 \end{pmatrix}
 ```
 
@@ -700,11 +706,11 @@ Where $ S_{ij} $ is symmetric and $ A_{ij} $ is antisymmetric.
 For Nth order tensor:
 
 ```{math}
-S_{i_1 \dots i_N} = \frac{1}{2} \left( T_{i_1 \dots i_N} + T_{i_1 \dots i_m \dots i_N} \right)
+S_{i_1 \dots i_n \dots i_m \dots i_N} = \frac{1}{2} \left( T_{i_1 \dots i_n \dots i_m \dots i_N} + T_{i_1 \dots i_m \dots i_n \dots i_N} \right)
 ```
 
 ```{math}
-A_{i_1 \dots i_N} = \frac{1}{2} \left( T_{i_1 \dots i_N} - T_{i_1 \dots i_m \dots i_N} \right)
+A_{i_1 \dots i_n \dots i_m \dots i_N} = \frac{1}{2} \left( T_{i_1 \dots i_n \dots i_m \dots i_N} - T_{i_1 \dots i_m \dots i_n \dots i_N} \right)
 ```
 
 ---
@@ -724,7 +730,7 @@ The permutation symbol $ \epsilon_{ijk} $ is a three-index object defined as:
 ```
 This is also called the *Levi-Civita symbol*, *Levi-Civita density*, *alternating* tensor, and *signature*. Notations $\varepsilon_{ijk}$ and $e_{ijk}$ are also used in literature.
 
-In matrix and vector language the $\epsilon$ tensor is used for the cross product $\mathbf{C} = \mathbf{A} \times \mathbf{B} \Rightarrow C_k = \epsilon_{ijk}\,A_i\,B_j$
+In matrix and vector language the $\epsilon$ tensor is used for the cross product $\mathbf{C} = \mathbf{A} \times \mathbf{B} \Rightarrow C_i = \epsilon_{ijk}\,A_j\,B_k$
 
 The permutation symbol satisfies the following relations:
 
@@ -745,18 +751,18 @@ and, in general,
 \end{vmatrix}
 ```
 
-### Proving that $ \delta_{ij} $ and $ \epsilon_{ijk} $ are tensors
+### Prove that $ \delta_{ij} $ and $ \epsilon_{ijk} $ are tensors
 
-Even if neither $ \delta_{ij} $ nor $ \epsilon_{ijk} $ depend on coordinates, we can formally consider the transformation of their components with respect to the rotation of the coordinate system. Note that $ \delta_{ij} $ has two subscripts and $ \epsilon_{ijk} $ has three subscripts. Hence, in the new coordinate system:
+Though neither $ \delta_{ij} $ nor $ \epsilon_{ijk} $ depend on coordinates, we can formally consider the transformation of their components with respect to the rotation of the coordinate system. Note that $ \delta_{ij} $ has two subscripts and $ \epsilon_{ijk} $ has three subscripts. Hence, in the new coordinate system:
 
 ```{math}
-\delta_{i'j} = L_{ik} L_{jl} \delta_{kl}.
+\delta'_{ij} = L_{ik} L_{jl} \delta_{kl}.
 ```
 
 Using the properties of $ \delta_{ij} $ and the orthogonality of the transformation matrix $ L $:
 
 ```{math}
-\delta_{i'j} = L_{ik} L_{jl} \delta_{kl} = L_{ik} L_{jk} = \delta_{ij}.
+\delta'_{ij} = L_{ik} L_{jl} \delta_{kl} = L_{ik} L_{jk} = \delta_{ij}.
 ```
 Similarly, transformation of $\epsilon_{ijk}$ is given by:
 
@@ -939,16 +945,17 @@ holds for all rotated coordinate systems and for any second-order tensor $ B $. 
 ```{math}
 A'_{jk} B'_{ik} &= C'_{ji} \\
 &= L_{jp} L_{iq} C_{pq} \\
-&= L_{jp} L_{iq} A_{pr} B_{rq} \\
+&= L_{jp} L_{iq} A_{pr} B_{qr} \\
 &= L_{jp} L_{iq} A_{pr} L_{uq} L_{vr} B'_{uv} \\
 &= L_{jp} (L_{iq} L_{uq}) L_{vr} A_{pr} B'_{uv} \\
+&= L_{jp} \delta_{iu} L_{vr} A_{pr} B'_{uv} \\
 &= L_{jp} L_{vr} A_{pr} B'_{iv}
 ```
 
 Comparing the left and right sides:
 
 ```{math}
-A'_{jk} B'_{ik} - L_{jp} L_{vr} A_{pr} B'_{uv} = 0
+A'_{jk} B'_{ik} - L_{jp} L_{vr} A_{pr} B’_{iv} = 0
 ```
 
 and note that subscripts $ k $ and $ v $ are dummy subscripts. Hence, the above equality can be rewritten as:

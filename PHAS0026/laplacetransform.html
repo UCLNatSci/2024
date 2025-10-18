@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -411,8 +411,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-ode-using-the-laplace-transform">Solving ODE Using the Laplace Transform</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-laplace-transform">Inverse Laplace Transform</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-inverse-transforms-by-convolution">Calculating Inverse Transforms by Convolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-products">Laplace Transform of Products</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-of-two-functions">Convolution of Two Functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
 </li>
@@ -627,7 +627,7 @@ f(t) &amp; \text{if } t \geq 0 \\
 0 &amp; \text{if } t &lt; 0 
 \end{cases} 
 \end{split}\end{split}\]</div>
-<p>In other words, it is assumed that the function is zero if <span class="math notranslate nohighlight">\(t &lt; 0\)</span>. The first half of the integral will\mathrm{d}rop out since the function is zero, and we will get back to the original definition.</p>
+<p>In other words, it is assumed that the function is zero if <span class="math notranslate nohighlight">\(t &lt; 0\)</span>. The first half of the integral will drop out since the function is zero, and we will get back to the original definition.</p>
 <p>We will return to this idea when we discuss the step function.</p>
 </section>
 </section>
@@ -702,10 +702,11 @@ u' = -p\,e^{-pt} &amp; \qquad v = f'(t)
 \end{split}\end{split}\]</div>
 </li>
 </ol>
+<p>Therefore we see that the Laplace transform has the power to turn an ODE into a polynomial - a useful property for solving ODEs.</p>
 <p>This means that the general result is that:</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{L}[f^{(n)}(t)] = p^n\, F(p) - p^{n-1}\, f(0) - p^{n-1} \,f'(0) - \dots - p\,f^{(n-2)}(0) - f^{(n-1)}(0)\]</div>
-<p>A related set of transform come in the form of <span class="math notranslate nohighlight">\(\mathcal{L}[t\,f(t)]\)</span>:</p>
+\[\begin{split}\mathcal{L}[f^{(n)}(t)] &amp;= p^n\, F(p) - p^{n-1}\, f(0) - p^{n-2} \,f'(0) - \dots - p^1\,f^{(n-2)}(0) - f^{(n-1)}(0) \\&amp;= p^n\, F(p) - \sum_{i=0}^{n-1} p^{n-i-1} f^{(i)}(0)\end{split}\]</div>
+<p>A related set of transforms come in the form of <span class="math notranslate nohighlight">\(\mathcal{L}[t\,f(t)]\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{L}[t\,f(t)] = \int_0^\infty t\,f(t)\,e^{-pt}\,\mathrm{d}t\]</div>
 <p>There is a temptation to evaluate this by parts, but this is not a fruitful method. Instead, consider taking a derivative with respect to <span class="math notranslate nohighlight">\(p\)</span> on a regular Laplace transform of <span class="math notranslate nohighlight">\(f(t)\)</span>:</p>
@@ -860,9 +861,13 @@ u' = \frac{1}{2}t^{-1/2} &amp; \qquad v = -\frac{1}{p}e^{-pt}
 <div class="math notranslate nohighlight">
 \[f(x) = \frac{1}{12} x^4 e^{-2x}\]</div>
 </section>
-<section id="inverse-laplace-transform">
-<h2>Inverse Laplace Transform<a class="headerlink" href="#inverse-laplace-transform" title="Link to this heading">#</a></h2>
-<p>Consider a 2nd-order ODE</p>
+<section id="laplace-transform-of-products">
+<h2>Laplace Transform of Products<a class="headerlink" href="#laplace-transform-of-products" title="Link to this heading">#</a></h2>
+<p>Unfortunately there is not a simple general rule for the Laplace transform of a product:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L} \left[f(t)\,g(t)\right] \rightarrow F(p)\,G(p)\]</div>
+<p>The two exceptions are if <span class="math notranslate nohighlight">\(f(t) = a t^n\)</span> or <span class="math notranslate nohighlight">\(f(t) = e^{at}\)</span> as described above, as these form addition rules for Laplace transforms (<span class="math notranslate nohighlight">\(p\)</span> derivative or shifting property)</p>
+<p>However we often find ourselves with the opposite problem, consider a 2nd-order ODE:</p>
 <div class="math notranslate nohighlight">
 \[A y''(t) + B y'(t) + C y(t) = f(t),\]</div>
 <p>where the boundary conditions imposed on the function <span class="math notranslate nohighlight">\( y \)</span> are <span class="math notranslate nohighlight">\( y(0) = y'(0) = 0 \)</span>, <span class="math notranslate nohighlight">\( t \geq 0 \)</span>, and <span class="math notranslate nohighlight">\( A \)</span>, <span class="math notranslate nohighlight">\( B \)</span>, <span class="math notranslate nohighlight">\( C \)</span> are constant coefficients.</p>
@@ -873,35 +878,54 @@ u' = \frac{1}{2}t^{-1/2} &amp; \qquad v = -\frac{1}{p}e^{-pt}
 <div class="math notranslate nohighlight">
 \[Y(p) = \frac{F(p)}{A p^2 + B p + C} = \frac{F(p)}{A(p + a)(p + b)},\]</div>
 <p>where <span class="math notranslate nohighlight">\( a \)</span> and <span class="math notranslate nohighlight">\( b \)</span> are constants.</p>
-<p>We already know the inverse Laplace transform of <span class="math notranslate nohighlight">\( F(p) \)</span> (it is given to us as <span class="math notranslate nohighlight">\( f(t) \)</span>) and we can always find the inverse transform of</p>
+<p>Given we already know the inverse Laplace transform of <span class="math notranslate nohighlight">\(F(p)\)</span> and we can try to find the inverse transform of:</p>
 <div class="math notranslate nohighlight">
-\[\frac{1}{A(p + a)(p + b)}\]</div>
-<p>by inspecting the table of Laplace transforms. Can we find the inverse transform of <span class="math notranslate nohighlight">\( Y(p) \)</span>?</p>
-<p>More generally, assume that inverse Laplace transforms of <span class="math notranslate nohighlight">\( H(p) \)</span> and <span class="math notranslate nohighlight">\( G(p) \)</span> are known functions <span class="math notranslate nohighlight">\( h(t) \)</span> and <span class="math notranslate nohighlight">\( g(t) \)</span>, respectively. How do we find the inverse Laplace transform of <span class="math notranslate nohighlight">\( H(p) G(p) \)</span>?</p>
+\[\frac{1}{A(p + a)(p + b)} \rightarrow \frac{B}{p+a} + \frac{C}{p+b}\]</div>
+<p>using partial fractions and then inspecting the table of Laplace transforms, can we find the inverse transform of a function of the form <span class="math notranslate nohighlight">\( Y(p) = F(p) G(p) \)</span> to find <span class="math notranslate nohighlight">\(y(t)\)</span>?</p>
+<p>Lets consider the two transform integrals multiplied (ensuring we don’t use the same variables in each to avoid confusion):</p>
+<div class="math notranslate nohighlight">
+\[F(p) \,G(p) = \int_0^\infty f(s) \,e^{-ps}\,\mathrm{d}s\int_0^\infty g(t)\, e^{-pt}\,\mathrm{d}t= \int_0^\infty \int_0^\infty f(s) \,g(t) \,e^{-p(s + t)}\,\mathrm{d}s\,\mathrm{d}t.\]</div>
+<p>Now lets introduce a new variable, <span class="math notranslate nohighlight">\( r = s + t \)</span>, we can rearrange <span class="math notranslate nohighlight">\( s = r - t \)</span> and for the <span class="math notranslate nohighlight">\(s\)</span> integral holding <span class="math notranslate nohighlight">\(t\)</span> constant we can write <span class="math notranslate nohighlight">\(\mathrm{d}s=\mathrm{d}r \)</span>.</p>
+<p>To define the limits of integration with respect to <span class="math notranslate nohighlight">\(\mathrm{d}r \)</span>, we notice that <span class="math notranslate nohighlight">\( r = t \)</span> if <span class="math notranslate nohighlight">\( s = 0 \)</span> and <span class="math notranslate nohighlight">\( r \rightarrow \infty \)</span> as <span class="math notranslate nohighlight">\( s \rightarrow \infty \)</span>.</p>
+<div class="math notranslate nohighlight">
+\[F(p) \,G(p) = \int_0^\infty \int_t^\infty f(r - t) \,g(t) \, e^{-pr}\,\mathrm{d}r \,\mathrm{d}t.\]</div>
+<p>This does not look like it has simplified the problem!</p>
+<p>However lets rewrite as:</p>
+<div class="math notranslate nohighlight">
+\[F(p) \,G(p) =  \int_t^\infty \left(\int_0^\infty f(r - t) \,g(t)  \,\mathrm{d}t\right)\, e^{-pr}\,\mathrm{d}r\]</div>
+<p>This <em>almost</em> looks like a Laplace transform, except the limits are not exactly right (we need from 0 to <span class="math notranslate nohighlight">\(\infty\)</span> in <span class="math notranslate nohighlight">\(r\)</span> for this to properly be a Laplace transform).  Lets we can consider how to interchange the two limits, consider Fig 1 (a) and (b).</p>
+<figure class="align-default" id="ltconv">
+<img alt="_images/convolution_integration.png" src="_images/convolution_integration.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Integration in <span class="math notranslate nohighlight">\(r-t\)</span> plane(a) Inner integral (over <span class="math notranslate nohighlight">\(r\)</span>): <span class="math notranslate nohighlight">\(t \leq r &lt; \infty\)</span>, outer integral (over <span class="math notranslate nohighlight">\(t\)</span>): <span class="math notranslate nohighlight">\(0 \leq t &lt; \infty\)</span>;(b) Inner integral (over <span class="math notranslate nohighlight">\(t\)</span>): <span class="math notranslate nohighlight">\(0 \leq t &lt; r\)</span>, outer integral (over <span class="math notranslate nohighlight">\(r\)</span>): <span class="math notranslate nohighlight">\(0 \leq r &lt; \infty\)</span>.</span><a class="headerlink" href="#ltconv" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In (a) we are integrating from <span class="math notranslate nohighlight">\(r = t\)</span> up to <span class="math notranslate nohighlight">\(r \rightarrow \infty\)</span> and then integrating this result over all values of <span class="math notranslate nohighlight">\(t\)</span> - which is how the integral is currently set up.  We can however also think of this as (b) where we are integrating from <span class="math notranslate nohighlight">\(t=0\)</span> up to <span class="math notranslate nohighlight">\(t = r\)</span> and then integrating this over all values of <span class="math notranslate nohighlight">\(r\)</span>.  We see this results in the same shaded area, <em>but</em> crucially it will switch both the integration limits:</p>
+<div class="math notranslate nohighlight">
+\[F(p) \,G(p) =  \int_0^\infty \left(\int_0^r f(r - t) \,g(t)  \,\mathrm{d}t\right)\, e^{-pr}\,\mathrm{d}r\]</div>
+<p>We can now see this as the Laplace transform of the inner integral:</p>
+<div class="math notranslate nohighlight">
+\[F(p) \,G(p) =  \mathcal{L}\left[\int_0^r f(r - t) \,g(t)  \,\mathrm{d}t\right]\]</div>
+<p>This inner integral has a name - the <strong>convolution</strong> of the functions <span class="math notranslate nohighlight">\(f(t)\)</span> and <span class="math notranslate nohighlight">\(g(t)\)</span>.</p>
+<section id="convolution-of-two-functions">
+<h3>Convolution of Two Functions<a class="headerlink" href="#convolution-of-two-functions" title="Link to this heading">#</a></h3>
+<p>The convolution is an interesting functional - we create it formally by taking two functions and integrating them to produce a third function:</p>
+<div class="math notranslate nohighlight">
+\[(f\ast g)(r) = \int_{-\infty}^{\infty} f(t) \,g(r-t)  \,\mathrm{d}t\]</div>
+<p>This operatoin has many properties, for instance it is commutative:</p>
+<div class="math notranslate nohighlight">
+\[(g\ast f)(r) = \int_{-\infty}^{\infty} g(t) \,f(r-t)  \,\mathrm{d}t\]</div>
+<p>If we define <span class="math notranslate nohighlight">\(s = r-t\)</span> and therefore <span class="math notranslate nohighlight">\(t = r-s\)</span>, then <span class="math notranslate nohighlight">\(\mathrm{d}t = \mathrm{d}s\)</span>, as <span class="math notranslate nohighlight">\(r \rightarrow \pm\infty, \, s\rightarrow \mp\infty\)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[(g\ast f)(r) = \int_{-\infty}^{\infty} g(r-s) \,f(s)  \,\mathrm{d}s = (f\ast g)(r) \]</div>
+<p>We can think of this integral visually as taking a function <span class="math notranslate nohighlight">\(f(t)\)</span> and passing another function <span class="math notranslate nohighlight">\(g(t)\)</span> past it and calculating the overlapping areas.  We can see this in Fig 2.</p>
+<figure class="align-default" id="conv">
+<img alt="_images/Convolution_of_box_signal_with_itself.gif" src="_images/Convolution_of_box_signal_with_itself.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Here we define a <strong>box</strong> function <span class="math notranslate nohighlight">\(f(t)\)</span> which has a unit area and is an even function.  If we convolve this function with itself <span class="math notranslate nohighlight">\(f(t) = g(t)\)</span>, then we see the result as a triangle (or tent) function.</span><a class="headerlink" href="#conv" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
-<section id="calculating-inverse-transforms-by-convolution">
-<h2>Calculating Inverse Transforms by Convolution<a class="headerlink" href="#calculating-inverse-transforms-by-convolution" title="Link to this heading">#</a></h2>
-<p>Consider the product <span class="math notranslate nohighlight">\( H(p) G(p) \)</span>, where <span class="math notranslate nohighlight">\( H(p) \)</span> and <span class="math notranslate nohighlight">\( G(p) \)</span> are Laplace transforms of <span class="math notranslate nohighlight">\( h(t) \)</span> and <span class="math notranslate nohighlight">\( g(t) \)</span>, respectively.</p>
-<div class="math notranslate nohighlight">
-\[H(p) G(p) = \int_0^\infty h(s) e^{-ps}\mathrm{d}s\int_0^\infty g(t) e^{-pt}\mathrm{d}t= \int_0^\infty \int_0^\infty h(s) g(t) e^{-p(s + t)}\mathrm{d}s\mathrm{d}t.\]</div>
-<p>Introduce a new variable <span class="math notranslate nohighlight">\( r = s + t \)</span> for any fixed <span class="math notranslate nohighlight">\( t \)</span>. Then, <span class="math notranslate nohighlight">\( s = r - t \)</span> and <span class="math notranslate nohighlight">\(\mathrm{d}s=\mathrm{d}r \)</span>. To define the limits of integration with respect to <span class="math notranslate nohighlight">\(\mathrm{d}r \)</span>, we notice that <span class="math notranslate nohighlight">\( r = t \)</span> if <span class="math notranslate nohighlight">\( s = 0 \)</span> and <span class="math notranslate nohighlight">\( r = \infty \)</span> if <span class="math notranslate nohighlight">\( s = \infty \)</span>. Therefore,</p>
-<div class="math notranslate nohighlight">
-\[H(p) G(p) = \int_0^\infty \left( \int_t^\infty h(r - t) g(t) e^{-pr}\mathrm{d}r \right) \mathrm{d}t.\]</div>
-<p>The figure (a) below shows schematically the order of integration in this equation: each horizontal line corresponds to the inner integration from <span class="math notranslate nohighlight">\(r=t\)</span> to <span class="math notranslate nohighlight">\(r = \infty\)</span>, so all lines together cover one half of the first quadrilateral, which corresponds to the outer integral for <span class="math notranslate nohighlight">\(0 \leq t &lt; \infty \)</span></p>
-<p><img alt="(a) Inner integral (over ): , outer integral (over ): ;(b) Inner integral (over ): , outer integral (over ): ." src="_images/convolution_integration.png" /></p>
-<p>We can change the order of integration with respect to <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(r\)</span> in the equation, as illustrated in the above figure (b), so as:</p>
-<div class="math notranslate nohighlight">
-\[H(p) G(p) = \int_0^\infty \left( \int_0^r h(r-t) g(t) \mathrm{d}t\right) e^{-pr} \,dr = \int_0^\infty \left[h \ast g\right]e^{-pr} \,dr .\]</div>
-<p>This inner integral is called the convolution of functions <span class="math notranslate nohighlight">\( g(x) \)</span> and <span class="math notranslate nohighlight">\( h(x) \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[h \ast g = \int_0^r h(r-t) g(t) \mathrm{d}t\]</div>
-<p>Thus, this integral can be written as</p>
-<div class="math notranslate nohighlight">
-\[H(p) G(p) = \int_0^\infty [h \ast g] e^{-pr}\mathrm{d}r,\]</div>
-<p>i.e., the Laplace transform of a convolution of functions <span class="math notranslate nohighlight">\( h(x) \)</span> and <span class="math notranslate nohighlight">\( g(x) \)</span> equals the product of the Laplace transforms of these functions. In other words, <span class="math notranslate nohighlight">\( h \ast g \)</span> is the inverse Laplace transform of <span class="math notranslate nohighlight">\( H(p) G(p) \)</span>.</p>
-<p>What is interesting about this convolution integral is that it is commutative:</p>
-<div class="math notranslate nohighlight">
-\[h \ast g = g \ast h \Rightarrow \int_0^r h(r-t) g(t) \mathrm{d}t = \int_0^t g(t-r) h(r) \mathrm{d}r\]</div>
 <hr class="docutils" />
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
@@ -914,19 +938,18 @@ u' = \frac{1}{2}t^{-1/2} &amp; \qquad v = -\frac{1}{p}e^{-pt}
 <p>which gives</p>
 <div class="math notranslate nohighlight">
 \[Y(p) = \frac{\mathcal{L}(e^{-t})}{(p^2 + 3p + 2)} = \frac{\mathcal{L}(e^{-t})}{(p+1)(p+2)}.\]</div>
-<p>The inverse transform of</p>
+<p>Given that we can simplify this down to:</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{(p+1)(p+2)} = \frac{1}{p+1} - \frac{1}{p+2}\]</div>
-<p>is <span class="math notranslate nohighlight">\( e^{-t} - e^{-2t} \)</span>.</p>
+<p>This will result from the Laplace transform of <span class="math notranslate nohighlight">\(\mathcal{L}\left[e^{-t} - e^{-2t}\right]\)</span>.</p>
 <p>Therefore,</p>
 <div class="math notranslate nohighlight">
 \[Y(p) = \mathcal{L}(e^{-t} - e^{-2t})\mathcal{L}(e^{-t}).\]</div>
 <p>To find <span class="math notranslate nohighlight">\( y(t) \)</span>, we need to calculate the convolution of <span class="math notranslate nohighlight">\( e^{-t} - e^{-2t} \)</span> and <span class="math notranslate nohighlight">\( e^{-t} \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[y(t) = \int_0^t g(\tau)\,h(t-\tau)\,\mathrm{d}\tau = \int_0^t \left[ e^{-\tau} - e^{-2\tau} \right] e^{-(t - \tau)} d\tau.\]</div>
-<p>This simplifies to:</p>
-<div class="math notranslate nohighlight">
-\[y(t) = t e^{-t} + e^{-2t} - e^{-t}.\]</div>
+\[\begin{split}y(t) &amp;= \int_0^t f(r)\,g(t-r)\,\mathrm{d}r \\&amp;= \int_0^t \left( e^{-r} - e^{-2r} \right) e^{-(t - r)} \mathrm{d}r = \int_0^t \left( e^{-t} - e^{-t-r} \right) \mathrm{d}r \\
+&amp;= \left[re^{-t} + e^{-t-r}\right]_0^t = te^{-t} + e^{-2r} - e^{-t}\end{split}\]</div>
+<p>This is the solution to our ODE.</p>
 </section>
 </section>
 <section id="tables-of-transforms">
@@ -1148,8 +1171,8 @@ g(t) &amp;= \mathcal{L}^{-1}[G(p)],
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-ode-using-the-laplace-transform">Solving ODE Using the Laplace Transform</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-laplace-transform">Inverse Laplace Transform</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-inverse-transforms-by-convolution">Calculating Inverse Transforms by Convolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-products">Laplace Transform of Products</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-of-two-functions">Convolution of Two Functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
 </li>

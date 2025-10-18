@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -422,7 +422,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-identity-and-permutation-tensors">The identity and permutation tensors</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutation-symbol-and-permutation-tensor-epsilon-ijk">Permutation Symbol and Permutation Tensor <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proving-that-delta-ij-and-epsilon-ijk-are-tensors">Proving that <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> are tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prove-that-delta-ij-and-epsilon-ijk-are-tensors">Prove that <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> are tensors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#th-order-epsilon-ijkl"><span class="math notranslate nohighlight">\(4^{th}\)</span> Order <span class="math notranslate nohighlight">\( \epsilon_{ijkl} \)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-epsilon-ijk">Applications of <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span>:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isotropic-tensors">Isotropic Tensors</a></li>
@@ -458,7 +458,7 @@ document.write(`
 <figure class="align-default" id="fig-tensors-fig1">
 <img alt="_images/tensors_fig1.png" src="_images/tensors_fig1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Examples of (a) <em>scalar</em> - volume of a cake; (b) <em>vector</em> - velocity of a champaign cork; (c) relation between directions of forces and displacements of each point in a solid; (d) metric of Minkowski space.</span><a class="headerlink" href="#fig-tensors-fig1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Examples of (a) <em>scalar</em> - volume of a cake; (b) <em>vector</em> - velocity of a champaign cork; (c) relation between directions of forces and displacements of each point in a solid; (d) metric of Minkowski space.</span><a class="headerlink" href="#fig-tensors-fig1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="n-dimensional-space">
@@ -506,7 +506,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\begin{split}a_i x_i &amp;= a_1 x_1 + a_2 x_2 + a_3 x_3 \\
 a_{ij} b_{jk} &amp;= a_{i1} b_{1k} + a_{i2} b_{2k} + a_{i3} b_{3k} \quad \text{(the sum depends on $ i $ and $ k $)}\\
-a_{ij}\,b_{jk}\,C_{kan} &amp;= \sum_{j=1}^3\,\sum_{k=1}^3 a_{ij}\,b_{jk}\,C_{kmn} \quad \text{(the sum depends on $ i, m $ and $ n $)} \\
+a_{ij}\,b_{jk}\,C_{kmn} &amp;= \sum_{j=1}^3\,\sum_{k=1}^3 a_{ij}\,b_{jk}\,C_{kmn} \quad \text{(the sum depends on $ i, m $ and $ n $)} \\
 \frac{\partial^2 \phi}{\partial x_i^2} &amp;= \frac{\partial^2 \phi}{\partial x_1^2} + \frac{\partial^2 \phi}{\partial x_2^2} + \frac{\partial^2 \phi}{\partial x_3^2}\end{split}\]</div>
 <p>Similarly, in <span class="math notranslate nohighlight">\( N \)</span>-dimensional space:</p>
 <div class="math notranslate nohighlight">
@@ -522,15 +522,15 @@ a_{ij}\,b_{jk}\,C_{kan} &amp;= \sum_{j=1}^3\,\sum_{k=1}^3 a_{ij}\,b_{jk}\,C_{kmn
 \[d\bar{x}_i = \sum_{j=1}^{N} \frac{\partial \phi_i}{\partial x_j} \mathrm{d}x_j = \frac{\partial \phi_i}{\partial x_j} \mathrm{d}x_j = \frac{\partial \phi_i}{\partial x_r} \mathrm{d}x_r.\]</div>
 <p>In order to avoid confusion, the same index should not be used more than twice in one term. For example,</p>
 <div class="math notranslate nohighlight">
-\[\frac{d\bar{x}_j}{\partial x_i} = \frac{\partial \phi_j}{\partial x_i} \quad \text{but not} \quad \frac{d\bar{x}_j}{\partial x_j}.\]</div>
+\[d\bar{x}_j = \frac{\partial \phi_j}{\partial x_i} dx_i\quad \text{but not} \quad d\bar{x}_j = \frac{\partial \phi_j}{\partial x_j} dx_j.\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
-\[\left( \sum_{i=1}^N a_i\,x_i\right)^2 = (a_x\,x_i)^2 = (a_i\,x_i)(a_j\,x_j) = a_i\,a_j\,x_i\,x_j \quad \text{but not} \quad a_i\,x_i\,a_i\,x_i\]</div>
+\[\left( \sum_{i=1}^N a_i\,x_i\right)^2 = (a_i\,x_i)^2 = (a_i\,x_i)(a_j\,x_j) = a_i\,a_j\,x_i\,x_j \quad \text{but not} \quad a_i\,x_i\,a_i\,x_i\]</div>
 <p>To demonstrate the effect of the Kronecker symbol:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}b_j\,\delta_{ij} &amp;= b_i \\
 a_{ij}\,\delta_{jk} &amp;= a_{ik} \\
-a_{ij}\,b_{jk}\,\delta_{kl} &amp;= a_{ki}\,b_{ji} = a_{kj}\,b_{jk}
+a_{ij}\,b_{jk}\,\delta_{ki} &amp;= a_{ij}\,b_{ji} = a_{kj}\,b_{jk}
 \end{split}\]</div>
 <p><em>Exercise:</em> Show that</p>
 <div class="math notranslate nohighlight">
@@ -553,7 +553,7 @@ a_{ij}\,b_{jk}\,\delta_{kl} &amp;= a_{ki}\,b_{ji} = a_{kj}\,b_{jk}
 \mathbf{e}'_3 &amp;= S_{13} \mathbf{e}_1 + S_{23} \mathbf{e}_2 + S_{33} \mathbf{e}_3 = S_{k3} \mathbf{e}_k\end{split}\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{e}_j' = S_{jk}\,\mathbf{e}_k\]</div>
+\[\mathbf{e}_j' = S_{kj}\,\mathbf{e}_k\]</div>
 <p>where <span class="math notranslate nohighlight">\( S_{ij} \)</span> are elements of a matrix <span class="math notranslate nohighlight">\( S \)</span>. In the new basis set, vector <span class="math notranslate nohighlight">\( \mathbf{x} \)</span> can be written as:</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{x} = x'_1 \mathbf{e}'_1 + x'_2 \mathbf{e}'_2 + x'_3 \mathbf{e}'_3 = x'_k \mathbf{e}'_k.\]</div>
@@ -567,7 +567,7 @@ a_{ij}\,b_{jk}\,\delta_{kl} &amp;= a_{ki}\,b_{ji} = a_{kj}\,b_{jk}
 &amp;+ x'_{2} (S_{12} \mathbf{e}_1 + S_{22} \mathbf{e}_2 + S_{32} \mathbf{e}_3) \\
 &amp;+ x'_{3} (S_{13} \mathbf{e}_1 + S_{23} \mathbf{e}_2 + S_{33} \mathbf{e}_3) \\
 &amp;= x'_{1} (S_{k1} \mathbf{e}_k) + x'_{2} (S_{k2} \mathbf{e}_k) + x'_{3} (S_{k3} \mathbf{e}_k) \\
-&amp;= x'_{j} (S_{k_j} \mathbf{e}_k).\end{split}\]</div>
+&amp;= x'_{j} (S_{kj} \mathbf{e}_k).\end{split}\]</div>
 <p>Hence, the components of the vector <span class="math notranslate nohighlight">\( x \)</span> in the old and new basis sets are related as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}x_1 &amp;= S_{11} x'_{1} + S_{12} x'_{2} + S_{13} x'_{3} = S_{1k} x'_{k}\\
@@ -579,15 +579,15 @@ x_3 &amp;= S_{31} x'_{1} + S_{32} x'_{2} + S_{33} x'_{3} = S_{3k} x'_{k}\end{spl
 <p>i.e. <span class="math notranslate nohighlight">\(x_i\)</span> are <em>functions</em> of <span class="math notranslate nohighlight">\(x'_i\)</span> and components of the transformation matrix <span class="math notranslate nohighlight">\( S \)</span> are given by:</p>
 <div class="math notranslate nohighlight">
 \[S_{ik} = \frac{\partial x_i}{\partial x'_k}\]</div>
-<p>The system of equations <span class="math notranslate nohighlight">\(x_i = S_{ij} x_{0j}\)</span> can be resolved with respect to <span class="math notranslate nohighlight">\( x'_{I} \)</span> if <span class="math notranslate nohighlight">\( \det(S) \neq 0 \)</span>. In this case, it is possible to define the inverse of the matrix <span class="math notranslate nohighlight">\( S \)</span>, which transforms components of <span class="math notranslate nohighlight">\( \mathbf{x} \)</span> from the old basis to the new one:</p>
+<p>The system of equations <span class="math notranslate nohighlight">\(x_i = S_{ij} x'_{j}\)</span> can be resolved with respect to <span class="math notranslate nohighlight">\( x’_{I} \)</span> if <span class="math notranslate nohighlight">\( \det(S) \neq 0 \)</span>. In this case, it is possible to define the inverse of the matrix <span class="math notranslate nohighlight">\( S \)</span>, which transforms components of <span class="math notranslate nohighlight">\( \mathbf{x} \)</span> from the old basis to the new one:</p>
 <div class="math notranslate nohighlight">
-\[x'_{I} = (S^{-1})_{ij} x_j.\]</div>
+\[x’_{I} = (S^{-1})_{ij} x_j.\]</div>
 </section>
 <section id="rotation">
 <h3>Rotation<a class="headerlink" href="#rotation" title="Link to this heading">#</a></h3>
 <p>If the transformation defined by the matrix <span class="math notranslate nohighlight">\( S \)</span> is a <em>rotation</em>, i.e., <span class="math notranslate nohighlight">\( S \)</span> is orthogonal (<span class="math notranslate nohighlight">\( S^{-1} = S^T \)</span>), then</p>
 <div class="math notranslate nohighlight">
-\[x'_{I} = (S^T)_{ij} x_j = S_{ji} x_j.\]</div>
+\[x’_{I} = (S^T)_{ij} x_j = S_{ji} x_j.\]</div>
 </section>
 <hr class="docutils" />
 <section id="transformation-of-coordinates-in-n-dimensional-space">
@@ -612,7 +612,7 @@ x_3 &amp;= S_{31} x'_{1} + S_{32} x'_{2} + S_{33} x'_{3} = S_{3k} x'_{k}\end{spl
 <p>Lets investigate how components of a vector are changed by a rotation of the Cartesian coordinate system. For convenience, introduce transformation matrix <span class="math notranslate nohighlight">\( L = S^{-1} \)</span>, where matrix <span class="math notranslate nohighlight">\( S \)</span> defines the rotation of the basis set vectors. Then,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}x'_{i} &amp;= L_{ij} x_{j}\\
-x_{i} &amp;= L_{ij} x'_{j}\end{split}\]</div>
+x_{i} &amp;= L_{ji} x'_{j}\end{split}\]</div>
 <p>Orthogonality of <span class="math notranslate nohighlight">\( L \)</span> means that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}L_{ik} L_{jk} &amp;= \delta_{ij} \quad \text{(orthogonality of rows)}\\
@@ -636,7 +636,7 @@ L_{ki} L_{kj} &amp;= \delta_{ij}  \quad \text{(orthogonality of columns)}\end{sp
 <figure class="align-default" id="fig-tensors-fig2">
 <img alt="_images/tensors_fig2.png" src="_images/tensors_fig2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Rotation of Cartesian axes by an angle <span class="math notranslate nohighlight">\( \alpha \)</span> about the <span class="math notranslate nohighlight">\( x_3 \)</span> axis. Note that the rotation of the axes changes components of the vector <span class="math notranslate nohighlight">\( x \)</span> but not the vector itself.</span><a class="headerlink" href="#fig-tensors-fig2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Rotation of Cartesian axes by an angle <span class="math notranslate nohighlight">\( \alpha \)</span> about the <span class="math notranslate nohighlight">\( x_3 \)</span> axis. Note that the rotation of the axes changes components of the vector <span class="math notranslate nohighlight">\( x \)</span> but not the vector itself.</span><a class="headerlink" href="#fig-tensors-fig2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><em>Exercise:</em> Show that two consecutive rotations of the coordinate system by an angle <span class="math notranslate nohighlight">\( \theta \)</span> about the <span class="math notranslate nohighlight">\( \mathbf{e}_3 \)</span> axis is also a rotation with the value of the rotation angle of <span class="math notranslate nohighlight">\( 2\theta \)</span>.</p>
@@ -648,7 +648,7 @@ L_{ki} L_{kj} &amp;= \delta_{ij}  \quad \text{(orthogonality of columns)}\end{sp
 \[x''_{i} = M_{ij} x'_{j},\]</div>
 <p>then</p>
 <div class="math notranslate nohighlight">
-\[x''_i = M_{ij} x'_j = M_{ij} (L_{jk} x_k) = (M_{ik} L_{jk}) x_k = (ML)_{ik} x_k.\]</div>
+\[x''_i = M_{ij} x'_j = M_{ij} (L_{jk} x_k) = (M_{ij} L_{jk}) x_k = (ML)_{ik} x_k.\]</div>
 <hr class="docutils" />
 <section id="transformation-of-vectors">
 <h3>Transformation of vectors<a class="headerlink" href="#transformation-of-vectors" title="Link to this heading">#</a></h3>
@@ -688,7 +688,7 @@ L_{ki} L_{kj} &amp;= \delta_{ij}  \quad \text{(orthogonality of columns)}\end{sp
 <figure class="align-default" id="fig-tensors-fig3">
 <img alt="_images/tensors_fig3.png" src="_images/tensors_fig3.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Examples of functions in the 2D case: (a) <span class="math notranslate nohighlight">\(\mathbf{v}(x_1, x_2) = x_1 \mathbf{e}_1 + x_2 \mathbf{e}_2\)</span>; (b) <span class="math notranslate nohighlight">\(\mathbf{v}(x_1, x_2) = x_2 \mathbf{e}_1 - x_1 \mathbf{e}_2\)</span>;(c) <span class="math notranslate nohighlight">\(\mathbf{v}(x_1, x_2) = x_2 \mathbf{e}_1 + x_1 \mathbf{e}_2\)</span>.</span><a class="headerlink" href="#fig-tensors-fig3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Examples of functions in the 2D case: (a) <span class="math notranslate nohighlight">\(\mathbf{v}(x_1, x_2) = x_1 \mathbf{e}_1 + x_2 \mathbf{e}_2\)</span>; (b) <span class="math notranslate nohighlight">\(\mathbf{v}(x_1, x_2) = x_2 \mathbf{e}_1 - x_1 \mathbf{e}_2\)</span>;(c) <span class="math notranslate nohighlight">\(\mathbf{v}(x_1, x_2) = x_2 \mathbf{e}_1 + x_1 \mathbf{e}_2\)</span>.</span><a class="headerlink" href="#fig-tensors-fig3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><em>Exercise</em>: For the case of a two-dimensional space, show that <span class="math notranslate nohighlight">\( \mathbf{v} = (x_2, -x_1) \)</span> transforms as a vector under rotation of the coordinate system and <span class="math notranslate nohighlight">\( \mathbf{v} = (x_2, x_1) \)</span> does not.</p>
@@ -746,7 +746,7 @@ L_{ki} L_{kj} &amp;= \delta_{ij}  \quad \text{(orthogonality of columns)}\end{sp
 <p>Thus, components of the outer products of two vectors transform in the same way as components of a 2nd-order tensor.</p>
 <p>Since <span class="math notranslate nohighlight">\( \mathbf{a} = a_i \mathbf{e}_i \)</span> and <span class="math notranslate nohighlight">\( \mathbf{b} = b_j \mathbf{e}_j \)</span>, the tensor formed by the outer product of <span class="math notranslate nohighlight">\( \mathbf{a} \)</span> and <span class="math notranslate nohighlight">\( \mathbf{b} \)</span> can be written as:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{T} = \mathbf{a} \otimes \mathbf{b} = a_i\,b_j\, \mathbf{e}_i \otimes \mathbf{e}_j = = T_{ij}'  \mathbf{e}_i' \otimes \mathbf{e}_j'\]</div>
+\[\mathbf{T} = \mathbf{a} \otimes \mathbf{b} = a_i\,b_j\, \mathbf{e}_i \otimes \mathbf{e}_j = T_{ij}  \mathbf{e}_i \otimes \mathbf{e}_j= T_{ij}'  \mathbf{e}_i' \otimes \mathbf{e}_j'\]</div>
 <p>Note that while components of the tensor <span class="math notranslate nohighlight">\( T \)</span> depend on the coordinate system, it is the <em>same</em> tensor in both coordinate systems.</p>
 <p>The outer product operation can be applied to arbitrary tensors <span class="math notranslate nohighlight">\( \mathbf{A} \)</span> and <span class="math notranslate nohighlight">\( \mathbf{B} \)</span> of orders <span class="math notranslate nohighlight">\( N \)</span> and <span class="math notranslate nohighlight">\( M \)</span>, respectively; the resulting tensor has order <span class="math notranslate nohighlight">\( N + M \)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -779,7 +779,7 @@ L_{ki} L_{kj} &amp;= \delta_{ij}  \quad \text{(orthogonality of columns)}\end{sp
 <div class="math notranslate nohighlight">
 \[\begin{split}T'_{i_1 \ldots i_p \ldots i_p \ldots i_N} &amp;= L_{i_1 j_1} \ldots L_{i_p j_p} \ldots L_{i_p j_q} \ldots L_{i_N j_N} T_{j_1 \ldots j_p \ldots j_q \ldots j_N}\\
 &amp;= L_{i_1 j_1} \ldots L_{i_p j_p} \, \delta_{j_p j_q} \ldots L_{i_N j_N} T_{j_1 \ldots j_p \ldots j_q \ldots j_N} \\
-&amp;= (L_{i_1 j_1} \ldots L_{i_{p-1} j_{p-1}})(L_{i_{p+1} j_{p+1}} \ldots L_{i_{q-1} j_{q-1}})(L_{i_{q+1} j_{q+1}} \ldots L_{i_N j_N}) T_{j_1 \ldots j_q \ldots j_N}.\end{split}\]</div>
+&amp;= (L_{i_1 j_1} \ldots L_{i_{p-1} j_{p-1}})(L_{i_{p+1} j_{p+1}} \ldots L_{i_{q-1} j_{q-1}})(L_{i_{q+1} j_{q+1}} \ldots L_{i_N j_N}) T_{j_1 \ldots j_q \ldots j_q \ldots j_N}.\end{split}\]</div>
 <p>The contraction operation is not defined for vectors. However, one can first generate a 2nd-order tensor as the outer product of two vectors</p>
 <div class="math notranslate nohighlight">
 \[T_{ij} = a_i b_j\]</div>
@@ -799,7 +799,7 @@ C_m &amp;= A_{ijk} B_{kmji}\end{split}\]</div>
 \[C_{kn} = A_{ki} B_{ni}\]</div>
 <p>in a rotated coordinate system:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}C_{k' n} &amp;= A'_{k i} B'_{n i} \\
+\[\begin{split}C'_{k n} &amp;= A'_{k i} B'_{n i} \\
 &amp;= (L_{k p} L_{i q} A_{p q})(L_{n r} L_{i s} B_{r s})\\
 &amp;= L_{k p} L_{n r} (L_{i q} L_{i s}) A_{p q} B_{r s}\\
 &amp;= L_{k p} L_{n r} (\delta_{q s}) A_{p q} B_{r s}\\
@@ -814,7 +814,7 @@ C_m &amp;= A_{ijk} B_{kmji}\end{split}\]</div>
 \[T_{ij} = \frac{\partial v_i}{\partial x_j}\]</div>
 <p>form components of a 2nd-order tensor. To prove it, consider these quantities in a rotated coordinate system:</p>
 <div class="math notranslate nohighlight">
-\[T'_{ij} = \frac{\partial v'_i}{\partial x'_j} = L_{ik} \frac{\partial v_k}{\partial x_l} L_{jl}\]</div>
+\[T'_{ij} = \frac{\partial v'_i}{\partial x'_j}= \frac{\partial L_{ik}v_k}{\partial x_l}\frac{\partial x_l}{\partial x'_j}= L_{ik} \frac{\partial v_k}{\partial x_l} L_{jl}=L_{ik} L_{jl} T_{kl}\]</div>
 <p>Tensor <span class="math notranslate nohighlight">\( \mathbf{T} = \nabla \mathbf{v} \)</span> can be considered as the gradient of a vector.</p>
 <p><em>Exercise:</em> Demonstrate that matrix <span class="math notranslate nohighlight">\( T \)</span> represents a 2nd-order tensor:</p>
 <div class="math notranslate nohighlight">
@@ -839,7 +839,7 @@ C_m &amp;= A_{ijk} B_{kmji}\end{split}\]</div>
 \[T_{ij} = T_{ji}\]</div>
 <p>for all values of <span class="math notranslate nohighlight">\( i \)</span> and <span class="math notranslate nohighlight">\( j \)</span>. In the case of an <span class="math notranslate nohighlight">\( N \)</span>-th order tensor, if:</p>
 <div class="math notranslate nohighlight">
-\[T_{i_1 \dots i_N} = T_{i_1 \dots i_m \dots i_n \dots i_N}\]</div>
+\[T_{i_1 \dots i_n \dots i_m \dots i_N} = T_{i_1 \dots i_m \dots i_n \dots i_N}\]</div>
 <p>this tensor is said to be symmetric with respect to the <span class="math notranslate nohighlight">\( n \)</span>-th and <span class="math notranslate nohighlight">\( m \)</span>-th subscripts.</p>
 <p>Examples include Stress and strain tensors.</p>
 </section>
@@ -853,17 +853,23 @@ C_m &amp;= A_{ijk} B_{kmji}\end{split}\]</div>
 \end{pmatrix}
 =
 \begin{pmatrix}
-\tau_{xx} &amp; \tau_{xy} &amp; \tau_{xz} \\
-\tau_{yx} &amp; \tau_{yy} &amp; \tau_{yz} \\
-\tau_{zx} &amp; \tau_{zy} &amp; \tau_{zz}
+\sigma_{xx} &amp; \sigma_{xy} &amp; \sigma_{xz} \\
+\sigma_{yx} &amp; \sigma_{yy} &amp; \sigma_{yz} \\
+\sigma_{zx} &amp; \sigma_{zy} &amp; \sigma_{zz}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\sigma_{x} &amp; \tau_{xy} &amp; \tau_{xz} \\
+\tau_{yx} &amp; \sigma_{y} &amp; \tau_{yz} \\
+\tau_{zx} &amp; \tau_{zy} &amp; \sigma_{z}
 \end{pmatrix}\end{split}\]</div>
 <p>Where:</p>
 <div class="math notranslate nohighlight">
-\[T_{ij} = T_{ji}\]</div>
+\[\tau_{ij} = \tau_{ji}\]</div>
 <figure class="align-default" id="fig-tensors-fig4">
 <img alt="_images/tensors_fig4.png" src="_images/tensors_fig4.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Stress in a loaded deformable body.</span><a class="headerlink" href="#fig-tensors-fig4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Stress in a loaded deformable body.</span><a class="headerlink" href="#fig-tensors-fig4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -871,7 +877,7 @@ C_m &amp;= A_{ijk} B_{kmji}\end{split}\]</div>
 <section id="maxwell-stress-tensor">
 <h3>Maxwell Stress Tensor:<a class="headerlink" href="#maxwell-stress-tensor" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
-\[\sigma_{ij} = \epsilon_0 \mathbf{e}_i \mathbf{e}_j + \mu_1 B_i B_j - \frac{1}{2} \left( \epsilon_0 E^2 + \mu_1 B^2 \right) \delta_{ij}\]</div>
+\[\sigma_{ij} = \epsilon_0 E_i E_j + \frac{1}{\mu_0} B_i B_j - \frac{1}{2} \left( \epsilon_0 E^2 + \frac{B^2}{\mu_0} \right) \delta_{ij}\]</div>
 </section>
 </section>
 <hr class="docutils" />
@@ -879,7 +885,7 @@ C_m &amp;= A_{ijk} B_{kmji}\end{split}\]</div>
 <h2>Antisymmetric Tensors:<a class="headerlink" href="#antisymmetric-tensors" title="Link to this heading">#</a></h2>
 <p>If:</p>
 <div class="math notranslate nohighlight">
-\[T_{i_1 i_2 \dots i_N} = -T_{i_1 \dots i_m \dots i_N}\]</div>
+\[T_{i_1 \dots i_n \dots i_m \dots i_N} = -T_{i_1 \dots i_m \dots i_n \dots i_N}\]</div>
 <p>Then the tensor is said to be <strong>antisymmetric</strong>.</p>
 <p>Examples include that <em>Levi-Civita</em> Tensor and <em>Electromagnetic</em> (or <em>Faraday</em>) Tensor.</p>
 <section id="electromagnetic-tensor">
@@ -887,10 +893,10 @@ C_m &amp;= A_{ijk} B_{kmji}\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}F^{\mu \nu} =
 \begin{pmatrix}
-0 &amp; \frac{\mathbf{e}_x}{c} &amp; \frac{\mathbf{e}_y}{c} &amp; \frac{\mathbf{e}_z}{c} \\
--\frac{\mathbf{e}_x}{c} &amp; 0 &amp; -B_z &amp; B_y \\
--\frac{\mathbf{e}_y}{c} &amp; B_z &amp; 0 &amp; -B_x \\
--\frac{\mathbf{e}_z}{c} &amp; -B_y &amp; B_x &amp; 0
+0 &amp; \frac{E_x}{c} &amp; \frac{E_y}{c} &amp; \frac{E_z}{c} \\
+-\frac{E_x}{c} &amp; 0 &amp; -B_z &amp; B_y \\
+-\frac{E_y}{c} &amp; B_z &amp; 0 &amp; -B_x \\
+-\frac{E_z}{c} &amp; -B_y &amp; B_x &amp; 0
 \end{pmatrix}\end{split}\]</div>
 <p>Where:</p>
 <div class="math notranslate nohighlight">
@@ -908,9 +914,9 @@ C_m &amp;= A_{ijk} B_{kmji}\end{split}\]</div>
 <p>Where <span class="math notranslate nohighlight">\( S_{ij} \)</span> is symmetric and <span class="math notranslate nohighlight">\( A_{ij} \)</span> is antisymmetric.</p>
 <p>For Nth order tensor:</p>
 <div class="math notranslate nohighlight">
-\[S_{i_1 \dots i_N} = \frac{1}{2} \left( T_{i_1 \dots i_N} + T_{i_1 \dots i_m \dots i_N} \right)\]</div>
+\[S_{i_1 \dots i_n \dots i_m \dots i_N} = \frac{1}{2} \left( T_{i_1 \dots i_n \dots i_m \dots i_N} + T_{i_1 \dots i_m \dots i_n \dots i_N} \right)\]</div>
 <div class="math notranslate nohighlight">
-\[A_{i_1 \dots i_N} = \frac{1}{2} \left( T_{i_1 \dots i_N} - T_{i_1 \dots i_m \dots i_N} \right)\]</div>
+\[A_{i_1 \dots i_n \dots i_m \dots i_N} = \frac{1}{2} \left( T_{i_1 \dots i_n \dots i_m \dots i_N} - T_{i_1 \dots i_m \dots i_n \dots i_N} \right)\]</div>
 </section>
 </section>
 <hr class="docutils" />
@@ -926,7 +932,7 @@ C_m &amp;= A_{ijk} B_{kmji}\end{split}\]</div>
 0 &amp; \text{if } i = j \text{ or } i = k \text{ or } j = k 
 \end{cases}\end{split}\]</div>
 <p>This is also called the <em>Levi-Civita symbol</em>, <em>Levi-Civita density</em>, <em>alternating</em> tensor, and <em>signature</em>. Notations <span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span> and <span class="math notranslate nohighlight">\(e_{ijk}\)</span> are also used in literature.</p>
-<p>In matrix and vector language the <span class="math notranslate nohighlight">\(\epsilon\)</span> tensor is used for the cross product <span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{A} \times \mathbf{B} \Rightarrow C_k = \epsilon_{ijk}\,A_i\,B_j\)</span></p>
+<p>In matrix and vector language the <span class="math notranslate nohighlight">\(\epsilon\)</span> tensor is used for the cross product <span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{A} \times \mathbf{B} \Rightarrow C_i = \epsilon_{ijk}\,A_j\,B_k\)</span></p>
 <p>The permutation symbol satisfies the following relations:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\delta_{ij} \,\epsilon_{ijk} &amp;= 0 \\
@@ -941,14 +947,14 @@ C_m &amp;= A_{ijk} B_{kmji}\end{split}\]</div>
   \delta_{kp} &amp; \delta_{kq} &amp; \delta_{kr}
 \end{vmatrix}\end{split}\]</div>
 </section>
-<section id="proving-that-delta-ij-and-epsilon-ijk-are-tensors">
-<h3>Proving that <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> are tensors<a class="headerlink" href="#proving-that-delta-ij-and-epsilon-ijk-are-tensors" title="Link to this heading">#</a></h3>
-<p>Even if neither <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> nor <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> depend on coordinates, we can formally consider the transformation of their components with respect to the rotation of the coordinate system. Note that <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> has two subscripts and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> has three subscripts. Hence, in the new coordinate system:</p>
+<section id="prove-that-delta-ij-and-epsilon-ijk-are-tensors">
+<h3>Prove that <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> are tensors<a class="headerlink" href="#prove-that-delta-ij-and-epsilon-ijk-are-tensors" title="Link to this heading">#</a></h3>
+<p>Though neither <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> nor <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> depend on coordinates, we can formally consider the transformation of their components with respect to the rotation of the coordinate system. Note that <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> has two subscripts and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> has three subscripts. Hence, in the new coordinate system:</p>
 <div class="math notranslate nohighlight">
-\[\delta_{i'j} = L_{ik} L_{jl} \delta_{kl}.\]</div>
+\[\delta'_{ij} = L_{ik} L_{jl} \delta_{kl}.\]</div>
 <p>Using the properties of <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> and the orthogonality of the transformation matrix <span class="math notranslate nohighlight">\( L \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\delta_{i'j} = L_{ik} L_{jl} \delta_{kl} = L_{ik} L_{jk} = \delta_{ij}.\]</div>
+\[\delta'_{ij} = L_{ik} L_{jl} \delta_{kl} = L_{ik} L_{jk} = \delta_{ij}.\]</div>
 <p>Similarly, transformation of <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
 \[\epsilon_{ijk}' = L_{il} L_{jm} L_{kn} \epsilon_{lmn}.\]</div>
@@ -1032,7 +1038,7 @@ c \epsilon_{ijk} &amp;= C_{il} C_{jm} C_{kn} \epsilon_{lmn}\end{split}\]</div>
 <figure class="align-default" id="fig-tensors-fig5">
 <img alt="_images/tensors_fig5.png" src="_images/tensors_fig5.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Predicted hysteresis loops in asymmetric ferromagnetic ring. [S. Prosandeev and L. Bellaiche, Phys. Rev. B, 77 060101(R) (2008).]</span><a class="headerlink" href="#fig-tensors-fig5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Predicted hysteresis loops in asymmetric ferromagnetic ring. [S. Prosandeev and L. Bellaiche, Phys. Rev. B, 77 060101(R) (2008).]</span><a class="headerlink" href="#fig-tensors-fig5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><em>Exercise:</em> Find an explicit expression for the <span class="math notranslate nohighlight">\( i \)</span>-th component of</p>
@@ -1063,13 +1069,14 @@ c \epsilon_{ijk} &amp;= C_{il} C_{jm} C_{kn} \epsilon_{lmn}\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}A'_{jk} B'_{ik} &amp;= C'_{ji} \\
 &amp;= L_{jp} L_{iq} C_{pq} \\
-&amp;= L_{jp} L_{iq} A_{pr} B_{rq} \\
+&amp;= L_{jp} L_{iq} A_{pr} B_{qr} \\
 &amp;= L_{jp} L_{iq} A_{pr} L_{uq} L_{vr} B'_{uv} \\
 &amp;= L_{jp} (L_{iq} L_{uq}) L_{vr} A_{pr} B'_{uv} \\
+&amp;= L_{jp} \delta_{iu} L_{vr} A_{pr} B'_{uv} \\
 &amp;= L_{jp} L_{vr} A_{pr} B'_{iv}\end{split}\]</div>
 <p>Comparing the left and right sides:</p>
 <div class="math notranslate nohighlight">
-\[A'_{jk} B'_{ik} - L_{jp} L_{vr} A_{pr} B'_{uv} = 0\]</div>
+\[A'_{jk} B'_{ik} - L_{jp} L_{vr} A_{pr} B’_{iv} = 0\]</div>
 <p>and note that subscripts <span class="math notranslate nohighlight">\( k \)</span> and <span class="math notranslate nohighlight">\( v \)</span> are dummy subscripts. Hence, the above equality can be rewritten as:</p>
 <div class="math notranslate nohighlight">
 \[(A'_{jk} - L_{jp} L_{kr} A_{pr}) B'_{ik} = 0\]</div>
@@ -1162,7 +1169,7 @@ c \epsilon_{ijk} &amp;= C_{il} C_{jm} C_{kn} \epsilon_{lmn}\end{split}\]</div>
 <figure class="align-default" id="fig-tensors-fig6">
 <img alt="_images/tensors_fig6.png" src="_images/tensors_fig6.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Components of the stress tensor.</span><a class="headerlink" href="#fig-tensors-fig6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Components of the stress tensor.</span><a class="headerlink" href="#fig-tensors-fig6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Consider a small volume shown in the above figure. The <span class="math notranslate nohighlight">\(i^{th}\)</span> component of the total force acting on a volume <span class="math notranslate nohighlight">\( V \)</span> is given by:</p>
@@ -1304,7 +1311,7 @@ c \epsilon_{ijk} &amp;= C_{il} C_{jm} C_{kn} \epsilon_{lmn}\end{split}\]</div>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-identity-and-permutation-tensors">The identity and permutation tensors</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutation-symbol-and-permutation-tensor-epsilon-ijk">Permutation Symbol and Permutation Tensor <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proving-that-delta-ij-and-epsilon-ijk-are-tensors">Proving that <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> are tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prove-that-delta-ij-and-epsilon-ijk-are-tensors">Prove that <span class="math notranslate nohighlight">\( \delta_{ij} \)</span> and <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span> are tensors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#th-order-epsilon-ijkl"><span class="math notranslate nohighlight">\(4^{th}\)</span> Order <span class="math notranslate nohighlight">\( \epsilon_{ijkl} \)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-epsilon-ijk">Applications of <span class="math notranslate nohighlight">\( \epsilon_{ijk} \)</span>:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isotropic-tensors">Isotropic Tensors</a></li>
