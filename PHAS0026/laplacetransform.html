@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -721,7 +721,7 @@ u' = -p\,e^{-pt} &amp; \qquad v = f'(t)
 \[\frac{\mathrm{d^2} F(p)}{\mathrm{d}p^2} = \int_0^\infty t^2\,f(t)\,e^{-pt}\,\mathrm{d}t = \mathcal{L}[t^2\,f(t)]\]</div>
 <p>which means the general expression is:</p>
 <div class="math notranslate nohighlight">
-\[F^{(n)}(p) = \mathcal{L}[t^n\,f(t)]\]</div>
+\[F^{(n)}(p) = (-1)^n\,\mathcal{L}[t^n\,f(t)]\]</div>
 <p>This is a useful way to calculate Laplace transforms for functions which involve factors of <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <section id="id1">
 <h3>Worked examples<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
@@ -948,7 +948,7 @@ u' = \frac{1}{2}t^{-1/2} &amp; \qquad v = -\frac{1}{p}e^{-pt}
 <p>To find <span class="math notranslate nohighlight">\( y(t) \)</span>, we need to calculate the convolution of <span class="math notranslate nohighlight">\( e^{-t} - e^{-2t} \)</span> and <span class="math notranslate nohighlight">\( e^{-t} \)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}y(t) &amp;= \int_0^t f(r)\,g(t-r)\,\mathrm{d}r \\&amp;= \int_0^t \left( e^{-r} - e^{-2r} \right) e^{-(t - r)} \mathrm{d}r = \int_0^t \left( e^{-t} - e^{-t-r} \right) \mathrm{d}r \\
-&amp;= \left[re^{-t} + e^{-t-r}\right]_0^t = te^{-t} + e^{-2r} - e^{-t}\end{split}\]</div>
+&amp;= \left[re^{-t} + e^{-t-r}\right]_0^t = te^{-t} + e^{-2t} - e^{-t}\end{split}\]</div>
 <p>This is the solution to our ODE.</p>
 </section>
 </section>
