@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -393,10 +393,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-gaussian-distribution">The Gaussian distribution.</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-prototype-for-the-delta-function">A prototype for the <span class="math notranslate nohighlight">\(\delta\)</span>-function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-delta-function">Properties of the <span class="math notranslate nohighlight">\( \delta \)</span>-function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-delta-ax">Calculating <span class="math notranslate nohighlight">\( \delta(ax) \)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-the-dirac-delta-function">Laplace transform of the Dirac delta function.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-of-the-dirac-delta-function">Derivatives of the Dirac delta function.</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-the-delta-function">Laplace transform of the <span class="math notranslate nohighlight">\(\delta\)</span> function.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-of-the-delta-function">Derivatives of the <span class="math notranslate nohighlight">\(\delta\)</span> function.</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-generalized-functions">Other generalized functions.</a></li>
 </ul>
 </li>
@@ -532,6 +533,19 @@ document.write(`
 <p>Yet, we will not equate <span class="math notranslate nohighlight">\( \delta(x) \)</span> and <span class="math notranslate nohighlight">\( \lim_{\sigma \to 0} g(x, a) \)</span> because <span class="math notranslate nohighlight">\( \delta(x) \)</span> is a generalised function defined via its integral definition with other functions, whilst <span class="math notranslate nohighlight">\( g(x, a) \)</span> is a function defined in the usual sense.</p>
 </section>
 </section>
+<section id="a-prototype-for-the-delta-function">
+<h2>A prototype for the <span class="math notranslate nohighlight">\(\delta\)</span>-function<a class="headerlink" href="#a-prototype-for-the-delta-function" title="Link to this heading">#</a></h2>
+<p>We can consider a simpler continuous function for the delta function and in the relevant limit still achieve the same properties.  If we know that the function <span class="math notranslate nohighlight">\(D(x) = \mathrm{sech}^2(x)\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^\infty \mathrm{sech}^2(x)\,\mathrm{d}x = \left[ \tanh(x)\right]_{-\infty}^{\infty} = 1 - (-1) = 2\]</div>
+<p>So we can control the area under the function by rescaling by <span class="math notranslate nohighlight">\(1/2\)</span> and then controlling the height and width of the function:</p>
+<div class="math notranslate nohighlight">
+\[D(x) = \frac{1}{2\epsilon} \mathrm{sech}^2\left(\frac{x}{\epsilon}\right)\]</div>
+<p>where we have added the <span class="math notranslate nohighlight">\(\epsilon\)</span> to the argument so that the area underneath remains one.</p>
+<p>Now we can have the same properties as the limiting box function if we take the limit as <span class="math notranslate nohighlight">\(\epsilon \rightarrow 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\delta(x-a) = \lim_{\epsilon \rightarrow 0}\frac{1}{2\epsilon} \mathrm{sech}^2\left(\frac{x-a}{\epsilon}\right)\]</div>
+</section>
 <section id="properties-of-the-delta-function">
 <h2>Properties of the <span class="math notranslate nohighlight">\( \delta \)</span>-function<a class="headerlink" href="#properties-of-the-delta-function" title="Link to this heading">#</a></h2>
 <p>It follows from the definition that a product of <span class="math notranslate nohighlight">\( \delta(x - a) \)</span> and any finite function is zero everywhere except at <span class="math notranslate nohighlight">\( x = a \)</span>. Hence,</p>
@@ -572,14 +586,15 @@ document.write(`
 \[\delta(ax) = \frac{1}{|a|} \delta(x)\]</div>
 <p>for any <span class="math notranslate nohighlight">\( a \in \mathbb{R}\)</span>.</p>
 </section>
-<section id="laplace-transform-of-the-dirac-delta-function">
-<h2>Laplace transform of the Dirac delta function.<a class="headerlink" href="#laplace-transform-of-the-dirac-delta-function" title="Link to this heading">#</a></h2>
+<section id="laplace-transform-of-the-delta-function">
+<h2>Laplace transform of the <span class="math notranslate nohighlight">\(\delta\)</span> function.<a class="headerlink" href="#laplace-transform-of-the-delta-function" title="Link to this heading">#</a></h2>
 <p>Evaluate <span class="math notranslate nohighlight">\( L[\delta(t - a)] \)</span>:</p>
 <div class="math notranslate nohighlight">
 \[L[\delta(t - a)] = \int_{0}^{\infty} \delta(t - a) e^{-pt}\mathrm{d}x= e^{-pa} \quad (\text{for } a &gt; 0)\]</div>
+<p>which is a littel unusual for a Laplace transform, using it takes the form of a fraction in <span class="math notranslate nohighlight">\(p\)</span> rather than an exponential.</p>
 </section>
-<section id="derivatives-of-the-dirac-delta-function">
-<h2>Derivatives of the Dirac delta function.<a class="headerlink" href="#derivatives-of-the-dirac-delta-function" title="Link to this heading">#</a></h2>
+<section id="derivatives-of-the-delta-function">
+<h2>Derivatives of the <span class="math notranslate nohighlight">\(\delta\)</span> function.<a class="headerlink" href="#derivatives-of-the-delta-function" title="Link to this heading">#</a></h2>
 <p>To attach meaning to <span class="math notranslate nohighlight">\( \delta'(x - a) \)</span>, consider</p>
 <div class="math notranslate nohighlight">
 \[\int_{-\infty}^{\infty} f(x) \delta'(x - a)\mathrm{d}x= \left[f(x) \delta(x - a)\right]_{-\infty}^{+\infty} - \int_{-\infty}^{\infty} f'(x) \delta(x - a)\mathrm{d}x= - f'(a).\]</div>
@@ -637,10 +652,26 @@ f(x) &amp; \text{if } x &gt; a\\
 f(x) &amp; \text{if } a &lt; x &lt; b \\
 0 &amp; \text{if } \text{otherwise} 
 \end{cases}\end{split}\]</div>
-<p>This differs from the Dirac delta function which only picks out a value of a function <span class="math notranslate nohighlight">\(f(x)\)</span> at <span class="math notranslate nohighlight">\(x=a\)</span>.</p>
+<p>This differs from the <span class="math notranslate nohighlight">\(\delta\)</span> function which only picks out a value of a function <span class="math notranslate nohighlight">\(f(x)\)</span> at <span class="math notranslate nohighlight">\(x=a\)</span>.</p>
 <p>The second property to note is that the derivative of the step function is zero almost everywhere - except at the point where the jump occurs, so we can think of the step functions derivative as being related to the Dirac delta function:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\mathrm{d}}{\mathrm{d}x}\Big(H(x-a) \Big) = \delta(x-a)\]</div>
+<p>We can see this by looking at the prototype <span class="math notranslate nohighlight">\(\delta\)</span> function expression, if:</p>
+<div class="math notranslate nohighlight">
+\[\delta(x-a) = \lim_{\epsilon \rightarrow 0}\frac{1}{2\epsilon} \mathrm{sech}^2\left(\frac{x-a}{\epsilon}\right)\]</div>
+<p>Then it makes sense that <span class="math notranslate nohighlight">\(H(x-a)\)</span> would be given by:</p>
+<div class="math notranslate nohighlight">
+\[H(x-a) = \lim_{\epsilon \rightarrow 0}\left[\frac{1}{2} \mathrm{tanh}^2\left(\frac{x-a}{\epsilon}\right)+C\right]\]</div>
+<p>We can choose the integration constant <span class="math notranslate nohighlight">\(C\)</span> here such that <span class="math notranslate nohighlight">\(H(x-a)\)</span> is never negative, so <span class="math notranslate nohighlight">\(C = \frac{1}{2}\)</span>, giving:</p>
+<div class="math notranslate nohighlight">
+\[H(x-a) = \lim_{\epsilon \rightarrow 0}\frac{1}{2} \left[\mathrm{tanh}^2\left(\frac{x-a}{\epsilon}  \right)+1\right]\]</div>
+<p>We can see the effect of ever decreasing <span class="math notranslate nohighlight">\(\epsilon\)</span> in Fig</p>
+<figure class="align-default" id="tanhstep">
+<img alt="_images/Step_function_approximation.png" src="_images/Step_function_approximation.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">As <span class="math notranslate nohighlight">\(k\)</span> increases (and hence <span class="math notranslate nohighlight">\(\epsilon\)</span> decreases) the <span class="math notranslate nohighlight">\(\tanh(x/\epsilon)\)</span> function approaches a step function, <span class="math notranslate nohighlight">\(H(x)\)</span>.</span><a class="headerlink" href="#tanhstep" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <section id="laplace-transform">
 <h3>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Link to this heading">#</a></h3>
 <p>Now that we have a new function to find the Laplace transform of:</p>
@@ -722,10 +753,11 @@ f(x) &amp; \text{if } a &lt; x &lt; b \\
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-gaussian-distribution">The Gaussian distribution.</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-prototype-for-the-delta-function">A prototype for the <span class="math notranslate nohighlight">\(\delta\)</span>-function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-delta-function">Properties of the <span class="math notranslate nohighlight">\( \delta \)</span>-function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-delta-ax">Calculating <span class="math notranslate nohighlight">\( \delta(ax) \)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-the-dirac-delta-function">Laplace transform of the Dirac delta function.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-of-the-dirac-delta-function">Derivatives of the Dirac delta function.</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform-of-the-delta-function">Laplace transform of the <span class="math notranslate nohighlight">\(\delta\)</span> function.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-of-the-delta-function">Derivatives of the <span class="math notranslate nohighlight">\(\delta\)</span> function.</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-generalized-functions">Other generalized functions.</a></li>
 </ul>
 </li>
