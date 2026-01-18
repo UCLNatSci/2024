@@ -238,7 +238,7 @@ I_V = \iiint_V \phi(x,\,y,\,z)\,\mathrm{d}V
 ---
 name: multiintegrals
 ---
-A triple integral of a surface based on the infinitesimal building blocks of the volume, here in Cartesian coordinates $\mathrm{d}V = \mathrm{d}x\,\mathrm{d}y\,\mathrm{d}x$.
+A triple integral of a surface based on the infinitesimal building blocks of the volume, here in Cartesian coordinates $\mathrm{d}V = \mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z$.
 ```
 
 ### Non-constant limits

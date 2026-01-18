@@ -314,9 +314,9 @@ Also we sometimes find the curl of the curl a useful quantity:
 In general we can write a vector field as having two sets of components, one curl free and one divergence free, this is known as the <b>Helmholtz Decomposition</b> of a vector field:
 
 ```{math}
-{\bf B} = -\nabla \phi + \nabla \times {\bf A}
+{\bf B} = \nabla \phi + \nabla \times {\bf A}
 ```
-
+Sometimes this is written as ${\bf B} = -\nabla \phi + \nabla \times {\bf A}$ which is a convention from Physics.  $\phi$ is usually denoted the *Scalar* potential here and $A$ the *Vector* potential - again these names stem from Physics.
 
 
 ## Conservative vector fields
@@ -374,3 +374,12 @@ v_y = x^2\cos(y) &\Rightarrow \phi = \int 2x\sin(y)\,\mathrm{d}x = x^2\sin(y) + 
 v_z = 2 &\Rightarrow \phi = \int 2\,\mathrm{d}z = 2z + c(x,\,y) 
 ```
 Comparing all three expressions we find that $f = x^2\sin(y) + 2z$ and hence ${\bf v} = \nabla f$.  
+
+## Solenoidal vector fields
+Just like we can have vector field that is only sourced by a gradient term (and hence only has divergence and no curl), we can have a vectpr field that is only sourced by a curl term (and hence only has curl and no divergence).
+
+```{math}
+\mathbf{v} = \nabla \times \mathbf{A}
+```
+
+Unless we have some additional information (or a symmetry present) it is not possible to uniquely constrain the vector field (unlike for the scalar field).  This flexibility is often called a **Gauge** freedom in Physics and is in part responsible for a large part of modern physical theories of nature.

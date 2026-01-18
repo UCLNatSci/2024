@@ -371,6 +371,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-variations-of-fields">6.3. Second order variations of fields</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservative-vector-fields">6.4. Conservative vector fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solenoidal-vector-fields">6.5. Solenoidal vector fields</a></li>
 </ul>
             </nav>
         </div>
@@ -639,7 +640,8 @@ rotation around a point compared with emergence from / convergence to a point.</
 \[\nabla \times \left(\nabla \times {\bf A}\right) = \nabla \left(\nabla \cdot {\bf A} \right) - \nabla^2 {\bf A}\]</div>
 <p>In general we can write a vector field as having two sets of components, one curl free and one divergence free, this is known as the <b>Helmholtz Decomposition</b> of a vector field:</p>
 <div class="math notranslate nohighlight">
-\[{\bf B} = -\nabla \phi + \nabla \times {\bf A}\]</div>
+\[{\bf B} = \nabla \phi + \nabla \times {\bf A}\]</div>
+<p>Sometimes this is written as <span class="math notranslate nohighlight">\({\bf B} = -\nabla \phi + \nabla \times {\bf A}\)</span> which is a convention from Physics.  <span class="math notranslate nohighlight">\(\phi\)</span> is usually denoted the <em>Scalar</em> potential here and <span class="math notranslate nohighlight">\(A\)</span> the <em>Vector</em> potential - again these names stem from Physics.</p>
 </section>
 <section id="conservative-vector-fields">
 <h2><span class="section-number">6.4. </span>Conservative vector fields<a class="headerlink" href="#conservative-vector-fields" title="Link to this heading">#</a></h2>
@@ -681,6 +683,13 @@ each component and integrate, for instance if:</p>
 v_y = x^2\cos(y) &amp;\Rightarrow \phi = \int 2x\sin(y)\,\mathrm{d}x = x^2\sin(y) + b(x,\,z) \\
 v_z = 2 &amp;\Rightarrow \phi = \int 2\,\mathrm{d}z = 2z + c(x,\,y) \end{split}\]</div>
 <p>Comparing all three expressions we find that <span class="math notranslate nohighlight">\(f = x^2\sin(y) + 2z\)</span> and hence <span class="math notranslate nohighlight">\({\bf v} = \nabla f\)</span>.</p>
+</section>
+<section id="solenoidal-vector-fields">
+<h2><span class="section-number">6.5. </span>Solenoidal vector fields<a class="headerlink" href="#solenoidal-vector-fields" title="Link to this heading">#</a></h2>
+<p>Just like we can have vector field that is only sourced by a gradient term (and hence only has divergence and no curl), we can have a vectpr field that is only sourced by a curl term (and hence only has curl and no divergence).</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{v} = \nabla \times \mathbf{A}\]</div>
+<p>Unless we have some additional information (or a symmetry present) it is not possible to uniquely constrain the vector field (unlike for the scalar field).  This flexibility is often called a <strong>Gauge</strong> freedom in Physics and is in part responsible for a large part of modern physical theories of nature.</p>
 </section>
 </section>
 
@@ -760,6 +769,7 @@ v_z = 2 &amp;\Rightarrow \phi = \int 2\,\mathrm{d}z = 2z + c(x,\,y) \end{split}\
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-variations-of-fields">6.3. Second order variations of fields</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservative-vector-fields">6.4. Conservative vector fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solenoidal-vector-fields">6.5. Solenoidal vector fields</a></li>
 </ul>
   </nav></div>
 
