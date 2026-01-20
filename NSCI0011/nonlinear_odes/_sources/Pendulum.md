@@ -1,4 +1,4 @@
-# Solving the Non-Linear Pendulum
+# Week 2 - Solving the Non-Linear Pendulum
 
 ```{figure} ./pendulum.png
 ---

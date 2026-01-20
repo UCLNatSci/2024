@@ -1,4 +1,4 @@
-# Looking at Numerical Solutions to ODEs
+# Week 1 - Looking at Numerical Solutions to ODEs
 
 ## Using odeint
 
