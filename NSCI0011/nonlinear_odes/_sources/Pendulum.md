@@ -160,7 +160,8 @@ The integral on the right cannot be expressed in terms of elementary functions. 
 K(k) = \int\limits_0^{\frac{\pi}{2}} \frac{d\theta}{\sqrt{1 - k^2 \sin^2\theta}}.
 ```
 
-We can see how this looks with a plot:
+
+
 ````{admonition} Elliptic Function
 :class: dropdown
 
@@ -181,8 +182,14 @@ plt.xlabel(r'$k$', fontsize=12)
 plt.ylabel(r'$K(k)$', fontsize=12)
 plt.grid(True, alpha=0.5)
 plt.show()
-
 ````
+
+We can see how this looks with a plot, see below. 
+```{figure} ./elliptic_integral.png
+---
+name: elliptic
+---
+```
 
 What is also interest is that $K(k)$ can also be represented as a power series:
 

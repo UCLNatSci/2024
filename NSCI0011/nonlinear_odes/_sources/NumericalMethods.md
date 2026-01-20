@@ -272,6 +272,15 @@ plt.legend()
 plt.show()
 ````
 
+We can see some of these phase portraits for different initial conditions below, note that we think of these as starting at some $(x_0,\,v_0)$ and then moving round the circular loops with time until they return to the starting conditions again.
+
+
+```{figure} ./PPSHM.png
+---
+name: PPSHM
+---
+```
+
 ## Vector Field Flows in Phase Portrait Diagrams
 
 A **vector field** in a phase portrait represents the direction and rate of change of the system's state variables at each point in the phase space. It provides a comprehensive view of how the system evolves over time, independent of specific initial conditions.
@@ -384,6 +393,14 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 ````
+
+We can see the effect below, note that the arrows are instructive so that we can understand the flow of the solutions. 
+
+```{figure} ./PPSHM_vec.png
+---
+name: PPSHM_vec
+---
+```
 
 ## Exercises 
 

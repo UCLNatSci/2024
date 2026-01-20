@@ -506,7 +506,6 @@ The potential energy depends on the height of the pendulum bob relative to its l
 <p>The integral on the right cannot be expressed in terms of elementary functions. It is the so-called <strong>complete elliptic integral of the first kind</strong>:</p>
 <div class="math notranslate nohighlight">
 \[K(k) = \int\limits_0^{\frac{\pi}{2}} \frac{d\theta}{\sqrt{1 - k^2 \sin^2\theta}}.\]</div>
-<p>We can see how this looks with a plot:</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Elliptic Function</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -528,6 +527,10 @@ The potential energy depends on the height of the pendulum bob relative to its l
 </pre></div>
 </div>
 </div>
+<p>We can see how this looks with a plot, see below.</p>
+<figure class="align-default" id="elliptic">
+<img alt="_images/elliptic_integral.png" src="_images/elliptic_integral.png" />
+</figure>
 <p>What is also interest is that <span class="math notranslate nohighlight">\(K(k)\)</span> can also be represented as a power series:</p>
 <div class="math notranslate nohighlight">
 \[K(k) = \frac{\pi}{2} \left\{ 1 + \left(\frac{1}{2}\right)^2 k^2 + \left(\frac{1 \cdot 3}{2 \cdot 4}\right)^2 k^4 + \left(\frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6}\right)^2 k^6 + \ldots + \left[\frac{\left(2n - 1\right)!!}{\left(2n\right)!!}\right]^2 k^{2n} + \ldots \right\},\]</div>
