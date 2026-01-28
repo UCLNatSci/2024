@@ -1,0 +1,956 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Week 3 - The Van der Pol Oscillator and Duffing Equation &#8212; Non-Linear ODEs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'VdPDuffingmd';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Non-Linear ODEs - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Non-Linear ODEs - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Solving Non-Linear Ordinary Differential Equations
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="NumericalMethods.html">Week 1 - Looking at Numerical Solutions to ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pendulum.html">Week 2 - Solving the Non-Linear Pendulum</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FVdPDuffingmd.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/VdPDuffingmd.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week 3 - The Van der Pol Oscillator and Duffing Equation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Week 3 - The Van der Pol Oscillator and Duffing Equation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-formulation">Mathematical Formulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics">Dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-duffing-equation">The Duffing Equation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chaos">Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaway">7. Key Takeaway</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#role-of-the-cubic-term">Role of the Cubic Term</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardening-and-softening-springs">Hardening and softening springs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unforced-undamped-duffing-oscillator">Unforced, Undamped Duffing Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibria">Equilibria</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forced-duffing-oscillator">Forced Duffing Oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-multiple-scales">Method of Multiple Scales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rationale">Rationale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-pendulum">Non-linear Pendulum</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-o-left-varepsilon-1-right-order"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^1\right) Order \)</span>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-o-left-varepsilon-3-right-order"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^3\right) \)</span> Order:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#theta-3-t-0-t-2-correction-term"><span class="math notranslate nohighlight">\( \theta_3(t_0, t_2) \)</span> Correction Term</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-pol-application">Van der Pol Application</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-o-left-varepsilon-0-right-order"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^0\right) \)</span> order:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^1\right) \)</span> Order:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions">Initial Conditions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#breakdown-of-asymptotics-at-higher-orders">Breakdown of Asymptotics at Higher Orders</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="week-3-the-van-der-pol-oscillator-and-duffing-equation">
+<h1>Week 3 - The Van der Pol Oscillator and Duffing Equation<a class="headerlink" href="#week-3-the-van-der-pol-oscillator-and-duffing-equation" title="Link to this heading">#</a></h1>
+<p>The Van der Pol oscillator is a nonlinear dynamical system with broad applications in physics, biology, and engineering.  The Van der Pol oscillator was first proposed by Dutch engineer and physicist Balthasar van der Pol while working at Philips. He discovered stable oscillations, which he called relaxation oscillations (now identified as a type of limit cycle), in electrical circuits containing vacuum tubes. When these circuits were driven near the limit cycle, their current synchronized with the driving signal, a phenomenon known as entrainment. In 1927, Van der Pol and his colleague Van der Mark reported in Nature[1] that irregular noise was observed at specific drive frequencies, which was later understood to be deterministic chaos.</p>
+<p>The Van der Pol equation has been widely applied in both physical and biological sciences. In biology, FitzHugh and Nagumo extended the equation to model neuron action potentials in a planar field. It has also been used in seismology to model the interaction of geological fault plates and in phonation research to describe oscillations of the vocal folds.</p>
+<p>[1] Frequency Demultiplication” by Balth. van der Pol and J. van der Mark, published in Nature, Volume 120, pages 363–364, on September 10, 1927.</p>
+<hr class="docutils" />
+<section id="mathematical-formulation">
+<h2>Mathematical Formulation<a class="headerlink" href="#mathematical-formulation" title="Link to this heading">#</a></h2>
+<p>The Van der Pol oscillator is governed by the second-order nonlinear differential equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2x}{\mathrm{d}t^2} - \mu(1 - x^2)\frac{\mathrm{d}x}{\mathrm{d}t} + x = 0,\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x(t)\)</span> is the state variable (e.g., displacement or voltage).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu &gt; 0\)</span> is the nonlinearity parameter, controlling the strength of damping and the nonlinearity.</p></li>
+</ul>
+<p>This equation can also be written as a system of first-order ODEs:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \frac{\mathrm{d}x}{\mathrm{d}t} &amp;= y, \\
+    \frac{\mathrm{d}y}{\mathrm{d}t} &amp;= \mu(1 - x^2)y - x.
+\end{aligned}\end{split}\]</div>
+</section>
+<hr class="docutils" />
+<section id="dynamics">
+<h2>Dynamics<a class="headerlink" href="#dynamics" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Small <span class="math notranslate nohighlight">\(\mu\)</span>:</strong> The system behaves like a harmonic oscillator with nearly sinusoidal solutions.</p></li>
+<li><p><strong>Large <span class="math notranslate nohighlight">\(\mu\)</span>:</strong> The system exhibits nonlinear effects, with relaxation oscillations—periodic oscillations with sharp transitions and slow changes in amplitude.</p></li>
+</ul>
+<p>We can see this in the phase-portrait of this system:</p>
+</section>
+<section id="id1">
+<h2><img alt="Van der Pol Oscillator" src="_images/vanderpol_plot.png" /><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>There are some interesting features that we see in the Van der Pol system:</p>
+<ol class="arabic">
+<li><p><strong>Nonlinear Damping:</strong></p>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(|x| &gt; 1\)</span>: The damping is positive (energy dissipation).</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(|x| &lt; 1\)</span>: The damping is negative (energy is pumped into the system).</p></li>
+</ul>
+<p>This mechanism drives the system toward a limit cycle.</p>
+</li>
+<li><p><strong>Limit Cycle Oscillations:</strong></p>
+<ul class="simple">
+<li><p>For <span class="math notranslate nohighlight">\(\mu &gt; 0\)</span>, the system exhibits stable limit cycles regardless of initial conditions.</p></li>
+<li><p>The amplitude of the limit cycle is approximately independent of <span class="math notranslate nohighlight">\(\mu\)</span>, but the shape becomes more pronounced with larger <span class="math notranslate nohighlight">\(\mu\)</span>.</p></li>
+</ul>
+</li>
+<li><p><strong>Self-Sustained Oscillations:</strong></p>
+<ul class="simple">
+<li><p>Oscillations persist due to the balance between energy input (negative damping) and dissipation (positive damping).</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<p>There are a variety of systems where the VdP oscillator describes the dynamics:</p>
+<ul class="simple">
+<li><p><strong>Electrical Engineering:</strong><br />
+Modeling vacuum tube circuits and oscillators.</p></li>
+<li><p><strong>Biology:</strong><br />
+Describing heartbeat dynamics and neural oscillations.</p></li>
+<li><p><strong>Mechanical Systems:</strong><br />
+Modeling systems with non-linear damping.</p></li>
+<li><p><strong>Synchronization:</strong><br />
+The Van der Pol oscillator is often used to study synchronization phenomena in coupled systems.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="the-duffing-equation">
+<h1>The Duffing Equation<a class="headerlink" href="#the-duffing-equation" title="Link to this heading">#</a></h1>
+<p>The <strong>Duffing equation</strong> is a nonlinear second-order differential equation that models oscillators with a nonlinear restoring force. It is a standard example in nonlinear dynamics and chaos theory.</p>
+<section id="chaos">
+<h2>Chaos<a class="headerlink" href="#chaos" title="Link to this heading">#</a></h2>
+<p>With both damping and forcing, the Duffing equation can exhibit <strong>deterministic chaos</strong>:</p>
+<ul class="simple">
+<li><p>Extreme sensitivity to initial conditions</p></li>
+<li><p>Strange attractors in phase space</p></li>
+<li><p>Period-doubling routes to chaos</p></li>
+</ul>
+<p>The periodically forced Duffing oscillator, particularly in the double-well regime, is a textbook example of chaotic dynamics.</p>
+<hr class="docutils" />
+<p>The Duffing equation appears in many real systems, including:</p>
+<ul class="simple">
+<li><p>Mechanical oscillators with large deflections</p></li>
+<li><p>Structural vibrations</p></li>
+<li><p>Nonlinear electrical circuits</p></li>
+<li><p>MEMS and NEMS resonators</p></li>
+<li><p>Models in climate dynamics and neuroscience</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="key-takeaway">
+<h2>7. Key Takeaway<a class="headerlink" href="#key-takeaway" title="Link to this heading">#</a></h2>
+<p>The Duffing equation demonstrates that adding a single cubic nonlinearity to a harmonic oscillator is enough to produce:</p>
+<ul class="simple">
+<li><p>Amplitude-dependent frequencies</p></li>
+<li><p>Bistability</p></li>
+<li><p>Hysteresis</p></li>
+<li><p>Chaos</p></li>
+</ul>
+<p>It is one of the simplest systems that clearly illustrates how nonlinear dynamics departs from linear intuition.</p>
+<hr class="docutils" />
+<p>The equation is typically written as</p>
+<p>[
+\ddot{x} + \delta \dot{x} + \alpha x + \beta x^3 = \gamma \cos(\omega t),
+]</p>
+<p>where:</p>
+<ul class="simple">
+<li><p>(x(t)): displacement</p></li>
+<li><p>(\ddot{x}): acceleration (inertia)</p></li>
+<li><p>(\delta \dot{x}): damping</p></li>
+<li><p>(\alpha x): linear restoring force</p></li>
+<li><p>(\beta x^3): <strong>nonlinear stiffness term</strong></p></li>
+<li><p>(\gamma \cos(\omega t)): external periodic forcing</p></li>
+</ul>
+<p>When (\beta = 0), the equation reduces to the linear driven, damped harmonic oscillator.</p>
+</section>
+<hr class="docutils" />
+<section id="role-of-the-cubic-term">
+<h2>Role of the Cubic Term<a class="headerlink" href="#role-of-the-cubic-term" title="Link to this heading">#</a></h2>
+<p>The cubic term ( \beta x^3 ) introduces nonlinearity and fundamentally changes the system’s behaviour.</p>
+<section id="hardening-and-softening-springs">
+<h3>Hardening and softening springs<a class="headerlink" href="#hardening-and-softening-springs" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>(\beta &gt; 0)</strong>: hardening spring</p>
+<ul>
+<li><p>Oscillation frequency increases with amplitude.</p></li>
+</ul>
+</li>
+<li><p><strong>(\beta &lt; 0)</strong>: softening spring</p>
+<ul>
+<li><p>Oscillation frequency decreases with amplitude.</p></li>
+</ul>
+</li>
+</ul>
+<p>As a result, resonance becomes amplitude-dependent and superposition no longer applies.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="unforced-undamped-duffing-oscillator">
+<h2>Unforced, Undamped Duffing Oscillator<a class="headerlink" href="#unforced-undamped-duffing-oscillator" title="Link to this heading">#</a></h2>
+<p>Setting (\delta = 0) and (\gamma = 0) gives</p>
+<p>[
+\ddot{x} + \alpha x + \beta x^3 = 0.
+]</p>
+<p>This is a conservative system that can be analysed using the potential energy</p>
+<p>[
+V(x) = \tfrac12 \alpha x^2 + \tfrac14 \beta x^4.
+]</p>
+<section id="equilibria">
+<h3>Equilibria<a class="headerlink" href="#equilibria" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>(\alpha &gt; 0, \beta &gt; 0):</p>
+<ul>
+<li><p>Single stable equilibrium at (x = 0).</p></li>
+</ul>
+</li>
+<li><p>(\alpha &lt; 0, \beta &gt; 0):</p>
+<ul>
+<li><p>Double-well potential with two stable equilibria and one unstable equilibrium at (x = 0).</p></li>
+</ul>
+</li>
+</ul>
+<p>The double-well case is especially important for understanding nonlinear transitions and chaos.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="forced-duffing-oscillator">
+<h2>Forced Duffing Oscillator<a class="headerlink" href="#forced-duffing-oscillator" title="Link to this heading">#</a></h2>
+<p>When periodic forcing is present ((\gamma \neq 0)):</p>
+<ul class="simple">
+<li><p>The resonance curve bends:</p>
+<ul>
+<li><p>Rightward for hardening systems</p></li>
+<li><p>Leftward for softening systems</p></li>
+</ul>
+</li>
+<li><p>Multiple steady-state solutions may exist for the same parameters.</p></li>
+<li><p>Sudden jumps in oscillation amplitude can occur as parameters (e.g. driving frequency) are varied.</p></li>
+</ul>
+<p>This leads to <strong>hysteresis</strong>, which does not occur in linear oscillators.</p>
+</section>
+<hr class="docutils" />
+<section id="method-of-multiple-scales">
+<h2>Method of Multiple Scales<a class="headerlink" href="#method-of-multiple-scales" title="Link to this heading">#</a></h2>
+<section id="rationale">
+<h3>Rationale<a class="headerlink" href="#rationale" title="Link to this heading">#</a></h3>
+<p>A simple example illustrating the need for an additional <strong>super-slow time scale</strong> is the <strong>linearly damped oscillator</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x} + 2\varepsilon \dot{x} + x = 0.\]</div>
+<p>The solution is:</p>
+<div class="math notranslate nohighlight">
+\[x = e^{-\varepsilon t} \cos \left(\sqrt{1- \varepsilon^2} t\right)\]</div>
+<p>In this case:</p>
+<ul class="simple">
+<li><p>The <strong>amplitude</strong> drifts on the time scale <span class="math notranslate nohighlight">\( O(\varepsilon^{-1}) \)</span>.</p></li>
+<li><p>The <strong>phase</strong> drifts on the longer time scale <span class="math notranslate nohighlight">\( O(\varepsilon^{-2}) \)</span>.</p></li>
+</ul>
+<p>By the time the phase has shifted significantly, the amplitude has already decayed substantially. In general when working to <span class="math notranslate nohighlight">\(\mathcal{O}(\varepsilon^k)\)</span> on a time scale <span class="math notranslate nohighlight">\(\mathcal{O}(\varepsilon^{k-n})\)</span> one must expect to have a hierarchy of <span class="math notranslate nohighlight">\(n\)</span> slow time scales. Some of these may be essential to the system, representing genuinely different processes.</p>
+</section>
+<section id="non-linear-pendulum">
+<h3>Non-linear Pendulum<a class="headerlink" href="#non-linear-pendulum" title="Link to this heading">#</a></h3>
+<p>For the non-linear pendulum, <span class="math notranslate nohighlight">\(\ddot{\theta} + \sin(\theta) = 0\)</span> we examined perturbatie solutions last week.  The perturbation series that we derived for <span class="math notranslate nohighlight">\( \theta(t) \)</span> had a secular term (proportional to <span class="math notranslate nohighlight">\( t \)</span>) that causes it to lose validity at large times, even for small <span class="math notranslate nohighlight">\( \varepsilon \)</span>. The physical cause of this problem was a slow phase drift of the true solution away from the unperturbed solution due to the nonlinear correction to the pendulum period. It would be nice to devise a perturbation series approach that remained valid at long time by accounting for such slow drifts to avoid secular terms. The method of multiple scales accomplishes this goal.</p>
+<p>The idea, as applied to the nonlinear pendulum problem,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2\theta}{dt^2} + \sin\theta = 0, \quad \theta(0) = \varepsilon \ll1, \quad \frac{d\theta}{dt}(0) = 0.\]</div>
+<p>is to make <span class="math notranslate nohighlight">\( \theta(t) \)</span> formally a function of multiple time scales that capture the fast and slow time variability of the solution. Since the first nonlinear correction to the solution is of order <span class="math notranslate nohighlight">\( \varepsilon^2 \)</span> compared to the unperturbed solution, we introduce the timescales</p>
+<div class="math notranslate nohighlight">
+\[t_0 = t, \quad t_2 = \varepsilon^2 t, \dots\]</div>
+<p>and (to the order of accuracy needed for our purposes)</p>
+<div class="math notranslate nohighlight">
+\[\theta(t) = \varepsilon \theta_1(t_0, t_2) + \varepsilon^3 \theta_3(t_0, t_2) + \dots\]</div>
+<p>Having multiple variables to describe the time dependence is redundant, but this redundancy can be exploited to develop a perturbation series with no secular terms that is uniformly valid for all small <span class="math notranslate nohighlight">\( \varepsilon \)</span>.</p>
+<p>Turning to the equation, note that</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\theta_k}{dt} = \frac{\partial \theta_k}{\partial t_0} + \varepsilon^2 \frac{\partial \theta_k}{\partial t_2}\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2\theta_k}{dt^2} = \left( \frac{\partial}{\partial t_0} + \varepsilon^2 \frac{\partial}{\partial t_2} \right)^2 \theta_k = \frac{\partial^2 \theta_k}{\partial t_0^2} + 2\varepsilon^2 \frac{\partial^2 \theta_k}{\partial t_0 \partial t_2} + \dots\]</div>
+<p>while</p>
+<div class="math notranslate nohighlight">
+\[\sin \theta = \varepsilon \theta_1 + \varepsilon^3 (\theta_3 - \frac{\theta_1^3}{6}) + \dots\]</div>
+<p>Substituting these series into the nonlinear pendulum equation and sorting by increasing powers of <span class="math notranslate nohighlight">\( \varepsilon \)</span>, we get:</p>
+<section id="mathcal-o-left-varepsilon-1-right-order">
+<h4><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^1\right) Order \)</span>:<a class="headerlink" href="#mathcal-o-left-varepsilon-1-right-order" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[0 = \frac{\partial^2 \theta_1}{\partial t_0^2} + \theta_1, \quad \theta_1(t_0 = 0, t_2 = 0) = 1, \quad \frac{\partial \theta_1}{\partial t_0}(t_0 = 0, t_2 = 0) = 0.\]</div>
+<p>Solving this,</p>
+<div class="math notranslate nohighlight">
+\[\theta_1(t) = A(t_2) \cos t_0 + B(t_2) \sin t_0, \quad A(0) = 1, \quad B(0) = 0.\]</div>
+<p>The formal dependence on the slow time <span class="math notranslate nohighlight">\( t_2 \)</span> allows the leading-order solution to be more general than in our original perturbation series solution. This is how the method accounts for the slow phase shift of the perturbed solution.</p>
+</section>
+<section id="mathcal-o-left-varepsilon-3-right-order">
+<h4><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^3\right) \)</span> Order:<a class="headerlink" href="#mathcal-o-left-varepsilon-3-right-order" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 \theta_3}{\partial t_0^2} + 2 \frac{\partial^2 \theta_1}{\partial t_0 \partial t_2} + \theta_3 - \frac{\theta_1^3}{6} = 0.\]</div>
+<p>Using the known form of <span class="math notranslate nohighlight">\( \theta_1 \)</span>, we deduce:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 \theta_3}{\partial t_0^2} + \theta_3 = -2 \frac{dA}{dt_2} \sin t_0 + 2 \frac{dB}{dt_2} \cos t_0 + \frac{1}{6} (A \cos t_0 + B \sin t_0)^3.\]</div>
+<p>To suppress secular terms, the coefficient of <span class="math notranslate nohighlight">\( e^{it} \)</span> and <span class="math notranslate nohighlight">\( e^{-it} \)</span> must be zero:</p>
+<div class="math notranslate nohighlight">
+\[0 = -\frac{dB}{dt_2} + i \frac{dA}{dt_2} + \frac{3}{48} (A - iB)^2 (A + iB).\]</div>
+<p>Separating into real and imaginary parts,</p>
+<div class="math notranslate nohighlight">
+\[\frac{dB}{dt_2} = \frac{1}{16} A(A^2 + B^2), \quad \frac{dA}{dt_2} = -\frac{1}{16} B(A^2 + B^2).\]</div>
+<p>This pair of coupled ODEs determines the slow evolution of the leading-order solution. Noting that</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt_2} (A^2 + B^2) = 0 \Rightarrow A^2 + B^2 = 1.\]</div>
+<p>Thus, the ODEs simplify to:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dB}{dt_2} = \frac{1}{16} A, \quad \frac{dA}{dt_2} = -\frac{1}{16} B.\]</div>
+<p>Solving these,</p>
+<div class="math notranslate nohighlight">
+\[A(t_2) = \cos \frac{t_2}{16}, \quad B(t_2) = \sin \frac{t_2}{16}.\]</div>
+<p>Thus, the slow-time behavior of the leading-order solution is:</p>
+<div class="math notranslate nohighlight">
+\[\theta_1(t) = \cos \frac{t_2}{16} \cos t_0 + \sin \frac{t_2}{16} \sin t_0 = \cos \left( t_0 - \frac{t_2}{16} \right) = \cos t \left( 1 - \frac{\varepsilon^2}{16} \right).\]</div>
+<p>The corresponding period is:</p>
+<div class="math notranslate nohighlight">
+\[T = 2\pi \left( 1 - \frac{\varepsilon^2}{16} \right) \approx 2\pi \left( 1 + \frac{\varepsilon^2}{16} \right),\]</div>
+<p>which matches the result derived from previous methods.</p>
+</section>
+<section id="theta-3-t-0-t-2-correction-term">
+<h4><span class="math notranslate nohighlight">\( \theta_3(t_0, t_2) \)</span> Correction Term<a class="headerlink" href="#theta-3-t-0-t-2-correction-term" title="Link to this heading">#</a></h4>
+<p>Solving for the correction term,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 \theta_3}{\partial t_0^2} + \theta_3 = \frac{1}{48} \left( [A - iB]^3 e^{3it_0} + [A + iB]^3 e^{-3it_0} \right).\]</div>
+<p>By solving for <span class="math notranslate nohighlight">\( \theta_3 \)</span>, we find:</p>
+<div class="math notranslate nohighlight">
+\[\theta_3(t_0, t_2) = -\frac{1}{192} \left( \cos^3 (t_0 - t_2/16) + A_3(t_2) \cos t_0 + B_3(t_2) \sin t_0 \right).\]</div>
+<p>Matching initial conditions,</p>
+<div class="math notranslate nohighlight">
+\[A_3(t_2) = \frac{1}{192}, \quad B_3(0) = 0.\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[\theta_3(t_0, t_2) = \frac{1}{192} \left( \cos (t_0 - t_2/16) - \cos^3 (t_0 - t_2/16) \right),\]</div>
+<p>which is consistent with the regular perturbation series - but without the secular terms!</p>
+<p>We can see the difference in a plot, against the numerical solutions:
+<img alt="method of multiple scales against numerical solutions" src="_images/nonlinearpmms.png" /></p>
+</section>
+</section>
+<section id="van-der-pol-application">
+<h3>Van der Pol Application<a class="headerlink" href="#van-der-pol-application" title="Link to this heading">#</a></h3>
+<p>Applying this method to the Van der Pol oscillator,</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x} + \varepsilon (x^2 - 1) \dot{x} + x = 0, \quad t &gt; 0, \quad \text{with } \varepsilon \ll 0\]</div>
+<p>subject to:</p>
+<div class="math notranslate nohighlight">
+\[x(0) = 1, \quad \dot{x}(0) = 0.\]</div>
+<p>Treating the problem as a regular one yields the approximation:</p>
+<div class="math notranslate nohighlight">
+\[x(t, \varepsilon) \approx \cos t + \varepsilon \left[ \frac{3}{8} \left(t \cos t - \sin t\right) - \frac{1}{32} \left(\sin 3t - 3 \sin t\right) \right].\]</div>
+<p>This expansion is asymptotic for fixed <span class="math notranslate nohighlight">\( t \)</span> as <span class="math notranslate nohighlight">\( \varepsilon \to 0 \)</span>, but breaks down when <span class="math notranslate nohighlight">\( t = \mathcal{O}\left(\varepsilon^{-1}\right) \)</span>. (It is, however, possible to prove that the expansion converges!)</p>
+<p>The problem with the naive approximation is that the <span class="math notranslate nohighlight">\( \varepsilon \)</span>-damping changes the amplitude of the oscillation on a time scale <span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^{-1}\right) \)</span> due to the slow accumulation of small effects. Thus, the oscillator has two processes acting on their own time scales:</p>
+<ol class="arabic simple">
+<li><p>The basic oscillation on the time scale of <span class="math notranslate nohighlight">\( \mathcal{O}\left(1\right) \)</span> due to inertia causing the restoring force to overshoot the equilibrium position.</p></li>
+<li><p>The slow drift in the amplitude (and possibly the phase) on the time scale <span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^{-1}\right) \)</span> due to small friction.</p></li>
+</ol>
+<p>We recognize these two time scales by introducing two time variables:</p>
+<div class="math notranslate nohighlight">
+\[\tau = t \quad \text{(the fast time of the oscillation)}\]</div>
+<div class="math notranslate nohighlight">
+\[T = \varepsilon t \quad \text{(the slow time of the amplitude drift)}\]</div>
+<p>The slowly changing features will then be combined into factors that are functions of <span class="math notranslate nohighlight">\( T \)</span>, while the rapidly changing features will be combined into factors that are functions of <span class="math notranslate nohighlight">\( \tau \)</span>. Thus, we look for a solution of the form:</p>
+<div class="math notranslate nohighlight">
+\[x(t; \varepsilon) = X(T, \tau; \varepsilon).\]</div>
+<p>As real time <span class="math notranslate nohighlight">\( t \)</span> increases, the fast time <span class="math notranslate nohighlight">\( \tau \)</span> increases at the same rate, while the slow time <span class="math notranslate nohighlight">\( T \)</span> increases slowly. Thus,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt} = \frac{\partial}{\partial \tau} + \varepsilon \frac{\partial}{\partial T}.\]</div>
+<p>We now seek an asymptotic approximation for <span class="math notranslate nohighlight">\( x \)</span> allowing for changes over the long time scale. Thus, we pose:</p>
+<div class="math notranslate nohighlight">
+\[x(t; \varepsilon) \approx X_0(T, \tau) + \varepsilon X_1(T, \tau)\]</div>
+<p>with the requirement that the expansion be asymptotic for <span class="math notranslate nohighlight">\( T = O(1) \)</span>. Substituting into the governing equation and comparing coefficients of <span class="math notranslate nohighlight">\( \varepsilon^n \)</span>, we find a sequence of problems.</p>
+<section id="mathcal-o-left-varepsilon-0-right-order">
+<h4><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^0\right) \)</span> order:<a class="headerlink" href="#mathcal-o-left-varepsilon-0-right-order" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 X_0}{\partial \tau^2} + X_0 = 0, \quad t &gt; 0\]</div>
+<p>with initial conditions:</p>
+<div class="math notranslate nohighlight">
+\[X_0(0) = 1, \quad \frac{\partial X_0}{\partial \tau}(0) = 0.\]</div>
+<p>Integrating with respect to <span class="math notranslate nohighlight">\( \tau \)</span>, treating <span class="math notranslate nohighlight">\( T \)</span> as an independent variable held constant, we obtain the general solution:</p>
+<div class="math notranslate nohighlight">
+\[X_0 = R(T) \cos (\tau + \theta(T)),\]</div>
+<p>where <span class="math notranslate nohighlight">\( R \)</span> and <span class="math notranslate nohighlight">\( \theta \)</span> are constant as far as the rapid <span class="math notranslate nohighlight">\( \tau \)</span> variations are concerned but are allowed to vary over the long <span class="math notranslate nohighlight">\( T \)</span> time scale. The initial conditions give:</p>
+<div class="math notranslate nohighlight">
+\[R(0) = 1, \quad \theta(0) = 0.\]</div>
+<p>Except for this information, <span class="math notranslate nohighlight">\( R \)</span> and <span class="math notranslate nohighlight">\( \theta \)</span> are unknown in the leading order analysis. Knowing that the amplitude is controlled by the action of the small friction over a long time, we must proceed to the next order.</p>
+</section>
+<section id="id2">
+<h4><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^1\right) \)</span> Order:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 X_1}{\partial \tau^2} + X_1 = -(X_0^3 - X_0).\]</div>
+<p>Substituting the leading order solution:</p>
+<div class="math notranslate nohighlight">
+\[2 R \frac{d\theta}{dT} \cos (\tau + \theta) + \left( 2 \frac{dR}{dT} + \frac{3}{4} R^3 - R \right) \sin (\tau + \theta) + \frac{1}{4} R^3 \sin 3(\tau + \theta) = 0.\]</div>
+<p>To maintain the asymptotic validity of the expansion, we must eliminate secular terms that grow unboundedly. This leads to the solvability conditions:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\theta}{dT} = 0, \quad \frac{dR}{dT} = \frac{1}{8} R (4 -  R^2).\]</div>
+<p>Using the initial conditions:</p>
+<div class="math notranslate nohighlight">
+\[\theta = 0, \quad R = 2(1 + 3e^{-T})^{-1/2}.\]</div>
+<p>Thus, eventually, the amplitude of the oscillator drifts to 2. Note that the amplitude and phase of the leading order term are fully determined in the next order problem by ensuring that the correction term does not break the asymptotic validity; it is not necessary to explicitly find the correction term.</p>
+<p>However, the correction term can still be found and is given by:</p>
+<div class="math notranslate nohighlight">
+\[X_1 = -\frac{1}{32} R^3 \sin 3\tau + S(T) \sin (\tau + \theta(T)),\]</div>
+<p>where <span class="math notranslate nohighlight">\( S(T) \)</span> and <span class="math notranslate nohighlight">\( \theta(T) \)</span> are new unknown amplitude and phase functions.</p>
+<p>The amplitude drifts on the time scale <span class="math notranslate nohighlight">\( \mathcal{O}\left(1\right) \)</span>, while the phase drifts on the longer time scale <span class="math notranslate nohighlight">\( O(\varepsilon^{-2}) \)</span>. In this example, by the time the phase has shifted significantly, the amplitude has already decayed considerably.</p>
+<p>In general, when working at <span class="math notranslate nohighlight">\( \mathcal{O}\left(k\right) \)</span> on a time scale <span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^{-n}\right) \)</span>, one must expect a <strong>hierarchy of <span class="math notranslate nohighlight">\( n \)</span> slow time scales</strong>. Some of these slow time scales represent genuinely different physical processes, while others may simply be <strong>adjustments to a previous process</strong>, such as frequency corrections, which are often better handled using coordinate straining.</p>
+</section>
+<section id="initial-conditions">
+<h4>Initial Conditions<a class="headerlink" href="#initial-conditions" title="Link to this heading">#</a></h4>
+<p>The unknown functions <span class="math notranslate nohighlight">\( S(T) \)</span> and <span class="math notranslate nohighlight">\( \theta(T) \)</span> satisfy the initial conditions:</p>
+<div class="math notranslate nohighlight">
+\[S(0) = -\frac{9}{32}, \quad \theta(0) = 0.\]</div>
+<p>These new amplitude and phase functions will ultimately be determined by the <strong>secularity condition</strong> in the <span class="math notranslate nohighlight">\( O(\varepsilon) \)</span> problem.</p>
+</section>
+<section id="breakdown-of-asymptotics-at-higher-orders">
+<h4>Breakdown of Asymptotics at Higher Orders<a class="headerlink" href="#breakdown-of-asymptotics-at-higher-orders" title="Link to this heading">#</a></h4>
+<p>At higher orders, resonant forcing may become <strong>unavoidable</strong> due to insufficient freedom in the undetermined functions. This leads to a <strong>loss of asymptotic validity</strong>.</p>
+<p>This is precisely what occurs in the <strong>Van der Pol oscillator</strong> when attempting to determine <span class="math notranslate nohighlight">\( X_2 \)</span> at <span class="math notranslate nohighlight">\( O(\varepsilon) \)</span> for <span class="math notranslate nohighlight">\( t = O(\varepsilon^{-1}) \)</span>. The issue can be resolved by introducing an <strong>additional slow time scale</strong>:</p>
+<div class="math notranslate nohighlight">
+\[T_2 = \varepsilon^2 t.\]</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<div class="admonition-exercises-with-ode-solvers admonition">
+<p class="admonition-title">Exercises with ODE solvers</p>
+<p>1. Get some numerical solutions out of Python, what does the time series for the Van der Pol Oscillator look like?</p>
+<p>2. Get a phase portrait out and look at small <span class="math notranslate nohighlight">\(\mu\)</span> (where daqmped oscillator solutions are valid) and large <span class="math notranslate nohighlight">\(\mu\)</span> results (damped oscillator solutions are not valid) - what conclusions can we draw?</p>
+<p>3. The forced Van der Pol oscillator includes an external driving term:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}^2x}{\mathrm{d}t^2} - \mu(1 - x^2)\frac{\mathrm{d}x}{\mathrm{d}t} + x = F\cos(\Omega t),\]</div>
+<p>where <span class="math notranslate nohighlight">\(F\)</span> is the forcing amplitude and <span class="math notranslate nohighlight">\(\Omega\)</span> is the forcing frequency.</p>
+<p>How does adding in a forcing term change the dynamics of this system? Add this to your code and compare.</p>
+<p>4. Compare your numerical results to the method of multiple scales results.</p>
+<p>5. Start solving the Duffing equatoin in Python, can we find any sorts of solutions with stable limit cycles.</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Week 3 - The Van der Pol Oscillator and Duffing Equation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-formulation">Mathematical Formulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics">Dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-duffing-equation">The Duffing Equation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chaos">Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaway">7. Key Takeaway</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#role-of-the-cubic-term">Role of the Cubic Term</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardening-and-softening-springs">Hardening and softening springs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unforced-undamped-duffing-oscillator">Unforced, Undamped Duffing Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibria">Equilibria</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forced-duffing-oscillator">Forced Duffing Oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-multiple-scales">Method of Multiple Scales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rationale">Rationale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-pendulum">Non-linear Pendulum</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-o-left-varepsilon-1-right-order"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^1\right) Order \)</span>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-o-left-varepsilon-3-right-order"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^3\right) \)</span> Order:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#theta-3-t-0-t-2-correction-term"><span class="math notranslate nohighlight">\( \theta_3(t_0, t_2) \)</span> Correction Term</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-pol-application">Van der Pol Application</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathcal-o-left-varepsilon-0-right-order"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^0\right) \)</span> order:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><span class="math notranslate nohighlight">\( \mathcal{O}\left(\varepsilon^1\right) \)</span> Order:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions">Initial Conditions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#breakdown-of-asymptotics-at-higher-orders">Breakdown of Asymptotics at Higher Orders</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Natural Sciences
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
