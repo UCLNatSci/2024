@@ -1,10 +1,10 @@
-# The Van der Pol Oscillator
+# Week 3 - The Van der Pol Oscillator
 
 The Van der Pol oscillator is a nonlinear dynamical system with broad applications in physics, biology, and engineering.  The Van der Pol oscillator was first proposed by Dutch engineer and physicist Balthasar van der Pol while working at Philips. He discovered stable oscillations, which he called relaxation oscillations (now identified as a type of limit cycle), in electrical circuits containing vacuum tubes. When these circuits were driven near the limit cycle, their current synchronized with the driving signal, a phenomenon known as entrainment. In 1927, Van der Pol and his colleague Van der Mark reported in Nature[1] that irregular noise was observed at specific drive frequencies, which was later understood to be deterministic chaos.
 
 The Van der Pol equation has been widely applied in both physical and biological sciences. In biology, FitzHugh and Nagumo extended the equation to model neuron action potentials in a planar field. It has also been used in seismology to model the interaction of geological fault plates and in phonation research to describe oscillations of the vocal folds.
 
-[1]"Frequency Demultiplication" by Balth. van der Pol and J. van der Mark, published in Nature, Volume 120, pages 363–364, on September 10, 1927. 
+[1] Frequency Demultiplication" by Balth. van der Pol and J. van der Mark, published in Nature, Volume 120, pages 363–364, on September 10, 1927. 
 
 ---
 
@@ -41,7 +41,7 @@ We can see this in the phase-portrait of this system:
 ![Van der Pol Oscillator](vanderpol_plot.png)
 ---
 
-## Key Features
+There are some interesting features that we see in the Van der Pol system:
 
 1. **Nonlinear Damping:**
    - When $|x| > 1$: The damping is positive (energy dissipation).
@@ -58,23 +58,21 @@ We can see this in the phase-portrait of this system:
 
 ---
 
-## Applications
+There are a variety of systems where the VdP oscillator describes the dynamics:
 
 - **Electrical Engineering:**  
   Modeling vacuum tube circuits and oscillators.
+
 - **Biology:**  
   Describing heartbeat dynamics and neural oscillations.
+
 - **Mechanical Systems:**  
   Modeling systems with non-linear damping.
+
 - **Synchronization:**  
   The Van der Pol oscillator is often used to study synchronization phenomena in coupled systems.
 
 ---
-
-
-
-
-
 
 ## Method of Multiple Scales
 
@@ -408,27 +406,7 @@ where $F$ is the forcing amplitude and $\Omega$ is the forcing frequency.
 
 How does adding in a forcing term change the dynamics of this system? Add this to your code and compare.
 
-
-4\. Look over the different projects, which one will you start working on? 
-
-Develop some simple code which produces some **useable** numerical results for your prototype. *(Due in Thursday Feb 13th, 2pm).*  We will use this as a starting point for the project! Recall you only need to pick one of the following equations: 
-
-**Duffing Oscillator**
-```{math}
-\frac{\mathrm{d}^2x}{\mathrm{d}t^2} + \delta \frac{\mathrm{d}x}{\mathrm{d}t} + \alpha x + \beta x^3 = \gamma \cos(\omega t)
-```
-
-**Ermakov-Pinney Equation**
-```{math}
-{\mathrm{d}^{2}x \over \mathrm{d}t^{2}}+\omega(t)^{2}x={\frac {h(t)^{2}}{x^{3}}}
-```
-
-
-**Thomas-Fermi Equation**
-```{math}
-\frac {\mathrm{d}^{2}y}{\mathrm{d}x^{2}}&={\frac {1}{\sqrt {x}}}y^{3/2}\\
-y(0) = 1, &\quad  y(\infty) = 0,  \text{for neutral atoms},
-````
+4\. Compare your numerical results to the method of multiple scales results.
 
 
 
