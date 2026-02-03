@@ -1,14 +1,12 @@
-# Project Submission Information
-
-## Protype Submission
+# Week 4 - Prototype Submission Information
 
 Your protype should include the 
 
-### Python Code
+## Python Code
 
 - **Complete and Functional Code**: Provide the full Python script that performs the following tasks:
   
-1. Solves the specified ordinary differential equation (ODE).
+1. Solves the Duffing equation.
 2. Generates a time series plot.
 3. Generates a phase portrait plot.
 
@@ -50,7 +48,7 @@ Your protype should include the
 
 ```
 
-### Plots
+## Plots
 
 - **Time Series Plot**: Illustrate how the system's variables evolve over time.
 
@@ -58,11 +56,11 @@ Your protype should include the
 
 *Note*: Choose initial conditions that highlight interesting behaviors in the system. Exploring a variety of initial conditions can reveal a range of dynamics.
 
-### Description Document
+## Description Document
 - **Length**: Limit to one page maximum.
 
 - **Content**:
-  - **Analysis of Plots**: Discuss very brieflt the behaviors observed in your plots.
+  - **Analysis of Plots**: Discuss very briefly the behaviors observed in your plots.
   - **Code Explanation**:
     - Describe how the ODE was transformed into a coupled system for numerical solving.
     - Specify the initial conditions used and the rationale behind their selection.
