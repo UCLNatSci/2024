@@ -2,7 +2,7 @@
 Whilst we are now comfortable with the idea of electric and magnetic fields (and how the two are inextricably linked), we can return 
 to an idea from the waves section, namely where are all the sources of energy in this system? 
 
-## Deriving Intrinsic Energy from Potentials
+## Deriving Electric Field Energy Density
 Recall the intrinsic electrostatic potential energy $U_E$ from a system of charges from Equation {eq}`elecpotenergy`, we can 
 modify this to consider a continuous charge density $\rho({\bf r})$:
 ```{math}
@@ -33,9 +33,86 @@ Then we can define the energy density $u_E$ through:
 U_E = \iiint u_E\,\mathrm{d} V= \iiint \frac{1}{2}\,\epsilon_0\,E^2 \, \mathrm{d} V \Longrightarrow u_E = \frac{1}{2}\,\epsilon_0\,E^2 
 ```
 
-## Energy Flux and Poynting Vector
-To find the total energy density we would need to repeat this process for ${\bf B}$ (which is fairly lengthy!), but we can consider this problem 
-through analogy.  The form of the Equation {eq}`curlB` in vacuum reveals that the units of the ${\bf B}$ field related to the ${\bf E}$ field by:
+## Deriving Magnetic Field Energy Density
+Consider a long solenoid (uniform magnetic field inside), of length $ \ell $, cross-sectional area $ A $, with $ N $ turns, carrying a current $ I $.
+
+From Ampère’s law,
+```{math}
+B = \mu_0 \frac{N}{\ell} I,
+```
+
+Assuming the magnetic field is uniform over the cross-section of the solenoid, the magnetic flux through a single turn is
+```{math}
+\Phi = BA = \left(\mu_0 \frac{N}{\ell} I\right)A.
+```
+
+If the current $ I $ changes slowly with time, the magnetic flux $ \Phi $ also changes, inducing an emf around the windings.  
+By Faraday’s law,
+```{math}
+\mathcal{E} = -N\frac{d\Phi}{dt}.
+```
+
+Substituting $ \Phi = \mu_0 \frac{N}{\ell} I A $,
+```{math}
+\mathcal{E}
+= -N\frac{d}{dt}(\mu_0 \frac{N}{\ell} I A)
+= -N(\mu_0 N A/\ell)\frac{dI}{dt} = -\mu_0 \frac{N^2 A}{\ell}\frac{dI}{dt}.
+```
+
+To increase the current, the power supply must do work against this induced (back) emf.  
+The instantaneous power delivered is
+```{math}
+P = I(-\mathcal{E})
+= I\left(\mu_0 \frac{N^2 A}{\ell}\frac{dI}{dt}\right).
+```
+
+The total energy supplied in increasing the current from $ 0 $ to $ I $ is
+```{math}
+U = \int_0^t P\,dt
+= \mu_0 \frac{N^2 A}{\ell}\int_0^I I\,dI
+= \mu_0 \frac{N^2 A}{\ell}\left(\frac{I^2}{2}\right).
+```
+
+Hence,
+```{math}
+U = \frac{1}{2}\mu_0 \frac{N^2 A}{\ell} I^2.
+```
+
+From
+```{math}
+B = \mu_0 \frac{N}{\ell} I,
+```
+we have
+```{math}
+I = \frac{B\ell}{\mu_0 N}.
+```
+
+Substituting into the expression for $ U $,
+```{math}
+U
+= \frac{1}{2}\mu_0 \frac{N^2 A}{\ell}
+\left(\frac{B^2\ell^2}{\mu_0^2 N^2}\right)
+= \frac{1}{2}\frac{A\ell}{\mu_0}B^2.
+```
+
+Since $ A\ell = V $ is the volume inside the solenoid,
+```{math}
+U = V\frac{B^2}{2\mu_0}.
+```
+
+The total magnetic energy is related to the energy density $ u_B $ by
+```{math}
+U = \int u_B\,dV.
+```
+
+For a uniform magnetic field inside the solenoid,
+```{math}
+u_B = \frac{U}{V} = \frac{B^2}{2\mu_0}.
+```
+
+This magnetic energy is the work required to “pump up” the current against the induced emf created by the changing magnetic flux.
+
+We can also see that the form of the Equation {eq}`curlB` in vacuum reveals that the units of the ${\bf B}$ field related to the ${\bf E}$ field by:
 ```{math}
 :label: E=cB
 \frac{[B]}{[\textrm{Length}]} = \epsilon_0\,\mu_0\,\frac{[E]}{[\textrm{Time}]} \Rightarrow [B] = [E]\,[\textrm{Speed}]\,\epsilon_0\,\mu_0 
@@ -44,7 +121,9 @@ Equation {eq}`SpeedOfLight` says $c = 1/\sqrt{\epsilon_0\,\mu_0}$, hence using $
 ```{math}
 u_B = \frac{1}{2}\,\epsilon_0\,c^2\,B^2 = \frac{1}{2\,\mu_0}\,B^2
 ```
-Therefore the total intrinsic energy density of electromagnetic fields is given by:
+
+## Energy Flux and Poynting Vector
+The total intrinsic energy density of electromagnetic fields is given by:
 ```{math}
 u = u_E + u_B = \frac{1}{2}\left(\epsilon_0\,E^2 + \frac{1}{\mu_0}\,B^2 \right)
 ```

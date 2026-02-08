@@ -404,10 +404,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-intrinsic-energy-from-potentials">16.1. Deriving Intrinsic Energy from Potentials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-flux-and-poynting-vector">16.2. Energy Flux and Poynting Vector</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electromagnetic-plane-waves">16.3. Electromagnetic Plane Waves</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-impedance">16.4. Characteristic Impedance*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-electric-field-energy-density">16.1. Deriving Electric Field Energy Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-magnetic-field-energy-density">16.2. Deriving Magnetic Field Energy Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-flux-and-poynting-vector">16.3. Energy Flux and Poynting Vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electromagnetic-plane-waves">16.4. Electromagnetic Plane Waves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-impedance">16.5. Characteristic Impedance*</a></li>
 </ul>
             </nav>
         </div>
@@ -423,8 +424,8 @@ document.write(`
 <h1><span class="section-number">16. </span>Energy in an Electromagnetic field<a class="headerlink" href="#energy-in-an-electromagnetic-field" title="Link to this heading">#</a></h1>
 <p>Whilst we are now comfortable with the idea of electric and magnetic fields (and how the two are inextricably linked), we can return
 to an idea from the waves section, namely where are all the sources of energy in this system?</p>
-<section id="deriving-intrinsic-energy-from-potentials">
-<h2><span class="section-number">16.1. </span>Deriving Intrinsic Energy from Potentials<a class="headerlink" href="#deriving-intrinsic-energy-from-potentials" title="Link to this heading">#</a></h2>
+<section id="deriving-electric-field-energy-density">
+<h2><span class="section-number">16.1. </span>Deriving Electric Field Energy Density<a class="headerlink" href="#deriving-electric-field-energy-density" title="Link to this heading">#</a></h2>
 <p>Recall the intrinsic electrostatic potential energy <span class="math notranslate nohighlight">\(U_E\)</span> from a system of charges from Equation <a class="reference internal" href="Efieldenergy.html#equation-elecpotenergy">(9.1)</a>, we can
 modify this to consider a continuous charge density <span class="math notranslate nohighlight">\(\rho({\bf r})\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -449,16 +450,69 @@ Then we can define the energy density <span class="math notranslate nohighlight"
 <div class="math notranslate nohighlight">
 \[U_E = \iiint u_E\,\mathrm{d} V= \iiint \frac{1}{2}\,\epsilon_0\,E^2 \, \mathrm{d} V \Longrightarrow u_E = \frac{1}{2}\,\epsilon_0\,E^2 \]</div>
 </section>
-<section id="energy-flux-and-poynting-vector">
-<h2><span class="section-number">16.2. </span>Energy Flux and Poynting Vector<a class="headerlink" href="#energy-flux-and-poynting-vector" title="Link to this heading">#</a></h2>
-<p>To find the total energy density we would need to repeat this process for <span class="math notranslate nohighlight">\({\bf B}\)</span> (which is fairly lengthy!), but we can consider this problem
-through analogy.  The form of the Equation <a class="reference internal" href="maxwelleqns.html#equation-curlb">(14.3)</a> in vacuum reveals that the units of the <span class="math notranslate nohighlight">\({\bf B}\)</span> field related to the <span class="math notranslate nohighlight">\({\bf E}\)</span> field by:</p>
+<section id="deriving-magnetic-field-energy-density">
+<h2><span class="section-number">16.2. </span>Deriving Magnetic Field Energy Density<a class="headerlink" href="#deriving-magnetic-field-energy-density" title="Link to this heading">#</a></h2>
+<p>Consider a long solenoid (uniform magnetic field inside), of length <span class="math notranslate nohighlight">\( \ell \)</span>, cross-sectional area <span class="math notranslate nohighlight">\( A \)</span>, with <span class="math notranslate nohighlight">\( N \)</span> turns, carrying a current <span class="math notranslate nohighlight">\( I \)</span>.</p>
+<p>From Ampère’s law,</p>
+<div class="math notranslate nohighlight">
+\[B = \mu_0 \frac{N}{\ell} I,\]</div>
+<p>Assuming the magnetic field is uniform over the cross-section of the solenoid, the magnetic flux through a single turn is</p>
+<div class="math notranslate nohighlight">
+\[\Phi = BA = \left(\mu_0 \frac{N}{\ell} I\right)A.\]</div>
+<p>If the current <span class="math notranslate nohighlight">\( I \)</span> changes slowly with time, the magnetic flux <span class="math notranslate nohighlight">\( \Phi \)</span> also changes, inducing an emf around the windings.<br />
+By Faraday’s law,</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{E} = -N\frac{d\Phi}{dt}.\]</div>
+<p>Substituting <span class="math notranslate nohighlight">\( \Phi = \mu_0 \frac{N}{\ell} I A \)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{E}
+= -N\frac{d}{dt}(\mu_0 \frac{N}{\ell} I A)
+= -N(\mu_0 N A/\ell)\frac{dI}{dt} = -\mu_0 \frac{N^2 A}{\ell}\frac{dI}{dt}.\]</div>
+<p>To increase the current, the power supply must do work against this induced (back) emf.<br />
+The instantaneous power delivered is</p>
+<div class="math notranslate nohighlight">
+\[P = I(-\mathcal{E})
+= I\left(\mu_0 \frac{N^2 A}{\ell}\frac{dI}{dt}\right).\]</div>
+<p>The total energy supplied in increasing the current from <span class="math notranslate nohighlight">\( 0 \)</span> to <span class="math notranslate nohighlight">\( I \)</span> is</p>
+<div class="math notranslate nohighlight">
+\[U = \int_0^t P\,dt
+= \mu_0 \frac{N^2 A}{\ell}\int_0^I I\,dI
+= \mu_0 \frac{N^2 A}{\ell}\left(\frac{I^2}{2}\right).\]</div>
+<p>Hence,</p>
+<div class="math notranslate nohighlight">
+\[U = \frac{1}{2}\mu_0 \frac{N^2 A}{\ell} I^2.\]</div>
+<p>From</p>
+<div class="math notranslate nohighlight">
+\[B = \mu_0 \frac{N}{\ell} I,\]</div>
+<p>we have</p>
+<div class="math notranslate nohighlight">
+\[I = \frac{B\ell}{\mu_0 N}.\]</div>
+<p>Substituting into the expression for <span class="math notranslate nohighlight">\( U \)</span>,</p>
+<div class="math notranslate nohighlight">
+\[U
+= \frac{1}{2}\mu_0 \frac{N^2 A}{\ell}
+\left(\frac{B^2\ell^2}{\mu_0^2 N^2}\right)
+= \frac{1}{2}\frac{A\ell}{\mu_0}B^2.\]</div>
+<p>Since <span class="math notranslate nohighlight">\( A\ell = V \)</span> is the volume inside the solenoid,</p>
+<div class="math notranslate nohighlight">
+\[U = V\frac{B^2}{2\mu_0}.\]</div>
+<p>The total magnetic energy is related to the energy density <span class="math notranslate nohighlight">\( u_B \)</span> by</p>
+<div class="math notranslate nohighlight">
+\[U = \int u_B\,dV.\]</div>
+<p>For a uniform magnetic field inside the solenoid,</p>
+<div class="math notranslate nohighlight">
+\[u_B = \frac{U}{V} = \frac{B^2}{2\mu_0}.\]</div>
+<p>This magnetic energy is the work required to “pump up” the current against the induced emf created by the changing magnetic flux.</p>
+<p>We can also see that the form of the Equation <a class="reference internal" href="maxwelleqns.html#equation-curlb">(14.3)</a> in vacuum reveals that the units of the <span class="math notranslate nohighlight">\({\bf B}\)</span> field related to the <span class="math notranslate nohighlight">\({\bf E}\)</span> field by:</p>
 <div class="math notranslate nohighlight" id="equation-e-cb">
 <span class="eqno">(16.1)<a class="headerlink" href="#equation-e-cb" title="Link to this equation">#</a></span>\[\frac{[B]}{[\textrm{Length}]} = \epsilon_0\,\mu_0\,\frac{[E]}{[\textrm{Time}]} \Rightarrow [B] = [E]\,[\textrm{Speed}]\,\epsilon_0\,\mu_0 \]</div>
 <p>Equation <a class="reference internal" href="solvingmaxwell.html#equation-speedoflight">(15.2)</a> says <span class="math notranslate nohighlight">\(c = 1/\sqrt{\epsilon_0\,\mu_0}\)</span>, hence using <span class="math notranslate nohighlight">\(c\)</span> as the wave speed, <span class="math notranslate nohighlight">\(u_B\)</span> has the form:</p>
 <div class="math notranslate nohighlight">
 \[u_B = \frac{1}{2}\,\epsilon_0\,c^2\,B^2 = \frac{1}{2\,\mu_0}\,B^2\]</div>
-<p>Therefore the total intrinsic energy density of electromagnetic fields is given by:</p>
+</section>
+<section id="energy-flux-and-poynting-vector">
+<h2><span class="section-number">16.3. </span>Energy Flux and Poynting Vector<a class="headerlink" href="#energy-flux-and-poynting-vector" title="Link to this heading">#</a></h2>
+<p>The total intrinsic energy density of electromagnetic fields is given by:</p>
 <div class="math notranslate nohighlight">
 \[u = u_E + u_B = \frac{1}{2}\left(\epsilon_0\,E^2 + \frac{1}{\mu_0}\,B^2 \right)\]</div>
 <p>Equations for <span class="math notranslate nohighlight">\(u\)</span> also appear within Maxwell’s equations, take Equations <a class="reference internal" href="maxwelleqns.html#equation-curlb">(14.3)</a> and <a class="reference internal" href="maxwelleqns.html#equation-curle">(14.4)</a>:</p>
@@ -486,7 +540,7 @@ generated per unit volume per unit time.  Thus we can see that the Poynting vect
 <span class="math notranslate nohighlight">\({\bf J}\cdot {\bf E}\)</span> relates to the energy given to free charges with current density <span class="math notranslate nohighlight">\({\bf J}\)</span>.</p>
 </section>
 <section id="electromagnetic-plane-waves">
-<h2><span class="section-number">16.3. </span>Electromagnetic Plane Waves<a class="headerlink" href="#electromagnetic-plane-waves" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.4. </span>Electromagnetic Plane Waves<a class="headerlink" href="#electromagnetic-plane-waves" title="Link to this heading">#</a></h2>
 <p>Recall the plane wave solutions from Equation <a class="reference internal" href="solvingmaxwell.html#equation-planewavesolns">(15.4)</a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}{\bf E} &amp;=\begin{bmatrix}
@@ -515,7 +569,7 @@ as we see in <a class="reference internal" href="solvingmaxwell.html#emplanewave
 <span class="math notranslate nohighlight">\(v_S = c = v_{E,\,B}\)</span> but the wavelength <span class="math notranslate nohighlight">\(\lambda_S = \frac{1}{2}\lambda_{E,\,B}\)</span> and frequency <span class="math notranslate nohighlight">\(f_S = 2\,f_{E,\,B}\)</span> are changed.</p>
 </section>
 <section id="characteristic-impedance">
-<h2><span class="section-number">16.4. </span>Characteristic Impedance*<a class="headerlink" href="#characteristic-impedance" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">16.5. </span>Characteristic Impedance*<a class="headerlink" href="#characteristic-impedance" title="Link to this heading">#</a></h2>
 <p>Another way to view these results is through Equation <a class="reference internal" href="solvingmaxwell.html#equation-kebperp">(15.3)</a>,</p>
 <div class="math notranslate nohighlight">
 \[{\bf S} = \,\frac{1}{\mu_0}{\bf E}\times {\bf B} = \frac{1}{\mu_0}{\bf E}\times \left(\frac{1}{\omega} {\bf k} \times {\bf E}\right) 
@@ -605,10 +659,11 @@ their power. For the plane wave propograting along the <span class="math notrans
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-intrinsic-energy-from-potentials">16.1. Deriving Intrinsic Energy from Potentials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-flux-and-poynting-vector">16.2. Energy Flux and Poynting Vector</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electromagnetic-plane-waves">16.3. Electromagnetic Plane Waves</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-impedance">16.4. Characteristic Impedance*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-electric-field-energy-density">16.1. Deriving Electric Field Energy Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-magnetic-field-energy-density">16.2. Deriving Magnetic Field Energy Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-flux-and-poynting-vector">16.3. Energy Flux and Poynting Vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electromagnetic-plane-waves">16.4. Electromagnetic Plane Waves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-impedance">16.5. Characteristic Impedance*</a></li>
 </ul>
   </nav></div>
 
