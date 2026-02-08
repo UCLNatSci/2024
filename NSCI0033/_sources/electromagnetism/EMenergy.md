@@ -121,7 +121,7 @@ Equation {eq}`SpeedOfLight` says $c = 1/\sqrt{\epsilon_0\,\mu_0}$, hence using $
 ```{math}
 u_B = \frac{1}{2}\,\epsilon_0\,c^2\,B^2 = \frac{1}{2\,\mu_0}\,B^2
 ```
-
+ 
 ## Energy Flux and Poynting Vector
 The total intrinsic energy density of electromagnetic fields is given by:
 ```{math}
