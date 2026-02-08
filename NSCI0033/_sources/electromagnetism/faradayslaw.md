@@ -20,6 +20,77 @@ field.  Therefore to calculate the total contribution to the EMF, we need to fin
 \mathcal{E}  = -\frac{\partial \Phi_B}{\partial t} = - \frac{\partial}{\partial t} \iint_A {\bf B}\cdot\mathrm{d}{\bf A}
 ```
 
+A charge $ q $ moving with velocity $ \mathbf{v} $ in electromagnetic fields experiences the Lorentz force
+```{math}
+\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B}).
+```
+
+In a purely magnetic field ($ \mathbf{E} = 0 $), the force is always perpendicular to the velocity. As a result magnetic fields can change the *direction* of motion of a charge, but they do **no work** on a free charge in uniform motion.
+
+This raises an important question - **how can a magnetic field produce a voltage in a circuit?**
+
+Consider a magnet moving past a stationary conductor or loop.
+
+- In the **rest frame of the magnet**, the magnetic field is static, but charges in the conductor are moving.
+  They experience a magnetic force $ q(\mathbf{v} \times \mathbf{B}) $.
+- In the **rest frame of the conductor**, charges may initially be at rest, yet a force still acts on them and a current is induced.
+
+In this frame, the effect of the moving magnetic field is described as an **induced electric field** acting around the loop.
+
+**Key idea:**
+
+> A changing magnetic flux can be viewed as producing an effective electric field that drives charges around a closed path.
+
+This motivates the definition of emf as a loop integral rather than as a conservative potential difference.
+
+Consider a straight conducting rod of length $ L $ moving with speed $ v $ through a uniform magnetic field $ \mathbf{B} $, with
+$ \mathbf{v} \perp \mathbf{B} $.
+
+A charge in the rod experiences a magnetic force
+```{math}
+F = qvB.
+```
+
+Charge separation continues until an electric field $ \mathbf{E} $ builds up such that
+```{math}
+qE = qvB \quad \Rightarrow \quad E = vB.
+```
+
+The potential difference across the rod is
+```{math}
+\Delta V = \int \mathbf{E}\cdot d\mathbf{l} = EL = vBL.
+```
+
+Hence the motional emf is
+```{math}
+\mathcal{E} = BLv.
+```
+
+Now place the moving rod into a rectangular circuit so that the area enclosed by the loop changes with time.
+
+If the rod moves a distance $ x(t) $,
+```{math}
+A(t) = Lx(t).
+```
+
+For a uniform magnetic field perpendicular to the loop,
+```{math}
+\Phi_B(t) = BA(t) = BLx(t).
+```
+
+Differentiating,
+```{math}
+\frac{d\Phi_B}{dt} = BL\frac{dx}{dt} = BLv.
+```
+
+Therefore,
+```{math}
+\mathcal{E} = -\frac{d\Phi_B}{dt}
+```
+where the minus sign encodes Lenz’s law.
+
+This shows that Faraday’s law captures both, an emf due to a **time-varying magnetic field**, and an emf due to **motion of conductors through a magnetic field**.
+
 If we have a coil of wire, with $N$ turns of wire, each of which cuts through magnetic field lines, as we see in {numref}`MagnetInACoil`. 
 Faraday's law applies to each turn, it acts like a series circuit across the field and so the EMF induced becomes an additive process, and so we have:
 ```{math}

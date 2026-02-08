@@ -165,9 +165,9 @@ Applying Biot-Savart law here:
 Given $\ell = R \tan(\alpha) \Rightarrow \mathrm{d} \ell = R\,\sec^2(\alpha)\,\mathrm{d}\alpha$ and given $R = r\, \cos(\alpha) \Rightarrow r = R / \cos(\alpha)$:
 ```{math}
 :label: FiniteWireBField
-{\bf B} &=&\, \frac{\mu_0\,I}{4\pi}\int_{\alpha_1}^{\alpha_2} \frac{\cos(\alpha)\,\cos^2(\alpha)}{R^2}\,R\,\sec^2(\alpha)\, \mathrm{d} \alpha\,\hat{ \theta} \\ 
-&=& \,\frac{\mu_0\,I}{4\pi\,R}\int_{\alpha_1}^{\alpha_2} \cos(\alpha)\,\mathrm{d} \alpha\,\hat{ \theta} \\
-&=&\, \frac{\mu_0\,I}{4\pi\,R}\Big[ \sin(\alpha_2) - \sin(\alpha_1)\Big]\,\hat{ \theta}
+{\bf B} &=\, \frac{\mu_0\,I}{4\pi}\int_{\alpha_1}^{\alpha_2} \frac{\cos(\alpha)\,\cos^2(\alpha)}{R^2}\,R\,\sec^2(\alpha)\, \mathrm{d} \alpha\,\hat{ \theta} \\ 
+&= \,\frac{\mu_0\,I}{4\pi\,R}\int_{\alpha_1}^{\alpha_2} \cos(\alpha)\,\mathrm{d} \alpha\,\hat{ \theta} \\
+&=\, \frac{\mu_0\,I}{4\pi\,R}\Big[ \sin(\alpha_2) - \sin(\alpha_1)\Big]\,\hat{ \theta}
 ```
 Notice that if we take $\alpha_2 \rightarrow \pi/2,\, \alpha_1 \rightarrow -\pi/2$:
 ```{math}
