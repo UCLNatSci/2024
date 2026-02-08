@@ -1,4 +1,4 @@
-# Energy in an Electromagnetic field
+# Energy in an Electromagnetic Field
 Whilst we are now comfortable with the idea of electric and magnetic fields (and how the two are inextricably linked), we can return 
 to an idea from the waves section, namely where are all the sources of energy in this system? 
 

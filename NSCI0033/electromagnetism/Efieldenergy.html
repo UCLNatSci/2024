@@ -414,58 +414,58 @@ and have non-zero momentum.  Therefore an electric field carries <b>Electric Pot
 <span class="math notranslate nohighlight">\(\mathrm{d} W\)</span> on a charge <span class="math notranslate nohighlight">\(Q\)</span> in the presence of an electric field <span class="math notranslate nohighlight">\(\bf E\)</span> moving a distance <span class="math notranslate nohighlight">\(\bf \mathrm{\bf d} r\)</span> in the
 field would be given by:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d} W = Q\,\bf E\,\cdot \mathrm{\bf d} r\]</div>
-<p>and therefore the change in electric potential energy <span class="math notranslate nohighlight">\(\mathrm{d} U_E\)</span> is found to be:</p>
+\[\mathrm{d} W = Q\,\mathbf{E}\,\cdot \mathrm{d} \mathbf{r}\]</div>
+<p>and therefore the change in electric potential energy <span class="math notranslate nohighlight">\(\mathrm{d} U\)</span> is found to be:</p>
 <div class="math notranslate nohighlight" id="equation-elecpotenergy">
-<span class="eqno">(9.1)<a class="headerlink" href="#equation-elecpotenergy" title="Link to this equation">#</a></span>\[\mathrm{d} U_E = - Q\,{\bf E\,\cdot \mathrm{\bf d} r} \Rightarrow U_E = -\int_{\mathcal{C}} Q\,{\bf E\,\cdot \mathrm{\bf d} r}\]</div>
+<span class="eqno">(9.1)<a class="headerlink" href="#equation-elecpotenergy" title="Link to this equation">#</a></span>\[\mathrm{d} U = - Q\,\mathbf{E}\,\cdot \mathrm{d} \mathbf{r} \Rightarrow U = -\int_{\mathcal{C}} Q\,\mathbf{E}\,\cdot \mathrm{d} \mathbf{r}\]</div>
 <p>For a point charge <span class="math notranslate nohighlight">\(Q\)</span>, centered on the origin, producing an electric field, then a charge moving in from <span class="math notranslate nohighlight">\(r \rightarrow \infty\)</span>
-up to a distance <span class="math notranslate nohighlight">\(r\)</span>, the potential energy is:</p>
+up to a distance <span class="math notranslate nohighlight">\(r_0\)</span>, the potential energy is:</p>
 <div class="math notranslate nohighlight">
-\[U_E = -\,\frac{Q\,Q_s}{4\pi\,\epsilon_0}\int_{\infty}^r \frac{{\mathbf{e_r}}'}{(r')^2}\,\cdot \mathrm{\bf d} {\bf r}' = 
-\frac{Q\,Q_s}{4\pi\,\epsilon_0}\frac{1}{r}\]</div>
-<p>This gives rise to the idea of <b> Electric Potential </b> <span class="math notranslate nohighlight">\(V_E\)</span>,</p>
+\[U = -\,\frac{Q\,Q_s}{4\pi\,\epsilon_0}\int_{\infty}^{r_0} \frac{\mathbf{e_r}}{r^2}\,\cdot \mathrm{d} \mathbf{r} = 
+\frac{Q\,Q_s}{4\pi\,\epsilon_0}\frac{1}{r_0}\]</div>
+<p>This gives rise to the idea of <b> Electric Potential </b> <span class="math notranslate nohighlight">\(\phi\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-efieldpotential">
-<span class="eqno">(9.2)<a class="headerlink" href="#equation-efieldpotential" title="Link to this equation">#</a></span>\[V_E({\bf r}) = -\int_c {\bf E} \cdot \mathrm{\bf d}\ell\]</div>
-<p>Here <span class="math notranslate nohighlight">\(V_E\)</span> is amount of energy per unit charge given to <span class="math notranslate nohighlight">\(Q\)</span> when moving on some path <span class="math notranslate nohighlight">\(C\)</span> through an electric field from a point with
+<span class="eqno">(9.2)<a class="headerlink" href="#equation-efieldpotential" title="Link to this equation">#</a></span>\[\phi({\bf r}) = -\int_c {\bf E} \cdot \mathrm{\bf d} \mathbf{r}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\phi\)</span> is amount of energy per unit charge given to <span class="math notranslate nohighlight">\(Q\)</span> when moving on some path <span class="math notranslate nohighlight">\(C\)</span> through an electric field from a point with
 zero potential to position <span class="math notranslate nohighlight">\(\bf r\)</span>.  As the Helmholtz decomposition theorem in Equation <a class="reference internal" href="../maths.html#equation-helmholtzdecomp">(1.6)</a> shows, <span class="math notranslate nohighlight">\(\bf E\)</span> would
 in general have divergence and curl components, however if <span class="math notranslate nohighlight">\(\bf E\)</span> is curl free, then we can write:</p>
 <div class="math notranslate nohighlight" id="equation-efieldgradpotential">
-<span class="eqno">(9.3)<a class="headerlink" href="#equation-efieldgradpotential" title="Link to this equation">#</a></span>\[{\bf E} = -\nabla V_E \]</div>
-<p>We can also see that <span class="math notranslate nohighlight">\(V_E\)</span> is related to the potential energy <span class="math notranslate nohighlight">\(U_E\)</span>,</p>
+<span class="eqno">(9.3)<a class="headerlink" href="#equation-efieldgradpotential" title="Link to this equation">#</a></span>\[{\bf E} = -\nabla \phi \]</div>
+<p>We can also see that <span class="math notranslate nohighlight">\(\phi\)</span> is related to the potential energy <span class="math notranslate nohighlight">\(U\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[U_E = Q\,V_E\]</div>
+\[U = Q\,\phi\]</div>
 <p>For a point charge <span class="math notranslate nohighlight">\(Q_S\)</span> producing an electric field, the electrical potential is given by:</p>
 <div class="math notranslate nohighlight">
-\[V_E = -\frac{Q_S}{4\pi\,\epsilon_0}\int_{\infty}^{r}\frac{\mathbf{e_r}'}{(r')^2}\cdot\mathrm{\bf d}{\bf r}' 
-= -\frac{Q_S}{4\pi\,\epsilon_0}\int_{\infty}^{r}\frac{\mathrm{d} r'}{(r')^2} = \frac{Q_S}{4\pi\,\epsilon_0}\frac{1}{r}\]</div>
-<p>The term <b>Potential Difference</b> is given to the difference between the electric potentials <span class="math notranslate nohighlight">\(\Delta V_E\)</span> between
+\[\phi = -\frac{Q_S}{4\pi\,\epsilon_0}\int_{\infty}^{r_0}\frac{\mathbf{e_r}}{r^2}\cdot\mathrm{d}\mathbf{r} 
+= -\frac{Q_S}{4\pi\,\epsilon_0}\int_{\infty}^{r}\frac{\mathrm{d}r}{r^2} = \frac{Q_S}{4\pi\,\epsilon_0}\frac{1}{r_0}\]</div>
+<p>The term <b>Potential Difference</b> is given to the difference between the electric potentials <span class="math notranslate nohighlight">\(\Delta \phi\)</span> between
 two points <span class="math notranslate nohighlight">\(({\bf r_1,\, r_2} )\)</span> in an electrostatic system:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\Delta V_E = {V_E}_2 - {V_E}_1 &amp;= -\int_{{\bf r}_0}^{{\bf r}_2} {\bf E} \cdot \mathrm{\bf d} \ell - 
-\left (- \int_{{\bf r}_0}^{{\bf r}_1} {\bf E} \cdot \mathrm{\bf d} \ell\right) 
-= \int_{{\bf r}_2}^{{\bf r}_0} {\bf E} \cdot \mathrm{\bf d} \ell + \int_{{\bf r}_0}^{{\bf r}_1} {\bf E} \cdot \mathrm{\bf d} \ell \\ 
-&amp;= \int_{{\bf r}_2}^{{\bf r}_1} {\bf E} \cdot \mathrm{\bf d} \ell = -\int_{{\bf r}_1}^{{\bf r}_2} {\bf E} \cdot \mathrm{\bf d} \ell\end{split}\]</div>
-<p>Suppose we have a system of two charges, how does <span class="math notranslate nohighlight">\(U_E\)</span> change?  <span class="math notranslate nohighlight">\(Q_1\)</span> and <span class="math notranslate nohighlight">\(Q_2\)</span> will each produce an
-electrostatic field which a test charge <span class="math notranslate nohighlight">\(Q\)</span> coming in from <span class="math notranslate nohighlight">\(r \rightarrow \infty\)</span> will feel and therefore <span class="math notranslate nohighlight">\(U_E\)</span> has the form:</p>
+\[\begin{split}\Delta \phi = {\phi}_2 - {\phi}_1 &amp;= -\int_{\infty}^{r_2} {\bf E} \cdot \mathrm{d} \mathbf{r} - 
+\left (- \int_{\infty}^{r_1} {\bf E} \cdot \mathrm{d} \mathbf{r}\right) 
+= \int_{r_2}^{\infty} {\bf E} \cdot \mathrm{d} \mathbf{r}+ \int_{\infty}^{r_1} {\bf E} \cdot \mathrm{d} \mathbf{r}\\ 
+&amp;= \int_{r_2}^{r_1} {\bf E} \cdot \mathrm{d} \mathbf{r}= -\int_{r_1}^{r_2} {\bf E} \cdot \mathrm{d} \mathbf{r}\end{split}\]</div>
+<p>Suppose we have a system of two charges, how does <span class="math notranslate nohighlight">\(U\)</span> change?  <span class="math notranslate nohighlight">\(Q_1\)</span> and <span class="math notranslate nohighlight">\(Q_2\)</span> will each produce an
+electrostatic field which a test charge <span class="math notranslate nohighlight">\(Q\)</span> coming in from <span class="math notranslate nohighlight">\(r \rightarrow \infty\)</span> will feel and therefore <span class="math notranslate nohighlight">\(U\)</span> has the form:</p>
 <div class="math notranslate nohighlight">
-\[U_E = \frac{Q}{4 \pi\,\epsilon_0}\left(\frac{Q_1}{r_1} + \frac{Q_2}{r_2}\right)\]</div>
+\[U = \frac{Q}{4 \pi\,\epsilon_0}\left(\frac{Q_1}{r_1} + \frac{Q_2}{r_2}\right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(r_1,\, r_2\)</span> are the distances between the charges <span class="math notranslate nohighlight">\(Q_1,\, Q_2\)</span> and the test charge.  We can generalise this for <span class="math notranslate nohighlight">\(N\)</span> point charges
 <span class="math notranslate nohighlight">\(Q_1, \,Q_2, \, \dots,\, Q_N\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[U_E = \frac{Q}{4 \pi\,\epsilon_0}\left(\frac{Q_1}{r_1} + \frac{Q_2}{r_2} + \dots + \frac{Q_N}{r_N}\right) = 
+\[U = \frac{Q}{4 \pi\,\epsilon_0}\left(\frac{Q_1}{r_1} + \frac{Q_2}{r_2} + \dots + \frac{Q_N}{r_N}\right) = 
 \frac{Q}{4 \pi\,\epsilon_0}\,\sum_{i=1}^N \frac{Q_i}{r_i}\]</div>
 <p>We should notice however that this is the potential energy that is a result of a charge <span class="math notranslate nohighlight">\(Q\)</span> being introduced into the system,
 but clearly if there two or more charges already in the system, they too possess electric potential energies because there are
 also pairs of charges mutually interacting:</p>
 <div class="math notranslate nohighlight">
-\[U_E = \frac{1}{4\pi\,\epsilon_0}\frac{Q_1\,Q_2}{|r_1-r_2|}\]</div>
-<p>We can also think about this in terms of potentials, e.g. <span class="math notranslate nohighlight">\(V_E({\bf r_1})\)</span> is as a result of charge <span class="math notranslate nohighlight">\(Q_1({\bf r_1})\)</span>, therefore here:</p>
+\[U = \frac{1}{4\pi\,\epsilon_0}\frac{Q_1\,Q_2}{|r_1-r_2|}\]</div>
+<p>We can also think about this in terms of potentials, e.g. <span class="math notranslate nohighlight">\(\phi({\bf r_1})\)</span> is as a result of charge <span class="math notranslate nohighlight">\(Q_1({\bf r_1})\)</span>, therefore here:</p>
 <div class="math notranslate nohighlight">
-\[U_E = \frac{1}{2}\bigg[Q_2\,{V_E}_1({\bf r}_2) + Q_1\,{V_E}_2({\bf r}_1)\bigg] \]</div>
+\[U = \frac{1}{2}\bigg[Q_2\,{\phi}_1(r_2) + Q_1\,{\phi}_2(r_1)\bigg] \]</div>
 <p>where the <span class="math notranslate nohighlight">\(1/2\)</span> factor is to avoid the over counting of the interaction field <span class="math notranslate nohighlight">\(Q_1 \rightarrow Q_2\)</span> and <span class="math notranslate nohighlight">\(Q_2 \rightarrow Q_1\)</span>.  These
 expressions can be generalised for <span class="math notranslate nohighlight">\(N\)</span> point charges:</p>
 <div class="math notranslate nohighlight" id="equation-intrinsicelecpotenergy">
-<span class="eqno">(9.4)<a class="headerlink" href="#equation-intrinsicelecpotenergy" title="Link to this equation">#</a></span>\[\begin{split}U_E &amp;= \,\frac{1}{2}\sum_{i=1}^N Q_i\,{V_E}({\bf r}_i)  \\ 
+<span class="eqno">(9.4)<a class="headerlink" href="#equation-intrinsicelecpotenergy" title="Link to this equation">#</a></span>\[\begin{split}U &amp;= \,\frac{1}{2}\sum_{i=1}^N Q_i\,{\phi}({\bf r}_i)  \\ 
 &amp;=  \,\frac{1}{2}\left(\frac{1}{4\pi\,\epsilon_0}\right)\sum_{i=1}^N Q_i\, \sum_{j=1}^{N(j \neq i)} \frac{Q_j}{|r_i-r_j|}\end{split}\]</div>
 </section>
 
