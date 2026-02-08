@@ -405,22 +405,14 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coulombs-law">7.1. Coulombs Law</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition-of-charges">7.2. Superposition of charges</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-superposition-of-electric-fields">7.2.1. Example Problem: Superposition of Electric Fields</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-electric-field-contributions">7.2.2. Step 1: Electric Field Contributions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-electric-field-magnitudes">7.2.3. Step 2: Electric Field Magnitudes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-direction-of-electric-fields">7.2.4. Step 3: Direction of Electric Fields</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-net-electric-field">7.2.5. Step 4: Net Electric Field</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-magnitude-and-direction">7.2.6. Step 5: Magnitude and Direction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-answer">7.2.7. Final Answer:</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition-of-charges">7.2. Superposition of charges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-coulombs-law">7.3. Infinitesimal Coulombs law</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rectilinear-rod">7.3.1. Rectilinear Rod</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gausss-law">7.4. Gauss’s law</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitational-analogue">7.5. Gravitational Analogue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solid-angle-perspective">7.5. Solid Angle Perspective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitational-analogue">7.6. Gravitational Analogue</a></li>
 </ul>
             </nav>
         </div>
@@ -443,13 +435,13 @@ charges <span class="math notranslate nohighlight">\(Q_i\)</span>, <span class="
 <p>Obviously we can shift the charges, so that in general  <span class="math notranslate nohighlight">\((Q_1(\mathbf{r}_1), \, Q_2(\mathbf{r}_2))\)</span>.  Also <span class="math notranslate nohighlight">\(\mathbf{F}_c\)</span> is a vector quantity,</p>
 <p>so we can write the force acting on <span class="math notranslate nohighlight">\(Q_2(\mathbf{r}_2)\)</span> due to <span class="math notranslate nohighlight">\(Q_1(\mathbf{r}_1)\)</span> as:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{F}_{12} = \frac{Q_1\,Q_2}{4\,\pi\,\epsilon_0}\frac{1}{|\mathbf{r}_2 - \mathbf{r}_1|^2}\,\mathbf{\hat{r}}_{12}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{\hat{r}}_{12}\)</span> is a normalised vector that points from <span class="math notranslate nohighlight">\(Q_1(\mathbf{r}_1) \rightarrow Q_2(\mathbf{r}_2)\)</span>:</p>
+\[\mathbf{F}_{12} = \frac{Q_1\,Q_2}{4\,\pi\,\epsilon_0}\frac{1}{|\mathbf{r}_2 - \mathbf{r}_1|^2}\,{\mathbf{e_r}}_{12}\]</div>
+<p>where <span class="math notranslate nohighlight">\({\mathbf{e_r}}_{12}\)</span> is a normalised vector that points from <span class="math notranslate nohighlight">\(Q_1(\mathbf{r}_1) \rightarrow Q_2(\mathbf{r}_2)\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{\hat{r}}_{12} = \frac{\mathbf{r}_2 - \mathbf{r}_1}{|\mathbf{r}_2 - \mathbf{r}_1|}\]</div>
+\[{\mathbf{e_r}}_{12} = \frac{\mathbf{r}_2 - \mathbf{r}_1}{|\mathbf{r}_2 - \mathbf{r}_1|}\]</div>
 <p>This force <span class="math notranslate nohighlight">\(\mathbf{F}_{12}\)</span> is related directly to the size of the charges and to the inverse square of the distance between them.  We can define the <mark>Electric Field</mark> <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> as the <mark>force per unit charge</mark>, in this case we can find the electric field due to the charge <span class="math notranslate nohighlight">\(Q_1\)</span> measured at <span class="math notranslate nohighlight">\(\mathbf{r}_2\)</span> as:</p>
 <div class="math notranslate nohighlight" id="equation-efieldcharge">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-efieldcharge" title="Link to this equation">#</a></span>\[\mathbf{E} = \frac{\mathbf{F}_c}{Q_2} = \frac{Q_1}{4\,\pi\,\epsilon_0}\frac{1}{|\mathbf{r}_2-\mathbf{r}_1|^2}\,\mathbf{\hat{r}}_{12}\]</div>
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-efieldcharge" title="Link to this equation">#</a></span>\[\mathbf{E} = \frac{\mathbf{F}_c}{Q_2} = \frac{Q_1}{4\,\pi\,\epsilon_0}\frac{1}{|\mathbf{r}_2-\mathbf{r}_1|^2}\,{\mathbf{e_r}}_{12}\]</div>
 <p>This expression has <span class="math notranslate nohighlight">\(Q_1\)</span> taking the role of a <mark>source charge</mark>.</p>
 <p>The direction of <span class="math notranslate nohighlight">\( \mathbf{E} \)</span> depends on the sign of the charges, positive sources have <span class="math notranslate nohighlight">\( \mathbf{E} \)</span> pointing <mark>away</mark> from the charge, negative sources have <span class="math notranslate nohighlight">\( \mathbf{E} \)</span> pointing <mark>towards</mark> the charge.  We can see this from an electric field diagram, such
 as shown in <a class="reference internal" href="#positivechargeefield"><span class="std std-numref">Fig. 7.1</span></a>.</p>
@@ -470,82 +462,57 @@ as shown in <a class="reference internal" href="#positivechargeefield"><span cla
 \[\mathbf{E}_{\text{net}} = \sum_i \mathbf{E}_i\]</div>
 <p>For charges distributed in 2D or 3D, we can break each electric field into components:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{E}_i = E_{i,x} \hat{\mathbf{i}} + E_{i,y} \hat{\mathbf{j}} + E_{i,z} \hat{\mathbf{k}}\]</div>
+\[\mathbf{E}_i = E_{i,x} \mathbf{e_x} + E_{i,y} \mathbf{e_y} + E_{i,z} \mathbf{e_z}\]</div>
 <p>And then sum the components along each axis:</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{E}_{\text{net},x} = \sum_i E_{i,x}, \quad \mathbf{E}_{\text{net},y} = \sum_i E_{i,y}, \quad \mathbf{E}_{\text{net},z} = \sum_i E_{i,z}\]</div>
 <p>We can use this method to calculate fields in systems with multiple discrete charges (or in the case of <em>continuous</em> charge distributions with integration to find the total charge).</p>
 <p>Symmetry can often be exploited to simplify calculations (e.g., fields cancel out along certain axes).</p>
-<section id="example-problem-superposition-of-electric-fields">
-<h3><span class="section-number">7.2.1. </span>Example Problem: Superposition of Electric Fields<a class="headerlink" href="#example-problem-superposition-of-electric-fields" title="Link to this heading">#</a></h3>
+<p>Example Problem: Superposition of Electric Fields</p>
 <p>Two point charges, <span class="math notranslate nohighlight">\( q_1 \)</span> and <span class="math notranslate nohighlight">\( q_2 \)</span>, are placed in a 2D coordinate plane:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( q_1 = +2 \, \mu\mathrm{C} \)</span> is located at <span class="math notranslate nohighlight">\( \mathbf{r}_1 = (0, 0) \, \mathrm{m} \)</span> (origin).</p></li>
 <li><p><span class="math notranslate nohighlight">\( q_2 = -3 \, \mu\mathrm{C} \)</span> is located at <span class="math notranslate nohighlight">\( \mathbf{r}_2 = (4, 0) \, \mathrm{m} \)</span> (along the x-axis).</p></li>
 <li><p>Find the net electric field <span class="math notranslate nohighlight">\( \mathbf{E}_{\text{net}} \)</span> at point <span class="math notranslate nohighlight">\( P \)</span> located at <span class="math notranslate nohighlight">\( (2, 3) \, \mathrm{m} \)</span>.</p></li>
 </ul>
-</section>
-<hr class="docutils" />
-<section id="step-1-electric-field-contributions">
-<h3><span class="section-number">7.2.2. </span>Step 1: Electric Field Contributions<a class="headerlink" href="#step-1-electric-field-contributions" title="Link to this heading">#</a></h3>
-<p>The electric field <span class="math notranslate nohighlight">\( \mathbf{E}_i \)</span> due to a point charge <span class="math notranslate nohighlight">\( q_i \)</span> is:</p>
+<p><em>Electric Field Contributions</em>
+The electric field <span class="math notranslate nohighlight">\( \mathbf{E}_i \)</span> due to a point charge <span class="math notranslate nohighlight">\( q_i \)</span> is:</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{E}_i = \frac{1}{4\pi\epsilon_0} \frac{|q_i|}{r_i^2} \hat{\mathbf{r}}_i\]</div>
 <p>where <span class="math notranslate nohighlight">\( r_i \)</span> is the distance between the charge <span class="math notranslate nohighlight">\( q_i \)</span> and point <span class="math notranslate nohighlight">\( P \)</span>, and <span class="math notranslate nohighlight">\( \hat{\mathbf{r}}_i \)</span> is the unit vector from <span class="math notranslate nohighlight">\( q_i \)</span> to <span class="math notranslate nohighlight">\( P \)</span>.</p>
-<ol class="arabic simple">
-<li><p><strong>Distance from <span class="math notranslate nohighlight">\( q_1 \)</span> to <span class="math notranslate nohighlight">\( P \)</span>:</strong></p></li>
-</ol>
+<p><strong>Distance from <span class="math notranslate nohighlight">\( q_1 \)</span> to <span class="math notranslate nohighlight">\( P \)</span>:</strong></p>
 <div class="math notranslate nohighlight">
 \[r_1 = \sqrt{(2 - 0)^2 + (3 - 0)^2} = \sqrt{4 + 9} = 3 \, \mathrm{m}\]</div>
-<ol class="arabic simple" start="2">
-<li><p><strong>Distance from <span class="math notranslate nohighlight">\( q_2 \)</span> to <span class="math notranslate nohighlight">\( P \)</span>:</strong></p></li>
-</ol>
+<p><strong>Distance from <span class="math notranslate nohighlight">\( q_2 \)</span> to <span class="math notranslate nohighlight">\( P \)</span>:</strong></p>
 <div class="math notranslate nohighlight">
 \[r_2 = \sqrt{(2 - 4)^2 + (3 - 0)^2} = \sqrt{(-2)^2 + 3^2} = \sqrt{4 + 9} = 3 \, \mathrm{m}\]</div>
-</section>
-<hr class="docutils" />
-<section id="step-2-electric-field-magnitudes">
-<h3><span class="section-number">7.2.3. </span>Step 2: Electric Field Magnitudes<a class="headerlink" href="#step-2-electric-field-magnitudes" title="Link to this heading">#</a></h3>
-<p>Using <span class="math notranslate nohighlight">\( \frac{1}{4\pi\epsilon_0} \approx 9 \times 10^9 \, \mathrm{N \cdot m^2 / C^2} \)</span>:</p>
-<ol class="arabic simple">
-<li><p><strong>Electric field from <span class="math notranslate nohighlight">\( q_1 \)</span>:</strong></p></li>
-</ol>
+<p><em>Electric Field Magnitudes</em>
+Using <span class="math notranslate nohighlight">\( \frac{1}{4\pi\epsilon_0} \approx 9 \times 10^9 \, \mathrm{N \cdot m^2 / C^2} \)</span>:</p>
+<p><strong>Electric field from <span class="math notranslate nohighlight">\( q_1 \)</span>:</strong></p>
 <div class="math notranslate nohighlight">
 \[E_1 = \frac{9 \times 10^9 \cdot 2 \times 10^{-6}}{3^2} = \frac{18 \times 10^3}{9} = 2 \times 10^3 \, \mathrm{N/C}\]</div>
-<ol class="arabic simple" start="2">
-<li><p><strong>Electric field from <span class="math notranslate nohighlight">\( q_2 \)</span>:</strong></p></li>
-</ol>
+<p><strong>Electric field from <span class="math notranslate nohighlight">\( q_2 \)</span>:</strong></p>
 <div class="math notranslate nohighlight">
 \[E_2 = \frac{9 \times 10^9 \cdot 3 \times 10^{-6}}{3^2} = \frac{27 \times 10^3}{9} = 3 \times 10^3 \, \mathrm{N/C}\]</div>
-</section>
-<hr class="docutils" />
-<section id="step-3-direction-of-electric-fields">
-<h3><span class="section-number">7.2.4. </span>Step 3: Direction of Electric Fields<a class="headerlink" href="#step-3-direction-of-electric-fields" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p><strong>Direction of <span class="math notranslate nohighlight">\( \mathbf{E}_1 \)</span>:</strong></p>
+<p><em>Direction of Electric Fields</em>
+<strong>Direction of <span class="math notranslate nohighlight">\( \mathbf{E}_1 \)</span>:</strong></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( q_1 &gt; 0 \)</span>, so <span class="math notranslate nohighlight">\( \mathbf{E}_1 \)</span> points away from <span class="math notranslate nohighlight">\( q_1 \)</span>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\hat{\mathbf{r}}_1 = \frac{\mathbf{r}_P - \mathbf{r}_1}{r_1} = \frac{(2, 3) - (0, 0)}{3} = \left(\frac{2}{3}, 1\right)\]</div>
 <div class="math notranslate nohighlight">
-\[\mathbf{E}_1 = E_1 \hat{\mathbf{r}}_1 = 2 \times 10^3 \left(\frac{2}{3} \hat{\mathbf{i}} + \hat{\mathbf{j}}\right) = \left(1333 \hat{\mathbf{i}} + 2000 \hat{\mathbf{j}}\right) \, \mathrm{N/C}\]</div>
-</li>
-<li><p><strong>Direction of <span class="math notranslate nohighlight">\( \mathbf{E}_2 \)</span>:</strong></p>
+\[\mathbf{E}_1 = E_1 \hat{\mathbf{r}}_1 = 2 \times 10^3 \left(\frac{2}{3} \mathbf{e_x} + \mathbf{e_y}\right) = \left(1333 \mathbf{e_x} + 2000 \mathbf{e_y}\right) \, \mathrm{N/C}\]</div>
+<p><strong>Direction of <span class="math notranslate nohighlight">\( \mathbf{E}_2 \)</span>:</strong></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( q_2 &lt; 0 \)</span>, so <span class="math notranslate nohighlight">\( \mathbf{E}_2 \)</span> points toward <span class="math notranslate nohighlight">\( q_2 \)</span>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\hat{\mathbf{r}}_2 = \frac{\mathbf{r}_P - \mathbf{r}_2}{r_2} = \frac{(2, 3) - (4, 0)}{3} = \left(\frac{-2}{3}, 1\right)\]</div>
 <div class="math notranslate nohighlight">
-\[\mathbf{E}_2 = E_2 \hat{\mathbf{r}}_2 = 3 \times 10^3 \left(\frac{-2}{3} \hat{\mathbf{i}} + \hat{\mathbf{j}}\right) = \left(-2000 \hat{\mathbf{i}} + 3000 \hat{\mathbf{j}}\right) \, \mathrm{N/C}\]</div>
-</li>
-</ol>
-</section>
-<hr class="docutils" />
-<section id="step-4-net-electric-field">
-<h3><span class="section-number">7.2.5. </span>Step 4: Net Electric Field<a class="headerlink" href="#step-4-net-electric-field" title="Link to this heading">#</a></h3>
-<p>Add <span class="math notranslate nohighlight">\( \mathbf{E}_1 \)</span> and <span class="math notranslate nohighlight">\( \mathbf{E}_2 \)</span> component-wise:</p>
+\[\mathbf{E}_2 = E_2 \hat{\mathbf{r}}_2 = 3 \times 10^3 \left(\frac{-2}{3} \mathbf{e_x} + \mathbf{e_y}\right) = \left(-2000 \mathbf{e_x} + 3000 \mathbf{e_y}\right) \, \mathrm{N/C}\]</div>
+<p><em>Net Electric Field</em>
+Add <span class="math notranslate nohighlight">\( \mathbf{E}_1 \)</span> and <span class="math notranslate nohighlight">\( \mathbf{E}_2 \)</span> component-wise:</p>
 <ol class="arabic">
 <li><p><span class="math notranslate nohighlight">\( x \)</span>-component:</p>
 <div class="math notranslate nohighlight">
@@ -558,33 +525,21 @@ as shown in <a class="reference internal" href="#positivechargeefield"><span cla
 </ol>
 <p>Thus:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{E}_{\text{net}} = -667 \hat{\mathbf{i}} + 5000 \hat{\mathbf{j}} \, \mathrm{N/C}\]</div>
-</section>
-<hr class="docutils" />
-<section id="step-5-magnitude-and-direction">
-<h3><span class="section-number">7.2.6. </span>Step 5: Magnitude and Direction<a class="headerlink" href="#step-5-magnitude-and-direction" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p><strong>Magnitude</strong>:</p>
+\[\mathbf{E}_{\text{net}} = -667 \mathbf{e_x} + 5000 \mathbf{e_y} \, \mathrm{N/C}\]</div>
+<p><em>Magnitude and Direction</em>
+<strong>Magnitude</strong>:</p>
 <div class="math notranslate nohighlight">
 \[|\mathbf{E}_{\text{net}}| = \sqrt{(-667)^2 + 5000^2} = \sqrt{445889 + 25000000} \approx 5022 \, \mathrm{N/C}\]</div>
-</li>
-<li><p><strong>Angle (relative to <span class="math notranslate nohighlight">\( x \)</span>-axis)</strong>:</p>
+<p>*Angle (relative to <span class="math notranslate nohighlight">\( x \)</span>-axis)**:</p>
 <div class="math notranslate nohighlight">
 \[\theta = \tan^{-1}\left(\frac{E_{\text{net},y}}{E_{\text{net},x}}\right) = \tan^{-1}\left(\frac{5000}{-667}\right) \approx -83.4^\circ\]</div>
 <p>(or <span class="math notranslate nohighlight">\( 96.6^\circ \)</span> counterclockwise from the positive <span class="math notranslate nohighlight">\( x \)</span>-axis).</p>
-</li>
-</ol>
-</section>
-<hr class="docutils" />
-<section id="final-answer">
-<h3><span class="section-number">7.2.7. </span>Final Answer:<a class="headerlink" href="#final-answer" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\mathbf{E}_{\text{net}} = 5022 \, \mathrm{N/C} \, \text{at an angle of } 96.6^\circ \, \text{counterclockwise from the } x\text{-axis.}\]</div>
 </section>
-</section>
 <section id="infinitesimal-coulombs-law">
 <h2><span class="section-number">7.3. </span>Infinitesimal Coulombs law<a class="headerlink" href="#infinitesimal-coulombs-law" title="Link to this heading">#</a></h2>
-<p>Lets start with a simpler problem first though, a semicircular arc of charge, as depicted in <a class="reference internal" href="solvingEsystems.html#semicirculararcofcharge"><span class="std std-numref">Fig. 8.9</span></a></p>
+<p>Lets start with a simpler problem first though, a semicircular arc of charge, as depicted in <a class="reference internal" href="#semicirculararcofcharge"><span class="std std-numref">Fig. 7.2</span></a></p>
 <figure class="align-default" id="semicirculararcofcharge">
 <img alt="../_images/SemiCircularArcofCharge.png" src="../_images/SemiCircularArcofCharge.png" />
 <figcaption>
@@ -595,7 +550,7 @@ as shown in <a class="reference internal" href="#positivechargeefield"><span cla
 <span class="math notranslate nohighlight">\(\mathrm{d} Q = \lambda \mathrm{d} \ell\)</span>.  Given that for a circular arc <span class="math notranslate nohighlight">\(\ell = r \theta\)</span> and since <span class="math notranslate nohighlight">\(L = \pi r\)</span>, therefore</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{d} Q = \frac{\lambda\,L}{\pi} \mathrm{d} \theta\]</div>
-<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is an angle that moves round the arc, as we define in <a class="reference internal" href="solvingEsystems.html#angulararcofcharge"><span class="std std-numref">Fig. 8.10</span></a>.</p>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is an angle that moves round the arc, as we define in <a class="reference internal" href="#angulararcofcharge"><span class="std std-numref">Fig. 7.3</span></a>.</p>
 <figure class="align-default" id="angulararcofcharge">
 <img alt="../_images/SemiCircularArcofCharge2.png" src="../_images/SemiCircularArcofCharge2.png" />
 <figcaption>
@@ -608,21 +563,21 @@ these infitesimal charge elements as point charges, the magnitude of the electri
 \[\mathrm{d} E = \frac{\mathrm{d}Q}{4 \pi\,\epsilon_0\,r^2} = \frac{\pi \,\mathrm{d}Q}{4\,\epsilon_0\,L^2}\]</div>
 <p>The direction of the field components however will change depending on whereabouts along the ring we are, clearly are <span class="math notranslate nohighlight">\(\theta = 0\)</span>, the field is directed along the <span class="math notranslate nohighlight">\(x\)</span>-axis only:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}\mathbf{E}_{\theta = 0} = \frac{\pi \,\mathrm{d}Q}{4\,\epsilon_0\,L^2} \,\mathbf{\hat{i}} + 0 \,\mathbf{\hat{j}}\]</div>
+\[\mathrm{d}\mathbf{E}_{\theta = 0} = \frac{\pi \,\mathrm{d}Q}{4\,\epsilon_0\,L^2} \,{\mathbf{e_x}} + 0 \,{\mathbf{e_y}}\]</div>
 <p>Whilst if we examine the field at <span class="math notranslate nohighlight">\(\theta = -\pi/2\)</span> and <span class="math notranslate nohighlight">\(\theta = \pi/2\)</span>, we notice that the electric field will be aligned in the positive and negative <span class="math notranslate nohighlight">\(y\)</span>-axis directions (respectively):</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathrm{d}\mathbf{E}_{\theta = -\pi/2} &amp;=&amp;\, 0 \,\mathbf{\hat{i}} + \frac{\pi \,\mathrm{d}Q}{4\,\epsilon_0\,L^2} \,\mathbf{\hat{j}} \\
-\mathrm{d}\mathbf{E}_{\theta =\pi/2} &amp;=&amp;\, 0 \,\mathbf{\hat{i}} - \frac{\pi \,\mathrm{d}Q}{4\,\epsilon_0\,L^2} \,\mathbf{\hat{j}} \end{split}\]</div>
+\[\begin{split}\mathrm{d}\mathbf{E}_{\theta = -\pi/2} &amp;=\, 0 \,{\mathbf{e_x}} + \frac{\pi \,\mathrm{d}Q}{4\,\epsilon_0\,L^2} \,{\mathbf{e_y}} \\
+\mathrm{d}\mathbf{E}_{\theta =\pi/2} &amp;=\, 0 \,{\mathbf{e_x}} - \frac{\pi \,\mathrm{d}Q}{4\,\epsilon_0\,L^2} \,{\mathbf{e_y}} \end{split}\]</div>
 <p>In fact we see that there will always be a cancellation of the <span class="math notranslate nohighlight">\(y\)</span> components of the electric field from the arc, we can always pair up the components over
 <span class="math notranslate nohighlight">\(-\pi/2 \leq \theta \leq \pi/2\)</span>, this leaves just the <span class="math notranslate nohighlight">\(x\)</span> components:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathrm{d}\mathbf{E}_{\theta} &amp;=&amp;\, \frac{\pi \,\mathrm{d}Q}{4\,\epsilon_0\,L^2} \Big[ \cos(\theta) \,\mathbf{\hat{i}} + \sin(\theta) \,\mathbf{\hat{j}} \Big] \\
-\int_0^\mathbf{E} \mathrm{d}\mathbf{E}_{\theta} &amp;=&amp;\,  \frac{\pi}{4\,\epsilon_0\,L^2} \frac{\lambda\,L}{\pi} \int_{-\pi/2}^{\pi/2} \Big(\cos(\theta)\,\mathbf{\hat{i}} + 
-\sin(\theta)\,\mathbf{\hat{j}} \Big)\,\mathrm{d} \theta\\
-\mathbf{E} &amp;=&amp;\,  \frac{\lambda}{4\,\epsilon_0\,L}  \Big[\sin(\theta)\,\mathbf{\hat{i}} - \cos(\theta)\,\mathbf{\hat{j}}\Big]_{-\pi/2}^{\pi/2} = \frac{\lambda}{2\,\epsilon_0\,L} \,\mathbf{\hat{i}} + 0\,\mathbf{\hat{j}}\end{split}\]</div>
+\[\begin{split}\mathrm{d}\mathbf{E}_{\theta} &amp;=\, \frac{\pi \,\mathrm{d}Q}{4\,\epsilon_0\,L^2} \Big[ \cos(\theta) \,{\mathbf{e_x}} + \sin(\theta) \,{\mathbf{e_y}} \Big] \\
+\int_0^\mathbf{E} \mathrm{d}\mathbf{E}_{\theta} &amp;=\,  \frac{\pi}{4\,\epsilon_0\,L^2} \frac{\lambda\,L}{\pi} \int_{-\pi/2}^{\pi/2} \Big(\cos(\theta)\,{\mathbf{e_x}} + 
+\sin(\theta)\,{\mathbf{e_y}} \Big)\,\mathrm{d} \theta\\
+\mathbf{E} &amp;=\,  \frac{\lambda}{4\,\epsilon_0\,L}  \Big[\sin(\theta)\,{\mathbf{e_x}} - \cos(\theta)\,{\mathbf{e_y}}\Big]_{-\pi/2}^{\pi/2} = \frac{\lambda}{2\,\epsilon_0\,L} \,{\mathbf{e_x}} + 0\,{\mathbf{e_y}}\end{split}\]</div>
 <section id="rectilinear-rod">
 <h3><span class="section-number">7.3.1. </span>Rectilinear Rod<a class="headerlink" href="#rectilinear-rod" title="Link to this heading">#</a></h3>
-<p>Lets return to the rod in <a class="reference internal" href="solvingEsystems.html#finitelineofcharge"><span class="std std-numref">Fig. 8.8</span></a>, we can set this system up in <a class="reference internal" href="solvingEsystems.html#finitelineofcharge2"><span class="std std-numref">Fig. 8.11</span></a>, trying to make the rod as symmetric as possible:</p>
+<p>Lets return to the rod in <a class="reference internal" href="solvingEsystems.html#finitelineofcharge"><span class="std std-numref">Fig. 8.8</span></a>, we can set this system up in <a class="reference internal" href="#finitelineofcharge2"><span class="std std-numref">Fig. 7.4</span></a>, trying to make the rod as symmetric as possible:</p>
 <figure class="align-default" id="finitelineofcharge2">
 <img alt="../_images/FiniteLineOfCharges3.png" src="../_images/FiniteLineOfCharges3.png" />
 <figcaption>
@@ -638,32 +593,32 @@ field at a distance <span class="math notranslate nohighlight">\(R\)</span> from
 <p>where the length <span class="math notranslate nohighlight">\(r\)</span> can take values between <span class="math notranslate nohighlight">\(R \leq r \leq \sqrt{R^2 + L^2 / 4}\)</span>.</p>
 <p>In this system, we find that at <span class="math notranslate nohighlight">\(x = 0\)</span>, the electric field is only aligned in the <span class="math notranslate nohighlight">\(y\)</span> direction:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d} \mathbf{E}_{x = L/2} = 0\,\mathbf{\hat{i}} + \frac{\mathrm{d}Q}{4\pi \,\epsilon_0\,R^2}\,\mathbf{\hat{j}}\]</div>
+\[\mathrm{d} \mathbf{E}_{x = L/2} = 0\,{\mathbf{e_x}} + \frac{\mathrm{d}Q}{4\pi \,\epsilon_0\,R^2}\,{\mathbf{e_y}}\]</div>
 <p>whereas the <span class="math notranslate nohighlight">\(x\)</span> components of the electric field for all the lengths at <span class="math notranslate nohighlight">\(-L/2 \leq x &lt; 0\)</span> and <span class="math notranslate nohighlight">\(0 &gt; x \leq L/2\)</span> will pair up, to cancel out, leaving only the <span class="math notranslate nohighlight">\(y\)</span> components:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathrm{d} \mathbf{E} &amp;=&amp;\, \frac{\mathrm{d}Q}{4\pi \,\epsilon_0\,r^2} \Big (\sin(\theta)\,\mathbf{\hat{i}} + \cos(\theta)\,\mathbf{\hat{j}}\Big)\\
-\int_0^\mathbf{E} \mathrm{d} \mathbf{E}' &amp;=&amp;\, \frac{\lambda }{4\pi \,\epsilon_0} \int_{-L/2}^{L/2}\Big (\frac{x}{r^3}\,\mathbf{\hat{i}} + \frac{R}{r^3}\,\mathbf{\hat{j}}\Big)\,\mathrm{d} x\\
-\mathbf{E} &amp;=&amp;\, \frac{\lambda}{4\pi \,\epsilon_0} \int_{-L/2}^{L/2}\Bigg(\frac{x}{(x^2 + R^2)^{3/2}}\,\mathbf{\hat{i}} + \frac{R}{(x^2 + R^2)^{3/2}}\,\mathbf{\hat{j}}\Bigg)\,\mathrm{d} x \end{split}\]</div>
+\[\begin{split}\mathrm{d} \mathbf{E} &amp;=\, \frac{\mathrm{d}Q}{4\pi \,\epsilon_0\,r^2} \Big (\sin(\theta)\,{\mathbf{e_x}} + \cos(\theta)\,{\mathbf{e_y}}\Big)\\
+\int_0^\mathbf{E} \mathrm{d} \mathbf{E}' &amp;=\, \frac{\lambda }{4\pi \,\epsilon_0} \int_{-L/2}^{L/2}\Big (\frac{x}{r^3}\,{\mathbf{e_x}} + \frac{R}{r^3}\,{\mathbf{e_y}}\Big)\,\mathrm{d} x\\
+\mathbf{E} &amp;=\, \frac{\lambda}{4\pi \,\epsilon_0} \int_{-L/2}^{L/2}\Bigg(\frac{x}{(x^2 + R^2)^{3/2}}\,{\mathbf{e_x}} + \frac{R}{(x^2 + R^2)^{3/2}}\,{\mathbf{e_y}}\Bigg)\,\mathrm{d} x \end{split}\]</div>
 <p>Where we have used the substitutions <span class="math notranslate nohighlight">\(\sin(\theta) = x/r = x / \sqrt{x^2 + R^2},\, \cos(\theta) = R / r = R / \sqrt{x^2 + R^2}\)</span>.  We can also use the substitution
 <span class="math notranslate nohighlight">\(x = R\,\tan(\theta) \Rightarrow \mathrm{d}x = R\,\sec^2(\theta)\)</span> to find:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathbf{E} &amp;=&amp;\, \frac{\lambda}{4\pi \,\epsilon_0} \int_{x = -L/2}^{x = L/2}\Big (\frac{R \,\tan(\theta)}{R^3\,\sec^3(\theta)}\,\mathbf{\hat{i}} + 
-\frac{R}{R^3\,\sec^3(\theta)}\,\mathbf{\hat{j}}\Big) R\,\sec^2(\theta)\,\mathrm{d} \theta \\
- &amp;=&amp;\,\frac{\lambda}{4\pi \,\epsilon_0\,R} \int_{x = -L/2}^{x = L/2}\Bigg(\sin(\theta)\,\mathbf{\hat{i}} + \cos(\theta)\,\mathbf{\hat{j}}\Bigg)\,\mathrm{d} \theta \\
- &amp;=&amp;\,\frac{\lambda}{4\pi \,\epsilon_0\,R} \Big[ -\cos(\theta)\,\mathbf{\hat{i}} + \sin(\theta)\,\mathbf{\hat{j}}\Big]_{x = -L/2}^{x = L/2} \\
- &amp;=&amp;\,\frac{\lambda}{4\pi \,\epsilon_0\,R} \Big[ -\frac{R}{(x^2 + R^2)^{1/2}}\,\mathbf{\hat{i}} + \frac{x}{(x^2 + R^2)^{1/2}}\,\mathbf{\hat{j}}\Big]_{-L/2}^{L/2} \\
- &amp;=&amp;\,\frac{\lambda}{4\pi \,\epsilon_0\,R} \Big( 0 \,\mathbf{\hat{i}} + \frac{L}{(L^2/4 + R^2)^{1/2}}\,\mathbf{\hat{j}}\Big) \end{split}\]</div>
+\[\begin{split}\mathbf{E} &amp;=\, \frac{\lambda}{4\pi \,\epsilon_0} \int_{x = -L/2}^{x = L/2}\Big (\frac{R \,\tan(\theta)}{R^3\,\sec^3(\theta)}\,{\mathbf{e_x}} + 
+\frac{R}{R^3\,\sec^3(\theta)}\,{\mathbf{e_y}}\Big) R\,\sec^2(\theta)\,\mathrm{d} \theta \\
+ &amp;=\,\frac{\lambda}{4\pi \,\epsilon_0\,R} \int_{x = -L/2}^{x = L/2}\Bigg(\sin(\theta)\,{\mathbf{e_x}} + \cos(\theta)\,{\mathbf{e_y}}\Bigg)\,\mathrm{d} \theta \\
+ &amp;=\,\frac{\lambda}{4\pi \,\epsilon_0\,R} \Big[ -\cos(\theta)\,{\mathbf{e_x}} + \sin(\theta)\,{\mathbf{e_y}}\Big]_{x = -L/2}^{x = L/2} \\
+ &amp;=\,\frac{\lambda}{4\pi \,\epsilon_0\,R} \Big[ -\frac{R}{(x^2 + R^2)^{1/2}}\,{\mathbf{e_x}} + \frac{x}{(x^2 + R^2)^{1/2}}\,{\mathbf{e_y}}\Big]_{-L/2}^{L/2} \\
+ &amp;=\,\frac{\lambda}{4\pi \,\epsilon_0\,R} \Big( 0 \,{\mathbf{e_x}} + \frac{L}{(L^2/4 + R^2)^{1/2}}\,{\mathbf{e_y}}\Big) \end{split}\]</div>
 <p>Which results in:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{E} = \frac{\lambda\,L }{4\pi \,\epsilon_0\,R\,\sqrt{L^2/4 + R^2}}\,\mathbf{\hat{j}}\]</div>
+\[\mathbf{E} = \frac{\lambda\,L }{4\pi \,\epsilon_0\,R\,\sqrt{L^2/4 + R^2}}\,{\mathbf{e_y}}\]</div>
 <p>Notice that in the limit of <span class="math notranslate nohighlight">\(L \gg 1\)</span>, this would look like:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{E} \rightarrow \frac{\lambda}{2\pi \,\epsilon_0\,R}\,\mathbf{\hat{j}}\]</div>
+\[\mathbf{E} \rightarrow \frac{\lambda}{2\pi \,\epsilon_0\,R}\,{\mathbf{e_y}}\]</div>
 <p>which is essentially the result for the infinite line of charge in Equation <a class="reference internal" href="solvingEsystems.html#equation-infinitechargelineefield">(8.1)</a>.</p>
 <p>We note therefore that the relevant expression for the magnitude of the electric field at a distance <span class="math notranslate nohighlight">\(R\)</span> from the rod is found from just the <span class="math notranslate nohighlight">\(y\)</span> component:</p>
 <div class="math notranslate nohighlight" id="equation-efieldwire">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-efieldwire" title="Link to this equation">#</a></span>\[\begin{split}\mathrm{d} E &amp;=&amp;\, \frac{\mathrm{d}Q}{4\pi \,\epsilon_0\,r^2}\,\cos(\theta) = \frac{\mathrm{d}Q\,R}{4\pi \,\epsilon_0\,r^3}\\
-\Rightarrow E &amp;=&amp;\,  \frac{\lambda}{4\pi \,\epsilon_0}\int_{rod} \frac{R}{r^3}\,\mathrm{d}x = \frac{\lambda}{4\pi \,\epsilon_0\,R} \Bigg[\frac{x}{\sqrt{x^2+R^2}}\Bigg]_{rod}\end{split}\]</div>
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-efieldwire" title="Link to this equation">#</a></span>\[\begin{split}\mathrm{d} E &amp;=\, \frac{\mathrm{d}Q}{4\pi \,\epsilon_0\,r^2}\,\cos(\theta) = \frac{\mathrm{d}Q\,R}{4\pi \,\epsilon_0\,r^3}\\
+\Rightarrow E &amp;=\,  \frac{\lambda}{4\pi \,\epsilon_0}\int_{rod} \frac{R}{r^3}\,\mathrm{d}x = \frac{\lambda}{4\pi \,\epsilon_0\,R} \Bigg[\frac{x}{\sqrt{x^2+R^2}}\Bigg]_{rod}\end{split}\]</div>
 </section>
 </section>
 <section id="gausss-law">
@@ -695,12 +650,12 @@ of the electric field is crossing the spherical boundary here, clearly the flux 
 \[[\textrm{k}] = [\rho][\mathbf{v}][\textrm{Q}]^{-2} = \textrm{kg}\,\textrm{m}^{-3}\,\textrm{m}\,\textrm{s}^{-1}\,\textrm{C}^{-2} 
 = \textrm{kg}\,\textrm{m}^{-2}\,\textrm{s}^{-1}\,\textrm{C}^{-2}\]</div>
 <p>We can aim to use this flux law to get to Coulombs law, as the two results must agree, so starting with the spherical surface area <span class="math notranslate nohighlight">\(A\)</span>
-around the charge <span class="math notranslate nohighlight">\(Q\)</span> we find that the area normal vector is <span class="math notranslate nohighlight">\(\mathbf{A} = A_r\,\mathbf{\hat{r}}\)</span>.  The surface integral term therefore reduces to:</p>
+around the charge <span class="math notranslate nohighlight">\(Q\)</span> we find that the area normal vector is <span class="math notranslate nohighlight">\(\mathbf{A} = A_r\,{\mathbf{e_r}}\)</span>.  The surface integral term therefore reduces to:</p>
 <div class="math notranslate nohighlight">
 \[\iint \mathbf{E}\cdot \mathrm{d} \mathbf{A} = \iint E_r \,\mathrm{d} A_r\]</div>
 <p>where we decomposed the electric field <span class="math notranslate nohighlight">\(\bf E\)</span> in to components:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{E} = E_r \mathbf{\hat{r}} + E_\theta \mathbf{\hat{\theta}} + E_\phi \mathbf{\hat{\phi}}\]</div>
+\[\mathbf{E} = E_r {\mathbf{e_r}} + E_\theta {\mathbf{e_\theta}} + E_\phi {\mathbf{e_\phi}}\]</div>
 <p>By symmetry therefore the electric field does not have an angular <span class="math notranslate nohighlight">\((\theta,\, \phi)\)</span> dependence - this makes sense physically because
 whether a charge is on our left or right hand side does not charge the force felt if it is at the same fixed distance.</p>
 <p>Calculating <span class="math notranslate nohighlight">\(\iint \mathbf{E}\cdot \mathrm{d} \mathbf{A}\)</span> is straightforward on a sphere:</p>
@@ -708,11 +663,11 @@ whether a charge is on our left or right hand side does not charge the force fel
 \[\iint E_r\, \mathrm{d} A_r = \iint E_r \,r^2 \,\sin \theta\, \mathrm{d} \theta \,\mathrm{d} \phi\]</div>
 <p>Since <span class="math notranslate nohighlight">\(E_r\)</span> only has <span class="math notranslate nohighlight">\(r\)</span> dependence, we can factorise this out of the integral:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}E_r \iint  \,r^2 \,\sin \theta\, \mathrm{d} \theta \,\mathrm{d} \phi = E_r(4 \pi\,r^2) &amp;=&amp;\, kQ \\
-\Rightarrow E_r &amp;=&amp;\, \frac{kQ}{4\pi\,r^2}\end{split}\]</div>
+\[\begin{split}E_r \iint  \,r^2 \,\sin \theta\, \mathrm{d} \theta \,\mathrm{d} \phi = E_r(4 \pi\,r^2) &amp;=\, kQ \\
+\Rightarrow E_r &amp;=\, \frac{kQ}{4\pi\,r^2}\end{split}\]</div>
 <p>Finally we can write this in vector form:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{E} = \,E_r \,\mathbf{\hat{r}} = \frac{k Q}{4\pi\,r^2} \,\mathbf{\hat{r}}\]</div>
+\[\mathbf{E} = \,E_r \,{\mathbf{e_r}} = \frac{k Q}{4\pi\,r^2} \,{\mathbf{e_r}}\]</div>
 <p>Comparing this result with Coulomb’s law in Equation <a class="reference internal" href="#equation-coulombslaw">(7.1)</a>, we find we can fix <span class="math notranslate nohighlight">\(k = 1/\epsilon_0\)</span> (which also has the required units, check
 this for yourself!).  So our final expression, which is known as <mark>Gauss’s Law</mark>, can be written as:</p>
 <div class="math notranslate nohighlight" id="equation-gausslaw">
@@ -723,8 +678,125 @@ we should really write Gauss’s law as:</p>
 <div class="math notranslate nohighlight">
 \[\iint_A \mathbf{E} \cdot \mathrm{d} \mathbf{A} = \frac{Q_{enclosed}}{\epsilon_0}\]</div>
 </section>
+<section id="solid-angle-perspective">
+<h2><span class="section-number">7.5. </span>Solid Angle Perspective<a class="headerlink" href="#solid-angle-perspective" title="Link to this heading">#</a></h2>
+<p>Let’s start with a <strong>radian</strong>, which is defined geometrically. Take a circle of radius <span class="math notranslate nohighlight">\( r \)</span>. An angle <span class="math notranslate nohighlight">\( \theta \)</span> (in radians) is defined by</p>
+<div class="math notranslate nohighlight">
+\[\theta = \frac{\text{arc length } s}{r}.\]</div>
+<p>So:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\( s = r \)</span>, then <span class="math notranslate nohighlight">\( \theta = 1 \)</span> rad,</p></li>
+<li><p>For a full circle, <span class="math notranslate nohighlight">\( s = 2\pi r \Rightarrow \theta = 2\pi \)</span>.</p></li>
+</ul>
+<p>A radian therefore measures <em>how much of the circle</em> is subtended, independent of the circle’s size. This size-independence is why radians are natural in physics.</p>
+<hr class="docutils" />
+<p>Now let’s repeat the same construction one dimension higher. Instead of arc length on a circle, we use surface area on a sphere. Place a point <span class="math notranslate nohighlight">\( P \)</span> at the centre of a sphere of radius <span class="math notranslate nohighlight">\( r \)</span>.</p>
+<p>A <strong>solid angle</strong> <span class="math notranslate nohighlight">\( \Omega \)</span>, measured in <strong>steradians</strong>, is defined by</p>
+<div class="math notranslate nohighlight">
+\[\Omega = \frac{\text{surface area } A}{r^2}.\]</div>
+<figure class="align-default" id="solidangle">
+<img alt="../_images/solid_angle.png" src="../_images/solid_angle.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 7.6 </span><span class="caption-text">Solid angle <span class="math notranslate nohighlight">\(\Omega\)</span> defined from a point <span class="math notranslate nohighlight">\(P\)</span> at the centre of a circle over a radius <span class="math notranslate nohighlight">\(r\)</span> producing an area <span class="math notranslate nohighlight">\(A\)</span> at the surface.</span><a class="headerlink" href="#solidangle" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The solid angle tells us how large an area <span class="math notranslate nohighlight">\( A \)</span> at distance <span class="math notranslate nohighlight">\( r \)</span> appears when viewed from the origin. For a small surface element <span class="math notranslate nohighlight">\( \mathrm{d}A \)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}\Omega = \frac{\mathrm{d}A}{r^2}.\]</div>
+<p>For a full circle, the total number of radians is</p>
+<div class="math notranslate nohighlight">
+\[\theta_{\text{max}} = \frac{2\pi r}{r} = 2\pi.\]</div>
+<p>For a full sphere, the total number of steradians is</p>
+<div class="math notranslate nohighlight">
+\[\Omega_{\text{max}} = \frac{4\pi r^2}{r^2} = 4\pi.\]</div>
+<p>More generally, the <strong>differential solid angle</strong> is defined as</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}\Omega
+= \frac{\mathrm{d}A_\perp}{r^2}
+= \frac{\mathrm{d}A \cos\alpha}{r^2},\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \mathrm{d}A_\perp \)</span> is the area element perpendicular to the line of sight,</p></li>
+<li><p><span class="math notranslate nohighlight">\( r \)</span> is the distance to the area element,</p></li>
+<li><p><span class="math notranslate nohighlight">\( \alpha \)</span> is the angle between the surface normal and the line of sight.</p></li>
+</ul>
+<p>In spherical polar coordinates,</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}\Omega = \sin\theta\,\mathrm{d}\theta\,\mathrm{d}\phi,
+\qquad
+\iint \mathrm{d}\Omega = 4\pi.\]</div>
+<p>For a point charge <span class="math notranslate nohighlight">\( q \)</span>, the electric flux through a small surface element is proportional to the solid angle it subtends:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}\Phi
+= \frac{q}{4\pi\varepsilon_0}\,\mathrm{d}\Omega.\]</div>
+<p>Integrating over a closed surface,</p>
+<div class="math notranslate nohighlight">
+\[\Phi
+= \frac{q}{4\pi\varepsilon_0} \iint \mathrm{d}\Omega.\]</div>
+<p>Since Gauss’s law states</p>
+<div class="math notranslate nohighlight">
+\[\oint \mathbf{E}\cdot \mathrm{d}\mathbf{A}
+= \frac{Q_{\text{enc}}}{\varepsilon_0},\]</div>
+<p>this can be interpreted as saying that the total electric flux depends on the <strong>total solid angle</strong> subtended by the surface at the charge, which is <span class="math notranslate nohighlight">\( 4\pi \)</span> for any closed surface enclosing the charge.</p>
+<p>Consider a thin spherical shell of uniform surface charge density <span class="math notranslate nohighlight">\( \sigma \)</span>, and a point <span class="math notranslate nohighlight">\( P \)</span> located inside the shell (not at the centre). Take a small surface element <span class="math notranslate nohighlight">\( \mathrm{d}A \)</span> on the shell. The electric field contribution at <span class="math notranslate nohighlight">\( P \)</span> from this element is</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}\mathbf{E}
+= \frac{1}{4\pi\varepsilon_0}
+\frac{\sigma\,\mathrm{d}A}{s^2}\,\hat{\mathbf{s}},\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( s \)</span> is the distance from <span class="math notranslate nohighlight">\( \mathrm{d}A \)</span> to <span class="math notranslate nohighlight">\( P \)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\( \hat{\mathbf{s}} \)</span> points from the charge element towards <span class="math notranslate nohighlight">\( P \)</span>.</p></li>
+</ul>
+<p>By symmetry, only the radial component (along the line from the centre of the shell to <span class="math notranslate nohighlight">\( P \)</span>) can survive. Projecting onto this direction gives</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}E_r
+= \mathrm{d}E \cos\alpha
+= \frac{1}{4\pi\varepsilon_0}
+\frac{\sigma\,\mathrm{d}A \cos\alpha}{s^2},\]</div>
+<p>where <span class="math notranslate nohighlight">\( \alpha \)</span> is the angle between <span class="math notranslate nohighlight">\( \hat{\mathbf{s}} \)</span> and the radial direction.</p>
+<p>Recalling that the differential solid angle subtended by <span class="math notranslate nohighlight">\( \mathrm{d}A \)</span> at point <span class="math notranslate nohighlight">\( P \)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}\Omega
+= \frac{\mathrm{d}A \cos\alpha}{s^2},\]</div>
+<p>If we divide the spherical shell into surface elements lying <strong>above</strong> point <span class="math notranslate nohighlight">\( P \)</span>, and <strong>below</strong> point <span class="math notranslate nohighlight">\( P \)</span>, relative to the radial direction through the centre:</p>
+<ul class="simple">
+<li><p>For elements below <span class="math notranslate nohighlight">\( P \)</span>, the distance <span class="math notranslate nohighlight">\( s \)</span> is smaller, so the field magnitude from each element is larger, however, these elements subtend a <strong>smaller solid angle</strong> at <span class="math notranslate nohighlight">\( P \)</span>.</p></li>
+<li><p>For elements above <span class="math notranslate nohighlight">\( P \)</span>, the distance <span class="math notranslate nohighlight">\( s \)</span> is larger, so the field magnitude from each element is weaker, however, these elements subtend a <strong>larger solid angle</strong> at <span class="math notranslate nohighlight">\( P \)</span>.</p></li>
+</ul>
+<p>Because the radial field contribution is proportional to <span class="math notranslate nohighlight">\( \mathrm{d}\Omega \)</span>, these two effects exactly compensate.</p>
+<p>When integrating over the entire shell, solid angles above and below <span class="math notranslate nohighlight">\( P \)</span> enter with <strong>opposite orientation</strong>.  Surface elements whose outward normal points roughly towards <span class="math notranslate nohighlight">\( P \)</span> contribute positive <span class="math notranslate nohighlight">\( \mathrm{d}\Omega \)</span> and surface elements whose outward normal points away from <span class="math notranslate nohighlight">\( P \)</span> contribute negative <span class="math notranslate nohighlight">\( \mathrm{d}\Omega \)</span>.</p>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[\int_{\text{above}} \mathrm{d}\Omega
++
+\int_{\text{below}} \mathrm{d}\Omega
+= 0.\]</div>
+<p>Equivalently, for a point located inside a closed surface, the total <strong>oriented solid angle</strong> subtended by the surface is zero:</p>
+<div class="math notranslate nohighlight">
+\[\oint_{\text{shell}} \mathrm{d}\Omega = 0.\]</div>
+<p>we obtain:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}E_r
+= \frac{\sigma}{4\pi\varepsilon_0}\,\mathrm{d}\Omega.\]</div>
+<p>and we notice that the dependence on the distance <span class="math notranslate nohighlight">\( s \)</span> has cancelled completely.</p>
+<p>Integrating over the entire spherical shell,</p>
+<div class="math notranslate nohighlight">
+\[E_r
+= \frac{\sigma}{4\pi\varepsilon_0}
+\oint_{\text{shell}} \mathrm{d}\Omega.\]</div>
+<p>and using the results from above:</p>
+<div class="math notranslate nohighlight">
+\[E_r = 0.\]</div>
+<p>This shows that a complete spherical shell of charge produces zero electric field everywhere inside it.</p>
+<p>Since every spherical shell with radius greater than <span class="math notranslate nohighlight">\( r \)</span> contributes zero electric field at radius <span class="math notranslate nohighlight">\( r \)</span>, only the charge enclosed within <span class="math notranslate nohighlight">\( r \)</span> affects the field.</p>
+<p>This is why, for a spherically symmetric charge distribution,</p>
+<div class="math notranslate nohighlight">
+\[E(r)\,4\pi r^2 = \frac{Q_{\text{enc}}(r)}{\varepsilon_0},\]</div>
+<p>and charges outside the Gaussian surface do not contribute.</p>
+</section>
 <section id="gravitational-analogue">
-<h2><span class="section-number">7.5. </span>Gravitational Analogue<a class="headerlink" href="#gravitational-analogue" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.6. </span>Gravitational Analogue<a class="headerlink" href="#gravitational-analogue" title="Link to this heading">#</a></h2>
 <p>One of the grand goals of physics is to understand nature through the same equations but on different scales - so called <mark>universality</mark>.  We
 find that the equations in electrostatics can be used to discuss Newton’s law of gravitation.  We notice that the equations are essentially just a
 redefinition of fields and constants:</p>
@@ -809,22 +881,14 @@ which we find results in the analogue of <a class="reference internal" href="sol
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coulombs-law">7.1. Coulombs Law</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition-of-charges">7.2. Superposition of charges</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-superposition-of-electric-fields">7.2.1. Example Problem: Superposition of Electric Fields</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-electric-field-contributions">7.2.2. Step 1: Electric Field Contributions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-electric-field-magnitudes">7.2.3. Step 2: Electric Field Magnitudes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-direction-of-electric-fields">7.2.4. Step 3: Direction of Electric Fields</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-net-electric-field">7.2.5. Step 4: Net Electric Field</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-magnitude-and-direction">7.2.6. Step 5: Magnitude and Direction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-answer">7.2.7. Final Answer:</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition-of-charges">7.2. Superposition of charges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-coulombs-law">7.3. Infinitesimal Coulombs law</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rectilinear-rod">7.3.1. Rectilinear Rod</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gausss-law">7.4. Gauss’s law</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitational-analogue">7.5. Gravitational Analogue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solid-angle-perspective">7.5. Solid Angle Perspective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitational-analogue">7.6. Gravitational Analogue</a></li>
 </ul>
   </nav></div>
 

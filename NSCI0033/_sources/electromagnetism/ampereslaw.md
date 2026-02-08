@@ -1,14 +1,14 @@
 # Ampère's Circuital Law
 Going back to the magnetic field due to an infinite wire in Equation {eq}`InfiniteWireBField`:
 ```{math}
-B_\theta = \frac{\mu_0\,I}{2\pi\,r}
+B_\phi = \frac{\mu_0\,I}{2\pi\,R}
 ```
 and recall that this expression (and it's electric field counterpart in {numref}`finitelineofcharge`) is derived by considering some bounding 
 surface around the line of charge.  We found the boundary surface area from the  circumference of the cylinders cross sectional area and multiplying by the 
 cylinder length - but in essence we found a <b> bounding contour </b> for moving charges.  If we rearrange our expression for the magnetic field:
 
 ```{math}
-B_\theta\,(2\pi\,r) = \mu_0\,I \Longleftrightarrow B \times (\text{boundary around I}) = \mu_0\,I_\text{{enclosed by boundary}}
+B_\phi\,(2\pi\,R) = \mu_0\,I \Longleftrightarrow B \times (\text{boundary around I}) = \mu_0\,I_\text{{enclosed by boundary}}
 ```
 
 We can consider breaking up this boundary (containing the current $I$) into elements $\mathrm{d} {\bf \ell}$ and then through a contour integral find the LHS here, 
@@ -36,7 +36,7 @@ akin to solving Gauss's law,  that there are two regimes of interest:
 
 Applying Ampère's law, we find the $I_{enclosed} = I$ here and therefore:
 ```{math}
-\oint {\bf B} \cdot \mathrm{d} {\bf \ell} = B_\theta\,(2\pi\,r) = \mu_0\,I \Rightarrow {\bf B} = \frac{\mu_0\,I}{2\pi\,r}\,\hat{{\bf \theta}}
+\oint {\bf B} \cdot \mathrm{d} {\bf \ell} = B_\phi\,(2\pi\,R) = \mu_0\,I \Rightarrow {\bf B} = \frac{\mu_0\,I}{2\pi\,R}\,{\mathbf{e_ \phi}}
 ```
     
 - <b>REGION II: $r < R$ </b>
@@ -45,16 +45,16 @@ In order to find the $I_{enclosed}$ we can see from Equation {eq}`driftvelocity`
 therefore we can calculate the uniform current density $\rho = I / A$.  Therefore here:
 
 ```{math}
-\oint {\bf B} \cdot \mathrm{d} {\bf \ell} = B_\theta\,(2\pi\,r) = \mu_0\,I\left(\frac{\,\pi\,r^2}{\pi\,R^2}\right) \Rightarrow {\bf B} = 
-\frac{\mu_0\,I\,r}{2\pi\,R^2}\,\hat{{\bf \theta}}
+\oint {\bf B} \cdot \mathrm{d} {\bf \ell} = B_\phi\,(2\pi\,R) = \mu_0\,I\left(\frac{\,\pi\,R^2}{\pi\,R^2}\right) \Rightarrow {\bf B} = 
+\frac{\mu_0\,I\,R}{2\pi\,R^2}\,{\mathbf{e_ \phi}}
 ```
 
 We see that at the boundary of the wire, $r = R$, these two magnetic field expressions agree.  Therefore the magnetic field is given by the 
 piecewise function:
 ```{math}
 {\bf B} = \begin{cases} 
-      \mu_0 \,I\, r / 2 \pi\, R^2 \,\hat{\bf \theta} & r < R \\
-      \mu_0 \,I / 2 \pi\, r \,\hat{\bf \theta} & r \geq R 
+      \mu_0 \,I\, r / 2 \pi\, R^2 \,\mathbf{e_\phi} & r < R \\
+      \mu_0 \,I / 2 \pi\, r \,\mathbf{e_\phi} & r \geq R 
    \end{cases}
 ```
 and we see a depiction of this in {numref}`BfieldWire`.  Note that once again the fields expression coincide at the boundary $r = R$.
@@ -106,36 +106,36 @@ name: BFieldCoilofWire
 <b> Bottom Pane </b> - At point $P$ there is a pair-wise cancellation of the magnetic field components in the $(x,\,y )$ plane, leaving only those in the $z$ direction.
 ```
 In order to find the magnetic field at point $P$, we can use the Biot-Savart law.  Given that the coil sits in the $(x,\, y)$ plane here and we are 
-interested in the magnetic field at a point on the $z$ axis, the vectors $\mathrm{d} {\bf \ell}$ and $\hat{{\bf r}}$ are perpendicular, therefore we have:
+interested in the magnetic field at a point on the $z$ axis, the vectors $\mathrm{d} {\bf \ell}$ and ${\mathbf{e_ r}}$ are perpendicular, therefore we have:
 
 ```{math}
-\mathrm{d} {\bf B} = \frac{\mu_0}{4\pi} \frac{I\,\mathrm{d} \ell}{r^2}\,\hat{{\bf z}} = \frac{\mu_0}{4\pi} \frac{I\,\mathrm{d} \ell}{z^2 + R^2}\,\hat{{\bf z}}
+\mathrm{d} {\bf B} = \frac{\mu_0}{4\pi} \frac{I\,\mathrm{d} \ell}{r^2}\,{\mathbf{e_ z}} = \frac{\mu_0}{4\pi} \frac{I\,\mathrm{d} \ell}{z^2 + R^2}\,{\mathbf{e_ z}}
 ```
 
 A further symmetry we can exploit is there since the direction of the current changes, the direction of $\mathrm{d} {\bf \ell}'$ is opposite to that of 
 $\mathrm{d} {\bf \ell}''$.  We find that there will a pair-wise cancellation of some of the magnetic field components therefore around the coil, as 
-shown in {numref}`BFieldCoilofWire`.  This means that the components of ${\bf B}$ that are <em> perpendicular </em> to the $z$ axis will cancel i.e. ${\bf B} \sin(\theta)$ 
-and only the net <em> parallel </em> components, i.e. ${\bf B} \cos(\theta)$ will be non-zero.  Therefore the expression we need to find is:
+shown in {numref}`BFieldCoilofWire`.  This means that the components of ${\bf B}$ that are <em> perpendicular </em> to the $z$ axis will cancel i.e. ${\bf B} \sin(\phi)$ 
+and only the net <em> parallel </em> components, i.e. ${\bf B} \cos(\phi)$ will be non-zero.  Therefore the expression we need to find is:
 
 ```{math}
-{\bf B} = \int_{\mathcal{C}} \frac{\mu_0}{4\pi} \frac{I\,\cos(\theta)\,\mathrm{d} \ell}{z^2 + R^2}\,\hat{{\bf z}} 
+{\bf B} = \int_{\mathcal{C}} \frac{\mu_0}{4\pi} \frac{I\,\cos(\phi)\,\mathrm{d} \ell}{z^2 + R^2}\,{\mathbf{e_ z}} 
 ```
 
-Given that $\cos(\theta) = R/\sqrt{z^2 + R^2}$, we can simplify:
+Given that $\cos(\phi) = R/\sqrt{z^2 + R^2}$, we can simplify:
 ```{math}
-{\bf B} = \frac{\mu_0\,I\,R}{4\pi\,(z^2 + R^2)^{3/2}}\,\int_{\mathcal{C}}\mathrm{d} \ell\,\hat{{\bf z}} 
+{\bf B} = \frac{\mu_0\,I\,R}{4\pi\,(z^2 + R^2)^{3/2}}\,\int_{\mathcal{C}}\mathrm{d} \ell\,{\mathbf{e_ z}} 
 ```
 Recall that we are integrating around the current loop, not over the $z$ axis, so we have moved all the constant terms outside the integral, now 
 integrating the segment elements $\mathrm{d} \ell$ round the loop produces the circumference $2\pi\,R$:
 
 ```{math}
-{\bf B} = \frac{\mu_0\,I\,R}{4\pi\,(z^2 + R^2)^{3/2}} \,(2\pi\,R)\,\hat{{\bf z}} = \frac{\mu_0\,I\,R^2}{2(z^2 + R^2)^{3/2}} \,\hat{{\bf z}}
+{\bf B} = \frac{\mu_0\,I\,R}{4\pi\,(z^2 + R^2)^{3/2}} \,(2\pi\,R)\,{\mathbf{e_ z}} = \frac{\mu_0\,I\,R^2}{2(z^2 + R^2)^{3/2}} \,{\mathbf{e_ z}}
 ```
 
 At the centre of the loop, $z = 0$ and therefore:
 
 ```{math}
-{\bf B} = \frac{\mu_0\,I}{2R} \,\hat{{\bf z}}
+{\bf B} = \frac{\mu_0\,I}{2R} \,{\mathbf{e_ z}}
 ```
 
 If we wanted to find the magnetic field at <em> all </em> points in space, the simplification of the cross product in the Biot-Savart law would not be true and the 
@@ -158,7 +158,7 @@ B = \frac{\mu_0\,N\,I}{L}
 where $N$ is the number of turns on the solenoid and $L$ is the length of the coil.  Likewise it is possible to find the magnetic field 
 from a solenoid shaped like a torus, as depicted in {numref}`BFieldSolenoid`:
 ```{math}
-B = \frac{\mu_0\,N\,I}{2\pi\,r}
+B = \frac{\mu_0\,N\,I}{2\pi\,R}
 ``` 
 where $r$ is the torus radius. 
 ```{figure} ../figures/BFieldSolenoid.png

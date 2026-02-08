@@ -15,7 +15,7 @@ and therefore the change in electric potential energy $\mathrm{d} U_E$ is found 
 For a point charge $Q$, centered on the origin, producing an electric field, then a charge moving in from $r \rightarrow \infty$ 
 up to a distance $r$, the potential energy is:
 ```{math}
-U_E = -\,\frac{Q\,Q_s}{4\pi\,\epsilon_0}\int_{\infty}^r \frac{\hat{{\bf r}}'}{(r')^2}\,\cdot \mathrm{\bf d} {\bf r}' = 
+U_E = -\,\frac{Q\,Q_s}{4\pi\,\epsilon_0}\int_{\infty}^r \frac{{\mathbf{e_r}}'}{(r')^2}\,\cdot \mathrm{\bf d} {\bf r}' = 
 \frac{Q\,Q_s}{4\pi\,\epsilon_0}\frac{1}{r}
 ```
 This gives rise to the idea of <b> Electric Potential </b> $V_E$,
@@ -36,7 +36,7 @@ U_E = Q\,V_E
 ``` 
 For a point charge $Q_S$ producing an electric field, the electrical potential is given by:
 ```{math}
-V_E = -\frac{Q_S}{4\pi\,\epsilon_0}\int_{\infty}^{r}\frac{\hat{\bf r}'}{(r')^2}\cdot\mathrm{\bf d}{\bf r}' 
+V_E = -\frac{Q_S}{4\pi\,\epsilon_0}\int_{\infty}^{r}\frac{\mathbf{e_r}'}{(r')^2}\cdot\mathrm{\bf d}{\bf r}' 
 = -\frac{Q_S}{4\pi\,\epsilon_0}\int_{\infty}^{r}\frac{\mathrm{d} r'}{(r')^2} = \frac{Q_S}{4\pi\,\epsilon_0}\frac{1}{r}
 ```
 The term <b>Potential Difference</b> is given to the difference between the electric potentials $\Delta V_E$ between 
