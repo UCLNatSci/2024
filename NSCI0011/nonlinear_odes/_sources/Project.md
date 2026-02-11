@@ -1,7 +1,5 @@
 # Week 4 - Prototype Submission Information
 
-Your protype should include the 
-
 ## Python Code
 
 - **Complete and Functional Code**: Provide the full Python script that performs the following tasks:

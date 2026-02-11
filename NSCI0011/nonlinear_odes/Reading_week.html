@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Week 4 - Prototype Submission Information &#8212; Non-Linear ODEs</title>
+    <title>Reading Week - Investigate Dynamical Systems &#8212; Non-Linear ODEs</title>
   
   
   
@@ -57,11 +57,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Project';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Reading_week';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Reading Week - Investigate Dynamical Systems" href="Reading_week.html" />
-    <link rel="prev" title="Week 3 - The Van der Pol Oscillator and Duffing Equation" href="VdPDuffing.html" />
+    <link rel="prev" title="Week 4 - Prototype Submission Information" href="Project.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,8 +184,8 @@
 <li class="toctree-l1"><a class="reference internal" href="NumericalMethods.html">Week 1 - Looking at Numerical Solutions to ODEs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pendulum.html">Week 2 - Solving the Non-Linear Pendulum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VdPDuffing.html">Week 3 - The Van der Pol Oscillator and Duffing Equation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 4 - Prototype Submission Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Reading_week.html">Reading Week - Investigate Dynamical Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Project.html">Week 4 - Prototype Submission Information</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Reading Week - Investigate Dynamical Systems</a></li>
 </ul>
 
     </div>
@@ -256,7 +257,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FProject.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FReading_week.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +287,7 @@
       
       
       
-      <li><a href="_sources/Project.md" target="_blank"
+      <li><a href="_sources/Reading_week.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -370,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Week 4 - Prototype Submission Information</h1>
+    <h1>Reading Week - Investigate Dynamical Systems</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,9 +381,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code">Python Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plots">Plots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-document">Description Document</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-to-investigate-dynamical-systems">Tools to investigate dynamical systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-space">Phase Space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-stability">Linear Stability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcations">Bifurcations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-exponents">Lyapunov Exponents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attractors">Attractors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-example-systems">Canonical Example Systems</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -394,85 +401,94 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="week-4-prototype-submission-information">
-<h1>Week 4 - Prototype Submission Information<a class="headerlink" href="#week-4-prototype-submission-information" title="Link to this heading">#</a></h1>
-<section id="python-code">
-<h2>Python Code<a class="headerlink" href="#python-code" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="reading-week-investigate-dynamical-systems">
+<h1>Reading Week - Investigate Dynamical Systems<a class="headerlink" href="#reading-week-investigate-dynamical-systems" title="Link to this heading">#</a></h1>
+<p>Over reading week read through Chapter 5 of Steven Strogatz — <em>Nonlinear Dynamics and Chaos</em>.  It will explain to you some of the following ideas in a formal way which will be useful for the second part of your project. (optionally chapters 6 and 7 are also useful!)</p>
+<p>A dynamical system describes how a state evolves over time:</p>
 <ul class="simple">
-<li><p><strong>Complete and Functional Code</strong>: Provide the full Python script that performs the following tasks:</p></li>
+<li><p><strong>Continuous time (ODEs):</strong><br />
+<span class="math notranslate nohighlight">\(dx/dt = f(x)\)</span></p></li>
+<li><p><strong>Discrete time (maps):</strong><br />
+<span class="math notranslate nohighlight">\(x_{n+1} = f(x_n) \)</span></p></li>
 </ul>
-<ol class="arabic simple">
-<li><p>Solves the Duffing equation.</p></li>
-<li><p>Generates a time series plot.</p></li>
-<li><p>Generates a phase portrait plot.</p></li>
-</ol>
+<p>The state (x) may represent position, population, voltage, climate variables, etc. The goal is to understand <em>long-term behaviour</em> from simple rules.</p>
+<p>When investigating a system, ask:</p>
 <ul class="simple">
-<li><p><strong>Code Comments</strong>: Include clear and concise comments within your code to explain:</p></li>
+<li><p>What are the <strong>fixed points / equilibria</strong>?</p></li>
+<li><p>Are they <strong>stable or unstable</strong>?</p></li>
+<li><p>Are there <strong>limit cycles</strong> or periodic orbits?</p></li>
+<li><p>Is the motion <strong>quasiperiodic</strong> or <strong>chaotic</strong>?</p></li>
+<li><p>How sensitive is it to initial conditions?</p></li>
 </ul>
-<ol class="arabic simple" start="4">
-<li><p>Initial conditions setup.</p></li>
-<li><p>ODE formulation and integration method.</p></li>
-<li><p>Plotting functions and any other significant code segments.</p></li>
-</ol>
-<p><em>Example</em>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-    <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
-
-    <span class="c1"># Define the system of ODEs</span>
-    <span class="k">def</span> <span class="nf">system</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="n">dydt</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">dydt</span>
-
-    <span class="c1"># Initial conditions</span>
-    <span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-
-    <span class="c1"># Time span for the solution</span>
-    <span class="n">t_span</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-
-    <span class="c1"># Solve the ODE</span>
-    <span class="n">solution</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">t_span</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
-
-    <span class="c1"># Plotting the time series</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">solution</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">solution</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Variable 1&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">solution</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">solution</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Variable 2&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Variables&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Time Series Plot&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-</pre></div>
+<section id="tools-to-investigate-dynamical-systems">
+<h2>Tools to investigate dynamical systems<a class="headerlink" href="#tools-to-investigate-dynamical-systems" title="Link to this heading">#</a></h2>
+<section id="phase-space">
+<h3>Phase Space<a class="headerlink" href="#phase-space" title="Link to this heading">#</a></h3>
+<p>All possible states of the system. Dynamics becomes geometry.</p>
+</section>
+<section id="linear-stability">
+<h3>Linear Stability<a class="headerlink" href="#linear-stability" title="Link to this heading">#</a></h3>
+<p>Linearise around equilibrium using the Jacobian:</p>
+<ul class="simple">
+<li><p>Eigenvalues → determine local stability</p></li>
+<li><p>Real part &gt; 0 → unstable</p></li>
+<li><p>Real part &lt; 0 → stable</p></li>
+</ul>
+</section>
+<section id="bifurcations">
+<h3>Bifurcations<a class="headerlink" href="#bifurcations" title="Link to this heading">#</a></h3>
+<p>Qualitative change in behaviour as a parameter varies:</p>
+<ul class="simple">
+<li><p>Saddle-node</p></li>
+<li><p>Transcritical</p></li>
+<li><p>Pitchfork</p></li>
+<li><p>Hopf</p></li>
+</ul>
+</section>
+<section id="lyapunov-exponents">
+<h3>Lyapunov Exponents<a class="headerlink" href="#lyapunov-exponents" title="Link to this heading">#</a></h3>
+<p>Measure exponential separation of nearby trajectories.</p>
+<ul class="simple">
+<li><p>Largest exponent &gt; 0 → chaos</p></li>
+</ul>
+</section>
+<section id="attractors">
+<h3>Attractors<a class="headerlink" href="#attractors" title="Link to this heading">#</a></h3>
+<p>Sets that trajectories approach:</p>
+<ul class="simple">
+<li><p>Fixed points</p></li>
+<li><p>Limit cycles</p></li>
+<li><p>Strange (chaotic) attractors</p></li>
+</ul>
+</section>
+<section id="canonical-example-systems">
+<h3>Canonical Example Systems<a class="headerlink" href="#canonical-example-systems" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>System</p></th>
+<th class="head"><p>Why it matters</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Logistic map</p></td>
+<td><p>Period-doubling and route to chaos</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lorenz system</p></td>
+<td><p>Strange attractor, deterministic chaos</p></td>
+</tr>
+<tr class="row-even"><td><p>Van der Pol oscillator</p></td>
+<td><p>Nonlinear limit cycle</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simple pendulum</p></td>
+<td><p>Hamiltonian vs damped behaviour</p></td>
+</tr>
+<tr class="row-even"><td><p>Duffing oscillator</p></td>
+<td><p>Bifurcations and chaos</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
-<section id="plots">
-<h2>Plots<a class="headerlink" href="#plots" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Time Series Plot</strong>: Illustrate how the system’s variables evolve over time.</p></li>
-<li><p><strong>Phase Portrait Plot</strong>: Depict the trajectories of the system in the phase plane.</p></li>
-</ul>
-<p><em>Note</em>: Choose initial conditions that highlight interesting behaviors in the system. Exploring a variety of initial conditions can reveal a range of dynamics.</p>
-</section>
-<section id="description-document">
-<h2>Description Document<a class="headerlink" href="#description-document" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Length</strong>: Limit to one page maximum.</p></li>
-<li><p><strong>Content</strong>:</p>
-<ul>
-<li><p><strong>Analysis of Plots</strong>: Discuss very briefly the behaviors observed in your plots.</p></li>
-<li><p><strong>Code Explanation</strong>:</p>
-<ul>
-<li><p>Describe how the ODE was transformed into a coupled system for numerical solving.</p></li>
-<li><p>Specify the initial conditions used and the rationale behind their selection.</p></li>
-<li><p>Briefly explain the numerical methods or solvers employed.</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><em>Example</em>:</p>
-<p>In the time series plot, Variable 1 exhibits damped oscillations, converging to a steady state, while Variable 2 shows a monotonic decrease. The phase portrait reveals a spiral trajectory indicating a stable focus at the origin. The ODE was decomposed into a system of first-order equations to facilitate the use of the <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> solver from SciPy. Initial conditions were selected to demonstrate the system’s response to perturbations from equilibrium.</p>
 </section>
 </section>
 
@@ -507,22 +523,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="VdPDuffing.html"
+       href="Project.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Week 3 - The Van der Pol Oscillator and Duffing Equation</p>
+        <p class="prev-next-title">Week 4 - Prototype Submission Information</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="Reading_week.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Reading Week - Investigate Dynamical Systems</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -540,9 +547,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code">Python Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plots">Plots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-document">Description Document</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-to-investigate-dynamical-systems">Tools to investigate dynamical systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-space">Phase Space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-stability">Linear Stability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcations">Bifurcations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-exponents">Lyapunov Exponents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attractors">Attractors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-example-systems">Canonical Example Systems</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
