@@ -1,0 +1,1491 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Weeks 6–10 — Investigating Chaos &#8212; Non-Linear ODEs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chaos';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Reading Week - Investigate Dynamical Systems" href="Reading_week.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Non-Linear ODEs - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Non-Linear ODEs - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Solving Non-Linear Ordinary Differential Equations
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="NumericalMethods.html">Week 1 - Looking at Numerical Solutions to ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pendulum.html">Week 2 - Solving the Non-Linear Pendulum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VdPDuffing.html">Week 3 - The Van der Pol Oscillator and Duffing Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Project.html">Week 4 - Prototype Submission Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reading_week.html">Reading Week - Investigate Dynamical Systems</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Weeks 6–10 — Investigating Chaos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FChaos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Chaos.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Weeks 6–10 — Investigating Chaos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinism-does-not-imply-predictability">Determinism Does Not Imply Predictability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-vs-continuous-time-chaos">Discrete vs Continuous-Time Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-chaos-special">What Makes Chaos Special?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hallmarks-of-chaotic-behaviour">Hallmarks of Chaotic Behaviour</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitive-dependence-on-initial-conditions">Sensitive Dependence on Initial Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aperiodic-but-bounded-long-term-behaviour">Aperiodic but Bounded Long-Term Behaviour</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-mixing">Topological Mixing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dense-periodic-orbits">Dense Periodic Orbits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strange-attractors-dissipative-systems">Strange Attractors (Dissipative Systems)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-diagnostics-of-chaos">Quantitative Diagnostics of Chaos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-exponents-and-predictability-time">Lyapunov Exponents and Predictability Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearised-dynamics-continuous-time">Linearised Dynamics (Continuous Time)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#criterion-for-chaos">Criterion for Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-time-systems">Discrete-Time Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predictability-time-lyapunov-time">Predictability Time (Lyapunov Time)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcations-and-routes-to-chaos">Bifurcations and Routes to Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-routes-to-chaos">Common Routes to Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-diagnostics">Summary of Diagnostics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-chaos-is-not">What Chaos Is Not</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-randomness">Not Randomness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-noise">Not Noise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-mere-nonlinearity">Not Mere Nonlinearity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-simple-visual-complexity">Not Simple Visual Complexity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-unbounded-instability">Not Unbounded Instability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-complete-disorder">Not Complete Disorder</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-the-logistic-map">Case Study: The Logistic Map</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-the-logistic-map">Definition of the Logistic Map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-points-and-stability">Fixed Points and Stability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#period-doubling-route-to-chaos">Period-Doubling Route to Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#onset-of-chaos">Onset of Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-exponent-of-the-logistic-map">Lyapunov Exponent of the Logistic Map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcation-diagram">Bifurcation Diagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invariant-measure-r-4">Invariant Measure (r = 4)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#period-three-implies-chaos">Period Three Implies Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-exploration-python-example">Numerical Exploration (Python Example)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-the-duffing-oscillator-continuous-time-chaos">Case Study: The Duffing Oscillator (Continuous-Time Chaos)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-duffing-equation">The Duffing Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-chaos-is-possible-here">Why Chaos Is Possible Here</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poincare-section-stroboscopic-map">Poincaré Section (Stroboscopic Map)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#largest-lyapunov-exponent">Largest Lyapunov Exponent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcation-structure">Bifurcation Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-space-structure">Phase-Space Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-continuous-time-diagnostics">Summary of Continuous-Time Diagnostics</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="weeks-610-investigating-chaos">
+<h1>Weeks 6–10 — Investigating Chaos<a class="headerlink" href="#weeks-610-investigating-chaos" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Chaos is a phenomenon in deterministic dynamical systems in which
+long-term behaviour becomes practically unpredictable despite the
+governing laws being exact and non-random.</p>
+<p>A dynamical system describes how a state evolves in time.<br />
+It can be written either as:</p>
+<p><em>Continuous-time system (flow)</em></p>
+<div class="math notranslate nohighlight">
+\[\frac{d\mathbf{x}}{dt} = \mathbf{f}(\mathbf{x}),\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{x}(t) \in \mathbb{R}^n\)</span> is the state vector,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{f}\)</span> is a deterministic nonlinear function.</p></li>
+</ul>
+<p><em>Discrete-time system (map)</em></p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}_{n+1} = \mathbf{F}(\mathbf{x}_n),\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{x}_n\)</span> is the state at step <span class="math notranslate nohighlight">\(n\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is a deterministic update rule.</p></li>
+</ul>
+<p>In both cases:</p>
+<ul class="simple">
+<li><p>There is <strong>no randomness</strong> in the equations.</p></li>
+<li><p>Once an initial condition is specified, the entire future trajectory is uniquely determined (assuming standard existence and uniqueness conditions).</p></li>
+</ul>
+<section id="determinism-does-not-imply-predictability">
+<h3>Determinism Does Not Imply Predictability<a class="headerlink" href="#determinism-does-not-imply-predictability" title="Link to this heading">#</a></h3>
+<p>A central insight of chaos theory is:</p>
+<div class="math notranslate nohighlight">
+\[\text{Deterministic laws} \;\not\Rightarrow\; \text{Long-term predictability}.\]</div>
+<p>Even when equations are perfectly known, arbitrarily small uncertainties
+in the initial condition can grow exponentially with time.
+Because real measurements always have finite precision, this leads to
+practical unpredictability.</p>
+<p>Thus, chaos represents a breakdown of long-term prediction —
+not a breakdown of determinism.</p>
+</section>
+<section id="discrete-vs-continuous-time-chaos">
+<h3>Discrete vs Continuous-Time Chaos<a class="headerlink" href="#discrete-vs-continuous-time-chaos" title="Link to this heading">#</a></h3>
+<p>Chaos can occur in both:</p>
+<p><em>Discrete-Time Systems (Maps)</em></p>
+<ul class="simple">
+<li><p>Often lower-dimensional.</p></li>
+<li><p>Can exhibit chaos even in one dimension.</p></li>
+<li><p>Example: the logistic map</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[x_{n+1} = r x_n (1 - x_n).\]</div>
+<p><em>Continuous-Time Systems (Flows)</em></p>
+<ul class="simple">
+<li><p>Governed by differential equations.</p></li>
+<li><p>Require sufficient phase-space dimension.</p></li>
+<li><p>Autonomous systems in two dimensions cannot exhibit chaos
+(Poincaré–Bendixson theorem).</p></li>
+<li><p>Chaos typically requires:</p>
+<ul>
+<li><p>At least three dimensions, or</p></li>
+<li><p>Explicit time-dependent forcing.</p></li>
+</ul>
+</li>
+</ul>
+<p>Example: the Lorenz system</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\dot{x} &amp;= \sigma (y - x), \\
+\dot{y} &amp;= x(\rho - z) - y, \\
+\dot{z} &amp;= xy - \beta z.
+\end{aligned}\end{split}\]</div>
+</section>
+<section id="what-makes-chaos-special">
+<h3>What Makes Chaos Special?<a class="headerlink" href="#what-makes-chaos-special" title="Link to this heading">#</a></h3>
+<p>Chaotic systems are characterised by a combination of:</p>
+<ul class="simple">
+<li><p>Deterministic evolution,</p></li>
+<li><p>Exponential sensitivity to initial conditions,</p></li>
+<li><p>Bounded yet aperiodic motion,</p></li>
+<li><p>Complex geometric structure in phase space.</p></li>
+</ul>
+<p>They are neither random nor simply complicated —
+they are structured, lawful systems exhibiting instability and recurrence.</p>
+<p>The following sections formalise these properties,
+introduce quantitative diagnostics,
+and demonstrate how chaos is identified in both
+discrete and continuous-time systems.</p>
+</section>
+</section>
+<section id="hallmarks-of-chaotic-behaviour">
+<h2>Hallmarks of Chaotic Behaviour<a class="headerlink" href="#hallmarks-of-chaotic-behaviour" title="Link to this heading">#</a></h2>
+<p>Chaos is not defined by visual irregularity or mere complexity,
+but by a specific combination of dynamical and geometric properties.</p>
+<p>The following features characterise chaotic systems at a conceptual level.
+Precise quantitative tests are introduced later.</p>
+<section id="sensitive-dependence-on-initial-conditions">
+<h3>Sensitive Dependence on Initial Conditions<a class="headerlink" href="#sensitive-dependence-on-initial-conditions" title="Link to this heading">#</a></h3>
+<p>A defining property of chaos is <strong>sensitive dependence on initial conditions</strong>.</p>
+<p>If two trajectories begin arbitrarily close in phase space,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}_0
+\quad \text{and} \quad
+\mathbf{x}_0 + \delta \mathbf{x}_0,\]</div>
+<p>then their separation typically grows exponentially:</p>
+<div class="math notranslate nohighlight">
+\[\|\delta \mathbf{x}(t)\|
+\approx
+\|\delta \mathbf{x}_0\| e^{\lambda t},\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\|\delta \mathbf{x}(t)\|\)</span> is the distance between trajectories,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda &gt; 0\)</span> represents an exponential growth rate.</p></li>
+</ul>
+<p>This phenomenon is often called the <strong>butterfly effect</strong>.</p>
+<p>Because real measurements have finite precision,
+exponential growth of errors leads to practical unpredictability,
+even though the equations themselves are deterministic.</p>
+<p>(Exponential growth rates are quantified using Lyapunov exponents,
+introduced in Section 3.)</p>
+</section>
+<section id="aperiodic-but-bounded-long-term-behaviour">
+<h3>Aperiodic but Bounded Long-Term Behaviour<a class="headerlink" href="#aperiodic-but-bounded-long-term-behaviour" title="Link to this heading">#</a></h3>
+<p>Chaotic trajectories:</p>
+<ul class="simple">
+<li><p>Do not converge to stable fixed points,</p></li>
+<li><p>Do not settle into stable periodic orbits,</p></li>
+<li><p>Never exactly repeat.</p></li>
+</ul>
+<p>Formally, there is no finite <span class="math notranslate nohighlight">\(T &gt; 0\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}(t + T) = \mathbf{x}(t)
+\quad \text{for all } t.\]</div>
+<p>However, chaotic motion is typically <strong>bounded</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\|\mathbf{x}(t)\| &lt; C
+\quad \text{for all } t \ge 0,\]</div>
+<p>for some constant <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<p>Thus chaos combines:</p>
+<ul class="simple">
+<li><p>Instability,</p></li>
+<li><p>Non-periodicity,</p></li>
+<li><p>Long-term confinement to a structured region of phase space.</p></li>
+</ul>
+<p>This distinguishes chaos from:</p>
+<ul class="simple">
+<li><p>Simple periodic oscillation,</p></li>
+<li><p>Quasi-periodic motion on invariant tori,</p></li>
+<li><p>Unbounded exponential growth.</p></li>
+</ul>
+</section>
+<section id="topological-mixing">
+<h3>Topological Mixing<a class="headerlink" href="#topological-mixing" title="Link to this heading">#</a></h3>
+<p>Chaos is not only locally unstable but also globally intertwined.</p>
+<p>A system is <strong>topologically mixing</strong> on an invariant set <span class="math notranslate nohighlight">\(\mathcal{A}\)</span>
+if, for any two nonempty open sets <span class="math notranslate nohighlight">\(U, V \subset \mathcal{A}\)</span>,
+there exists a time <span class="math notranslate nohighlight">\(T\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\phi^t(U) \cap V \neq \varnothing
+\quad \text{for all } t &gt; T,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi^t\)</span> denotes the flow (or iterated map).</p>
+<p>Intuitively:</p>
+<ul class="simple">
+<li><p>Any small region of phase space eventually spreads throughout the accessible region.</p></li>
+<li><p>The system continually redistributes trajectories.</p></li>
+</ul>
+<p>Mixing implies long-term loss of information about
+where trajectories originated.</p>
+</section>
+<section id="dense-periodic-orbits">
+<h3>Dense Periodic Orbits<a class="headerlink" href="#dense-periodic-orbits" title="Link to this heading">#</a></h3>
+<p>Although typical chaotic trajectories are aperiodic,
+periodic orbits are densely embedded within the chaotic set.</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> be an invariant chaotic set.
+Periodic orbits are <strong>dense</strong> in <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> if:</p>
+<p>For every point <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathcal{A}\)</span>
+and every neighbourhood <span class="math notranslate nohighlight">\(U\)</span> of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[U \cap \{\text{periodic points}\} \neq \varnothing.\]</div>
+<p>Thus:</p>
+<ul class="simple">
+<li><p>Infinitely many periodic motions exist,</p></li>
+<li><p>They lie arbitrarily close to every chaotic trajectory,</p></li>
+<li><p>They are typically unstable.</p></li>
+</ul>
+<p>Chaotic motion can be viewed as trajectories
+continually shadowing different unstable periodic orbits.</p>
+</section>
+<section id="strange-attractors-dissipative-systems">
+<h3>Strange Attractors (Dissipative Systems)<a class="headerlink" href="#strange-attractors-dissipative-systems" title="Link to this heading">#</a></h3>
+<p>In dissipative systems, chaotic motion often occurs on a
+<strong>strange attractor</strong>.</p>
+<p>An attractor <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> satisfies:</p>
+<ol class="arabic">
+<li><p><strong>Invariance</strong></p>
+<div class="math notranslate nohighlight">
+\[\phi^t(\mathcal{A}) = \mathcal{A}
+\quad \text{for all } t \ge 0.\]</div>
+</li>
+<li><p><strong>Attraction</strong>
+Nearby trajectories converge toward <span class="math notranslate nohighlight">\(\mathcal{A}\)</span>.</p></li>
+</ol>
+<p>A strange attractor additionally exhibits:</p>
+<ul class="simple">
+<li><p>Sensitive dependence on initial conditions,</p></li>
+<li><p>Complex geometric structure,</p></li>
+<li><p>Typically fractal (non-integer) dimension.</p></li>
+</ul>
+<p>Such attractors arise from repeated stretching
+(exponential instability)
+combined with folding and dissipation
+(which keep trajectories bounded).</p>
+<p>The Lorenz attractor is a classical example.</p>
+</section>
+</section>
+<section id="quantitative-diagnostics-of-chaos">
+<h2>Quantitative Diagnostics of Chaos<a class="headerlink" href="#quantitative-diagnostics-of-chaos" title="Link to this heading">#</a></h2>
+<p>The hallmarks of chaos describe qualitative behaviour.
+To determine whether a system is chaotic in practice,
+we require <strong>quantitative diagnostics</strong>.</p>
+<p>This section develops the main mathematical tools used
+to detect and measure chaos.</p>
+<section id="lyapunov-exponents-and-predictability-time">
+<h3>Lyapunov Exponents and Predictability Time<a class="headerlink" href="#lyapunov-exponents-and-predictability-time" title="Link to this heading">#</a></h3>
+<p>The most fundamental quantitative signature of chaos
+is the existence of a <strong>positive Lyapunov exponent</strong>.</p>
+</section>
+<section id="linearised-dynamics-continuous-time">
+<h3>Linearised Dynamics (Continuous Time)<a class="headerlink" href="#linearised-dynamics-continuous-time" title="Link to this heading">#</a></h3>
+<p>Consider</p>
+<div class="math notranslate nohighlight">
+\[\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}),\]</div>
+<p>and let <span class="math notranslate nohighlight">\(\mathbf{x}(t)\)</span> be a trajectory.</p>
+<p>A small perturbation evolves according to the linearised equation</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}\delta \mathbf{x}
+=
+D\mathbf{f}(\mathbf{x}(t))\, \delta \mathbf{x},\]</div>
+<p>where <span class="math notranslate nohighlight">\(D\mathbf{f}\)</span> is the <strong>Jacobian matrix</strong> of <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> with respect to the state <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{f} : \mathbb{R}^n \to \mathbb{R}^n\)</span> with components</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{f}(\mathbf{x}) = (f_1(\mathbf{x}), f_2(\mathbf{x}), \dots, f_n(\mathbf{x}))^\top,
+\quad
+\mathbf{x} = (x_1, x_2, \dots, x_n)^\top.\]</div>
+<p>Then the Jacobian evaluated along the trajectory <span class="math notranslate nohighlight">\(\mathbf{x}(t)\)</span> is the <span class="math notranslate nohighlight">\(n\times n\)</span> matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}D\mathbf{f}(\mathbf{x}(t))
+=
+\left[
+\frac{\partial f_i}{\partial x_j}\big(\mathbf{x}(t)\big)
+\right]_{i,j=1}^n
+=
+\begin{pmatrix}
+\frac{\partial f_1}{\partial x_1} &amp; \frac{\partial f_1}{\partial x_2} &amp; \cdots &amp; \frac{\partial f_1}{\partial x_n} \\
+\frac{\partial f_2}{\partial x_1} &amp; \frac{\partial f_2}{\partial x_2} &amp; \cdots &amp; \frac{\partial f_2}{\partial x_n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\frac{\partial f_n}{\partial x_1} &amp; \frac{\partial f_n}{\partial x_2} &amp; \cdots &amp; \frac{\partial f_n}{\partial x_n}
+\end{pmatrix}_{\mathbf{x}=\mathbf{x}(t)}.\end{split}\]</div>
+<p>Equivalently, <span class="math notranslate nohighlight">\(D\mathbf{f}(\mathbf{x})\)</span> is the linear map that gives the first-order Taylor expansion</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{f}(\mathbf{x} + \delta\mathbf{x})
+\approx
+\mathbf{f}(\mathbf{x}) + D\mathbf{f}(\mathbf{x})\,\delta\mathbf{x}.\]</div>
+</section>
+<section id="definition">
+<h3>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h3>
+<p>The Lyapunov exponent associated with a perturbation direction is</p>
+<div class="math notranslate nohighlight">
+\[\lambda
+=
+\lim_{t \to \infty}
+\frac{1}{t}
+\ln
+\frac{\|\delta \mathbf{x}(t)\|}
+     {\|\delta \mathbf{x}(0)\|}.\]</div>
+<p>An <span class="math notranslate nohighlight">\(n\)</span>-dimensional system has a full <strong>Lyapunov spectrum</strong></p>
+<div class="math notranslate nohighlight">
+\[\lambda_1 \ge \lambda_2 \ge \dots \ge \lambda_n.\]</div>
+</section>
+<section id="criterion-for-chaos">
+<h3>Criterion for Chaos<a class="headerlink" href="#criterion-for-chaos" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\boxed{\lambda_1 &gt; 0}\]</div>
+<p>A positive largest exponent guarantees exponential divergence:</p>
+<div class="math notranslate nohighlight">
+\[\|\delta \mathbf{x}(t)\|
+\sim
+e^{\lambda_1 t}.\]</div>
+<p>In continuous-time systems:</p>
+<ul>
+<li><p>One exponent is always zero (flow direction).</p></li>
+<li><p>Dissipative chaos typically satisfies</p>
+<div class="math notranslate nohighlight">
+\[\lambda_1 &gt; 0,
+\qquad
+\sum_{i=1}^n \lambda_i &lt; 0.\]</div>
+</li>
+</ul>
+<p>We can think of two trajectories in phase space, nearby:</p>
+<figure class="align-default" id="orbital-instability">
+<img alt="_images/Orbital_instability.png" src="_images/Orbital_instability.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Explanations of the Lyapunov exponent from phase space.</span><a class="headerlink" href="#orbital-instability" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="discrete-time-systems">
+<h3>Discrete-Time Systems<a class="headerlink" href="#discrete-time-systems" title="Link to this heading">#</a></h3>
+<p>For a map</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}_{n+1} = \mathbf{F}(\mathbf{x}_n),\]</div>
+<p>the Lyapunov exponent is</p>
+<div class="math notranslate nohighlight">
+\[\lambda
+=
+\lim_{N \to \infty}
+\frac{1}{N}
+\sum_{n=0}^{N-1}
+\ln \|D\mathbf{F}(\mathbf{x}_n)\|.\]</div>
+</section>
+<section id="predictability-time-lyapunov-time">
+<h3>Predictability Time (Lyapunov Time)<a class="headerlink" href="#predictability-time-lyapunov-time" title="Link to this heading">#</a></h3>
+<p>If initial uncertainty is <span class="math notranslate nohighlight">\(\epsilon\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[t_{\text{predict}}
+\approx
+\frac{1}{\lambda_1}
+\ln\!\left(\frac{1}{\epsilon}\right).\]</div>
+<p>The characteristic timescale</p>
+<div class="math notranslate nohighlight">
+\[\tau_L = \frac{1}{\lambda_1}\]</div>
+<p>is called the <strong>Lyapunov time</strong>.</p>
+<p>It measures how quickly predictability is lost.</p>
+</section>
+<section id="bifurcations-and-routes-to-chaos">
+<h3>Bifurcations and Routes to Chaos<a class="headerlink" href="#bifurcations-and-routes-to-chaos" title="Link to this heading">#</a></h3>
+<p>Chaos typically emerges through parameter variation.</p>
+<p>Consider</p>
+<div class="math notranslate nohighlight">
+\[\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}; \mu).\]</div>
+<p>As <span class="math notranslate nohighlight">\(\mu\)</span> changes, qualitative transitions occur.</p>
+</section>
+<section id="common-routes-to-chaos">
+<h3>Common Routes to Chaos<a class="headerlink" href="#common-routes-to-chaos" title="Link to this heading">#</a></h3>
+<p><em>Period-Doubling Cascade</em></p>
+<div class="math notranslate nohighlight">
+\[\text{period-1}
+\rightarrow
+\text{period-2}
+\rightarrow
+\text{period-4}
+\rightarrow
+\cdots
+\rightarrow
+\text{chaos}.\]</div>
+<p><em>Intermittency</em></p>
+<p>Alternation between near-periodic behaviour and chaotic bursts.</p>
+<p><em>Crisis</em></p>
+<p>Sudden change in chaotic attractor size or existence.</p>
+<p><em>Bifurcation Diagram</em></p>
+<p>To visualise:</p>
+<ol class="arabic simple">
+<li><p>Vary parameter <span class="math notranslate nohighlight">\(\mu\)</span>.</p></li>
+<li><p>Remove transients.</p></li>
+<li><p>Plot long-term values (e.g. maxima or Poincaré points).</p></li>
+<li><p>Identify branches, cascades, and chaotic bands.</p></li>
+</ol>
+</section>
+<section id="summary-of-diagnostics">
+<h3>Summary of Diagnostics<a class="headerlink" href="#summary-of-diagnostics" title="Link to this heading">#</a></h3>
+<p>Chaos is strongly supported if:</p>
+<ul class="simple">
+<li><p>Largest Lyapunov exponent <span class="math notranslate nohighlight">\( \lambda_1 &gt; 0 \)</span>,</p></li>
+<li><p>Motion is bounded,</p></li>
+<li><p>Attractor has non-integer dimension,</p></li>
+<li><p>Power spectrum is broadband,</p></li>
+<li><p>Bifurcation structure exhibits known routes to chaos.</p></li>
+</ul>
+<p>These tools provide a rigorous, measurable framework
+for identifying chaotic dynamics.</p>
+</section>
+</section>
+<section id="what-chaos-is-not">
+<h2>What Chaos Is Not<a class="headerlink" href="#what-chaos-is-not" title="Link to this heading">#</a></h2>
+<p>Understanding chaos requires distinguishing it from several
+commonly confused concepts. Chaos is subtle: it combines
+determinism, instability, and geometric structure — but it is
+neither randomness nor mere complexity.</p>
+<p>Clarifying what chaos is <em>not</em> prevents conceptual mistakes.</p>
+<section id="not-randomness">
+<h3>Not Randomness<a class="headerlink" href="#not-randomness" title="Link to this heading">#</a></h3>
+<p>A chaotic system is governed by deterministic equations:</p>
+<div class="math notranslate nohighlight">
+\[\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x})
+\quad \text{or} \quad
+\mathbf{x}_{n+1} = \mathbf{F}(\mathbf{x}_n).\]</div>
+<p>Given an exact initial condition <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>,
+the future trajectory is uniquely determined.</p>
+<p>In contrast, a stochastic system includes intrinsic randomness:</p>
+<div class="math notranslate nohighlight">
+\[\dot{\mathbf{x}}
+=
+\mathbf{f}(\mathbf{x})
++
+\boldsymbol{\eta}(t),\]</div>
+<p>where <span class="math notranslate nohighlight">\(\boldsymbol{\eta}(t)\)</span> is a random process.</p>
+<p><strong>Key distinction:</strong></p>
+<ul class="simple">
+<li><p>Chaos → unpredictability from exponential sensitivity.</p></li>
+<li><p>Randomness → unpredictability from probabilistic forcing.</p></li>
+</ul>
+<p>Identical initial conditions in a chaotic system always produce identical trajectories. This is not true in a stochastic system.</p>
+</section>
+<section id="not-noise">
+<h3>Not Noise<a class="headerlink" href="#not-noise" title="Link to this heading">#</a></h3>
+<p>Chaotic signals often <em>look</em> noisy in time series plots.
+However, chaotic dynamics have:</p>
+<ul class="simple">
+<li><p>Finite-dimensional deterministic structure,</p></li>
+<li><p>A well-defined Lyapunov spectrum,</p></li>
+<li><p>An invariant attractor.</p></li>
+</ul>
+<p>Noise-driven systems:</p>
+<ul class="simple">
+<li><p>Do not evolve on a finite-dimensional attractor,</p></li>
+<li><p>Do not have deterministic stretching-and-folding geometry,</p></li>
+<li><p>Often exhibit diffusion rather than bounded structure.</p></li>
+</ul>
+<p>Phase-space reconstruction techniques can distinguish
+low-dimensional chaos from high-dimensional noise.</p>
+</section>
+<section id="not-mere-nonlinearity">
+<h3>Not Mere Nonlinearity<a class="headerlink" href="#not-mere-nonlinearity" title="Link to this heading">#</a></h3>
+<p>Nonlinearity is necessary for chaos — but not sufficient.</p>
+<p>For example:</p>
+<div class="math notranslate nohighlight">
+\[\dot{x} = -x + x^3\]</div>
+<p>is nonlinear but does not exhibit chaos.</p>
+<p>Similarly, many nonlinear systems display:</p>
+<ul class="simple">
+<li><p>Stable fixed points,</p></li>
+<li><p>Stable periodic orbits,</p></li>
+<li><p>Quasi-periodic motion on invariant tori.</p></li>
+</ul>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[\text{Nonlinearity} \;\not\Rightarrow\; \text{Chaos}.\]</div>
+<p>Additional ingredients are required:
+instability, recurrence, and global phase-space structure.</p>
+</section>
+<section id="not-simple-visual-complexity">
+<h3>Not Simple Visual Complexity<a class="headerlink" href="#not-simple-visual-complexity" title="Link to this heading">#</a></h3>
+<p>A system may appear complicated but still be regular.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>Multi-frequency quasi-periodic oscillations,</p></li>
+<li><p>High-frequency periodic motion,</p></li>
+<li><p>Large linear systems with many oscillatory modes.</p></li>
+</ul>
+<p>Visual irregularity alone does not imply:</p>
+<ul class="simple">
+<li><p>Positive Lyapunov exponent,</p></li>
+<li><p>Topological mixing,</p></li>
+<li><p>Fractal attractor.</p></li>
+</ul>
+<p>Chaos is defined by precise dynamical properties,
+not aesthetic irregularity.</p>
+</section>
+<section id="not-unbounded-instability">
+<h3>Not Unbounded Instability<a class="headerlink" href="#not-unbounded-instability" title="Link to this heading">#</a></h3>
+<p>Exponential growth alone is not chaos.</p>
+<p>Consider:</p>
+<div class="math notranslate nohighlight">
+\[\dot{x} = x
+\quad \Rightarrow \quad
+x(t) = x_0 e^t.\]</div>
+<p>This system has exponential divergence but:</p>
+<ul class="simple">
+<li><p>No bounded attractor,</p></li>
+<li><p>No recurrence,</p></li>
+<li><p>No stretching-and-folding mechanism.</p></li>
+</ul>
+<p>Chaos requires bounded motion combined with instability.</p>
+</section>
+<section id="not-complete-disorder">
+<h3>Not Complete Disorder<a class="headerlink" href="#not-complete-disorder" title="Link to this heading">#</a></h3>
+<p>Although chaotic trajectories are aperiodic and unpredictable
+in detail, they are not structureless.</p>
+<p>Chaotic systems contain:</p>
+<ul class="simple">
+<li><p>Dense unstable periodic orbits,</p></li>
+<li><p>Invariant measures,</p></li>
+<li><p>Fractal attractors,</p></li>
+<li><p>Statistical regularities.</p></li>
+</ul>
+<p>Chaos is therefore structured instability —
+not total disorder.</p>
+</section>
+</section>
+<section id="case-study-the-logistic-map">
+<h2>Case Study: The Logistic Map<a class="headerlink" href="#case-study-the-logistic-map" title="Link to this heading">#</a></h2>
+<p>The logistic map is one of the simplest dynamical systems that exhibits
+the full transition from stability to chaos.</p>
+<p>Despite being a one-dimensional discrete map, it displays:</p>
+<ul class="simple">
+<li><p>Fixed points,</p></li>
+<li><p>Period-doubling cascades,</p></li>
+<li><p>Chaotic attractors,</p></li>
+<li><p>Positive Lyapunov exponents,</p></li>
+<li><p>Fractal invariant sets,</p></li>
+<li><p>Universal scaling laws.</p></li>
+</ul>
+<p>It is therefore a canonical example of deterministic chaos.</p>
+<section id="definition-of-the-logistic-map">
+<h3>Definition of the Logistic Map<a class="headerlink" href="#definition-of-the-logistic-map" title="Link to this heading">#</a></h3>
+<p>The logistic map is defined by</p>
+<div class="math notranslate nohighlight">
+\[x_{n+1} = f(x_n) = r x_n (1 - x_n),\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x_n \in [0,1]\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(r \in [0,4]\)</span> is a control parameter.</p></li>
+</ul>
+<p>Given an initial value <span class="math notranslate nohighlight">\(x_0\)</span>, the entire sequence
+<span class="math notranslate nohighlight">\(\{x_1, x_2, \dots\}\)</span> is completely deterministic.</p>
+</section>
+<section id="fixed-points-and-stability">
+<h3>Fixed Points and Stability<a class="headerlink" href="#fixed-points-and-stability" title="Link to this heading">#</a></h3>
+<p>Fixed points satisfy</p>
+<div class="math notranslate nohighlight">
+\[x^* = r x^*(1 - x^*).\]</div>
+<p>Solving gives</p>
+<div class="math notranslate nohighlight">
+\[x_1^* = 0,
+\qquad
+x_2^* = 1 - \frac{1}{r}.\]</div>
+<p>To determine stability, compute</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = r(1 - 2x).\]</div>
+<p>A fixed point is stable if</p>
+<div class="math notranslate nohighlight">
+\[|f'(x^*)| &lt; 1.\]</div>
+<p>Results:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 &lt; r &lt; 1\)</span>: <span class="math notranslate nohighlight">\(x^* = 0\)</span> is stable.</p></li>
+<li><p><span class="math notranslate nohighlight">\(1 &lt; r &lt; 3\)</span>: <span class="math notranslate nohighlight">\(x^* = 1 - \frac{1}{r}\)</span> is stable.</p></li>
+<li><p>At <span class="math notranslate nohighlight">\(r = 3\)</span>: the fixed point loses stability.</p></li>
+</ul>
+<p>This marks the first bifurcation.</p>
+</section>
+<section id="period-doubling-route-to-chaos">
+<h3>Period-Doubling Route to Chaos<a class="headerlink" href="#period-doubling-route-to-chaos" title="Link to this heading">#</a></h3>
+<p>At <span class="math notranslate nohighlight">\(r = 3\)</span>, a <strong>period-doubling bifurcation</strong> occurs:</p>
+<ul class="simple">
+<li><p>The fixed point becomes unstable.</p></li>
+<li><p>A stable period-2 orbit emerges.</p></li>
+</ul>
+<p>As <span class="math notranslate nohighlight">\(r\)</span> increases:</p>
+<div class="math notranslate nohighlight">
+\[\text{period-2}
+\rightarrow
+\text{period-4}
+\rightarrow
+\text{period-8}
+\rightarrow
+\cdots\]</div>
+<p>The bifurcation values accumulate at</p>
+<div class="math notranslate nohighlight">
+\[r_\infty \approx 3.56995.\]</div>
+<p>The spacing between successive bifurcations shrinks geometrically:</p>
+<div class="math notranslate nohighlight">
+\[\delta
+=
+\lim_{n\to\infty}
+\frac{r_{n-1}-r_{n-2}}
+     {r_n - r_{n-1}}
+\approx 4.669,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta\)</span> is the <strong>Feigenbaum constant</strong>.</p>
+<p>This constant appears universally in many nonlinear systems
+undergoing period-doubling cascades.</p>
+</section>
+<section id="onset-of-chaos">
+<h3>Onset of Chaos<a class="headerlink" href="#onset-of-chaos" title="Link to this heading">#</a></h3>
+<p>For</p>
+<div class="math notranslate nohighlight">
+\[r &gt; r_\infty,\]</div>
+<p>the logistic map becomes chaotic (for most values of <span class="math notranslate nohighlight">\(r\)</span>).</p>
+<p>Characteristics:</p>
+<ul class="simple">
+<li><p>Aperiodic long-term behaviour,</p></li>
+<li><p>Sensitive dependence on initial conditions,</p></li>
+<li><p>Irregular iterates within a bounded interval.</p></li>
+</ul>
+<p>However, periodic windows still exist,
+for example the period-3 window near <span class="math notranslate nohighlight">\(r \approx 3.83\)</span>.</p>
+</section>
+<section id="lyapunov-exponent-of-the-logistic-map">
+<h3>Lyapunov Exponent of the Logistic Map<a class="headerlink" href="#lyapunov-exponent-of-the-logistic-map" title="Link to this heading">#</a></h3>
+<p>For one-dimensional maps, the Lyapunov exponent is</p>
+<div class="math notranslate nohighlight">
+\[\lambda
+=
+\lim_{N \to \infty}
+\frac{1}{N}
+\sum_{n=0}^{N-1}
+\ln |f'(x_n)|.\]</div>
+<p>For the logistic map:</p>
+<div class="math notranslate nohighlight">
+\[\lambda
+=
+\lim_{N \to \infty}
+\frac{1}{N}
+\sum_{n=0}^{N-1}
+\ln |r(1 - 2x_n)|.\]</div>
+<p>Interpretation:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda &lt; 0\)</span> → periodic behaviour,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda = 0\)</span> → bifurcation point,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda &gt; 0\)</span> → chaos.</p></li>
+</ul>
+<p>At <span class="math notranslate nohighlight">\(r = 4\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\lambda = \ln 2,\]</div>
+<p>indicating strong exponential sensitivity.</p>
+</section>
+<section id="bifurcation-diagram">
+<h3>Bifurcation Diagram<a class="headerlink" href="#bifurcation-diagram" title="Link to this heading">#</a></h3>
+<p>Plotting long-term values of <span class="math notranslate nohighlight">\(x_n\)</span> versus <span class="math notranslate nohighlight">\(r\)</span>
+produces the <strong>bifurcation diagram</strong>:</p>
+<ul class="simple">
+<li><p>Single branch → stable fixed point,</p></li>
+<li><p>Two branches → period-2,</p></li>
+<li><p>Four branches → period-4,</p></li>
+<li><p>Dense band → chaotic regime.</p></li>
+</ul>
+<p>The diagram reveals:</p>
+<ul class="simple">
+<li><p>Period-doubling cascade,</p></li>
+<li><p>Self-similarity,</p></li>
+<li><p>Fractal structure,</p></li>
+<li><p>Periodic windows embedded in chaos.</p></li>
+</ul>
+</section>
+<section id="invariant-measure-r-4">
+<h3>Invariant Measure (r = 4)<a class="headerlink" href="#invariant-measure-r-4" title="Link to this heading">#</a></h3>
+<p>At <span class="math notranslate nohighlight">\(r = 4\)</span>, the logistic map has invariant density</p>
+<div class="math notranslate nohighlight">
+\[\rho(x)
+=
+\frac{1}{\pi \sqrt{x(1-x)}}.\]</div>
+<p>This distribution is non-uniform and singular at the boundaries,
+reflecting the stretching and folding dynamics.</p>
+</section>
+<section id="period-three-implies-chaos">
+<h3>Period Three Implies Chaos<a class="headerlink" href="#period-three-implies-chaos" title="Link to this heading">#</a></h3>
+<p>A fundamental theorem (Li &amp; Yorke, 1975):</p>
+<p>If a continuous one-dimensional map has a period-3 orbit,
+then it has periodic orbits of every period and exhibits chaotic behaviour.</p>
+<p>Thus the presence of period-3 implies chaos.</p>
+</section>
+<section id="numerical-exploration-python-example">
+<h3>Numerical Exploration (Python Example)<a class="headerlink" href="#numerical-exploration-python-example" title="Link to this heading">#</a></h3>
+<p>Below is a minimal example computing both
+the bifurcation diagram and Lyapunov exponent.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">r_min</span><span class="p">,</span> <span class="n">r_max</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">4.0</span>
+<span class="n">n_r</span> <span class="o">=</span> <span class="mi">4000</span>
+<span class="n">n_iter</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">n_transient</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">r_min</span><span class="p">,</span> <span class="n">r_max</span><span class="p">,</span> <span class="n">n_r</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_r</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span>
+<span class="n">lyap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_r</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_iter</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">lyap</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)))</span>
+    
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">n_transient</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;,k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Logistic Map Bifurcation Diagram&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">lyap</span> <span class="o">/=</span> <span class="n">n_iter</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">lyap</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Lyapunov Exponent&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Lyapunov Exponent vs r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This results in a bifurcation diagram:</p>
+<figure class="align-default" id="id1">
+<img alt="_images/bifurcation_diagram.png" src="_images/bifurcation_diagram.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Bifurcation diagram of the logistic map <span class="math notranslate nohighlight">\(x_{n+1} = r x_n (1 - x_n)\)</span>,
+showing long-term values of <span class="math notranslate nohighlight">\(x_n\)</span> as the parameter <span class="math notranslate nohighlight">\(r\)</span> varies from 2.5 to 4.0.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<div class="legend">
+<p>For <span class="math notranslate nohighlight">\(r &lt; 3\)</span>, the system converges to a stable fixed point.<br />
+At <span class="math notranslate nohighlight">\(r = 3\)</span>, a period-doubling bifurcation occurs, followed by a cascade of further doublings accumulating at <span class="math notranslate nohighlight">\(r_\infty \approx 3.56995\)</span>.<br />
+Beyond this value, chaotic behaviour emerges, visible as dense bands of aperiodic iterates.<br />
+Embedded within the chaotic region are periodic windows (e.g. near <span class="math notranslate nohighlight">\(r \approx 3.83\)</span>), illustrating the intricate self-similar structure of the route to chaos.</p>
+</div>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="case-study-the-duffing-oscillator-continuous-time-chaos">
+<h2>Case Study: The Duffing Oscillator (Continuous-Time Chaos)<a class="headerlink" href="#case-study-the-duffing-oscillator-continuous-time-chaos" title="Link to this heading">#</a></h2>
+<p>The Duffing oscillator is a classical nonlinear system that exhibits
+chaos when periodically forced.</p>
+<p>It provides a canonical example of <strong>continuous-time chaos</strong> and
+illustrates how the diagnostics developed earlier are applied to flows.</p>
+<section id="the-duffing-equation">
+<h3>The Duffing Equation<a class="headerlink" href="#the-duffing-equation" title="Link to this heading">#</a></h3>
+<p>The forced, damped Duffing equation is</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x}
++
+\delta \dot{x}
++
+\alpha x
++
+\beta x^3
+=
+\gamma \cos(\omega t),\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> = damping,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha, \beta\)</span> = linear and nonlinear stiffness,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> = forcing amplitude,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega\)</span> = forcing frequency.</p></li>
+</ul>
+<p>This is a nonlinear second-order ODE.</p>
+</section>
+<section id="why-chaos-is-possible-here">
+<h3>Why Chaos Is Possible Here<a class="headerlink" href="#why-chaos-is-possible-here" title="Link to this heading">#</a></h3>
+<p><em>Autonomous vs Forced Systems</em></p>
+<p>The unforced Duffing equation (no <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span>) is
+a 2D autonomous system:</p>
+<div class="math notranslate nohighlight">
+\[\dot{x} = v,
+\qquad
+\dot{v} = -\delta v - \alpha x - \beta x^3.\]</div>
+<p>By the <strong>Poincaré–Bendixson theorem</strong>, 2D autonomous systems
+cannot exhibit chaos.</p>
+<p><em>Time-Dependent Forcing Adds a Dimension</em></p>
+<p>Introduce</p>
+<div class="math notranslate nohighlight">
+\[\dot{\theta} = \omega.\]</div>
+<p>The system becomes</p>
+<div class="math notranslate nohighlight">
+\[\dot{x} = v,\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{v} = -\delta v - \alpha x - \beta x^3 + \gamma \cos \theta,\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{\theta} = \omega.\]</div>
+<p>This is a <strong>3D autonomous system</strong>, making chaos possible.</p>
+<p>Thus, periodic forcing effectively increases the phase-space dimension.</p>
+</section>
+<section id="poincare-section-stroboscopic-map">
+<h3>Poincaré Section (Stroboscopic Map)<a class="headerlink" href="#poincare-section-stroboscopic-map" title="Link to this heading">#</a></h3>
+<p>Because the forcing is periodic with period</p>
+<div class="math notranslate nohighlight">
+\[T = \frac{2\pi}{\omega},\]</div>
+<p>we construct a <strong>stroboscopic Poincaré section</strong>:</p>
+<div class="math notranslate nohighlight">
+\[(x(nT), \dot{x}(nT)).\]</div>
+<p>This reduces the continuous flow to a discrete map.</p>
+<p>Classification:</p>
+<ul class="simple">
+<li><p>Single point → periodic motion</p></li>
+<li><p>Finite set of points → period-<span class="math notranslate nohighlight">\(k\)</span></p></li>
+<li><p>Closed curve → quasi-periodic</p></li>
+<li><p>Fractal cloud → chaotic attractor</p></li>
+</ul>
+<p>A fractal Poincaré section strongly indicates chaos.</p>
+</section>
+<section id="largest-lyapunov-exponent">
+<h3>Largest Lyapunov Exponent<a class="headerlink" href="#largest-lyapunov-exponent" title="Link to this heading">#</a></h3>
+<p>To confirm chaos quantitatively, compute
+the largest Lyapunov exponent <span class="math notranslate nohighlight">\(\lambda_1\)</span>.</p>
+<p>For the Duffing system, the Jacobian matrix is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}J(t)
+=
+\begin{pmatrix}
+0 &amp; 1 \\
+-\alpha - 3\beta x^2 &amp; -\delta
+\end{pmatrix}.\end{split}\]</div>
+<p>Integrating the variational equation</p>
+<div class="math notranslate nohighlight">
+\[\dot{\delta \mathbf{x}} = J(t)\,\delta \mathbf{x}\]</div>
+<p>alongside the original system allows numerical estimation
+of <span class="math notranslate nohighlight">\(\lambda_1\)</span>.</p>
+<p>Criterion:</p>
+<div class="math notranslate nohighlight">
+\[\lambda_1 &gt; 0
+\quad \Rightarrow \quad
+\text{chaos}.\]</div>
+</section>
+<section id="bifurcation-structure">
+<h3>Bifurcation Structure<a class="headerlink" href="#bifurcation-structure" title="Link to this heading">#</a></h3>
+<p>Varying the forcing amplitude <span class="math notranslate nohighlight">\(\gamma\)</span>
+reveals a rich bifurcation structure:</p>
+<div class="math notranslate nohighlight">
+\[\text{periodic}
+\rightarrow
+\text{period-doubling}
+\rightarrow
+\text{chaos}.\]</div>
+<p>Features include:</p>
+<ul class="simple">
+<li><p>Period-doubling cascades,</p></li>
+<li><p>Periodic windows within chaos,</p></li>
+<li><p>Crisis transitions.</p></li>
+</ul>
+<p>Plotting Poincaré points or maxima of <span class="math notranslate nohighlight">\(x(t)\)</span>
+versus <span class="math notranslate nohighlight">\(\gamma\)</span> produces a bifurcation diagram.</p>
+</section>
+<section id="phase-space-structure">
+<h3>Phase-Space Structure<a class="headerlink" href="#phase-space-structure" title="Link to this heading">#</a></h3>
+<p>In chaotic regimes, trajectories:</p>
+<ul class="simple">
+<li><p>Remain bounded,</p></li>
+<li><p>Never repeat,</p></li>
+<li><p>Accumulate on a strange attractor.</p></li>
+</ul>
+<p>The attractor exhibits:</p>
+<ul class="simple">
+<li><p>Stretching and folding geometry,</p></li>
+<li><p>Fractal structure,</p></li>
+<li><p>Embedded unstable periodic orbits.</p></li>
+</ul>
+</section>
+<section id="summary-of-continuous-time-diagnostics">
+<h3>Summary of Continuous-Time Diagnostics<a class="headerlink" href="#summary-of-continuous-time-diagnostics" title="Link to this heading">#</a></h3>
+<p>To establish chaos in the Duffing oscillator:</p>
+<ol class="arabic simple">
+<li><p>Confirm sufficient dimensionality (effective 3D system).</p></li>
+<li><p>Construct a Poincaré section.</p></li>
+<li><p>Compute largest Lyapunov exponent.</p></li>
+<li><p>Examine bifurcation structure.</p></li>
+<li><p>Inspect power spectrum.</p></li>
+</ol>
+<p>If:</p>
+<ul class="simple">
+<li><p>Motion is bounded,</p></li>
+<li><p>Aperiodic,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_1 &gt; 0\)</span>,</p></li>
+<li><p>Poincaré section is fractal,</p></li>
+</ul>
+<p>then the Duffing system is chaotic.</p>
+<p>The Duffing oscillator demonstrates that
+continuous-time chaos arises from
+nonlinearity combined with forcing and dissipation,
+producing structured yet unpredictable dynamics.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Reading_week.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Reading Week - Investigate Dynamical Systems</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinism-does-not-imply-predictability">Determinism Does Not Imply Predictability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-vs-continuous-time-chaos">Discrete vs Continuous-Time Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-chaos-special">What Makes Chaos Special?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hallmarks-of-chaotic-behaviour">Hallmarks of Chaotic Behaviour</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitive-dependence-on-initial-conditions">Sensitive Dependence on Initial Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aperiodic-but-bounded-long-term-behaviour">Aperiodic but Bounded Long-Term Behaviour</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-mixing">Topological Mixing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dense-periodic-orbits">Dense Periodic Orbits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strange-attractors-dissipative-systems">Strange Attractors (Dissipative Systems)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-diagnostics-of-chaos">Quantitative Diagnostics of Chaos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-exponents-and-predictability-time">Lyapunov Exponents and Predictability Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearised-dynamics-continuous-time">Linearised Dynamics (Continuous Time)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#criterion-for-chaos">Criterion for Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-time-systems">Discrete-Time Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predictability-time-lyapunov-time">Predictability Time (Lyapunov Time)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcations-and-routes-to-chaos">Bifurcations and Routes to Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-routes-to-chaos">Common Routes to Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-diagnostics">Summary of Diagnostics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-chaos-is-not">What Chaos Is Not</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-randomness">Not Randomness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-noise">Not Noise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-mere-nonlinearity">Not Mere Nonlinearity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-simple-visual-complexity">Not Simple Visual Complexity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-unbounded-instability">Not Unbounded Instability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-complete-disorder">Not Complete Disorder</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-the-logistic-map">Case Study: The Logistic Map</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-the-logistic-map">Definition of the Logistic Map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-points-and-stability">Fixed Points and Stability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#period-doubling-route-to-chaos">Period-Doubling Route to Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#onset-of-chaos">Onset of Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-exponent-of-the-logistic-map">Lyapunov Exponent of the Logistic Map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcation-diagram">Bifurcation Diagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invariant-measure-r-4">Invariant Measure (r = 4)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#period-three-implies-chaos">Period Three Implies Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-exploration-python-example">Numerical Exploration (Python Example)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-the-duffing-oscillator-continuous-time-chaos">Case Study: The Duffing Oscillator (Continuous-Time Chaos)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-duffing-equation">The Duffing Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-chaos-is-possible-here">Why Chaos Is Possible Here</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poincare-section-stroboscopic-map">Poincaré Section (Stroboscopic Map)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#largest-lyapunov-exponent">Largest Lyapunov Exponent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcation-structure">Bifurcation Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-space-structure">Phase-Space Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-continuous-time-diagnostics">Summary of Continuous-Time Diagnostics</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Natural Sciences
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

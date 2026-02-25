@@ -1,0 +1,3532 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Weeks 6 - 10 - Investigating Chaos &#8212; Non-Linear ODEs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chaos copy';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Non-Linear ODEs - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Non-Linear ODEs - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Solving Non-Linear Ordinary Differential Equations
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="NumericalMethods.html">Week 1 - Looking at Numerical Solutions to ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pendulum.html">Week 2 - Solving the Non-Linear Pendulum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VdPDuffing.html">Week 3 - The Van der Pol Oscillator and Duffing Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Project.html">Week 4 - Prototype Submission Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reading_week.html">Reading Week - Investigate Dynamical Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chaos.html">Weeks 6–10 — Investigating Chaos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FChaos copy.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Chaos copy.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Weeks 6 - 10 - Investigating Chaos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Weeks 6 - 10 - Investigating Chaos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hallmarks-of-chaotic-behaviour-in-a-dynamical-system">Hallmarks of Chaotic Behaviour in a Dynamical System</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitive-dependence-on-initial-conditions">Sensitive Dependence on Initial Conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-exponent-formal-definition">Lyapunov Exponent (Formal Definition)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">[
+\lambda</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictability-horizon-lyapunov-time">Predictability Horizon (Lyapunov Time)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministic-dynamics">Deterministic Dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-time-systems">Discrete-Time Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinism-vs-randomness">Determinism vs Randomness</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-mathbf-x-dt">[
+\frac{d\mathbf{x}}{dt}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#role-of-nonlinearity">Role of Nonlinearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-insight">Key Insight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aperiodic-long-term-behaviour">Aperiodic Long-Term Behaviour</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-points-and-periodic-orbits">Fixed Points and Periodic Orbits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-periodicity">Non-Periodicity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-but-non-repeating-motion">Bounded but Non-Repeating Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contrast-with-quasi-periodic-motion">Contrast with Quasi-Periodic Motion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-x-t">[
+\mathbf{x}(t)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-term-behaviour-and-attractors">Long-Term Behaviour and Attractors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-mixing">Topological Mixing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-definition-continuous-time">Formal Definition (Continuous Time)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-time-version">Discrete-Time Version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation-stretching-and-folding">Geometric Interpretation: Stretching and Folding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-vs-ergodicity">Mixing vs Ergodicity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lim-t-to-infty-mu-phi-t-u-cap-v">[
+\lim_{t \to \infty}
+\mu(\phi^t(U) \cap V)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-meaning">Physical Meaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dense-periodic-orbits">Dense Periodic Orbits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodic-orbits">Periodic Orbits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#density">Density</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unstable-nature-of-periodic-orbits">Unstable Nature of Periodic Orbits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-importance">Structural Importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-significance">Conceptual Significance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strange-attractors-dissipative-systems">Strange Attractors (Dissipative Systems)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attractors">Attractors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dissipation-and-volume-contraction">Dissipation and Volume Contraction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-dv-dt">[
+\frac{dV}{dt}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fractal-geometry">Fractal Geometry</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#d-b">[
+D_B</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-spectrum-and-dimension">Lyapunov Spectrum and Dimension</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#d-ky">[
+D_{KY}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-lorenz-attractor">Example: The Lorenz Attractor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Conceptual Significance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-diagnostics-of-chaos">Quantitative Diagnostics of Chaos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-lyapunov-exponent">Positive Lyapunov Exponent</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linearised-dynamics">Linearised Dynamics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-dt-delta-mathbf-x">[
+\frac{d}{dt}\delta \mathbf{x}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-lyapunov-exponents">Definition of Lyapunov Exponents</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[
+\lambda</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criterion-for-chaos">Criterion for Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Discrete-Time Systems</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#delta-mathbf-x-n-1">[
+\delta \mathbf{x}_{n+1}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">[
+\lambda</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-interpretation">Physical Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-volume-evolution">Relation to Volume Evolution</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-lambda-i">[
+\sum_{i=1}^n \lambda_i</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fractal-non-integer-dimension">Fractal (Non-Integer) Dimension</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-fractal-structure-appears">Why Fractal Structure Appears</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-counting-dimension">Box-Counting Dimension</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">[
+D_B</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-dimension">Correlation Dimension</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#c-varepsilon">[
+C(\varepsilon)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#d-2">[
+D_2</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kaplanyorke-lyapunov-dimension">Kaplan–Yorke (Lyapunov) Dimension</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">[
+D_{KY}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Physical Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broadband-power-spectrum">Broadband Power Spectrum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-and-fourier-transform">Time Series and Fourier Transform</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-x-omega">[
+\hat{x}(\omega)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#s-omega">[
+S(\omega)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-signatures-of-different-dynamics">Spectral Signatures of Different Dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-correlation-decay">Relation to Correlation Decay</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#r-tau">[
+R(\tau)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">[
+S(\omega)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-distinction">Important Distinction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Physical Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-chaos-is-not">What Chaos Is Not</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-randomness">Not Randomness</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-mathbf-x">[
+\dot{\mathbf{x}}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-noise">Not Noise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-mere-nonlinearity">Not Mere Nonlinearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-simple-complexity">Not Simple Complexity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-unbounded-instability">Not Unbounded Instability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-chaos-in-the-logistic-map">Finding Chaos in the Logistic Map</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-the-logistic-map">Definition of the Logistic Map</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-fixed-points-and-stability">Step 1: Fixed Points and Stability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-period-doubling-cascade">Step 2: Period-Doubling Cascade</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#delta">[
+\delta</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-onset-of-chaos">Step 3: Onset of Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-lyapunov-exponent">Step 4: Lyapunov Exponent</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">[
+\lambda</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">[
+\lambda</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-bifurcation-diagram">Step 5: Bifurcation Diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-fractal-attractor">Step 6: Fractal Attractor</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-x">[
+\rho(x)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#period-three-implies-chaos">Period Three Implies Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-logistic-map-is-important">Why the Logistic Map Is Important</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#r-values">r values</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-condition">Initial condition</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-for-lyapunov-exponents">Storage for Lyapunov exponents</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-figure">Prepare figure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-average-lyapunov-exponent">Compute average Lyapunov exponent</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-lyapunov-exponent">Plot Lyapunov exponent</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-chaos-in-continuous-time-dynamical-systems">Finding Chaos in Continuous-Time Dynamical Systems</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-requirement">1. Dimensional Requirement</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomous-systems">1.1 Autonomous Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-theorem-poincarebendixson">Key Theorem: Poincaré–Bendixson</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-2d-is-too-simple">1.2 Why 2D Is Too Simple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-dimension-for-continuous-chaos">1.3 Minimum Dimension for Continuous Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-dependent-forcing">1.4 Time-Dependent Forcing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-intuition">1.5 Geometric Intuition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian-vs-dissipative-systems">1.6 Hamiltonian vs Dissipative Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-rule">1.7 Practical Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">1.8 Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#largest-lyapunov-exponent">2. Largest Lyapunov Exponent</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearisation-along-a-trajectory">2.1 Linearisation Along a Trajectory</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-delta-mathbf-x">[
+\dot{\delta \mathbf{x}}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-the-largest-lyapunov-exponent">2.2 Definition of the Largest Lyapunov Exponent</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-1">[
+\lambda_1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-the-sign">2.3 Interpretation of the Sign</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-lyapunov-spectrum">2.4 Full Lyapunov Spectrum</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">[
+\sum_{i=1}^n \lambda_i</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-computation-benettin-method">2.5 Numerical Computation (Benettin Method)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-meaning">2.6 Geometric Meaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-forced-duffing">2.7 Example: Forced Duffing</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#j-t">[
+J(t)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-is-the-definitive-test">2.8 Why This Is the Definitive Test</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#poincare-section">3. Poincaré Section</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-from-continuous-flow-to-a-discrete-map">3.1 Motivation: From Continuous Flow to a Discrete Map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#periodically-forced-systems-stroboscopic-section">3.2 Periodically Forced Systems (Stroboscopic Section)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomous-systems-surface-of-section">3.3 Autonomous Systems (Surface of Section)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-classify-the-motion-from-the-section">3.4 How to Classify the Motion from the Section</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-periodic-motion">(a) Periodic Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-quasi-periodic-motion">(b) Quasi-Periodic Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-chaotic-motion">(c) Chaotic Motion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-chaos-looks-fractal-in-a-poincare-section">3.5 Why Chaos Looks Fractal in a Poincaré Section</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-procedure-forced-duffing-example">3.6 Practical Procedure (Forced Duffing Example)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-and-best-practice">3.7 Limitations and Best Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.8 Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-space-structure-and-strange-attractors">4. Phase-Space Structure and Strange Attractors</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-space-representation">4.1 Phase Space Representation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#omega-mathbf-x-0">[
+\omega(\mathbf{x}_0)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-motion-in-phase-space">4.2 Regular Motion in Phase Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fixed-points">(a) Fixed Points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-periodic-orbits">(b) Periodic Orbits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-quasi-periodic-motion">(c) Quasi-Periodic Motion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chaotic-motion">4.3 Chaotic Motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stretching-and-folding-mechanism">4.4 Stretching and Folding Mechanism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.5 Dissipation and Volume Contraction</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">[
+\frac{dV}{dt}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lorenz-attractor">4.6 Example: Lorenz Attractor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-identification">4.7 Practical Identification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.8 Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-spectrum-and-frequency-analysis">5. Power Spectrum and Frequency Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-time-series-to-frequency-spectrum">5.1 From Time Series to Frequency Spectrum</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">[
+\hat{x}(\omega)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">[
+S(\omega)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-signatures-of-different-dynamical-regimes">5.2 Spectral Signatures of Different Dynamical Regimes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">(a) Periodic Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">(b) Quasi-Periodic Motion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#x-t">[
+x(t)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">(c) Chaotic Motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-autocorrelation">5.3 Relation to Autocorrelation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">[
+R(\tau)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">[
+S(\omega)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-computation">5.4 Practical Computation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">5.5 Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-forced-duffing-oscillator">5.6 Example: Forced Duffing Oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">5.7 Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcation-analysis-and-routes-to-chaos">6. Bifurcation Analysis and Routes to Chaos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-parameters">6.1 Control Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-bifurcations">6.2 Local Bifurcations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-saddlenode-bifurcation">(a) Saddle–Node Bifurcation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-hopf-bifurcation">(b) Hopf Bifurcation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#period-doubling-route-to-chaos">6.3 Period-Doubling Route to Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quasi-periodic-route-torus-breakdown">6.4 Quasi-Periodic Route (Torus Breakdown)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intermittency">6.5 Intermittency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crisis-induced-chaos">6.6 Crisis-Induced Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-a-bifurcation-diagram">6.7 Constructing a Bifurcation Diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">6.8 Example: Forced Duffing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-bifurcation-analysis-is-important">6.9 Why Bifurcation Analysis Is Important</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">6.10 Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fractal-dimension">7. Fractal Dimension</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#decay-of-correlations">8. Decay of Correlations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-prediction-advanced">9. Analytical Prediction (Advanced)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-workflow-for-continuous-time-chaos">Practical Workflow for Continuous-Time Chaos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-insight">Conceptual Insight</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="weeks-6-10-investigating-chaos">
+<h1>Weeks 6 - 10 - Investigating Chaos<a class="headerlink" href="#weeks-6-10-investigating-chaos" title="Link to this heading">#</a></h1>
+<section id="hallmarks-of-chaotic-behaviour-in-a-dynamical-system">
+<h2>Hallmarks of Chaotic Behaviour in a Dynamical System<a class="headerlink" href="#hallmarks-of-chaotic-behaviour-in-a-dynamical-system" title="Link to this heading">#</a></h2>
+<p>A dynamical system is typically considered <strong>chaotic</strong> if it exhibits the following core features:</p>
+<section id="sensitive-dependence-on-initial-conditions">
+<h3>Sensitive Dependence on Initial Conditions<a class="headerlink" href="#sensitive-dependence-on-initial-conditions" title="Link to this heading">#</a></h3>
+<p>A defining feature of chaos is <strong>sensitive dependence on initial conditions</strong>:<br />
+arbitrarily small differences in initial states grow exponentially with time.</p>
+<p>Consider two nearby initial conditions in phase space:</p>
+<p>[
+\mathbf{x}_0
+\quad \text{and} \quad
+\mathbf{x}_0 + \delta \mathbf{x}_0 .
+]</p>
+<p>Under the system dynamics, their separation evolves approximately as</p>
+<p>[
+|\delta \mathbf{x}(t)|
+\approx
+|\delta \mathbf{x}_0| e^{\lambda t},
+]</p>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\|\delta \mathbf{x}(t)\|\)</span> is the distance between trajectories at time <span class="math notranslate nohighlight">\(t\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> is the <strong>Lyapunov exponent</strong>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda &gt; 0\)</span> implies exponential divergence.</p></li>
+</ul>
+<section id="lyapunov-exponent-formal-definition">
+<h4>Lyapunov Exponent (Formal Definition)<a class="headerlink" href="#lyapunov-exponent-formal-definition" title="Link to this heading">#</a></h4>
+<p>The largest Lyapunov exponent is defined by</p>
+</section>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lambda">
+<h1>[
+\lambda<a class="headerlink" href="#lambda" title="Link to this heading">#</a></h1>
+<p>\lim_{t \to \infty}
+\frac{1}{t}
+\ln
+\left(
+\frac{|\delta \mathbf{x}(t)|}
+{|\delta \mathbf{x}_0|}
+\right).
+]</p>
+<p>Interpretation:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \lambda &gt; 0 \)</span> → chaos (exponential divergence)</p></li>
+<li><p><span class="math notranslate nohighlight">\( \lambda &lt; 0 \)</span> → trajectories converge</p></li>
+<li><p><span class="math notranslate nohighlight">\( \lambda = 0 \)</span> → neutral stability (e.g. quasi-periodic motion)</p></li>
+</ul>
+<p>In an <span class="math notranslate nohighlight">\(n\)</span>-dimensional system there exists a full <strong>Lyapunov spectrum</strong></p>
+<p>[
+\lambda_1 \ge \lambda_2 \ge \dots \ge \lambda_n,
+]</p>
+<p>and chaos requires at least one positive exponent.</p>
+<section id="predictability-horizon-lyapunov-time">
+<h2>Predictability Horizon (Lyapunov Time)<a class="headerlink" href="#predictability-horizon-lyapunov-time" title="Link to this heading">#</a></h2>
+<p>If errors grow as</p>
+<p>[
+|\delta \mathbf{x}(t)|
+\approx
+|\delta \mathbf{x}_0| e^{\lambda t},
+]</p>
+<p>then the time at which the error becomes <span class="math notranslate nohighlight">\( \mathcal{O}(1) \)</span> is approximately</p>
+<p>[
+t_{\text{predict}}
+\approx
+\frac{1}{\lambda}
+\ln
+\left(
+\frac{1}{|\delta \mathbf{x}_0|}
+\right).
+]</p>
+<p>The characteristic timescale</p>
+<p>[
+\tau_L = \frac{1}{\lambda}
+]</p>
+<p>is called the <strong>Lyapunov time</strong>.</p>
+</section>
+<section id="deterministic-dynamics">
+<h2>Deterministic Dynamics<a class="headerlink" href="#deterministic-dynamics" title="Link to this heading">#</a></h2>
+<p>Chaos occurs in systems governed by <strong>deterministic evolution laws</strong>.<br />
+There is no stochastic forcing, no random noise, and no probabilistic rule in the dynamics itself.</p>
+<p>A continuous-time dynamical system is typically written as</p>
+<p>[
+\frac{d\mathbf{x}}{dt} = \mathbf{f}(\mathbf{x}),
+]</p>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^n\)</span> is the state vector,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{f} : \mathbb{R}^n \to \mathbb{R}^n\)</span> is a deterministic nonlinear function.</p></li>
+</ul>
+<p>Given an initial condition <span class="math notranslate nohighlight">\(\mathbf{x}(0) = \mathbf{x}_0\)</span>, the solution <span class="math notranslate nohighlight">\(\mathbf{x}(t)\)</span> is uniquely determined (assuming standard existence and uniqueness conditions).</p>
+<section id="discrete-time-systems">
+<h3>Discrete-Time Systems<a class="headerlink" href="#discrete-time-systems" title="Link to this heading">#</a></h3>
+<p>Similarly, a discrete dynamical system (map) takes the form</p>
+<p>[
+\mathbf{x}_{n+1} = \mathbf{F}(\mathbf{x}_n).
+]</p>
+<p>Again, once <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span> is specified, the entire future sequence</p>
+<p>[
+{\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3, \dots}
+]</p>
+<p>is completely determined.</p>
+<p>Example (logistic map):</p>
+<p>[
+x_{n+1} = r x_n (1 - x_n),
+]</p>
+<p>which is entirely deterministic — yet chaotic for certain parameter values.</p>
+</section>
+<section id="determinism-vs-randomness">
+<h3>Determinism vs Randomness<a class="headerlink" href="#determinism-vs-randomness" title="Link to this heading">#</a></h3>
+<p>It is crucial to distinguish:</p>
+<ul class="simple">
+<li><p><strong>Chaotic dynamics</strong> (deterministic but unpredictable)</p></li>
+<li><p><strong>Stochastic dynamics</strong> (intrinsically random)</p></li>
+</ul>
+<p>In a chaotic system:</p>
+<ul class="simple">
+<li><p>The governing equations contain no random variables.</p></li>
+<li><p>Identical initial conditions produce identical trajectories.</p></li>
+<li><p>Unpredictability arises from exponential amplification of microscopic uncertainty.</p></li>
+</ul>
+<p>In contrast, stochastic systems include explicit noise terms, e.g.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="frac-d-mathbf-x-dt">
+<h1>[
+\frac{d\mathbf{x}}{dt}<a class="headerlink" href="#frac-d-mathbf-x-dt" title="Link to this heading">#</a></h1>
+<p>\mathbf{f}(\mathbf{x})
++
+\boldsymbol{\eta}(t),
+]</p>
+<p>where <span class="math notranslate nohighlight">\(\boldsymbol{\eta}(t)\)</span> is a random process.</p>
+<section id="role-of-nonlinearity">
+<h2>Role of Nonlinearity<a class="headerlink" href="#role-of-nonlinearity" title="Link to this heading">#</a></h2>
+<p>Determinism alone is not sufficient for chaos.</p>
+<p>Linear systems of the form</p>
+<p>[
+\frac{d\mathbf{x}}{dt} = A\mathbf{x}
+]</p>
+<p>cannot exhibit chaos. Their solutions are combinations of exponentials and cannot produce:</p>
+<ul class="simple">
+<li><p>Stretching-and-folding dynamics</p></li>
+<li><p>Strange attractors</p></li>
+<li><p>Sensitive dependence with bounded motion</p></li>
+</ul>
+<p>Chaos requires <strong>nonlinearity</strong>, which allows trajectories to be stretched, folded, and reinjected into bounded regions of phase space.</p>
+</section>
+<section id="key-insight">
+<h2>Key Insight<a class="headerlink" href="#key-insight" title="Link to this heading">#</a></h2>
+<p>Chaos is not a failure of determinism.</p>
+<p>Rather, it reveals that:</p>
+<p>[
+\text{Deterministic laws} ;\not\Rightarrow; \text{Long-term predictability}.
+]</p>
+<p>The equations are exact — but finite precision in initial data leads to unavoidable practical unpredictability.</p>
+</section>
+<section id="aperiodic-long-term-behaviour">
+<h2>Aperiodic Long-Term Behaviour<a class="headerlink" href="#aperiodic-long-term-behaviour" title="Link to this heading">#</a></h2>
+<p>A chaotic system exhibits <strong>aperiodic long-term motion</strong>: trajectories do not settle to fixed points or periodic orbits, and they never exactly repeat.</p>
+<p>Importantly, the motion remains <strong>bounded</strong>, yet non-repeating.</p>
+<section id="fixed-points-and-periodic-orbits">
+<h3>Fixed Points and Periodic Orbits<a class="headerlink" href="#fixed-points-and-periodic-orbits" title="Link to this heading">#</a></h3>
+<p>A <strong>fixed point</strong> <span class="math notranslate nohighlight">\(\mathbf{x}^*\)</span> satisfies</p>
+<p>[
+\mathbf{f}(\mathbf{x}^*) = 0
+\quad \text{(continuous time)},
+]</p>
+<p>or</p>
+<p>[
+\mathbf{F}(\mathbf{x}^<em>) = \mathbf{x}^</em>
+\quad \text{(discrete time)}.
+]</p>
+<p>A <strong>periodic orbit</strong> of period <span class="math notranslate nohighlight">\(T\)</span> (continuous time) satisfies</p>
+<p>[
+\mathbf{x}(t + T) = \mathbf{x}(t)
+\quad \forall t,
+]</p>
+<p>while for a discrete map, a period-<span class="math notranslate nohighlight">\(k\)</span> orbit satisfies</p>
+<p>[
+\mathbf{F}^k(\mathbf{x}) = \mathbf{x}.
+]</p>
+<p>In chaotic systems, typical trajectories do <strong>not</strong> converge to stable fixed points or stable periodic orbits.</p>
+</section>
+<section id="non-periodicity">
+<h3>Non-Periodicity<a class="headerlink" href="#non-periodicity" title="Link to this heading">#</a></h3>
+<p>For chaotic motion,</p>
+<p>[
+\mathbf{x}(t + T) \neq \mathbf{x}(t)
+\quad \text{for all finite } T &gt; 0.
+]</p>
+<p>There is no finite recurrence time for which the trajectory exactly repeats.</p>
+<p>However, trajectories may return arbitrarily close to previous states (Poincaré recurrence), without ever becoming periodic.</p>
+</section>
+<section id="bounded-but-non-repeating-motion">
+<h3>Bounded but Non-Repeating Motion<a class="headerlink" href="#bounded-but-non-repeating-motion" title="Link to this heading">#</a></h3>
+<p>A key feature of dissipative chaotic systems is that trajectories remain confined to a bounded region of phase space:</p>
+<p>[
+|\mathbf{x}(t)| &lt; C
+\quad \text{for all } t \ge 0,
+]</p>
+<p>for some constant <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<p>Yet within this bounded region, the trajectory wanders forever in a complex, non-repeating way.</p>
+<p>This distinguishes chaos from:</p>
+<ul class="simple">
+<li><p>Unbounded exponential growth</p></li>
+<li><p>Simple periodic motion</p></li>
+<li><p>Quasi-periodic motion on invariant tori</p></li>
+</ul>
+</section>
+<section id="contrast-with-quasi-periodic-motion">
+<h3>Contrast with Quasi-Periodic Motion<a class="headerlink" href="#contrast-with-quasi-periodic-motion" title="Link to this heading">#</a></h3>
+<p>Quasi-periodic motion (e.g. on a torus) has the form</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mathbf-x-t">
+<h1>[
+\mathbf{x}(t)<a class="headerlink" href="#mathbf-x-t" title="Link to this heading">#</a></h1>
+<p>\mathbf{g}(\omega_1 t, \omega_2 t, \dots),
+]</p>
+<p>where the frequencies <span class="math notranslate nohighlight">\(\omega_i\)</span> are incommensurate.</p>
+<p>Such motion:</p>
+<ul class="simple">
+<li><p>Never exactly repeats,</p></li>
+<li><p>But does <strong>not</strong> exhibit sensitive dependence on initial conditions,</p></li>
+<li><p>And has zero largest Lyapunov exponent.</p></li>
+</ul>
+<p>Thus, aperiodicity alone does not imply chaos — it must occur together with exponential instability.</p>
+<section id="long-term-behaviour-and-attractors">
+<h2>Long-Term Behaviour and Attractors<a class="headerlink" href="#long-term-behaviour-and-attractors" title="Link to this heading">#</a></h2>
+<p>In dissipative chaotic systems, trajectories approach a <strong>chaotic attractor</strong>:</p>
+<p>[
+\lim_{t \to \infty} \text{dist}(\mathbf{x}(t), \mathcal{A}) = 0,
+]</p>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> is:</p>
+<ul class="simple">
+<li><p>Invariant,</p></li>
+<li><p>Bounded,</p></li>
+<li><p>Fractal in structure.</p></li>
+</ul>
+<p>The motion on this attractor is:</p>
+<ul class="simple">
+<li><p>Deterministic,</p></li>
+<li><p>Bounded,</p></li>
+<li><p>Aperiodic,</p></li>
+<li><p>Sensitive to initial conditions.</p></li>
+</ul>
+<p>Aperiodic long-term behaviour means that the system never settles into simple repeating dynamics, yet remains confined to a structured region of phase space — a defining qualitative signature of chaos.</p>
+</section>
+<section id="topological-mixing">
+<h2>Topological Mixing<a class="headerlink" href="#topological-mixing" title="Link to this heading">#</a></h2>
+<p>A central structural property of chaotic systems is <strong>topological mixing</strong>.</p>
+<p>Informally, mixing means that the system eventually spreads any small region of phase space throughout the entire accessible region.</p>
+<section id="formal-definition-continuous-time">
+<h3>Formal Definition (Continuous Time)<a class="headerlink" href="#formal-definition-continuous-time" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> be an invariant set (e.g. an attractor), and let
+<span class="math notranslate nohighlight">\(\phi^t : \mathcal{A} \to \mathcal{A}\)</span> denote the flow of the system.</p>
+<p>The system is <strong>topologically mixing</strong> on <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> if for any two nonempty open sets
+<span class="math notranslate nohighlight">\(U, V \subset \mathcal{A}\)</span>, there exists a time <span class="math notranslate nohighlight">\(T &gt; 0\)</span> such that</p>
+<p>[
+\phi^t(U) \cap V \neq \varnothing
+\quad \text{for all } t &gt; T.
+]</p>
+<p>That is, after sufficient time, the evolved image of <span class="math notranslate nohighlight">\(U\)</span> overlaps with <span class="math notranslate nohighlight">\(V\)</span>.</p>
+</section>
+<section id="discrete-time-version">
+<h3>Discrete-Time Version<a class="headerlink" href="#discrete-time-version" title="Link to this heading">#</a></h3>
+<p>For a map <span class="math notranslate nohighlight">\(\mathbf{F} : \mathcal{A} \to \mathcal{A}\)</span>, mixing means:</p>
+<p>For any two nonempty open sets <span class="math notranslate nohighlight">\(U, V \subset \mathcal{A}\)</span>, there exists an integer <span class="math notranslate nohighlight">\(N\)</span> such that</p>
+<p>[
+\mathbf{F}^n(U) \cap V \neq \varnothing
+\quad \text{for all } n \ge N.
+]</p>
+</section>
+<section id="geometric-interpretation-stretching-and-folding">
+<h3>Geometric Interpretation: Stretching and Folding<a class="headerlink" href="#geometric-interpretation-stretching-and-folding" title="Link to this heading">#</a></h3>
+<p>Topological mixing arises from two competing mechanisms:</p>
+<ol class="arabic simple">
+<li><p><strong>Stretching</strong><br />
+Nearby trajectories separate exponentially along unstable directions
+(positive Lyapunov exponent).</p></li>
+<li><p><strong>Folding</strong><br />
+The system remains bounded, so stretched regions must fold back into
+phase space.</p></li>
+</ol>
+<p>This repeated stretching-and-folding process creates intricate filamentary
+structures and fractal geometry.</p>
+<p>A classic analogy is kneading dough:</p>
+<ul class="simple">
+<li><p>Stretch</p></li>
+<li><p>Fold</p></li>
+<li><p>Repeat</p></li>
+</ul>
+<p>Eventually, any small patch becomes intertwined with the whole.</p>
+</section>
+<section id="mixing-vs-ergodicity">
+<h3>Mixing vs Ergodicity<a class="headerlink" href="#mixing-vs-ergodicity" title="Link to this heading">#</a></h3>
+<p>Mixing is stronger than ergodicity.</p>
+<ul class="simple">
+<li><p><strong>Ergodic:</strong> time averages equal space averages for almost all initial conditions.</p></li>
+<li><p><strong>Mixing:</strong> correlations between sets decay over time.</p></li>
+</ul>
+<p>In measure-theoretic terms, mixing implies that for measurable sets
+<span class="math notranslate nohighlight">\(U, V\)</span>,</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lim-t-to-infty-mu-phi-t-u-cap-v">
+<h1>[
+\lim_{t \to \infty}
+\mu(\phi^t(U) \cap V)<a class="headerlink" href="#lim-t-to-infty-mu-phi-t-u-cap-v" title="Link to this heading">#</a></h1>
+<p>\mu(U)\mu(V),
+]</p>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is an invariant measure.</p>
+<p>This expresses statistical independence at long times.</p>
+<section id="physical-meaning">
+<h2>Physical Meaning<a class="headerlink" href="#physical-meaning" title="Link to this heading">#</a></h2>
+<p>Topological mixing implies:</p>
+<ul class="simple">
+<li><p>Long-term loss of memory of initial regions,</p></li>
+<li><p>Irreversible-looking macroscopic behaviour,</p></li>
+<li><p>Statistical structure emerging from deterministic laws.</p></li>
+</ul>
+<p>Although the system is deterministic, the continual mixing of phase space
+produces behaviour that resembles random evolution at large scales.</p>
+<p>Topological mixing ensures that chaotic dynamics are not merely unstable,
+but globally intertwined — every region of phase space eventually
+interacts with every other region.</p>
+</section>
+<section id="dense-periodic-orbits">
+<h2>Dense Periodic Orbits<a class="headerlink" href="#dense-periodic-orbits" title="Link to this heading">#</a></h2>
+<p>A defining structural property of chaotic systems is the existence of
+<strong>dense periodic orbits</strong>.</p>
+<p>This means that although typical trajectories are aperiodic, periodic
+orbits are embedded throughout the chaotic set and lie arbitrarily
+close to any point on it.</p>
+<section id="periodic-orbits">
+<h3>Periodic Orbits<a class="headerlink" href="#periodic-orbits" title="Link to this heading">#</a></h3>
+<p>For a discrete map <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>, a point <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is periodic of period <span class="math notranslate nohighlight">\(k\)</span> if</p>
+<p>[
+\mathbf{F}^k(\mathbf{x}) = \mathbf{x},
+]</p>
+<p>where <span class="math notranslate nohighlight">\(k \in \mathbb{N}\)</span> is the smallest such integer.</p>
+<p>For continuous-time systems with flow <span class="math notranslate nohighlight">\(\phi^t\)</span>, a periodic orbit
+of period <span class="math notranslate nohighlight">\(T &gt; 0\)</span> satisfies</p>
+<p>[
+\phi^T(\mathbf{x}) = \mathbf{x}.
+]</p>
+</section>
+<section id="density">
+<h3>Density<a class="headerlink" href="#density" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> be a chaotic invariant set (e.g. an attractor).</p>
+<p>Periodic orbits are <strong>dense</strong> in <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> if:</p>
+<p>For every point <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathcal{A}\)</span> and every neighborhood
+<span class="math notranslate nohighlight">\(U\)</span> of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>,</p>
+<p>[
+U \cap {\text{periodic points}} \neq \varnothing.
+]</p>
+<p>In other words, periodic points lie arbitrarily close to every point in
+the chaotic set.</p>
+</section>
+<section id="unstable-nature-of-periodic-orbits">
+<h3>Unstable Nature of Periodic Orbits<a class="headerlink" href="#unstable-nature-of-periodic-orbits" title="Link to this heading">#</a></h3>
+<p>In chaotic systems, these periodic orbits are typically <strong>unstable</strong>.</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{x}^*\)</span> is a periodic point, then the Jacobian of the
+<span class="math notranslate nohighlight">\(k\)</span>-fold map,</p>
+<p>[
+D\mathbf{F}^k(\mathbf{x}^*),
+]</p>
+<p>has at least one eigenvalue with magnitude greater than 1:</p>
+<p>[
+|\lambda_i| &gt; 1.
+]</p>
+<p>Thus nearby trajectories diverge from the periodic orbit
+exponentially.</p>
+<p>This instability explains why:</p>
+<ul class="simple">
+<li><p>Periodic motion exists mathematically,</p></li>
+<li><p>But is not observed for generic initial conditions.</p></li>
+</ul>
+</section>
+<section id="structural-importance">
+<h3>Structural Importance<a class="headerlink" href="#structural-importance" title="Link to this heading">#</a></h3>
+<p>Although unstable, periodic orbits form the “skeleton” of chaotic dynamics.</p>
+<p>Many properties of chaotic systems can be expressed in terms of sums over periodic orbits, for example:</p>
+<ul class="simple">
+<li><p>Topological entropy</p></li>
+<li><p>Lyapunov exponents</p></li>
+<li><p>Natural invariant measures</p></li>
+</ul>
+<p>This is the foundation of <strong>periodic orbit theory</strong>.</p>
+</section>
+<section id="conceptual-significance">
+<h3>Conceptual Significance<a class="headerlink" href="#conceptual-significance" title="Link to this heading">#</a></h3>
+<p>Dense periodic orbits imply that chaotic dynamics are not random.</p>
+<p>Instead, chaos consists of:</p>
+<ul class="simple">
+<li><p>Infinitely many unstable periodic motions,</p></li>
+<li><p>Interwoven densely throughout phase space,</p></li>
+<li><p>With trajectories continually shadowing different periodic orbits.</p></li>
+</ul>
+<p>Thus, chaos contains an intricate hidden order:
+aperiodic motion built from an infinity of unstable periodic structures.</p>
+</section>
+</section>
+<section id="strange-attractors-dissipative-systems">
+<h2>Strange Attractors (Dissipative Systems)<a class="headerlink" href="#strange-attractors-dissipative-systems" title="Link to this heading">#</a></h2>
+<p>In dissipative chaotic systems, long-term trajectories approach a
+geometrically complex invariant set known as a <strong>strange attractor</strong>.</p>
+<p>A strange attractor is characterized by:</p>
+<ul class="simple">
+<li><p>Invariance under the dynamics,</p></li>
+<li><p>Attraction of nearby trajectories,</p></li>
+<li><p>Fractal (non-integer) dimension,</p></li>
+<li><p>Sensitive dependence on initial conditions.</p></li>
+</ul>
+<section id="attractors">
+<h3>Attractors<a class="headerlink" href="#attractors" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(\phi^t\)</span> denote the flow of a continuous-time system.</p>
+<p>A set <span class="math notranslate nohighlight">\(\mathcal{A} \subset \mathbb{R}^n\)</span> is an <strong>attractor</strong> if:</p>
+<ol class="arabic simple">
+<li><p><strong>Invariance</strong>
+[
+\phi^t(\mathcal{A}) = \mathcal{A}
+\quad \text{for all } t \ge 0.
+]</p></li>
+<li><p><strong>Attraction</strong>
+There exists a neighborhood <span class="math notranslate nohighlight">\(U\)</span> of <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> such that
+[
+\lim_{t \to \infty}
+\text{dist}(\phi^t(\mathbf{x}), \mathcal{A}) = 0
+\quad \text{for all } \mathbf{x} \in U.
+]</p></li>
+<li><p><strong>Minimality</strong>
+<span class="math notranslate nohighlight">\(\mathcal{A}\)</span> contains no proper subset with these properties.</p></li>
+</ol>
+</section>
+<section id="dissipation-and-volume-contraction">
+<h3>Dissipation and Volume Contraction<a class="headerlink" href="#dissipation-and-volume-contraction" title="Link to this heading">#</a></h3>
+<p>Strange attractors arise in <strong>dissipative systems</strong>, where phase-space
+volume contracts.</p>
+<p>For a system</p>
+<p>[
+\frac{d\mathbf{x}}{dt} = \mathbf{f}(\mathbf{x}),
+]</p>
+<p>volume contraction occurs if</p>
+<p>[
+\nabla \cdot \mathbf{f} &lt; 0.
+]</p>
+<p>The divergence determines the rate of change of an infinitesimal
+volume element <span class="math notranslate nohighlight">\(V(t)\)</span>:</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="frac-dv-dt">
+<h1>[
+\frac{dV}{dt}<a class="headerlink" href="#frac-dv-dt" title="Link to this heading">#</a></h1>
+<p>(\nabla \cdot \mathbf{f}) V.
+]</p>
+<p>If the divergence is negative on average, volumes shrink, forcing
+trajectories onto a lower-dimensional set.</p>
+<section id="fractal-geometry">
+<h2>Fractal Geometry<a class="headerlink" href="#fractal-geometry" title="Link to this heading">#</a></h2>
+<p>A strange attractor has <strong>non-integer dimension</strong>.</p>
+<p>One commonly used notion is the box-counting dimension:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="d-b">
+<h1>[
+D_B<a class="headerlink" href="#d-b" title="Link to this heading">#</a></h1>
+<p>\lim_{\varepsilon \to 0}
+\frac{\log N(\varepsilon)}
+{\log(1/\varepsilon)},
+]</p>
+<p>where <span class="math notranslate nohighlight">\(N(\varepsilon)\)</span> is the number of boxes of size
+<span class="math notranslate nohighlight">\(\varepsilon\)</span> required to cover the attractor.</p>
+<p>For strange attractors:</p>
+<p>[
+\text{integer dimension} &gt; D_B &gt; \text{topological dimension}.
+]</p>
+<p>This fractal structure results from repeated stretching and folding.</p>
+<section id="lyapunov-spectrum-and-dimension">
+<h2>Lyapunov Spectrum and Dimension<a class="headerlink" href="#lyapunov-spectrum-and-dimension" title="Link to this heading">#</a></h2>
+<p>In dissipative chaotic systems:</p>
+<ul class="simple">
+<li><p>At least one Lyapunov exponent is positive,</p></li>
+<li><p>The sum of exponents is negative (volume contraction).</p></li>
+</ul>
+<p>The <strong>Kaplan–Yorke (Lyapunov) dimension</strong> is often used:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="d-ky">
+<h1>[
+D_{KY}<a class="headerlink" href="#d-ky" title="Link to this heading">#</a></h1>
+<p>j
++
+\frac{\lambda_1 + \cdots + \lambda_j}
+{|\lambda_{j+1}|},
+]</p>
+<p>where <span class="math notranslate nohighlight">\(j\)</span> is the largest integer such that</p>
+<p>[
+\sum_{i=1}^{j} \lambda_i \ge 0.
+]</p>
+<p>This provides an estimate of the attractor’s fractal dimension.</p>
+<section id="example-the-lorenz-attractor">
+<h2>Example: The Lorenz Attractor<a class="headerlink" href="#example-the-lorenz-attractor" title="Link to this heading">#</a></h2>
+<p>The Lorenz system:</p>
+<p>[
+\begin{aligned}
+\dot{x} &amp;= \sigma (y - x), \
+\dot{y} &amp;= x(\rho - z) - y, \
+\dot{z} &amp;= xy - \beta z,
+\end{aligned}
+]</p>
+<p>for suitable parameter values, produces a strange attractor that is:</p>
+<ul class="simple">
+<li><p>Bounded,</p></li>
+<li><p>Fractal,</p></li>
+<li><p>Chaotic,</p></li>
+<li><p>Structurally stable over parameter ranges.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>Conceptual Significance<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Strange attractors represent the long-term state of dissipative chaotic systems.</p>
+<p>They combine:</p>
+<ul class="simple">
+<li><p>Deterministic laws,</p></li>
+<li><p>Exponential instability,</p></li>
+<li><p>Global boundedness,</p></li>
+<li><p>Fractal geometric structure.</p></li>
+</ul>
+<p>Thus, chaotic motion is not wandering arbitrarily through phase space,
+but is confined to a highly organized yet infinitely intricate set.</p>
+</section>
+<section id="quantitative-diagnostics-of-chaos">
+<h2>Quantitative Diagnostics of Chaos<a class="headerlink" href="#quantitative-diagnostics-of-chaos" title="Link to this heading">#</a></h2>
+<section id="positive-lyapunov-exponent">
+<h3>Positive Lyapunov Exponent<a class="headerlink" href="#positive-lyapunov-exponent" title="Link to this heading">#</a></h3>
+<p>The most practical and widely used quantitative signature of chaos is the
+existence of a <strong>positive Lyapunov exponent</strong>.</p>
+<p>While earlier sections introduced the concept qualitatively, here we
+formalize its role as a diagnostic criterion.</p>
+<section id="linearised-dynamics">
+<h4>Linearised Dynamics<a class="headerlink" href="#linearised-dynamics" title="Link to this heading">#</a></h4>
+<p>Consider a continuous-time dynamical system</p>
+<p>[
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}),
+]</p>
+<p>and let <span class="math notranslate nohighlight">\(\mathbf{x}(t)\)</span> be a trajectory.</p>
+<p>The evolution of an infinitesimal perturbation
+<span class="math notranslate nohighlight">\(\delta \mathbf{x}(t)\)</span> is governed by the linearised system:</p>
+</section>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="frac-d-dt-delta-mathbf-x">
+<h1>[
+\frac{d}{dt}\delta \mathbf{x}<a class="headerlink" href="#frac-d-dt-delta-mathbf-x" title="Link to this heading">#</a></h1>
+<p>D\mathbf{f}(\mathbf{x}(t))
+, \delta \mathbf{x},
+]</p>
+<p>where <span class="math notranslate nohighlight">\(D\mathbf{f}\)</span> is the Jacobian matrix evaluated along the trajectory.</p>
+<p>This equation describes the dynamics in the tangent space.</p>
+<section id="definition-of-lyapunov-exponents">
+<h2>Definition of Lyapunov Exponents<a class="headerlink" href="#definition-of-lyapunov-exponents" title="Link to this heading">#</a></h2>
+<p>The Lyapunov exponent associated with a perturbation direction is</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1>[
+\lambda<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<p>\lim_{t \to \infty}
+\frac{1}{t}
+\ln
+\frac{|\delta \mathbf{x}(t)|}
+{|\delta \mathbf{x}(0)|}.
+]</p>
+<p>More generally, an <span class="math notranslate nohighlight">\(n\)</span>-dimensional system has a full
+<strong>Lyapunov spectrum</strong></p>
+<p>[
+\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n.
+]</p>
+<section id="criterion-for-chaos">
+<h2>Criterion for Chaos<a class="headerlink" href="#criterion-for-chaos" title="Link to this heading">#</a></h2>
+<p>A system is chaotic if</p>
+<p>[
+\lambda_1 &gt; 0,
+]</p>
+<p>i.e. the largest Lyapunov exponent is positive.</p>
+<p>This guarantees exponential divergence of nearby trajectories:</p>
+<p>[
+|\delta \mathbf{x}(t)|
+\sim
+e^{\lambda_1 t}.
+]</p>
+</section>
+<section id="id3">
+<h2>Discrete-Time Systems<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>For a discrete map</p>
+<p>[
+\mathbf{x}_{n+1} = \mathbf{F}(\mathbf{x}_n),
+]</p>
+<p>perturbations evolve according to</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="delta-mathbf-x-n-1">
+<h1>[
+\delta \mathbf{x}_{n+1}<a class="headerlink" href="#delta-mathbf-x-n-1" title="Link to this heading">#</a></h1>
+<p>D\mathbf{F}(\mathbf{x}_n)
+, \delta \mathbf{x}_n.
+]</p>
+<p>The Lyapunov exponent is then</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id4">
+<h1>[
+\lambda<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+<p>\lim_{n \to \infty}
+\frac{1}{n}
+\ln
+\frac{|\delta \mathbf{x}_n|}
+{|\delta \mathbf{x}_0|}.
+]</p>
+<section id="physical-interpretation">
+<h2>Physical Interpretation<a class="headerlink" href="#physical-interpretation" title="Link to this heading">#</a></h2>
+<p>A positive Lyapunov exponent implies:</p>
+<ul class="simple">
+<li><p>Exponential loss of information about initial conditions,</p></li>
+<li><p>Finite predictability time,</p></li>
+<li><p>Practical irreversibility despite deterministic laws.</p></li>
+</ul>
+<p>If measurement precision is <span class="math notranslate nohighlight">\(\epsilon\)</span>, then the predictability horizon is</p>
+<p>[
+t_{\text{predict}}
+\approx
+\frac{1}{\lambda_1}
+\ln!\left(\frac{1}{\epsilon}\right).
+]</p>
+</section>
+<section id="relation-to-volume-evolution">
+<h2>Relation to Volume Evolution<a class="headerlink" href="#relation-to-volume-evolution" title="Link to this heading">#</a></h2>
+<p>The sum of Lyapunov exponents determines volume behaviour:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sum-i-1-n-lambda-i">
+<h1>[
+\sum_{i=1}^n \lambda_i<a class="headerlink" href="#sum-i-1-n-lambda-i" title="Link to this heading">#</a></h1>
+<p>\lim_{t \to \infty}
+\frac{1}{t}
+\ln \left(\frac{V(t)}{V(0)}\right).
+]</p>
+<ul class="simple">
+<li><p>Positive sum → volume expansion (Hamiltonian-type systems)</p></li>
+<li><p>Negative sum → volume contraction (dissipative systems)</p></li>
+</ul>
+<p>In dissipative chaos:</p>
+<p>[
+\lambda_1 &gt; 0
+\quad \text{but} \quad
+\sum_{i=1}^n \lambda_i &lt; 0.
+]</p>
+<p>This combination produces strange attractors.</p>
+<p>The largest Lyapunov exponent provides a concrete, computable,
+and experimentally measurable test for chaos, making it the most
+operational definition used in practice.</p>
+<section id="fractal-non-integer-dimension">
+<h2>Fractal (Non-Integer) Dimension<a class="headerlink" href="#fractal-non-integer-dimension" title="Link to this heading">#</a></h2>
+<p>A key geometric signature of chaotic attractors is that they possess
+<strong>non-integer (fractal) dimension</strong>.</p>
+<p>Unlike smooth manifolds (lines, surfaces, volumes), strange attractors
+occupy a set whose effective dimension lies between integers.</p>
+<section id="why-fractal-structure-appears">
+<h3>Why Fractal Structure Appears<a class="headerlink" href="#why-fractal-structure-appears" title="Link to this heading">#</a></h3>
+<p>Chaotic dynamics involve repeated:</p>
+<ul class="simple">
+<li><p>Stretching (due to positive Lyapunov exponents),</p></li>
+<li><p>Folding (to remain bounded),</p></li>
+<li><p>Dissipation (phase-space volume contraction).</p></li>
+</ul>
+<p>This infinite repetition produces structures with detail at all scales.</p>
+<p>The result is a geometrically intricate set that is:</p>
+<ul class="simple">
+<li><p>Bounded,</p></li>
+<li><p>Self-similar (often statistically),</p></li>
+<li><p>Non-smooth,</p></li>
+<li><p>Non-integer dimensional.</p></li>
+</ul>
+</section>
+<section id="box-counting-dimension">
+<h3>Box-Counting Dimension<a class="headerlink" href="#box-counting-dimension" title="Link to this heading">#</a></h3>
+<p>One practical definition is the <strong>box-counting dimension</strong>.</p>
+<p>Cover the attractor with boxes of side length <span class="math notranslate nohighlight">\(\varepsilon\)</span>.<br />
+Let <span class="math notranslate nohighlight">\(N(\varepsilon)\)</span> be the number of boxes required.</p>
+<p>The box-counting dimension is defined as</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>[
+D_B<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+<p>\lim_{\varepsilon \to 0}
+\frac{\log N(\varepsilon)}
+{\log (1/\varepsilon)}.
+]</p>
+<p>For smooth objects:</p>
+<ul class="simple">
+<li><p>Line → <span class="math notranslate nohighlight">\(D = 1\)</span></p></li>
+<li><p>Surface → <span class="math notranslate nohighlight">\(D = 2\)</span></p></li>
+<li><p>Volume → <span class="math notranslate nohighlight">\(D = 3\)</span></p></li>
+</ul>
+<p>For strange attractors:</p>
+<p>[
+1 &lt; D_B &lt; 2
+\quad \text{(typically, in 3D systems)}
+]</p>
+<p>or more generally,</p>
+<p>[
+\text{topological dimension} &lt; D_B &lt; \text{embedding dimension}.
+]</p>
+<section id="correlation-dimension">
+<h2>Correlation Dimension<a class="headerlink" href="#correlation-dimension" title="Link to this heading">#</a></h2>
+<p>In experimental data, the <strong>correlation dimension</strong> is often used.</p>
+<p>Define the correlation sum</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="c-varepsilon">
+<h1>[
+C(\varepsilon)<a class="headerlink" href="#c-varepsilon" title="Link to this heading">#</a></h1>
+<p>\frac{1}{N^2}
+\sum_{i,j}
+\Theta
+\big(
+\varepsilon - |\mathbf{x}_i - \mathbf{x}_j|
+\big),
+]</p>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Theta\)</span> is the Heaviside step function,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{\mathbf{x}_i\}\)</span> are sampled trajectory points.</p></li>
+</ul>
+<p>The correlation dimension is</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="d-2">
+<h1>[
+D_2<a class="headerlink" href="#d-2" title="Link to this heading">#</a></h1>
+<p>\lim_{\varepsilon \to 0}
+\frac{\log C(\varepsilon)}
+{\log \varepsilon}.
+]</p>
+<p>For chaotic attractors, <span class="math notranslate nohighlight">\(D_2\)</span> is typically non-integer.</p>
+<section id="kaplanyorke-lyapunov-dimension">
+<h2>Kaplan–Yorke (Lyapunov) Dimension<a class="headerlink" href="#kaplanyorke-lyapunov-dimension" title="Link to this heading">#</a></h2>
+<p>The fractal dimension can also be estimated from the Lyapunov spectrum.</p>
+<p>Let</p>
+<p>[
+\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n
+]</p>
+<p>be the ordered Lyapunov exponents.</p>
+<p>Define <span class="math notranslate nohighlight">\(j\)</span> as the largest integer such that</p>
+<p>[
+\sum_{i=1}^{j} \lambda_i \ge 0.
+]</p>
+<p>The <strong>Kaplan–Yorke dimension</strong> is</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id6">
+<h1>[
+D_{KY}<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+<p>j
++
+\frac{\sum_{i=1}^{j} \lambda_i}
+{|\lambda_{j+1}|}.
+]</p>
+<p>This links geometric complexity directly to dynamical instability.</p>
+<section id="id7">
+<h2>Physical Interpretation<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>Fractal dimension reflects:</p>
+<ul class="simple">
+<li><p>Partial contraction of phase-space volume,</p></li>
+<li><p>Competition between expansion and dissipation,</p></li>
+<li><p>Infinite geometric refinement.</p></li>
+</ul>
+<p>It quantifies how densely trajectories fill phase space.</p>
+<p>In dissipative chaotic systems:</p>
+<p>[
+\lambda_1 &gt; 0,
+\quad
+\sum_i \lambda_i &lt; 0,
+\quad
+D_{KY} \notin \mathbb{Z}.
+]</p>
+<p>Thus, strange attractors are geometrically intermediate between smooth
+manifolds of different integer dimensions.</p>
+<p>Non-integer dimension is therefore a geometric fingerprint of chaotic
+attractors — revealing that the long-term state of the system is neither
+a simple curve nor a surface, but a fractal object.</p>
+</section>
+<section id="broadband-power-spectrum">
+<h2>Broadband Power Spectrum<a class="headerlink" href="#broadband-power-spectrum" title="Link to this heading">#</a></h2>
+<p>Another practical diagnostic of chaos is the presence of a
+<strong>broadband power spectrum</strong>.</p>
+<p>While periodic systems exhibit discrete spectral lines,
+chaotic systems typically display a continuous frequency distribution.</p>
+<section id="time-series-and-fourier-transform">
+<h3>Time Series and Fourier Transform<a class="headerlink" href="#time-series-and-fourier-transform" title="Link to this heading">#</a></h3>
+<p>Consider an observable <span class="math notranslate nohighlight">\(x(t)\)</span> generated by a dynamical system.</p>
+<p>Its Fourier transform is defined as</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="hat-x-omega">
+<h1>[
+\hat{x}(\omega)<a class="headerlink" href="#hat-x-omega" title="Link to this heading">#</a></h1>
+<p>\int_{-\infty}^{\infty}
+x(t) e^{-i \omega t} , dt.
+]</p>
+<p>The <strong>power spectral density (PSD)</strong> is</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="s-omega">
+<h1>[
+S(\omega)<a class="headerlink" href="#s-omega" title="Link to this heading">#</a></h1>
+<p>\lim_{T \to \infty}
+\frac{1}{2T}
+\left|
+\int_{-T}^{T}
+x(t) e^{-i \omega t} , dt
+\right|^2.
+]</p>
+<p>The PSD measures how signal energy is distributed across frequencies.</p>
+<section id="spectral-signatures-of-different-dynamics">
+<h2>Spectral Signatures of Different Dynamics<a class="headerlink" href="#spectral-signatures-of-different-dynamics" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Periodic Motion</strong></p></li>
+</ol>
+<p>If</p>
+<p>[
+x(t) = A \cos(\omega_0 t),
+]</p>
+<p>then</p>
+<p>[
+S(\omega)
+\propto
+\delta(\omega - \omega_0)
++
+\delta(\omega + \omega_0),
+]</p>
+<p>i.e. sharp spectral lines.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Quasi-Periodic Motion</strong></p></li>
+</ol>
+<p>For motion with incommensurate frequencies,</p>
+<p>[
+x(t) = \sum_k A_k \cos(\omega_k t),
+]</p>
+<p>the spectrum consists of a countable set of discrete peaks.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Chaotic Motion</strong></p></li>
+</ol>
+<p>For chaotic dynamics, the spectrum becomes continuous:</p>
+<p>[
+S(\omega)
+\text{ is broadband and smooth.}
+]</p>
+<p>There are no isolated delta-function peaks dominating the signal.</p>
+<p>This reflects the aperiodic, non-repeating nature of the motion.</p>
+</section>
+<section id="relation-to-correlation-decay">
+<h2>Relation to Correlation Decay<a class="headerlink" href="#relation-to-correlation-decay" title="Link to this heading">#</a></h2>
+<p>The power spectrum is related to the autocorrelation function</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="r-tau">
+<h1>[
+R(\tau)<a class="headerlink" href="#r-tau" title="Link to this heading">#</a></h1>
+<p>\lim_{T \to \infty}
+\frac{1}{2T}
+\int_{-T}^{T}
+x(t)x(t+\tau), dt.
+]</p>
+<p>By the Wiener–Khinchin theorem,</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id8">
+<h1>[
+S(\omega)<a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
+<p>\int_{-\infty}^{\infty}
+R(\tau) e^{-i \omega \tau} , d\tau.
+]</p>
+<p>In chaotic systems, correlations typically decay:</p>
+<p>[
+R(\tau) \to 0
+\quad \text{as} \quad \tau \to \infty.
+]</p>
+<p>Decay of correlations produces a continuous spectrum.</p>
+<section id="important-distinction">
+<h2>Important Distinction<a class="headerlink" href="#important-distinction" title="Link to this heading">#</a></h2>
+<p>A broadband spectrum alone does not prove chaos.</p>
+<p>Stochastic noise can also produce continuous spectra.</p>
+<p>Therefore, spectral analysis should be combined with:</p>
+<ul class="simple">
+<li><p>Lyapunov exponent calculations,</p></li>
+<li><p>Phase-space reconstruction,</p></li>
+<li><p>Fractal dimension estimation.</p></li>
+</ul>
+</section>
+<section id="id9">
+<h2>Physical Interpretation<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<p>A broadband spectrum indicates:</p>
+<ul class="simple">
+<li><p>No dominant repeating frequency,</p></li>
+<li><p>Loss of long-term phase coherence,</p></li>
+<li><p>Mixing of timescales due to nonlinear interactions.</p></li>
+</ul>
+<p>It provides an experimentally accessible indicator of chaotic dynamics,
+especially in physical and laboratory systems.</p>
+</section>
+<section id="what-chaos-is-not">
+<h2>What Chaos Is Not<a class="headerlink" href="#what-chaos-is-not" title="Link to this heading">#</a></h2>
+<p>To properly understand chaos, it is equally important to clarify
+what chaos does <em>not</em> mean.</p>
+<p>Chaos is frequently confused with randomness, noise, or mere complexity.
+These are fundamentally different concepts.</p>
+<section id="not-randomness">
+<h3>Not Randomness<a class="headerlink" href="#not-randomness" title="Link to this heading">#</a></h3>
+<p>A chaotic system is governed by deterministic equations:</p>
+<p>[
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x})
+\quad \text{or} \quad
+\mathbf{x}_{n+1} = \mathbf{F}(\mathbf{x}_n).
+]</p>
+<p>Given an exact initial condition <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>,
+the future trajectory is uniquely determined.</p>
+<p>In contrast, a stochastic system includes explicit randomness:</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="dot-mathbf-x">
+<h1>[
+\dot{\mathbf{x}}<a class="headerlink" href="#dot-mathbf-x" title="Link to this heading">#</a></h1>
+<p>\mathbf{f}(\mathbf{x})
++
+\boldsymbol{\eta}(t),
+]</p>
+<p>where <span class="math notranslate nohighlight">\(\boldsymbol{\eta}(t)\)</span> is a random process.</p>
+<p>Key distinction:</p>
+<ul class="simple">
+<li><p><strong>Chaos:</strong> unpredictability from exponential sensitivity.</p></li>
+<li><p><strong>Randomness:</strong> unpredictability from intrinsic probabilistic forcing.</p></li>
+</ul>
+<section id="not-noise">
+<h2>Not Noise<a class="headerlink" href="#not-noise" title="Link to this heading">#</a></h2>
+<p>Experimental signals from chaotic systems often resemble noise.
+However, chaotic time series:</p>
+<ul class="simple">
+<li><p>Possess finite-dimensional attractors,</p></li>
+<li><p>Have deterministic structure,</p></li>
+<li><p>Exhibit positive Lyapunov exponents.</p></li>
+</ul>
+<p>Noise-driven systems generally:</p>
+<ul class="simple">
+<li><p>Lack a finite-dimensional deterministic structure,</p></li>
+<li><p>Do not admit a Lyapunov spectrum in the same sense,</p></li>
+<li><p>Often produce stochastic diffusion rather than bounded strange attractors.</p></li>
+</ul>
+<p>Phase-space reconstruction can distinguish the two.</p>
+</section>
+<section id="not-mere-nonlinearity">
+<h2>Not Mere Nonlinearity<a class="headerlink" href="#not-mere-nonlinearity" title="Link to this heading">#</a></h2>
+<p>Nonlinearity is necessary for chaos, but not sufficient.</p>
+<p>For example:</p>
+<p>[
+\dot{x} = -x + x^3
+]</p>
+<p>is nonlinear but not chaotic.</p>
+<p>Similarly, many nonlinear systems exhibit:</p>
+<ul class="simple">
+<li><p>Stable fixed points,</p></li>
+<li><p>Stable periodic orbits,</p></li>
+<li><p>Quasi-periodic tori.</p></li>
+</ul>
+<p>Thus:</p>
+<p>[
+\text{Nonlinearity} ;\not\Rightarrow; \text{Chaos}.
+]</p>
+<p>Additional ingredients such as stretching, folding, and recurrence are required.</p>
+</section>
+<section id="not-simple-complexity">
+<h2>Not Simple Complexity<a class="headerlink" href="#not-simple-complexity" title="Link to this heading">#</a></h2>
+<p>A system may appear complicated but still be regular.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>Quasi-periodic motion on a torus,</p></li>
+<li><p>High-frequency but periodic oscillations,</p></li>
+<li><p>Large systems of coupled linear oscillators.</p></li>
+</ul>
+<p>Visual complexity alone does not imply:</p>
+<ul class="simple">
+<li><p>Positive Lyapunov exponents,</p></li>
+<li><p>Topological mixing,</p></li>
+<li><p>Fractal attractors.</p></li>
+</ul>
+<p>Chaos is defined by precise dynamical properties, not aesthetic irregularity.</p>
+</section>
+<section id="not-unbounded-instability">
+<h2>Not Unbounded Instability<a class="headerlink" href="#not-unbounded-instability" title="Link to this heading">#</a></h2>
+<p>Exponential growth alone is not chaos.</p>
+<p>For example:</p>
+<p>[
+\dot{x} = x
+\quad \Rightarrow \quad
+x(t) = x_0 e^{t}.
+]</p>
+<p>This system has exponential divergence but:</p>
+<ul class="simple">
+<li><p>No bounded attractor,</p></li>
+<li><p>No stretching-and-folding mechanism,</p></li>
+<li><p>No complex invariant set.</p></li>
+</ul>
+<p>Chaos requires bounded motion combined with instability.</p>
+<p>Chaos is therefore:</p>
+<ul class="simple">
+<li><p>Deterministic but unpredictable,</p></li>
+<li><p>Structured but aperiodic,</p></li>
+<li><p>Bounded but unstable,</p></li>
+<li><p>Geometrically fractal but dynamically lawful.</p></li>
+</ul>
+<p>Understanding what chaos is <em>not</em> prevents conflating it with noise,
+disorder, or mere complication.</p>
+</section>
+<section id="finding-chaos-in-the-logistic-map">
+<h2>Finding Chaos in the Logistic Map<a class="headerlink" href="#finding-chaos-in-the-logistic-map" title="Link to this heading">#</a></h2>
+<p>The logistic map is one of the simplest dynamical systems that exhibits
+chaos. Despite its algebraic simplicity, it displays the full sequence
+from stability to periodic motion to chaos.</p>
+<hr class="docutils" />
+<section id="definition-of-the-logistic-map">
+<h3>Definition of the Logistic Map<a class="headerlink" href="#definition-of-the-logistic-map" title="Link to this heading">#</a></h3>
+<p>The logistic map is a one-dimensional discrete dynamical system:</p>
+<p>[
+x_{n+1} = f(x_n) = r x_n (1 - x_n),
+]</p>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x_n \in [0,1]\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(r \in [0,4]\)</span> is a control parameter.</p></li>
+</ul>
+<p>For a given initial condition <span class="math notranslate nohighlight">\(x_0\)</span>, the sequence
+<span class="math notranslate nohighlight">\(\{x_1, x_2, x_3, \dots\}\)</span> is completely deterministic.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="step-1-fixed-points-and-stability">
+<h2>Step 1: Fixed Points and Stability<a class="headerlink" href="#step-1-fixed-points-and-stability" title="Link to this heading">#</a></h2>
+<p>Fixed points satisfy</p>
+<p>[
+x^* = r x^* (1 - x^*).
+]</p>
+<p>Solving gives:</p>
+<p>[
+x^<em>_1 = 0,
+\qquad
+x^</em>_2 = 1 - \frac{1}{r}.
+]</p>
+<p>To determine stability, compute</p>
+<p>[
+f’(x) = r(1 - 2x).
+]</p>
+<p>A fixed point is stable if</p>
+<p>[
+|f’(x^*)| &lt; 1.
+]</p>
+<p>Results:</p>
+<ul class="simple">
+<li><p>For <span class="math notranslate nohighlight">\(0 &lt; r &lt; 1\)</span>: <span class="math notranslate nohighlight">\(x^* = 0\)</span> is stable.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(1 &lt; r &lt; 3\)</span>: <span class="math notranslate nohighlight">\(x^* = 1 - \frac{1}{r}\)</span> is stable.</p></li>
+<li><p>At <span class="math notranslate nohighlight">\(r = 3\)</span>: stability is lost.</p></li>
+</ul>
+<p>This marks the first bifurcation.</p>
+</section>
+<hr class="docutils" />
+<section id="step-2-period-doubling-cascade">
+<h2>Step 2: Period-Doubling Cascade<a class="headerlink" href="#step-2-period-doubling-cascade" title="Link to this heading">#</a></h2>
+<p>At <span class="math notranslate nohighlight">\(r = 3\)</span>, a <strong>period-doubling bifurcation</strong> occurs:</p>
+<ul class="simple">
+<li><p>The fixed point becomes unstable.</p></li>
+<li><p>A stable period-2 orbit emerges.</p></li>
+</ul>
+<p>As <span class="math notranslate nohighlight">\(r\)</span> increases further:</p>
+<ul class="simple">
+<li><p>Period-2 becomes unstable.</p></li>
+<li><p>Period-4 orbit appears.</p></li>
+<li><p>Then period-8.</p></li>
+<li><p>Then period-16.</p></li>
+<li><p>And so on.</p></li>
+</ul>
+<p>This sequence accumulates at</p>
+<p>[
+r_\infty \approx 3.56995.
+]</p>
+<p>The spacing between bifurcation values shrinks geometrically:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="delta">
+<h1>[
+\delta<a class="headerlink" href="#delta" title="Link to this heading">#</a></h1>
+<p>\lim_{n \to \infty}
+\frac{r_{n-1} - r_{n-2}}
+{r_n - r_{n-1}}
+\approx 4.669,
+]</p>
+<p>where <span class="math notranslate nohighlight">\(\delta\)</span> is the <strong>Feigenbaum constant</strong>.</p>
+<p>This universal constant appears in many nonlinear systems.</p>
+<hr class="docutils" />
+<section id="step-3-onset-of-chaos">
+<h2>Step 3: Onset of Chaos<a class="headerlink" href="#step-3-onset-of-chaos" title="Link to this heading">#</a></h2>
+<p>For</p>
+<p>[
+r &gt; r_\infty,
+]</p>
+<p>the system becomes chaotic.</p>
+<p>Characteristics:</p>
+<ul class="simple">
+<li><p>No stable periodic orbit (for most <span class="math notranslate nohighlight">\(r\)</span>),</p></li>
+<li><p>Aperiodic long-term behaviour,</p></li>
+<li><p>Sensitive dependence on initial conditions.</p></li>
+</ul>
+<p>However, small periodic windows still exist
+(e.g. the period-3 window near <span class="math notranslate nohighlight">\(r \approx 3.83\)</span>).</p>
+</section>
+<hr class="docutils" />
+<section id="step-4-lyapunov-exponent">
+<h2>Step 4: Lyapunov Exponent<a class="headerlink" href="#step-4-lyapunov-exponent" title="Link to this heading">#</a></h2>
+<p>For one-dimensional maps, the Lyapunov exponent is</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id10">
+<h1>[
+\lambda<a class="headerlink" href="#id10" title="Link to this heading">#</a></h1>
+<p>\lim_{N \to \infty}
+\frac{1}{N}
+\sum_{n=0}^{N-1}
+\ln |f’(x_n)|.
+]</p>
+<p>For the logistic map:</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id11">
+<h1>[
+\lambda<a class="headerlink" href="#id11" title="Link to this heading">#</a></h1>
+<p>\lim_{N \to \infty}
+\frac{1}{N}
+\sum_{n=0}^{N-1}
+\ln |r(1 - 2x_n)|.
+]</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\lambda &lt; 0\)</span>: periodic behaviour.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\lambda &gt; 0\)</span>: chaos.</p></li>
+</ul>
+<p>At <span class="math notranslate nohighlight">\(r = 4\)</span>,</p>
+<p>[
+\lambda = \ln 2,
+]</p>
+<p>indicating strong exponential sensitivity.</p>
+<hr class="docutils" />
+<section id="step-5-bifurcation-diagram">
+<h2>Step 5: Bifurcation Diagram<a class="headerlink" href="#step-5-bifurcation-diagram" title="Link to this heading">#</a></h2>
+<p>Plotting long-term values of <span class="math notranslate nohighlight">\(x_n\)</span> versus <span class="math notranslate nohighlight">\(r\)</span> produces the
+<strong>bifurcation diagram</strong>:</p>
+<ul class="simple">
+<li><p>Single branch (stable fixed point),</p></li>
+<li><p>Split into two,</p></li>
+<li><p>Then four,</p></li>
+<li><p>Then a dense chaotic band.</p></li>
+</ul>
+<p>The diagram visually demonstrates:</p>
+<ul class="simple">
+<li><p>Period-doubling cascade,</p></li>
+<li><p>Self-similarity,</p></li>
+<li><p>Fractal structure,</p></li>
+<li><p>Windows of periodicity within chaos.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="step-6-fractal-attractor">
+<h2>Step 6: Fractal Attractor<a class="headerlink" href="#step-6-fractal-attractor" title="Link to this heading">#</a></h2>
+<p>In the chaotic regime, iterates of the logistic map
+accumulate on a fractal subset of <span class="math notranslate nohighlight">\([0,1]\)</span>.</p>
+<p>The invariant density for <span class="math notranslate nohighlight">\(r = 4\)</span> is</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="rho-x">
+<h1>[
+\rho(x)<a class="headerlink" href="#rho-x" title="Link to this heading">#</a></h1>
+<p>\frac{1}{\pi \sqrt{x(1-x)}},
+]</p>
+<p>which is singular at the boundaries.</p>
+<p>This non-uniform invariant measure reflects mixing
+and stretching dynamics.</p>
+<hr class="docutils" />
+<section id="period-three-implies-chaos">
+<h2>Period Three Implies Chaos<a class="headerlink" href="#period-three-implies-chaos" title="Link to this heading">#</a></h2>
+<p>A fundamental result (Li &amp; Yorke, 1975):</p>
+<p>If a continuous one-dimensional map has a period-3 orbit,
+then it has periodic orbits of every period and exhibits chaotic behaviour.</p>
+<p>Thus, the existence of period-3 in the logistic map
+guarantees chaos.</p>
+</section>
+<hr class="docutils" />
+<section id="why-the-logistic-map-is-important">
+<h2>Why the Logistic Map Is Important<a class="headerlink" href="#why-the-logistic-map-is-important" title="Link to this heading">#</a></h2>
+<p>The logistic map demonstrates that:</p>
+<ul class="simple">
+<li><p>Chaos does not require high dimension,</p></li>
+<li><p>Chaos does not require complicated equations,</p></li>
+<li><p>Nonlinearity plus feedback is sufficient.</p></li>
+</ul>
+<p>It provides a complete route to chaos via:</p>
+<p>[
+\text{Fixed point}
+\rightarrow
+\text{Period doubling}
+\rightarrow
+\text{Chaos}.
+]</p>
+<hr class="docutils" />
+<p>The logistic map stands as one of the clearest and most studied
+examples of deterministic chaos, encapsulating the essential
+mechanisms of nonlinear instability, universality, and fractal
+structure in a single quadratic equation.</p>
+<p>]`{admonition} ODE code using odeint
+:class: dropdown</p>
+<p>]python
+import numpy as np
+import matplotlib.pyplot as plt</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="parameters">
+<h1>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h1>
+<p>r_min, r_max = 2.5, 4.0
+n_r = 5000
+n_iter = 1000
+n_transient = 500</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="r-values">
+<h1>r values<a class="headerlink" href="#r-values" title="Link to this heading">#</a></h1>
+<p>r = np.linspace(r_min, r_max, n_r)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="initial-condition">
+<h1>Initial condition<a class="headerlink" href="#initial-condition" title="Link to this heading">#</a></h1>
+<p>x = np.ones(n_r) * 0.5</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="storage-for-lyapunov-exponents">
+<h1>Storage for Lyapunov exponents<a class="headerlink" href="#storage-for-lyapunov-exponents" title="Link to this heading">#</a></h1>
+<p>lyapunov = np.zeros(n_r)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="prepare-figure">
+<h1>Prepare figure<a class="headerlink" href="#prepare-figure" title="Link to this heading">#</a></h1>
+<p>plt.figure(figsize=(10, 7))</p>
+<p>for i in range(n_iter):
+x = r * x * (1 - x)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Accumulate Lyapunov exponent
+lyapunov += np.log(np.abs(r * (1 - 2*x)))
+
+# Plot after transients die out
+if i &gt;= n_transient:
+    plt.plot(r, x, &#39;,k&#39;, alpha=0.25)
+</pre></div>
+</div>
+<p>plt.title(“Logistic Map Bifurcation Diagram”)
+plt.xlabel(“r”)
+plt.ylabel(“x”)
+plt.show()</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="compute-average-lyapunov-exponent">
+<h1>Compute average Lyapunov exponent<a class="headerlink" href="#compute-average-lyapunov-exponent" title="Link to this heading">#</a></h1>
+<p>lyapunov /= n_iter</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plot-lyapunov-exponent">
+<h1>Plot Lyapunov exponent<a class="headerlink" href="#plot-lyapunov-exponent" title="Link to this heading">#</a></h1>
+<p>plt.figure(figsize=(10, 4))
+plt.plot(r, lyapunov, ‘k’)
+plt.axhline(0, color=’red’, linestyle=’–‘)
+plt.title(“Lyapunov Exponent of Logistic Map”)
+plt.xlabel(“r”)
+plt.ylabel(“λ”)
+plt.show()
+]
+]`</p>
+<section id="finding-chaos-in-continuous-time-dynamical-systems">
+<h2>Finding Chaos in Continuous-Time Dynamical Systems<a class="headerlink" href="#finding-chaos-in-continuous-time-dynamical-systems" title="Link to this heading">#</a></h2>
+<p>Unlike discrete maps (e.g. the logistic map), continuous-time systems
+are governed by ordinary differential equations:</p>
+<p>[
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}, t).
+]</p>
+<p>Detecting chaos in such systems requires a combination of dynamical,
+geometric, and numerical diagnostics.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="dimensional-requirement">
+<h1>1. Dimensional Requirement<a class="headerlink" href="#dimensional-requirement" title="Link to this heading">#</a></h1>
+<p>Before attempting to detect chaos in a continuous-time system,
+one must verify that chaos is <em>structurally possible</em>.</p>
+<p>Not all dynamical systems can exhibit chaos.</p>
+<hr class="docutils" />
+<section id="autonomous-systems">
+<h2>1.1 Autonomous Systems<a class="headerlink" href="#autonomous-systems" title="Link to this heading">#</a></h2>
+<p>Consider an autonomous system</p>
+<p>[
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}),
+\qquad \mathbf{x} \in \mathbb{R}^n.
+]</p>
+<p>The dimension (n) of phase space plays a fundamental role.</p>
+<section id="key-theorem-poincarebendixson">
+<h3>Key Theorem: Poincaré–Bendixson<a class="headerlink" href="#key-theorem-poincarebendixson" title="Link to this heading">#</a></h3>
+<p>For a smooth <strong>two-dimensional autonomous system</strong>, long-term bounded trajectories can only approach:</p>
+<ul class="simple">
+<li><p>A fixed point,</p></li>
+<li><p>A periodic orbit,</p></li>
+<li><p>A set of fixed points connected by trajectories.</p></li>
+</ul>
+<p>They cannot form strange attractors.</p>
+<p>Therefore:</p>
+<p>[
+\textbf{2D autonomous systems cannot exhibit chaos.}
+]</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="why-2d-is-too-simple">
+<h2>1.2 Why 2D Is Too Simple<a class="headerlink" href="#why-2d-is-too-simple" title="Link to this heading">#</a></h2>
+<p>Chaos requires:</p>
+<ul class="simple">
+<li><p>Exponential stretching,</p></li>
+<li><p>Folding to maintain boundedness,</p></li>
+<li><p>Recurrence.</p></li>
+</ul>
+<p>In two dimensions:</p>
+<ul class="simple">
+<li><p>Stretching in one direction must be compensated by contraction in another.</p></li>
+<li><p>There is insufficient geometric freedom to fold trajectories into fractal structures.</p></li>
+<li><p>Limit sets must be simple (fixed points or periodic orbits).</p></li>
+</ul>
+<p>The topology of the plane restricts complexity.</p>
+</section>
+<hr class="docutils" />
+<section id="minimum-dimension-for-continuous-chaos">
+<h2>1.3 Minimum Dimension for Continuous Chaos<a class="headerlink" href="#minimum-dimension-for-continuous-chaos" title="Link to this heading">#</a></h2>
+<p>Continuous-time chaos requires:</p>
+<p>[
+n \ge 3.
+]</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>Lorenz system (3D) → chaotic.</p></li>
+<li><p>Rössler system (3D) → chaotic.</p></li>
+<li><p>Unforced Duffing (2D autonomous) → not chaotic.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="time-dependent-forcing">
+<h2>1.4 Time-Dependent Forcing<a class="headerlink" href="#time-dependent-forcing" title="Link to this heading">#</a></h2>
+<p>A periodically forced 2D system behaves differently.</p>
+<p>Example: forced Duffing</p>
+<p>[
+\ddot{x} + \delta \dot{x} + \alpha x + \beta x^3 = \gamma \cos(\omega t).
+]</p>
+<p>Although the physical state is ((x, \dot{x})),
+the system is explicitly time-dependent.</p>
+<p>Introduce a new variable:</p>
+<p>[
+\dot{\theta} = \omega.
+]</p>
+<p>Now the system becomes:</p>
+<p>[
+\dot{x} = v,
+]
+[
+\dot{v} = -\delta v - \alpha x - \beta x^3 + \gamma \cos \theta,
+]
+[
+\dot{\theta} = \omega.
+]</p>
+<p>This is a <strong>3D autonomous system</strong>.</p>
+<p>Thus, chaos becomes possible.</p>
+</section>
+<hr class="docutils" />
+<section id="geometric-intuition">
+<h2>1.5 Geometric Intuition<a class="headerlink" href="#geometric-intuition" title="Link to this heading">#</a></h2>
+<p>Chaos requires a mechanism analogous to kneading dough:</p>
+<ol class="arabic simple">
+<li><p>Stretch phase space locally.</p></li>
+<li><p>Fold it globally.</p></li>
+<li><p>Repeat indefinitely.</p></li>
+</ol>
+<p>In 2D autonomous systems:</p>
+<ul class="simple">
+<li><p>Folding without intersections of trajectories is severely restricted.</p></li>
+<li><p>Stable and unstable manifolds cannot form the complex transverse intersections required for homoclinic tangles.</p></li>
+</ul>
+<p>In 3D:</p>
+<ul class="simple">
+<li><p>Manifolds can intersect transversely.</p></li>
+<li><p>Homoclinic and heteroclinic tangles can form.</p></li>
+<li><p>Strange attractors become possible.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="hamiltonian-vs-dissipative-systems">
+<h2>1.6 Hamiltonian vs Dissipative Systems<a class="headerlink" href="#hamiltonian-vs-dissipative-systems" title="Link to this heading">#</a></h2>
+<p>Even in 3D, additional structure matters.</p>
+<ul class="simple">
+<li><p>Hamiltonian systems conserve phase-space volume.</p></li>
+<li><p>Dissipative systems contract volume.</p></li>
+</ul>
+<p>Continuous-time dissipative chaos typically requires:</p>
+<p>[
+\sum_{i=1}^n \lambda_i &lt; 0,
+\quad \text{and} \quad
+\lambda_1 &gt; 0.
+]</p>
+<p>This combination produces strange attractors.</p>
+</section>
+<hr class="docutils" />
+<section id="practical-rule">
+<h2>1.7 Practical Rule<a class="headerlink" href="#practical-rule" title="Link to this heading">#</a></h2>
+<p>Before searching for chaos:</p>
+<ol class="arabic simple">
+<li><p>Determine whether the system is autonomous.</p></li>
+<li><p>Determine its phase-space dimension.</p></li>
+<li><p>If autonomous and (n \le 2), chaos is impossible.</p></li>
+<li><p>If (n \ge 3) (or time-forced), chaos is possible — proceed to diagnostics.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>1.8 Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>Continuous-time chaos requires sufficient dimensionality to support:</p>
+<ul class="simple">
+<li><p>Exponential instability,</p></li>
+<li><p>Recurrence,</p></li>
+<li><p>Topological complexity.</p></li>
+</ul>
+<p>Without at least three effective dimensions,
+the geometry of phase space forbids chaotic attractors.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="largest-lyapunov-exponent">
+<h1>2. Largest Lyapunov Exponent<a class="headerlink" href="#largest-lyapunov-exponent" title="Link to this heading">#</a></h1>
+<p>The most definitive diagnostic of chaos in continuous-time systems
+is the <strong>largest Lyapunov exponent</strong>.</p>
+<p>It quantifies the average exponential rate at which nearby trajectories diverge.</p>
+<hr class="docutils" />
+<section id="linearisation-along-a-trajectory">
+<h2>2.1 Linearisation Along a Trajectory<a class="headerlink" href="#linearisation-along-a-trajectory" title="Link to this heading">#</a></h2>
+<p>Consider an autonomous system:</p>
+<p>[
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}),
+\qquad \mathbf{x} \in \mathbb{R}^n.
+]</p>
+<p>Let (\mathbf{x}(t)) be a solution trajectory.</p>
+<p>Introduce a small perturbation:</p>
+<p>[
+\mathbf{x}(t) + \delta \mathbf{x}(t).
+]</p>
+<p>Linearising gives the <strong>variational equation</strong>:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="dot-delta-mathbf-x">
+<h1>[
+\dot{\delta \mathbf{x}}<a class="headerlink" href="#dot-delta-mathbf-x" title="Link to this heading">#</a></h1>
+<p>D\mathbf{f}(\mathbf{x}(t)) , \delta \mathbf{x},
+]</p>
+<p>where (D\mathbf{f}) is the Jacobian matrix evaluated along the trajectory.</p>
+<p>This describes the evolution of perturbations in tangent space.</p>
+<hr class="docutils" />
+<section id="definition-of-the-largest-lyapunov-exponent">
+<h2>2.2 Definition of the Largest Lyapunov Exponent<a class="headerlink" href="#definition-of-the-largest-lyapunov-exponent" title="Link to this heading">#</a></h2>
+<p>The largest Lyapunov exponent is:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lambda-1">
+<h1>[
+\lambda_1<a class="headerlink" href="#lambda-1" title="Link to this heading">#</a></h1>
+<p>\lim_{t \to \infty}
+\frac{1}{t}
+\ln
+\frac{|\delta \mathbf{x}(t)|}
+{|\delta \mathbf{x}(0)|}.
+]</p>
+<p>If nearby trajectories diverge exponentially,</p>
+<p>[
+|\delta \mathbf{x}(t)|
+\sim
+e^{\lambda_1 t}.
+]</p>
+<hr class="docutils" />
+<section id="interpretation-of-the-sign">
+<h2>2.3 Interpretation of the Sign<a class="headerlink" href="#interpretation-of-the-sign" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>( \lambda_1 &lt; 0 ) → perturbations decay → stable fixed point</p></li>
+<li><p>( \lambda_1 = 0 ) → neutral direction (e.g. periodic orbit)</p></li>
+<li><p>( \lambda_1 &gt; 0 ) → exponential divergence → chaos</p></li>
+</ul>
+<p>In continuous-time systems:</p>
+<ul class="simple">
+<li><p>One exponent is always zero (flow direction).</p></li>
+<li><p>Chaos requires at least one positive exponent.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="full-lyapunov-spectrum">
+<h2>2.4 Full Lyapunov Spectrum<a class="headerlink" href="#full-lyapunov-spectrum" title="Link to this heading">#</a></h2>
+<p>An (n)-dimensional system has (n) Lyapunov exponents:</p>
+<p>[
+\lambda_1 \ge \lambda_2 \ge \dots \ge \lambda_n.
+]</p>
+<p>Their sum determines phase-space volume evolution:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id12">
+<h1>[
+\sum_{i=1}^n \lambda_i<a class="headerlink" href="#id12" title="Link to this heading">#</a></h1>
+<p>\lim_{t\to\infty}
+\frac{1}{t}
+\ln \frac{V(t)}{V(0)}.
+]</p>
+<ul class="simple">
+<li><p>Positive sum → volume expansion</p></li>
+<li><p>Negative sum → dissipation</p></li>
+</ul>
+<p>In dissipative chaotic systems:</p>
+<p>[
+\lambda_1 &gt; 0,
+\quad
+\sum_{i=1}^n \lambda_i &lt; 0.
+]</p>
+<p>This produces strange attractors.</p>
+<hr class="docutils" />
+<section id="numerical-computation-benettin-method">
+<h2>2.5 Numerical Computation (Benettin Method)<a class="headerlink" href="#numerical-computation-benettin-method" title="Link to this heading">#</a></h2>
+<p>In practice, the limit is approximated by:</p>
+<ol class="arabic simple">
+<li><p>Integrating the original system.</p></li>
+<li><p>Simultaneously integrating the variational equation.</p></li>
+<li><p>Periodically renormalising the perturbation vector.</p></li>
+<li><p>Averaging logarithmic growth.</p></li>
+</ol>
+<p>If renormalisations occur at times (t_k), then:</p>
+<p>[
+\lambda_1
+\approx
+\frac{1}{T}
+\sum_{k}
+\ln \frac{|\delta \mathbf{x}(t_k)|}
+{|\delta \mathbf{x}(t_{k-1})|},
+]</p>
+<p>where (T) is total elapsed time.</p>
+<p>Renormalisation prevents overflow and keeps perturbations infinitesimal.</p>
+</section>
+<hr class="docutils" />
+<section id="geometric-meaning">
+<h2>2.6 Geometric Meaning<a class="headerlink" href="#geometric-meaning" title="Link to this heading">#</a></h2>
+<p>The largest Lyapunov exponent measures:</p>
+<ul class="simple">
+<li><p>Local stretching rate,</p></li>
+<li><p>Information loss rate,</p></li>
+<li><p>Predictability horizon.</p></li>
+</ul>
+<p>Predictability time:</p>
+<p>[
+t_{\text{predict}}
+\approx
+\frac{1}{\lambda_1}
+\ln!\left(\frac{1}{\epsilon}\right),
+]</p>
+<p>where (\epsilon) is measurement precision.</p>
+</section>
+<hr class="docutils" />
+<section id="example-forced-duffing">
+<h2>2.7 Example: Forced Duffing<a class="headerlink" href="#example-forced-duffing" title="Link to this heading">#</a></h2>
+<p>For the forced Duffing oscillator:</p>
+<p>[
+\ddot{x} + \delta \dot{x} + \alpha x + \beta x^3 = \gamma \cos(\omega t),
+]</p>
+<p>the Jacobian is:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="j-t">
+<h1>[
+J(t)<a class="headerlink" href="#j-t" title="Link to this heading">#</a></h1>
+<p>\begin{pmatrix}
+0 &amp; 1 \
+-\alpha - 3\beta x^2 &amp; -\delta
+\end{pmatrix}.
+]</p>
+<p>Integrating the tangent dynamics reveals whether
+(\lambda_1 &gt; 0).</p>
+<p>If so, the Duffing system is chaotic.</p>
+<hr class="docutils" />
+<section id="why-this-is-the-definitive-test">
+<h2>2.8 Why This Is the Definitive Test<a class="headerlink" href="#why-this-is-the-definitive-test" title="Link to this heading">#</a></h2>
+<p>Other diagnostics (Poincaré sections, spectra, fractal dimension)
+can strongly suggest chaos.</p>
+<p>But:</p>
+<p>[
+\boxed{\lambda_1 &gt; 0}
+]</p>
+<p>is the clearest quantitative criterion.</p>
+<p>It directly measures exponential instability —
+the core dynamical signature of chaos.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="poincare-section">
+<h1>3. Poincaré Section<a class="headerlink" href="#poincare-section" title="Link to this heading">#</a></h1>
+<p>A <strong>Poincaré section</strong> is one of the most powerful tools for detecting
+and visualising chaos in continuous-time systems, especially when the
+system is periodically forced (e.g. the Duffing oscillator).</p>
+<p>It reduces a continuous flow to a discrete map, making chaotic structure
+much easier to classify.</p>
+<hr class="docutils" />
+<section id="motivation-from-continuous-flow-to-a-discrete-map">
+<h2>3.1 Motivation: From Continuous Flow to a Discrete Map<a class="headerlink" href="#motivation-from-continuous-flow-to-a-discrete-map" title="Link to this heading">#</a></h2>
+<p>For a continuous-time system</p>
+<p>[
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}, t),
+]</p>
+<p>trajectories are curves in phase space, which can be difficult to interpret.</p>
+<p>A Poincaré section samples the trajectory at specific times or crossings
+to produce a sequence of points:</p>
+<p>[
+\mathbf{x}_0, \mathbf{x}_1, \mathbf{x}_2, \dots
+]</p>
+<p>This converts the flow into an <strong>iterated map</strong>, allowing classification
+using the geometry of discrete-time dynamics.</p>
+</section>
+<hr class="docutils" />
+<section id="periodically-forced-systems-stroboscopic-section">
+<h2>3.2 Periodically Forced Systems (Stroboscopic Section)<a class="headerlink" href="#periodically-forced-systems-stroboscopic-section" title="Link to this heading">#</a></h2>
+<p>If the system is forced with period</p>
+<p>[
+T = \frac{2\pi}{\omega},
+]</p>
+<p>a natural choice is a <strong>stroboscopic Poincaré section</strong>, defined by sampling
+once every forcing period:</p>
+<p>[
+\mathbf{x}_n = \mathbf{x}(nT).
+]</p>
+<p>For the forced Duffing oscillator, one records</p>
+<p>[
+(x(nT), \dot{x}(nT)).
+]</p>
+<p>This produces a discrete map</p>
+<p>[
+\mathbf{x}_{n+1} = \mathcal{P}(\mathbf{x}_n),
+]</p>
+<p>called the <strong>Poincaré map</strong>, where (\mathcal{P}) advances the solution by one period.</p>
+</section>
+<hr class="docutils" />
+<section id="autonomous-systems-surface-of-section">
+<h2>3.3 Autonomous Systems (Surface of Section)<a class="headerlink" href="#autonomous-systems-surface-of-section" title="Link to this heading">#</a></h2>
+<p>For an autonomous (n)-dimensional system</p>
+<p>[
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}),
+]</p>
+<p>a Poincaré section is defined by choosing a hypersurface</p>
+<p>[
+\Sigma = {\mathbf{x} \in \mathbb{R}^n : g(\mathbf{x}) = 0},
+]</p>
+<p>such that trajectories intersect (\Sigma) transversely:</p>
+<p>[
+\nabla g(\mathbf{x}) \cdot \mathbf{f}(\mathbf{x}) \neq 0
+\quad \text{on intersections}.
+]</p>
+<p>Each time the trajectory crosses (\Sigma), record the intersection point.
+This again defines a Poincaré map:</p>
+<p>[
+\mathbf{x}_{k+1} = \mathcal{P}(\mathbf{x}_k).
+]</p>
+<p>Dimensional reduction:</p>
+<ul class="simple">
+<li><p>Original flow in (n) dimensions</p></li>
+<li><p>Poincaré map acts on ((n-1))-dimensional section</p></li>
+</ul>
+<p>This reduction is a key reason Poincaré sections reveal structure so clearly.</p>
+</section>
+<hr class="docutils" />
+<section id="how-to-classify-the-motion-from-the-section">
+<h2>3.4 How to Classify the Motion from the Section<a class="headerlink" href="#how-to-classify-the-motion-from-the-section" title="Link to this heading">#</a></h2>
+<p>The geometry of points on the section determines the regime:</p>
+<section id="a-periodic-motion">
+<h3>(a) Periodic Motion<a class="headerlink" href="#a-periodic-motion" title="Link to this heading">#</a></h3>
+<p>A periodic orbit in continuous time intersects the section at a finite number of points.</p>
+<ul class="simple">
+<li><p>Period-1 orbit → one point</p></li>
+<li><p>Period-(k) orbit → (k) distinct points</p></li>
+</ul>
+<p>[
+{\mathbf{x}_1, \dots, \mathbf{x}_k}.
+]</p>
+</section>
+<section id="b-quasi-periodic-motion">
+<h3>(b) Quasi-Periodic Motion<a class="headerlink" href="#b-quasi-periodic-motion" title="Link to this heading">#</a></h3>
+<p>Quasi-periodic motion lies on an invariant torus.
+Its intersection with the section forms a smooth closed curve:</p>
+<p>[
+\text{closed invariant loop on } \Sigma.
+]</p>
+</section>
+<section id="c-chaotic-motion">
+<h3>(c) Chaotic Motion<a class="headerlink" href="#c-chaotic-motion" title="Link to this heading">#</a></h3>
+<p>Chaotic trajectories produce an aperiodic sequence of intersections.
+The points fill a complicated set with fine structure.</p>
+<p>Typical signature:</p>
+<ul class="simple">
+<li><p>A scattered, filamentary, fractal-looking “cloud”</p></li>
+<li><p>Self-similar structure under magnification</p></li>
+</ul>
+<p>This is the cross-section of a strange attractor.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="why-chaos-looks-fractal-in-a-poincare-section">
+<h2>3.5 Why Chaos Looks Fractal in a Poincaré Section<a class="headerlink" href="#why-chaos-looks-fractal-in-a-poincare-section" title="Link to this heading">#</a></h2>
+<p>For dissipative chaos:</p>
+<ul class="simple">
+<li><p>Phase-space volume contracts,</p></li>
+<li><p>Trajectories collapse onto an attractor,</p></li>
+<li><p>Stretching and folding create fractal geometry.</p></li>
+</ul>
+<p>The attractor (\mathcal{A}) has non-integer dimension.
+Its intersection with (\Sigma) inherits this complexity.</p>
+<p>Thus, a Poincaré section can reveal fractality even when the full
+phase-space attractor is difficult to view.</p>
+</section>
+<hr class="docutils" />
+<section id="practical-procedure-forced-duffing-example">
+<h2>3.6 Practical Procedure (Forced Duffing Example)<a class="headerlink" href="#practical-procedure-forced-duffing-example" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Simulate long enough to remove transients.</p></li>
+<li><p>Compute the forcing period (T = 2\pi/\omega).</p></li>
+<li><p>Sample ((x(t), \dot{x}(t))) at (t = nT).</p></li>
+<li><p>Plot the points in the ((x,\dot{x})) plane.</p></li>
+</ol>
+<p>Then classify:</p>
+<ul class="simple">
+<li><p>Point(s) → periodic</p></li>
+<li><p>Closed loop → quasi-periodic</p></li>
+<li><p>Fractal cloud → chaotic</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="limitations-and-best-practice">
+<h2>3.7 Limitations and Best Practice<a class="headerlink" href="#limitations-and-best-practice" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A finite simulation may hide very long transients.</p></li>
+<li><p>Periodic windows exist inside chaotic regimes.</p></li>
+<li><p>Noise can blur the fractal structure.</p></li>
+</ul>
+<p>Therefore, Poincaré sections should be combined with:</p>
+<ul class="simple">
+<li><p>Largest Lyapunov exponent ((\lambda_1 &gt; 0)),</p></li>
+<li><p>Power spectrum,</p></li>
+<li><p>Bifurcation scans.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id13">
+<h2>3.8 Summary<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<p>A Poincaré section converts a continuous-time system into a discrete map
+whose geometry provides a direct visual classification:</p>
+<p>[
+\text{periodic} \rightarrow \text{finite points},\quad
+\text{quasi-periodic} \rightarrow \text{closed curve},\quad
+\text{chaotic} \rightarrow \text{fractal set}.
+]</p>
+<p>For forced oscillators such as Duffing,
+the stroboscopic Poincaré section is one of the clearest ways to detect chaos.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="phase-space-structure-and-strange-attractors">
+<h1>4. Phase-Space Structure and Strange Attractors<a class="headerlink" href="#phase-space-structure-and-strange-attractors" title="Link to this heading">#</a></h1>
+<p>Beyond numerical indicators such as Lyapunov exponents,
+chaos in continuous-time systems can often be recognised directly
+from the <strong>geometry of phase space</strong>.</p>
+<p>Examining long-term trajectories reveals whether the system
+settles into simple motion or onto a strange attractor.</p>
+<hr class="docutils" />
+<section id="phase-space-representation">
+<h2>4.1 Phase Space Representation<a class="headerlink" href="#phase-space-representation" title="Link to this heading">#</a></h2>
+<p>For a system</p>
+<p>[
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}),
+]</p>
+<p>the <strong>phase space</strong> is the space of all possible states (\mathbf{x}).</p>
+<p>A trajectory is a curve:</p>
+<p>[
+\mathbf{x}(t)
+\subset \mathbb{R}^n.
+]</p>
+<p>Long-term behaviour corresponds to the limit set:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="omega-mathbf-x-0">
+<h1>[
+\omega(\mathbf{x}_0)<a class="headerlink" href="#omega-mathbf-x-0" title="Link to this heading">#</a></h1>
+<p>\left{
+\mathbf{y} :
+\mathbf{x}(t_k) \to \mathbf{y}
+\text{ for some } t_k \to \infty
+\right}.
+]</p>
+<p>Understanding this limit set is central to classifying chaos.</p>
+<hr class="docutils" />
+<section id="regular-motion-in-phase-space">
+<h2>4.2 Regular Motion in Phase Space<a class="headerlink" href="#regular-motion-in-phase-space" title="Link to this heading">#</a></h2>
+<section id="a-fixed-points">
+<h3>(a) Fixed Points<a class="headerlink" href="#a-fixed-points" title="Link to this heading">#</a></h3>
+<p>Trajectories converge to:</p>
+<p>[
+\mathbf{x}(t) \to \mathbf{x}^*.
+]</p>
+<p>The phase portrait shows all trajectories spiralling
+or flowing toward a single point.</p>
+</section>
+<hr class="docutils" />
+<section id="b-periodic-orbits">
+<h3>(b) Periodic Orbits<a class="headerlink" href="#b-periodic-orbits" title="Link to this heading">#</a></h3>
+<p>Trajectories approach a closed curve:</p>
+<p>[
+\mathbf{x}(t+T) = \mathbf{x}(t).
+]</p>
+<p>In phase space, this appears as a stable limit cycle.</p>
+</section>
+<hr class="docutils" />
+<section id="c-quasi-periodic-motion">
+<h3>(c) Quasi-Periodic Motion<a class="headerlink" href="#c-quasi-periodic-motion" title="Link to this heading">#</a></h3>
+<p>Trajectories lie on invariant tori.
+In 3D phase space, this forms a smooth toroidal surface.</p>
+<p>The motion never repeats but remains geometrically smooth.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="chaotic-motion">
+<h2>4.3 Chaotic Motion<a class="headerlink" href="#chaotic-motion" title="Link to this heading">#</a></h2>
+<p>In chaotic regimes:</p>
+<ul class="simple">
+<li><p>Motion remains bounded,</p></li>
+<li><p>Trajectories never close,</p></li>
+<li><p>The limit set is neither a point nor a smooth surface.</p></li>
+</ul>
+<p>Instead, trajectories accumulate on a <strong>strange attractor</strong>.</p>
+<p>Characteristics:</p>
+<ul class="simple">
+<li><p>Fractal geometry,</p></li>
+<li><p>Sensitive dependence on initial conditions,</p></li>
+<li><p>Non-integer dimension,</p></li>
+<li><p>Dense unstable periodic orbits embedded within.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="stretching-and-folding-mechanism">
+<h2>4.4 Stretching and Folding Mechanism<a class="headerlink" href="#stretching-and-folding-mechanism" title="Link to this heading">#</a></h2>
+<p>The geometric origin of strange attractors is:</p>
+<ol class="arabic simple">
+<li><p><strong>Local stretching</strong><br />
+Exponential separation of nearby trajectories.</p></li>
+<li><p><strong>Global folding</strong><br />
+Dissipation keeps motion bounded.</p></li>
+</ol>
+<p>This repeated process creates:</p>
+<ul class="simple">
+<li><p>Filamentary structure,</p></li>
+<li><p>Self-similarity,</p></li>
+<li><p>Fractal geometry.</p></li>
+</ul>
+<p>A useful analogy is repeatedly stretching and folding dough.</p>
+</section>
+<hr class="docutils" />
+<section id="id14">
+<h2>4.5 Dissipation and Volume Contraction<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
+<p>For a continuous system:</p>
+<p>[
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}),
+]</p>
+<p>the divergence</p>
+<p>[
+\nabla \cdot \mathbf{f}
+]</p>
+<p>determines phase-space volume evolution.</p>
+<p>If</p>
+<p>[
+\nabla \cdot \mathbf{f} &lt; 0,
+]</p>
+<p>then volumes contract:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id15">
+<h1>[
+\frac{dV}{dt}<a class="headerlink" href="#id15" title="Link to this heading">#</a></h1>
+<p>(\nabla \cdot \mathbf{f}) V.
+]</p>
+<p>Volume contraction combined with instability
+forces trajectories onto lower-dimensional attractors.</p>
+<hr class="docutils" />
+<section id="example-lorenz-attractor">
+<h2>4.6 Example: Lorenz Attractor<a class="headerlink" href="#example-lorenz-attractor" title="Link to this heading">#</a></h2>
+<p>The Lorenz system:</p>
+<p>[
+\begin{aligned}
+\dot{x} &amp;= \sigma (y - x), \
+\dot{y} &amp;= x(\rho - z) - y, \
+\dot{z} &amp;= xy - \beta z,
+\end{aligned}
+]</p>
+<p>produces a bounded, butterfly-shaped attractor.</p>
+<p>Properties:</p>
+<ul class="simple">
+<li><p>(\lambda_1 &gt; 0),</p></li>
+<li><p>Fractal dimension ( \approx 2.06 ),</p></li>
+<li><p>Dissipative (volume contracting).</p></li>
+</ul>
+<p>The attractor is neither surface nor volume,
+but a fractal subset of (\mathbb{R}^3).</p>
+</section>
+<hr class="docutils" />
+<section id="practical-identification">
+<h2>4.7 Practical Identification<a class="headerlink" href="#practical-identification" title="Link to this heading">#</a></h2>
+<p>To classify chaos via phase space:</p>
+<ol class="arabic simple">
+<li><p>Simulate long enough to remove transients.</p></li>
+<li><p>Plot trajectories in full phase space.</p></li>
+<li><p>Check for:</p>
+<ul class="simple">
+<li><p>Boundedness,</p></li>
+<li><p>Non-closure,</p></li>
+<li><p>Apparent fractal structure,</p></li>
+<li><p>No smooth invariant surface.</p></li>
+</ul>
+</li>
+</ol>
+<p>If trajectories densely fill a complex,
+structured region without forming smooth manifolds,
+the system is likely chaotic.</p>
+</section>
+<hr class="docutils" />
+<section id="id16">
+<h2>4.8 Summary<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<p>Phase-space analysis distinguishes regimes:</p>
+<ul class="simple">
+<li><p>Fixed point → single point attractor.</p></li>
+<li><p>Periodic → closed curve.</p></li>
+<li><p>Quasi-periodic → smooth torus.</p></li>
+<li><p>Chaotic → strange attractor with fractal geometry.</p></li>
+</ul>
+<p>Continuous-time chaos is therefore visible not only
+through numerical diagnostics,
+but directly in the geometric structure of phase space.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="power-spectrum-and-frequency-analysis">
+<h1>5. Power Spectrum and Frequency Analysis<a class="headerlink" href="#power-spectrum-and-frequency-analysis" title="Link to this heading">#</a></h1>
+<p>Another practical way to detect chaos in continuous-time systems
+is through <strong>frequency-domain analysis</strong> of a time series.</p>
+<p>While Lyapunov exponents measure instability directly,
+the power spectrum reveals the temporal structure of the motion.</p>
+<hr class="docutils" />
+<section id="from-time-series-to-frequency-spectrum">
+<h2>5.1 From Time Series to Frequency Spectrum<a class="headerlink" href="#from-time-series-to-frequency-spectrum" title="Link to this heading">#</a></h2>
+<p>Suppose we observe a scalar variable (x(t))
+from a dynamical system:</p>
+<p>[
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}).
+]</p>
+<p>The Fourier transform of (x(t)) is</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id17">
+<h1>[
+\hat{x}(\omega)<a class="headerlink" href="#id17" title="Link to this heading">#</a></h1>
+<p>\int_{-\infty}^{\infty}
+x(t) e^{-i \omega t} , dt.
+]</p>
+<p>The <strong>power spectral density (PSD)</strong> is</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id18">
+<h1>[
+S(\omega)<a class="headerlink" href="#id18" title="Link to this heading">#</a></h1>
+<p>\lim_{T \to \infty}
+\frac{1}{2T}
+\left|
+\int_{-T}^{T}
+x(t) e^{-i \omega t} , dt
+\right|^2.
+]</p>
+<p>It describes how energy is distributed across frequencies.</p>
+<hr class="docutils" />
+<section id="spectral-signatures-of-different-dynamical-regimes">
+<h2>5.2 Spectral Signatures of Different Dynamical Regimes<a class="headerlink" href="#spectral-signatures-of-different-dynamical-regimes" title="Link to this heading">#</a></h2>
+<section id="id19">
+<h3>(a) Periodic Motion<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<p>If</p>
+<p>[
+x(t) = A \cos(\omega_0 t),
+]</p>
+<p>then</p>
+<p>[
+S(\omega)
+\propto
+\delta(\omega - \omega_0)
++
+\delta(\omega + \omega_0).
+]</p>
+<p>The spectrum consists of sharp discrete peaks.</p>
+</section>
+<hr class="docutils" />
+<section id="id20">
+<h3>(b) Quasi-Periodic Motion<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<p>If motion contains incommensurate frequencies,</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="x-t">
+<h1>[
+x(t)<a class="headerlink" href="#x-t" title="Link to this heading">#</a></h1>
+<p>\sum_k A_k \cos(\omega_k t),
+]</p>
+<p>the spectrum contains multiple discrete peaks,
+but still remains countable and sharp.</p>
+<hr class="docutils" />
+<section id="id21">
+<h2>(c) Chaotic Motion<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
+<p>For chaotic systems:</p>
+<ul class="simple">
+<li><p>Motion is aperiodic,</p></li>
+<li><p>Correlations decay,</p></li>
+<li><p>No finite set of frequencies dominates.</p></li>
+</ul>
+<p>The spectrum becomes <strong>broadband and continuous</strong>:</p>
+<p>[
+S(\omega)
+\text{ is smooth over a range of frequencies.}
+]</p>
+<p>This reflects the mixing of many timescales.</p>
+</section>
+<hr class="docutils" />
+<section id="relation-to-autocorrelation">
+<h2>5.3 Relation to Autocorrelation<a class="headerlink" href="#relation-to-autocorrelation" title="Link to this heading">#</a></h2>
+<p>Define the autocorrelation function:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id22">
+<h1>[
+R(\tau)<a class="headerlink" href="#id22" title="Link to this heading">#</a></h1>
+<p>\lim_{T\to\infty}
+\frac{1}{T}
+\int_0^T x(t)x(t+\tau),dt.
+]</p>
+<p>The Wiener–Khinchin theorem gives:</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id23">
+<h1>[
+S(\omega)<a class="headerlink" href="#id23" title="Link to this heading">#</a></h1>
+<p>\int_{-\infty}^{\infty}
+R(\tau) e^{-i\omega\tau},d\tau.
+]</p>
+<p>In chaotic systems:</p>
+<p>[
+R(\tau) \to 0
+\quad \text{as} \quad \tau \to \infty.
+]</p>
+<p>Decay of correlations leads to a continuous spectrum.</p>
+<hr class="docutils" />
+<section id="practical-computation">
+<h2>5.4 Practical Computation<a class="headerlink" href="#practical-computation" title="Link to this heading">#</a></h2>
+<p>In numerical simulations:</p>
+<ol class="arabic simple">
+<li><p>Simulate long enough to remove transients.</p></li>
+<li><p>Record (x(t)) over a long time window.</p></li>
+<li><p>Compute the discrete Fourier transform (FFT).</p></li>
+<li><p>Plot the magnitude squared.</p></li>
+</ol>
+<p>Interpretation:</p>
+<ul class="simple">
+<li><p>Isolated sharp peaks → periodic.</p></li>
+<li><p>Several sharp peaks → quasi-periodic.</p></li>
+<li><p>Dense continuous band → chaotic.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="limitations">
+<h2>5.5 Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h2>
+<p>A broadband spectrum alone does <strong>not</strong> prove chaos.</p>
+<p>Stochastic noise also produces continuous spectra.</p>
+<p>Therefore, spectral analysis must be combined with:</p>
+<ul class="simple">
+<li><p>Largest Lyapunov exponent,</p></li>
+<li><p>Poincaré section,</p></li>
+<li><p>Phase-space structure.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="example-forced-duffing-oscillator">
+<h2>5.6 Example: Forced Duffing Oscillator<a class="headerlink" href="#example-forced-duffing-oscillator" title="Link to this heading">#</a></h2>
+<p>In the chaotic regime:</p>
+<ul class="simple">
+<li><p>The time series appears irregular.</p></li>
+<li><p>The power spectrum shows a continuous band.</p></li>
+<li><p>Small remnants of forcing frequency may still appear,
+but without dominant discrete harmonics.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id24">
+<h2>5.7 Summary<a class="headerlink" href="#id24" title="Link to this heading">#</a></h2>
+<p>Frequency-domain classification:</p>
+<p>[
+\text{Periodic} \rightarrow \text{Discrete spectrum}
+]
+[
+\text{Quasi-periodic} \rightarrow \text{Discrete multi-peak spectrum}
+]
+[
+\text{Chaotic} \rightarrow \text{Broadband continuous spectrum}
+]</p>
+<p>Power spectrum analysis provides a practical,
+experimentally accessible method for detecting
+continuous-time chaos.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="bifurcation-analysis-and-routes-to-chaos">
+<h1>6. Bifurcation Analysis and Routes to Chaos<a class="headerlink" href="#bifurcation-analysis-and-routes-to-chaos" title="Link to this heading">#</a></h1>
+<p>Chaos in continuous-time systems typically does not appear abruptly.
+Instead, it emerges as a system parameter is varied through a sequence
+of qualitative changes called <strong>bifurcations</strong>.</p>
+<p>Studying these transitions provides both structural insight and
+a practical method for locating chaotic regimes.</p>
+<hr class="docutils" />
+<section id="control-parameters">
+<h2>6.1 Control Parameters<a class="headerlink" href="#control-parameters" title="Link to this heading">#</a></h2>
+<p>Consider a parametrised system:</p>
+<p>[
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}; \mu),
+]</p>
+<p>where (\mu) is a control parameter
+(e.g. forcing amplitude, damping, frequency).</p>
+<p>As (\mu) varies, the qualitative nature of solutions may change.</p>
+<p>These qualitative changes are called <strong>bifurcations</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="local-bifurcations">
+<h2>6.2 Local Bifurcations<a class="headerlink" href="#local-bifurcations" title="Link to this heading">#</a></h2>
+<p>Before chaos appears, systems often undergo
+simpler local bifurcations.</p>
+<section id="a-saddlenode-bifurcation">
+<h3>(a) Saddle–Node Bifurcation<a class="headerlink" href="#a-saddlenode-bifurcation" title="Link to this heading">#</a></h3>
+<p>Two fixed points collide and annihilate.</p>
+</section>
+<hr class="docutils" />
+<section id="b-hopf-bifurcation">
+<h3>(b) Hopf Bifurcation<a class="headerlink" href="#b-hopf-bifurcation" title="Link to this heading">#</a></h3>
+<p>A fixed point loses stability and a limit cycle emerges.</p>
+<p>In 3D systems, this may lead to quasi-periodic motion on a torus.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="period-doubling-route-to-chaos">
+<h2>6.3 Period-Doubling Route to Chaos<a class="headerlink" href="#period-doubling-route-to-chaos" title="Link to this heading">#</a></h2>
+<p>One of the most common routes to chaos is the
+<strong>period-doubling cascade</strong>.</p>
+<p>As parameter (\mu) increases:</p>
+<p>[
+\text{period-1}
+\rightarrow
+\text{period-2}
+\rightarrow
+\text{period-4}
+\rightarrow
+\text{period-8}
+\rightarrow
+\cdots
+\rightarrow
+\text{chaos}.
+]</p>
+<p>The intervals between bifurcations shrink geometrically,
+often following Feigenbaum scaling.</p>
+<p>This route occurs in:</p>
+<ul class="simple">
+<li><p>Forced Duffing oscillator,</p></li>
+<li><p>Many nonlinear oscillators,</p></li>
+<li><p>Fluid convection models.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="quasi-periodic-route-torus-breakdown">
+<h2>6.4 Quasi-Periodic Route (Torus Breakdown)<a class="headerlink" href="#quasi-periodic-route-torus-breakdown" title="Link to this heading">#</a></h2>
+<p>Another common route:</p>
+<ol class="arabic simple">
+<li><p>Hopf bifurcation produces a limit cycle.</p></li>
+<li><p>A second frequency appears.</p></li>
+<li><p>Motion lies on a torus.</p></li>
+<li><p>The torus becomes unstable and breaks down.</p></li>
+<li><p>Chaos emerges.</p></li>
+</ol>
+<p>This is called <strong>torus breakdown</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="intermittency">
+<h2>6.5 Intermittency<a class="headerlink" href="#intermittency" title="Link to this heading">#</a></h2>
+<p>In intermittency:</p>
+<ul class="simple">
+<li><p>Motion alternates between nearly periodic behaviour
+and chaotic bursts.</p></li>
+<li><p>As parameter changes, chaotic intervals grow longer.</p></li>
+</ul>
+<p>This route is common near crisis bifurcations.</p>
+</section>
+<hr class="docutils" />
+<section id="crisis-induced-chaos">
+<h2>6.6 Crisis-Induced Chaos<a class="headerlink" href="#crisis-induced-chaos" title="Link to this heading">#</a></h2>
+<p>A <strong>crisis</strong> occurs when a chaotic attractor
+suddenly changes size or disappears due to
+collision with an unstable invariant set.</p>
+<p>This can cause:</p>
+<ul class="simple">
+<li><p>Sudden onset of chaos,</p></li>
+<li><p>Sudden expansion of attractor,</p></li>
+<li><p>Sudden destruction of chaos.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="constructing-a-bifurcation-diagram">
+<h2>6.7 Constructing a Bifurcation Diagram<a class="headerlink" href="#constructing-a-bifurcation-diagram" title="Link to this heading">#</a></h2>
+<p>To visualise routes to chaos:</p>
+<ol class="arabic simple">
+<li><p>Choose a parameter (\mu).</p></li>
+<li><p>Simulate long-term dynamics for many values of (\mu).</p></li>
+<li><p>Remove transients.</p></li>
+<li><p>Record local maxima of (x(t))
+or Poincaré section points.</p></li>
+<li><p>Plot these values versus (\mu).</p></li>
+</ol>
+<p>Interpretation:</p>
+<ul class="simple">
+<li><p>Single branch → periodic.</p></li>
+<li><p>Multiple branches → period-k.</p></li>
+<li><p>Dense band → chaos.</p></li>
+<li><p>Gaps → periodic windows.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id25">
+<h2>6.8 Example: Forced Duffing<a class="headerlink" href="#id25" title="Link to this heading">#</a></h2>
+<p>As forcing amplitude (\gamma) increases:</p>
+<ul class="simple">
+<li><p>Stable periodic oscillation,</p></li>
+<li><p>Period-doubling cascade,</p></li>
+<li><p>Chaotic attractor,</p></li>
+<li><p>Periodic windows embedded in chaos.</p></li>
+</ul>
+<p>The bifurcation diagram reveals the structure
+of chaotic regions.</p>
+</section>
+<hr class="docutils" />
+<section id="why-bifurcation-analysis-is-important">
+<h2>6.9 Why Bifurcation Analysis Is Important<a class="headerlink" href="#why-bifurcation-analysis-is-important" title="Link to this heading">#</a></h2>
+<p>Bifurcation analysis:</p>
+<ul class="simple">
+<li><p>Locates chaotic parameter regions,</p></li>
+<li><p>Explains how chaos emerges,</p></li>
+<li><p>Reveals universal scaling behaviour,</p></li>
+<li><p>Connects continuous-time chaos to discrete-map theory.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id26">
+<h2>6.10 Summary<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
+<p>Chaos in continuous-time systems typically arises through
+well-defined routes:</p>
+<p>[
+\text{Periodic}
+\rightarrow
+\text{Period-doubling / Torus breakdown / Intermittency}
+\rightarrow
+\text{Chaos}.
+]</p>
+<p>Bifurcation diagrams provide a global structural view of
+how nonlinear instability develops as system parameters vary.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fractal-dimension">
+<h1>7. Fractal Dimension<a class="headerlink" href="#fractal-dimension" title="Link to this heading">#</a></h1>
+<p>For dissipative systems, compute dimension of the attractor:</p>
+<ul class="simple">
+<li><p>Box-counting dimension</p></li>
+<li><p>Correlation dimension</p></li>
+<li><p>Kaplan–Yorke dimension from Lyapunov spectrum</p></li>
+</ul>
+<p>Non-integer dimension is strong evidence of strange attractors.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="decay-of-correlations">
+<h1>8. Decay of Correlations<a class="headerlink" href="#decay-of-correlations" title="Link to this heading">#</a></h1>
+<p>Compute the autocorrelation function:</p>
+<p>[
+R(\tau) =
+\lim_{T\to\infty}
+\frac{1}{T}
+\int_0^T x(t)x(t+\tau),dt.
+]</p>
+<p>Chaotic systems typically show decay of correlations,
+indicating mixing.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="analytical-prediction-advanced">
+<h1>9. Analytical Prediction (Advanced)<a class="headerlink" href="#analytical-prediction-advanced" title="Link to this heading">#</a></h1>
+<p>In some systems (e.g. forced Duffing),
+the <strong>Melnikov method</strong> can predict transversal
+intersection of stable and unstable manifolds,
+which implies chaos.</p>
+<p>This provides analytical evidence of homoclinic tangles.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="practical-workflow-for-continuous-time-chaos">
+<h1>Practical Workflow for Continuous-Time Chaos<a class="headerlink" href="#practical-workflow-for-continuous-time-chaos" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Verify sufficient dimensionality.</p></li>
+<li><p>Simulate long-time dynamics.</p></li>
+<li><p>Remove transients.</p></li>
+<li><p>Compute largest Lyapunov exponent.</p></li>
+<li><p>Construct Poincaré section.</p></li>
+<li><p>Check power spectrum.</p></li>
+<li><p>(Optional) Estimate fractal dimension.</p></li>
+</ol>
+<p>If:</p>
+<ul class="simple">
+<li><p>Motion is bounded,</p></li>
+<li><p>Aperiodic,</p></li>
+<li><p>Largest Lyapunov exponent &gt; 0,</p></li>
+<li><p>Poincaré section is fractal,</p></li>
+</ul>
+<p>then the system is chaotic.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="conceptual-insight">
+<h1>Conceptual Insight<a class="headerlink" href="#conceptual-insight" title="Link to this heading">#</a></h1>
+<p>Continuous-time chaos arises from:</p>
+<p>[
+\text{Nonlinearity}
++
+\text{Instability}
++
+\text{Recurrence (boundedness)}.
+]</p>
+<p>Stretching generates exponential divergence,
+while folding (due to bounded phase space)
+creates fractal structure.</p>
+<p>Chaos is therefore structured instability,
+not randomness.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Weeks 6 - 10 - Investigating Chaos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hallmarks-of-chaotic-behaviour-in-a-dynamical-system">Hallmarks of Chaotic Behaviour in a Dynamical System</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitive-dependence-on-initial-conditions">Sensitive Dependence on Initial Conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-exponent-formal-definition">Lyapunov Exponent (Formal Definition)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">[
+\lambda</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictability-horizon-lyapunov-time">Predictability Horizon (Lyapunov Time)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministic-dynamics">Deterministic Dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-time-systems">Discrete-Time Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinism-vs-randomness">Determinism vs Randomness</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-mathbf-x-dt">[
+\frac{d\mathbf{x}}{dt}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#role-of-nonlinearity">Role of Nonlinearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-insight">Key Insight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aperiodic-long-term-behaviour">Aperiodic Long-Term Behaviour</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-points-and-periodic-orbits">Fixed Points and Periodic Orbits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-periodicity">Non-Periodicity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-but-non-repeating-motion">Bounded but Non-Repeating Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contrast-with-quasi-periodic-motion">Contrast with Quasi-Periodic Motion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-x-t">[
+\mathbf{x}(t)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-term-behaviour-and-attractors">Long-Term Behaviour and Attractors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-mixing">Topological Mixing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-definition-continuous-time">Formal Definition (Continuous Time)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-time-version">Discrete-Time Version</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-interpretation-stretching-and-folding">Geometric Interpretation: Stretching and Folding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-vs-ergodicity">Mixing vs Ergodicity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lim-t-to-infty-mu-phi-t-u-cap-v">[
+\lim_{t \to \infty}
+\mu(\phi^t(U) \cap V)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-meaning">Physical Meaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dense-periodic-orbits">Dense Periodic Orbits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodic-orbits">Periodic Orbits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#density">Density</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unstable-nature-of-periodic-orbits">Unstable Nature of Periodic Orbits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-importance">Structural Importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-significance">Conceptual Significance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strange-attractors-dissipative-systems">Strange Attractors (Dissipative Systems)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attractors">Attractors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dissipation-and-volume-contraction">Dissipation and Volume Contraction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-dv-dt">[
+\frac{dV}{dt}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fractal-geometry">Fractal Geometry</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#d-b">[
+D_B</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-spectrum-and-dimension">Lyapunov Spectrum and Dimension</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#d-ky">[
+D_{KY}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-lorenz-attractor">Example: The Lorenz Attractor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Conceptual Significance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-diagnostics-of-chaos">Quantitative Diagnostics of Chaos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-lyapunov-exponent">Positive Lyapunov Exponent</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linearised-dynamics">Linearised Dynamics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-dt-delta-mathbf-x">[
+\frac{d}{dt}\delta \mathbf{x}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-lyapunov-exponents">Definition of Lyapunov Exponents</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[
+\lambda</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criterion-for-chaos">Criterion for Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Discrete-Time Systems</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#delta-mathbf-x-n-1">[
+\delta \mathbf{x}_{n+1}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">[
+\lambda</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-interpretation">Physical Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-volume-evolution">Relation to Volume Evolution</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-lambda-i">[
+\sum_{i=1}^n \lambda_i</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fractal-non-integer-dimension">Fractal (Non-Integer) Dimension</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-fractal-structure-appears">Why Fractal Structure Appears</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-counting-dimension">Box-Counting Dimension</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">[
+D_B</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-dimension">Correlation Dimension</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#c-varepsilon">[
+C(\varepsilon)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#d-2">[
+D_2</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kaplanyorke-lyapunov-dimension">Kaplan–Yorke (Lyapunov) Dimension</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">[
+D_{KY}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Physical Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broadband-power-spectrum">Broadband Power Spectrum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-and-fourier-transform">Time Series and Fourier Transform</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-x-omega">[
+\hat{x}(\omega)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#s-omega">[
+S(\omega)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-signatures-of-different-dynamics">Spectral Signatures of Different Dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-correlation-decay">Relation to Correlation Decay</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#r-tau">[
+R(\tau)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">[
+S(\omega)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-distinction">Important Distinction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Physical Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-chaos-is-not">What Chaos Is Not</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-randomness">Not Randomness</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-mathbf-x">[
+\dot{\mathbf{x}}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-noise">Not Noise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-mere-nonlinearity">Not Mere Nonlinearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-simple-complexity">Not Simple Complexity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-unbounded-instability">Not Unbounded Instability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-chaos-in-the-logistic-map">Finding Chaos in the Logistic Map</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-the-logistic-map">Definition of the Logistic Map</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-fixed-points-and-stability">Step 1: Fixed Points and Stability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-period-doubling-cascade">Step 2: Period-Doubling Cascade</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#delta">[
+\delta</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-onset-of-chaos">Step 3: Onset of Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-lyapunov-exponent">Step 4: Lyapunov Exponent</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">[
+\lambda</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">[
+\lambda</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-bifurcation-diagram">Step 5: Bifurcation Diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-fractal-attractor">Step 6: Fractal Attractor</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-x">[
+\rho(x)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#period-three-implies-chaos">Period Three Implies Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-logistic-map-is-important">Why the Logistic Map Is Important</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#r-values">r values</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-condition">Initial condition</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-for-lyapunov-exponents">Storage for Lyapunov exponents</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-figure">Prepare figure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-average-lyapunov-exponent">Compute average Lyapunov exponent</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-lyapunov-exponent">Plot Lyapunov exponent</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-chaos-in-continuous-time-dynamical-systems">Finding Chaos in Continuous-Time Dynamical Systems</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-requirement">1. Dimensional Requirement</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomous-systems">1.1 Autonomous Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-theorem-poincarebendixson">Key Theorem: Poincaré–Bendixson</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-2d-is-too-simple">1.2 Why 2D Is Too Simple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-dimension-for-continuous-chaos">1.3 Minimum Dimension for Continuous Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-dependent-forcing">1.4 Time-Dependent Forcing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-intuition">1.5 Geometric Intuition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian-vs-dissipative-systems">1.6 Hamiltonian vs Dissipative Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-rule">1.7 Practical Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">1.8 Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#largest-lyapunov-exponent">2. Largest Lyapunov Exponent</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearisation-along-a-trajectory">2.1 Linearisation Along a Trajectory</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-delta-mathbf-x">[
+\dot{\delta \mathbf{x}}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-the-largest-lyapunov-exponent">2.2 Definition of the Largest Lyapunov Exponent</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-1">[
+\lambda_1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-the-sign">2.3 Interpretation of the Sign</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-lyapunov-spectrum">2.4 Full Lyapunov Spectrum</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">[
+\sum_{i=1}^n \lambda_i</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-computation-benettin-method">2.5 Numerical Computation (Benettin Method)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-meaning">2.6 Geometric Meaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-forced-duffing">2.7 Example: Forced Duffing</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#j-t">[
+J(t)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-is-the-definitive-test">2.8 Why This Is the Definitive Test</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#poincare-section">3. Poincaré Section</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-from-continuous-flow-to-a-discrete-map">3.1 Motivation: From Continuous Flow to a Discrete Map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#periodically-forced-systems-stroboscopic-section">3.2 Periodically Forced Systems (Stroboscopic Section)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomous-systems-surface-of-section">3.3 Autonomous Systems (Surface of Section)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-classify-the-motion-from-the-section">3.4 How to Classify the Motion from the Section</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-periodic-motion">(a) Periodic Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-quasi-periodic-motion">(b) Quasi-Periodic Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-chaotic-motion">(c) Chaotic Motion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-chaos-looks-fractal-in-a-poincare-section">3.5 Why Chaos Looks Fractal in a Poincaré Section</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-procedure-forced-duffing-example">3.6 Practical Procedure (Forced Duffing Example)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-and-best-practice">3.7 Limitations and Best Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.8 Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-space-structure-and-strange-attractors">4. Phase-Space Structure and Strange Attractors</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-space-representation">4.1 Phase Space Representation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#omega-mathbf-x-0">[
+\omega(\mathbf{x}_0)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-motion-in-phase-space">4.2 Regular Motion in Phase Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fixed-points">(a) Fixed Points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-periodic-orbits">(b) Periodic Orbits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-quasi-periodic-motion">(c) Quasi-Periodic Motion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chaotic-motion">4.3 Chaotic Motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stretching-and-folding-mechanism">4.4 Stretching and Folding Mechanism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.5 Dissipation and Volume Contraction</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">[
+\frac{dV}{dt}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lorenz-attractor">4.6 Example: Lorenz Attractor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-identification">4.7 Practical Identification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.8 Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-spectrum-and-frequency-analysis">5. Power Spectrum and Frequency Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-time-series-to-frequency-spectrum">5.1 From Time Series to Frequency Spectrum</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">[
+\hat{x}(\omega)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">[
+S(\omega)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-signatures-of-different-dynamical-regimes">5.2 Spectral Signatures of Different Dynamical Regimes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">(a) Periodic Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">(b) Quasi-Periodic Motion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#x-t">[
+x(t)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">(c) Chaotic Motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-autocorrelation">5.3 Relation to Autocorrelation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">[
+R(\tau)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">[
+S(\omega)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-computation">5.4 Practical Computation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">5.5 Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-forced-duffing-oscillator">5.6 Example: Forced Duffing Oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">5.7 Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcation-analysis-and-routes-to-chaos">6. Bifurcation Analysis and Routes to Chaos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-parameters">6.1 Control Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-bifurcations">6.2 Local Bifurcations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-saddlenode-bifurcation">(a) Saddle–Node Bifurcation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-hopf-bifurcation">(b) Hopf Bifurcation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#period-doubling-route-to-chaos">6.3 Period-Doubling Route to Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quasi-periodic-route-torus-breakdown">6.4 Quasi-Periodic Route (Torus Breakdown)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intermittency">6.5 Intermittency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crisis-induced-chaos">6.6 Crisis-Induced Chaos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-a-bifurcation-diagram">6.7 Constructing a Bifurcation Diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">6.8 Example: Forced Duffing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-bifurcation-analysis-is-important">6.9 Why Bifurcation Analysis Is Important</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">6.10 Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fractal-dimension">7. Fractal Dimension</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#decay-of-correlations">8. Decay of Correlations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-prediction-advanced">9. Analytical Prediction (Advanced)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-workflow-for-continuous-time-chaos">Practical Workflow for Continuous-Time Chaos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-insight">Conceptual Insight</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Natural Sciences
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
