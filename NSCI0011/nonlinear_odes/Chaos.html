@@ -424,15 +424,43 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#onset-of-chaos">Onset of Chaos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-exponent-of-the-logistic-map">Lyapunov Exponent of the Logistic Map</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcation-diagram">Bifurcation Diagram</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invariant-measure-r-4">Invariant Measure (r = 4)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#period-three-implies-chaos">Period Three Implies Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#period-three-implies-chaos">Period Three Implies Chaos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#period-1-fixed-point">Period 1 (Fixed Point)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#period-2">Period 2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#period-3">Period 3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-period-3-is-interesting">Why Period 3 Is Interesting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#intuitive-picture">Intuitive Picture</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-logistic-map">Example: The Logistic Map</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-exploration-python-example">Numerical Exploration (Python Example)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-the-duffing-oscillator-continuous-time-chaos">Case Study: The Duffing Oscillator (Continuous-Time Chaos)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-duffing-equation">The Duffing Equation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-chaos-is-possible-here">Why Chaos Is Possible Here</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poincare-section-stroboscopic-map">Poincaré Section (Stroboscopic Map)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poincare-section-stroboscopic-map">Poincaré Section (Stroboscopic Map)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-interpret-the-poincare-section">How to Interpret the Poincaré Section</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-the-duffing-section">Interpretation of the Duffing Section</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-mechanism">Geometric Mechanism</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-it-is-not-a-random-cloud">Why It Is Not a Random Cloud</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#diagnostic-power">Diagnostic Power</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#largest-lyapunov-exponent-for-the-duffing-oscillator">Largest Lyapunov Exponent for the Duffing Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reformulating-duffing-as-a-first-order-system">Reformulating Duffing as a First-Order System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-tangent-equations-and-computation-of-delta-mathbf-x-t">Variational (Tangent) Equations and Computation of <span class="math notranslate nohighlight">\(\delta \mathbf{x}(t)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linearisation-along-the-trajectory">Linearisation Along the Trajectory</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-delta-mathbf-x-t-is-found-in-practice">How <span class="math notranslate nohighlight">\(\delta \mathbf{x}(t)\)</span> Is Found in Practice</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-the-largest-lyapunov-exponent">Definition of the Largest Lyapunov Exponent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-algorithm-benettin-method">Numerical Algorithm (Benettin Method)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-meaning">Physical Meaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-is-the-definitive-test">Why This Is the Definitive Test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#largest-lyapunov-exponent">Largest Lyapunov Exponent</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcation-structure">Bifurcation Structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-space-structure">Phase-Space Structure</a></li>
@@ -750,10 +778,13 @@ e^{\lambda_1 t}.\]</div>
 </li>
 </ul>
 <p>We can think of two trajectories in phase space, nearby:</p>
-<figure class="align-default" id="orbital-instability">
+<figure class="align-default" id="id1">
 <img alt="_images/Orbital_instability.png" src="_images/Orbital_instability.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Explanations of the Lyapunov exponent from phase space.</span><a class="headerlink" href="#orbital-instability" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">name: Orbital_instability</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<div class="legend">
+<p>Explanations of the Lyapunov exponent from phase space.</p>
+</div>
 </figcaption>
 </figure>
 </section>
@@ -1094,22 +1125,123 @@ produces the <strong>bifurcation diagram</strong>:</p>
 <li><p>Periodic windows embedded in chaos.</p></li>
 </ul>
 </section>
-<section id="invariant-measure-r-4">
-<h3>Invariant Measure (r = 4)<a class="headerlink" href="#invariant-measure-r-4" title="Link to this heading">#</a></h3>
-<p>At <span class="math notranslate nohighlight">\(r = 4\)</span>, the logistic map has invariant density</p>
-<div class="math notranslate nohighlight">
-\[\rho(x)
-=
-\frac{1}{\pi \sqrt{x(1-x)}}.\]</div>
-<p>This distribution is non-uniform and singular at the boundaries,
-reflecting the stretching and folding dynamics.</p>
-</section>
 <section id="period-three-implies-chaos">
 <h3>Period Three Implies Chaos<a class="headerlink" href="#period-three-implies-chaos" title="Link to this heading">#</a></h3>
 <p>A fundamental theorem (Li &amp; Yorke, 1975):</p>
 <p>If a continuous one-dimensional map has a period-3 orbit,
 then it has periodic orbits of every period and exhibits chaotic behaviour.</p>
-<p>Thus the presence of period-3 implies chaos.</p>
+<p><em>What Does “Period 3” Mean?</em></p>
+<p>Consider a simple rule for updating a number repeatedly:</p>
+<div class="math notranslate nohighlight">
+\[x_{n+1} = f(x_n).\]</div>
+<p>Starting from some initial value <span class="math notranslate nohighlight">\(x_0\)</span>, we apply the rule again and again:</p>
+<div class="math notranslate nohighlight">
+\[x_1 = f(x_0), \quad
+x_2 = f(x_1), \quad
+x_3 = f(x_2), \dots\]</div>
+<p>This produces a sequence:</p>
+<div class="math notranslate nohighlight">
+\[x_0, x_1, x_2, x_3, x_4, \dots\]</div>
+<section id="period-1-fixed-point">
+<h4>Period 1 (Fixed Point)<a class="headerlink" href="#period-1-fixed-point" title="Link to this heading">#</a></h4>
+<p>If applying the rule once brings you back to the same number,</p>
+<div class="math notranslate nohighlight">
+\[f(x) = x,\]</div>
+<p>then the value never changes.</p>
+<p>Example:</p>
+<div class="math notranslate nohighlight">
+\[0.6, 0.6, 0.6, 0.6, \dots\]</div>
+<p>This is called a <strong>fixed point</strong> (or period-1 orbit).</p>
+</section>
+<section id="period-2">
+<h4>Period 2<a class="headerlink" href="#period-2" title="Link to this heading">#</a></h4>
+<p>If the sequence alternates between two distinct values,</p>
+<div class="math notranslate nohighlight">
+\[x_0 \to x_1 \to x_0 \to x_1 \to \dots\]</div>
+<p>Example:</p>
+<div class="math notranslate nohighlight">
+\[0.3, 0.7, 0.3, 0.7, 0.3, 0.7, \dots\]</div>
+<p>then the system has <strong>period 2</strong>.</p>
+<p>After two applications of the rule, it returns to where it started.</p>
+</section>
+<section id="period-3">
+<h4>Period 3<a class="headerlink" href="#period-3" title="Link to this heading">#</a></h4>
+<p>Now suppose the sequence cycles through three distinct values:</p>
+<div class="math notranslate nohighlight">
+\[x_0 \to x_1 \to x_2 \to x_0 \to x_1 \to x_2 \to \dots\]</div>
+<p>Example:</p>
+<div class="math notranslate nohighlight">
+\[0.2, 0.6, 0.8, 0.2, 0.6, 0.8, 0.2, \dots\]</div>
+<p>This is called a <strong>period-3 orbit</strong>.</p>
+<p>Formally, this means:</p>
+<div class="math notranslate nohighlight">
+\[f^3(x) = x,\]</div>
+<p>but</p>
+<div class="math notranslate nohighlight">
+\[f(x) \neq x,
+\qquad
+f^2(x) \neq x.\]</div>
+<p>So:</p>
+<ul class="simple">
+<li><p>After one step → different value</p></li>
+<li><p>After two steps → different value</p></li>
+<li><p>After three steps → back to the start</p></li>
+</ul>
+<p>Then the cycle repeats forever.</p>
+</section>
+<section id="why-period-3-is-interesting">
+<h4>Why Period 3 Is Interesting<a class="headerlink" href="#why-period-3-is-interesting" title="Link to this heading">#</a></h4>
+<p>At first glance, period 3 just means:</p>
+<blockquote>
+<div><p>The system repeats every three steps.</p>
+</div></blockquote>
+<p>Like period 2, it still looks completely predictable.</p>
+<p>However, something remarkable happens in <strong>continuous one-dimensional systems</strong>:</p>
+<blockquote>
+<div><p>If a period-3 orbit exists, then periodic orbits of <em>every possible period</em> must also exist.</p>
+</div></blockquote>
+<p>That means the system is capable of:</p>
+<ul class="simple">
+<li><p>Period 4</p></li>
+<li><p>Period 5</p></li>
+<li><p>Period 7</p></li>
+<li><p>Period 100</p></li>
+<li><p>Arbitrarily long repeating cycles</p></li>
+</ul>
+<p>In other words, once a 3-cycle appears, the system is capable of extremely complicated behaviour.</p>
+</section>
+<section id="intuitive-picture">
+<h4>Intuitive Picture<a class="headerlink" href="#intuitive-picture" title="Link to this heading">#</a></h4>
+<p>To produce a 3-cycle, the function must:</p>
+<ul class="simple">
+<li><p>Bend the interval,</p></li>
+<li><p>Send different parts to different regions,</p></li>
+<li><p>Fold values back over themselves.</p></li>
+</ul>
+<p>Once a map bends and folds enough to create a 3-cycle,
+it automatically has enough internal structure to support
+much more complicated patterns.</p>
+<p>So period 3 acts as a signal:</p>
+<blockquote>
+<div><p>The system is no longer simple.</p>
+</div></blockquote>
+</section>
+<section id="example-the-logistic-map">
+<h4>Example: The Logistic Map<a class="headerlink" href="#example-the-logistic-map" title="Link to this heading">#</a></h4>
+<p>For the logistic map</p>
+<div class="math notranslate nohighlight">
+\[x_{n+1} = r x_n (1 - x_n),\]</div>
+<p>a stable period-3 orbit appears near</p>
+<div class="math notranslate nohighlight">
+\[r \approx 3.83.\]</div>
+<p>When this happens:</p>
+<ul class="simple">
+<li><p>Many other periodic behaviours also exist,</p></li>
+<li><p>Chaotic motion appears in nearby parameter values.</p></li>
+</ul>
+<p>Thus, observing period 3 indicates the system has entered
+a regime of complex dynamics.</p>
+</section>
 </section>
 <section id="numerical-exploration-python-example">
 <h3>Numerical Exploration (Python Example)<a class="headerlink" href="#numerical-exploration-python-example" title="Link to this heading">#</a></h3>
@@ -1153,12 +1285,13 @@ the bifurcation diagram and Lyapunov exponent.</p>
 </pre></div>
 </div>
 <p>This results in a bifurcation diagram:</p>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id2">
 <img alt="_images/bifurcation_diagram.png" src="_images/bifurcation_diagram.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Bifurcation diagram of the logistic map <span class="math notranslate nohighlight">\(x_{n+1} = r x_n (1 - x_n)\)</span>,
-showing long-term values of <span class="math notranslate nohighlight">\(x_n\)</span> as the parameter <span class="math notranslate nohighlight">\(r\)</span> varies from 2.5 to 4.0.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">name: bifurcation_diagram</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 <div class="legend">
+<p>Bifurcation diagram of the logistic map <span class="math notranslate nohighlight">\(x_{n+1} = r x_n (1 - x_n)\)</span>,
+showing long-term values of <span class="math notranslate nohighlight">\(x_n\)</span> as the parameter <span class="math notranslate nohighlight">\(r\)</span> varies from 2.5 to 4.0.</p>
 <p>For <span class="math notranslate nohighlight">\(r &lt; 3\)</span>, the system converges to a stable fixed point.<br />
 At <span class="math notranslate nohighlight">\(r = 3\)</span>, a period-doubling bifurcation occurs, followed by a cascade of further doublings accumulating at <span class="math notranslate nohighlight">\(r_\infty \approx 3.56995\)</span>.<br />
 Beyond this value, chaotic behaviour emerges, visible as dense bands of aperiodic iterates.<br />
@@ -1226,18 +1359,293 @@ cannot exhibit chaos.</p>
 <p>Because the forcing is periodic with period</p>
 <div class="math notranslate nohighlight">
 \[T = \frac{2\pi}{\omega},\]</div>
-<p>we construct a <strong>stroboscopic Poincaré section</strong>:</p>
+<p>we construct a <strong>stroboscopic Poincaré section</strong> by sampling the system once every forcing period:</p>
 <div class="math notranslate nohighlight">
 \[(x(nT), \dot{x}(nT)).\]</div>
-<p>This reduces the continuous flow to a discrete map.</p>
-<p>Classification:</p>
+<p>Rather than examining the full continuous trajectory in the extended phase space
+<span class="math notranslate nohighlight">\((x, \dot{x}, \theta)\)</span>, this procedure reduces the system to a discrete map</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}_{n+1} = \mathcal{P}(\mathbf{x}_n),\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{P}\)</span> advances the system forward by exactly one forcing period.</p>
+<p>Thus, a continuous-time system is converted into an iterated map,
+making geometric structure much easier to identify.</p>
+<section id="how-to-interpret-the-poincare-section">
+<h4>How to Interpret the Poincaré Section<a class="headerlink" href="#how-to-interpret-the-poincare-section" title="Link to this heading">#</a></h4>
+<p>The geometry of points in the section classifies the dynamics:</p>
 <ul class="simple">
-<li><p>Single point → periodic motion</p></li>
-<li><p>Finite set of points → period-<span class="math notranslate nohighlight">\(k\)</span></p></li>
-<li><p>Closed curve → quasi-periodic</p></li>
-<li><p>Fractal cloud → chaotic attractor</p></li>
+<li><p><strong>Single point</strong> → stable period-1 orbit</p></li>
+<li><p><strong>Finite set of points</strong> → period-<span class="math notranslate nohighlight">\(k\)</span> orbit</p></li>
+<li><p><strong>Closed smooth curve</strong> → quasi-periodic motion on an invariant torus</p></li>
+<li><p><strong>Filamentary / fractal structure</strong> → chaotic attractor</p></li>
 </ul>
-<p>A fractal Poincaré section strongly indicates chaos.</p>
+<p>This classification follows from how the continuous trajectory intersects
+the sampling plane once per forcing cycle.</p>
+</section>
+<section id="interpretation-of-the-duffing-section">
+<h4>Interpretation of the Duffing Section<a class="headerlink" href="#interpretation-of-the-duffing-section" title="Link to this heading">#</a></h4>
+<figure class="align-default" id="poincare">
+<img alt="_images/poincare.png" src="_images/poincare.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Stroboscopic Poincaré section of the periodically forced Duffing oscillator,
+constructed by sampling <span class="math notranslate nohighlight">\((x(t), \dot{x}(t))\)</span> once per forcing period
+<span class="math notranslate nohighlight">\(T = 2\pi/\omega\)</span>.</span><a class="headerlink" href="#poincare" title="Link to this image">#</a></p>
+<div class="legend">
+<p>The section reveals a layered, filamentary structure rather than a finite set
+of points or a smooth invariant curve. This geometry indicates the presence of
+a strange attractor. The two lobes correspond to motion within the two wells
+of the Duffing double-well potential, while the thin folded bands reflect
+repeated stretching and folding of phase space. Such a fractal Poincaré
+structure is a clear geometric signature of chaotic dynamics.</p>
+</div>
+</figcaption>
+</figure>
+<p>The computed Poincaré section for the Duffing oscillator shows:</p>
+<ul class="simple">
+<li><p>Two large lobed regions,</p></li>
+<li><p>Thin layered filaments,</p></li>
+<li><p>Structured but non-smooth geometry,</p></li>
+<li><p>No finite set of repeating points,</p></li>
+<li><p>No smooth invariant curve.</p></li>
+</ul>
+<p>This is neither periodic nor quasi-periodic motion.</p>
+<p>Instead, the layered and folded structure indicates the presence of a
+<strong>strange attractor</strong>.</p>
+</section>
+<section id="geometric-mechanism">
+<h4>Geometric Mechanism<a class="headerlink" href="#geometric-mechanism" title="Link to this heading">#</a></h4>
+<p>The structure arises from the repeated action of:</p>
+<ol class="arabic simple">
+<li><p><strong>Stretching</strong><br />
+Nearby trajectories separate exponentially (positive Lyapunov exponent).</p></li>
+<li><p><strong>Folding</strong><br />
+Dissipation prevents trajectories from escaping to infinity.</p></li>
+<li><p><strong>Reinjection</strong><br />
+The forcing reintroduces trajectories into different regions of phase space each period.</p></li>
+</ol>
+<p>This repeated stretching-and-folding produces:</p>
+<ul class="simple">
+<li><p>Filamentary sheets,</p></li>
+<li><p>Layered bands,</p></li>
+<li><p>Self-similar structure under magnification.</p></li>
+</ul>
+<p>The two large lobes correspond physically to motion in the two wells
+of the Duffing double-well potential. Chaotic switching between wells
+produces the intertwined geometry seen in the section.</p>
+</section>
+<section id="why-it-is-not-a-random-cloud">
+<h4>Why It Is Not a Random Cloud<a class="headerlink" href="#why-it-is-not-a-random-cloud" title="Link to this heading">#</a></h4>
+<p>A chaotic Poincaré section does <strong>not</strong> fill area uniformly.</p>
+<p>Instead:</p>
+<ul class="simple">
+<li><p>Points lie on thin stretched manifolds,</p></li>
+<li><p>The attractor has non-integer dimension,</p></li>
+<li><p>Zooming reveals further geometric refinement.</p></li>
+</ul>
+<p>Thus the section provides geometric evidence of chaos:
+bounded, structured, but non-periodic dynamics.</p>
+</section>
+<section id="diagnostic-power">
+<h4>Diagnostic Power<a class="headerlink" href="#diagnostic-power" title="Link to this heading">#</a></h4>
+<p>The Poincaré section is one of the clearest qualitative diagnostics of
+continuous-time chaos.</p>
+<p>When combined with:</p>
+<ul class="simple">
+<li><p>Largest Lyapunov exponent <span class="math notranslate nohighlight">\( \lambda_1 &gt; 0 \)</span>,</p></li>
+<li><p>Bounded motion,</p></li>
+<li><p>Broadband power spectrum,</p></li>
+</ul>
+<p>it provides strong evidence that the system is chaotic.</p>
+</section>
+</section>
+</section>
+<section id="largest-lyapunov-exponent-for-the-duffing-oscillator">
+<h2>Largest Lyapunov Exponent for the Duffing Oscillator<a class="headerlink" href="#largest-lyapunov-exponent-for-the-duffing-oscillator" title="Link to this heading">#</a></h2>
+<p>While the Poincaré section provides geometric evidence of chaos,
+the most definitive quantitative diagnostic is the <strong>largest Lyapunov exponent</strong>.</p>
+<p>Chaos is present if</p>
+<div class="math notranslate nohighlight">
+\[\lambda_1 &gt; 0.\]</div>
+<section id="reformulating-duffing-as-a-first-order-system">
+<h3>Reformulating Duffing as a First-Order System<a class="headerlink" href="#reformulating-duffing-as-a-first-order-system" title="Link to this heading">#</a></h3>
+<p>The forced Duffing equation</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x} + \delta \dot{x} + \alpha x + \beta x^3
+= \gamma \cos(\omega t)\]</div>
+<p>is written as a first-order system:</p>
+<div class="math notranslate nohighlight">
+\[\dot{x} = v,\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{v} = -\delta v - \alpha x - \beta x^3 + \gamma \cos(\omega t).\]</div>
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{x} =
+\begin{pmatrix}
+x \\
+v
+\end{pmatrix},
+\qquad
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}, t).\end{split}\]</div>
+</section>
+<section id="variational-tangent-equations-and-computation-of-delta-mathbf-x-t">
+<h3>Variational (Tangent) Equations and Computation of <span class="math notranslate nohighlight">\(\delta \mathbf{x}(t)\)</span><a class="headerlink" href="#variational-tangent-equations-and-computation-of-delta-mathbf-x-t" title="Link to this heading">#</a></h3>
+<p>To compute the Lyapunov exponent, we must measure how a small perturbation
+<span class="math notranslate nohighlight">\(\delta \mathbf{x}(t)\)</span> evolves along a reference trajectory
+<span class="math notranslate nohighlight">\(\mathbf{x}(t)\)</span> of the Duffing system.</p>
+<p>The key idea is:</p>
+<ol class="arabic simple">
+<li><p>First integrate the original Duffing equations to obtain <span class="math notranslate nohighlight">\(\mathbf{x}(t)\)</span>.</p></li>
+<li><p>Then compute how an infinitesimal displacement evolves in the tangent space along that trajectory.</p></li>
+</ol>
+<section id="linearisation-along-the-trajectory">
+<h4>Linearisation Along the Trajectory<a class="headerlink" href="#linearisation-along-the-trajectory" title="Link to this heading">#</a></h4>
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{x}(t) =
+\begin{pmatrix}
+x(t) \\
+v(t)
+\end{pmatrix}.\end{split}\]</div>
+<p>A nearby trajectory can be written as</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}(t) + \delta \mathbf{x}(t).\]</div>
+<p>Substituting into the Duffing equations and retaining only first-order terms
+in <span class="math notranslate nohighlight">\(\delta \mathbf{x}\)</span> gives the <strong>variational equation</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt} \delta \mathbf{x}
+=
+D\mathbf{f}(\mathbf{x}(t), t)
+\, \delta \mathbf{x}.\]</div>
+<p>The Jacobian matrix is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}D\mathbf{f}
+=
+\begin{pmatrix}
+0 &amp; 1 \\
+-\alpha - 3\beta x^2(t) &amp; -\delta
+\end{pmatrix}.\end{split}\]</div>
+<p>Thus the perturbation evolves according to</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{d}{dt}
+\begin{pmatrix}
+\delta x \\
+\delta v
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 &amp; 1 \\
+-\alpha - 3\beta x^2(t) &amp; -\delta
+\end{pmatrix}
+\begin{pmatrix}
+\delta x \\
+\delta v
+\end{pmatrix}.\end{split}\]</div>
+</section>
+<hr class="docutils" />
+<section id="how-delta-mathbf-x-t-is-found-in-practice">
+<h4>How <span class="math notranslate nohighlight">\(\delta \mathbf{x}(t)\)</span> Is Found in Practice<a class="headerlink" href="#how-delta-mathbf-x-t-is-found-in-practice" title="Link to this heading">#</a></h4>
+<p>To obtain <span class="math notranslate nohighlight">\(\delta \mathbf{x}(t)\)</span>:</p>
+<ol class="arabic">
+<li><p>Choose a small initial perturbation,</p>
+<div class="math notranslate nohighlight">
+\[\delta \mathbf{x}(0),\]</div>
+<p>and normalise it (e.g. to unit norm). The Lyapunov exponent depends only on the exponential growth rate, not on the initial magnitude.</p>
+</li>
+<li><p>Integrate <strong>simultaneously</strong>:</p>
+<ul class="simple">
+<li><p>The original Duffing equations for <span class="math notranslate nohighlight">\(\mathbf{x}(t)\)</span>,</p></li>
+<li><p>The linearised equations for <span class="math notranslate nohighlight">\(\delta \mathbf{x}(t)\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+<p>The tangent dynamics depend explicitly on <span class="math notranslate nohighlight">\(x(t)\)</span>,
+so the two systems must be evolved together.</p>
+<p>At each time <span class="math notranslate nohighlight">\(t\)</span>, the solution of the variational equation gives
+the instantaneous separation between two infinitesimally close trajectories.</p>
+<p>Thus <span class="math notranslate nohighlight">\(\delta \mathbf{x}(t)\)</span> is not guessed —
+it is obtained by solving the linearised ODE driven by the evolving trajectory.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="definition-of-the-largest-lyapunov-exponent">
+<h3>Definition of the Largest Lyapunov Exponent<a class="headerlink" href="#definition-of-the-largest-lyapunov-exponent" title="Link to this heading">#</a></h3>
+<p>Once <span class="math notranslate nohighlight">\(\delta \mathbf{x}(t)\)</span> is known, the largest Lyapunov exponent is defined as</p>
+<div class="math notranslate nohighlight">
+\[\lambda_1
+=
+\lim_{t \to \infty}
+\frac{1}{t}
+\ln
+\frac{\|\delta \mathbf{x}(t)\|}
+     {\|\delta \mathbf{x}(0)\|}.\]</div>
+<p>This measures the long-time average exponential growth rate of the perturbation.</p>
+<p>If</p>
+<div class="math notranslate nohighlight">
+\[\lambda_1 &gt; 0,\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\|\delta \mathbf{x}(t)\| \sim e^{\lambda_1 t},\]</div>
+<p>so nearby trajectories separate exponentially.</p>
+<p>This exponential divergence is the defining dynamical signature of chaos.</p>
+</section>
+<section id="numerical-algorithm-benettin-method">
+<h3>Numerical Algorithm (Benettin Method)<a class="headerlink" href="#numerical-algorithm-benettin-method" title="Link to this heading">#</a></h3>
+<p>In practice, the limit is approximated by:</p>
+<ol class="arabic">
+<li><p>Integrate the Duffing system.</p></li>
+<li><p>Integrate the tangent equations simultaneously.</p></li>
+<li><p>At fixed time intervals, compute the norm</p>
+<div class="math notranslate nohighlight">
+\[r = \|\delta \mathbf{x}\|.\]</div>
+</li>
+<li><p>Accumulate</p>
+<div class="math notranslate nohighlight">
+\[\lambda_1 \approx \frac{1}{T}
+\sum_{k=1}^{N}
+\ln r_k.\]</div>
+</li>
+<li><p>Renormalise the perturbation vector:</p>
+<div class="math notranslate nohighlight">
+\[\delta \mathbf{x} \leftarrow \frac{\delta \mathbf{x}}{r_k}.\]</div>
+</li>
+</ol>
+<p>Renormalisation prevents numerical overflow and keeps the perturbation infinitesimal.</p>
+</section>
+<section id="interpretation">
+<h3>Interpretation<a class="headerlink" href="#interpretation" title="Link to this heading">#</a></h3>
+<p>For the Duffing oscillator:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \lambda_1 &lt; 0 \)</span> → periodic motion</p></li>
+<li><p><span class="math notranslate nohighlight">\( \lambda_1 = 0 \)</span> → quasi-periodic motion</p></li>
+<li><p><span class="math notranslate nohighlight">\( \lambda_1 &gt; 0 \)</span> → chaotic motion</p></li>
+</ul>
+<p>In continuous-time systems, one Lyapunov exponent is always zero
+(due to flow along the trajectory).
+Chaos requires at least one positive exponent.</p>
+</section>
+<section id="physical-meaning">
+<h3>Physical Meaning<a class="headerlink" href="#physical-meaning" title="Link to this heading">#</a></h3>
+<p>A positive Lyapunov exponent implies:</p>
+<ul class="simple">
+<li><p>Exponential sensitivity to initial conditions,</p></li>
+<li><p>Finite predictability time,</p></li>
+<li><p>Irregular switching between wells in the Duffing potential.</p></li>
+</ul>
+<p>The predictability horizon is approximately</p>
+<div class="math notranslate nohighlight">
+\[t_{\text{predict}}
+\approx
+\frac{1}{\lambda_1}
+\ln\!\left(\frac{1}{\epsilon}\right),\]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is measurement precision.</p>
+</section>
+<section id="why-this-is-the-definitive-test">
+<h3>Why This Is the Definitive Test<a class="headerlink" href="#why-this-is-the-definitive-test" title="Link to this heading">#</a></h3>
+<p>Unlike visual diagnostics (Poincaré sections or spectra),
+the Lyapunov exponent directly measures the core mechanism of chaos:</p>
+<div class="math notranslate nohighlight">
+\[\text{Exponential instability}.\]</div>
+<p>Thus, computing <span class="math notranslate nohighlight">\(\lambda_1\)</span> provides a rigorous confirmation
+that the Duffing oscillator is chaotic for a given parameter set.</p>
 </section>
 <section id="largest-lyapunov-exponent">
 <h3>Largest Lyapunov Exponent<a class="headerlink" href="#largest-lyapunov-exponent" title="Link to this heading">#</a></h3>
@@ -1419,15 +1827,43 @@ producing structured yet unpredictable dynamics.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#onset-of-chaos">Onset of Chaos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-exponent-of-the-logistic-map">Lyapunov Exponent of the Logistic Map</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcation-diagram">Bifurcation Diagram</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invariant-measure-r-4">Invariant Measure (r = 4)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#period-three-implies-chaos">Period Three Implies Chaos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#period-three-implies-chaos">Period Three Implies Chaos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#period-1-fixed-point">Period 1 (Fixed Point)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#period-2">Period 2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#period-3">Period 3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-period-3-is-interesting">Why Period 3 Is Interesting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#intuitive-picture">Intuitive Picture</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-logistic-map">Example: The Logistic Map</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-exploration-python-example">Numerical Exploration (Python Example)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-the-duffing-oscillator-continuous-time-chaos">Case Study: The Duffing Oscillator (Continuous-Time Chaos)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-duffing-equation">The Duffing Equation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-chaos-is-possible-here">Why Chaos Is Possible Here</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poincare-section-stroboscopic-map">Poincaré Section (Stroboscopic Map)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poincare-section-stroboscopic-map">Poincaré Section (Stroboscopic Map)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-interpret-the-poincare-section">How to Interpret the Poincaré Section</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-the-duffing-section">Interpretation of the Duffing Section</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-mechanism">Geometric Mechanism</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-it-is-not-a-random-cloud">Why It Is Not a Random Cloud</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#diagnostic-power">Diagnostic Power</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#largest-lyapunov-exponent-for-the-duffing-oscillator">Largest Lyapunov Exponent for the Duffing Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reformulating-duffing-as-a-first-order-system">Reformulating Duffing as a First-Order System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-tangent-equations-and-computation-of-delta-mathbf-x-t">Variational (Tangent) Equations and Computation of <span class="math notranslate nohighlight">\(\delta \mathbf{x}(t)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linearisation-along-the-trajectory">Linearisation Along the Trajectory</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-delta-mathbf-x-t-is-found-in-practice">How <span class="math notranslate nohighlight">\(\delta \mathbf{x}(t)\)</span> Is Found in Practice</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-the-largest-lyapunov-exponent">Definition of the Largest Lyapunov Exponent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-algorithm-benettin-method">Numerical Algorithm (Benettin Method)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-meaning">Physical Meaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-is-the-definitive-test">Why This Is the Definitive Test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#largest-lyapunov-exponent">Largest Lyapunov Exponent</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bifurcation-structure">Bifurcation Structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-space-structure">Phase-Space Structure</a></li>

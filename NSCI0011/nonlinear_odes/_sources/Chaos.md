@@ -383,9 +383,9 @@ In continuous-time systems:
 
 We can think of two trajectories in phase space, nearby:
 ```{figure} ./Orbital_instability.png
----
+
 name: Orbital_instability
----
+
 Explanations of the Lyapunov exponent from phase space.
 ```
 
@@ -845,22 +845,6 @@ The diagram reveals:
 - Periodic windows embedded in chaos.
 
 
-
-### Invariant Measure (r = 4)
-
-At $r = 4$, the logistic map has invariant density
-
-```{math}
-\rho(x)
-=
-\frac{1}{\pi \sqrt{x(1-x)}}.
-```
-
-This distribution is non-uniform and singular at the boundaries,
-reflecting the stretching and folding dynamics.
-
-
-
 ### Period Three Implies Chaos
 
 A fundamental theorem (Li & Yorke, 1975):
@@ -868,7 +852,177 @@ A fundamental theorem (Li & Yorke, 1975):
 If a continuous one-dimensional map has a period-3 orbit,
 then it has periodic orbits of every period and exhibits chaotic behaviour.
 
-Thus the presence of period-3 implies chaos.
+*What Does “Period 3” Mean?*
+
+Consider a simple rule for updating a number repeatedly:
+
+```{math}
+x_{n+1} = f(x_n).
+```
+
+Starting from some initial value $x_0$, we apply the rule again and again:
+
+```{math}
+x_1 = f(x_0), \quad
+x_2 = f(x_1), \quad
+x_3 = f(x_2), \dots
+```
+
+This produces a sequence:
+
+```{math}
+x_0, x_1, x_2, x_3, x_4, \dots
+```
+
+
+
+#### Period 1 (Fixed Point)
+
+If applying the rule once brings you back to the same number,
+
+```{math}
+f(x) = x,
+```
+
+then the value never changes.
+
+Example:
+
+```{math}
+0.6, 0.6, 0.6, 0.6, \dots
+```
+
+This is called a **fixed point** (or period-1 orbit).
+
+
+
+#### Period 2
+
+If the sequence alternates between two distinct values,
+
+```{math}
+x_0 \to x_1 \to x_0 \to x_1 \to \dots
+```
+
+Example:
+
+```{math}
+0.3, 0.7, 0.3, 0.7, 0.3, 0.7, \dots
+```
+
+then the system has **period 2**.
+
+After two applications of the rule, it returns to where it started.
+
+
+
+#### Period 3
+
+Now suppose the sequence cycles through three distinct values:
+
+```{math}
+x_0 \to x_1 \to x_2 \to x_0 \to x_1 \to x_2 \to \dots
+```
+
+Example:
+
+```{math}
+0.2, 0.6, 0.8, 0.2, 0.6, 0.8, 0.2, \dots
+```
+
+This is called a **period-3 orbit**.
+
+Formally, this means:
+
+```{math}
+f^3(x) = x,
+```
+
+but
+
+```{math}
+f(x) \neq x,
+\qquad
+f^2(x) \neq x.
+```
+
+So:
+
+- After one step → different value  
+- After two steps → different value  
+- After three steps → back to the start  
+
+Then the cycle repeats forever.
+
+
+
+#### Why Period 3 Is Interesting
+
+At first glance, period 3 just means:
+
+> The system repeats every three steps.
+
+Like period 2, it still looks completely predictable.
+
+However, something remarkable happens in **continuous one-dimensional systems**:
+
+> If a period-3 orbit exists, then periodic orbits of *every possible period* must also exist.
+
+That means the system is capable of:
+
+- Period 4  
+- Period 5  
+- Period 7  
+- Period 100  
+- Arbitrarily long repeating cycles  
+
+In other words, once a 3-cycle appears, the system is capable of extremely complicated behaviour.
+
+
+
+#### Intuitive Picture
+
+To produce a 3-cycle, the function must:
+
+- Bend the interval,
+- Send different parts to different regions,
+- Fold values back over themselves.
+
+Once a map bends and folds enough to create a 3-cycle,
+it automatically has enough internal structure to support
+much more complicated patterns.
+
+So period 3 acts as a signal:
+
+> The system is no longer simple.
+
+
+
+#### Example: The Logistic Map
+
+For the logistic map
+
+```{math}
+x_{n+1} = r x_n (1 - x_n),
+```
+
+a stable period-3 orbit appears near
+
+```{math}
+r \approx 3.83.
+```
+
+When this happens:
+
+- Many other periodic behaviours also exist,
+- Chaotic motion appears in nearby parameter values.
+
+Thus, observing period 3 indicates the system has entered
+a regime of complex dynamics.
+
+
+
+
 
 
 
@@ -918,9 +1072,9 @@ plt.show()
 This results in a bifurcation diagram:
 
 ```{figure} ./bifurcation_diagram.png
----
+
 name: bifurcation_diagram
----
+
 Bifurcation diagram of the logistic map $x_{n+1} = r x_n (1 - x_n)$, 
 showing long-term values of $x_n$ as the parameter $r$ varies from 2.5 to 4.0. 
 
@@ -1008,8 +1162,6 @@ This is a **3D autonomous system**, making chaos possible.
 
 Thus, periodic forcing effectively increases the phase-space dimension.
 
-
-
 ### Poincaré Section (Stroboscopic Map)
 
 Because the forcing is periodic with period
@@ -1018,24 +1170,372 @@ Because the forcing is periodic with period
 T = \frac{2\pi}{\omega},
 ```
 
-we construct a **stroboscopic Poincaré section**:
+we construct a **stroboscopic Poincaré section** by sampling the system once every forcing period:
 
 ```{math}
 (x(nT), \dot{x}(nT)).
 ```
 
-This reduces the continuous flow to a discrete map.
+Rather than examining the full continuous trajectory in the extended phase space
+$(x, \dot{x}, \theta)$, this procedure reduces the system to a discrete map
 
-Classification:
+```{math}
+\mathbf{x}_{n+1} = \mathcal{P}(\mathbf{x}_n),
+```
 
-- Single point → periodic motion
-- Finite set of points → period-$k$
-- Closed curve → quasi-periodic
-- Fractal cloud → chaotic attractor
+where $\mathcal{P}$ advances the system forward by exactly one forcing period.
 
-A fractal Poincaré section strongly indicates chaos.
+Thus, a continuous-time system is converted into an iterated map,
+making geometric structure much easier to identify.
 
 
+
+#### How to Interpret the Poincaré Section
+
+The geometry of points in the section classifies the dynamics:
+
+- **Single point** → stable period-1 orbit  
+- **Finite set of points** → period-$k$ orbit  
+- **Closed smooth curve** → quasi-periodic motion on an invariant torus  
+- **Filamentary / fractal structure** → chaotic attractor  
+
+This classification follows from how the continuous trajectory intersects
+the sampling plane once per forcing cycle.
+
+
+
+#### Interpretation of the Duffing Section 
+
+```{figure} ./poincare.png
+---
+name: Poincare
+---
+Stroboscopic Poincaré section of the periodically forced Duffing oscillator,
+constructed by sampling $(x(t), \dot{x}(t))$ once per forcing period 
+$T = 2\pi/\omega$. 
+
+The section reveals a layered, filamentary structure rather than a finite set 
+of points or a smooth invariant curve. This geometry indicates the presence of 
+a strange attractor. The two lobes correspond to motion within the two wells 
+of the Duffing double-well potential, while the thin folded bands reflect 
+repeated stretching and folding of phase space. Such a fractal Poincaré 
+structure is a clear geometric signature of chaotic dynamics.
+```
+
+The computed Poincaré section for the Duffing oscillator shows:
+
+- Two large lobed regions,
+- Thin layered filaments,
+- Structured but non-smooth geometry,
+- No finite set of repeating points,
+- No smooth invariant curve.
+
+This is neither periodic nor quasi-periodic motion.
+
+Instead, the layered and folded structure indicates the presence of a
+**strange attractor**.
+
+
+
+#### Geometric Mechanism
+
+The structure arises from the repeated action of:
+
+1. **Stretching**  
+   Nearby trajectories separate exponentially (positive Lyapunov exponent).
+
+2. **Folding**  
+   Dissipation prevents trajectories from escaping to infinity.
+
+3. **Reinjection**  
+   The forcing reintroduces trajectories into different regions of phase space each period.
+
+This repeated stretching-and-folding produces:
+
+- Filamentary sheets,
+- Layered bands,
+- Self-similar structure under magnification.
+
+The two large lobes correspond physically to motion in the two wells
+of the Duffing double-well potential. Chaotic switching between wells
+produces the intertwined geometry seen in the section.
+
+
+
+#### Why It Is Not a Random Cloud
+
+A chaotic Poincaré section does **not** fill area uniformly.
+
+Instead:
+
+- Points lie on thin stretched manifolds,
+- The attractor has non-integer dimension,
+- Zooming reveals further geometric refinement.
+
+Thus the section provides geometric evidence of chaos:
+bounded, structured, but non-periodic dynamics.
+
+
+
+#### Diagnostic Power
+
+The Poincaré section is one of the clearest qualitative diagnostics of
+continuous-time chaos.
+
+When combined with:
+
+- Largest Lyapunov exponent $ \lambda_1 > 0 $,
+- Bounded motion,
+- Broadband power spectrum,
+
+it provides strong evidence that the system is chaotic.
+
+## Largest Lyapunov Exponent for the Duffing Oscillator
+
+While the Poincaré section provides geometric evidence of chaos,
+the most definitive quantitative diagnostic is the **largest Lyapunov exponent**.
+
+Chaos is present if
+
+```{math}
+\lambda_1 > 0.
+```
+
+
+
+### Reformulating Duffing as a First-Order System
+
+The forced Duffing equation
+
+```{math}
+\ddot{x} + \delta \dot{x} + \alpha x + \beta x^3
+= \gamma \cos(\omega t)
+```
+
+is written as a first-order system:
+
+```{math}
+\dot{x} = v,
+```
+```{math}
+\dot{v} = -\delta v - \alpha x - \beta x^3 + \gamma \cos(\omega t).
+```
+
+Let
+
+```{math}
+\mathbf{x} =
+\begin{pmatrix}
+x \\
+v
+\end{pmatrix},
+\qquad
+\dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}, t).
+```
+
+
+
+### Variational (Tangent) Equations and Computation of $\delta \mathbf{x}(t)$
+
+To compute the Lyapunov exponent, we must measure how a small perturbation
+$\delta \mathbf{x}(t)$ evolves along a reference trajectory
+$\mathbf{x}(t)$ of the Duffing system.
+
+The key idea is:
+
+1. First integrate the original Duffing equations to obtain $\mathbf{x}(t)$.
+2. Then compute how an infinitesimal displacement evolves in the tangent space along that trajectory.
+
+
+
+#### Linearisation Along the Trajectory
+
+Let
+
+```{math}
+\mathbf{x}(t) =
+\begin{pmatrix}
+x(t) \\
+v(t)
+\end{pmatrix}.
+```
+
+A nearby trajectory can be written as
+
+```{math}
+\mathbf{x}(t) + \delta \mathbf{x}(t).
+```
+
+Substituting into the Duffing equations and retaining only first-order terms
+in $\delta \mathbf{x}$ gives the **variational equation**
+
+```{math}
+\frac{d}{dt} \delta \mathbf{x}
+=
+D\mathbf{f}(\mathbf{x}(t), t)
+\, \delta \mathbf{x}.
+```
+
+The Jacobian matrix is
+
+```{math}
+D\mathbf{f}
+=
+\begin{pmatrix}
+0 & 1 \\
+-\alpha - 3\beta x^2(t) & -\delta
+\end{pmatrix}.
+```
+
+Thus the perturbation evolves according to
+
+```{math}
+\frac{d}{dt}
+\begin{pmatrix}
+\delta x \\
+\delta v
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 & 1 \\
+-\alpha - 3\beta x^2(t) & -\delta
+\end{pmatrix}
+\begin{pmatrix}
+\delta x \\
+\delta v
+\end{pmatrix}.
+```
+
+---
+
+#### How $\delta \mathbf{x}(t)$ Is Found in Practice
+
+To obtain $\delta \mathbf{x}(t)$:
+
+1. Choose a small initial perturbation,
+   ```{math}
+   \delta \mathbf{x}(0),
+   ```
+   and normalise it (e.g. to unit norm). The Lyapunov exponent depends only on the exponential growth rate, not on the initial magnitude.
+
+2. Integrate **simultaneously**:
+   - The original Duffing equations for $\mathbf{x}(t)$,
+   - The linearised equations for $\delta \mathbf{x}(t)$.
+
+The tangent dynamics depend explicitly on $x(t)$,
+so the two systems must be evolved together.
+
+At each time $t$, the solution of the variational equation gives
+the instantaneous separation between two infinitesimally close trajectories.
+
+Thus $\delta \mathbf{x}(t)$ is not guessed —
+it is obtained by solving the linearised ODE driven by the evolving trajectory.
+
+---
+
+### Definition of the Largest Lyapunov Exponent
+
+Once $\delta \mathbf{x}(t)$ is known, the largest Lyapunov exponent is defined as
+
+```{math}
+\lambda_1
+=
+\lim_{t \to \infty}
+\frac{1}{t}
+\ln
+\frac{\|\delta \mathbf{x}(t)\|}
+     {\|\delta \mathbf{x}(0)\|}.
+```
+
+This measures the long-time average exponential growth rate of the perturbation.
+
+If
+
+```{math}
+\lambda_1 > 0,
+```
+
+then
+
+```{math}
+\|\delta \mathbf{x}(t)\| \sim e^{\lambda_1 t},
+```
+
+so nearby trajectories separate exponentially.
+
+This exponential divergence is the defining dynamical signature of chaos.
+
+### Numerical Algorithm (Benettin Method)
+
+In practice, the limit is approximated by:
+
+1. Integrate the Duffing system.
+2. Integrate the tangent equations simultaneously.
+3. At fixed time intervals, compute the norm
+   ```{math}
+   r = \|\delta \mathbf{x}\|.
+   ```
+4. Accumulate
+   ```{math}
+   \lambda_1 \approx \frac{1}{T}
+   \sum_{k=1}^{N}
+   \ln r_k.
+   ```
+5. Renormalise the perturbation vector:
+   ```{math}
+   \delta \mathbf{x} \leftarrow \frac{\delta \mathbf{x}}{r_k}.
+   ```
+
+Renormalisation prevents numerical overflow and keeps the perturbation infinitesimal.
+
+
+
+### Interpretation
+
+For the Duffing oscillator:
+
+- $ \lambda_1 < 0 $ → periodic motion  
+- $ \lambda_1 = 0 $ → quasi-periodic motion  
+- $ \lambda_1 > 0 $ → chaotic motion  
+
+In continuous-time systems, one Lyapunov exponent is always zero
+(due to flow along the trajectory).
+Chaos requires at least one positive exponent.
+
+
+
+### Physical Meaning
+
+A positive Lyapunov exponent implies:
+
+- Exponential sensitivity to initial conditions,
+- Finite predictability time,
+- Irregular switching between wells in the Duffing potential.
+
+The predictability horizon is approximately
+
+```{math}
+t_{\text{predict}}
+\approx
+\frac{1}{\lambda_1}
+\ln\!\left(\frac{1}{\epsilon}\right),
+```
+
+where $\epsilon$ is measurement precision.
+
+
+
+### Why This Is the Definitive Test
+
+Unlike visual diagnostics (Poincaré sections or spectra),
+the Lyapunov exponent directly measures the core mechanism of chaos:
+
+```{math}
+\text{Exponential instability}.
+```
+
+Thus, computing $\lambda_1$ provides a rigorous confirmation
+that the Duffing oscillator is chaotic for a given parameter set.
 
 ### Largest Lyapunov Exponent
 
